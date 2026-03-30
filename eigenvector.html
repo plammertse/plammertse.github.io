@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : eigenvector.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+   history :
+--     2025-11-23 new
+--------------------------------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on eigenvectors  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li><a href="index.html">         Home              </a> </li>
+
+  <li><a href="modes.html">         Modes             </a> </li>
+
+  <li> <a style="background-color:#0000C0;"
+          href="eigenvector.html">  Eigenvectors      </a> </li>
+</ul>
+
+<!------------------------------------------------------------->
+
+<h2> Eigenvectors </h2>
+
+<h4> modes </h4>
+
+<p> The idea of a mode was discussed 
+<a href = "modes.html"> elsewhere</a>.
+ Briefly, it is a certain motion 
+(&thinsp;an "eigenmotion", if you like&hairsp;)
+of a mechanical or electrical system.
+ It is a motion which does not change its "shape"
+ over time, just its amplitude.
+Typical examples include a vibrating string, 
+or a swinging pendulum.
+</p>
+
+<h4> eigenvectors </h4>
+
+<p> The "shape" of the motion can be described
+ by the amplitudes of a set of numerical parameters,
+like the momen&shytary values of the positions
+and velocities of a number of masses.
+We can call such a list of numbers a "vec&shytor".
+</p>
+<p>&emsp;
+The whole idea of a mode is that this vector
+does not change its shape during the motion,
+ but that only its amplitude uni&shyformly increases,
+ or more usually decreases, over time.
+
+ As an example, a non-driven pendulum
+ will always have the same ratio be&shytween
+ the amplitude of its velocity and its position,
+ and these will decay together.
+</p>
+
+<h4> the rotating eigenvector of a pendulum </h4>
+
+<p> The picture below shows a rotating eigenvector.
+The example given is the eigenvector of a pendulum.
+<!--
+The&nbsp;section below gives the details.
+-->
+</p>
+<p>&emsp;
+Eigenvectors are a part of linear algebra,
+but they pop up in all sorts of applications. 
+We limit ourselves to the application in control theory.
+In that context, eigen&hairsp;<i>values</i> represent the oscillation 
+frequencies (&hairsp;or decay times&hairsp;)
+ of natural motions 
+<!--
+(&hairsp;"eigenmotions"&hairsp;)
+-->
+of linear (&hairsp;or linearized&hairsp;) systems.
+Eigen&hairsp;<i>vectors</i> are the "shapes" of such motions.
+</p>
+<p>&emsp;
+The subject is too wide to introduce here from the ground up.
+We will leave that to proper textbooks.
+ We will just jump in at the deep end, where such textbooks
+may stop, leaving the reader with a few practical questions.
+</p>
+
+<!-- ---------------------------------------------------------->
+<img src="images/pendulum_eig.gif" 
+     width="400" alt="Pendulum eigenvector"
+     style="margin-left   : 120px;
+            margin-top    : 12px;
+            margin-bottom :  8px;" >
+
+<p style = "margin-left:100px;">
+<i> The rotating eigenvector of a pendulum</i> </p>
+
+
+<h4> eigenvectors </h4>
+
+<p> Eigenvectors are a part of 
+<a href = "linear_algebra.html"> linear algebra</a>,
+which  is too big a subject to cover here.
+But let us repeat a few definitions just in case.
+ When a vector <i>x</i> is multiplied by a matrix 
+<b><i>A</i></b>,
+ the result is a new vector <i>y</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>y</mi>
+  <mspace/> <mo>=</mo>
+  <mi>A</mi> 
+  <mo>.</mo>
+  <mi>x</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We can interpret this as the matrix <b><i>A</b></i> 
+giving the vector <i>x</i> a new length and direction.
+</p>
+<p>&emsp;
+This happens literally in 2D and 3D where the vector
+is a visible arrow, but it holds
+up in general if we forget about the geometrical meaning
+of "length" and "direction".
+</p>
+<p>&emsp;
+As it happens, every 3D matrix <b><i>A</b></i>
+ has at least its own three directions
+(&hairsp;though they may coincide&hairsp;) in which
+it does not change the direction of the vector <i>x</i>
+ as it turns into <i>y</i>.
+It just gets shorter or longer 
+ (&hairsp;or it stays the same&hairsp;).
+Such a vector <i>x</i> is called an eigenvector
+(&hairsp;from the German word for "self"&hairsp;).
+And the idea generalizes to N dimen&shysions.
+
+
+<h4> pendulum </h4>
+
+<p> We will take the pendulum as an example
+ of the relation between modes and eigenvectors.
+
+<!-- ---------------------------------------------------------->
+<img src="images/pendulum_eig.gif" 
+     width="400" alt="Pendulum eigenvector"
+     style="margin-left   : 120px;
+            margin-top    : 12px;
+            margin-bottom :  8px;" >
+
+
+<p>
+- pendulum example.
+</p>
+<p>
+- phase plane, more than 90&deg phase between position and velocity,
+tangent line.
+</p>
+<p>
+- animation of damped and rotating eigenvector.
+</p>
+<p>
+- analytical expression for 2-DOF systems.
+</p>
+<p>
+- connection to aircraft modes (including energy mode).
+</p>
+<p>
+- frequency domain versus time domain.
+</p>
+<p>
+- poles and zeros, root locus, eigenvalues, SVD.
+</p>
+<p>
+- modes, resonance, anti-resonance.
+</p>
+
+<!-- FOOTER ---------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : autopilot.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-23 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING ----------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on the autopilot </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">          Home            </a> </li>
+
+  <li> <a href="delft.html">           Delft </a> </li>
+  <li> <a href="design_exercise.html"> Design exercise </a> </li>
+
+  <li> <a style="background-color:#0000B0;"
+          href="autopilot.html">      Autopilot       </a> </li>
+</ul>
+
+
+<!-- TEXT PAGE ------------------------------------------------>
+
+<h2> Autopilot - energy mode </h2>
+
+<p> In 1985 I graduated from Delft as an aeronautical
+ control engineer on two separate theses.
+</p>
+
+<!------------------------------------------------------------>
+
+<h4> asymmetric autopilot </h4>
+
+<p> The first thesis was on an asymmetrical autopilot
+  (&hairsp;i.e. for left&thinsp;/&thinsp;right turns&hairsp;), 
+ for the DHC-3 "Beaver" laboratory aircraft,
+which had recently been fully identified in flight.
+ The thesis was in Dutch, which was the standard at the time.
+</p>
+<p>&emsp; I used an interesting feedforward take
+ on turn co&shyordination when rolling into a turn,
+ and a charming cascaded setup for the localiser approach,
+ starting from an innermost loop for the roll angle,
+ then the course angle, and finally the offset from
+ the runway centerline, with natural settable limiters on every step
+ in the nested loops : first a limit on roll rate, then a limit 
+ on the roll angle (&nbsp;set to 30&deg&hairsp;),
+ and finally a limit on the intercept course towards
+ the runway centerline, to prevent circling. 
+</p>
+
+<!------------------------------------------------------------->
+
+<h4> symmetric autopilot </h4>
+
+<p> There was no love lost between me and my professor,
+ and he forced me to do a second thesis, this time in English,
+ on the symmetrical (&hairsp;up&thinsp;/&thinsp;down&hairsp;)
+ control. </p>
+
+<p>&emsp; I used a cascaded controller again,
+ starting from an innermost loop for the angle of attack
+  <i>&alpha;</i>,
+right up to alti&shytude hold and ILS approach capture.
+ In the system equations, I used the flight path angle
+   <i>&gamma;</i>
+ instead of the pitch attitude <i>&theta;</i>
+ as a state element
+ (&hairsp;and as a step in the nested,
+ cascaded controller&hairsp;), 
+ because this gave a very  elegant inner loop
+ for the ILS glide path
+ and altitude hold intercept.
+</p>
+<p>&emsp;
+ Like in the asymmetric controller,
+ every step in the cascade
+ was a setpoint for an inner loop, which makes it
+ a natural place for a limiter,
+ starting with a straightforward limit on the commanded
+ angle of attack which automatically prevented
+ ever commanding a stall.
+</p>
+
+<!------------------------------------------------------------>
+
+<h4> the energy mode as the fifth state </h4>
+
+<p> In the symmetric system state I replaced the height
+ <i>h</i> by the energy difference 
+(<i>&hairsp;u 
+    + g&hairsp;/&hairsp;V&hairsp;.&hairsp;h&hairsp;</i>).
+ Unlike <i>h</i> proper, this energy state is
+ completely decoupled from all other modes,
+ including the phugoid. 
+ It is directly coupled as a first order system
+ to the throttle,
+ which is now also decoupled from the phugoid.
+This is why I termed the fifth mode the "energy mode".
+</p>
+<p>&emsp; It is a known fact that the throttle
+ is an energy control,
+ not an airspeed or climb angle control. 
+On approach, the energy management and in particular
+ the trading between airspeed excess and height
+ relative to the glide slope becomes fully automatic
+ if feedback of altitude and airspeed
+ is replaced by feedback of just the energy excess.
+ When coming in slow and high or fast and low,
+ there is no unnecessary throttle activity at all.
+ In the root locus, feedback of the energy on the throttle
+ moves only the single pole of the energy mode.
+
+<!------------------------------------------------------------>
+
+<h4> result </h4>
+
+<p> The professor told me: "that's not how we do it".
+ Then he offered me a job at the NLR
+ (&hairsp;Dutch National Aerospace Laboratory&hairsp;),
+ where he was chairman of the board,
+ in addition to his professorship in Delft.
+ I politely declined.
+</p>
+
+<br> <br>
+
+<!-------------------------------------------------------------------> 
+<hr>
+
+<p> <i> PDF&hairsp;'&hairsp;s : </i> </p>
+<p>&emsp; <a href="PDF/lammertse_1985_thesis_symmetrical.pdf"> 
+                    Beaver autopilot &nbsp; symmetrical, 1985 </a> </p>
+<p>&emsp; <a href="PDF/lammertse_1984_thesis_asymmetrical.pdf"> 
+                          Beaver autopilot asymmetrical, 1984 </a> </p>
+
+<!-- FOOTER ---------------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse,  2025 </div>
+
+</body>
+</html>
