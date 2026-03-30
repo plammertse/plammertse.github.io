@@ -1,0 +1,215 @@
+/*-------------------------------------------------------------
+-- file    : plammertse.css
+-- purpose : Style sheet for homepage Piet Lammertse
+-- note    : Beware : inside CSS, the comment symbol is / * etc.
+--             This is unlike HTML, where it is <!-- -->   
+---------------------------------------------------------------
+-- history :
+--     2026-03-15 small, gradual developments
+--     2025-11-21 new
+--------------------------------------------------------------*/
+
+/* Sans serif everywhere.                   */
+/*   Default font size seems to be 16px     */
+/* Don't do margin, it shifts the navbar :  */
+/*   margin-left : 32px;                    */
+
+body {
+  margin      : 0;
+  padding     : 0;
+  font-family : Arial, Helvetica, sans-serif;
+}
+
+/* all hyperlinks darker blue */
+/* in Chrome, this briefly changed dead links
+   to black (they were lighter blue), but no more ? 
+   Also see the result in prop_book_00_TOC.html  */
+a {
+   color : #000040;    /* #000080  */
+}
+/* line spacing + indent for header         */
+
+h2 {     /* default font desktop/tablet 30/24 */
+  margin     : 6px 16px;
+  margin-top : 16px;
+}
+
+h3 {     /* default font desktop/tablet 24/20 */
+  font-size  : 20px;
+  margin     : 4px 16px;
+  margin-top : 16px;
+}
+
+h4 {     /* default font desktop/tablet 20/18 */
+  font-size  : 18px;
+  margin     : 2px 32px;
+  margin-top : 12px;
+}
+h5, h6 {
+  margin     : 2px 32px;
+  margin-top : 16px;
+}
+
+/* paragraph : smaller vertical line distance,     */
+/* larger left margin                              */
+/* Max. column width 800 gives some 108 letters.   */
+/* Word wraps can be helped with soft hyphens &shy */
+p {
+  margin    : 3px 32px;
+  max-width : 800px;
+/* font-size : 16px;  already the default, I think */
+}
+
+/* horizontal rulers text width */
+hr {
+  margin-left : 32px;
+  max-width   : 800px;" >
+}
+
+/* prevent sup and sub from increasing line height */
+sup, sub {
+  vertical-align:  baseline;
+  position       : relative;
+  top            : -0.2em;
+}
+
+sub {
+  top : 0.2em;
+}
+
+/*<pre> increase fixed-spacing font size 
+        ( default is 12, main text is 16 )         */
+/* margin is absolute, not inside <p>              */
+pre {
+  font-size : 15px;
+  margin    : 4px 64px;
+}
+
+table {
+   width       : 750px;
+   margin-left :  48px;
+}
+
+/* table content (rows) spaced a little more       */
+td {
+  padding : 1px 0;
+}
+
+/* Two equal columns that float next to each other, for TOC */
+.column {
+  float        : left;
+  width        : 400px;    /* for now, half of 800 */
+  padding-left : 10px;
+}
+
+/* increase the math font size to look like 16px text.
+   The extra math margin (vertical + horizontal)
+   acts *inside* <p> ( and inside <td>, TBC ).                              
+   <mfrac> from inline to display style cannot be fixed here,
+   this needs <mstyle displaystyle="true"> first every time. */
+math {
+  font-size : 18px;
+  margin : 0px 32px;
+}
+
+/* Always use <mspace/> with the slash, else it won't work  */
+/* <mspace> width itself does not seem to allow an override */
+mspace {
+   min-width : 0.5em;
+}
+
+img {
+   display       : inline-block;
+   /* margin-top    : 16px; margin-bottom : 16px;  */
+}
+
+video {
+   display       : inline-block;
+   margin-top    : 16px;
+   margin-bottom : 16px;
+}
+
+/* unordered lists (bullets, not numbered) */
+ul {
+  list-style-type: none;
+  margin   : 0;
+  padding  : 0;
+  overflow : hidden;
+/*  background-color: #38444d;  */      /* dark greyish blue */
+  background-color: #404040;
+}
+
+/* list items, left aligned */
+li {
+  float : left;
+}
+
+/* format for anchors <a>..</> and drpbtn's inside a list <li>*/
+li a, .dropbtn {
+  display    : inline-block;
+  color      : white;
+  text-align : center;
+  padding    : 14px 16px;
+  text-decoration: none;
+}
+
+/* Attempt at central color for "here" buttons, needs work : */
+.dropbtn1 {
+  background-color : blue;
+}
+
+/* dark red banner button on hover */
+li a:hover, .dropdown:hover .dropbtn {
+/*  background-color: red;  made the red a bit darker : */
+  background-color : #E00000;
+}
+
+/* dropdown lists */
+li.dropdown {
+  display : inline-block;
+}
+
+.dropdown-content {
+  display    : none;
+  position   : absolute;
+  background-color: #f9f9f9;
+  min-width  : 160px;
+/* width:auto;  */
+/* width:max-content;  failed attempts to allow "Table of Contents" */
+  box-shadow : 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index    : 1;
+}
+
+/* format anchors *inside dropdowns*  (plain elsewhere) */ 
+/* The first padding is vertical (like a line spacing), */
+/* the second is horizontal (like a tab)                */
+/* Text color dark blue is a bit less harsh than black  */
+.dropdown-content a {
+  color      : #000070;         /* #000080  too blue ?? */
+  padding    : 4px 14px;
+  text-decoration: none;
+  display    : block;
+  text-align : left;
+}
+
+.dropdown-content a:hover {
+  background-color : #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display     : block;
+}
+
+.footer {
+   position   : fixed;
+   left       : 32px;
+   bottom     : 0;
+   width      : 800px;
+   background-color: white;
+   color      : black;
+   text-align : right;
+   padding    : 0 16px;          /* from default 32px ? */
+   /* padding  : 20px 16px 0px 0px;  This just shifts the border up */
+   box-sizing : border-box;
+   border-top : 1px solid black;
+}
