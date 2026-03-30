@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<!---------------------------------------------------------------------
+-- file    : prop_book_16_4.html
+-- purpose : Page for website Piet Lammertse
+-----------------------------------------------------------------------
+--   history :
+--     2025-12-18  new
+----------------------------------------------------------------------> 
+
+
+
+
+<!-- OPTIONAL SECTION 16.4 -->
+
+<!-- THIS IS CHARMING NATHEMATICALLY, 
+     BUT IT DOES NOT BRING MUCH INSIGHT,
+     SO REMOVED IT FROMTHE WEB VERSION FOR NOW.
+          "KILL YOUR DARLINGS"
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FORMATTING  ----------------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU --------------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home            </a> </li>
+
+  <li> <a href="prop_book_15.html">&#x25C4  Previous  </a> </li>
+
+  <!-- TOP LEVEL TABLE OF CONTENTS ----------------------------------->
+  <li class="dropdown">
+    <a class="dropbtn";
+       style="background-color:#0000B0";
+       href="javascript:void(0)" >       Book  &#x25BC;</a>
+
+    <div class="dropdown-content">
+      <a style="background-color:#E8E8E8";
+         href="prop_book_frontispiece.html">
+                    <i> Frontispiece </i> 
+     </a>
+      <a style="background-color:#E8E8E8";
+         href="prop_book_preface.html">
+                    <i> Preface </i>
+     </a>
+      <a style="background-color:#E8E8E8";
+         href="prop_book_01.html"> Introduction 
+           &emsp;&emsp;&ensp;&hairsp;     ( 1 - 3 )
+     </a>
+
+      <a style="background-color:#E8E8E8";
+         href="prop_book_04.html"> Axial induction 
+           &emsp;&nbsp;&hairsp;            ( 4 - 6 )
+     </a>
+
+      <a style="background-color:#E8E8E8";
+         href="prop_book_07.html"> Rotation 
+           &emsp;&emsp;&emsp;&ensp;&nbsp;  ( 7 - 12 )
+     </a>
+      <a style="background-color:#C0C0F0";
+         href="prop_book_15.html"> Viscous loss
+           &emsp;&ensp;&hairsp;           ( 15 - 17 )
+     </a>
+      <a style="background-color:#E8E8E8";
+         href="prop_book_18.html"> Tip loss 
+           &emsp;&emsp;&emsp;&ensp;&nbsp; ( 18 - 25 )
+     </a>
+      <a style="background-color:#E8E8E8";
+         href="prop_book_22.html"> Vortex theory
+           &emsp;&emsp;&ensp;               ( 22 )
+     </a>
+      <a style="background-color:#E8E8E8";
+         href="prop_book_01.html"> Installation
+           &emsp;&emsp;&nbsp;&hairsp;      ( 29 - 30 )
+     </a>
+    </div>
+  </li>
+<!------------------------------------------------------------------->
+
+  <li> <a href="prop_book_17.html">  Next &#x25BA</a> </li>
+
+</ul>
+
+
+<!-- TEXT PAGE ------------------------------------------------------->
+
+<!--- PAGE HEADER ---------------------------------------------------->
+<p style="margin-left : 320px">  <i> VISCOUS LOSS </i> </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 16 ----------------------------------------------------->
+
+<h2> 16 &emsp; Non-optimized viscous loss </h2>
+
+<!-- SECTION 16.1 ----------------------------------------------------->
+
+<h4> 16.1 &emsp;
+        Viscous loss in the rotationally optimal propeller </h4>
+<p> For the rotationally optimal propeller, the momentum loss (10.10)
+ is constant along the blade due to the cos<sup>2</sup><i>&phi;</i>
+ loading distribution from (10.8).
+</p>
+<p>&emsp;
+ The viscous loss however varies along the blade.
+ Unlike the momentum loss, the local loss ratio (15.21) 
+ is&nbsp;independent of the load, but instead it varies with the radius.
+</p>
+<p>&emsp;
+ The combined local loss ratio (10.8) plus (15.21)
+ for the rotationally optimal propeller is :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d&hairsp;</mn> 
+      <msub>  <mi>P</mi> <mn>m</mn> </msub> <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d&hairsp;</mn>
+      <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d&hairsp;</mn> 
+      <msub>  <mi>P</mi> <mn>v</mn> </msub> <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d&hairsp;</mn>
+      <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12</mn> <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow> 
+    <mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mrow>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+        <mi>&phi;</mi>
+    </mrow>
+  </mfrac>
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.1)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> Figure 16.1 shows the graph.
+ It is the same as figure 15.4, but shifted up
+ by the constant momentum loss.
+</p>
+
+<!-- COMBINED VISCOUS LOCAL LOSS DIAGRAM --------------------------->
+<img  width="500";
+     style="margin-left:160px";
+     alt="Viscous loss diagram";
+     src="images/prop_viscous_combined_local_loss_non_optimized.gif" >
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 16.1 : &ensp; Local combined loss ratio  (16.1),
+ rotationally optimal thrust.
+ </i> 
+
+<p>&emsp;
+ Clearly, the combined local loss ratio is not constant along the blade.
+ Neither is the marginal loss, as we shall see in a later chapter.
+ The rotationally optimized propeller is not optimal
+ in the presence of viscous loss.
+ We will optimize it in the next chapter.
+ </p>
+
+<!------------------------------------------------------------------->
+
+
+<!-- SECTION 16.2 ----------------------------------------------------->
+
+<h4> 16.2 &emsp;
+        Integrating the viscous loss
+            (&thinsp;rotationally optimal distribution&thinsp;) </h4>
+
+<p> We wish to find an average viscous loss over the propeller.
+ The average will depend on the thrust distribution,
+ because the local viscous loss ratio depends on the radius.
+ We need to make a choice, and we will use the rotationally
+ optimized propeller as a baseline.
+ We noted above that this is not the optimal choice,
+ but will use it because it is common in the literature,
+ and it gives a simple result which can be used as a baseline later.
+</p>
+<p>&emsp;
+ Loss ratios and efficiencies cannot be integrated
+ over the propeller disk. 
+ As a counter-example, it will not help if half the disk area
+ has a perfect zero percent loss ratio, if all the thrust
+ is on the non-perfect half.
+</p>
+<p>&emsp;
+ We will have to integrate the local loss itself, not the ratio.
+ From (15.21) we have :
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mn>d&hairsp;</mn>
+  <msub>  <mi>P</mi> <mn>v</mn> </msub> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>d&hairsp;</mn>
+  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+        <mi>&phi;</mi>
+    </mrow>
+  </mfrac>
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.2)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+</p>
+<p> For lightly loaded propellers without tip loss,
+ d<i>T</i>&thinsp;&prime; follows from (10.9) :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mn>d&hairsp;</mn>
+  <msub>  <mi>P</mi> <mn>v</mn> </msub> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+        <mi>&phi;</mi>
+    </mrow>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mi>T</mi> <mn>&hairsp;&prime;&hairsp;</mn>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+        <mi>&phi;</mi>
+    </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mi>x</mi>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>2</mn> <mi>x</mi> <mo>.</mo> <mn>d</mn> <mi>x</mi>
+   </mrow> 
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.3)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> The viscous loss  (15.21) contains a term of
+ 1&hairsp;/&hairsp;cos<sup>2</sup>&hairsp;<i>&phi;</i> 
+ which increases the loss of the linear term 
+ <i>&epsilon;&hairsp;.&hairsp;x</i>.
+ The two cos<sup>2</sup><i>&phi;</i> terms happen to cancel,
+ effectively replacing the local
+ 1&hairsp;/&hairsp;cos<sup>2</sup><i>&phi;</i> loss term by the overall 
+   1&hairsp;/&hairsp;<i>&kappa;</i><sub>&phi;</sub> term :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mn>d&hairsp;</mn>
+  <msub>  <mi>P</mi> <mn>v</mn> </msub> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <<mrow>
+      <mi>&epsilon;</mi> <mo>.</mo> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> 
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mi>x</mi>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>2</mn> <mi>x</mi> <mo>.</mo> <mn>d</mn> <mi>x</mi>
+   </mrow> 
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.4)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> The integral is then simply that of
+  <i>&epsilon;&thinsp;.&thinsp;x</i> times the mass factor :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <msub>  <mi>P</mi> <mn>v</mn> </msub> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <<mrow>
+      <mi>&epsilon;</mi> <mo>.</mo> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> 
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+  <mn>&thinsp;.</mn>
+
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+    <mn>2&thinsp;</mn> 
+    <msup> <mi>x</mi> <mn>2</mn> </msup>
+    <mo>.</mo>
+   <mn>d&hairsp;</mn> <mi>x</i>
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.5)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p>
+The primitive of 2&thinsp;x<sup>2</sup> is &frac23;&thinsp;x<sup>3</sup>.
+</p>
+<p> Dividing by <i>T</i>&thinsp;&prime;, the overall viscous loss ratio
+ for the rotationally optimal propeller is :
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+      <msub> <mi>P</mi> <mn>v</mn> </msub>
+        <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn> 
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mi>&epsilon;</mi>
+
+  <mo>.</mo>
+
+  <mn>(&hairsp;</mn>
+    <mn>&frac23;&thinsp;</mn> <mi>X</mi>
+  <mn>&hairsp;)</mn>
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.6)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p>
+Here the &frac23;&thinsp;<i>X</i> is put in brackets to make a point.
+ It is like an effective, average value of <i>x</i>  for the local
+ <i>&epsilon;&thinsp;.&thinsp;x</i> in (16.2).
+ Viewed in this way, the 1/<i>κ</i><sub>ϕ</sub> term in (16.6)
+ also represents  an average, for the
+  1&thinsp;/&thinsp;cos<sup>2</sup><i>&phi;</i> factor.
+</p>
+<p> Since 1&thinsp;/&thinsp;cos<sup>2</sup><i>&phi;</i>
+ at an “average radius” of 0.7*hairsp;R
+  is very similar to 1&thinsp;/&thinsp;<i>κ</i><sub>&phi;</sub>,
+ comparing (16.6) to (16.2) supports the classical rule of thumb
+ that the overall viscous efficiency of a propeller
+ can be well approximated by the local viscous efficiency
+ at the radius 0.7&thinsp;R.
+</p>
+<p> &emsp; 
+ Figure 16.2 shows (16.6) against the tip speed ratio
+ <i>X</i> , using <i>&epsilon;</i> = 0.02 as an example for the
+ blade section
+   <i>C</i><sub>d</sub>&thinsp;/&thinsp;<i>C</i><sub>l</sub>.
+ The shape is similar to the plot against the local speed ratio
+ in figure 15.4, 
+ but this time the minimum occurs near <i>X</i> = 1.35
+ instead of at  <i>x</i> = 1, and the asymptote is
+ &frac23;&thinsp;<i>&epsilon;&thinsp;X</i> instead of
+ <i>&epsilon;&thinsp;X</i>.
+</p>
+
+<!-- COMBINED VISCOUS LOCAL LOSS DIAGRAM --------------------------->
+<img  width="600";
+     style="margin-left:120px";
+     alt="Viscous loss diagram";
+     src="images/prop_viscous_overall_X.gif" >
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 16.2 : &ensp;
+          The overall viscous loss ratio (16.6) in the
+             rotationally optimal propeller
+ </i>
+</p>
+ 
+<!------------------------------------------------------------------->
+
+
+<!-- SECTION 16.3 ----------------------------------------------------->
+
+<h4> 16.3 &emsp;
+  The overall loss (&thinsp;rotationally optimal distribution&thinsp;) </h4>
+<p> We can now sum the averaged values of the momentum
+ and viscous losses (10.10) and (16.6),
+ like we did for the local losses in (16.1).
+ Note that these are values for the rotationally optimal propeller,
+ for light loading, before tip loss,
+ and before viscous optimization :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+      <msub> 
+        <mrow> <mi>P</mi> <mn>&hairsp;&prime;</mn> </mrow>
+        <mn>m+v</mn> </msub>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+      <msub> <mi>P</mi> <mn>m</mn> </msub>
+        <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+      <msub> <mi>P</mi> <mn>v</mn> </msub>
+        <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>&frac12;</mn> <mo>.</mo>
+      <mi>T</mi> <mn>&thinsp;&prime;</mn> 
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>&frac23;&thinsp;</mn>
+   <mi>&epsilon;</mi> <mn>&thinsp;.&thinsp;</mn> <mi>X</mi> 
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+ </mfrac>
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.7)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> Figure 16.3 shows the result. The basis is a constant loss
+ due to the optimized momentum loss,
+ and a straight slope due to the corresponding viscous loss.
+ The viscous loss term gives a steady rise of
+ the combined loss ratio with increasing tip speed ratio <i>X</i>.
+</p>
+
+<!-- COMBINED VISCOUS OVERALL LOSS DIAGRAM --------------------------->
+<img  width="640";
+     style="margin-left:120px";
+     alt="Viscous loss diagram";
+     src="images/prop_viscous_combined_overall_non_optimized.gif" >
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 16.3 : &ensp; Overall  combined loss ratio (16.7),
+for rotationally optimal thrust.
+ </i> 
+<!------------------------------------------------------------------->
+
+<p> The factor 1&thinsp;/&thinsp;<i>&kappa;</i><sub>&phi;</sub>
+( <i>X</i> )
+  which restores the design thrust after the rotational optimization,
+ adds a sharply curved sweep-up for the lower <i>X</i> values
+ on top of this straight line. 
+</p>
+<p>&emsp; The loss increase at both ends of the <i>X</i> range means
+ that there is a minimum halfway.
+ The figure has a circle marker at this minimum
+ for our standard example of
+ <i>T</i>&thinsp;&prime; = 0.1, <i>&epsilon;</i> = 0.02. 
+ Its optimum falls at <i>X</i> = 2.9.
+ The location of the optimum depends on the balance
+ between momentum and viscous loss. 
+</p>
+<p>&emsp; This balance will not change if we scale up both
+ <i>T</i>&thinsp;&prime; and <i>&epsilon;</i> by the same factor.
+ The whole graph will just scale up.
+ The shape of the curve and the location of the minimum
+ do shift if we change the ratio
+ <i>&epsilon;</i> / <i>T</i>&thinsp;&prime;.
+ The figure shows the effect of  varying <i>&epsilon;</i>
+ for a given thrust.
+</p>
+
+<!-- SECTION 16.4 ----------------------------------------------------->
+
+<h4> 16.4 &emsp; The optimal tip speed ratio ( no tip loss ) </h4>
+<p> Figure 16.3 shows a minimum for the combined momentum
+ and viscous loss of the rotationally optimal propeller
+ before tip loss, at least for larger values of <i>&epsilon;</i>.
+ The location of the optimum can be found
+ by taking the derivative of (16.7) with respect to X,
+ and setting it to zero.
+ Indicating the X derivative by a subscript X ,
+ the standard rules for the derivative of a quotient yield :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>d</mn>
+    <mrow> <mn>d</mn> <mi>X</mi>
+   </mrow>
+ </mfrac>
+
+  <mrow>
+  <mo>(</mo>
+    <mstyle displaystyle="true">
+    <mfrac>
+      <mrow> 
+        <msub> 
+          <mrow> <mi>P</mi> <mn>&hairsp;&prime;</mn> </mrow>
+          <mn>m+v</mn> </msub>
+     </mrow>
+      <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+     </mrow>
+   </mfrac>
+  <mo>)</mo>
+  </mrow>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&minus;</mn> <mspace/>
+  <mn>&frac12;</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msubsup> <mi>&kappa;</mi> <mn>&phi;</mn> <mn>2</mn>
+    </msubsup>
+  </mfrac>;
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <msub> <mi>&kappa;</mi> <mn>&phi; </msub>
+      <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    </mrow>
+     <mrow> <mn>d</mn> <mi>X</mi>
+    </mrow>
+  </mfrac>
+
+  <mspace/> <mo>+</mo> <mspace/> 
+
+  <mn>&frac23;&thinsp;</mn>
+     <msub> <mi>&epsilon;</mi> </msub>
+  <mo>.</mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <msub> <mi>&kappa;</mi> <mn>&phi;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>&minus;</mo> <mspace/>
+
+  <mn>&frac23;&thinsp;</mn> 
+    <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi> 
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msubsup> <mi>&kappa;</mi> <mn>&phi;</mn> <mn>2</mn>
+    </msubsup>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <msub> <mi>&kappa;</mi> <mn>&phi; </msub>
+      <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    </mrow>
+     <mrow> <mn>d</mn> <mi>X</mi>
+    </mrow>
+  </mfrac>
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.8)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> Equating this to zero and collecting terms, this yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <msub> <mi>&kappa;</mi> <mn>&phi; </msub>
+      <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    </mrow>
+     <mrow> <mn>d</mn> <mi>X</mi>
+    </mrow>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+  </mfrac>;
+
+  <mo>.</mo> 
+
+  <mrow>
+  <mn>(</mn> <mn>&thinsp;</mn>
+    <mn>&frac12;&thinsp;</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+    <mo>+</mo>
+    <mn>&frac23;&thinsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+    <mn>&thinsp;</mn>
+  <mn>)</mn>
+  </mrow>
+
+  <mo>=</mo>
+
+   <mn>&frac23;&thinsp;</mn> <mi>&epsilon;</mi> 
+
+</math> </td>
+
+<td style="width:50px; text-align:right">  (16.9)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+
+<p>&emsp;
+	(κ_ ϕ )_X/((κ_ ϕ ) )  . (  ½ T^'/ϵ+ ⅔ X  )  =  ⅔
+(16.9)
+</p>
+<p> Bringing the fraction to the other side and multiplying by 1½ yields :
+</p>
+<p>&emsp;
+	¾ 〖 .T/ϵ〗^ '+ X  =   (〖 κ〗_ϕ     )/(κ_ ϕ )_X 
+(16.10)
+</p>
+<p> We have κϕ from (10.5). Its derivative with respect to X  is :
+<p>&emsp;
+	(κ_ϕ )_X    =    (2 )/(X . ( 1+X2 ) )   -   ( 2  . ln  ( 1+X2 ) )/X3	(16.11)
+</p>
+<p>
+Between this derivative and (10.5) for κϕ itself, solving (16.10) analytically is
+not trivial.
+  However, it is easily solved graphically or by iteration.
+ Figure 16.4 gives the graphs of the left and right hand terms of  (16.10).
+ The optimum values of X  are at the crossings of these lines.
+</p>
+<p>&emsp;
+The optimum  X depends only on the value of T'/ϵ.
+ For large ϵ,  the optimum shifts to the purely viscous optimum
+ of figure 16.2, at  X = 1.35. For very low viscous drag ϵ,
+ the optimum shifts to very high X,
+ where the momentum loss gets progressively smaller.
+ A typical intermediate value for our standard example
+  T '= 0.1, ϵ = 0.02  is X = 2.9,  as seen before in figure 16.3.
+</p>
+<p>&emsp; These are optimum tip speed ratios before tip loss,
+ and so they apply only in a duct.
+ Equation (27.5) will later add the tip loss.
+ This will shift the optimum  X to higher values.
+</p>
+
+
+<!-- OPTIMAL TIP SPEED RATIO DIAGRAM --------------------------->
+<img  width="600";
+     style="margin-left:120px";
+     alt="Tip speed ratio diagram";
+     src="images/prop_viscous_optimal_X_B.gif" >
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 16.4 : &ensp; Overall  combined loss ratio (16.7),
+for rotationally optimal thrust.
+ </i> 
+<!------------------------------------------------------------------->
+
+
+<!-- FOOTER ------------------------------------------------------------>
+<br> <br>
+<div class="footer">  P. Lammertse,  2025  </div>
+
+</body>
+</html>

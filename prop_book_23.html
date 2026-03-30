@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_23.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_22.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_24.html">  Next &#x25BA</a> </li>
+</ul>
+
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> VORTEX THEORY </i>     </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER -------------------------------------------------->
+
+<h2> 23 &emsp; The propeller lifting line                  </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 23.1 &emsp;The spiral horseshoe vortex                </h4>
+
+<p> The vortex field around a propeller is more complicated
+ than that around a wing, but the principle is the same.
+</p>
+<p>&emsp;
+ Figure 23.1 shows the "horseshoe" vortex
+ from a single propeller blade.
+ It is the equivalent of the single horse&shyshoe on the wing
+ of figure 21.3, but it looks even less like one...
+</p>
+<p>&emsp;
+ This simplest of propeller lifting line models
+ is sometimes called the
+"<span style="font-variant: small-caps;">Joukowsky</span>" rotor.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="560";
+     style="margin-left:100px";
+     alt="Joukowsky rotor";
+     src="images/prop_spiral_vortex_joukowsky.gif" >
+<p style="margin-left   : 100px;
+          margin-bottom : 12px;">
+    <i> Figure 23.1 : &ensp;
+    Joukowsky rotor : core, bound, and tip vortex
+    of a single "horseshoe". </i>
+</p>
+<!------------------------------------------------------------->
+
+<p> Both the bound vortex and the root vortex
+ (&hairsp;i.e. the inner tip vortex&hairsp;) are straight lines,
+ just like in the wing. However, the outer tip vortex follows 
+ the spiral path of the blade tip.
+</p>
+<p>&emsp;
+ The   <a style = "color:black"
+          href="prop_book_frontispiece.html">frontispiece</a>
+ photograph of a Hawker Hurricane ticking over
+ on a moist day, shows that these spiral vortices
+ are more than just a theoretical model.
+</p>
+<p>&emsp;
+ We will develop this horseshoe spiral model
+ first into a justification for the ideal actuator disk,
+ and then into a tip loss and lifting line model
+ for propellers of finite tip speed ratio.
+</p>
+
+<!-- SECTION --------------------------------------------------->
+
+<h4> 23.2 &emsp; The thrust from the bound vortex          </h4>
+
+<p>
+ First we have a look at the thrust.
+ Like in the wing, and for the same reasons,
+ the thrust comes exclusively from the bound vortex.
+ The core vortex and the spiral vortex drift with the flow,
+ and therefore they cannot generate thrust, or any other force.
+</p>
+<p>&emsp;
+ The vortex lift (21.3)&ensp;, alias the 
+  <span style="font-variant: small-caps;">Lorentz</span>
+ force,
+  on a blade element of spanwise width
+ d<i>r</i>&thinsp; generates
+ both the torque and the thrust for that element.
+ The
+  <span style="font-variant: small-caps;">Lorentz</span>
+ force works at right angles to the flow,
+ and since it is linear in the velocity, 
+ it can be split into two orthogonal components.
+ The <i>axial</i> component <i>V</i> of the local airspeed
+ relative to the blade gives a <i>tangential</i> force
+ at right angles to it. This leads to a torque,
+ but we will not be using the torque directly in our derivations.
+</p>
+<p>&emsp; 
+  The <i>tangential</i> velocity <i>&Omega;&hairsp;r</i>
+ gives an <i>axial</i> force, or in other words a thrust,
+ on the blade element.
+ From the generic
+  <span style="font-variant: small-caps;">Lorentz</span>
+ force (21.3), this axial thrust is :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>&rho;</mi>
+  <mo>.</mo>
+  <mi>&Omega;</mi> <mi>r</mi> 
+  <mo>.</mo>
+  <mi>&Gamma;</mi>
+  <mo>.</mo>
+  <mn>d</mn> <mi>r;</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+</p>
+<p> At any given <i>&Omega;</i>, the thrust on a blade element
+ is proportional to the local radius <i>r</i>.
+ But so is the ring area
+ 2&pi;&hairsp;<i>r</i>&hairsp;.&hairsp;d<i>r</i>
+ swept by that element.
+ For a single bound vortex, the thrust per frontal area
+ is therefore constant over the whole prop disk.
+</p>
+<p>&emsp;
+ The overall thrust follows by integrating (23.1)
+ over the blade span for the single constant value
+ of <i>&Gamma;</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>R</mi>
+  </msubsup>
+
+  <mi>&rho;</mi>
+  <mo>.</mo>
+  <mi>&Omega;</mi> <mi>r</mi> 
+  <mo>.</mo>
+  <mi>&Gamma;</mi>
+  <mo>.</mo>
+  <mn>d</mn> <mi>r</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+
+  <mn>&frac12;&thinsp;</mn>
+  <mi>&rho;</mi>
+  <mo>.</mo>
+  <mi>&Omega;</mi> <mn>&hairsp;</mn>
+  <msup> <mi>R</mi> <mn>2</mn> </msup>
+  <mo>.</mo>
+  <mi>&Gamma;</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 23.3 &emsp; The non-dimensional thrust                </h4>
+
+<p> We can make the thrust non-dimensional
+ by the definition of  (3.2) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+     <mn>&frac12;&thinsp;</mn>
+     <mi>&rho;</mi>
+     <mo>.</mo>
+     <mi>&Omega;</mi> <mn>&hairsp;</mn>
+     <msup> <mi>R</mi> <mn>2</mn> </msup>
+     <mn>.&hairsp;</mn>
+     <mi>&Gamma;</mi>
+   </mrow>
+   <mrow>
+     <mi>&rho;</mi>
+     <mn>&hairsp;</mn>
+     <msup> <mi>V</mi> <mn>2</mn> </msup>
+     <mn>.&hairsp;</mn>
+     <mn>&pi;</mn>
+     <msup> <mi>R</mi> <mn>2</mn> </msup>
+    </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <mn>2&pi;&hairsp;</mn> <mi>V</mi> </mrow>
+  </mfrac>
+
+  <mo>&thinsp;.&thinsp;</mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>&Omega;</mi>
+    <mi>V</mi>
+  </mfrac>
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <mi>&Gamma;</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Multiplying by <i>R</i> top and bottom and using
+  <i>X</i> = <i>Ω&hairsp;R / V</i> from (2.11) we get :
+<p/>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>&Gamma;</mi> <mo>.</mo> <mi>X</mi> </mrow>
+    <mrow> <mn>2&pi;&hairsp;</mn> 
+           <mi>R</mi> <mo>.</mo><mi>V</mi> </mrow>
+  </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> In the propeller, we will define a non-dimensional
+ vortex strength <i>Γ</i>&thinsp;&prime; :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>&Gamma;</mi>
+    <mrow> <mn>2&pi;&hairsp;</mn> 
+           <mi>R</mi> <mo>.</mo><mi>V</mi> </mrow>
+  </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This changes (23.4) to :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
+  <mn>.&thinsp;</mn> <mi>X</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+ The factor <i>X</i> is a bit unexpected at first,
+ but it derives from the decision to use the thrust
+ (&hairsp;and not the torque&hairsp;) as the basic
+ design parameter. This makes it more appropriate
+ to use <i>V</i> as the reference velocity,
+ and not <i>&Omega;&hairsp;R</i>.
+</p>
+<p>&emsp; The next section discusses the interpretation
+ of the factor <i>X</i> further.
+</p>
+
+<!-- SECTION 23.4 --------------------------------------------->
+
+<h4> 23.4 &emsp; Axial induction in the ideal propeller    </h4>
+
+<p> For the axial induction, we will first look at
+ the " ideal" case of very flat spirals,
+ i.e. for spirals of "infinitely small pitch".
+ Like for the
+<span style="font-variant: small-caps;"> Lorentz</span>
+ force (22.3),
+ there is a direct electro-magnetic equivalent.
+ This is the tightly wound electrical coil,
+ the so-called "solenoid".
+</p>
+<p>&emsp; 
+ Figure 23.2 gives a schematic impression.
+  A wire carrying an electrical current is wound as a coil
+ around a passive empty tube,
+ and this generates a magnetic field inside the tube.
+ It turns out that the magnetic field becomes parallel
+ and uniform inside the coil, and zero outside it. 
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:180px";
+     alt="Solenoid";
+     src="images/prop_solenoid_magnetic_field.jpg" >
+<p style="margin-left   : 160px;
+          margin-bottom : 12px;">
+    <i> Figure 23.2 : &ensp;
+        Magnetic field lines inside and outside a solenoid. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p> We are going to use the solenoid as an analog
+ for the spiral vortices wound around a flow tube.
+ The transformation between the electromagnetic
+ and the aerodynamic domains is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>&Gamma;</mi>
+  <mspace/> <mn>&emsp;&harr;&emsp;</mn> <mspace/>
+  <msub> <mi>&mu;</mi> <mn>o</mn> </msub>
+  <mo>.</mo>  <mi>I</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>v</mi>
+  <mspace/>  <mn>&emsp;&harr;&emsp;</mn>  <mspace/>
+  <mi>B</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> If  <i>s</i>  is the axial spacing between the spirals or coils,
+ then the axial induction inside a  tightly wound "tip" spiral is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>w</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>&Gamma;</mi>
+    <mi>s</mi>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (23.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The direct derivation by the law of
+ <span style="font-variant: small-caps;"> Biot-Savart</span>
+ is relatively straightforward,
+ but we will take the result for granted here.
+ It can be looked up in any text on electrical
+ (&hairsp;potential&hairsp;) theory. 
+</p>
+
+<p>&emsp;
+ In the propeller, by figure 2.4 the tip spacing equals
+ 1<i>&hairsp;/X&hairsp;</i> times the prop disk circumference
+ 2&pi;&hairsp;<i>R</i> :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>s</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>2&pi;&thinsp;</mn> <mi>R</mi> </mrow>
+    <mi>X</mi>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Substituting this into (23.9)  <i>V</i> yields :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>w</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>&Gamma;</mi>
+   </mrow>
+    <mrow> <mn>2&pi;&hairsp;</mn> <mi>R</mi>
+   </mrow>
+ </mfrac>
+
+ <mo>&thinsp;.&thinsp;</mo> <mi>X</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Dividing by <i>V</i>, by (23.5)
+ the non-dimensional version is :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>w</mi>
+    <mi>V</mi>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>&Gamma;</mi>
+   </mrow>
+    <mrow> <mn>2&pi;&hairsp;</mn> <mi>R</mi>
+   <mo>.</mo> <mi>V</mi>
+   </mrow>
+ </mfrac>
+
+ <mo>&thinsp;.&thinsp;</mo> <mi>X</mi>
+
+ <mspace/> <mo>=</mo> <mspace/>
+
+ <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
+ <mn>.&thinsp;</mn> <mi>X</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With (23.6) we have :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>w</mi>
+    <mi>V</mi>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With (4.2), this result is identical to (5.10)
+ for the ideal actuator disk. Like in the elliptical wing
+ with uniform down&shywash, the vortex picture gives
+ a "physical" justification for the actuator tube flow with
+ a uniform propwash inside the tube, and zero outside it.
+</p>
+<p>&emsp;
+ The factor X reflects the fact that the thrust on the bound vortex
+ is proportional to the (&hairsp;tip) circumferential velocity,
+ which is a factor of <i>X</i> larger than the axial velocity.
+ The same thrust can be generated by narrow-chord blades
+ turning at high RPM, or by wider chord blades turning at lower RPM.
+ This is the interpretation from the bound vortex. 
+</p>
+<p>&emsp;
+ We can also make sense of the factor of <i>X</i>
+  via the trailing spirals.
+ In the electrical solenoid, the same magnetic induction
+ can be generated by many windings of thin copper wire
+ carrying a small current, or by fewer windings of thicker wire
+ carrying a larger current.
+ They will have the same "current density per length"
+ (&hairsp;known in the elec&shytrical world as
+"<span style="font-variant: small-caps;">  Ampère</span>
+turns" per length&hairsp;).
+</p>
+<p>&emsp;
+ Similarly, we can see the
+    <i>&Gamma;</i>&thinsp;&prime;.&thinsp;<i>X</i>
+  in (23.12) as the "vortex density per length"
+ on the surface of the flow tube.
+ This vortex density determines the axial induction
+ inside the tube.
+ </p>
+<!--
+ <p>&emsp;
+ There will be a tip effect for lower <i>X</i>,
+ when the axial spacing between the spirals
+ is no longer negligible w.r.t the radius. 
+</p>
+-->
+
+<!-- SECTION ---------------------------------------------------->
+
+<h4> 23.5 &emsp; Mass flow in the ideal propeller          </h4>
+
+<p> By (23.1) we know that the thrust is uniform 
+ over the prop disk and zero outside it.
+ By (23.11) we know that the axial induction
+ is uniform on the prop disk, and again zero outside it.
+ This means that the
+ <span style="font-variant: small-caps;">Joukowsky</span>
+ rotor with infinitesimally small pitch is identical
+ to the ideal actuator disk of figure 4.1,
+ with uniform thrust and uniform induction
+ inside a closed tube.
+</p>
+<p>&emsp;
+ Combining the overall thrust (23.2) with the induction (23.11)
+ allows us to find the effective mass flow.
+ From
+  <span style="font-variant: small-caps;">Newton</span>'s
+ law (4.7) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+
+  <mo>&thinsp;=&thinsp;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>T</mi>
+    <mi>w</mi>
+ </mfrac>
+
+  <mo>&thinsp;=&thinsp;</mo>
+
+  <mn>&frac12;&thinsp;</mn>
+  <mi>&rho;</mi>
+  <mo>.</mo>
+  <mi>&Omega;</mi> <mn>&hairsp;</mn>
+  <msup> <mi>R</mi> <mn>2</mn> </msup>
+  <mo>.</mo>
+  <mi>&Gamma;</mi>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>2&pi;&thinsp;</mn> <mi>R</mi>
+   </mrow>
+    <mrow> <mi>&Gamma;</mi> <mo>.</mo><mi>X</mi>
+   </mrow>
+  </mfrac>
+
+  <mo>&thinsp;=&thinsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mi>&rho;</mi> <mn>&thinsp;&pi;</mn>
+     <mo>.</mo>
+     <mi>&Omega;</mi> <mn>&hairsp;</mn>
+      <msup> <mi>R</mi> <mn>3</mn> </msup>
+   </mrow>
+    <mi>X</mi>
+  </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With <i>X</i> &equiv; 
+    <i>&Omega;&hairsp;R&thinsp;/&thinsp;V</i>
+ this simplifies to :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+
+  <mo>&thinsp;=&thinsp;</mo> <mspace/>
+
+  <mi>&rho;</mi>
+  <mn>&thinsp;</mn>
+  <mi>V</mi>
+  <mo>.</mo>
+  <mn>&pi;</mn> <mn>&hairsp;</mn>
+  <msup> <mi>R</mi> <mn>2</mn> </msup>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (23.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This matches exactly with equation (5.2), which simply assumed
+ that the effective mass is the mass <i>&rho;&hairsp;V</i> 
+ flowing through the actuator disk frontal area
+ &pi;&hairsp;<i>R</i><sup>2</sup>.
+</p>
+<p>&emsp;
+ It is also strikingly similar to (21.22) for the ideal wing.
+ But most importantly, the solenoid model provides
+ the "physical" justification for the  ideal actuator disk model,
+ with its sharp edge between the uniform, full induction
+ inside the tube and zero induction outside it.
+</p>
+
+<!-- FOOTER ------------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

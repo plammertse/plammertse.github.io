@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_08.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-01  renumbered 7 to 8
+--     2025-12-07  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_08_TOC.html">&#x25C4
+                                            Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_09.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- TEXT BLOCK HEADER ---------------------------------------->
+
+<p style="margin-left : 320px">  <i> ROTATION </i> </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 8 ------------------------------------------------>
+
+<h2> 8 &emsp; Rotation                                     </h2>
+
+<!-- SECTION 8.1 ---------------------------------------------->
+
+<h4> 8.1 &emsp; Introduction                               </h4>
+
+<p> So far, we discussed a purely axial momentum theory.
+ But the blades of a propeller also cause
+ a rotation of the wake,
+ and this causes extra  momentum loss.
+ This extra loss is a <i>factor</i> on the axial loss.
+ We could call it the rotational overhead.
+ The rotational overhead depends exclusively on the local
+ pitch angle <i>&phi;</i>.
+</p>
+<p>&emsp; This chapter discusses the rotational factor
+ without regard to tip loss.
+ We will see later that the analysis holds without change
+ for that case as well.
+</p>
+<p>&emsp;
+ We will first calculate the rotational loss,
+ and then optimize it.
+</p>
+
+<!-- SECTION 8.2 ---------------------------------------------->
+
+<h4> 8.2 &emsp; The axial component of the blade lift      </h4>
+
+<p> Chapter 6 subdivided the prop disk into
+ a nested assembly of independent, thin-walled flow tubes,
+ cutting up the prop disk plane into concentric rings.
+ We consider the conditions in one of these rings.
+</p>
+<p>&emsp;
+ Figure 2.3 showed how the blades meet the air
+ at a local aerodynamic pitch angle <i>&phi;</i>.
+ By the very definition of&nbsp;lift,
+ the blade lift is orthogonal
+ to the local velocity vector <i>W</i>. 
+ The local lift d<i>L</i> is tilted
+ relative to the direction of flight by the same pitch angle.
+</p>
+
+<a name="8.1"></a>
+
+<p>&emsp;
+ Figure 8.1 shows the force diagram for a blade element.
+
+<!-- FIGURE --------------------------------------------------->
+<img width="290" alt="Ring force diagram";
+     style="margin-left :290px;
+            margin-top  :  8px;"
+      src="images/prop_force_diagram.gif">
+<p style="margin-left:270px">
+    <i> Figure 8.1 : &ensp; Force diagram for a ring.</i> 
+</p>
+<!------------------------------------------------------------->
+
+<p> The thrust is the forward component of the lift :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn><mi>T</mi>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mn>d</mn> <mi>L</mi>
+  <mo> . cos</mo> <mi>&phi;</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (8.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+ In the actuator disk, the thrust pointed
+ straight to the rear, causing a purely axial induced
+ velocity <i>v</i> at the prop disk.
+ With the lift tilted by the angle <i>&phi;</i>, by
+ <span style="font-variant: small-caps;"> Newton</span>'s
+ law of action and reaction the velocity increment
+ is tilted by the local pitch angle <i>&phi;</i> .
+</p>
+
+<!-- SECTION 8.3 ---------------------------------------------->
+
+<a name="8.3"></a>
+
+<h4> 8.3 &emsp; The local induced velocity </h4>
+
+<p> We will call the induced velocity at the prop disk
+ <i>v</i>&thinsp;&prime;.
+ Figure 8.2 shows the <i>velocity</i> diagram.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img width="400" alt="Ring velocity diagram";
+     style="margin-left :180px;
+            margin-top  :  8px;"
+      src="images/prop_velocity_diagram_induced.png">
+<p style="margin-left:250px">
+    <i> Figure 8.2 : &ensp; Velocity diagram for a ring.</i> 
+</p>
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ The induced velocity is orthogonal to the local
+ blade velocity <i>W</i>&thinsp;&prime;.
+ Therefore, <i>v</i>&thinsp;&prime;
+ is tilted relative to the flying velocity <i>V</i>.
+</p>
+<p>&emsp;
+ In lightly loaded propellers, the induced velocity
+ <i>v</i>&thinsp;&prime; is much smaller than the 
+ blade relative wind
+  <i>W</i>&thinsp;&prime;.
+ This makes <i>W</i> and <i>W</i>&thinsp;&prime;
+  almost the same length,
+ and <i>v</i>&thinsp;&prime; nearly orthogonal to both.
+  The  axial component of the induced velocity
+  at the prop disk is <i>v</i>.
+</p>
+<p>&emsp;
+ We will call the rotational component <i>u</i>.
+ We approximate <i>&phi;</i>&thinsp;&prime;
+ by <i>&phi;</i>, which is in keeping
+ with the light loading assumption.
+ From the diagram we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>v</mi>
+  <mo> = </mo>
+  <mi>v</mi> <mn>&thinsp;&prime;</mn>
+  <mo>. cos</mo> <mi>&phi;</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                  (8.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> and so :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>v</mi> <mn>&thinsp;&prime;</mn>
+  <mo> = </mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>v</mi>
+    <mrow> <mo>cos</mo> <mi>&phi;</mi> <mrow>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (8.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The tangential component is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>u</mi>
+  <mo> = </mo>
+  <mi>v</mi> <mo>.</mo> <mo>tan</mo> <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (8.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- SECTION 8.4 ---------------------------------------------->
+
+<h4> 8.4 &emsp; The local wind speed                       </h4>
+
+<p> The induction <i>v</i>&thinsp;&prime; is at right angles
+ to <i>W</i>. Therefore the induction gives
+ almost no change in length
+ from the nominal wind speed <i>W</i> to the actual wind speed
+ <i>W</i>&thinsp;&prime;.
+ There is a change in angle, however.
+</p>
+
+<!-- SECTION 8.5 ---------------------------------------------->
+
+<h4> 8.5 &emsp; The local pitch angle                      </h4>
+
+<p> The induction <i>v</i>&thinsp;&prime; changes
+ the effective local pitch angle.
+ We can extend the vector <i>V</i> in figure 8.2
+ straight down by a length of
+  <i>v</i>&thinsp;&prime;&hairsp;/&hairsp;cos <i>&phi;</i>
+ to meet the extension of <i>W</i>&thinsp;&prime;.
+ This gives the following tangent of
+ <i>&phi;</i>&thinsp;&prime; :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>V</mi> <mo>+</mo> 
+      <mi>v</mi> <mi>&thinsp;&prime;</mi>
+      <mn>&frasl;</mn> <mn>cos</mn> <mi>&phi;</mi>
+   </mrow>
+    <mrow> <mi>&Omega;</mi> <mn>&hairsp;</mn> <mi>r</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>V</mi>
+    <mrow> <mi>&Omega;</mi> <mn>&hairsp;</mn> <mi>r</mi>
+   </mrow>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mrow>
+  <mo>(</mo>
+
+  <mn>1</mn> <mo>+</mo>
+  <mstyle displaystyle="true">
+
+  <mfrac>
+    <mrow> <mi>v</mi> <mo>/</mo> <mi>V</mi> 
+   </mrow>
+
+   <mrow>
+     <mrow>
+       <mrow>
+        <msup> <mrow> <mi>cos</mi> </mrow>
+               <mrow>  <mn>2</mn>  </mrow>
+       </msup>
+       </mrow>
+     <mrow> <mi>&phi;</mi> </mrow>
+    </mrow>
+   </mrow>
+   </mfrac>
+  <mo>)</mo>
+  </mrow>
+</math>
+
+
+<td style="width:50px; text-align:right">                 (8.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With tan <i>&phi;</i> =
+   <i>V&thinsp;/&thinsp;&Omega;&hairsp;r</i>
+  and  <i>v&hairsp;/&hairsp;V</i> = &frac12;&hairsp;<i>b</i>
+  as usual, this yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo> = </mo>
+
+  <mo>tan</mo> <mi>&phi;</mi>
+
+  <mo> . </mo>
+
+  <mrow>
+  <mo>(</mo>
+
+  <mn>1</mn> <mo>+</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>&frac12&hairsp;</mn> <mi>b</mi> 
+   </mrow>
+
+   <mrow>
+     <mrow>
+       <mrow>
+        <msup> <mrow> <mi>cos</mi> </mrow>
+               <mrow>  <mn>2</mn>  </mrow>
+       </msup>
+       </mrow>
+     <mrow> <mi>&phi;</mi> </mrow>
+    </mrow>
+   </mrow>
+   </mfrac>
+   <mo>)</mo>
+  </mrow>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (8.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> When the axial induction <i>b</i> is relatively large,
+  it is more exact to replace the angle <i>&phi;</i>
+ by <i>&phi;</i>&thinsp;&prime; in some of the calculations,
+ but the differences are not large.    
+</p>
+
+<!-- SECTION 8.6 ---------------------------------------------->
+
+<h4> 8.6 &emsp; The swirl angle </h4>
+
+<p> The sideways induced velocity <i>u</i> will change the direction
+ of the local wind velocity <i>V</i> in in figure 8.2
+ by an angle <i>&psi;</i> (&hairsp;Greek letter <i>"psi"</i>&hairsp;).
+ Using  (8.4) for <i>u</i>, the tangent of this
+ so-called swirl angle is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mo>tan</mo> <mi>&psi;</mi>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>u</mi>
+    <mrow> <mi>V</mi> <mo>+</mo> <mi>v</mi>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>v</mi> <mo>.</mo> <mo>tan</mo> <mi>&phi;</mi>
+   </mrow>
+    <mrow> <mi>V</mi> <mo>+</mo> <mi>v</mi>
+   </mrow>
+ </mfrac>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (8.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Further downstream, the velocities will be
+ <i>w</i> and <i>V</i> + <i>w</i>.
+  With  <i>w / V</i> ≡ <i>b</i> from (4.2),
+  the swirl angle in the far wake will be  :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mo>tan</mo> <mi>&psi;</mi>
+
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>b</mi>
+    <mrow> <mn>1</mn> <mo>+</mo> <mi>b</mi> </mrow>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mo>tan</mo> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (8.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The swirl angle <i>&psi;</i> is smaller than
+ the pitch angle <i>&phi;</i>  
+ by a factor of roughly <i>b</i>.
+ For normal, “lightly loaded” values of
+ <i>b</i>&nbsp;&Lt;&nbsp;1,
+  the swirl angle is at most a few degrees.
+</p>
+<p>&emsp;
+ The swirl angle gives an angle of attack to the fin
+ of single engine aircraft.
+ This is the reason why aircraft with
+ right hand turning propellers
+ veer to the left when power is applied,
+ an effect often ascribed to "torque".
+ Many light aircraft have fins with a built-in offset
+  to accommodate the average swirl angle,
+ but this does not undo the effects of changing power.
+</p>
+<p>&emsp;
+ We will briefly discuss the options of counterrotation
+ and swirl recovery in chapter 15,
+ but without such special measures
+ the propeller leaves behind
+ the  rotation of figure 8.2,
+ and this rotation is lost to the atmosphere.
+</p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

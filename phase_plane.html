@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : phase_plane.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-01 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING-------- --------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on the phase plane  </title>
+</head>
+
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<body>
+
+<ul>
+  <li> <a href="index.html">       Home               </a> </li>
+  <li> <a href="nonlinear.html">   Nonlinear          </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="phase_plane.html"> Phase plane        </a> </li>
+  <li> <a href="dual_control_law.html"> 
+                                   Dual control       </a> </li>
+</ul>
+
+<!------------------------------------------------------------->
+
+<h2> The phase plane </h2>
+
+<h4> position and velocity </h4>
+
+<p> The phase plane is a broad term, but we limit ourselves here
+to the cross-plot between the position and the velocity 
+of a moving mass. 
+Such a plot can be useful to get a grip on some non-linear
+system behaviour.
+</p>
+<p>&emsp;
+Some basic properties are :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>v</mi> <mn>&bullet;</mn> </msup>
+  <mspace/> <mo> = </mo> <mspace/> 
+  <mi>a</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>x</mi> <mn>&bullet;</mn> </msup>
+  <mspace/> <mo> = </mo> <mspace/> 
+  <mi>v</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Here <i>x</i> is the position, <i>v</i> is the velocity,
+ and <i>a</i> is the acceleration of the moving mass.
+ The dot is Newton's symbol for the derivative
+ with respect to time.
+ Figure 1 shows what will happen next. 
+</p>
+<p>&emsp;The point will move to the right in the plot
+with the velocity
+ <i>x</i><sup>&bullet;</sup>&nbsp;=&nbsp;<i>v</i>.
+It will move faster in direct proportion
+ to its ver&shytical coordinate,
+ because that represents the velocity <i>v</i>.
+ At the same time, the point will also move upward
+ at&nbsp;a&nbsp;rate of 
+ <i>v</i><sup>&thinsp;&bullet;</sup>&nbsp;=&nbsp;<i>a</i>.
+The figure shows that the resulting motion
+has a slope of <i>a&thinsp;/&thinsp;v</i>.
+</p>
+<p>&emsp;
+A simple corollary is that the slope is "infinite"
+ for <i>v</i>&nbsp;=&nbsp;0. This is obvious anyway :
+since <i>v</i>&nbsp;=&nbsp0 means 
+<i>x</i><sup>&thinsp;&bullet;</sup>&nbsp;=&nbsp;0,
+ a&nbsp;point on the horizontal axis
+ can only move vertically away from it. 
+ In other words, the trajectories can only
+ cross&nbsp;the horizontal axis orthogonally.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/phase_plane_acc.gif" 
+     width="260" alt="Phase plane acceleration"
+     style="margin-left   : 220px;
+            margin-bottom :  8px;" >
+<p style="margin-left   : 200px;">
+<b><i> Figure 1 : &ensp; Phase plane acceleration. </i></b>
+</p>
+
+<h4> minimum time trajectory under
+    a maximum acceleration / deceleration </h4>
+
+<p> From high school math we remember that 
+when starting from standstill, the movement 
+for a constant accel&shyeration is described by  :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>v</mi>
+  <mspace/> <mo> = </mo> <mspace/> 
+  <mspace/> <mspace/> 
+
+  <mi>a</mi>
+  <mo> . </mo> 
+  <mi>t</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>x</mi>
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mn>&frac12;&thinsp;</mn> <mi>a</mi>
+  <mo>.</mo> 
+  <msup> <mi>t</mi> <mn>2</mn> </msup>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Suppose we can accelerate a mass with a 
+ maximum acceleration <i>a</i><sub>max</sub>,
+ and maximum deceleration &minus;<i>a</i><sub>max</sub>.
+Substituting &thinsp;<i>t</i> from (3) into (4) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>x</mi>
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mn>&frac12;&thinsp;</mn>
+  <mo>.</mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow> 
+     <msup> <mi>v</mi> <mn>2</mn> </msup>
+  </mrow>
+  <msub> <mi>a</mi> <mn>max</mn> </msub>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This is the equation of a parabola, but since
+it expresses <i>x</i> in terms of <i>v</i>, the parabola 
+lies its side in the phase plane plot.
+Figure 2 shows the result.
+ If we start from rest in the origin,
+then accelerate for a certain time <i>T</i>,
+and then decelerate to zero again,
+ we will have covered a distance of 
+ <i>x</i>&nbsp;=&nbsp;&frac12;&thinsp;<i>a</i><sub>max</sub><i>&hairsp;T</i><sup>&thinsp;2</sup>,
+ in a time 2&hairsp;.<i>T</i>.
+</p>
+<p>&emsp;
+Halfway, we reached a maximum velocity of
+ <i>v</i>&nbsp;=&nbsp;<i>a</i><sub>max</sub>&hairsp;.&hairsp;<i>T</i>.
+For the maximum acceleration that was available,
+this distance could not have been covered faster.
+This is why this is called a "minimum time manoeuver".
+</p>
+<p>&emsp;
+The "control law", if you like, that underlies
+ this manoeuver is : maximum to halfway,
+and negative maximum over the second half,
+starting the deceleration "just in time".
+This strategy is aptly called "bang-bang control".
+It&nbsp;is&nbsp;highly nonlinear.
+ The phase plane method lends itself very well
+ to the analysis of nonlinear control laws.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/phase_plane_minimum_time.gif" 
+     width="300" alt="Phase plane minimum time"
+     style="margin-left   : 200px;
+            margin-bottom :  8px;" >
+<p style="margin-left   : 200px;">
+<b><i> Figure 2 : &ensp; Minimum time manoeuvre. </i></b>
+</p>
+
+<h4> minimum time under a speed limit </h4>
+
+<p> Another quite common constraint is that of
+a maximum velocity.
+Taken to the extreme, we have instantaneous
+   <i>v</i>&nbsp;=&nbsp;<i>v</i><sub>max</sub>,
+with a distance covered of
+ <i>x</i>&nbsp;=&nbsp;<i>v</i><sub>max</sub>&thinsp;.&thinsp;<i>T</i>.
+ This trajectory shows up in the phase plane plot
+ as a block.
+</p>
+<p>&emsp;
+ If both a maximum acceleration and a maximum
+velocity apply, we get Figure 3.
+This combines the parabolic sections
+of Figure 2 with a straight intermediate stretch
+of constant maximum velocity and
+zero acceleration.
+
+</p>
+<p>&emsp;
+ This constant speed part is often called the "coasting phase".
+The equations are more or less obvious, if <i>T</i>
+is the coasting period.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/phase_plane_coast.gif" 
+     width="360" alt="Phase plane coasting"
+     style="margin-left   : 200px;
+            margin-bottom :  8px;" >
+<p style="margin-left   : 200px;">
+<b><i> Figure 3 : &ensp; Minimum time with coasting phase. </i></b>
+</p>
+
+<h4> the pendulum, or mass-spring-damper system </h4>
+
+<p> We briefly discuss the case of a pendulum,
+ or a mass-spring-damper system.
+</p>
+<p>&emsp;
+ This is a linear system, and the phase plane plot
+ is not very useful in this case.
+ We discuss it only because the plot
+ bears a superficial resemblance to the 
+ far more useful eigenvector plot,
+ and we wish to prevent any confus&shyion between the two.
+</p>
+<p>&emsp;
+The equations of motion for a mass-spring-damper system
+centered on the origin are :
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>m</mi> <mo>.</mo> <mi>a</mi> 
+
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mn>&minus;&nbsp;</mn>
+  <mi>k</mi> <mo> .</mo> <mi>x</mi>
+  <mo> &minus; </mo>
+  <mi>b</mi> <mo>.</mo> <mi>v</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Here <i>m</i> is the mass, <i>k</i>
+is the stiffness, and <i>b</i> is the damping.
+</p>
+<p>&emsp;
+From this we see that for <i>x</i>&nbsp;=&nbsp;0 :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>a</mi> 
+  <mspace/> <mo> = </mo> <mspace/> 
+  <mn>&minus;&nbsp;</mn>
+  <mstyle displaystyle="true">
+  <mfrac> <mi>b</mi> <mi>m</mi> </mfrac>
+  <mo>.</mo>
+  <mi>v</mi>
+
+  <mspace width="150px"/>
+  <mn>&commat;&nbsp;&nbsp;
+  </mn><mi>x</mi> <mo> = </mo> <mn>0</mn>
+  </math>
+
+<td style="width:50px; text-align:right">                 (7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This shows that the vertical axis is crossed 
+at a slope of
+<i>v</i><sup>&bullet;</sup><i>&thinsp;/&thinsp;x</i><sup>&bullet;</sup>
+ = <i>a&thinsp;/&thinsp;v</i> =
+ &minus;<i>b&thinsp;/&thinsp;m</i>.
+From (2) we concluded that the horizontal axis <nobr>
+(&hairsp;i.e. the line <i>v</i>&nbsp;=&nbsp;0&hairsp;)
+</nobr> is always crossed vertically.
+</p>
+<p>&emsp;
+This allows us to sketch the trajectory as in Figure 4.
+From the signs in (2), the point will always move
+ clock&shywise.
+The trajectory is a kind of slanted spiral.
+We will see elsewhere that the eigenvector plot
+is more appropri&shyate to this problem,
+and that it produces a true spiral
+which by convention rotates anti-clockwise.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/phase_plane_spiral.gif" 
+     width="300" alt="Phase plane spiral"
+     style="margin-left   : 240px;
+            margin-bottom :  8px;" >
+<p style="margin-left   : 200px;">
+<b><i> Figure 3 : &ensp; Mass-spring-damper system. </i></b>
+</p>
+
+
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

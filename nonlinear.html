@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : nonlinear.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-01 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING-------- --------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on nonlinear control  </title>
+</head>
+
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<body>
+
+<ul>
+  <li> <a href="index.html">             Home         </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="nonlinear.html">   Nonlinear control  </a> </li>
+  <li> <a href="phase_plane.html">     Phase plane    </a> </li>
+</ul>
+
+<!------------------------------------------------------------->
+
+<h2> Nonlinear control </h2>
+
+<h4> bananas and non-bananas </h4>
+
+<p> Virtually all of control theory is about linear systems.
+ Virtualy all of the world is not.
+</p>
+<p>&emsp;
+As one teacher described it to me : "the world consists of
+ bananas and non-bananas". Linear systems are the bananas.
+They are not in the majority.
+They may even be next to impossible, because linearity 
+of cause and effect implies immediate response.
+This is not likely in a world where the speed of light is finite.
+</p>
+
+<h4> linearizing nonlinear systems </h4>
+
+<p> Linear systems have been analyzed to death,
+ and they are "all the same",
+while all nonlinear systems
+ tend to be different in different ways.
+ But this is not the only reason that linear systems 
+are so popular in  textbooks.
+</p>
+<p>&emsp;
+Linear systems are ubiquitous in a more practical sense.
+Most linearities in the physical world around us
+are relatively smooth.
+ Their graphs are gentle curves, not sharp blocks and pulses.
+ And a gentle curve is almost straight if you travel
+ only a very short distance along it.
+ Most engineering control systems move only over a short 
+ range around a desired setpoint.
+This means that they we can approximate these curves
+ quite well by their straight tangent lines at the setpoint.
+ This amounts to taking the local derivatives of the curves,
+and this is usually easy to do.
+ The process is called linearization.
+</p>
+<p>&emsp;
+In the engineering sense, most physical systems are linear
+in the vicinity of their setpoint.
+</p>
+
+<h4> everything is bananas </h4>
+
+<p> Almost all control systems belong to the  bananas.
+ This makes it so useful to study the bananas extensively.
+</p>
+<p>
+But occasionally it is still useful to study a particular
+nonlinear system for its own good.
+We will discuss one of these in the sections on the
+<a href="phase_plane.html"> phase plane</a> and the
+<a href="dual_control_law.html"> dual control law</a>.
+</p>
+
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

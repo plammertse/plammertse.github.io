@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_09.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-01  renumbered from 8 to 9
+--     2025-12-16  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_08.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_10.html">       Next &#x25BA</a> </li>
+</ul>
+
+
+<!-- TEXT BLOCK HEADER ---------------------------------------->
+
+<p style="margin-left : 320px">  <i> ROTATION </i> </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 9 ------------------------------------------------>
+
+<h2> 9 &emsp; Rotational momentum loss </h2>
+
+<!-- SECTION 9.1 ---------------------------------------------->
+
+<h4> 9.1 &emsp; Local loss and local efficiency            </h4>
+
+<p> Compared to the axial actuator disk,
+ the pitch angle of the blade elements causes 
+ an extra induction <i>u</i>, at right angles 
+ to the axial inducton <i>v</i>.
+ This leaves extra kinetic energy in the wake which shows up
+ as an extra momen&shytum loss.
+</p>
+<p>&emsp; Using the far wake values <i>w</i>
+ and <i>w</i>&thinsp;&prime;
+ in figure 7.2, we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>w</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>w</mi>
+    <mrow> <mn>cos</mn> <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With the definition <i>w</i> &equiv;
+ <i>b&hairsp;.&hairsp;V</i> from (4.1),
+ the kinetic energy d<i>P</i><sub>m</sub> left behind
+ in the far wake of a ring becomes  :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+
+  <mo> = </mo>
+
+  <mn>&frac12;&thinsp;</mn> <mn>d</mn> 
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo>
+    <msup> <mrow> <mn>(</mn>
+             <mi>w</mi> <mn>&thinsp;&prime;</mn>
+           <mn>)</mn> </mrow>
+           <mn>2</mn>
+   </msup>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mn>&frac12;&thinsp;</mn> <mn>d</mn> 
+  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.&thinsp;</mo>
+  <msup> <mi>V</mi> <mn>2</mn> </msup>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msup> <mi>b</mi> <mn>2</mn> </msup>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(9.2)"></a>
+
+<p> Dividing by the local thrust (7.5) gives us
+ the local momentum loss ratio :
+<!-- for any induction ratio
+ <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) for any value
+ of d<i>m</i><sup>&thinsp;&bull;</sup> :
+-->
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>&frac12;&thinsp;</mn>
+
+      <mn>d</mn> 
+      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo>
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+      <mo>.</mo> 
+      <mstyle displaystyle="true">
+      <mfrac>
+        <msup> <mi>b</mi> <mn>2</mn> </msup>
+        <mrow>
+          <msup> <mn>cos</mn> <mn>2</mn> </msup>
+            <mi>&phi;</mi>
+       </mrow>
+      </mfrac>
+   </mrow>
+
+    <mrow> <mn>d</mn> 
+      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo>
+      <mi>V</mi>
+      <mo>.</mo> <mi>b</mi> <mo>.</mo> <mi>V</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mn>&frac12;</mn>
+  <mo>&thinsp;.&thinsp;</mo> 
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   </mrow>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+ This local loss depends on the local induction ratio,
+ but not on the mass flow through the ring,
+ since d<i>m</i><sup>&#9679;</sup> drops out of (9.3). 
+ Compared to the axial loss ratio <i>b</i> of (4.16),
+ the rotation increases the momentum loss
+ by&nbsp;a&nbsp;factor of
+ 1&nbsp;&#x2044;&thinsp;cos<sup>2</sup>&hairsp;<i>&phi;</i>.
+</p>
+
+<p>&emsp; We can reach the same result by the non-dimensional route.
+ Applying the steps from (7.15) tot (7.17) to the ring
+ momentum loss (7.2) gives :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> 
+  <msub> <mi>P</mi> <mn>m</mn> </msub>
+  <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+    <mo>.</mo>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <mn>(</mn>
+   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+  <mn>)</mn>
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>&frac12;&thinsp;</mn>
+      <msup> <mi>b</mi> <mn>2</mn> </msup>
+   </mrow>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (9.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+ Dividing by
+ (&hairsp;<a href="prop_book_07.html#(7.13)">7.14</a>&hairsp;)
+   for the ring thrust, first off the 
+   2<i>x</i>&hairsp;.&hairsp;d<i>x</i>  <i>/</i>
+   <i>X</i><sup>&thinsp;2</sup>
+ terms cancel, leaving :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mi>b</mi>
+ </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>(</mn>
+       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+      <mn>)</mn>
+   </mrow>
+    <mrow>
+      <mn>(</mn>
+       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+      <mn>)</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>.</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>&frac12;&thinsp;</mn>
+      <msup> <mi>b</mi> <mn>2</mn> </msup>
+   </mrow>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Like in the dimensional (9.3), one term of <i>b</i>
+ and both the heavy loading terms in
+   d<i>m</i>&hairsp;&prime; cancel, leaving only : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>&frac12;&thinsp;</mn>
+      <mi>b</mi>
+   </mrow>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Once again, this ratio is independent of the local mass flow.
+ By (3.9) and (3.10), the ring efficiency becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn>
+  <msub> <mi>&eta;</mi> <mn>m</mn> </msub>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <mn>1</mn> <mo>+</mo> 
+      <mstyle displaystyle="true">
+      <mfrac>
+        <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+          <mn>&thinsp;&prime;</mn>
+       </mrow>
+        <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+       </mrow>
+     </mfrac>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+
+    <mrow> 
+        <mrow> <mn>1 + &frac12&nbsp;</mn> <mo>.</mo>
+          
+          <mstyle displaystyle="true">
+          <mfrac>
+            <mrow> <mi>b</mi>
+              <mn>(</mn> <mi>x</mi> <mn>)</mn>
+            </mrow>
+           <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+              <mi>&phi;</mi>
+          </mrow>
+        </mfrac>
+
+     </mrow>
+   </mrow>
+ </mfrac>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                 (9.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The symbol d<i>&eta;</i><sub>m</sub>, with a "d" in front,
+ is used here loosely
+ for the <i>local</i> momentum efficiency, but is not 
+ an infini&shytesimal.
+ Local ratios and efficiencies cannot be integrated
+ over the rings like the overall thrust and power can.
+</p>
+
+<!-- SECTION 9.2 ---------------------------------------------->
+
+<!--
+
+
+
+<h4> 9.2 &emsp; Integrating the rotational loss </h4>
+<p> For the overall efficiency, we cannot integrate
+ the power loss ratio (9.4) over the propeller.
+ As a counterexample, this will not work
+ if one half of the propeller has a power loss ratio
+ of maybe zero, but the only thrust is on the other half.
+</p>
+<p>&emsp;
+ We will have to separately integrate
+ the power and the thrust over the propeller,
+ and find the ratio of those two overall values.
+ We do the integration in non-dimensional form.
+</p>
+<p>&emsp;
+ We can make (9.3) a non-dimensional power by the definition
+ of (3.3) :
+</p>
+<p>&emsp;
+	〖〖dP〗_m〗^'  =  ½ .  (dm●   .V^2)/(ρ V^3.πR^2 ).  b^2/cos^2⁡ϕ 	(9.6)
+</p>
+<p> Following the steps from (7.9) to (7.11),
+ for lightly loaded propellers we have :
+</p>
+<p>&emsp;
+	〖dA〗^'   =     (dm●.V^2)/(ρ V^3.π R^2 )    ≅   (2 x .dx)/X^2 	(9.7)
+</p>
+<p> This turns (9.6) into :
+</p>
+<p>&emsp;
+    〖〖dP〗_m〗^'    =   ½ .( b(x)2 )/cos^2⁡ϕ   .   (2 x .dx)/X^2 	(9.8)
+</p>
+<p>
+The integral is :
+</p>
+<p>&emsp;
+    〖P_m〗^'   =   ∫▒〖〖dP〗_m〗^'   =   1 /X^2   ∫_0^(X )▒〖½ .( b(x)2 )/cos^2⁡ϕ   .2 x .dx〗
+(9.9)
+</p>
+<p> This is the generic, non-dimensional, overall momentum loss
+ for a lightly loaded propeller including rotation,
+ at an arbitrary induction ratio distribution b(x).
+</p>
+<p>&emsp; 
+ The matching thrust integral was given by  (7.17).
+ The ratio of the two integrals yields the overall loss ratio,
+ which is
+   <i>P</i><sub>m</sub>&prime;&nbsp;&#x2044;&thinsp;<i>T</i>&prime; by (3.9) :
+</p>
+<p?&emsp;
+     〖P_m〗^'/T^'    =    (∫▒〖〖dP〗_m〗^'   )/(∫▒〖dT〗^' )   =   ( ∫_0^(X )▒〖½ .( b(x)2 )/cos^2⁡ϕ   .2 x .dx〗)/(∫_0^X▒〖b(x)   .2  x .dx〗)
+(9.10)
+</p>
+<p>&emsp;
+This equation looks a bit daunting at first,
+ but we will derive an optimum distribution <i>b</i>(<i>x</i>)
+ which not only minimizes the rotational loss,
+ but also yields a very simple solution for (9.10).
+</p>
+
+
+-->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_14.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-01-12  14 to 12, skipped inflating, moved chords
+--     2026-01-01  new, swapped 14 and 15
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_11.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_13.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!--- PAGE HEADER --------------------------------------------->
+<p style="margin-left : 320px">  <i> ROTATION </i> </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 12 ----------------------------------------------->
+
+<h2> 12 &emsp; The spiral wake </h2>
+
+<!-- SECTION 12.1 --------------------------------------------->
+
+<h4> 12.1 &emsp; Introduction </h4>
+
+<p>
+A large part of propeller theory, including the tip loss,
+ is concerned with the conditions inside the wake.
+ In a turn of good fortune,
+ <span style="font-variant: small-caps;"> Betz</span>'s
+ rotationally optimal induction distribution (10.7)
+ simplifies the shape of the wake sheets to&nbsp;a regular
+ <span style="font-variant: small-caps;"> Archimedes</span> screw.
+ We will derive this fact below.
+</p>
+<p>&emsp;
+ We will see later that the regularity of the screw shape
+ is not distorted by the tip loss, since the tip loss 
+ does not affect the local induction -
+ it only affects the mass flow.
+</p>
+
+<!-- SECTION 12.2 --------------------------------------------->
+
+<h4> 12.2 &emsp; The rotating, telescoping wake </h4>
+<p> The induction velocity vector <b><i>v</i></b>&hairsp;&prime;
+ in figure 8.2 has an axial component <i>v</i>,
+ and a circumferential
+ (&hairsp;also called tan&shygential, or sideways&hairsp;)
+ component <i>u</i>.
+ The axial reduction equals
+ cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i>.
+ From standard trigonometry we have : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+   <mi>v</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+  <mi>&phi;</mi>
+
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12;</mn> <mo>+</mo> 
+  <mn>&frac12;&thinsp;</mn> <mn>cos&thinsp;</mn> <mn>2</mn>
+    <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (12.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From the same figure, the tangential component <i>u</i>
+ equals tan&hairsp;<i>&phi;</i> times the axial component <i>v</i> : 
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+   <mi>u</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+  <mi>&phi;</mi>
+  <mo>.</mo>
+  <mn>tan</mn> <mi>&phi;</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+ <mn>sin</mn>  <mi>&phi;</mi>
+  <mo>.</mo>
+  <mn>cos</mn> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                     (12.2)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> Again from standard trigonometry we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------------>
+<table> <tr> <td>
+<math>
+   <mi>u</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12;&thinsp;</mn> <mn>sin&thinsp;</mn> <mn>2</mn> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">  (12.3)
+</td> </tr> </table>
+<!-- END EQUATION -------------------------------------------------->
+
+<p> The axial and tangential components can thus
+ both be expressed as functions of
+ the "double pitch angle" 2&hairsp;<i>&phi;</i>.
+ Figure 12.1 shows that by these two equations,
+ the ends of the induced velocity vector
+ <b><i>v</i></b>&hairsp;&prime;
+ lie on a circle with radius &frac12&hairsp;<i>C</i>
+ and “phase” 2&hairsp;<i>&phi;</i>.
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="520";
+     style="margin-left : 160px;
+            margin-top  :  8px";
+     alt="Betz_arc";
+     src="images/prop_cos2_arc_C.gif" >
+<p style="margin-left   :160px;
+          margin-bottom : 12px;">
+    <i> Figure 12.1 : &ensp;
+The optimal induction as a function of the local pitch angle. </i> 
+<!------------------------------------------------------------->
+
+<p>&emsp; Far from the hub, the local pitch angle <i>&phi;</i>
+ is nearly zero.
+ The induced velocity vector <b><i>v</i></b>&hairsp;&prime;
+ points almost straight aft
+ (&hairsp;down in the picture&hairsp;),
+ and its length is nearly <i>C</i>.
+  Very close to the hub, <i>&phi;</i> &cong; 90&deg;.
+ Here <b><i>v</i></b>&thinsp;&prime;
+  is nearly tangential,
+  and its length is almost zero.
+ At the radius <i>x</i> = 1, the vector
+ points 45&deg; down and has the length
+<nobr>
+    <math style="margin: 0 0""> 
+    <mn>&frac12</mn>
+     <msqrt> </mo><mn>2</mn> </msqrt>
+   </math>&thinsp;<i>C</i>.
+</nobr>
+</p>
+<p>&emsp;
+ We can see from this picture that the flow tube
+ must be filled with hollow, telescoping tubes of air,
+ which both rotate and slide relative to each other.
+ The inconvenient truth that these telescoping tubes must
+ "rub" against each other is one reason
+ why the independence of the rings is noot self evident,
+ but rather a non-obvious assump&shytion
+ in the theory of the optimal propeller.
+</p>
+
+<!-- SECTION 12.3 ----------------------------------------------------->
+
+<h4> 12.3 &emsp; Betz's Archimedes screw </h4>
+
+<p> <span style="font-variant: small-caps;"> Betz</span>
+ was the first to point out that his optimal velocity distribution
+ results in a wake shaped like a regular rigid
+ <span style="font-variant: small-caps;"> Archimedes</span> screw,
+ which seems to drift straight to the rear without rotating.
+</p>
+<p>&emsp; 
+ From the previous section we know that in reality,
+ each ring has its own rearward velocity and its own
+ rate of rotation.
+</p>
+<p>
+ The apparent lack of rotation of the
+ <span style="font-variant: small-caps;"> Archimedes</span> screw
+ is due to an optical effect called the "barber pole illusion".
+ Figure 12.2 shows the apparent rearward velocity
+ <i>v</i>&thinsp;&prime;&hairsp;
+ (&hairsp;with two primes&hairsp;).
+ The sheet surface seems to move straight to the rear
+ with the velocity <i>v</i>&thinsp;&prime;&hairsp;
+ if we ignore the fact that it is actually
+ moving in a spiral with velocity <i>v</i>&thinsp;,
+ and not really just sliding backward,
+ but rotating as well.
+</p>
+<p>&emsp;
+ Interestingly, the efficiency (9.5) of the
+ rotationally optimal propeller matches the
+ purely axial efficiency (4.18) of the actuator disk
+ if we replace <i>v</i> by <i>v</i>&thinsp;&prime;&hairsp;
+ (&hairsp;sometimes called &zeta; by the Greek letter
+ <i>zeta</i>&hairsp;),
+ or <i>b</i> by
+  <i>b&hairsp;/&hairsp;</i>cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i>.
+ Some texts give <i>v</i>&thinsp;&prime;&hairsp;
+ a central role in the theory, which perhaps it does not deserve.
+</p>
+<p>&emsp;
+ The rigid
+ <span style="font-variant: small-caps;"> Archimedes</span>
+ wake shape however is instrumental in both
+ <span style="font-variant: small-caps;"> Prandtl</span>’s
+ approximate theory of the tip loss,
+ and in the exact vortex solution of that loss,
+ as we shall see in later chapters.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="640";
+     style="margin-left : 100px;
+            margin-top  :  8px"     alt="Betz_arc";
+     src="images/prop_cos2_betz_sheet.gif" >
+<p style="margin-left   : 100px;
+          margin-bottom : 12px;">
+    <i> Figure 12.2 : &ensp;
+The apparent axial sheet velocity of the spirals,
+partly barber pole illusion.
+ </i> 
+<!------------------------------------------------------------->
+
+
+<!-- SECTION 12.4 ----------------------------------------------------->
+
+<h4> 12.4 &emsp; The momentum wake and the viscous wake </h4>
+
+<p> Like a wing, a propeller leaves behind two distinct motions in the air :
+</p>
+<p>-&emsp; a large scale momentum wake, or propwash.
+</p>
+<p>-&emsp; a thin viscous wake sheet, sliding off the blade trailing edges.
+</p>
+<p> For the propeller as for the wing, the velocities in
+ the momentum wake and those in the viscous wake
+ are orthogonal in both senses of the word.
+ They are a right angles to each other, and they do not interact.
+</p>
+
+<!-- SECTION 12.5 ----------------------------------------------------->
+
+<h4> 12.5 &emsp; The viscous wake sheet </h4>
+
+<p> First we look at the viscous wake.
+ Figure 12.3 shows the zero-thrust wake of a two-bladed propeller.
+ Without blade lift or thrust, there will be no induced velocity.
+ The propeller screws itself effortlessly out of the picture,
+ each blade leaving behind a thin viscous wake sheet in the air.
+</p>
+<p>&emsp;
+ This viscous "scar" separates the air which passed under
+ the blade section, from the air which passed over it.
+ The friction between the passing air and the surface of the blade
+ drags with it a thin boundary layer of air,
+ which trails off the trailing edges of the blades
+ like treacle from a spoon.
+ This thin viscous sheet momentarily follows the blade,
+ then dissipates to zero velocity relative to the surrounding air
+ after a few chord lengths.
+</p>
+<p>&emsp;
+ Figure 12.3 indicates the initial following velocity by
+ a small arrow marked <i>W</i>.
+ From the velocity diagram in figure 8.2 we know
+ that for <i>X</i>&nbsp;&NestedGreaterGreater;&nbsp;1,
+ the blade velocity <i>W</i> approximately equals <i>&Omega;&hairsp;r</i>.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="640";
+     style="margin-left : 100px;
+            margin-top  :  8px";
+     alt="viscous spiral";
+     src="images/prop_spiral_zero_thrust.gif" >
+<p style="margin-left   : 120px;
+          margin-bottom :   8px;">
+    <i> Figure 12.3 : &ensp;
+Purely viscous wake of a propeller at zero thrust.
+Two blades,  X = 5
+ </i> 
+<!------------------------------------------------------------->
+
+<p> The thickness of the viscous trailing sheet roughly equals
+ the local viscous drag coefficient <i>C</i><sub>d</sub>
+  of the blade section times its local chord.
+ In propellers, this viscous sheet thickness
+ is on the order of a millimeter.
+</p>
+<p>&emsp;
+ The viscous sheet has the shape of an
+<span style="font-variant: small-caps;"> Archimedes</span> screw,
+ like a classical water pump.
+ But instead of rotating in place, the screw is free
+ to screw itself forward through the air
+ like a corkscrew in cork.
+ The sliding motion will generate viscous drag,
+ and the  blade will drag a thin sheet of air with it.
+ The air outside the sheets remains completely undisturbed.
+ This means that at zero thrust,
+ the concept of "tip loss" does not apply. 
+</p>
+
+<!-- SECTION 12.6 ----------------------------------------------------->
+
+<h4> 12.6 &emsp; The momentum wake </h4>
+
+<p> When the propeller starts delivering thrust,
+ the air the propeller has passed through
+ will start drifting slowly backward.
+ The induction (both axial and rotational) starts ahead of the propeller.
+ The induced velocity at the moment of passing
+ is the local induction <i>v</i>&hairsp;&prime; from figure 8.2.
+ The rearward drift will have doubled to <i>w</i>&hairsp;&prime;
+ once the propeller has passed far away into the distance.
+ Figure 12.4 shows this large-scale velocity field,
+ which influences all of the air within the flow tube
+ that the propeller has passed through.
+</p>
+<p>&emsp;
+ The local induction <i>v</i>&hairsp;&prime;
+ is normally a small fraction of the flying velocity <i>V</i>.
+ Since <i>v</i>&hairsp;&prime; is tilted, as seen in figure  8.2,
+ the air is not just floating backward, it is also quietly rotating.
+</p>
+<p>&emsp; 
+ The lift-induced velocity at the blades is by definition
+ at right angles to the local blade velocity,
+ and therefore orthogonal to the spiral surfaces.
+ From figure 12.2 we know that the wake sheets
+ maintain the shape of a rigid
+  <span style="font-variant: small-caps;"> Archimedes</span> screw,
+ even though the sheets are stretched and rotated a bit
+ by the blade lift.
+</p>
+<p>&emsp;
+ Contrary to popular belief, the air does not blow backward
+ aft of the propeller with anything like the flying velocity <i>V</i>.
+</p>
+<p>&emsp;
+ This quiet wake, drifting backward slowly, does not fit
+ our usual intuitive image, where the propeller is stationary
+ and the air is blowing backward fast.
+ That image is based on an aircraft standing on the runway,
+ or maybe from looking at a propeller in a wind tunnel.
+ By contrast, in flight the propeller actually
+ threads its way quietly like a corkscrew
+ through an almost stationary atmosphere,
+ adding very little induced velocity to the air.
+</p>
+<p>&emsp;
+ Figure 12.4 shows the momentum wake as seen
+ from a stationary reference on the ground.
+ The propeller moves to the left at the flying velocity <i>V</i>.
+ The small arrows represent the induced velocities <i>v</i>&hairsp;&prime;
+ from figure 8.2.
+ These little vectors are much smaller than <i>V</i>,
+ and they do not point straight to the rear.
+ More precisely, they are induced orthogonally
+ to the blade velocity and path,
+ and they spiral at the pitch angle <i>&phi;</i>&hairsp;&prime;
+ (&hairsp;as shown in figure 8.2&hairsp;)
+ relative to the direction of flight.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="640";
+     style="margin-left : 100px;
+            margin-top  :  8px";
+     alt="viscous spiral";
+     src="images/prop_spiral_momentum_wake.gif" >
+<p style="margin-left   : 120px;
+          margin-bottom :   8px;">
+    <i> Figure 12.4 : &ensp;
+ Momentum wake of a two-bladed propeller
+     delivering thrust ( X = 5 ).
+
+ </i> 
+<!------------------------------------------------------------->
+
+<p>&emsp;
+The same wake looks very different when viewed from the airplane,
+ taking the plane of the propeller disk
+ as a “static” reference.
+ We might call this the “wind tunnel view”.
+ In the wind tunnel, we will see the propeller “standing still”
+ and the air flowing by.
+ The velocity  in the propeller plane is not <i>v</i>&hairsp;&prime;,
+ but <i>V</i>&nbsp;+&nbsp;<i>v</i>&hairsp;&prime;.
+ The swirl angle as viewed from the airplane,
+ or in the wind tunnel, was found in (8.8).
+ It gives a much less pronounced spiral
+ than the blade pitch angle <i>&hairsp;</i>&hairsp;&prime;
+ of figure  12.4 because the axial component
+ is "stretched" by the flying velocity <i>V</i>.
+</p>
+<p>&emsp; 
+ In wake calculations, the wind tunnel viewpoint is not useful.
+ The view relative to the stationary atmosphere
+ in figure 12.4 is the essential one.
+</p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!---------------------------------------------------------------------
+-- file    : tomation.html
+-- purpose : Page for website Piet Lammertse
+-----------------------------------------------------------------------
+--   history :
+--     2025-11-23 new
+----------------------------------------------------------------------> 
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>
+       Piet Lammertse on tomato picking
+  </title>
+</head>
+
+<body>
+
+<!---------------------------------------------------------------------
+-- Navigation bar
+---------------------------------------------------------------------->
+<ul>
+  <li><a href="index.html">                  Home           </a> </li>
+  <li> <a href="haptic_master.html">         Haptic Master  </a> </li>
+  <li> <a style="background-color:#0000B0;"
+          href="tomation.html">              Tomation       </a> </li>
+</ul>
+
+<!-----------------------------------------------------------------------
+-- Text page
+------------------------------------------------------------------------>
+<h2> Tomation </h2>
+<p> In 2004 we were approached for a workshop on agricultural robotics.
+There is an area under Rotterdam called "the Westland" which is
+ virtually covered in greenhouses,
+and which employs people (and has a turnover) in excess of the whole port of Rotterdam.
+The work in these greenhouses is repetitive,
+ and there was a wish to automate it as much as possible.
+</p>
+<p> Robots were not at the stage they are now, but the main stumbling block
+was the intelligence to guide them, in&nbsp;particular the interpretation
+of the camera images used. Stacks of large computers were required to analyze very high
+ definition video images, taking tens of seconds to interpret each image of the plant forest.
+A path planning exercise followed, and then the robot would plow its way into the plant,
+causing damage and not getting any new information out of the experience.
+</p>
+<p> Years before, in the context of autonomous zero-G flying with UAV's
+ (now called drones, I suppose), I had been intrigued by books (see bottom of page)
+ on autonomous mobile robots with "emergent" behavior. The simplest example would be the "bumper logic" 
+which is probably still used today in robot vacuum cleaners.
+</p>
+<p> I found the idea of emergent behavior absolutely charming. 
+It reminded me of Lorenz's research on digger wasps, who use a very limited
+set of behavioral rules to accomplish seemingly complex tasks like 
+returning to the tiny hole they dug before, from hundreds of meters away.
+</p>
+<p> Lorenz's research showed that even with their very limited vision and brain, 
+they could recognize a pattern of a few leaves and small rocks near their nest and home in on it.
+Their algorithm showed up because they could be easily fooled by moving the rocks.
+They would repeatedly home in on the wrong spot now marked by the rocks.
+<p> It occurred to me that these tiny insects did not need a supercomputer to navigate
+ in the natural world. They live and survive by a minimalist set of sensors and behavioral rules.
+</p>
+<p> Coming from the haptics side, I felt that tactile or force sensing
+ was an ideal extra sensor to add to the robot.
+It&nbsp;could make the robot gentle, and avoid its damaging the plant.
+
+<p>
+<br> <i>
+Explain use of force fields. Explain behavioral rules used in video. <br>
+Explain how the movement itself gives visual information,
+or at the very least gives increasingly better views (closer up, better angled and less obtructed). 
+A large part of the motion is in fact intended to give a better visual. 
+<br>Leaf pruning, not picking (yet).<br>
+Maybe comment a bit on the politics here, or preferably elsewhere. </i>
+</p>
+
+<!-- Tomation video ------------------------------------------------------>
+<video width="480" height="auto" autoplay muted controls
+    style="margin-left:120px" >
+  <source src="video/tomation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<!---------------------------------------------------------------------->
+<p> <br> <br> </p> <!-- Prevent text covering by footer -->
+<div class="footer">
+  <p> P. Lammertse,  2025 </p>
+</div>
+
+</body>
+</html>

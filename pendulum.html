@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : spring_mass.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+   history :
+--     2026-03-02 new
+--------------------------------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on spring-mass systems  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li><a href="index.html">           Home            </a> </li>
+
+  <li> <a style="background-color:#0000C0;"
+          href="pendulum.html">       Spring-mass     </a> </li>
+</ul>
+
+<!------------------------------------------------------------->
+
+<h2> Spring-mass systems </h2>
+
+<h4> importance of the spring-mass model </h4>
+
+<p> The spring-mass system seems like a bit of a toy
+for high school physics nerds.
+</p>
+
+<h4> damped spring-mass equations </h4>
+
+<p> The solution for the motion of a freely oscillating
+ (&hairsp;non-driven&hairsp;), damped, spring-mass system is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>x</mi>
+  <mspace/> <mo> = </mo> <mspace/>
+  <mi>A</mi> <mo> . </mo> 
+  <msup> <mn>e</mn>
+    <mrow> <mn>&minus;</mn> <mi>a</mi> <mn>t</mn>
+  </msup>
+  <mo> . </mo> 
+  <mn>cos</mn> <mspace/> <mi>&omega;</mi> <mn>t</mn>
+</math>
+
+<td style="width:50px; text-align:right">                    (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Here <i>&omega;</i> is an angular frequency in
+ [&hairsp;rad/s&hairsp;],
+and <i>a</i> is a decay factor.
+This can also be written
+ as <i>a</i> = 1/<i>&tau;</i>, where <i>&tau;</i>
+ is called the decay  time constant.
+The idea is that the system oscillates with anangular 
+frequency of <i>&omega;</i> radians per second,
+while the amplitude decays by a factor of 1/<i>e</i>
+per <i>&tau;&hairsp;</i> seconds.  
+The derivation can be looked up in text&shybooks.
+The velocity <i>v</i> is the time derivative
+ of the position <i>x</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>v</mi>
+  <mspace/> <mo> = </mo> <mspace/>
+  <mi>A</mi> <mo> . </mo> 
+  <mo>[ </mo>
+ <mn>&minus;</mn> <mi>a</mi> <mo> . </mo>
+  <msup> <mn>e</mn>
+    <mrow> <mn>&minus;</mn> <mi>a</mi> <mn>t</mn>
+  </msup>
+  <mo>. </mo> 
+  <mn>cos&nbsp;</mn>   <mi>&omega;</mi> <mn>t</mn>
+
+   <mspace/> <mo> &minus; </mo> <mspace/>
+  <mi>a</mi> <mo> . </mo> 
+  <msup> <mn>e</mn>
+    <mrow> <mn>&minus;</mn> <mi>a</mi> <mn>t</mn>
+  </msup>
+  <mo>. </mo> 
+  <mn>sin&nbsp;</mn> <mi>&omega;</mi> <mn>t </mn>
+
+  <mspace/> <mo>]</mo>
+</math>
+
+<td style="width:50px; text-align:right">                    
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mspace/>
+  <mspace/> <mo> = </mo> <mspace/>
+  <mi>A</mi> <mo> . </mo>
+  <msup> <mn>e</mn>
+    <mrow> <mn>&minus;</mn> <mi>a</mi> <mn>t</mn>
+  </msup>
+ 
+  <mo> . </mo>
+
+  <mo>[ </mo>
+ <mn>&minus;&nbsp;</mn> <mi>a</mi> 
+  <mo>.</mo>
+  <mn> cos&nbsp;</mn>
+     <mi>&omega;</mi> <mn>t</mn>
+
+   <mspace/> <mo> &minus; </mo> <mspace/>
+  <mi>&omega;</mi>  
+  <mo>.</mo>
+  <mn>sin&nbsp;</mn> <mi>&omega;</mi> <mn>t </mn>
+
+  <mspace/> <mo>]</mo>
+</math>
+
+<td style="width:50px; text-align:right">                    (2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+TBW.
+</p>
+
+<!-- FOOTER ---------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

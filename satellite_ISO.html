@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : satellite_ISO.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-26 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING-------- --------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on the ISO satellite </title>
+</head>
+
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<body>
+
+<ul>
+  <li> <a href="index.html">          Home             </a> </li>
+  <li> <a style="background-color:#0000B0";
+          href="satellite_ISO.html" > ISO satellite    </a> </li>
+  <li> <a href="dual_control_law.html">
+                                    Dual control law   </a> </li>
+</ul>
+
+
+<!------------------------------------------------------------->
+
+<h2> The ISO satellite </h2>
+
+<h4> my involvement </h4>
+
+<p> From 1988 to 1993 I was involved
+ in the "Attitude and Orbit Control
+  System" (&hairsp;AOCS&hairsp;) of the ISO satellite.
+ Fokker (&thinsp;FSS&thinsp;) did
+ the attitude control system as a subcontractor
+ to A&eacuteroSpatiale.
+  My job was to run the "control simulations".
+ I implemented the spec for the onboard ADA software in FORTRAN,
+ and ran it with dynamical models of the satellite's orbit, 
+ sensors, and actuators. 
+</p>
+<p>&emsp;
+ This was interesting enough in its own right,
+ but at the end of the project I also contributed
+ a technical improvement in the attitude
+ (&hairsp;pointing&hairsp;) control law,
+ which came to be known as the
+ "<a href="dual_control_law.html">dual control law</a>". 
+</p> 
+
+<h4> the ISO satellite </h4>
+
+<p> ISO was an ESA scientific
+ (&thinsp;astronomical&thinsp;) satellite. 
+ The acronym stands for "Infrared Space Observatory".
+ The&nbsp;satellite was basically an infrared telescope mounted
+ in a toroidal, two story high helium tank.
+</p>
+<p>&emsp;
+ The helium was allowed to boil off through a tiny
+ calibrated orifice, cooling the telescope to near zero Kelvin.
+ There was enough helium on board for a two year mission,
+ after which the satellite would have to be discarded.
+</p>
+
+<h4> elliptical orbit </h4>
+<p> The satellite was brought into a highly elliptical,
+ 24 hour orbit.
+The apogee was at about six Earth radii away from Earth.
+The perigee was only a few hundred miles high.
+This orbit was cheaper than a full circular orbit
+ far away from Earth, but it had the disadvantage that 
+ Earth filled almost half of ISO's field of view
+ once per day.
+</p>
+<p>&emsp;
+ The satellite whipped through perigee every 24 hours,
+ taking about half an hour to make a low pass around 
+ Earth and be on its way back towards apogee again.
+The majority of each orbit was spent far away from Earth,
+ allowing the telecope to point in most directions
+ without looking towards Earth, or the sun or moon. 
+</p>
+
+<h4> viewing corridor </h4>
+
+<p> Getting even the rim of the Earth 
+(&hairsp;"the Earth limb"&hairsp;) over the
+edge of the sun shade would boil off the helium 
+very quickly, and getting the sun in view
+ would be catastrophic. One of the sides of the satellite,
+ let's call it its "back", carried the solar panels.
+  This side should always be oriented towards the sun.
+ The edge of the large conical sun&nbsp;shade 
+ slanted away from this direction so the satellite could 
+ be tilted to avoid the other constraints, without
+ the sun shining inside the cone.  
+</p>
+<p>&emsp;
+Even so, there were times of the year when the satellite
+was caught in perigee between the sun
+ standing directly over the Earth,
+leaving a pointing corridor of one or two degrees
+ between the constraints of the Sun and the Earth,
+ occasionally even involving the Moon.
+</p>
+
+<span style = "color : darkgrey"> 
+
+<h4 style = "color:silver"> the ISO AOCS </h4>
+<p>
+- sun shade.
+</p>
+<p>
+- one or two degree corridor between Sun and Earth albedo,
+ and occasionally the Moon.
+</p>
+<p>
+- 180&deg slew in half an hour every day during the low perigee.
+</p>
+<p>
+- arcminute precision pointing.
+</p>
+<p>
+- poor reaction wheel sensor design.
+</p>
+<p>
+- no post-operation tests.
+</p>
+<p>
+- poor requirement setting
+ (&hairsp;settling time, pointing precision vs. acuity&hairsp;).
+</p>
+
+</span>
+
+<!-- FOOTER ----------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

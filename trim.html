@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : trim.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-02 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING------------------------------------------------>
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on stabilizer and canard trim </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR-------------------------------------------->
+<ul>
+  <li> <a href="index.html">           Home           </a> </li>
+
+  <li> <a href="canards.html" >      Canards          </a> </li>
+  <li> <a style="background-color:#0000B0;";
+       href="trim.html" >            Trim             </a> </li>
+</ul>
+
+
+<!------------------------------------------------------------->
+
+<h2> Trim </h2>
+
+<h4> trim and stability </h4>
+
+<p> Trim is the equilibrium condition
+ where the total pitching moment of the airplane is zero.
+This is a necessary condition for steady flight,
+but it is not enough.
+</p>
+<p>&emsp;
+To be useful, the trimmed condition also needs to be stable.
+We will discuss this elsewhere. 
+Briefly, the air&shyplane needs to act like a weathervane,
+with the center of its "side area" aft of the pivot.
+In free flight, the CG is the pivot.
+The center of the side area is called the AC
+ ("aerodynamic center").
+</p>
+
+<h4> elevator effect </h4>
+
+<p> I always had an uneasy feeling
+ about trim and the elevator.
+</p>
+<p>&emsp;
+It is a well known fact that the tailplane download
+ increases
+with airspeed, and that in many airplanes the tailplane
+load is upward in slower flight.
+ I believed this to be due to the higher angle
+of attack. 
+</p>
+<p>&emsp;
+ But there is a contradiction.
+ To get to slower flight, you have to pull up elevator.
+ And this gives a down force on&nbsp;the tailplane,
+ not an up force.
+It seemed like two forces were fighting,
+ and the winner was not clear to me.
+</p>
+<p>&emsp;
+ Friends of mine were trying to balance a canard airplane,
+ and this gave me a reason to finally think this through.
+I found that in most standard textbooks the answer
+ to the static equilibrium is rather hidden
+ in the analysis of the dynamic stability.
+The section below gives a clean and simple shortcut
+ to the static solution.
+</p>
+
+<h4> the two components of the tailplane load </h4>
+
+<p> It turns out that the up or down 
+load on  the tailplane or canard
+consists of two independent components.
+</p>
+<p>&emsp;
+One component of the tail load is purely aerodynamic.
+This component is needed to balance the intrinsic
+nose down moment that every curved wing section
+exerts on the airplane.
+ This nose down moment is a constant
+ in the non-dimensional world,
+and so dimensionally it is
+proportional to the square of the airspeed.
+The down force on the tail&shyplane needed to counter
+this moment, is therefore also proportional
+ to the square of the airspeed. 
+This down&shyload always wins in the end,
+for the higher airspeeds.
+</p>
+<p>&emsp;
+The other component is also aerodynamic of course,
+but there is a simple shortcut to it :
+ <i>for the trimmed con&shydition</i>,
+it is simply the static
+force balance around the aircraft CG 
+between the lift of the wing
+and the lift of the tailplane.
+Since these are at fixed distances from the CG,
+this balance is independent of the airspeed.
+For a given aircraft weight and CG,
+ this component of the tailplane load is therefore,
+ somewhat surprisingly, <i>fixed</i>.
+</p>
+
+<h4> sign convention </h4>
+
+<p> Figure 1 gives the sign conventions which
+ we will use in the equations.
+ Note the arrangement does not necess&shyarily represent
+the <i>actual</i> signs in every case. 
+For instance, in an actual aircraft,
+the wing AC may well be forward 
+of the aircraft CG, so
+ &hairsp;<i>x</i><sub>w&hairsp;</sub> may well be negative.
+ And in a canard the "horizontal stabilizer"
+ will always be ahead of the CG,
+so <i>x</i><sub>h</sub> will always be negative.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/trim_sign_convention.gif" 
+     width="440" alt="Trim sign convention"
+     style="margin-left   : 190px;
+            margin-top    : 12px;
+            margin-bottom :  8px;" >
+<p style="margin-left  : 250px;
+         margin-bottom:   8px">
+ <b><i> Figure 1 : &emsp; Trim sign convention </i></b>
+</p>
+
+
+<h4> zero moment at zero lift </h4>
+
+<p> A normal, downward curved wing section gives
+ a nose-down moment at zero lift. 
+ To compensate for this towards equilibrium,
+ we need to add a positive
+ (&hairsp;nose up&hairsp;) moment.
+This is normally provided by a stabilizer pushing down
+ or a canard pushing up.
+The wing needs to give the opposite force to maintain
+<i>net zero lift</i>.
+</p>
+<p>&emsp;
+This is accomplished by a difference in angle of attack,
+ hence in lift coefficient, 
+between the wing and the stabilizer.
+ Typically the wing rotates a little bit up,
+and the tailplane a lot more down to maintain
+net zero lift, because of their difference in area.
+The difference in incidence is officially called "decalage",
+with a nice 1914 vintage French word.
+</p>
+<p>&emsp;
+We can make a quick estimate of the lift coefficient
+needed on the tailplane. 
+We take moments around the CG at zero lift.
+ With an <i>x</i> coordinate defined as positive aft,
+ the wing lift and the tailplane lift give
+ a nose down moment for positive <i>x</i>.
+The non-dimensional zero lift moment of the airplane
+is called <i>C</i><sub>m<sub>ac</sub></sub>&thinsp;.
+ It is due mostly to the curvature of the wing,
+and it is always negative.
+The total moment in equilibrium must be zero :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+    <msub>
+    <msub> <mi>C</mi> <mn>m</mn> </msub> 
+    <mn>ac</mn>
+  </msub> 
+  <mo>.</mo> <mn>&frac12;&thinsp;</mn>
+  <mi>&rho;</mi> 
+  <msup> <mi>V</mi><mn>2</mn> </msup>
+  <mn>.&thinsp; </mn> <mi>S</mi> <mo>.</mo> <mi>c</mi>
+
+   <mo> &minus; </mo> 
+
+  <msub> <mi>L</mi> <mn>w</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+  <mo> &minus; </mo> 
+  <msub> <mi>L</mi> <mn>h</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>h</mn> </msub>
+
+  <mo> = </mo>
+  <mn>0</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We define :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>l</mi> <mn>h</mn> </msub> 
+
+  <mspace /> <mo> &equiv; </mo> <mspace />
+
+  <msub> <mi>x</mi> <mn>h</mn> </msub>
+  <mo> &minus; </mo> 
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> For zero lift we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;</mn> <msub> <mi>L</mi> <mn>w</mn> </msub> 
+  <mspace/><mo> = </mo> <mspace/>
+  <mn>&minus;&thinsp;</mn> 
+  <mn>&Delta;</mn> <msub> <mi>L</mi> <mn>h</mn> </msub> 
+</math>
+
+<td style="width:50px; text-align:right">                 (3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This turns (1) into :
+</p> 
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;</mn> <msub> <mi>L</mi> <mn>h</mn> </msub> 
+  <mo>.</mo>
+  <msub> <mi>l</mi> <mn>h</mn> </msub>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <msub>
+    <msub> <mi>C</mi> <mn>m</mn> </msub> 
+    <mn>ac</mn>
+  </msub>
+  <mo>.</mo>
+   <mn>&frac12;&thinsp;</mn>
+  <mi>&rho;</mi> 
+  <msup> <mi>V</mi><mn>2</mn> </msup>
+  <mn>.&thinsp; </mn> <mi>S</mi> <mo>.</mo> <mi>c</mi>
+
+</math>
+<td style="width:50px; text-align:right">                 (4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> 
+This result could also have been found by taking moments
+around the wing AC, which is allowed in the zero lift case,
+but taking moments around the CG avoids the discussion,
+and extends more naturally to the later case 
+including a net lift.
+<p>&emsp;
+ Since <i>C</i><sub>m<sub>ac</sub></sub> is always negative,
+ we see that this component of the tailplane lift
+ is always down, and it is pro&shyportional
+ to the square of the velocity.
+ The equations are identical for the canard aircraft,
+ with the only difference that <i>l</i><sub>h</sub>
+ is negative for the canard, 
+and so the canard lift is directed up.
+</p>
+<p>&emsp;
+ We can write the <i>L</i><sub>h</sub> in (4) 
+in non-dimensional form with
+the definition of a tail lift coefficient
+ or <i>C</i><sub>Lh</sub>.<br>
+ Leaving out the common term of <nobr>
+&frac12;&hairsp;<i>&rho;V&thinsp;</i><sup>2</sup>,
+</nobr> we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub>
+    <msub> <mi>C</mi> <mn>m</mn> </msub> 
+    <mn>ac</mn>
+  </msub> 
+  <mo>. </mo> <mi>S</mi> <mo>.</mo> <mi>c</mi>
+
+  <mspace /> <mo> = </mo> <mspace />
+
+  <mn>&Delta;&hairsp;</mn>
+  <msub> <mi>C</mi> <mn>Lh</mn> </msub>
+  <mo>. </mo> 
+  <msub> <mi>S</mi> <mn>h</mn> </msub>
+  <mo>.</mo> 
+  <msub> <mi>l</mi> <mn>h</mn> </msub>
+</math>
+
+<td style="width:50px; text-align:right">                 (5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> which means :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;&hairsp;</mn>
+  <msub> <mi>C</mi> <mn>Lh</mn> </msub>
+
+  <mo> = </mo> <mspace />
+
+  <msub>
+    <msub> <mi>C</mi> <mn>m</mn> </msub> 
+    <mn>ac</mn>
+  </msub> 
+  <mo> . </mo> 
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>S</mi> <mo> . </mo> <mi>c</mi> </msub>
+    </mrow>
+    <mrow>
+      <msub> <mi>S</mi> <mn>h</mn> </msub>
+      <mo>.</mo> 
+      <msub> <mi>l</mi> <mn>h</mn> </msub>
+    </mrow>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The fraction on the right hand side is
+the inverse of the so-called "tail volume coefficient"
+(&hairsp;so called because of its dimension
+ of a length times an area&hairsp;).
+Typical values are <i>S</i><sub>h</sub>
+ <i>/ S</i> = 0.2 and <i>l&hairsp;</i><sub>h</sub> <i>/ c</i> = 2.5,
+ and so the tail volume coefficient is on the order of 0.5.
+A typical value for the <i>C</i><sub>m<sub>ac</sub></sub>
+ of a conventional NACA airfoil is &minus;&hairsp;0.10.
+</p>
+<p>&emsp;
+Such typical values lead to :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;&hairsp;</mn>
+  <msub> <mi>C</mi> <mn>Lh</mn> </msub>
+
+  <mspace /> <mo> &cong; </mo> <mspace />
+
+  <mn> &minus;&hairsp;0.10 / 0.5 </mn>
+  <mspace /> <mo> &cong; </mo> <mspace />
+  <mn> &minus;&thinsp;0.2 </mn>
+</math>
+
+<td style="width:50px; text-align:right">                 (7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The wing lift is even simpler. Taking moments around the
+tailplane AC, or working through (3) and (4), or simply
+ by stating that for opposite lift
+ &thinsp;&Delta;<i>C</i><sub>L</sub>&hairsp;.&hairsp;S
+ = &minus;
+ &Delta;<i>C</i><sub>Lh</sub>&hairsp;.&hairsp;<i>S</i><sub>h</sub>
+ we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;&hairsp;</mn>
+  <msub> <mi>C</mi> <mn>L</mn> </msub>
+
+  <mo> = </mo> <mspace />
+
+  <mn>&Delta;</mn>
+  <msub> <mi>C</mi> <mn>Lh</mn> </msub>
+
+  <mo> . </mo> 
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>S</mi> <mn>h</mn> </msub>
+    <mi>S</mi>
+  </mfrac>
+
+  <mspace /> <mo> &cong; </mo> <mspace />
+
+  <mn>( &minus; 0.2) . (&minus; 0.2)</mn>
+  <mspace /> <mo> &cong; </mo> <mspace />
+  <mn> + 0.04 </mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The wing needs a small positive
+   &Delta;<i>C</i><sub>L</sub>,
+and the stabilizer needs a larger negative
+   &Delta;<i>C</i><sub>Lh</sub>.
+ From first principles
+ <nobr>(&hairsp;potential </nobr>
+ <nobr> theory&hairsp;), </nobr>
+the lift curve slope of almost any airfoil is 
+ d<i>C</i><sub>L</sub> / d<i>&alpha;</i>
+ &cong; 0.11 per degree. For a wing of finite span
+it is a bit less. 
+This would indicate the need for a tailplane incidence
+ setting of about &minus;&thinsp;2&deg
+ and a wing inci&shydence setting of about +&hairsp;0.4&deg,
+ for a total "decalage" of about &minus;&thinsp;2.4&deg;.
+</p>
+<p>&emsp;
+It must be noted that this is the decalage between the 
+zero lift directions of the wing and tailplane sections,
+not&nbsp;some arbitrary geometrical "zero" direction.
+</p>
+<p>&emsp;
+A common value in model aircraft is &minus;&thinsp;3&deg,
+ and this makes
+sense if we take into account the effect of the down&shywash
+of the wing on the tailplane.
+ This reduces the aerodynamic angle of attack of the tailplane
+with increasing wing lift, leading to a lower
+effective value for 
+   d<i>C</i><sub>Lh</sub> / d<i>&alpha;</i>.
+We will not go into this, because here we are only 
+con&shycerned with the principle and the first order of magnitude
+of the decalage, not its exact value in a particular case.
+</p>
+<p>&emsp;
+The negative &Delta;<i>C</i><sub>Lh</sub> explains why stabilizers
+often have "inverted" wing sections, although we will see
+that there is another factor which contributes to the tail load.
+</p>
+<p>&emsp;
+In a canard, the equations are the same,
+ but the sign of <i>l</i><sub>&hairsp;h</sub> is negative,
+ since the canard is ahead of the wing.
+ Also, a canard is not in the downwash of the main wing,
+so it may need a decalage of only +&hairsp;2&deg.
+However, we will see that the other, "fixed" term
+in the canard is much larger than in 
+conventional aircraft.
+</p>
+
+<h4> the result so far </h4>
+
+<p> The analysis so far has produced the following result.
+With the decalage set to the proper value, we have : 
+</p>
+<p>
+- &emsp; an airframe with zero moment and zero lift at any speed.
+</p>
+<p> This airplane is in every way identical to 
+an airplane with a symmetrical wing section 
+and a symmetrical tailplane section at zero incidence,
+except for one thing :
+ in the actual airplane, there are constant
+ &Delta;&hairsp;<i>C</i><sub>L</sub> offsets
+on the wing and the tailplane.
+ These constant <i>C</i><sub>L</sub>
+ offsets create a down force on the tailplane
+ which is proportional to the airspeed squared,
+and an equal up force offset on the main wing,
+together always giving zero lift.
+</p>
+<p>&emsp;
+It is interesting to note that all relations so far
+are independent of the aircraft weight
+and of its CG location. These simply do not appear
+in the equations.
+</p>
+<p>&emsp;
+ We will now add a net lift to this neutral airplane.
+This will introduce the CG into the mix.
+</p>
+
+<h4> adding trimmed positive lift </h4>
+
+<p> We now add a net lift, but we keep
+ a zero moment, because we are looking
+for the static, trimmed condition.
+The moment is defined around the CG location,
+because the net lift needs to apply there,
+and so we will not have the net lift
+in the moment equations.
+</p>
+
+<p>&emsp; The total lift <i>L</i>
+is provided by the wing lift
+ <i>L</i><sub>w</sub>
+ and the stabilizer lift <i>L</i><sub>h</sub> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+ <mi>L</mi> 
+
+  <mspace /> <mo> = </mo> <mspace />
+
+  <msub> <mi>L</mi> <mn>w</mn> </msub> 
+  <mo> + </mo>
+  <msub> <mi>L</mi> <mn>h</mn> </msub> 
+</math>
+
+<td style="width:50px; text-align:right">                 (9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We define new lift terms needed at the wing
+and the stabilizer to create this net lift <i>L</i>,
+without disturbing the zero moment balance 
+of (1) and (2). 
+We will call these new lift terms <i>L</i><sub>w+</sub>
+and <i>L</i><sub>h+</sub> : 
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+ <mi>L</mi> 
+
+  <mspace /> <mo> = </mo> <mspace />
+
+  <msub> <mi>L</mi> <mn>w</mn> </msub> 
+  <mo> + </mo>
+  <msub> <mi>L</mi> <mn>h</mn> </msub> 
+  <mo> + </mo>
+  <msub> <mi>L</mi> <mn>w+</mn> </msub> 
+  <mo> + </mo>
+  <msub> <mi>L</mi> <mn>h+</mn> </msub> 
+</math>
+
+<td style="width:50px; text-align:right">                 (10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With (3) this simplifies to :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+ <mi>L</mi> 
+
+  <mspace /> <mo> = </mo> <mspace />
+
+  <msub> <mi>L</mi> <mn>w+</mn> </msub> 
+  <mo> + </mo>
+  <msub> <mi>L</mi> <mn>h+</mn> </msub> 
+</math>
+
+<td style="width:50px; text-align:right">                 (11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Similarly, we expand the trim equilibrium moment equation (1)
+with the new terms :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub>
+    <msub> <mi>C</mi> <mn>m</mn> </msub> 
+    <mn>ac</mn>
+  </msub> 
+  <mo>.</mo> <mn>&frac12;&thinsp;</mn>
+  <mi>&rho;</mi> 
+  <msup> <mi>V</mi><mn>2</mn> </msup>
+  <mn>.&thinsp; </mn> <mi>S</mi> <mo>.</mo> <mi>c</mi>
+
+  <mo> &minus; </mo> 
+  <msub> <mi>L</mi> <mn>w</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+  <mo> &minus; </mo> 
+  <msub> <mi>L</mi> <mn>h</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>h</mn> </msub>
+
+  <mo> &minus; </mo> 
+  <msub> <mi>L</mi> <mn>w+</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+  <mo> &minus; </mo> 
+  <msub> <mi>L</mi> <mn>h+</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>h</mn> </msub>
+
+  <mo> = </mo>
+  <mn>0</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Subtracting the orginal (1) simplifies this to
+the more or less obvious result :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>w+</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+
+  <mspace/> <mo> + </mo> <mspace/>
+
+  <msub> <mi>L</mi> <mn>h+</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>x</mi> <mn>h</mn> </msub>
+
+  <mo> = </mo>
+  <mn>0</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Equations (9) and (13) describe a classical beam balance
+(&hairsp;easiest to see if <i>x</i><sub>w</sub> < 0,
+ so the CG lies between the wing and the tailplane&hairsp;),
+  with the following algebraic solution (&hairsp;where
+  <i>l&hairsp;</i><sub>h</sub> was defined in (2)&nbsp;) :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>h+</mn> </msub>
+
+  <mo> = </mo>
+
+  <mi>L</mi>
+  <mo>.</mo>
+ <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>&minus;</mn>
+      <msub> <mi>x</mi> <mn>w</mn> </msub>
+    </mrow>
+  <mrow>
+     <mn>&thinsp;</mn> <msub> <mi>l</mi> <mn>h</mn> </msub>
+  </mrow>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top : 8px;"> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>w+</mn> </msub>
+  <mo> = </mo>
+  <mi>L</mi>
+  <mo>.</mo>
+ <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>x</mi> <mn>h</mn> </msub>
+    <msub> <mi>l</mi> <mn>h</mn> </msub>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> These forces are independent of the flying speed.
+ They are simply a force balance around the CG location.
+</p>
+<p>&emsp;
+This is the reverse case from
+ &hairsp;&Delta;&hairsp;<i>L</i><sub>h</sub>
+and &hairsp;&Delta;&hairsp;<i>L</i><sub>w</sub> of (3) and (4),
+which trim out <i>C</i><sub>m<sub>ac</sub></sub>&hairsp;.
+Those forces are proportional to the square of the flying speed,
+but they do <i>not</i> vary with the CG location.
+</p>
+<p>&emsp;
+Figure 2 shows how this works out
+ in a typical conventional airplane,
+and in a canard.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/trim_tail_load_with_V.gif" 
+     width="440" alt="Tailplane load"
+     style="margin-left   : 190px;
+            margin-top    : 12px;
+            margin-bottom :  8px;" >
+
+<p style="margin-left  : 250px;
+         margin-bottom:   8px">
+ <b><i> Figure 2 : &emsp; Stabilizer load with flying speed </i></b>
+</p>
+
+<p> In a conventional airplane, the CG may be ahead of the wing
+or behind it. We will study this below.
+</p>
+<p>&emsp;
+ If it is behind,  
+then the trimmed tail&shyplane load starts out positive
+at "zero speed". If the CG is <i>at</i> the wing AC,
+the tailplane load starts from
+ <i>L</i><sub>h</sub>&nbsp;=&nbsp;0. If the CG is ahead
+of the wing AC, the tailplane load starts out negative.
+In&nbsp;all&nbsp;cases, the trimmed tailplane load
+ goes negative at high speeds.
+</p>
+<p>&emsp;
+ In the canard, the CG is always ahead of the main wing.
+The canard load starts out positive from "zero" speed. 
+ With increasing speed, the canard load
+ becomes ever more positive.
+</p>
+
+<h4> the CG location relative to the wing </h4>
+
+<p> From equation (14) and Figure 2 we see that it
+is interesting to know if the CG lies ahead of the wing
+or behind it, and if so by how much.
+With the typical numbers used in (6) and one more rule of thumb,
+we can hazard a guess.
+</p>
+<p>&emsp;
+ For the static and dynamic stability, the most important
+point in the aircraft is the overall AC (&hairsp;aerodynamic
+center, or "neutral point"&hairsp;) of the whole airframe.
+This is the point where the lift on the whole airfame
+applies with a change in angle of attack.
+</p>
+<p>&emsp;
+To a first approximation, this is a fixed point in 
+the aircraft. It is not the same as the CP
+(&hairsp;center of pressure&hairsp;) :
+we are talking about the <i>change</i> in lift with
+angle of attack, not the location of the actual lift.
+From the discusson of  <i>C</i><sub>m<sub>ac</sub></sub>&thinsp;
+it should be clear that these points are not the same.
+</p>
+<p>&emsp;
+The AC of the whole airframe is the weighted sum of the AC's
+of all the aircraft's components,
+ including wing, tail and fuselage.
+In practice, the wing and the taiplane are the major
+contributors.
+ To a first approximation, we can find the location
+ of the aircraft AC by taking their average,
+ weighted by their surface area :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+     <mrow>
+       <msub> <mi>x</mi> <mn>w</mn> </msub> 
+       <mo>.</mo> 
+       <msub> <mi>S</mi> <mn>w</mn> </msub> 
+
+       <mo> + </mo>
+       <msub> <mi>x</mi> <mn>h</mn> </msub> 
+       <mo>.</mo> 
+       <msub> <mi>S</mi> <mn>h</mn> </msub> 
+
+    </mrow>
+     <mrow>
+       <msub> <mi>S</mi> <mn>w</mn> </msub>
+       <mo>+</mo> 
+       <msub> <mi>S</mi> <mn>h</mn> </msub>
+    </mrow>
+  </mfrac>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (16)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> We want to know how far the aircraft AC is
+is behind the wing AC.
+Doing the subtraction, collecting terms,
+and using (2) for the definition of
+ <i>l&hairsp;</i><sub>h</sub>
+ we have : </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+  <mo> &minus; </mo>
+  <msub> <mi>x</mi> <mn>w</mn> </msub> 
+
+  <mspace/><mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>S</mi> <mn>h</mn> </msub> 
+     <mrow>
+       <msub> <mi>S</mi> <mn>w</mn> </msub>
+       <mo>+</mo> 
+       <msub> <mi>S</mi> <mn>h</mn> </msub>
+    </mrow>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <msub> <mi>l</mi> <mn>h</mn> </msub>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (17)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This should not surprise us too much.
+It is just the weighted distance
+between the tailplane and wing AC's.
+</p> 
+<p> We will need this distance in terms
+of the average wing chord, or MAC
+ (&hairsp;mean average chord&hairsp;). This is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+   </mrow>
+   <msub> <mi>c</mi>
+  </mfrac>
+
+  <mspace/><mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>S</mi> <mn>h</mn> </msub> 
+     <mrow>
+       <msub> <mi>S</mi> <mn>w</mn> </msub>
+       <mo>+</mo> 
+       <msub> <mi>S</mi> <mn>h</mn> </msub>
+    </mrow>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>l</mi> <mn>h</mn> </msub>
+    <mi>c</mi>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (18)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With the numerical values used before in (6), we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+   </mrow>
+   <msub> <mi>c</mi>
+  </mfrac>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn> 0.2 </mn>
+    <mn> 1 + 0.2 </mn>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mn> 2.5 </mn>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> 0.4 </mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (19)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We now take into account a stability figure of merit
+ called the "static margin". 
+This is the (&hairsp;non-dimensional&hairsp;)
+ dis&shytance between the aircraft AC and CG.
+<p>&emsp;
+The aircraft will be stable like a weathervane,
+ provided the effective location of the weathervane's side area
+ <nobr> (&hairsp;the AC&hairsp;) </nobr> is behind its axis of rotation
+ <nobr> (&hairsp;the CG&hairsp;) </nobr> by a sufficient margin.
+ This margin is made non-dimensional by the wing chord.
+The definition  is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>s</mi> 
+
+ <mspace/> <mo> &equiv; </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow> <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+         <msub> <mi>x</mi> <mn>CG</mn> </msub> 
+  </mrow>
+  <mi>c</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (20)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Simple arithmetic gives :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>CG</mn> </msub>
+  </mrow>
+  <mi>c</mi>
+  </mfrac>
+
+ <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow> <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+         <msub> <mi>x</mi> <mn>CG</mn> </msub> 
+  </mrow>
+  <mi>c</mi>
+  </mfrac>
+
+  <mo> &minus; </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow> <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+         <msub> <mi>x</mi> <mn>w</mn> </msub> 
+  </mrow>
+  <mi>c</mi>
+  </mfrac>
+
+ <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>s</mi>
+
+  <mo> &minus; </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow> <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+         <msub> <mi>x</mi> <mn>w</mn> </msub> 
+  </mrow>
+  <mi>c</mi>
+  </mfrac>
+  </mfrac>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (21)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> A healthy static margin is typically at least
+ 0.1 or 0.2&nbsp;<i>c</i>.
+If we select 0.2 for a reasonably stable airplane,
+with still a bit of leeway for aft CG locations,
+then we have, from (19) in (21) : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>CG</mn> </msub> 
+   </mrow>
+   <msub> <mi>c</mi>
+  </mfrac>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> 0.2 &minus; 0.4 </mn>
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> &minus; 0.2 </mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (22)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> In words, the aircraft AC lies about
+ 0.4&hairsp;<i>c</i> aft of the wing,
+and the aircraft CG lies about 
+0.2&hairsp;<i>c</i> forward of the aircraft AC,
+so&nbsp;the CG lies about 0.2&hairsp;<i>c</i>
+ aft of the wing.
+The CG lies between the wing and the tailplane,
+so the tailplane wil have positive lift
+at "zero airspeed".
+</p>
+<p>&emsp;
+Applying this to (14) we have for the tailplane load :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>h+</mn> </msub>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+
+ <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mn> &minus; ( &minus; 0.2 )  </mn> </msub>
+    <msub> <mn> &ensp; 2.5 </mn> </msub>
+  </mfrac>
+  <mo>.</mo>
+  <mi>L</mi>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+
+  <mn> 0.08 &thinsp; </mn>  <mi>L</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (23)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With 
+ <i>x</i><sub>h</sub> = <i>l</i><sub>h</sub>
++ <i>x</i><sub>w</sub> from (2)
+we have from (15) for the wing load, as a check :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>w+</mn> </msub>
+
+  <mspace/> <mo> &cong; </mo> <mspace/> <mspace/>
+
+ <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mn> 2.5 &minus; 0.2 </mn> </msub>
+    <msub> <mn> &ensp; 2.5 </mn> </msub>
+  </mfrac>
+  <mo>.</mo>
+  <mi>L</mi>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+
+  <mn> 0.92 &thinsp; </mn>  <mi>L</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (24)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Sure enough, (23) and (24) together provide
+ the overall lift <i>L</i>.
+Figure 2 gives the correct view in this case :
+the&nbsp;tailplane load starts out positive, and
+then becomes negative beyond a certain airspeed.
+</p>
+<p>&emsp;
+In practice, many other parts of the aircraft such
+as the fuselage nose and the engine nacelles
+tend to be de&shystabi&shylizing.
+They tend to move the overall AC forward.
+This is not a problem
+if we move the CG forward by the same amount.
+Model aircraft for instance
+ usually have the CG at the
+wing quarter chord point.
+</p>
+
+<h4> the same case for the canard </h4>
+
+<p> We repeat the numerical example
+for the case of the canard.
+The equations and the sign conventions are the same, 
+but some numerical values have reversed sign.
+Figure 3 shows some definitions.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/trim_canard_definitions.gif" 
+     width="320" alt="Trim canard definitions"
+     style="margin-left   : 250px;
+            margin-top    :   8px;
+            margin-bottom :   8px;" >
+<p style="margin-left  : 250px;
+         margin-bottom:   8px">
+ <b><i> Figure 3 : &emsp; Canard geometry. </i></b>
+
+<p>
+The absolute value of 2.5 for 
+<i>l</i><sub>h</sub> may still
+be about right, but the sign is now negative,
+for the stabilizer is ahead of the main wing.
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>l</mi> <mn>h</mn> </msub>
+  <mspace/><mo> &cong; </mo> <mspace/>
+  <mn> &minus; 0.5 </mn>
+</math>
+
+<td style="width:50px; text-align:right">                 (25)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With the same ballpark figure for
+for <i>S</i><sub>h</sub> / <i>S</i>,
+ (19) now becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>AC</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+   </mrow>
+   <msub> <mi>c</mi>
+  </mfrac>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn> 0.2 </mn>
+    <mn> 1 + 0.2 </mn>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mn> ( &minus; 2.5 ) </mn>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> &minus; 0.4 </mn>
+
+
+</math>
+
+<td style="width:50px; text-align:right">                 (26)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> and with the same static margin
+    <i>s</i> = 0.2, (21) becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+  <mrow>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+    <mo> &minus; </mo>
+    <msub> <mi>x</mi> <mn>CG</mn> </msub> 
+   </mrow>
+   <msub> <mi>c</mi>
+  </mfrac>
+
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> 0.2 &minus; ( &minus; 0.4 ) </mn>
+  <mspace/><mo> &cong; </mo> <mspace/>
+
+  <mn> + 0.6 </mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (27)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> In words, a stable CG will lie well ahead
+of the main wing, because the aircraft AC lies ahead
+of the wing, and the&nbsp;CG lies ahead of the aircraft AC.
+ With the wing AC always at the wing quarter chord point,
+the CG typically lies 0.35&hairsp;<i>c</i>
+ ahead of the wing leading edge.
+</p>
+<p>&emsp;
+Applying this to the trim equation (14),
+where <i>x</i><sub>w</sub> and
+ <i>x</i><sub>w</sub> were relative to the CG,
+ we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>h+</mn> </msub>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+ <mspace/> <mspace/>
+ <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mn> &minus; 0.6 </mn> </msub>
+    <msub> <mn> &minus; 2.5 </mn> </msub>
+  </mfrac>
+  <mspace/> <mn> . </mn> <mspace/>
+  <mi>L</mi>
+
+  <mspace/>
+  <mspace/> <mo> &cong; </mo> <mspace/>
+  <mspace/>
+  <mn> 0.24 &thinsp; </mn>  <mi>L</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (28)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> As a check, with
+ <i>x</i><sub>h</sub> = <i>l&hairsp;</i><sub>h</sub>
++ <i>x</i><sub>w</sub> from (2) and with the 
+negative  
+<i>l&hairsp;</i><sub>h</sub> from (23),
+the main wing load (15) becomes :
+</p> 
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>L</mi> <mn>w+</mn> </msub>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+
+ <mstyle displaystyle="true">
+  <mfrac>
+    <mn> 0.6 &minus; 2.5 </mn>
+    <mn> &minus; 2.5 </mn>
+  </mfrac>
+  <mspace/> <mn> . </mn> <mspace/> 
+  <mi>L</mi>
+
+  <mspace/> <mo> &cong; </mo> <mspace/>
+
+  <mn> 0.76 &thinsp; </mn>  <mi>L</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (29)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The overall lift is still <i>L</i>,
+but the canard carries a far greater part
+of the load than with the normal stabilizer,
+even at&nbsp;"zero speed".
+ As we saw in Figure 2, this load only
+increases with higher airspeed.
+</p>
+<p>&emsp;
+This sometimes leads to elaborate
+high lift devices on the canard, 
+which makes one wonder 
+if it is a good idea to make such a small surface
+ responsible for such a large part of the overall lift.
+</p>
+
+<h4> trim drag </h4>
+
+<p> Trim drag is the name for the performance penalty
+ we have to pay for trimming an aircraft
+ to zero net moment,
+ relative to the ideal of a single wing,
+ preferably with elliptical loading,
+ doing all the heavy lifting.
+</p>
+<p>&emsp;
+There is a folklore that strongly
+ (&hairsp;aft&hairsp;) curved wing sections
+with high <i>C</i><sub>m<sub>ac</sub></sub>
+and forward CG positions cause large
+negative tailplane loads, and that large
+negative tailplane loads cause large
+induced drag contributions.
+</p>
+<p>&emsp;
+This even leads some people to believe
+in the superiority of the canard layout.
+In the cold light of day, I believe
+these are all fairy tales.
+But perhaps someone can direct me
+to an analysis which shows otherwise.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color:darkgrey;">
+
+<h4> postscript on the elevator conundrum </h4>
+
+<p>
+- &emsp; difference between static and dynamic elevator effect.
+</p>
+<p>
+- &emsp; a trim <i>step input</i> gives a dynamic response of 
+ the "weathervane" around the CG.
+</p>
+
+<h4> the Cessna Cardinal </h4>
+
+<p> 
+- &ensp; extreme forward CG necessitated
+ upside-down slot in stabilizer.
+</p>
+<p>
+- &ensp; F27 mild upside-down stab section,
+</p>
+
+</span>
+
+<!--
+<p>
+What does change strongly with airspeed are 
+the non-dimensional values
+of C<sub>Lw</sub> and C<sub>Lh</sub>, but
+always in that same ratio.
+</p>
+-->
+
+<!-- FOOTER ------------------------------------------------------------>
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

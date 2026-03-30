@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_07.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-03  renumbered  6 to 7
+--     2025-12-15  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_06.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_08_TOC.html">  Next &#x25BA</a> </li>
+</ul>
+
+<!--- TEXT PAGE HEADER ---------------------------------------->
+<p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
+<hr style="margin : 0 0;">
+
+<h2> 7 &emsp; Concentric tubes </h4>
+
+<!-- SECTION 7.1 ---------------------------------------------->
+
+<h4> 7.1 &emsp; The independence of the rings              </h4>
+
+<p> Most of propeller theory rests on the idea
+ that the momentum tube
+ of figure  4.1 can be subdivided into set of thin-walled
+ concentric tubes, sliding ( and rotating ) inside each other
+ like a pirate's telescope.
+ These tubes will cut the propeller disk into nested,
+ concentric rings.
+ Figure 2.2 already showed such a tube. 
+</p>
+<p>&emsp;
+ The thin-walled tubes are supposed not
+ to influence each other very much.
+ But such independence is by no means obvious.
+ The justification can be found in vortex theory,
+ which we will discuss much later.
+</p>
+<p>&emsp;
+ In practice, the in&shydepen&shydence of the thin-walled tubes
+ holds up much better than might reasonably be expected.
+</p>
+<p>&emsp;
+ If the rings and tubes of a propeller do not interact,
+ then each ring is like a separate propeller.
+ It has its own local induction ratio,
+ its own pitch angle, and its own blade elements.
+ The propeller as a whole is just an assem&shybly of independent,
+ nested ring propellers flying in close formation.
+ We can derive the conditions for every single ring,
+ and then integrate the ring contributions
+ into an overall value for the whole propeller.
+</p>
+
+<!-- SECTION 7.2 ---------------------------------------------->
+
+<h4> 7.2 &emsp; Integrating over the rings                 </h4>
+<p> We will often wish to know the total,
+ or average of some value
+ <i>g</i>&thinsp;(&hairsp;<i>r</i>&hairsp;)
+ over the prop disk.
+ This could be the overall thrust, or an average loss factor.
+ Such values can be found by integrating the
+ individual ring contributions.
+ We will use the prefix "d" for variables belonging
+ to a ring of "infinitesimal" width d<i>r</i>.
+</p>
+<p>&emsp;
+ The frontal area of a ring is
+ 2&hairsp;&pi;&hairsp;<i>r</i>&hairsp;.&hairsp;d<i>r</i>,
+ and the contribution of a local value
+  <i>g</i>&hairsp;(&hairsp;<i>r</i>&hairsp;)
+ to the total will be
+   <i>g</i>&hairsp;(&hairsp;<i>r</i>&hairsp;)&hairsp;.&hairsp;2&hairsp;&pi;</i><i>r&hairsp;</i>.&hairsp;d<i>r</i>.
+
+ Summing over "infinitely narrow" rings of width d<i>r</i> 
+ represents an integral.
+ The average of <i>g</i>&hairsp;(&hairsp;<i>r</i>&hairsp;)
+ over the disk is the integral divided by the disk area.
+ We will call this average &thinsp;<i>G</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>G</mi>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <mn>&pi;&hairsp;</mn>
+       <msup> <mi>R</mi> <mn>2</mn> </msup>
+   </mrow>
+  </mfrac>
+  <mn>&thinsp;.</mn>
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>R</mi> </msubsup>
+
+  <mi>g</mi> <mn>(</mn><mi>r</mi><mn>)</mn>
+  <mo>.</mo>
+  <mn>2&hairsp;&pi;&hairsp;</mn> <mi>r</mi>
+  <mo>.</mo>
+  <mn>d</mn><mi>r</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> or, by dividing out the factor of &pi; :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>G</mi>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msup> <mi>R</mi> <mn>2</mn> </msup>
+  </mfrac>
+  <mn>&thinsp;.</mn>
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>R</mi> </msubsup>
+
+  <mi>g</mi> <mn>(</mn><mi>r</mi><mn>)</mn>
+  <mo>.</mo>
+  <mn>2&hairsp;</mn> <mi>r</mi>
+  <mo>.</mo>
+  <mn>d</mn><mi>r</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> By (2.12), we can replace <i>r&nbsp;&#x2044;&nbsp;R</i>
+ by <i>x</i>&nbsp;&#x2044;&thinsp;<i>X</i>,
+ and d<i>r</i>&nbsp;&#x2044;&nbsp;<i>R</i>
+ by d<i>x</i>&nbsp;&#x2044;&thinsp;<i>X</i>,
+ yielding :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>G</mi>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+  <mn>&thinsp;.</mn>
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mi>g</mi> <mn>(</mn><mi>x</mi><mn>)</mn>
+  <mo>.</mo>
+  <mn>2&hairsp;</mn> <mi>x</mi>
+  <mo>.</mo>
+  <mn>d</mn><mi>x</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We can write either <i>g</i>&thinsp;(&hairsp;<i>r</i>&hairsp;),
+  <i>g</i>&thinsp;(&hairsp;<i>x</i>&hairsp;) or
+ <i>g</i>&thinsp;(&hairsp;<i>&phi;</i>&hairsp;),
+ whichever is the most natural expression for the function
+ at that moment.
+ They are easily converted into each other by (2.5),
+ when the time comes to evaluate the integral.
+ In many cases, we will simply write <i>g</i> without an argument.
+</p>
+<p>&emsp; We can interpret
+ 2&hairsp;&pi;&hairsp;<i>r</i>&hairsp;.&hairsp;d<i>r</i> as
+ d&hairsp;(&hairsp;&pi;&hairsp;<i>r</i><sup>&hairsp;2</sup>&hairsp;),
+ the increase of the disk area with <i>r</i>, or
+ 2&hairsp;<i>x</i>&hairsp;.&hairsp;d<i>x</i>
+ as the increase of d&hairsp;(&hairsp;<i>x</i><sup>2</sup>&hairsp;).
+ This is rarely useful from an analytical point of view,
+ but it offers the opportunity to plot
+  <i>g</i>&thinsp;(&hairsp;<i>x</i>&hairsp;)
+ against <i>x</i><sup>2</sup> instead of against <i>x</i>.
+ Such a plot can be useful to get a graphical feeling
+ for the contribution of a ring.
+ The function value is unchanged on the vertical axis,
+ but the horizontal "strips" 
+ d&hairsp;(&hairsp;<i>x</i>&hairsp;<sup>2</sup>&hairsp;)
+ get progressively narrower towards the hub.
+This gives the proper visual impression
+ of their relative area contribution to the integral.
+</p>
+
+<!-- SECTION 7.3 ---------------------------------------------->
+
+<h4> 7.3 &emsp; Numerical integration                     </h4>
+
+<p> Somwetimes the analytical integral 
+ (7.3) of <i>f</i>&thinsp;(&hairsp;<i>x</i>&hairsp;) 
+over the prop disk is complicated.
+ In such cases, numerical inte&shygration
+ can come to the rescue.
+ </p>
+<p>&emsp;
+The typical functions in propeller theory have a teardrop shape,
+starting from zero at the hub and going back to zero at the outer 
+end with a more or less elliptical tip.
+ Such functions are easily integrated numerically.
+ The inte&shygral over the infinitesimal width d<i>x</i>
+ becomes a sum over finite widths.
+</p>
+<p>&emsp;
+ Replacing d<i>x</i> in (7.3) by  
+  &Delta;&hairsp;<i>x</i> = <i>X&nbsp;&#x2044;&thinsp;N</i> 
+and bringing it outside the summation yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>G</mi>
+  <mspace/> <mo>=</mo> <mspace/>
+<mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <mi>X</mi> <mo>.</mo> <mi>N</mi> </mrow>
+  </mfrac>
+  <mn>&ensp;.</mn>
+
+  <msubsup>
+    <mo>&sum;</mo> 
+   <mrow> <mi>0</mi> <mn>&hairsp;.&thinsp;&Delta;</mn>
+     <mi>x</mi>
+  </mrow>
+   <mrow> <mn>N</mn> <mn>&hairsp;.&thinsp;&Delta;</mn>
+     <mi>x</mi>
+  </mrow>
+     <!-- <mn>0</mn> <mi>N</mi>-->
+ </msubsup> 
+
+  <mi>g</mi> <mn>(</mn><mi>x</mi><mn>)</mn>
+  <mo>.</mo>
+  <mn>2&hairsp;</mn> <mi>x</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This expression sums over <i>N</i>&thinsp;+&thinsp;1</i> points
+ ranging from <nobr> <i>x</i> = 0 </nobr> 
+ to <nobr> <i>x</i> = <i>X</i> </nobr>,
+ and divides by <i>N</i> rings of width
+ <nobr> &Delta;&hairsp;<i>x</i>. </nobr>
+ With the end values of <i>f</i>&thinsp;(<i>x</i>)  both zero,
+ this is equiv&shyalent to the trapezoidal rule. 
+</p>
+<p>&emsp;
+ A typical value for <i>N</i> used to be
+ <i>N</i>&nbsp;=&nbsp;10 in the days of the slide rule.
+ The result was often improved by
+  <span style="font-variant: small-caps;"> Simp&shyson</span>'s 
+ weighting rule, with end correction for the rounded tip.
+ Today, N = 10,000 is more common and the simple numerical
+ integration of (7.4) does not need such refinement.
+</p>
+
+<a name="7.4"></a>
+
+<!-- SECTION 7.4 ---------------------------------------------->
+<h4> 7.4 &emsp; The thrust per ring                        </h4>
+
+<p> The thrust of a uniform actuator disk follows from (5.1).
+ We define the equivalent for a ring :
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.</mo>
+  <mi>w</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.</mo>
+  <mi>b</mi>
+  <mo>.</mo>
+  <mi>V</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.5)
+</td> </tr> </table>
+
+<!-- END EQUATION --------------------------------------------->
+
+<p> The non-dimensional version follows just like in (5.8) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+
+  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+ 
+  <mo>=</mo> 
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup> 
+   </mrow>
+    <mrow>
+      <mi>&rho;</mi> <mn>&hairsp;</mn> 
+       <msup> <mi>V</mi> <mn>2</mn> </msup>
+      <mn>.&thinsp;&pi;&thinsp;</mn> 
+      <msup> <mi>R</mi> <mn>2</mn> </msup>
+    </mrow>
+ </mfrac>
+
+ <mo>.</mo> <mi>b</mi> <mo>.</mo> <mi>V</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The difference is that now
+ d<i>m</i><sup>&#9679;</sup> 
+ is the air
+ flowing through a <i>ring</i>,
+ instead of the air flowing through the whole disk,
+ and that the induction ratio <i>b</i> may vary among the rings.
+</p>
+
+<a name="(7.7)"></a>
+
+<p>&emsp;
+ By analogy with (5.2) and (5.3),
+ the mass flow through a ring is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> 
+    <msup> <mi>m</mi> <mn>&hairsp;&bull;</mn> </msup>
+
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi> <mo>.</mo> 
+  <mn>2&hairsp;&pi;&hairsp;</mn>
+  <mi>R</mi>
+  <mo>.</mo>
+  <mn>d</mn> <mi>r</mi>
+  <mo>.</mo>
+  <mo>(</mo>
+     <mn>1&thinsp;+&thinsp;&frac12;&thinsp;</mn> <mi>b</mi>
+  <mo>)</mo>
+</math>
+<td style="width:50px; text-align:right">                 (7.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mspace width="2.2em"/> <mo> &cong; </mo> <mspace/>
+
+  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi> <mo>.</mo> 
+  <mn>2&hairsp;&pi;&hairsp;</mn>
+  <mi>R</mi>
+  <mo>.</mo>
+  <mn>d</mn> <mi>r</mi>
+</math>
+
+<td style="width:50px; text-align:right">
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We can make
+ d<i>m</i><sup>&#9679;</sup>
+ non-dimensional 
+ relative to the whole disk area in the same way as 
+ <i>m</i>&hairsp;&prime; in (5.4) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> &equiv; </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+     <mn>d</mn> 
+       <msup> <mi>m</mi> <mn>&bull; </mn> </msup>
+  </mrow>
+   <mrow>
+    <mi>&rho;</mi> <mn>&hairsp;</mn> <mi>V</mi> <mo>.</mo> 
+    <mi>&pi;&hairsp;</mi>
+      <msup> <mi>R</mi> <mo>2</mn> </msup>
+ </mrow>
+</math>
+
+<td style="width:50px; text-align:right">                 (7.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Applying (7.7) to (7.6), the <i>&rho;&hairsp;.V</i>&thinsp; 
+ terms cancel, and we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;&pi;&thinsp;</mn>
+      <mi>r</mi>
+      <mn>&hairsp;.&hairsp;d</mn> <mi>r</mi> 
+  </mrow>
+   <mrow>
+     <mi>&pi;&hairsp;</mi>
+     <msup> <mi>R</mi> <mo>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mn>(</mn>
+   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+  <mn>)</mn>
+</math>
+
+<td style="width:50px; text-align:right">                 (7.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Replacing <i>r&nbsp;&#x2044;&nbsp;R</i>
+ by <i>x&nbsp;&#x2044;&nbsp;X</i>
+ and d<i>r&nbsp;&#x2044;&nbsp;R</i>
+ by d<i>x&nbsp;&#x2044;&nbsp;X</i>
+ like we did in (7.3) yields :
+</p>  
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+    <mo>.</mo>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mn>(</mn>
+   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+  <mn>)</mn>
+</math>
+
+<td style="width:50px; text-align:right">                (7.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> For light loading, this reduces to :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+</math>
+
+<td style="width:50px; text-align:right">                (7.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(7.12)"></a>
+
+<p> Not surprisingly, the non-dimensional mass flow is simply
+ the (&hairsp;effective&hairsp;)
+ frontal area of the ring.
+</p>
+
+<p> Using this in (7.6) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn><mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo>=</mo>
+
+    <mn>d</mn> 
+      <mi>m</mi> <mn>&hairsp;&prime;</mn>
+  <mo>.</mo>
+  <mi>b</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name=(7.14)></a>
+
+<p> For a "heavily" loaded ring this yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+    <mo>.</mo>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mn>(</mn>
+   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+  <mn>)</mn>
+
+  <mo>.</mo>
+  <mi>b</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (7.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> and for light loading :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mi>b</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (7.14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- SECTION 7.5 ---------------------------------------------->
+
+<h4> 7.5 &emsp; The momentum loss per ring                 </h4>
+
+<p> The momentum loss for a uniform actuator disk
+ follows from (4.15).
+ The equivalent for a ring is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12;&thinsp;</mn>
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.</mo>
+  <msup> <mi>w</mi> <mn>2</mn> </msup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12;&thinsp;</mn>
+
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.</mo>
+  <msup> <mi>b</mi> <mn>2</n> </msup>
+  <mo>.</mo>
+  <msup> <mi>V</mi> <mn>2</n> </msup>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (7.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We can make this non-dimensional in the same way
+as we did for the thrust. The result is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+  <mn>&thinsp;&prime;</mn>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12;&thinsp;</mn>
+  <mn>d</mn> <mi>m</mi> <mn>&thinsp;&prime;</mn>
+  <mo>.</mo>
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+</math>
+
+<td style="width:50px; text-align:right">                (7.16)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> For a "heavily" loaded ring this yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> 
+  <msub> <mi>P</mi> <mn>m</mn> </msub>
+  <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+    <mo>.</mo>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>.</mo>
+
+  <mn>(</mn>
+   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+  <mn>)</mn>
+
+  <mo>.</mo>
+  <mn>&frac12;&thinsp;</mn>
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+</math>
+
+<td style="width:50px; text-align:right">                (7.17)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> and for light loading :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> 
+  <msub> <mi>P</mi> <mn>m</mn> </msub>
+  <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+    <mo>.</mo>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>&hairsp;.&hairsp;</mo>
+
+  <mn>&frac12;&thinsp;</mn>
+
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+</math>
+
+<td style="width:50px; text-align:right">                (7.18)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- FOOTER ----------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

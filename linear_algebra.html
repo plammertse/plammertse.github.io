@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : linear_algebra.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+-- history :
+--   2026-02-23 new
+--------------------------------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on eigenvectors  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li><a href="index.html">           Home            </a> </li>
+
+  <li> <a style="background-color:#0000C0;"
+          href="linear_algebra.html"> Linear algebra  </a> </li>
+  <li> <a href="eigenvector.html">   Eigenvectors     </a> </li>
+
+</ul>
+
+<!------------------------------------------------------------->
+
+<h2> Linear algebra </h2>
+
+<h4> linear algebra </h4>
+
+<p> If you are not already familiar with some of the basics
+of linear algebra, then this section and its subsections
+are probably not for you.
+But I wil make a valiant effort at a crash course anyway.
+</p>
+<p> &emsp;
+Linear algebra is one of those math subjects 
+that begins with an innocent question,
+and then develops within two short pages into n-dimensional
+vector spaces where you cannot see the forest for the trees.
+</p>
+<p>&emsp;
+The innocent question is :
+if three apples and two oranges cost $5, and
+three apples and three oranges cost $6, how much
+does an apple cost ? The answer, of course, is $1.
+Subtracting the first "equation" from the 
+second shows that one orange costs $1, and entering that
+back into  the first equation says that three apples cost $3.
+</p>
+<p>&emsp;
+It's algebra because you can temporarily write the numbers
+as letters until you know their values, and it is linear
+because everything is one-on-one. There are no squares,
+cubes or worse involved, just plain multiplication
+of one or more variables by one or more factors.
+It is hard to believe that from such humble beginnings,
+an ab&shystract theory has evolved that is useful
+from finite element
+methods to aircraft stability and control, but there it is.
+
+<h4> the number of unknowns </h4>
+
+<p> You cannot pinpoint the price of an orange from just
+the first equation. But if you have a second equation, 
+you can "eliminate" the apples by subtracting the two
+equations, maybe with a scale factor to make the number
+of apples equal in both
+ (&hairsp;this is called "Gauss elimination"&hairsp;).
+If you have N unknowns, you need N equations.
+</p>
+<p>&emsp;
+  Allowing any number of equations ("N") instead 
+of just two, is the first level of abstraction right there.
+</p>
+
+<h4> "simultaneous" equations </h4>
+
+<p> 
+Taking Gulliver steps, we can first write the apples
+ and oranges as follows :
+</p>
+<p>&emsp;
+  3 * x + 3 * y = 5
+</p>
+<p>&emsp;
+  3 * x + 4 * y = 6
+</p>
+<p> Here <i>x</i> and <i>y</i> are the unknown prices
+ of apples and oranges.
+We can make this more general by replacing the "known"
+numbers by symbols too :
+</p>
+<p>&emsp;
+  a * x + b * y = e
+</p>
+<p>&emsp;
+  c * x + d * y = f
+</p>
+<p> I remember how in high school it baffled me that
+the <i>a</i>, <i>b</i>, <i>c</i> and <i>d</i>
+ seemed to belong to a different "family"
+than the <i>x</i> and the <i>y</i>.
+Why would one letter be "known"
+ and the other "unknown" ?
+</p>
+<p>&emsp;
+ As it turns out, I was right about that.
+ You can juggle with these
+numbers any way you like. You can fill in one set
+and determine the other, in any mixture you like.
+The only thing that remains true is that from  N equations,
+you can never find more than N "unknown" values.
+This truth holds out in all of mathematics and beyond.
+</p>
+
+<h4> intersecting lines </h4>
+
+<p>
+- parallel lines. Useless duplication. Subtle connections.
+</p>
+
+<h4> matrix notation </h4>
+
+<p> Matrices are just a shorthand to note down
+the simultaneous linear equations.
+The name means something like a grid
+ to collects numbers in.
+</p>
+<p>&emsp;
+The equations above in matrix notation are :
+</p>
+
+<!------------------------------------------------>
+<p>
+<math>
+
+<mstyle displaystyle="true">
+<mo>[</mo>
+
+<mtable>
+  <mtr>
+    <mtd> <mi>a</mi> </mtd>
+    <mtd> <mi>b</mi> </mtd>
+  </mtr>
+  <mtr>
+    <mtd> <mi>c</mi> </mtd>
+    <mtd> <mi>d</mi> </mtd>
+  </mtr>
+</mtable>
+
+<mo>]</mo>
+
+<mo>.</mo>
+
+<mo>[</mo>
+
+<mtable>
+  <mtr>
+    <mtd> <mi>x</mi> </mtd>
+  </mtr>
+  <mtr>
+    <mtd> <mi>y</mi> </mtd>
+  </mtr>
+</mtable>
+
+<mo>]</mo>
+
+<mo>=</mo>
+
+<mo>[</mo>
+
+<mtable>
+  <mtr>
+    <mtd> <mi>e</mi> </mtd>
+  </mtr>
+  <mtr>
+    <mtd> <mi>f</mi> </mtd>
+  </mtr>
+</mtable>
+
+<mo>]</mo>
+
+</math>
+</p>
+
+<p>
+If the rules of matrix and vector multiplication
+ are really new to you, then now would be the time
+to look up an introductory text on linear algebra.
+Having grouped the numbers like this,
+we can give names to each block of numbers.
+We can write :
+</p>
+<p>&emsp;
+ A . x  =  b
+</p>
+<p>
+</p>
+<p> The "matrix" <b><i>A</i></b> is the square block of numbers.
+It does not have to be square, but in our applications
+it usually is, because we try to have the same
+number of equations as unknowns.
+ The columns of numbers <i><b>x</b></i>
+  and <i><b>b</i></b> are called "vectors".
+</p>
+<p>
+There, now I've done it myself.
+We have moved from a very simple problem to a very abstract
+concept.
+</p>
+
+<p>&emsp;
+- parallel with directions in space. And rotations and scalings.
+</p>
+
+<h4> analytical eigenvalues of a 2 x 2 matrix </h4>
+
+<p>
+- TBW.
+</p>
+
+<!--
+<p>
+- frequency domain versus time domain.
+</p>
+<p>
+- poles and zeros, root locus, eigenvalues, SVD.
+</p>
+<p>
+- modes, resonance, anti-resonance.
+</p>
+<p>
+- pendulum example.
+</p>
+<p>
+- animation of damped and rotating eigenvector.
+</p>
+<p>
+- analytical expression for 2-DOF systems.
+</p>
+<p>
+- connection to aircraft modes (including energy mode).
+</p>
+-->
+
+
+<!-- FOOTER ---------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+</body>
+</html>

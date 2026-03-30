@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : quaternion.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-26 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING ----------------------------------------------->
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on quaternions  </title>
+</head>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<body>
+
+<ul>
+  <li> <a href="index.html">          Home            </a> </li>
+
+  <li class="dropdown">
+    <a class="dropbtn"
+       style="background-color:#0000B0;
+       href="javascript:void(0)">
+                            Quaternions&hairsp;&#x25BC;     </a>
+
+    <div class="dropdown-content">
+      <a href="#" style="color: silver"> Definition         </a>
+      <a href="#" style="color: silver"> Consecutive rotations  </a>
+      <a href="#" style="color: silver"> Attitude propagation   </a>
+      <a href="#" style="color: silver"> Back to Euler, Amy de Butléir </a>
+      <a href="#" style="color: silver"> Wertz, wrong element order </a>
+    </div>
+  </li>
+
+  <li> <a href="skewed_axes.html"> Skewed axes         </a> </li>
+</ul>
+
+<span style="color:darkgrey">
+
+<!-- TEXT PAGE ------------------------------------------------>
+<h2> Quaternions </h2>
+
+<h4> what are quaternions </h4>
+
+<p>
+- Hamilton.
+</p>
+<p>
+- mathematically it's sort sort of
+ an expanded complex number. Not just an extra i,
+ but i, j, and k.
+</p>
+<p>
+- unfortunate element order
+ in Wertz's book on "Spacecraft Attitude Control".<br>
+&emsp; <i>Therefore also in one of Matlab's toolboxes.</i>
+</p>
+<p>
+- unfortunately, order and interpretation varies too.
+</p>
+<p>
+- one day, put memo PL-18-052 here.
+</p>
+
+<h4> the unit quaternion </h4>
+
+<p>
+- also called "versor".
+</p>
+<p>
+- for attitudes, use normalized quaternion.
+</p>
+<p>
+- that means one element is redundant.
+</p>
+
+<h4> why use (&hairsp;unit&hairsp;) quaternions </h4>
+
+<p> I first met quaternions in my work on the ISO satellite.
+Later I found them extremely useful in mechanisms,
+ and then again in haptic rendering.
+</p>
+<p> - they can be "almost" intuitive (&hairsp;examples&hairsp;).
+</p>
+<p> First in 3D haptic rendering, and later again in tracking
+ the kinematics of the Simodont dental trainer mechanism, 
+ and my exoskeletons.
+</p>
+
+<h4> rigid body - successive rotations </h4>
+
+<p> - Euler angles. </p>
+<p> - Amy de Butleir. </p>
+
+<h4> successive rotations in serial mechanisms </h4>
+
+<p>- order matters. </p>
+<p>- exoskeletons, ADL gimbal. </p>
+<p>- forward and inverse kinematics. </p>
+<p>- add end point positions too. </p>
+
+<h4> satellite attitude </h4>
+
+<p>
+- small relative rotations in the "control error", <br>
+&emsp; &emsp; needed because of the extreme difference
+ between the pointing accuracy
+and the full 180&deg; slewing range.
+</p>
+<p>
+- infinitesimal rotations in "attitude propagation", in simulation.
+</p>
+
+<p>
+- rigid body rotations in VR (haptic rendering).
+</p>
+
+
+<h4> attitude propagation - integrating infinitesimal rotations </h4>
+
+<p>
+- ( 1, 0, 0, 0 )
+</p>
+
+</span>
+
+<!------------------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse,  \2025 </div>
+
+</body>
+</html>

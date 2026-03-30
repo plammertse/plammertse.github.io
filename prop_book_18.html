@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_18.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-13  renumbered 20 to 18, filled in text
+--     2025-01-03  new stub
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_17.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_19.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> TIP LOSS </i>          </p>
+<hr style="margin : 0 0;">
+
+<!------------------------------------------------------------->
+<h2> 18 &emsp; Two solutions for the tip shape             </h2>
+
+<!-- SECTION 18.1 --------------------------------------------->
+
+<h4> 18.1 &emsp;
+ <span style="font-variant: small-caps;">Prandtl</span> or
+ <span style="font-variant: small-caps;">Goldstein</span> </h4>
+
+<p> Tip loss is by far the most complex part
+  of propeller theory.
+ In the end, the problem comes down to determining
+ the shape of the local mass reduction factor 
+ <i>K</i>&hairsp;(&hairsp;x&hairsp;) defined in (17.3)
+ from some physical model.
+</p>
+<p>&emsp;
+ There are two classical models, both based in potential theory.
+ One is an approximate impulse method due to
+  <span style="font-variant: small-caps;">Prandtl</span>,
+ and the other is an exact vortex method
+ associated with the name of
+ <span style="font-variant: small-caps;">Goldstein</span>. 
+</p>
+<p>&emsp;
+  <span style="font-variant: small-caps;">Prandtl</span>’s
+ method is the classical one.
+ It has been in universal use for well over a century.
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ method gives a physically intuitive insight,
+ and it results in a very close
+ approximation of the proper tip shape
+ for conven&shytional propellers of moderate pitch.
+ But it is too optimistic about the resulting
+ momentum efficiency even for ordinary propellers,
+ and it fails completely for propellers of 
+ unusually high pitch and low blade count.
+</p>
+<p>&emsp;
+ <span style="font-variant: small-caps;">Goldstein</span>'s
+ method is more complex, and initially less intuitive.
+ But it is more accurate, especially for 
+ pro&shypel&shylers of low tip speed ratio.
+ And with proper explanation, it also sheds a different,
+ but no less interesting light
+ on the inner workings of the propeller.
+</p>
+<p>&emsp;
+ In line with all the literature, we will use
+ <span style="font-variant: small-caps;">Prandtl</span>’s
+ solution for our initial introduction to the tip problem.
+</p>
+<p>&emsp;
+ In a break with tra&shydition,
+ we will also give full details and a simple computer code
+ for the vortex solution,
+ and&nbsp;use its more exact results as the ground truth for
+ <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>) right away.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="500";
+     style="margin-left:120px";
+     alt="Glauert in Durand";
+     src="images/prop_durand_goldstein_prandtl_x5.gif" >
+
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 18.1 : &ensp; 
+   Two solutions of G(x) for a common type of propeller.<br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; &ensp; 
+ <span style="font-variant: small-caps;">Goldstein</span>
+ solid,
+ <span style="font-variant: small-caps;">Prandtl</span>
+ dashed.
+ </i> 
+<!------------------------------------------------------------->
+
+<p> Figure 18.1 shows the two solutions for
+ <i>G</i>&hairsp;(<i>x</i>),
+ for a two-bladed propeller
+ with a tip speed ratio of <i>X</i>&nbsp;=&nbsp;5.
+ The red line is the rotationally optimal
+ cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i></i>
+distribution of figure 10.1
+ (&hairsp;i.e., before tip loss&hairsp;),
+ truncated at <i>X</i>&nbsp;=&nbsp;5.
+</p>
+<p>&emsp; The figure is identical to 
+<span style="font-variant: small-caps;">Glauert</span>'s
+figure 64 in 
+<span style="font-variant: small-caps;">Durand</span>
+(1934), and it is in fact the same case used by 
+<span style="font-variant: small-caps;">Prandtl</span>
+in figure 3 of his original 1919 Appendix
+ (&hairsp;"Zusatz"&hairsp;) to
+ <span style="font-variant: small-caps;">Betz</span>'s
+ article.
+</p>
+<p>&emsp; Even for this very common case, the differences
+ are quite apparent.
+ The shape of
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ solution is very similar to that of 
+ <span style="font-variant: small-caps;">Goldstein</span>'s,
+ but the the "amplitude" is quite different.
+ We will find that
+<span style="font-variant: small-caps;">Prandtl</span>'s
+ approximat&shyion gives good results for the 
+ optimal shape of the propeller blades,
+ but a far too optimistic value for the overall
+ loss factor <i>&kappa;</i><sub>G</sub> .
+</p>
+<p>&emsp; A fact that puzzled 
+<span style="font-variant: small-caps;">Glauert</span>
+ and is frankly still puzzling today, is that unlike
+<span style="font-variant: small-caps;">Prandtl</span>'s,
+<span style="font-variant: small-caps;">Goldstein</span>'s
+ solution is not just a "tip" function.
+ It affects the hub region as well, changing the
+ curved character of the 
+  cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i>
+ function near the hub to a linear one.
+ This change is quite pronounced in propellers
+ of high pitch and low blade count, and only 
+ disappears for very high values of <i>X</i>, or for
+ high blade count. In those regions,
+<span style="font-variant: small-caps;">Prandtl</span>'s
+ and <span style="font-variant: small-caps;">Gold&shystein</span>'s
+ solutions become identical.
+</p>
+
+<!-- SECTION 18.2 --------------------------------------------->
+
+<h4> 18.2 &emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+   impulse solution
+</h4>
+
+<p> <span style="font-variant: small-caps;">Prandtl</span>
+ published his approximate solution for the tip loss
+ in an appendix to
+<span style="font-variant: small-caps;">Betz</span>’s
+ 1919 article on the rotational optimum,
+ which also introduced the cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
+ shape of the optimal induction and the resulting
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw shape of the wake sheets.
+</p>
+<p>&emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ derivation cleverly reverses cause and effect on the
+ <span style="font-variant: small-caps;">Archimedes</span> screw.
+ For the sake of his arg&shyument,
+ <span style="font-variant: small-caps;">Prandtl</span> considers the
+ <span style="font-variant: small-caps;">Archimedes</span> screw
+ as a physical object which <i>drives</i> the flow,
+ instead of as a "non-material" viscous wake sheet
+ which <i>drifts</i> with the flow.
+ He then approximates the shape of the screw
+  by a straightened and simplified version of its rim,
+ and from potential theory he derives the mass 
+ set in motion when it starts moving.
+</p>
+<p>&emsp; 
+ Setting the induction in motion from rest
+ (&hairsp;as if switching on the thrust&hairsp;)
+ requires an impulsive force from the spiral surface,
+ and this force is proportional
+ to the effective mass of the air set in motion.
+ In this way,
+ <span style="font-variant: small-caps;">Prandtl</span>
+ obtains an effective mass factor
+ without having to consider the flow 
+in-between the spiral surfaces.
+</p>
+<p>&emsp;
+The limitation of
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ method is not in the physics,
+ but in his simplification of the screw shape. 
+</p>
+<p>&emsp;
+Figure 18.1 gives a typical shape for
+ <span style="font-variant: small-caps;">Prandtl</span>’s
+ version of <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
+ which we will come to call
+ <i>F</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ later for historical reasons.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="400";
+     style="margin-left : 200px;
+            margin-top  :  8px;";
+     alt="Tip sketch Prandtl";
+     src="images/prop_blade_slice_elliptical_prandtl.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 18.1 : &ensp;
+     Typical
+   <span style="font-variant: small-caps;">Prandtl</span>
+ mass flow reduction F(x).
+ </i> 
+<!------------------------------------------------------------->
+
+<!-- SECTION 18.3 --------------------------------------------->
+
+<h4> 18.3 &emsp;
+ <span style="font-variant: small-caps;">Goldstein</span>'s
+ vortex solution
+</h4>
+
+<p>
+ <span style="font-variant: small-caps;">Prandtl</span> 
+ was of course well aware that his solution 
+ was an approximation, albeit a very good one, and he pointed out
+the conditions under which it would hold.
+</p>
+<p>&emsp;
+ In the early 1930’s, the exact solution was calculated
+ by <span style="font-variant: small-caps;">Goldtein</span>
+ and others.
+ Like <span style="font-variant: small-caps;">Prandtl</span>’s,
+ his solution is simplified by 
+ <span style="font-variant: small-caps;">Betz</span>’s
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw shape.
+ The method constrains the flow at right angles
+ through the screw surface to be zero,
+ and calculates the corresponding vortex pattern.
+ Since this pattern respects the
+  cos<sup>&hairsp;2</sup><mi>&hairsp;&phi;</mi>
+ function of the rotational optimization,
+ it actually gives the combination
+   <i>G</i>&hairsp;(<i>&hairsp;x&hairsp;</i>)
+ from (17.6) for the rotational reduction
+ cos<sup>&hairsp;2</sup><mi>&hairsp;&phi;</mi>
+  and the tip reduction
+   <i>K</i>&hairsp;(&hairsp;<i>x&hairsp;</i>),
+ combined in a single pass.
+</p>
+<p>
+<span style="font-variant: small-caps;">Goldstein</span>'s
+ solution involved an expansion into
+ <span style="font-variant: small-caps;">Bessel</span>
+ functions, which does not help the intuition much.
+</p><p>&emsp;
+ Because the standard handbook on
+ <span style="font-variant: small-caps;">Bessel</span>
+ functions did not contain all orders,
+ the solution for three blades was not available.
+ The two- and four-blade propellers were tabled
+ only for the outer 80&thinsp;% of the blade.
+ The hub region was considered less important,
+ because there is not much thrust there anyway.
+</p>
+<p> It was immediately noted that
+ <i>K</i>&hairsp;(<i>x</i>)
+ tends to go to infinity near the hub,
+ which is both puzzling and inconvenient.
+ The combination <i>G</i>&hairsp;(<i>x</i>)
+ does not go to infinity there.
+ With the advent of digital computers in the 1980’s,
+ better tables became available;
+ but judging from the literature,
+ they were rarely used in practice. 
+</p>
+<p> More recently, a relatively simple
+ “brute force” algorithm was published
+ which solves the vortex system
+ without resorting to tables for 
+ <i>G</i>&hairsp;(<i>x</i>).
+ The last chapters of  this text
+ gives an impression how it is derived.
+</p>
+<p>&emsp;
+ Even in the 1930’s it was clear
+ that the function <i>G</i>&hairsp;(<i>x</i>)
+ is not a simple as
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ approximation would indicate.
+ The vortex solution of <i>K</i>&hairsp;(<i>x</i>)
+ in fact goes to infinity at the hub.
+ Figure 18.2 gives an impression.
+ For low number of blades, 
+the combined reduction starts with a finite slope,
+ instead of by cos2ϕ
+ which gives the unpleasant result for
+ <i>K</i>&hairsp;(<i>x</i>).
+ Unfortunately, the numerical solution
+ does not give an intuitive reason for this.
+</p>
+<p>&emsp;
+The combined reduction factor <i>G</i>&hairsp;(<i>x</i>)
+ gives the regular
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw shape for optimal rotation,
+ and the corresponding tip reduction.
+</p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

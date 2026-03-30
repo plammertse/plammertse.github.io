@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<!-------------------------------------------------------------
+-- file    : prop_book_06.html
+-- purpose : Page for website Piet Lammertse
+---------------------------------------------------------------
+--   history :
+--     2025-01-03  inserted new 6
+--     2025-12-15  new
+--------------------------------------------------------------> 
+
+<!-- FORMATTING  --------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU ------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_05.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_07.html">  Next &#x25BA</a> </li>
+</ul>
+
+
+<!-- TEXT PAGE ------------------------------------------------>
+
+<!--- PAGE HEADER --------------------------------------------->
+
+<p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
+<hr style="margin : 0 0;">
+
+
+<!-- CHAPTER 6 ------------------------------------------------>
+
+<h2> 6 &emsp; Heavy loading                                </h4>
+
+<!-- SECTION 6.1 ---------------------------------------------->
+
+<h4> 6.1 &emsp; Heavy loading                              </h4>
+
+<p> We will briefly touch on the case of "heavy" loading.
+
+ We can solve (5.9) for <i>b</i> by writing it as a quadratic :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+  <mo>+</mo>
+  <mn>2&hairsp;</mn> <mi>b</mi>
+  <mo>-</mo>
+  <mn>2&hairsp;</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (6.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> Solving the quadratic gives
+ one positive solution for <i>b</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi>
+
+  <mo>=</mo>
+
+  <msqrt>
+    <mn>1</mn> <mo>+</mo> <mn>2</mn>
+      <mi>T</mi> <mn>&thinsp;&prime;</mn>
+  </msqrt>
+  <mo>-</mo>
+  <mn>1</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (6.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> Figure 6.1 shows this relation. 
+ For small <i>b</i>, the approximation
+ &radic;&hairsp;(&hairsp;1&hairsp;+&hairsp;<i>&epsilon;</i>&hairsp;)
+ &cong;
+ 1&hairsp;+&hairsp;&frac12<i>&thinsp;&epsilon;</i>
+ recovers
+ <i>b</i>&nbsp;&cong;&nbsp;<i>T</i>&thinsp;&prime;.
+</p>
+
+<!--   Math inline fontsize should be reduced...
+<math>
+ <msqrt> <mn>&hairsp;1&hairsp;+
+ </mn> <mi>&epsilon;</mi> )
+ </msqrt>
+ <mo>&cong;</mo>
+ <mn>1 + &frac12&thinsp;</mn> <mi>&epsilon;</mi>
+</math>
+-->
+
+<!-- FIGURE --------------------------------------------------->
+<img src="images/prop_b_tp_ramp.gif" 
+     width="300" alt="Axial induction ratio b versus T_prime";
+     style="margin-left   : 260px;
+            margin-top    :  8px;">
+<p style="margin-left     : 260px;
+          margin-bottom   :   8px;">
+    <i> Figure 6.1 : &ensp;
+          Axial induction ratio b versus T&hairsp;&prime;. </i> 
+</p>
+<!------------------------------------------------------------->
+
+<p> For a given induction ratio and efficiency,
+ the contraction of the flow tube ahead draws more air
+ through the prop disk,
+ increasing the thrust at the same efficiency,
+ which gives the propeller a slight advantage.
+ This is, however only a slight mitigation of the fact 
+ that in principle, the momentum loss of the propeller
+ is directly proportional to the far wake induction <i>b</i>.
+</p>
+<p>&emsp;
+ Later chapters will show that strictly, we should carry the
+ (&hairsp;1&hairsp;+&hairsp;&frac12;&hairsp;<i>b</i>&hairsp;)
+ term right through all of our calculations,
+ including the derivatives with respect to <i>b</i>
+ in the rotational optimization.
+ This is not hard to do,
+ but the small increase in accuracy for heavy loading
+ does not outweigh the added complexity of the equations
+ obscuring our intuitive understanding. 
+</p>
+<p>&emsp;
+ We will stay with the light loading assumption,
+ mainly because it keeps the central arguments easier to follow.
+</p>
+
+
+<p> <!-- FOOTER ----------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_22.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_21.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_23.html">  Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> VORTEX THEORY </i>     </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER -------------------------------------------------->
+
+<h2> 22 &emsp; The wing lifting line                       </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 22.1 &emsp; Lifting line theory                       </h4>
+
+<p> The elliptical wing from the previous chapter
+ is an idealization. 
+ It is not normally realized in practical wings,
+ and especially not in off-design conditions.
+ This chapter describes a more general theory,
+ but still based on
+ the idea of simple horseshoe vortices. 
+</p>
+<p>&emsp;
+ Since potential theory for small deflection angles
+ is a linear theory,
+ an arbitrary wing can be interpreted as an in place
+ superposition
+ of simpler wings, of varying span and shape.
+ <span style="font-variant: small-caps;"> Prandtl</span> 
+ therefore was able to model the real wing as a collection
+ of horseshoes of different spans,
+ all centered at the same lifting line.
+</p>
+<p>&emsp;
+ We discuss two ways of assembling
+ a consistent lift and downwash
+ distribution from a collection of horseshoe vortices :
+ the analytical
+ <span style="font-variant: small-caps;"> Fourier</span>
+ method, and the discrete method.
+ <span style="font-variant: small-caps;"> Prandtl</span> and
+ <span style="font-variant: small-caps;"> Glauert</span>
+ both used the 
+ <span style="font-variant: small-caps;"> Fourier</span> method.
+ We will briefly discuss it, and then move on to the more 
+ "brute force" discrete method.
+</p>
+<p>&emsp;
+ In both cases, the calculation for the lift distribution
+ fitting an arbitrary wing shape is iterative.
+ A lift or bound vortex distribution is first assumed,
+ maybe starting with the physical wing planform
+ as a first estimate for the shape.
+ The trailing vortices are the changes in the bound vortex,
+ or in analytical terms, its derivative.
+</p>
+<p>&emsp;
+ The downwash at the wing is then calculated
+ from the trailing vortices.
+ This downwash influences the actual angle of attack
+ of the wing sections.
+ The local lift from the bound vortex must be the same
+ as the local wing section lift
+ at this modified local angle of attack,
+ or else the local lift and the local downwash will not match.
+</p>
+<p>&emsp;
+ The 2D wing section lift for a certain angle of attack
+ can be obtained
+ from the wind tunnel, but simple linear relations
+ between the lift and the section geometry are available
+ and these are usually more than adequate
+ to predict the section lift
+ for any angle of attack up to the stall.
+</p>
+<p>&emsp;
+ On the first round of iteration, the lift distribution 
+from the wing section properties will not match
+ the lift from the bound vortex.
+ The vortex lift is adapted, and the process is repeated.
+ This soon converges to a consistent combination
+ of lift and downwash along the span.
+ The whole process is called
+ "<span style="font-variant: small-caps;"> Prandtl</span>'s 
+ lifting line theory".
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 22.2 &emsp; The Fourier lift terms </h4>
+
+<p> <span style="font-variant: small-caps;">Prandtl</span>
+ and <span style="font-variant: small-caps;">Glauert</span>
+ did not use discrete locations along the span to define
+ the lift and downwash distribution.
+ Instead, they used the so-called
+ <span style="font-variant: small-caps;"> Fourier</span>
+ sine wave series as their building blocks.
+ These continuous functions allowed them to tame
+ the infinite velocities near the trailing vortices.
+</p>
+<p>&emsp;
+ In order to make the first term of the sine waves fit
+ the desired elliptical lift distribution,
+ they defined an angular spanwise coordinate
+ which replaces the distance <i>x</i> from the wing center
+ by an angular measurement on the unit circle.
+ Figure 22.1 shows the transformation.
+ The angle <i>&phi;</i> runs from 0 to &pi;
+ when <i>x</i> runs from <i>x</i>&thinsp;=&thinsp;1 
+ (&hairsp;at  the right hand tip&hairsp;)
+ to <i>x</i>&thinsp;= &minus;&thinsp;1 (&hairsp;at the left hand tip&hairsp;).
+ The angle is defined by :
+</p>
+
+<p>
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mo>cos</mo> <mi>&phi;</mi>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>x</mi>
+    <mrow> <mn>&frac12&thinsp;</mn> <mi>b</mi> </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="320";
+     style="margin-left:250px";
+     alt="Cosine transformation";
+     src="images/prop_cosine_wing.gif" >
+<p style="margin-left   :140px;
+          margin-bottom : 12px;">
+    <i> Figure 22.1 : &ensp;
+ Cosine transformation for the spanwise coordinate. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p> The first
+  <span style="font-variant: small-caps;"> Fourier</span>
+ term for the circulation is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>&Gamma;</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msub> <mi>A</mi> <mn>1</mn> </msub>
+  <mo>.</mo>
+
+  <mo>sin</mo><mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The amplitude <i>A</i><sub>1</sub> can be chosen freely.
+ It determines the contribution to the lift and the downwash
+ for this term.
+</p>
+<p>&emsp;
+ Since the combination of a cosine on the x-axis
+ and a sine on the y-axis forms an ellipse,
+ the first
+ <span style="font-variant: small-caps;">Fourier</span>
+ term describes an ellipse. This term  represents
+ the optimal elliptical distribution
+ with constant downwash.
+</p>
+<p>&emsp; 
+ The higher order terms in the
+  <span style="font-variant: small-caps;">Fourier</span>
+ series are
+<i>A</i><sub>2</sub>&hairsp;.&hairsp;sin 2&hairsp;<i>&phi;</i>,
+<i>A</i><sub>3</sub>&hairsp;.&hairsp;sin 3&hairsp;<i>&phi;</i> etc.
+ These higher frequency waves have 2, 3 etc. sine wave peaks
+ distributed over equal distances in <i>&phi;</i> along the span,
+ alternating between up and down inductions.
+</p>
+<p>&emsp;
+ The uneven numbers give a peak in the middle
+ and symmetrical peaks to the left and right of it.
+ The even numbers give a zero crossing in the middle,
+ and anti-symmetrical peaks left and right.
+ These anti-symmetrical terms can be used
+ to model aileron deflections
+ and aircraft rolling motion.
+ Using a standard sine wave integral,
+ <span style="font-variant: small-caps;">Glauert</span>
+ could show that the higher order terms
+ do not affect the overall lift.
+ They are just shape factors.
+ By a more complex integral he also demonstrated
+ that the downwash from each term has the same shape as the lift,
+ only once divided by sin&thinsp;<i>&phi;</i>
+ and with an amplitude increasing linearly
+ with the frequency of the term.
+ This specific integral is often called the
+  <span style="font-variant: small-caps;">Glauert</span>
+ integral. 
+</p>
+<p>&emsp;
+ The division by sin&thinsp;<i>&phi;</i>
+ causes the downwash to increase sharply
+ towards the tips, because sin&thinsp;<i>&phi;</i>
+ is zero at the ends.
+ The increasing amplitude with higher frequency
+ (&hairsp;i.e. , with increasing number of sine wave peaks
+ along the span&hairsp;) makes mathematical sense,
+ since the trailing vortices are the derivatives
+ of the bound vortex,
+ and derivatives give sharper peaks
+ than their base signal.
+ The downwash for the higher order terms
+ is much more oscillatory
+ than the lift distribution itself.
+</p>
+<p>&emsp; 
+ In
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ lifting line iteration,
+ comparing the local wing sections to the
+  <span style="font-variant: small-caps;">Fourier</span>
+ terms at the same location
+ is normally done at N points along the span,
+ giving N control points to determine
+ N sine wave amplitudes
+ <i>A</i><sub>1</sub> . . <i>A</i><sub>N</sub>.
+ The control points are usually chosen at the N peaks
+ of the highest order term.
+ Placing them at a zero crossing
+ would not give any information. 
+</p>
+<p>&emsp;
+ Only the first two or three terms of the
+  <span style="font-variant: small-caps;">Fourier</span>
+ series are smooth.
+ The rest becomes increasingly oscillatory.
+ The lift and downwash in between the control points
+ is not calculated from the
+  <span style="font-variant: small-caps;">Fourier</span>
+ waves, but interpolated between the values 
+ calculated at the control points. 
+</p>
+
+<!------------------------------------------------------------->
+<h4> 22.3 &emsp; The discrete lifting line </h4>
+
+<p> An alternative to assembling
+ <span style="font-variant: small-caps;">Fourier</span>
+ waves is to build up the bound vortex
+ from discrete horseshoe functions.
+</p>
+<p> Figure 22.1 shows two nested horseshoes as an example.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="320";
+     style="margin-left:250px";
+     alt="Actuator tube";
+     src="images/prop_wing_discrete_vortices_perspective.gif" >
+<p style="margin-left   :140px;
+          margin-bottom : 12px;">
+    <i> Figure 22.2 : &ensp;
+                          Nested horseshoe vortices. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p>  The resulting bound vortex  is a staircase function.
+ From figure 21.4XXXXXXXXXXXXXXXX we see that in the ellipse
+ the bound vortex changes rapidly towards the tips.
+ The trailing vorticity will go up sharply there,
+ and in fact the density at the very tips
+ it is infinite. For  a limited, discrete number
+ of horsehoes it is numerically desirable
+ to increase the number of discrete horseshoes
+ towards the tips. 
+</p>
+<p>&emsp;
+ Inspired by the cosine transformation of figure 22.1,
+ we choose a cosine distribution for the discrete
+ trailing vortices and for the control points.
+ Figure 22.3 shows the idea.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:250px";
+     alt="Actuator tube";
+     src="images/prop_discrete_cosine_wing.gif" >
+<p style="margin-left   :140px;
+          margin-bottom : 12px;">
+    <i> Figure 22.3 : &ensp;
+               Discrete full cosine distribution for the wing. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p> The trailing vortices are spaced equally
+ over the unit circle.
+ The control points for lift and downwash
+ are halfway in between.
+ This distribution is known as the "full cosine"
+  distribution, or more formally as
+ "<span style="font-variant: small-caps;">Chebyshev</span>"
+ nodes.
+ The N+1 trailing vortex locations <i>x</i><sub>t</sub>
+ are spread evenly from tip to tip
+ in the angular coordinate <i>&theta;</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table>
+<tr> <td>
+<math>
+  <mi>&theta;</mi>
+
+  <mo>=</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>0&hairsp;.&thinsp;.&hairsp;N</mn> 
+    <mn>N</mn> 
+ </mfrac>
+  <mo>.</mo>
+  <mn>&pi;</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:6px">
+<tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>t</mn> </msub>
+
+  <mo>=</mo>
+
+  <mn>&frac12;&hairsp;</mn> <mi>b</mi>
+  <mo>cos</mo> <mi>&theta;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Likewise, the N control points for the bound vortex
+ and for the local downwash are spread evenly
+ in  the spaces between the trailing vortices :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table>
+<tr> <td>
+<math>
+  <mi>&phi;</mi>
+
+  <mo>=</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>&frac12&thinsp;.&thinsp;.&hairsp;
+      (&hairsp;N&hairsp;-&hairsp;&frac12;&hairsp;)</mn> 
+    <mn>N</mn> 
+ </mfrac>
+  <mo>.</mo>
+  <mn>&pi;</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:6px">
+<tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+
+  <mo>=</mo>
+
+  <msub> <mi>x</mi> <mn>G</mn> </msub>
+
+  <mo>=</mo>
+
+  <mn>&frac12;&hairsp;</mn> <mi>b</mi>
+  <mo>cos</mo> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Equation (21.6) gave the effect
+ of a single trailing vortex
+ at a location <i>x</i><sub>t</sub>,
+ on the downwash at a different spanwise location
+ <i>x</i><sub>w</sub>.
+ The induction becomes infinite at the trailing vortex locations,
+ so <i>x</i><sub>w</sub> = <i>x</i><sub>t</sub>
+  is definitely not a good point to match the wing section lift
+ to the vortex pattern.
+ The points halfway between the trailing vortices
+ in the angular coordinate turn out to be the perfect locations,
+ although this seems like a minor miracle if we consider
+ the infinite up-and-down spikes of (21.1XXXXXXXXXX)
+ around the trailing vortex locations. 
+</p>
+<p>&emsp;
+With the control points always (&hairsp;"midway"&hairsp;) 
+ between two trailing vortices,
+  there are N control points between N+1 trailing vortices.
+ The first and the last trailing vortices are at the wing tips.
+ The total downwash at the control points <i>x</i><sub>w</sub>
+ is the sum of the contributions from all the trailing vortices
+ at the positions <i>x</i><sub>t</sub>.
+ We will give the transfer from d<i>Γ</i> to d<i>w</i> in (21.6)
+ the name <i>A</i>&hairsp;(&hairsp;
+   <i>x</i><sub>t</sub>,&hairsp; <i>x</i><sub>w</sub>&hairsp;) : 
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>A</mi>
+  <mn>(&hairsp;</mn> 
+  <msub> <mi>x</mi><mn>t&hairsp;</mn> </msub>
+  <mo>,</mo>
+  <msub> <mi>x</mi><mn>w</mn> </msub>
+  <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>1</mn>
+    <mn>2&hairsp;&pi;</mn> 
+ </mfrac>
+
+  <mspace/> <mo>.</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn >1</mn>
+    <mrow> <msub> <mi>x</mi> <mn>w</mn> </msub>
+           <mo>&minus;</mo>
+           <msub> <mi>x</mi> <mn>t</mn> </msub> 
+   </mrow>
+ </mfrac>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The total downwash at a certain spanwise location
+  <i>x</i><sub>w</sub>
+ is the sum of all the contributions of the N+1 trailing vortices
+ d&hairsp;<i>Γ</i>&hairsp;(&hairsp;<i>x</i><sub>t</sub>&hairsp;) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>w</mi> <mn>&hairsp;(</mn>
+    <msub> <mi>x</mi> <mn>w</mn> </msub> 
+  <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msubsup> <mo>&sum;</mo> <mn>0</mn> <mn>N</mn> </msubsup>
+  <mi>A</mi>
+  <mn>(&hairsp;</mn> 
+  <msub> <mi>x</mi><mn>t&hairsp;</mn> </msub>
+  <mo>,</mo>
+  <msub> <mi>x</mi><mn>w</mn> </msub>
+  <mn>)</mn>
+
+  <mo>.</mo>
+
+  <mn>d&hairsp;</mn> <mi>&Gamma;</mi>
+  <mn>&hairsp;(</mn>
+    <msub> <mi>x</mi> <mn>t</mn> </msub> 
+  <mn>)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> If we list all the N+1 values for
+ d&hairsp;<i>&Gamma;</i>(<i>x</i><sub>t</sub>&hairsp;)
+ along the span as a vector <b>d&hairsp;<i>&Gamma;</i></b>,
+ then we can write this sum as a vector multiplication
+ (&hairsp;alias dot product&hairsp;) of the row for
+   <i>x</i><sub>t</sub> 
+ in the matrix <b><i>A</i></b> &hairsp;&equiv;&hairsp; 
+ <i>&hairsp;A&hairsp;</i>(&hairsp;<i>x</i><sub>t</sub>,
+  <i>x</i><sub>w</sub>&hairsp;),
+ by the N+1 vector <b>d&hairsp;<i>&Gamma;</i></b>.
+The result is the downwash
+ <i>w</i>&hairsp;(&hairsp;<i>x</i><sub>w</sub>&hairsp;)
+at a single spanwise location.
+</p>
+<p>&emsp;
+ If we list all the local downwash values of
+ <i>w</i>&hairsp;(&hairsp;<i>x</i><sub>w</sub>&hairsp;) 
+ as a vector <b><i>w</i></b> too,
+ then we can condense (22.6) into a single
+ matrix multiplication :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">        <!-- !!!!!!!!!!!!!!! -->
+
+  <mi>w</b></mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>A</mi>
+
+  <mo>.</mo>
+
+  <mn>d</mn><mi>&Gamma;</mi>
+ </mstyle>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Figure 22.4 shows how one row of the matrix <b><i>A</i></b>
+ is multiplied by the vector <b>d<i>&Gamma;</i></b>,
+ giving one element
+   <i>w</i>&hairsp;(&hairsp;<i>x</i><sub>w</sub>&hairsp;)
+ of the vector <b><i>w</i></b>. 
+ Doing the full matrix multiplication gives the full transfer
+ from the vector  <b>d<i>&Gamma;</i></b>
+ to the vector  <b><i>w</i></b>.
+</p>
+<p>&emsp;
+ The method can be used in the lifting line iteration
+ between the values of the bound (and trailing) vortices
+ and the lift that the wing section generates
+ in the resulting downwash at the control points.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px";
+     alt="Actuator tube";
+     src="images/prop_wing_matrix_N_N1.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 22.4 : &ensp;
+               Transfer matrix <b>A</b>
+                from <b>d&Gamma;</b> to <b>w</b>. </i>
+</p>
+<!------------------------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+<h4> 22.4 &emsp; 
+    Finding the vortex pattern for a given downwash        </h4>
+
+<p> Equation (21.6) and the matrix <b><i>A</i></b>
+ derived from it, 
+ give the downwash pattern as a function of
+ the circulation distribution.
+</p>
+<p> However, wing and propeller optimizations
+ typically give an optimal
+ distribution for the downwash,
+ rather than for its "cause", the circulation.
+ The discretized downwash pattern follows
+ from the trailing vortices
+ <b>d<i>&Gamma;</i></b>,
+ rather than from the discretized bound vortex
+ <b><i>&Gamma;</i></b>. 
+</p>
+<p>&emsp;
+If we wish to find the vector
+ <b>d<i>&Gamma;</i></b> which produces
+ the desired downwash vector <b><i>w</i></b>,
+ then we must find N+1 element values for
+ <b>d<i>&Gamma;</i></b>,
+  from N element values for <b><i>w</i></b>.
+</p>
+<p>&emsp;
+ This means we have one unknown too many,
+ or we are one equation short.
+ In matrix terms we can say
+ that the matrix <b><i>A</i></b>
+ has to be square before we can invert it.
+</p>
+<p>&emsp;
+ We need an extra equation,
+ and the following equality comes to the rescue :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msubsup> <mo>&sum;</mo> <mn>0</mn> <mn>N</mn> 
+ </msubsup>
+
+  <mn>d</mn><mi>&Gamma;</mi> <mn>(&hairsp;k&hairsp;)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>0</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This condition states the fact, known from potential theory,
+ that the aircraft wing cannot create net vorticity.
+</p>
+<p> All the horseshoe vortices must be closed,
+ and so the sum of all the trailing vortices must be zero. 
+</p>
+<p>&emsp; We add (22.8) to the matrix <b><i>A</i></b>
+ by adding an extra row of 1's at the bottom.
+ Following the rules of matrix multi&shyplication,
+ this adds an extra element to the end of the vector
+ <b><i>w</i></b>. This extra element is not a downwash,
+ but simply the sum of all d<i>Γ</i>&thinsp;'s. 
+ Figure 22.5 shows the matrix with this extra line
+ added in yellow.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px";
+     alt="Actuator tube";
+     src="images/prop_wing_matrix_N1_N1.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 22.5 : &ensp;
+          Matrix <b>A</b>
+ expanded by a row for S = Σ&thinsp;(d&thinsp;&Gamma;&thinsp;).</i>
+</p>
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ The resulting matrix is square,
+ and we can solve it by matrix inversion :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">
+
+  <mn>d</mn><mi>&Gamma;</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msup> <mi>A</mi> <mn>-&hairsp;1</msup>   
+  <mn>.&thinsp;</mn> <mi>w</b></mi>
+  
+ </mstyle>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (22.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Figure 22.6 shows this multiplication by <i>A</i><sup>-1</sup>.
+ To fulfil the condition (22.8), the vector <b><i>w</i></b>
+ is extended by an extra element.
+ This element is set to the desired value
+ of the sum of the trailing vortices, which is zero.
+ </p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px";
+     alt="Actuator tube";
+     src="images/prop_wing_matrix_N1_N1_inverse.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 22.6 : &ensp;
+          Finding <b>dΓ</b> from a desired <b>w</b>,
+          extended by a zero.</i>
+</p>
+<!------------------------------------------------------------->
+
+<p> By the rules of matrix multiplication,
+ the values in the final column of the inverse matrix 
+are irrelevant,
+ because they are all multiplied by zero,
+ and therefore the calculation of <b>d<i>&Gamma;</i></b> 
+ from the actual, non-extended <b><i>w</i></b> in (22.9)
+ is effectively an N+1 by N matrix multiplication.
+ We will not be using this simplifying fact however,
+ since in practice the matrix inverse is not
+ explicitly calculated.
+ Instead, (22.9) is normally solved by a more efficient
+   <span style="font-variant: small-caps;">Gauss</span> 
+ elim&shyination method. In
+    <span style="font-variant:
+          small-caps;">Matlab&hairsp;</span><sup>©</sup>,
+ such a method is invoked by :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">
+
+  <mn>d</mn><mi>&Gamma;</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>A</mi> <mo>&hairsp;\</mo> <mi>w</mi>
+  
+ </mstyle>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (22.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- SECTION 22.4 --------------------------------------------->
+
+<h4> 22.5 &emsp;
+    Finding the bound vortex from the trailing vortices    </h4>
+
+<p>
+So far we worked with the trailing vortices d<i>&Gamma;</i>
+ at the locations <i>x</i><sub>t</sub>.
+ We now turn to the bound vortex <i>&Gamma;</i> itself at
+ the in-between locations <i>x</i><sub>&Gamma;</sub>
+  = <i>x</i><sub>w</sub>.
+</p>
+<p> We know that the discrete trailing vortices d<i>&Gamma;</i>
+ are the steps in the bound vortex <i>&Gamma;</i>.
+ We will number the N+1 trailing vortices in figure 22.3
+ as n = 0 . . N from right to left,
+ and the N control points as m = 1 . . N, also from right to left.
+ The right hand tip vortex d<i>&Gamma;</i><sub>o</sub>
+ lets the bound vortex jump from zero outside the tip to
+ <i>&Gamma;</i><sub>1</sub> = &thinsp;d<i>&Gamma;</i><sub>o</sub>
+ inside it:
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&Gamma;</mi> <mn>1</mn> </msub>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mn>d</mn> <msub> <mi>&Gamma;</mi> <mn>0</mn> </msub>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (22.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Each subsequent trailing vortex changes the bound vortex to
+ the left of it by +&hairsp;d<i>&Gamma;</i><sub>k</sub>.
+ The incremental version of (22.11) is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&Gamma;</mi> <mn>k+1</mn> </msub>
+  <mspace/> <mo>=</mo> <mspace/>
+  <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+  <mo>+</mo>
+  <mn>d</mn> <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (22.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We can use this equation starting from k&nbsp;=&nbsp;0
+ and ending for k&nbsp;=&nbsp;N, if we define
+ the bound vortex strength outside the right hand tip 
+ as <i>&Gamma;</i><sub>0</sub>&nbsp;=&nbsp;0 
+ and the bound vortex outside the left hand tip as
+ <i>&Gamma;</i><sub>N+1</sub> = 0. 
+</p>
+<p>&emsp;
+ In <span style="font-variant: small-caps;">
+    Matlab&hairsp;</span><sup>©</sup> 
+ we can write (22.12) for the vectors <i>&Gamma;</i>
+ and d<i>&Gamma;</i> by the standard function <b>
+ <span style="font-family:
+             'Courier New', Courier, monospace;">
+    cumsum()
+</span>.
+ </b>
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 22.6 &emsp; Summing the total lift                    </h4>
+
+<p> Equation (21.4) gave the lift for a short section
+ of bound vortex.
+ The total lift is the sum of all of these sections
+ over the span.
+ The discretized bound vortex changes only on shedding
+ a trailing vortex,
+ so its graph becomes a staircase plot, like in figure 22.2.
+ This suggests integrating the overall lift by summing
+ the constant
+ lift sections between the trailing vortices,
+ and this works out well.
+</p>
+<p>&emsp;
+ With the trailing vortices d<i>&Gamma;</i>
+ numbered from 0 to N 
+ according to (22.3) and the vortex
+ (&hairsp;and downwash&hairsp;)
+ stations numbered from 1 to N according to (22.4), 
+ the integrated lift from (21.4) is found by :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>L</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>  <mo>.</mo> 
+
+  <msubsup> <mo>&sum;</mo> <mn>1</mn> <mn>N</mn> </msubsup>
+
+  <mn>d</mn>   <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+
+   <mo>.</mo> 
+
+  <mn>[&nbsp;</mn>
+    <msub> <mi>x</mi> <mn>t</mn> </msub> 
+       <mn>(&hairsp;k&hairsp;)</mn>
+      <mo>&minus;</mo>
+      <msub> <mi>x</mi> <mn>t</mn> </msub> 
+        <mn>(&hairsp;k-1&hairsp;)</mn>
+  <mn>&nbsp;]</mn>
+
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (22.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 22.7 &emsp;
+        The constant downwash case as a verification       </h4>
+
+<p> As a verification of the inverse discrete vortex method,
+ we run the case of constant downwash and see if it reproduces
+ the elliptical lift distribution from the previous chapter.
+ If successful, this is our first confirmation that
+ <span style="font-variant: small-caps;">Munk</span>'s
+ analytical result.
+</p>
+<p>&emsp;
+ To get a (&hairsp;discretized&hairsp;) constant downwash of 1, 
+ we fill the column vector <b><i>w</i></b> with 1's
+ and apply (22.10).
+</p>
+<p>&emsp;
+ Figure 22.7 shows the result for N = 6,
+ i.e. for five downwash (&hairsp;and bound vortex&hairsp;)
+ control points, between six trailing vortices. Together
+ this amounts to three horseshoes.
+ From experience, an even value for N gives nicer results,
+ even though we already know that the center trailing vortex
+ is zero from symmetry.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px;
+            margin-top: 8px;"
+     alt="Wing discrete constant downwash";
+     src="images/prop_wing_discrete_constant_downwash.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 22.7 : &ensp;
+          Discretized lift for constant downwash, N = 6.</i>
+</p>
+<!------------------------------------------------------------->
+
+
+<p> Even at N = 6 the circulation at the control points
+ is almost spot on the ideal ellipse.
+ At increasing N, for all intents and purposes
+ the bound vortex points are
+ indistinguishable from the ideal ellipse.
+</p>
+<p>&emsp;
+ Remarkably, if we check the total lift
+ by the numerical summation of (22.12),
+ we get the exact result (21.10) of&nbsp;the theoretical ellipse
+ for this downwash, for any order N&nbsp;&le;&nbsp;2.
+ In other words, we get the exact result right away,
+ even for a single horsehoe vortex :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mover>
+   <mi>&Gamma;</mi>
+   <mo>&#x2015;</mo>
+  </mover>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac14;&thinsp;&pi;</mn>
+  <mo>.</mo> <mi>b</mi>
+  <mo>.</mo> <mi>w</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (22.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The figure shows N = 1000 as a solid line. Even if this is
+ not proof, it is a strong confirmation of   
+ <span style="font-variant: small-caps;">Munk</span>'s
+ analytical result, or viewed in the other direction,
+ of our discretized solution.
+</p>
+
+<span style="color:darkgrey">
+
+<br>
+<p> <i> TODO &emsp; Show the downwash resulting
+ from the discretized circulation.
+<br> &emsp; &emsp; &emsp; &ensp;
+ Shiver at the lines in-between the control points.
+</p>
+
+</span>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

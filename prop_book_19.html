@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_19.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-03  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_18.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_20.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> TIP LOSS </i>          </p>
+<hr style="margin : 0 0;">
+
+<!------------------------------------------------------------->
+
+<h2> 19 &emsp; Prandtl's tip                               </h2>
+
+<!-- SECTION 19.1 --------------------------------------------->
+
+<h4> 19.1 &emsp; Introduction                              </h4>
+
+<p> In the same 1919 article where
+ <span style="font-variant: small-caps;">Betz</span>
+ introduced his derivation of the thrust distribution
+ for minimal rotational loss,
+ <span style="font-variant: small-caps;">Prandtl</span>
+ added an approximate tip loss model.
+ This model has stood the test of time remarkably well.
+ Somewhat surprisingly, it does not use
+ the concept of blade lift or a tip vortex at all.
+ Instead, it is based on the flow conditions
+ around
+ <span style="font-variant: small-caps;">Betz</span>'s
+ optimal spiral wake.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="400";
+     style="margin-left : 200px;
+            margin-top  :  8px;";
+     alt="Tip sketch Prandtl";
+     src="images/prop_blade_slice_elliptical_prandtl.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 18.1 : &ensp;
+     Typical
+   <span style="font-variant: small-caps;">Prandtl</span>
+ mass flow reduction F(x).
+ </i> 
+<!------------------------------------------------------------->
+
+
+<p>&emsp;
+ Figure 12.4 showed
+ <span style="font-variant: small-caps;">Betz</span>'s
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw wake from figure 12.2,
+ slowly translating and rotating.
+ The spiral sheets are in actual fact
+ drifting backward with the induced flow.
+ It was
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ idea to invert cause and effect here.
+ Since no air passes through the sheet surfaces,
+ we are allowed to imagine that they are smooth,
+ hard surfaces,
+ themselves displacing the air to the rear
+ instead of the other way around.
+ In potential theory,
+ if two flows meet the same boundary conditions,
+ they are identical.
+ If we can find a solution for this new flow,
+ it must be the flow we are looking for.
+</p>
+<p>&emsp; There is also no sliding friction
+ on the surfaces, so they can only push
+ on the air at right angles to their surface.
+ This still does not make the problem trivial,
+ for the
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw has a complex shape.
+</p>
+<p>&emsp; At the center, the sheets are highly curved;
+ but at the outer edges, they are almost flat.
+ The left hand side of figure 19.1 replaces the
+ <span style="font-variant: small-caps;">Archimedes</span>
+ screw by a stack of flat disks,
+ with the same spacing as the tip spirals
+ in figure 12.3. 
+</p>
+<p>&emsp;
+The disks move to the rear with the induction velocity v',
+  and they take the air with them,
+ except around the edges.
+ Some air is pushed to the side and circles back,
+ creating a wavy outline
+ to what was once a smooth flow tube.
+</p>
+<p>&emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>
+ further simplified this model by making it 2D.
+ He made the edges into straight lines,
+ like the straight fins of a heat sink.
+ He then inverted cause and effect again,
+ by considering the case where the fins are stationary,
+ and the air flows by them at the velocity v'.
+ The relative motion is still the same,
+ and the flow pattern does not change.
+</p>
+<p>&emsp; The right hand side of the figure
+ shows this simplified model.
+ The only size parameter it has
+ is the spacing <i>s</i> between the fins.
+</p>
+<p>&emsp;
+From potential theory,
+ <span style="font-variant: small-caps;">Prandtl</span>
+ was able to derive an equation
+ for the impulsive force distribution on a fin
+ when this system is
+ instantaneously set in motion.
+ A force impulse creating a step in the velocity
+ is the equivalent of a force of some duration
+ creating an acceleration for some time.
+ In both cases, the ratio is a mass.
+</p>
+<p>&emsp; The outcome is an estimate
+ for the “exact” mass coefficient K (x)
+ of (17.2),
+ at least for the tip regions of this simple model.
+</p>
+
+<p><i> TODO LATER &emsp;&emsp;&emsp; 
+ Make a better story on the potential theory,
+ maybe from the current previous chapter,
+ or an older/later version of the printed book.
+</i>
+</p>
+
+<p><i> TODO LATER &emsp;&emsp;&emsp; 
+Emphasize once more the difference
+ between induction and mass flow.
+And it's much better than a vortex model.
+ Betz's
+ helical wake sheet is much more similar
+ to the constant downflow wing model,
+ than the isolated tip vortex is.
+ Refer to section **** on vortex methods.
+</i>
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="280";
+     style="margin-left : 130px;
+            margin-top  :  8px;";
+     alt="Tip sketch Prandtl";
+     src="images/prop_prandtl_disk_skewer.gif" >
+<!------------------------------------------------------------->
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="280";
+     style="margin-left : 60px;
+            margin-top  :  8px;";
+     alt="Tip sketch Prandtl";
+     src="images/prop_prandtl_heatsink_no_floor.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 19.2 : &ensp;
+     Spiral sheet simplified to infinite heats sink fins.
+ </i> 
+<!------------------------------------------------------------->
+
+<!-- SECTION 19.2 --------------------------------------------->
+
+<h4> 19.2 &emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip is very nearly elliptical                             </h4>
+
+<p> <span style="font-variant: small-caps;">Prandtl</span>'s
+ approximate solution for <i>K</i>&hairsp;(<i>x</i>)
+ is traditionally denoted by
+ <i>K</i>&hairsp;(<i>x</i>).
+</p>
+<p> <i>
+The Notes section discusses the shape, and
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ derivation of it in some more detail.
+</i>
+</p>
+<p>&emsp;
+ Figure 19.1 gives y as the distance from the tip,
+ and s as the spacing between the tips.
+ With this definition, PRANDTL's equation reads :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>F</mi>
+  <mn>&hairsp;(</mn> <mi>y</mi> <mn>)</mn>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>2</mn>
+    <mn>&pi;</mn>
+  </mfrac>
+ 
+  <mo> . </mo>
+
+  <mn>acos&thinsp;</mn>
+  <mn>(</mn>
+<!--
+    <msup> <mo>e</mo> 
+      <mrow>
+        <mo>&minus;</mo> <mn>&pi;</mn>
+        <mstyle displaystyle="true">
+        <mfrac>  
+           <mi>y</mi>
+           <mi>s</mi>
+       </mfrac>
+     </mrow>
+    </msup>
+-->
+    <mn>&thinsp;exp</mn>
+    <mn>&thinsp;(&thinsp;</mn>
+      <mn>&minus;</mn>
+      <mn>&pi;</mn>
+      <mo>.</mo> 
+      <mstyle displaystyle="true">
+      <mfrac>  
+        <mi>y</mi>
+        <mi>s</mi>
+     </mfrac>
+    <mn> &thinsp; )</mn>
+
+  <mn>&thinsp;)</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (19.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> As expected, <i>F</i>&hairsp;(<i>y</i>)
+ is zero at the outer edges of the fins.
+ All of the air bypasses the fins there.
+ Evaluating the equation at <i>y</i>&nbsp;=&nbsp;0 
+ in fact gives exp&hairsp;(0)&nbsp;=&nbsp;1 and
+ acos&hairsp;(1)&nbsp;= &nbsp;0,
+ so <i>F</i>&hairsp;(<i>y</i>)&nbsp;=&nbsp;0.
+</p>
+<p>&emsp;
+ Deep inside the fins, <i>F</i>&hairsp;(<i>y</i> becomes 1
+ for <i>y</i>&nbsp;&rarr;&nbsp;&infin;.
+ All of the air is trapped there.
+ The equation gives exp&hairsp;(&minus;&infin;)&nbsp;=&nbsp;0
+ and acos&hairsp;(0)&nbsp;=&nbsp;&frac12;&pi;,
+ so <i>F</i>&hairsp;(<i>y</i>&nbsp;=&nbsp;1.
+</p>
+<p>&emsp;
+ In between these extremes, 
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+  tip shape is remarkably similar 
+ to a quarter circle with radius  s.
+ Figure 19.2 compares the two shapes.
+ The figure confirms the strong
+ family likeness between the elliptical
+ mass coefficient of an optimal wing,
+ and the optimal propeller.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px";
+     alt="Glauert in Durand";
+     src="images/prop_prandtl_quarter_circle.gif" >
+
+<p style="margin-left   :160px;
+          margin-bottom : 12px;">
+    <i> Figure 19.1 : &ensp; 
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip shape scaled to a quarter circle.
+ </i> 
+<!------------------------------------------------------------->
+
+<!-- SECTION 19.3 --------------------------------------------->
+
+<h4> 19.3 &emsp; The non-dimensional sheet spacing         </h4>
+
+<p> We will fit
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip model (19.1) to the non-dimensional propeller.
+ The distance between the "heat sink fins"
+ is given by the spacing between the spiral sheets.
+ <span style="font-variant: small-caps;">Prandtl</span>
+ applied his 2D model to the orthogonal distance
+ between the sheet surfaces,
+ because this is the direction in which
+ the sheets displace the air,
+ and it is the direction of the induction velocity
+ <i>v</i>&hairsp;&prime;.
+ We will briefly follow
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ physically sound reasoning, 
+ before converting to the simpler axial distance,
+ which not only gives simpler equations,
+ but also happens to fit
+ the exact vortex solution slightly better.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="600";
+     style="margin-left:120px";
+     alt="tip sheet distance";
+     src="images/prop_prandtl_tip_sheet_distance.gif" >
+
+<p style="margin-left   :120px;
+          margin-bottom : 12px;">
+    <i> Figure 19.3 : &ensp; 
+ The non-dimensional spacing between the tip spirals.
+ </i> 
+<!------------------------------------------------------------->
+
+<p> Figure 19.3 shows the "unrolled" outer surface
+ of the original, smooth flow tube
+ in non-dimensional units.
+ All lengths are divided by the unit distance
+ <i>U</i> of (2.9).
+</p>
+<i>
+<p> The radius of the propeller is <i>X</i>,
+ and the circumference of the flow tube is
+ 2&hairsp;&pi;&hairsp;<i>X</i>.
+ By figure 2.4,
+ this makes the non-dimensional tip pitch 2&hairsp;&pi;.
+ In a propeller with <i>B</i> blades,
+ the tip spirals are spaced in the axial direction
+ by the non-dimensional distance <i>s</i>&hairsp;&prime; :
+</p>
+</i>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>s</mi> <mn>&hairsp;&prime;</mn>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
+    <mi>B</mi>
+  </mfrac>
+ </math>
+ </td>
+
+ <td style="width:50px; text-align:right">               (19.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From the figure,
+ the orthogonal distance between the sheets
+ is shorter than  the axial one by a factor of
+ cos<i>&hairsp;&phi;</i><sub>tip</sub>.
+ With (2.5) for the cosine, we have :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>s</mi>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
+    <mi>B</mi>
+  </mfrac>
+
+  <mo>&hairsp;.&hairsp;</mo>
+
+  <mn>cos&thinsp;</mn>
+  <msub> <mi>&phi;</mi> <mn>tip</msub>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
+    <mi>B</mi>
+  </mfrac>
+
+  <mo>&hairsp;.&hairsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>X</mi>
+    <mrow> <msqrt> <mn>1 + </mn> 
+       <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+ </math>
+ </td>
+
+ <td style="width:50px; text-align:right">               (19.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>
+ based his model on this orthogonal sheet spacing,
+ but in fact his function fits
+ the exact vortex solution better
+ if we use the axial spacing s' instead.
+</p>
+<p>&emsp;
+ As a side benefit, this simplifies the equations.
+ To distinguish between the two versions of <i>s</i>,
+ we will use the notation <i>F</i>&hairsp;&prime;(<i>x</i>)
+ (&hairsp;with a prime&hairsp;)
+ for the version of <i>F</i> which uses
+ the axial spacing of (19.2).
+</p>
+<p>&emsp;
+ Note (&hairsp;<i>X &minus; x</i>&hairsp;)
+ is the distance from the tip at <i>X</i>,
+ measured on the scale of
+  <i>x</i>&nbsp;&equiv;&nbsp;<i>&Omega;&hairsp;r / V</i>.
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr>
+ <td style = "padding: 4px 0px;">
+<math>
+  <mi>F</mi> <mn>&hairsp;&prime;</mn>
+  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>2</mn>
+    <mn>&pi;</mn>
+  </mfrac>
+ 
+  <mo> . </mo>
+
+  <mn>acos&thinsp;</mn>
+  <mn>(</mn>
+    <mn>&thinsp;exp</mn>
+    <mn>&thinsp;(&thinsp;</mn>
+      <mn>&minus;</mn>
+      <mn>&pi;</mn>
+      <mo>.</mo> 
+      <mstyle displaystyle="true">
+      <mfrac>  
+        <mrow>
+           <mi>X</mi> <mn>&minus;</mn> <mi>x</mi>
+       </mrow>
+       <mrow>
+         <mi>s</mi> <mn>&hairsp;&prime;</mn>
+       </mrow>
+     </mfrac>
+    <mn> &thinsp; )</mn>
+
+  <mn>&thinsp;)</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (19.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This, then is our simplified and improved version of
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ approximation for the mass flow factor
+ <i>K</i>&hairsp;(<i>x</i>). 
+</p>
+
+<!-- SECTION 19.6 --------------------------------------------->
+
+<h4> 19.6 &emsp; The extent of 
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+    tip                                                    </h4>
+
+<p>
+Figure 19.4  gave the factor 
+<i>F</i>&hairsp;&prime;(<i>x</i>)
+ scaled to our standard example of <i>X</i>&thinsp;=&thinsp;5,
+  for two blades.
+</p>
+<p>&emsp;
+ Figure 19.6 shows what happens when we vary these parameters.
+ On a horizontal scale of <i>B&hairsp;.&hairsp;X</i>,
+ the tip length is fixed at 2&hairsp;&pi;,
+ and the  blade length shows up as <i>B&hairsp;.&hairsp;X</i>.
+ This keeps the relative tip depth  in the proper proportion.
+ The tip has always the same shape,
+ but with increasing <i>B&hairsp;.&hairsp;X</i> 
+ it covers a shorter fraction of the blade.
+</p>
+<p>&emsp;
+ Propellers with the same value of <i>B&hairsp;.&hairsp;X</i>
+ have the same tip length ratio,
+ regardless whether this comes from <i>B</i> or from <i>X</i>.
+ A propeller of <i>X</i>&thinsp;=&thinsp;10  
+and <i>B</i>&thinsp;=&thinsp;2
+ has the same tip ratio as a propeller of
+ <i>X</i>&thinsp;=&thinsp;5 and <i>B</i>&thinsp;=&thinsp;4.
+</p>
+<p>&emsp;
+  Propellers with large values of <i>B&hairsp;.&hairsp;X</i> have
+ relatively small tip ratios and hence lower tip loss.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="600";
+     style="margin-left: 120px";
+     alt="Prandtl tips stacked";
+     src="images/prop_prandtl_tip_only_stacked.gif" >
+
+<p style="margin-left   : 170px;
+          margin-bottom :  12px;">
+    <i> Figure 19.6 : &ensp; 
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+    tip length versus B&hairsp;.&hairsp;X.
+ </i> 
+<!------------------------------------------------------------->
+
+<!-- SECTION 19.4 --------------------------------------------->
+
+<h4> 19.4 &emsp; The equivalent cropped tip                </h4>
+
+<p> Using (19.2), we can redraw figure 19.2
+ on the non-dimensional x scale.
+ The tip shape will now start at a distance of
+ ( X - x ) = 2π/B from the tip.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="600";
+     style="margin-left: 120px";
+     alt="cropped tip";
+     src="images/prop_prandtl_ellipse_cropped.gif" >
+
+<p style="margin-left   : 170px;
+          margin-bottom :  12px;">
+    <i> Figure 19.4 : &ensp; 
+           Equivalent cropped tip for X = 5, B = 2.
+ </i> 
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ Figure 19.4 shows the result.
+ The plot runs from ( X - x ) = 0 at the right
+ to 10<i>&thinsp;/&thinsp;B</i> on the left.
+</p>
+<p> Taken from left to right, this equals
+ from <i>x</i>&nbsp;=&nbsp;0 at the root
+ to X&nbsp;=&nbsp;5 at the tip for pur running
+ example of a two bladed propeller with a tip
+speed ratio of 5.
+</p>
+<p>&emsp;
+ This makes it a plot of  F' (x) for our standard
+ running example of B = 2, X = 5.
+ The tip shape starts from
+ (&iarsp;<i>X</i>&minus;<i>x</i>&hairsp;)
+ = 2&hairsp;&pi;&&nbsp;<i>/</i>&nbsp;2,
+ i.e. from r/R = ( 1 - π ) / X,
+ or in other words from 
+ <i>r</i>&nbsp;&cong;&nbsp;0.4&hairsp;<i>R</i>.
+ The "tip" therefore extends
+ over more than half of the outer blade.
+ It covers most of the disk area.
+</p>
+<p>&emsp;
+ The figure also shows a simple approximation
+ for the net area loss.
+ <span style="font-variant: small-caps;">Prandtl</span>
+ noted that the blade tip can be replaced
+ by a blade of full width,
+ clipped off straight at a reduced diameter.
+ The figure shows the cropping length &Delta;<i>X</i> 
+ which gives the same equivalent area loss as
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip shape.
+ It is the following fraction of  (19.2)  : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>&Delta;</mn> <mi>X</mi> 
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>ln&thinsp;2</mn>
+    <mn>&pi;</mn>
+  </mfrac>
+
+  <mo> . </mo>
+  <mi>s</mi>
+
+  <mspace/> <mo>&cong;</mo> <mspace/>
+
+  <mn>0.22&thinsp;</mn>
+  <mi>s</mi>
+
+ </math>
+ </td>
+
+ <td style="width:50px; text-align:right">               (19.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+The function value of <i>F</i>(<i>x</i>)
+ at the cropping radius is
+ <sup>2</sup><i>/</i><sub>3</sub>. 
+</p>
+<p>&emsp;
+ The ellipse approximation gives
+ almost the same area reduction,
+ since the  area loss of a quarter circle shape equals
+ 1&nbsp;&minus;&nbsp;&frac14;&pi;&nbsp&cong;&nbsp;0.215,
+ which is almost identical to 0.22.
+</p>
+<p>&emsp;
+ With <i>s</i>&hairsp;&prime;&nbsp;&cong;
+ &nbsp;2&hairsp;&pi;<i>&thinp;/&thinsp;B</i>,
+  the cropping distance on the <i>x</i> scale becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>X</mi> 
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>ln&thinsp;2</mn>
+    <mi>B</mi>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>2&hairsp;&pi;</mn>
+    <mi>B</mi>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>2&thinsp;.&thinsp;ln&thinsp;2</mn>
+    <mn>&pi;</mn>
+  </mfrac>
+
+  <mspace/> <mo>&cong;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1.4</mn>
+    <mi>B</mi>
+  </mfrac>
+
+ </math>
+ </td>
+
+ <td style="width:50px; text-align:right">               (19.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> The "effective" radius of the propeller will be :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>X</mi> <mn>&hairsp;&prime;</mn> 
+ 
+  <mspace/> <mo>&cong;</mo> <mspace/>
+
+  <mi>X</mi>
+ 
+  <mo>&minus;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1.4</mn>
+    <mi>B</mi>
+  </mfrac>
+
+  <mspace/> <mo>&cong;</mo> <mspace/>
+
+  <mi>X</mi>
+
+  <mo> . </mo>
+
+  <mn>(&hairsp;</mn>
+    <mi>1</mi>
+    <mo>&minus;</mo>
+
+    <mstyle displaystyle="true">
+    <mfrac>
+      <mn>1.4</mn>
+      <mrow> <mi>B</mi> <mn>&hairsp;.&hairsp;</mn> <mi>X</mi>
+    </mfrac>
+  <mn>&thinsp;)</mn>
+
+ </math>
+ </td>
+
+ <td style="width:50px; text-align:right">               (19.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The propeller is equivalent to a square tipped propeller
+ inside a duct of this reduced radius. 
+ Figure 19.5 shows the relative size of the reduction
+ for our standard example
+ of a two-bladed propeller of tip speed ratio 5. 
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="540";
+     style="margin-left : 200px;
+            margin-top  :  8px;";
+     alt="Tip sketch Prandtl";
+     src="images/prop_prandtl_tube_reduction.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom :  12px;">
+    <i> Figure 19.3 : &ensp;
+       Equivalent duct radius
+ for X&thinsp;=&thinsp;5, B&thinsp;=&thinsp;2.
+ </i> 
+<!------------------------------------------------------------->
+
+<!-- SECTION 19.5 --------------------------------------------->
+
+
+<h4> 19.5 &emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+    approximate mass reduction                             </h4>
+
+<span style="color:darkgrey">
+
+<p> With (19.7) for the radius,
+ the effective disk area reduces to :
+</p>
+<p>&emsp;
+	 π 〖X^'  〗^2   = π X^2  .〖 ( 1-  2  ln 2  /(B.X)  )〗^2
+               = π X^2  .( 1-  4 ln 2 /(B.X)  +  (  (  2 ln 2  )/(B.X))^2  )	
+(19.8)
+</p>
+<p> If B .  X  ≫ 1,
+ the quadratic term is small.
+ <span style="font-variant: small-caps;">Prandtl</span>
+ therefore dropped it,
+ keeping only the linear term.
+ We will call his approximation of the overall
+ tip mass reduction factor κF' :
+</p>
+<p>&emsp;
+	 κ_ F '    ≅  1 -   2.77/(B .X)	(19.9)
+</p>
+<p> This κF' estimates the integral
+ of the local mass factor K (x) defined in (17.2).
+  It is not  the same as the integral κ G in (17.9),
+ because that contains the cos2ϕ term as well.
+</p>
+
+</span>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

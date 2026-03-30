@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : tuning.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-24 new
+---------------------------------------------------------------> 
+
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on controller tuning </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home            </a> </li>
+
+  <li> <a href="#">                          Previous        </a> </li>
+
+  <li class="dropdown">
+    <a class="dropbtn"
+       style="background-color:#0000B0;
+       href="javascript:void(0)">           Control                </a>
+
+    <div class="dropdown-content">
+      <a href="#">                          Feedforward            </a>
+      <a href="#">                          Feedback               </a>
+      <a href="#">                          Reducing Uncertainty   </a>
+      <a href="#">                          Kalman Filters         </a>
+      <a href="#">                          Saturation             </a>
+      <a href="#">                          Encoder differencing   </a>
+      <a href="tuning.html">                Tuning                 </a>
+    </div>
+  </li>
+
+  <li> <a href="#">                          Next   &#x25BA;</a> </li>
+</ul>
+
+
+<!------------------------------------------------------------->
+
+<h2> Tuning </h2>
+
+<h4> black art </h4>
+
+<p> Controller tuning is a black art.
+ In my professional life, have never met anyone
+ who had a method much better than trial and error,
+ mixed with some personal rules of thumb.
+ I know there must be professionals who do.
+<br> I just never met them.
+</p>
+
+<h4> frequency domain </h4>
+
+<p> There are certain tuning rules (&hairsp;like Ziegler-Nicholls
+ for PD controllers&hairsp;) that you will find in every textbook.
+T</p>
+<p> hey require some "a&nbsp;priori" 
+ (&hairsp;known beforehand&hairsp;)
+ knowledge of the system,
+and some experimentation while it is running.
+ sThe rationale behind these rules is usually the assumption
+ of a simple system model, like a basic
+ first or second order system.
+ This is not a bad idea in itself.
+</p>
+<p> Such rules are often exercised in the frequency domain.
+ The true professional will do "loop shaping" 
+on the Bode plot or the Nyquist plot of the system response,
+ tweaking the curve to give better response at certain
+ frequen&shycies.
+It is typically a matter of redistributing the feedback gain
+ from one frequency range to another, a waterbed effect which is 
+ a special case of nature's universal law of
+ "conservation of misery".
+</p>
+<p> These methods, however offer no way of making the system 
+ perform better across the board.
+They also do not seem to directly suggest adding extra sensors
+ or relocating existing ones,
+ or changing to a better system architecture. 
+</p> 
+
+<h4> time domain </h4>
+
+<p > Since I am by background a time domain person,
+ I have developed my own personal tactics.<br>
+That does not make me a professional by any means,
+ but in the land of the blind...
+</p>
+
+<h4> PD control </h4>
+
+<p> PD control has only really been possible
+ since digital computers.
+</p>
+<p>&emsp; In the analog age, pure differentiators
+ and pure integrators
+ were very difficult to implement.
+ This often led to controllers which were analog filters
+ (&hairsp;RC circuits consisting of
+ capacitors and resistors&hairsp;)
+ like "lead-lag" <nobr>(&hairsp;differentiators
+ working </nobr>
+ up to some
+ cutoff frequency&hairsp;)
+ or "lag-lead" (&hairsp;leaky integrators, working
+ down to a certain frequency&hairsp;).
+
+<h4> loop shaping </h4>
+
+<p> The classical tuning methods were, I believe,
+influenced by these hardware limitations.
+"Loop shaping" means making soldering RC circuits
+into the control loop to make bumps in the Bode plot
+over certain frequency ranges, shifting gain
+to another frequency range in a zero sum game,
+sometimes referred to as the "conservation of misery".
+</p>
+
+<h4> start with the velocity loop </h4>
+
+<p>
+When tuning a computer controlled PD loop,
+it is entirely possible to start with almost
+pure velocity feedback, up to very high frequencies
+if needed, and if allowed by the sensors.
+</p>
+<p>&emsp;
+The system canthen be driven by hand with a 
+vaiable velocity setpoint...
+<p>&emsp;
+</p>
+
+<!-- FOOTER --------------------------------------------------------->
+<br><br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

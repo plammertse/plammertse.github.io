@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_11.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-03  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_10.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_12.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- TEXT BLOCK HEADER ---------------------------------------->
+
+<p style="margin-left : 320px">  <i> ROTATION </i>          </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 11 ----------------------------------------------->
+
+<h2> 11 &emsp; The thrust at optimal efficiency            </h2>
+
+<!-- SECTION 11.1 --------------------------------------------->
+
+<h4> 11.1 &emsp; Integrating the optimal thrust            </h4>
+
+<p> For a given marginal loss <i>C</i>,
+  the optimal induction (10.7) will reduce the local thrust
+ all along the blade, and es&shypecially near the hub.
+</p>
+<p>&emsp;
+ We are interested in the overall thrust reduction.
+ For this we need to integrate the thrust
+ over all of the rings.
+ Substituting (10.7) into the local thrust
+ for light loading (7.14), we have : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d&hairsp;</mn>
+  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>C</mi>
+
+  <mo>.</mo>
+
+  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
+  <mi>&phi;</mi>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (11.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a home="(11.2)"></a>
+
+<p> The overall thrust is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>C</mi>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
+  <mi>&phi;</mi>
+
+  <mo>&hairsp;.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (11.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The integral is the weighted average of
+ cos<sup>&hairsp;2</sup>&thinsp;<i>&phi;</i>
+over the prop disk.
+ Its value is always smaller than one.
+</p>
+<p>&emsp;
+ In a notation due to
+    <span style="font-variant: small-caps;"> Theodorsen</span>,
+ we will call such overall thrust reduction factors <i>&kappa;</i>
+ (&thinsp;Greek letter "<i>kappa</i>"&hairsp;).
+ Since the rotational reduction factor depends only on <i>&phi;</i>,
+ we will give this particular <i>&kappa;</i> the subscript <i>&phi;</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&kappa;</mi> <mn>&phi;&hairsp;</mn> </msub>
+  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
+  <mi>&phi;</mi>
+
+  <mo>&hairsp;.</mo>
+
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (11.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+</p>
+<p> With (2.7) we can write this directly in <i>x</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&kappa;</mi> <mn>&phi;&hairsp;</mn> </msub>
+  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mn>2&hairsp;</mn> <mi>x</mi>
+  <mo>.</mo>
+  <mn>d</mn> <mi>x</mi>
+
+  <mo> &thinsp;&minus;</mo>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mrow>
+      <mn>2&thinsp;</mn> <mi>x</mi>
+   </mrow>
+    <mrow>
+      <mn>1</mn> <mo>+</mo> 
+      <msup> <mi>x</mi> <mn>2</mn> </msup>
+   </mrow>
+  </mfrac>
+  <mo>.</mo>
+  <mn>d</mn> <mi>x</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (11.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The primitive of the first integrand is <i>x</i><sup>&hairsp;2</sup>,
+ and that of the second integrand is
+    ln&hairsp;(&hairsp;1&hairsp;+&hairsp;<i>x</i><sup>2</sup>&hairsp;).
+ This yields the classical result for <i>&kappa;</i><sub>&phi;</sub>  :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&kappa;</mi> <mn>&phi;&hairsp;</mn> </msub>
+  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mi> 1 </mi>
+  <mo>&thinsp;&minus;&thinsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mrow>
+      <mn>ln&thinsp;</mn> 
+      <mn>(</mn>
+       <mn>1</mn> <mo>+</mo> 
+       <msup> <mi>X</mi> <mn>2</mn> </msup>
+      <mn>)</mn>
+   </mrow>
+    <mrow>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mrow>
+  </mfrac>
+
+</math>
+
+<td style="width:50px; text-align:right">                (11.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(11.1)"></a>
+
+<p> Figure 11.1 shows the graph of (11.5).
+ This figure gives the <i>overall</i> thrust reduction,
+ plotted against the <i>tip</i> speed ratio <i>X</i>.
+ The shape is essentially different from the <i>ring</i>
+ reduction shown against the </i>ring</i> radius <i>x</i>
+ in figure
+(&hairsp;<a href="prop_book_10.html#(10.1)">10.1</a>&hairsp;).
+ </p>
+
+<!-- FIGURE --------------------------------------------------->
+<img width="600" alt="Cosine squared versus x";
+     style="margin-left :120px;
+            margin-top  : -2px;"
+      src="images/prop_kappa_phi_x.gif">
+<p style="margin-left:220px">
+    <i> Figure 11.1 : &ensp;
+       The overall thrust reduction factor
+       &kappa;<sub>&phi;</sub>&hairsp;(&hairsp;<i>X</i></sub>&hairsp;). 
+</i> </p>
+<!------------------------------------------------------------->
+
+<!-- SECTION -------------------------------------------------->
+
+<a name="11.2"></a>
+
+<h4> 11.2 &emsp; Thrust reduction and efficiency </h4>
+
+<p> With <i>&kappa;</i><sub>&phi;</sub> now known,
+ we can rewrite (11.2) as :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>C</mi> <mo>&hairsp;.&hairsp;</mo>
+  <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+
+</math>
+
+<td style="width:50px; text-align:right">                (11.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+which yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>C</mi>
+    
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+    <mrow> <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (11.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Substituting into (10.10) gives us
+ the overall momentum loss ratio and the overall efficiency
+ for the rotationally optimized propeller :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mn>&frac12;</mn> <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+    <mrow> <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> </mrow>
+ </mfrac>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (11.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Substituting this into (10.11) gives us
+ the new overall efficiency :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>η</mi> <mn>m</mn> </msub>
+  <mspace/> <mspace/> 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn> <mo>+</mo>
+      <mn>&frac12;&thinsp;</mn>
+      <mn>&hairsp;.&hairsp;</mn>
+      <mstyle displaystyle="true">
+      <mfrac>
+        <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+        <mrow> <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> </mrow>
+     </mfrac>
+   </mrow>
+  </mfrac> 
+
+</math> </td>
+
+<td style="width:50px; text-align:right">                (11.9)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<p> Comparing to (5.12) for the purely axial actuator disk,
+ the (&hairsp;optimized&hairsp;) rotational loss
+ makes the momentum loss of the propeller
+ go up by a factor of
+ 1<i>&hairsp;/&thinsp;&kappa;</i><sub>&phi;</sub>&hairsp;.
+</p>
+
+<!-- SECTION 11.3 --------------------------------------------->
+
+<a name="(11.10)"></a>
+
+<h4> 11.3 &emsp; From reduction to redistribution          </h4>
+
+<p> If we apply the <i>C</i> of (11.7)
+ to the <i>b</i>(<i>x</i>) of (10.5), we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+     <mrow>
+       <mi>T</mi> <mn>&thinsp;&prime;</mn>
+    </mrow>
+     <mrow>
+       <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+    </mrow>
+  </mfrac> 
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+  <mi>&phi;</mi>
+</math> </td>
+
+<td style="width:50px; text-align:right">                (11.10)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<a name="(11.11)"></a>
+
+<p> From (11.4) we know that <i>&kappa;</i><sub>&phi;</sub>
+ is the average of cos<sup>2</sup><i>&phi;</i>
+ over the prop disk,
+ so we can also interpret (11.10) as a redistribution
+ of the thrust along the span of the blade
+ for a given thrust <i>T</i>&thinsp;&prime;, and write :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo>&thinsp;.&thinsp;</mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+     <mrow>
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+  <mi>&phi;</mi>
+    </mrow>
+     <mrow>
+       <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+    </mrow>
+  </mfrac> 
+</math> </td>
+
+<td style="width:50px; text-align:right">                (11.11)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<a name="11.3"></a>
+
+<p> Figure 11.2 repeats figure
+<a href="prop_book_10.html#10.2">10.1</a>,
+ but this time for
+ cos<sup>2</sup><i>&phi;&thinsp;/&thinsp;&kappa;</i><sub>&phi;</sub>&hairsp;.
+ This normalizes the reduction factor
+ to an average of&nbsp;1 over the whole blade.
+ In other words,
+ it replaces the reduction by cos<sup>2</sup><i>&phi;</i> of (10.7)
+ by a slightly inflated version, which is a redistribution
+ around an average of 1.
+ The shapes in figure 11.2 all have the same unit thrust,
+ for their particular tip speed ratio <i>X</i>.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img width="580" alt="Cos2 normalized";
+     style="margin-left :120px;
+            margin-top  : -2px;"
+      src="images/prop_cos2_normalized_by_kappa_phi.gif">
+<p style="margin-left   : 190px;
+          margin-bottom :  12px">
+    <i> Figure 11.2 : &ensp;
+       The optimal induction for normalized overall thrust. 
+</i> </p>
+<!------------------------------------------------------------->
+
+<p> Figures 10.1 and 11.2 both show a memorable fact :
+ all rotationally optimal propellers are identical in shape.
+ The&nbsp;ones with lower tip speed ratio <i>X</i>
+ are just cut off shorter.
+</op>
+<p>&emsp;
+ Applying (11.11) to the light loading ring thrust
+ of  (7.16) yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <<mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo>.</mo>
+
+  <mi>m</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+     <mrow>
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+  <mi>&phi;</mi>
+    </mrow>
+     <mrow>
+       <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+    </mrow>
+  </mfrac> 
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+     <mrow>
+       <mn>2</mn> <mi>x</mi> 
+       <mn>&thinsp;.&thinsp;</mn>
+       <mn>d</mn> <mi>x</mi>
+    </mrow>
+     <mrow>
+       <msup> <mi>X</mi> <mn>2</mn> </msup>
+    </mrow>
+  </mfrac> 
+</math> </td>
+
+<td style="width:50px; text-align:right">                (11.12)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<!-- SECTION 11.4 --------------------------------------------->
+
+<!--
+<h4> 11.4 &emsp; 
+   The approximate inverse of the reduction                </h4>
+<p>
+TBW.
+</p>
+-->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

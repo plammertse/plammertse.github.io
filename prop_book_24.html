@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_24.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_23.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_25.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> VORTEX THEORY </i>     </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER -------------------------------------------------->
+
+<h2> 24 &emsp; Finite blade spacing                        </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 24.1 &emsp;
+     The propeller compared to a multiplane wing           </h4>
+
+<p> The previous chapter introduce the discrete
+ spiral horseshoe vortex,
+ but for calculation it assumed that the spirals were
+ "infinitely" tighly wound.
+ We now turn to the case of finite blade spacing.
+ Before we move to the actual spirals, we look briefly
+ at another simplified model.
+</p>
+<p>&emsp; 
+ The propeller is in some ways similar to
+ an infinite multiplane wing.
+ Figure 24.1 shows such a multiplane,
+ with a small but finite spacing between the wings.
+ It is reminiscent of the early "Venetian blind" multiplanes
+ of Horatio
+ <span style="font-variant: small-caps;">Phillips</span>,
+ although he had to stop at 120 decks for practical reasons.
+</p>
+
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:200px";
+     alt="Multiplane";
+     src="images/prop_multiplane_downwash.gif" >
+<p style="margin-left   : 160px;
+          margin-bottom : 12px;">
+    <i> Figure 24.1 : &ensp;
+               The downwash of an infinite multiplane wing. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ The tip vortices in the two vertical tip planes
+ form two side walls,
+ which separate the region of uniform down&shywash between them,
+ from the region of zero downwash outside.
+ There is a direct parallel with the almost uniform axial
+ in&shyduct&shyion inside the windings of a solenoid,
+ and the zero induction outside,
+ but  the math of the flat vortex wall is much simpler
+ for the case where the blade tips have finite spacing.
+</p>
+<p>&emsp;
+ We will not do the math here,
+ but the outcome for finite spacing is that the downwash
+ over most of the wing is basically a constant,
+ but at the tips there is a transitional region
+ with a sharp down and up vortex,
+ like in the finite wing tip of figure 23.4.
+ Setting the constraint of uniform downwash
+ across the span gives a flat inner region for the lift,
+ and a nearly elliptical tip.
+</p>
+<p>&emsp;
+ The shape is very similar to
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip function
+ of figure 21.6. XXXXXXXXXXXXXXXXXXX
+ This is not surprising, since
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip came from the flat plate model of figure 21.1,  XXXXXXXXXXXX
+ which is similar to the left or right half
+ of an infinite multiplane wing.
+ </p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 24.2 &emsp; Goldstein's solution                      </h4>
+
+<p> A physical propeller will not have
+ zero spacing between the spirals.
+ It will therefore not have the sharp step
+ in the axial induction from a uniform value
+ inside a region, to zero outside it,
+ like in the ideal solenoid,
+ or in the ideal multiplane wing.
+</p>
+<p>&emsp;
+ By 
+<span style="font-variant: small-caps;">Prandtl</span>'s
+ approximation,
+ we are used to the idea that with finite tip spacing
+ there will be tip loss, and that the optimal tip shape
+ will have a family likeness to
+ the elliptical tip of an optimal wing.
+</p>
+<p>&emsp;
+ Attempts were made quite early to find the optimal
+ lift distribution for the propeller
+ from the horseshoe spiral vortex model.
+ However, the math for the spiral vortices
+ proved harder than that for the straight line
+ tip vortices of the wing.
+ The axial induction from the spirals contains
+ modified ellipse terms,
+ which are notoriously hard to integrate.
+</p>
+<p>&emsp;
+ In the 1930's,
+ <span style="font-variant: small-caps;">Goldstein</span>
+ and others published the equations,
+ but before the age of digital computers these were
+ too tedious for everyday use.
+</p>
+<p>&emsp;
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip approximation remained the option of choice
+ in all design texts. 
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 24.3 &emsp; Lerbs's solution                          </h4>
+
+<p>
+ In the 1950's, the German ship propulsion engineer
+ <span style="font-variant: small-caps;">Lerbs</span>
+ published a very good approximate solution of
+<span style="font-variant: small-caps;">Goldstein</span> 's
+ equations.
+</p>
+<p>&emsp;
+ These equations were still complex for hand calculations,
+ but more amenable to computer use.
+ <span style="font-variant: small-caps;">Wrench</span> 
+ made a slight improvement to the approximation
+ and published a set of tables,
+ more detailed but otherwise identical to
+<span style="font-variant: small-caps;">Goldstein</span>'s.
+ Still being tables, they did not replace the
+ <span style="font-variant: small-caps;"> Prandtl</span> 
+ tip function in preliminary design
+ for quite some time.
+</p>
+<p>&emsp;
+ However,
+ <span style="font-variant: small-caps;">Lerbs</span>'s
+ and
+ <span style="font-variant: small-caps;">Wrench</span>'s
+ equations are simple for present day laptop computers.
+ Elsewhere in this website you will find simple
+ <span style="font-variant: small-caps;">Matlab</span> <sup>©</sup>
+ code which runs the whole calculation in a fraction of a second.
+</p>
+<p>&emsp;
+ We do not give a justification of
+ <span style="font-variant: small-caps;">Lerbs</span> 's
+ equation.
+ The story leading up to it would require a separate volume,
+ But we will give a feeling for its shape.
+ <span style="font-variant: small-caps;">Lerbs</span> 's
+ equation is the direct equivalent of
+ the wing tip vortex downwash (21..6),
+ but this time for the tip spiral, starting with the axial
+ propwash from a single tip spiral, and then
+ combining the <i>B</i> nested spirals
+ of a propeller with <i>B</i> blades.
+</p>
+<p>&emsp; 
+ <span style="font-variant: small-caps;">Lerbs</span> 
+ gave the axial induction on the blade lifting line
+ from <i>B</i> coaxial spiral vortices,
+ where <i>B</i> is the number of blades as usual.
+ To be precise, his equation gives the axial velocity
+ d<i>v</i> induced on the lifting line
+ at a radius <i>x</i><sub>w</sub>,
+ by the <i>B</i> spiral vortices of <i>combined</i> 
+ strength d<i>&Gamma;</i> at the radius <i>x</i><sub>t</sub>.
+</p>
+<p>&emsp;
+ This is the direct equivalent of (21..6)
+ for a single trailing vortex trailing from the wing,
+ except it gives the induction d<i>v</i> at the lifting line,
+ instead of d<i>w</i> in the far wake :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>v</mi>
+  <mn>&thinsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
+     <mi>B</mi>
+  <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>d</mn> <mi>&Gamma;</mi>
+      <mn>(</mn>
+       <msub> <mi>x</mi> <mn>t</mn> </msub>
+      <mn>)</mn>
+   </mrow>
+   <mn>4&pi;</mn>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+      <mi>&Omega;</mi>
+      <mi>V</mi>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mi>Z</mi>
+  <mn>&hairsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
+     <mi>B</mi>
+  <mn>)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.1)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> In what follows, we will use the induction
+ <i>w</i>in the far wake.
+ From symmetry, this is exactly twice the value <i>v</i> 
+ at the disk plane in the propeller plane. We multiply by 2.
+</p>
+<p> 
+ At the same time we prepare for a fully 
+ non-dimensional expression by dividing by <i>V</i>,
+ and multiplying the right hand side
+ top and bottom by <i>R</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>d</mn> <mi>w</mi>
+      <mn>&thinsp;(</mn>
+         <msub> <mi>x</mi> <mn>t</mn> </msub>
+           <mn>&hairsp;,&thinsp;</mn>
+         <msub> <mi>x</mi> <mn>w</mn> </msub>
+           <mn>&hairsp;,&thinsp;</mn>
+         <mi>B</mi>
+      <mn>)</mn>
+    </mrow>
+    <mi>V</mi>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>d</mn> <mi>&Gamma;</mi>
+      <mn>(</mn>
+       <msub> <mi>x</mi> <mn>t</mn> </msub>
+      <mn>)</mn>
+   </mrow>
+    <mrow>
+      <mn>2&pi;</mn> <mi>R</mi> <mo>.</mo> <mi>V</mi>
+   </mrow>
+  </mfrac>
+
+  <mo>&thinsp;.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+      <mrow> <mi>&Omega;</mi> <mi>R</mi> </mrow>
+      <mi>V</mi>
+  </mfrac>
+
+  <mo>.&thinsp;</mo>
+
+  <mi>Z</mi>
+  <mn>&hairsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <mi>B</mi>
+  <mn>&hairsp;)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.2)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The radius coordinates <i>x</i><sub>w</sub> and
+ <i>x</i><sub>t</sub> are already non-dimensional in
+ <span style="font-variant: small-caps;">Lerbs</span>,
+ by the same definition of
+ <i>x</i> = <i>&Omega;&hairsp;r&thinsp;/&thinsp;V</i>
+ taht we are using since (2.10).
+ This gives 
+  <span style="font-variant: small-caps;">Lerbs</span>'s
+ equation for <i>Z</i> the information it needs on the
+ spiral angle <i>&phi;</i> of the trailing vortex
+ at <i>x</i><sub>t</sub>.
+ Applying the <i>&Gamma;</i>&thinsp;&prime;
+ definition of (23.5) makes
+ <span style="font-variant: small-caps;">Lerbs</span>'s
+ equation fully non-dimensional :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow>
+      <mn>d</mn> <mi>w</mi>
+      <mn>&thinsp;(</mn>
+         <msub> <mi>x</mi> <mn>t</mn> </msub>
+           <mn>&hairsp;,&thinsp;</mn>
+         <msub> <mi>x</mi> <mn>w</mn> </msub>
+           <mn>&hairsp;,&thinsp;</mn>
+         <mi>B</mi>
+      <mn>)</mn>
+    </mrow>
+    <mi>V</mi>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>d</mn> <mi>&Gamma;</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo>&thinsp;.</mo>
+
+  <mi>X</mi>
+
+  <mo>.&thinsp;</mo>
+
+  <mi>Z</mi>
+  <mn>&hairsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <mi>B</mi>
+  <mn>&hairsp;)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.3)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The role of the tip speed ratio <i>X</i>
+ was already discussed in (23.12).
+</p>
+<p>&emsp; 
+ The function <i>Z</i>&hairsp;(&hairsp;<i>x</i><sub>t</sub>,
+ &hairsp;<i>x</i><sub>w</sub>, <i>B</i>&hairsp;) describes
+ the transition between the region  of uniform induction inside
+ the trailing spirals,
+  and of zero induction outside it.
+ Its value is non-dimensional.
+ The basic value of the gain <i>Z</i> inside the spiral is 1,
+ and the basic value outside it is zero.
+ In between, the value of <i>Z</i> describes
+ the up and down sweep of the induction
+ as <i>x</i><sub>w</sub> passes the trailing vortex.
+</p>
+<p>&emsp;
+ Figure 24.2 shows the value of <i>Z</i>
+ for a two bladed propeller, at a radius of <i>X</i> = 3.5,
+ which would be the ring at a typical 0.7<i>R</i>
+ for a propeller of a typical tip speed ratio <i>X</i> = 5.
+</p>
+
+<span style="color:darkgrey">
+
+<p>&emsp;&emsp;<i> TODO
+ Discuss band of 2&pi;/B à la Prandtl. </i>
+</p>
+
+</span>
+
+<p>&emsp;
+ Having said that, the tip speed ratio is irrelevant to the
+ action of any ring inside it.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="500";
+     style="margin-left:160px";
+     alt="Multiplane";
+     src="images/prop_lerbs_induction.gif" >
+<p style="margin-left   : 120px;
+          margin-bottom : 12px;">
+    <i> Figure 24.2 : &ensp;
+      Lerbs's axial induction in x, from B spiral vortices. </i>
+</p>
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ Like in
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ approximation, the effects of <i>B</i> and those of <i>x</i>
+ are very similar.
+ Both act on the axial spacing between successive spirals,
+ though in a geometrically slightly different way.
+</p>
+<p>&emsp;
+ When the spiral location is further out from the propeller axis,
+ the transition occupies a smaller part of the blade length,
+ and the induction factor inside the spiral becomes closer to
+ a flat value of 1.
+</p>
+<p>&emsp;
+ This is an essential difference with the induction
+ of the straight line vortex in the wing,
+ which has zero tails to both center and tip.
+ The function <i>Z</i> is in fact more closely related
+ to the multiplane wing of figure 24.1,
+ which also has a uniform inner region. 
+
+<!--
+	Symmetry. No downflow from the other
+        bound vortices on the blade, from symmetry. 
+	Interaction between the spirals and the bound vortices ??
+	Zero at origin. Thin lines for larger B.
+-->
+</p>
+
+<!-- SECTION --------------------------------------------------->
+
+<h4> 24.3 &emsp;
+            The full cosine distribution for the propeller </h4>
+
+<p> We now use
+  <span style="font-variant: small-caps;">Lerbs</span>'s
+ downwash equation in a discrete lifting line theory
+ for the propeller,
+ in exactly the same way as we did before for the wing.
+</p>
+<p>&emsp;
+ We will use in the propeller the same half circle distribution
+ of discrete vortices that we  used in the wing.
+</p>
+<p>&emsp;
+ This is not immediately obvious,
+ since the baseline thrust distribution
+ in the propeller is not an ellipse.
+ A quarter circle cosine distribution works
+ almost as well here,
+ and neither solution is exact.
+</p>
+<p>&emsp;
+ It is even tempting to thin kthat the core vortex
+ is not a "true"
+ tip vortex, since it does not induce any axial induction,
+ only rotation, but that is a bit too rash.
+</p>
+<p>&emsp;  
+ Failing a simple shape for the optimal lift distribution
+ in the propeller, we stick to the half circle from core to tip.
+ By good fortune, we find that it gives nearly perfect results.
+</p>
+<p>&emsp;
+ Figure 24.3 is the equivalent for the propeller,
+ of figure 22.3 for the wing.
+ Unlike the x<i>x</i> range in the wing which is symmetrical 
+ around&nbdp;0,  with
+ <i>x</i>&nbsp;=&nbsp;<i>&Omega;&hairsp;r&hairsp;/&hairsp;V</i>
+ the <i>x</i> coordinate in the propeller runs from 0 to <i>X</i>.
+ The equivalent of (22.3) and (22.4) is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table>
+<tr> <td>
+<math>
+  <mi>&theta;</mi>
+
+  <mo>=</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>0&hairsp;.&thinsp;.&hairsp;N</mn> 
+    <mn>N</mn> 
+ </mfrac>
+  <mo>.</mo>
+  <mn>&pi;</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:6px">
+<tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>t</mn> </msub>
+
+  <mo>=</mo>
+
+  <mi>X</mi> <mo>.</mo>
+  <mn>(&hairsp;</mn>
+    <mn>&frac12;</mn> <mo>+</mo> <mn>&frac12;</mn>
+    <mo>cos</mo> <mi>&theta;</mi>
+  <mn>&hairsp;)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">  (24.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This places the first and the last trailing vortex
+ at the tip
+ (&hairsp;<i>x</i><sub>t</sub> = <i>X</i>&hairsp;), c.q.
+ at the core (&hairsp;<i>x</i><sub>t</sub> = 0&hairsp;).
+</p>
+<p> Likewise, the equivalent of (22.5) and (22.6) is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table>
+<tr> <td>
+<math>
+  <mi>&phi;</mi>
+
+  <mo>=</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>&frac12&thinsp;.&thinsp;.&hairsp;
+      (&hairsp;N&hairsp;-&hairsp;&frac12;&hairsp;)</mn> 
+    <mn>N</mn> 
+ </mfrac>
+  <mo>.</mo>
+  <mn>&pi;</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:6px">
+<tr> <td>
+<math>
+  <msub> <mi>x</mi> <mn>w</mn> </msub>
+
+  <mo>=</mo>
+
+  <msub> <mi>x</mi> <mn>G</mn> </msub>
+
+  <mo>=</mo>
+
+  <mi>X</mi> <mo>.</mo>
+  <mn>(&hairsp;</mn>
+    <mn>&frac12;</mn> <mo>+</mo> <mn>&frac12;</mn>
+    <mo>cos</mo> <mi>&phi;</mi>
+  <mn>&hairsp;)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This places the downwash (&hairsp;and bound vortex&hairsp;)
+ control points halfway between
+ the trailing vortex radius points, giving N control points
+ between N+1 traling vortices. 
+</p>
+<p>&emsp;
+ The <i>ordering</i> of the points is from the tip
+ at <i>x</i> = <i>X</i>, to the root at <i>x</i> = 0.
+ This "reverse" order makes no difference to the equations,
+ and it allows us later to build up the bound vortex
+ starting from a guaranteed value of zero at the free tip end.
+</p>
+
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:220px";
+     alt="Multiplane";
+     src="images/prop_full_cosine_blade.gif" >
+<p style="margin-left   : 200px;
+          margin-bottom : 12px;">
+    <i> Figure 24.2 : &ensp;
+         Full cosine distribution in the propeller. </i>
+</p>
+<!------------------------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 24.5 &emsp; The transfer matrix from vortex pattern
+ to downwash pattern </h4>
+
+<p> Like in (22.5) for the wing we can put the transfer from
+ the trailing vortex radius terms to the downwash radius terms
+into an influence matrix <i>A</i> :
+</p>
+<p>&emsp;&emsp; <i> Define the step from (24.1..3) to A </i> </p>
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>A</mi>
+  <mn>&thinsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub>
+  <mn>&thinsp;)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mn>2&pi;</mn>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mi>Z</mi>
+  <mn>&thinsp;(</mn>
+     <msub> <mi>x</mi> <mn>t</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <msub> <mi>x</mi> <mn>w</mn> </msub>
+       <mn>&hairsp;,&thinsp;</mn>
+     <mi>B</mi>
+  <mn>)</mn>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (24.8)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Similar to (22.7), the transfer from the trailing vortices
+ to the axial induction values in between them is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">        <!-- !!!!!!!!!!!!!!! -->
+
+  <mi>w</b></mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>A</mi>
+
+  <mo>.</mo>
+
+  <mn>d</mn><mi>&Gamma;</mi>
+ </mstyle>
+
+</math>
+
+<td style="width:50px; text-align:right">                (24.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Like in (22.10), the reverse path is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">
+
+  <mn>d</mn><mi>&Gamma;</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>A</mi>
+
+  <mo>&hairsp;\&hairsp;</mo>
+
+  <mi>w</b></mi>
+ </mstyle>
+</math>
+
+<td style="width:50px; text-align:right">               (24.10)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The basic matrix <b><i>A</i></b> has the dimensions 
+   (N+1) x N.
+ There are (N+1) trailing vortices d<i>Γ</i> for N
+ downwash locations.
+</p>
+<p>&emsp;
+ We can call the condition (22.8) on the total trailing vorticity
+ to the rescue again to increase <b><i>A</i></b>
+ to (N+1) x (N+1) before inverting it.
+</p>
+<p>&emsp;
+ However, in the propeller we have the immediate alternative of
+ reducing the order of <b><i>A</i></b>
+ to N&nbsp;x&nbsp;N before inverting it,
+ by leaving out the last column.
+ This column contains only zeros.
+ It gives the axial influence of the root vortex at
+ &theta; = &pi;,  <i>x</i><sub>t</sub>&nbsp;=&nbsp;0.
+</p>
+<p>&emsp;
+ The root vortex is not a true spiral.
+ It is just a straight line, coincidiong with the propeller axis.
+ Since it points straight back, its induction, if any,
+ is purely tangential.
+ In other words, the root vortex and the axial induction
+ do not "see" each other,
+ and they cannot be derived from each other.
+</p>
+<p>&emsp;
+ Omitting the last column of the matrix <b><i>A</i></b>
+ leaves only N trailing vortices, to match
+ with N desired downwash values.
+ The number of equations matches the number of unknowns.
+ After solving (24.8) for the remaining
+ N-vector <b>d<i>&Gamma;</i></b>
+ from an N-vector <b><i>w</i></b> for the desired
+ downwash distribution, we can later find
+ the root vortex separately by :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn>
+    <msub> <mi>&Gamma;</mi> <mn>N</mn> </msub>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msubsup> <mo>&sum;</mo> <mn>0</mn> <mn>N-1</mn> </msubsup>
+  <mn>d</mn>
+    <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+
+</math>
+
+<td style="width:50px; text-align:right">               (24.11)
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+The root vortex value is redundant.
+ It is not needed in finding either <b>d<i>&Gamma;</i></b>,
+ <b><i>&Gamma;</i></b>, or <b><i>w</i></b>.
+</p>
+<p>&emsp;
+ Figure 24.4 shows the two options in the matrix calculation.
+ We have a choice of leaving off the right hand column of zeros
+ ( shown in red ), or keeping it in
+ and adding the bottom row of ones, shown yellow,
+ like we did in figure 22.5 for the wing.
+ The easiest option is to use only the grey
+ N&nbsp;x&nbsp;N part
+ of the matrix equation.
+</p>
+
+<!-- FIGURE  -------------------------------------------------->
+<img  width="400";
+     style="margin-left:220px";
+     alt="Multiplane";
+     src="images/prop_matrix_N_N.gif" >
+<p style="margin-left   : 220px;
+          margin-bottom : 12px;">
+    <i> Figure 24.4 : &ensp;
+         The transfer matrix <b>A</b> in the propeller. </i>
+</p>
+<!------------------------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 24.6 &emsp;
+   Finding the bound vortex from the trailing vortices     </h4>
+
+<p> When the trailing vortices are known, the bound vortex
+ is built up in the same way as for the wing in (22.12) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&Gamma;</mi> <mn>k+1</mn> </msub>
+  <mspace/> <mo>=</mo> <mspace/>
+  <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+  <mo>+</mo>
+  <mn>d</mn> <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (24.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The bound vortex outside a free blade tip is zero.
+ For a free tip, (24.10) starts with
+ <i>&Gamma;</i><sub>0</sub> = 0
+ at <i>x</i><sub>G</sub> = <i>X</i>.
+<br> We will discuss the ducted propeller later.
+</p>
+<p>&emsp;
+ The first interpolated value is
+ <i>&Gamma;</i><sub>1</sub> =
+ d<i>&Gamma;</i><sub>0</sub>&hairsp;.
+ The cumulative sum continues to k = N,
+ where the root vortex (24.11) brings <i>&Gamma;</i> back to
+ <i>&Gamma;</i><sub>N+1</sub> = 0, at
+ <i>x</i><sub>G</sub> = 0.
+</p>
+<p>&emsp;
+ We will not need the zeros of the bound vortex
+ at the core and tip
+ to find the overall thrust.
+ We only need the interpolated values
+ <i>&Gamma;</i><sub>1</sub>
+ . . <i>&Gamma;</i><sub>N</sub>&thinsp;.
+</p>
+
+<!-- SECTION --------------------------------------------------->
+
+<h4> 24.7 &emsp; 
+         Overall thrust : the integral of the bound vortex </h4>
+
+<p> We find the average value of 
+ <i>&Gamma;&thinsp;.&thinsp;X</i>
+ in the same way as the wing lift in (22.XXXXXXXXXX), by summing
+ over the staircase graph of <i>&Gamma;</i> versus <i>x</i> :
+</p>
+
+<span style="color:darkgrey">
+
+<p> <i> &emsp;  &emsp; TODO  &emsp;
+ Fix the Gamma . X and the thrust. 
+</i> </p>
+
+</span>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>  <mo>.</mo> 
+
+  <msubsup> <mo>&sum;</mo> <mn>1</mn> <mn>N</mn> </msubsup>
+
+  <mn>d</mn>   <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+
+   <mo>.</mo> 
+
+  <mn>[&nbsp;</mn>
+    <msub> <mi>x</mi> <mn>t</mn> </msub> 
+       <mn>(&hairsp;k&hairsp;)</mn>
+      <mo>&minus;</mo>
+      <msub> <mi>x</mi> <mn>t</mn> </msub> 
+        <mn>(&hairsp;k-1&hairsp;)</mn>
+  <mn>&nbsp;]</mn>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (24.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

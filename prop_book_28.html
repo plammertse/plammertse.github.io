@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_28.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-18  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_27.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_29.html">      Next  &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> CHORDS </i>           </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER -------------------------------------------------->
+
+<!-- <span style="color:darkgrey">   -->
+
+<h2> 28 &emsp; Blade chords with tip loss </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 28.1 &emsp; The tip effect on the blade chord </h4>
+
+<p> Equation 
+  (&hairsp;<a href="prop_book_27.html#27.7">27.19</a>&hairsp;)
+ gave the blade chord for the
+ rotationally optimized <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
+  of
+  (&hairsp;<a href="prop_book_11.html#(11.10)">11.10</a>&hairsp;),
+combined with the uniform mass flow
+ (&hairsp;<a href="prop_book_07.html#(7.7)">7.7</a>&hairsp;),
+ giving the local thrust d<i>T</i> of (27.1).
+</p>
+<p>&emsp;
+ With tip loss, the mass flow is no longer uniform. 
+ Towards the tip it is reduced by a local factor of
+ <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>),
+de&shyfined by
+(&hairsp;<a href="prop_book_17.html#17.3">17.3</a>&hairsp;).
+For a given overall thrust, the total <i>mass</i> reduction
+ is compensated for by a uniform <i>induction</i>
+ increase <nobr>
+(&hairsp;<a href="prop_book_17.html#17.5">17.10</a>&hairsp;).</nobr>
+ The resulting thrust distribution is
+(&hairsp;<a href="prop_book_17.html#17.6">17.14</a>&hairsp;).
+</p><p>&emsp;
+ This changes the rotationally optimal chord distribution
+ for a given overall thrust from 
+(&hairsp;<a href="prop_book_27.html#27.7">27.19</a>&hairsp;)
+ into :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>B</mi> <mo>.</mo> 
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>c</mi>
+    <mi>R</mi>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+   <mn>4&pi;</mn>
+   <msub><mi>C</mi><mn>L</mn></msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+    <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
+    <msub><mi>&kappa;</mi> <mn>G</mn> </msub>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>>
+    <mi>X</mi>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+  <mo> . </mo>
+  <mn>sin&thinsp;</mn> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (28.1)
+</td> </tr> </table>
+
+<p> Figure 28.1 shows the result.
+ It is the direct counterpart of figure
+ <a href="prop_book_27.html#27.8">27.3</a>
+ in terms of thrust and parameter variation,
+ only this time including the tip loss.
+ The exact solution is drawn in solid lines,
+ and <span style="font-variant: small-caps;"> Prandtl</span>'s
+approximation in thin lines.
+ The differences are limited to the hub region.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="520";
+     style="margin-left : 160px;
+            margin-top  :  8px";
+     alt="Chords with tips";
+     src="images/prop_chords_with_tips_separate.gif" >
+
+<p style="margin-left   :160px;
+          margin-bottom : 12px;">
+    <i> Figure 28.1 : &ensp;
+            Optimal chords with tip loss. <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Two blades, thrust T&thinsp;' = 0.1,
+        C<sub>L</sub> = 0.4. </i>
+</p> 
+<!------------------------------------------------------------->
+
+<h4> 28.2 &emsp; Blade shape variation with X and B </h4>
+
+<p> Chapter 27 explored the basic parameters 
+influencing the blade chord.
+ It gave a simple approximation
+ for the blade chord at 0.7 R in (27.24).
+ This approximation still holds if we replace
+ <i>&kappa;</i><sub>&phi;</sub> by 
+<i>&kappa;</i><sub>G</sub>,
+ and take into account that the correction by
+    <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>&hairsp;) 
+is usually small at 0.7<i>R</i>.
+</p>
+<p>&emsp;
+ The chord at 0.7<i>R</i> varies with 
+   1<i>&thinsp;/&thinsp;X</i><sup>&hairsp;2</sup>,
+ but the largest chord width varies only by 
+   1<i>&thinsp;/&thinsp;X</i>.
+ This means that there is a systematic variation with
+  1<i>&thinsp;/&thinsp;X</i> in the taper ratio
+  between the widest point and the tip region.
+</p>
+<p>&emsp; Figure 28.2 shows this variation.
+ The tip speed ratio <i>X</i> decreases
+ when moving from left to right between the pictures.
+ The variation in taper ratio is most visible
+ in the top row, for almost infinitely many blades.
+ The location of the widest point at
+ <i>r&thinsp;/&thinsp;R</i> = √2<i>&thinsp;/&thinsp;X</i>
+ is indicated by circle markers.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="700";
+     style="margin-left : 100px;
+            margin-top  :  0px";
+     alt="Chords with tips";
+     src="images/prop_chords_matrix.gif" >
+
+<p style="margin-left   :220px;
+          margin-bottom : 12px;">
+    <i> Figure 28.2 : &ensp;
+            Chord shapes for varying X and B. </i>
+</p> 
+<!------------------------------------------------------------->
+
+<p> Moving along the vertical axis, the plots show the effect
+ of varying the number of blades.
+</p>
+<p>&emsp;
+ Figure 19.7 showed the  relative extent
+   Δ<i>r&thinsp;/&thinsp;R</i> =
+  2&hairsp;&pi;&thinsp;/&thinsp;</i>
+ (<i>&hairsp;B&thinsp;.&thinsp; X&hairsp;</i>) of
+<span style="font-variant: small-caps;"> Prandtl</span>'s tip. 
+</p>
+<p>&emsp;
+For <i>X</i> = 2.5, <i>B</i> = 2 the whole blade
+ is under the influence of the tip function.
+ For our standard example of 
+ <i>X</i>&nbsp;=&nbsp;5, <i>B</i>&nbsp;=&nbsp;2
+  it extends over
+   2π&thinsp;/&thinsp;( 2 * 5 ) = 0.6&nbsp;<i>X</i>,
+ which is more than half of the blade length.
+</p>
+<p>&emsp;
+ Blades with high <i>X</i> are shaped
+ like tapered, pointed saddles.
+</p>
+<p>&emsp;
+ Blades with low <i>X</i> and low <i>B</i> are shaped
+ like a rounded paddle, or a spoon.
+</p>
+<p>&emsp;
+ The blades in figure 28.2 were scaled
+ to roughly the same blade width, 
+to  show the shape to good advan&shytage.
+ In reality, the variation in overall width with
+ 1&thinsp;<i>/&thinsp;X</i><sup>&hairsp;2</sup>
+ as shown in figure 20.2,
+ completely dominates the shape effect.
+</p>
+
+<!--
+
+<h4> 28.4 &emsp; Tip sweepback </h4>
+
+<p> The increase of the lift force on a wing section 
+with angle of attack acts at the quarter chord point. 
+ The classical planform of most wings,
+ and many propeller blades therefore has
+ a straight centerline at this percentage of chord.
+</p>
+<p>&emsp;
+ Even more than wings though, propeller blade centerlines
+ are subject to practical constraints such as bending moments,
+ centrifugal forces, torsion, and aero-elasticity.
+ And from the beginning there has also been a school of thought,
+ maybe for reasons of fabrication,
+ to keep the trailing edge straight.
+ This typically gives the leading edges sweepback near the tips.
+</p>
+<p>&emsp;
+ The same straight trailing edges are seen traditionally
+ in aircraft fins and stabilizers,
+ and today in aircraft wings as well.
+ There is some evidence that a straight trailing edge
+ gives a flatter beginning of the wake sheet,
+ and slightly less induced drag,
+ than the 25% chord "straight" wing.
+</p>
+<p>&emsp;
+ In propellers, there may be a secondary advantage
+ to the straight trailing edge.
+ Even at moderate flying speeds,
+ the blade tips can approach high Mach numbers
+ with attendant noise and drag rise.
+ Swept-back tips may help to alleviate these problems.
+ In ships, they may help to shed cavitation bubbles.
+</p>
+<p>&emsp;
+ A simple, though not necessarily optimal way
+ to achieve some tip sweepback is by applying
+ the tip reduction <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ one-sided from the trailing edge,
+ instead of symmetrically around the centerline.
+ This keeps the trailing edge as it was
+ before the tip reduction, like in figure 27.3.
+</p>
+<p>&emsp;
+ The exact solution does not give
+ <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ as a separate factor,
+ so we will use
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ approximation
+  <i>F</i>&thinsp;&prime;&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ instead. With 
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ approximation, the chord comes from ( XXXXXXXXX ). 
+</p>
+<p>&emsp;
+Leaving out F '(x) gives : 
+</p>
+
+<! -- EQUATION ------------------------------------------------- >
+<table> <tr> <td>
+<math>
+
+  <mi>B</mi> <mo>.</mo> <mi>c</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+   <mn>4&pi;</mn>
+   <msub><mi>C</mi><mn>L</mn></msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+    <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
+    <msub><mi>&kappa;</mi>
+      <mn>G&prime;</mn> </msub>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+  <mo> . </mo>
+  <mn>sin&thinsp;</mn> <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (28.2)
+</td> </tr> </table>
+
+</td> </tr> </table>
+<! -- END EQUATION --------------------------------------------- >
+
+<p> This is a larger outline than (28.1), 
+ with a larger thrust, and with a straight cropped tip
+ as in figure 27.3.
+ Before sweepback, it will envelop the shape (28.2)
+ as reduced by <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
+ c.q. <i>F</i>&thinsp;&prime;&thinsp;(&thinsp;<i>x</i>&thinsp;).
+</p>
+<p>&emsp;
+ The
+ <span style="font-variant: small-caps;"> Prandtl</span>
+ tip will modify the chords by a factor of
+ F'(x). 
+The difference with (28.2) will be :
+</p>
+<p>&emsp;
+	Δ(B .c^' )=   ( F(x)-1 )  .   4 π/C_L .  T^'/κ_( G^' )   〖.cos〗^2 ϕ . sin⁡ϕ	(28.3) 
+</p>
+<p>&emsp;
+Until now, we applied this difference symmetrically
+ before and aft of the centerline.
+ This will sweep the leading edge back by half,
+ and the trailing edge forward by half.
+ If we do not wish the trailing edge to sweep forward,
+ then we will have to sweep back the centerline.
+</p>
+<p>&emsp;
+ We will call the sweepback Δ y', defined as positive to the rear :
+</p>
+<p>&emsp;
+	〖Δ y〗^'=   ½ .( 1-F'(x) )  .  1/B  .  4 π/C_L .  T^'/κ_( G^' )   〖.cos〗^2 ϕ . sin⁡ϕ	(28.4) 
+</p>
+<p> Figure 28.3 shows the result.
+ The swept centerline is shown in grey dashes.
+ It can be applied to
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ ap&shyprox&shyimation, but also to the exact solution,
+ since the two are very similar near the tip.
+ The solid line shows the exact vortex solution
+ after applying the sweepback.
+ The dashed line shows the "envelope" (28.2)
+  before the tip reduction.
+</p>
+
+<! -- FIGURE --------------------------------------------------- >
+<img  width="600";
+     style="margin-left : 100px;
+            margin-top  :  0px";
+     alt="Chords with tips";
+     src="images/prop_chord_sweepback.gif" >
+
+<p style="margin-left   :180px;
+          margin-bottom : 12px;">
+    <i> Figure 28.3 : &ensp;
+            Sweepback (28.4), applied to the exact solution.<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+ Envelope  (28.2) shown in red dashes. </i>
+</p> 
+<! ------------------------------------------------------------- >
+
+-->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

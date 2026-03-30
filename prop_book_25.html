@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+ file    : prop_book_25.html
+ purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+   history :
+     2025-12-31  new
+---------------------------------------------------------------> 
+
+<!- FORMATTING ------------------------------------------------>
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<! --NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                Home      </a> </li>
+  <li> <a href="prop_book_24.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_26.html">  Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> VORTEX THEORY </i>     </p>
+<hr style="margin : 0 0;">
+
+
+<!-- CHAPTER -------------------------------------------------->
+
+<h2> 25 &emsp; Applying the Lerbs vortex solution          </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 25.1 &emsp; The constant downwash propeller           </h4>
+
+<p> In the wing, we found that the optimal downwash distribution
+ is a constant.
+ For the propeller, we know that this is not the case.
+ The optimum propwash (&hairsp;more precisely, the optimal
+ axial induction &hairsp;) follows
+ <span style="font-variant: small-caps;">Betz</span>'s
+ cos<sup>2</sup><i>&phi;</i> pattern
+ for minimal rotational loss,
+ possibly modified by an extra linear term
+ for minimal viscous loss.
+</p>
+<p>&emsp;
+ However, it is interesting first to explore the
+ <span style="font-variant: small-caps;">Lerbs</span>
+ solution and the tip loss, for a propeller of constant
+ prop&shywash without the
+ <span style="font-variant: small-caps;">Betz</span>,
+ correction. This makes for a more direct comparison 
+ to the (&hairsp;multiplane&hairsp;) wing, and in fact to
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ approximation for the tip loss. 
+</p>
+<p>&emsp;
+ For a propeller of constant propwash, all we have to do
+ is apply (24.8) to a column vector of 1's
+ representing the (&hairsp;discretized&hairsp;)
+ desired propwash :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle style="font-weight: bold;">
+  <mi>w</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>1</mn>
+ </mstyle>
+</math>
+
+<td style="width:50px; text-align:right">                (25.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Here "<b>1</b>" is the vector of ones
+ of the appropriate length,
+ possibly extended with the extra zero from figure 24.4.
+</p>
+<p>&emsp;
+ Figure 25.1 shows the result for our standard example
+ of <i>B</i>&nbsp;=&nbsp;2, <i>X</i>&nbsp;=&nbsp;5.
+ The graph is very similar to figure 21.4 for the
+ <span style="font-variant: small-caps;">Prandtl</span>
+ tip for the same case. 
+</p>
+
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="500";
+     style="margin-left:160px";
+     alt="Lerbs uniform";
+     src="images/prop_lerbs_B2_X5_uniform.gif" >
+<p style="margin-left   : 120px;
+          margin-bottom : 12px;">
+    <i> Figure 25.1 : &ensp;
+                 The Lerbs solution for uniform induction.
+ B = 2,   X = 5, N = 1000. Crosses for N = 6.
+ </i>
+</p>
+<!-------------------------------------------------------------->
+
+<p> Like in the wing, the outcomes for N = 6, or even N = 4,
+ are already nearly on the line for "infinitely many" points.
+ This is not proof that the result is accurate,
+ but it does give some confidence.
+</p>
+<p>&emsp;
+ Figure 25.2 shows the comparison to
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip for a few other values of the tip speed ratio X.
+ The only real difference is near the root.
+ The
+ <span style="font-variant: small-caps;">Lerbs</span>
+ solution always goes to 1 there.
+</p>
+<p>&emsp;
+ Since the induction is a constant, by
+  <span style="font-variant: small-caps;">Newton</span>'s
+ law of (4.7) the effective mass distribution has the same shape
+ as the thrust distribution.
+ This fits with our earlier interpretation of
+   <span style="font-variant: small-caps;">Prandtl</span>'s
+ tip approximation as a mass factor.
+</p>
+<p>&emsp;
+ The result thus matches
+  <span style="font-variant: small-caps;">Prandtl</span>'s
+ model very nicely.
+ We will see in the next section
+ that this likeness is lost near the root of the blade,
+ as soon as we apply
+  <span style="font-variant: small-caps;">Betz</span>'s 
+ cos<sup>2</sup><i>&phi;</i> condition for minimal rotational loss.
+</p>
+
+<!-- FIGURE -------------------------------------------------->
+<img  width="700";
+     style="margin-left : 60px";
+     alt="Lerbs Prandtl";
+     src="images/prop_lerbs_prandtl_range.gif" >
+<p style="margin-left   : 80px;
+          margin-bottom : 12px;">
+    <i> Figure 25.1 : &ensp;
+       The Lerbs solution for uniform induction
+  compared to Prandtl (dashed). <br>
+     &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+  Also compare to Prandtl figure 21.6.
+ </i>
+</p>
+<!------------------------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 25.2 &emsp; A possible application to wind turbines  </h4>
+
+<p> The case of constant induction may  or may not
+ be of interest in wind turbines.
+</p>
+<p>&emsp;
+ In windmills, a different 
+  <span style="font-variant: small-caps;">Betz</span>
+ optimum applies,  which has nothing to do with rotation.
+ This "other" 
+  <span style="font-variant: small-caps;">Betz</span>
+ condition states that the actuator disk must reduce the incoming
+ wind velocity to &frac13; of its original value,
+ for maximum energy extraction.
+ If we assume that this also holds for every individual ring
+ of the rotor disk, then this is in fact
+ a condition of constant induction.
+</p>
+<p>&emsp;
+ There will be less efficiency near the center,
+ but it is not clear that it would be possible
+ to move thrust away from this region towards
+ more optimal, outboard radii.
+</p>
+<p>&emsp;
+ The tip "loss" however,
+ and therefore the optimal elliptical tip shape,
+ is the same in the wind turbine as it is for the propeller,
+ since it is not a loss as such,
+ but only a factor on the mass flow that receives
+ the optimal induction. And this is no different in a windmill
+ than it is in a propeller.
+</p>
+<p>&emsp;
+ This would seem to indicate that unlike propellers,
+ optimal wind turbines should have a concentrated root vortex.
+ In practice, keeping a finite thrust right down to the core
+ would lead to infinite blade chords there,
+ and so the discussion may be of academic interest only.
+ At any rate, the main theoretical issue in the wind turbine
+ is the extremely high loading, which leads to radial flows
+ and pressure gradients and massive wake expansion
+ (&hairsp;the opposite of the wake contraction in a propeller,
+ which are not covered in the present text.
+</p>
+<p>&emsp;
+ The other difference with the propeller is
+ that the viscous loss of (16.8) is upside-down in the windmill
+ (&hairsp;as it is in a backdriven leadscrew&hairsp;),
+ and therefore the "self locking" region in figure 16.3
+ is at the other end of the graph. It is in the tip region
+ near <i>&phi;</i>&nbsp;=&nbsp;0&deg;, and not at the root
+ near <i>&phi;</i>&nbsp;=&nbsp;90&deg;.
+ Pitch angles less than the glide ratio of the blade section
+ will give negative torque near the tip.
+</p>
+<p>&emsp;
+ This makes the optimal tip speed ratio of the windmill
+ smaller than that of the propeller.
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 25.3 &emsp; The rotationally optimal propeller </h4>
+
+<p>
+We now apply the discrete vortex solution to the rotationally
+ optimal propeller.
+ This is a simple matter of applying (24.8) to
+ the rotationally optimal distribution for the axial induction : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>w</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msup> <mo>cos</mo> <mn>2</mn> </msup> <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (25.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+This <i>&phi;</i> is not the cosine parameter of (24.5),
+ but the local pitch angle of (2.7).
+</p>
+
+<span style="color:darkgrey">
+
+<p> <i>&emsp;&emsp;&emsp; TODO &emsp; &emsp;&emsp; Transform to
+    x<sub>w</sub> to avoid <i>&phi;</i>.
+</i> </p>
+
+</span>
+
+<p>&emsp;
+ Figure 25.3 shows the result for our standard example
+ of <i>B</i>&nbsp;=&nbsp;2, <i>X</i>&nbsp;=&nbsp;5.
+ This the equivalent of the combination of 
+ the cos<sup>2</sup><i>&hairsp;&phi;</i> distribution with 
+ <span style="font-variant: small-caps;">Prandtl</span>'s
+  tip in figure 22.2.
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>T</mi>
+    <mi>w</mi>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (25.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="500";
+     style="margin-left:160px";
+     alt="Lerbs cos2";
+     src="images/prop_lerbs_X5_B2_cos2.gif" >
+<p style="margin-left   : 120px;
+          margin-bottom : 12px;">
+    <i> Figure 25.3 : &ensp;
+                 G(x) for cos<sup>2</sup>&phi; induction. 
+&emsp; B = 2,  X = 5.<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+ Line for N = 1000, crosses for N = 6. <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+ Mass factor K(x) shown in green.
+ </i>
+</p>
+<!-------------------------------------------------------------->
+
+<p>&emsp;
+ There is a qualitative difference between the two solutions,
+ which already surprised
+ <span style="font-variant: small-caps;">Glauert</span>.
+ The  <span style="font-variant: small-caps;">Prandtl</span>
+ solution always preserves the curved start of the
+ cos<sup>2</sup><i>&phi;</i> function from figure 10.1.
+  The  <span style="font-variant: small-caps;">Goldstein</span> 
+ vortex solution, as calculated here by the
+ <span style="font-variant: small-caps;">Lerbs</span> method,
+ has a linear start, at least for low blade counts
+ (&hairsp;up to four&hairsp;).
+ The mass flow ratio follows from 
+<span style="font-variant: small-caps;">Newton</span>'s law as per
+
+<span style="color:darkgrey">
+
+ (XXXXXXXXXXXXXXXXX), 
+
+</span>
+
+repeated here for the propeller :
+</p>
+
+<p>&emsp;
+ If <i>T</i> starts linearly in <i>x</i>, and <i>w</i>
+  starts quadratically (&hairsp;by the
+  cos<sup>2</sup>&hairsp;<i>&phi;</i>,
+ then the mass flow will start from the origin as
+ 1<i>&hairsp;/&hairsp;x</i>.
+ It will become infinite at <i>x</i>&nbsp;=&nbsp;0.
+ This is one way of saying that near the axis,
+ no amount of axial thrust will give any axial induction.
+</p>
+<p>&emsp;
+ <span style="font-variant: small-caps;">Goldstein</span>
+ gave mathematical models for the mass term <i>K</i>(<i>x</i>)
+ near the <i>x</i>&nbsp;=&nbsp;0 at infinite pitch
+ for several blade counts, but these are purely mathematical,
+and they give nophu=yscialinsight..
+ Figure 25.3 shows <i>K</i>(<i>x</i>) as computed by
+
+<span style="color:darkgrey">
+ (XXXXXXXXXX)
+
+</span>
+ from the <span style="font-variant: small-caps;">Lerbs</span> 
+ solution. It matches
+ <span style="font-variant: small-caps;">Goldstein</span>'s
+ tables, but it is not pretty.
+ Fortunately, we do not need <i>K</i>(<i>x</i>) explicitly
+ in our calculations. These give <i>G</i>(<i>x</i>) directly.
+</p>
+<p>&emsp;
+ The difference near the origin between the clean,
+ <span style="font-variant: small-caps;">Goldstein</span>-like
+ mass factor for the case of constant induction of figures
+ 25.1 and 25.2 and the infinite "exact" mass factor
+ in figure 25.3 is remarkable.
+</p>
+<p>&emsp;
+ It already surprised
+  <span style="font-variant: small-caps;">Glauert</span>.
+ A physical explanation would still be welcome.
+</p>
+
+<span style="color:darkgrey">
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 25.3 &emsp; Thrust reduction and mass factor          </h4>
+
+<p>
+TBW.
+</p>
+
+</span>
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer">  P. Lammertse, 2025 </div>
+
+</body>
+</html>

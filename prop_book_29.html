@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : prop_book_29.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-18  new
+--------------------------------------------------------------->
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_28.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <!--  //////   CURRENTLY NO NEXT CHAPTER  ////////// -->
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> CHORDS </i>           </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER -------------------------------------------------->
+
+<!-- <span style="color:darkgrey">   -->
+
+<h2> 29 &emsp; Tip sweepback </h2>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 29.1 &emsp; Tip sweepback </h4>
+
+<p> As a little extra, we mention a more or less "natural"
+way to add some sweepback to the blade tips.
+It is totally unscientific, but if nothing else,
+ the results are aesthetically pleasing.
+</p>
+<p>&emsp;
+ The increase of the lift force on a wing section 
+ with angle of attack acts at the quarter chord point. 
+ The classic&shyal wing planform is "straight"
+(&hairsp;no sweepback&hairsp;) at this point.
+The reason is not so much that the lift "applies there",
+because that is only true at high angles of attack.
+The main reason is more likely that classical wing sections
+have their maximum thickness at that point, or rather 
+at 30&hairsp;%, and it is convenient to locate
+a straight main spar at the point of maximum thickness.
+The 25&hairsp;% point also makes the calculation of the 
+aerodynamic center of the whole wing a trivial exercise.
+It will also be at 25&hairsp;%. 
+</p>
+<p>&emsp;
+ Many propeller blades also have a straight centerline
+ at 25&hairsp;% chord, or sometimes
+at 50&hairsp;% because this is where the lift applies
+in the blade section's design condition.
+
+ However, even more than in wings, propeller blade centerlines
+ are subject to practical constraints like bending moments,
+ centrifugal forces, torsion, and aero-elasticity.
+ From the early days, there has always been a school of thought,
+ if only for reasons of laminated plank fabrication,
+ to keep the blade trailing edge straight.
+ This was called the "Chauvi&egrave;re" type propeller.
+ A straight trailng edge gives a curved leading edge, 
+ effectively creating sweepback near the tips.
+</p>
+<p>&emsp;
+ The same straight trailing edges are seen traditionally
+ in aircraft fins and stabilizers,
+ and today in aircraft wings as well.
+ There is some evidence that a straight trailing edge
+ gives a flatter beginning of the wake sheet,
+ and slightly less induced drag
+ than the 25&hairsp;% chord "straight" wing.
+</p>
+<p>&emsp;
+ In propellers, there may be a secondary advantage
+ to the resulting tip sweepback.
+ Even at moderate flying speeds,
+ the blade tips can approach high Mach numbers
+ with attendant noise and drag rise.
+ Swept-back tips may help to alleviate these problems.
+ In ships, they may help to shed cavitation bubbles.
+</p>
+<p>&emsp;
+ A simple, though not necessarily optimal way
+ to achieve some tip sweepback is by applying
+ the tip reduction <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ one-sided from the trailing edge forward,
+ instead of symmetrically around the centerline.
+ This keeps the trailing edge as it was
+ before the tip reduction, like in figure 27.3.
+</p>
+<p>&emsp;
+ We will show the idea first on
+ a blade with 
+<span style="font-variant: small-caps;">Prandtl</span>'s
+ tip shape
+  (&hairsp;<a href="prop_book_20.html#20.3">20.4</a>&hairsp;).
+ With this version of <i>K</i>&hairsp;(<i>x</i>)
+and <i>&kappa;</i><sub>G</sub>, the chord 
+  (&hairsp;<a href="prop_book_28.html">28.1</a>&hairsp;).
+becomes :
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>B</mi> <mo>.</mo> 
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>c</mi>
+    <mi>R</mi>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+   <mn>4&pi;</mn>
+   <msub><mi>C</mi><mn>L</mn></msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mi>F</mi> <mn>&thinsp;&prime;</mn>
+    <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+    <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
+    <msub><mi>&kappa;</mi>
+       <mn>G&thinsp;&prime;</mn> </msub>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>>
+    <mi>X</mi>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+  <mo> . </mo>
+  <mn>sin&thinsp;</mn> <mi>&phi;</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (29.1)
+</td> </tr> </table>
+
+<p> Without the <i>F</i>&thinsp;&prime;(<i>x</i>) term,
+ the tip would be squared off like in
+figure 
+  <a href="prop_book_27.html#27.8">27.3.</a>.
+</p>
+<p>&emsp;
+Figure 29.1 shows the same square tipped outline without the
+<i>F</i>&thinsp;&prime;(<i>x</i>) term
+(&hairsp;lightly shaded&hairsp;),
+and the elliptical tip in&shycluding it (&hairsp;dashed&hairsp;),
+in both cases applied symmetrically around 
+the 50&hairsp;% chord line.
+</p>
+<p>&emsp;
+ The solid blue line shows the idea of applying
+the <i>F</i>&thinsp;&prime;(<i>x</i>) reduction
+not around the straight centerline, but
+from the trailing edge forward.
+This keeps the trailing edge "straight".
+Or rather, it follows the gently curved outline
+from before the tip loss function was applied.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="600";
+     style="margin-left : 100px;
+            margin-top  :  0px";
+     alt="Chords with tips";
+     src="images/prop_chord_swept_prandtl.gif" >
+
+<p style="margin-left   :180px;
+          margin-bottom : 12px;">
+    <i> Figure 29.1 : &ensp;
+            Prandtl tip reduction applied around the centerline, <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;
+            or from the trailing edge. </i>
+</p> 
+<!------------------------------------------------------------->
+
+<span style="color:darkgrey">
+
+<p> The idea can be generalized to "centerlines" at other chords
+ than 50&hairsp;%, like for instance 25&hairsp;%.
+The generic equation would be :
+</p>
+<p>
+&emsp; TBW. <i>y</i><sub>TE</sub> = ( 1-f ) * (1-F') * c<br>
+&emsp; &emsp; <i>y</i><sub>LE</sub> = <i>y</i><sub>TE</sub> + <i>c</i> 
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+
+<!--
+<p>&emsp;
+ The exact solution does not give
+ <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ as a separate factor,
+ so we will use
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ approximation
+  <i>F</i>&thinsp;&prime;&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ instead. With 
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ approximation, the chord comes from ( XXXXXXXXX ). 
+</p>
+<p>&emsp;
+Leaving out <i>F</i>&thinsp;&prime;(<i>x</i>) gives : 
+</p>
+-->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+
+  <mi>B</mi> <mo>.</mo> <mi>c</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+   <mn>4&pi;</mn>
+   <msub><mi>C</mi><mn>L</mn></msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+    <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
+    <msub><mi>&kappa;</mi>
+      <mn>G&prime;</mn> </msub>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+  <mo> . </mo>
+  <mn>sin&thinsp;</mn> <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (29.1)
+</td> </tr> </table>
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This is a larger outline than (28.1), 
+ with a larger thrust, and with a straight cropped tip
+ as in figure 27.3.
+ Before sweepback, it will envelop the shape (28.2)
+ as reduced by <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
+ c.q. <i>F</i>&thinsp;&prime;&thinsp;(&thinsp;<i>x</i>&thinsp;).
+</p>
+<p>&emsp;
+ The
+ <span style="font-variant: small-caps;"> Prandtl</span>
+ tip will modify the chords by a factor of
+ F'(x). 
+The difference with (28.2) will be :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+
+  <mi>B</mi> <mo>.</mo> <mi>c</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>( </mn>
+    <mi>F</mi> <mn>&thinsp;&prime;</mn>
+    <mn>&minus; 1 </mn>
+  <mn>) </mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+   <mn>4&pi;</mn>
+   <msub><mi>C</mi><mn>L</mn></msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle = "true">
+  <mfrac>
+    <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
+    <msub><mi>&kappa;</mi>
+      <mn>G&prime;</mn> </msub>
+  </mfrac>
+
+  <mo>.</mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+  <mo> . </mo>
+  <mn>sin&thinsp;</mn> <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (29.2)
+</td> </tr> </table>
+
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>&emsp;
+	Δ(B .c^' )=   ( F(x)-1 )  .   4 π/C_L .  T^'/κ_( G^' )   〖.cos〗^2 ϕ . sin⁡ϕ	(29.2) 
+</p>
+
+<p>&emsp;
+Until now, we applied this difference symmetrically
+ before and aft of the centerline.
+ This will sweep the leading edge back by half,
+ and the trailing edge forward by half.
+ If we do not wish the trailing edge to sweep forward,
+ then we will have to sweep back the centerline.
+</p>
+<p>&emsp;
+ We will call the sweepback 
+  &Delta;<i>y</i>&thinsp;&prime;,
+ defined as positive to the rear :
+</p>
+
+<p>&emsp;
+	〖Δ y〗^'=   ½ .( 1-F'(x) )  .  1/B  .  4 π/C_L .  T^'/κ_( G^' )   〖.cos〗^2 ϕ . sin⁡ϕ	(29.3) 
+</p>
+<p> Figure 29.2 shows the result.
+ The swept centerline is shown in grey dashes.
+ It can be applied to
+ <span style="font-variant: small-caps;"> Prandtl</span>'s
+ ap&shyprox&shyimation, but also to the exact solution,
+ since the two are very similar near the tip.
+ The solid line shows the exact vortex solution
+ after applying the sweepback.
+ The dashed line shows the "envelope" (29.1)
+  before the tip reduction.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img  width="600";
+     style="margin-left : 100px;
+            margin-top  :  0px";
+     alt="Chords with tips";
+     src="images/prop_chord_sweepback.gif" >
+
+<p style="margin-left   :180px;
+          margin-bottom : 12px;">
+    <i> Figure 29.1 : &ensp;
+            Sweepback (29.2), applied to the exact solution.<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+ Envelope  (29.1) shown in red dashes. </i>
+</p> 
+<!------------------------------------------------------------->
+
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

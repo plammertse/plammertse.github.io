@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_10.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-03  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title> Piet Lammertse on propeller theory </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_09.html">&#x25C4  Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_11.html">       Next &#x25BA</a> </li>
+</ul>
+
+<!-- TEXT BLOCK HEADER ---------------------------------------->
+
+<p style="margin-left : 320px">  <i> ROTATION </i>          </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 10 ----------------------------------------------->
+
+<h2> 10 &emsp; Optimizing the rotational loss              </h2>
+
+<!-- SECTION 10.1 --------------------------------------------->
+
+<h4> 10.1 &emsp; Marginal loss                             </h4>
+
+<p> We will now find the thrust distribution which minimizes
+ the rotational loss for a given overall thrust, by the
+ method of "constant marginal loss".
+</p>
+<p>&emsp;
+ The rotational momentum loss ratio (9.3)
+ and the efficiency (9.4) vary along the blade,
+ since they depend on the local pitch angle <i>&phi;</i>.
+ Intuitively, we can move thrust from a radius
+ with low efficiency to a radius with high efficiency,
+ making the whole propeller more efficient. 
+ We should keep doing this until all locations have the
+ same efficiency, so no further gains are possible.
+</p>
+<p>&emsp;
+ By inspection of (9.3) and (9.7), for light loading
+ we can make
+ the efficiency the same everywhere by scheduling
+ <i>b</i>&hairsp;(<i>x</i>)
+ with cos<sup>2</sup><i>&hairsp;&phi;</i>.
+ We will find below that this is in fact the optimal solution.
+</p>
+<p>&emsp;
+ But having the same efficiency everywhere is not formal proof
+ of optimality.
+ The formal proof requires that we make the <i>marginal</i>
+ efficiency the same everywhere.
+ This is not the same thing.
+</p>
+<p>&emsp;
+ A small change in the ring thrust d<i>T</i>,
+ or better a small change in the net ring power
+   d<i>T&hairsp;.&hairsp;V</i>,
+ will cause a small change in the ring power loss.
+ The ratio between this extra power loss and the extra
+ net power is called the <i>marginal loss</i>.
+</p>
+<p>&emsp;
+ As long as the derivative of d<i>P</i><sub>m</sub>
+ with respect to d<i>T</i> is not the same everywhere,
+ we can gain efficiency by taking in&shycre&shyments
+ of thrust away from locations with high marginal loss,
+ and moving thrust to locations with low marginal loss.
+ We will stop moving thrust only when the derivative
+ has reached the same value everywhere,
+ i.e.&nbsp;when the <i>marginal</i> loss
+ has the same value everywhere.
+ We will call this constant marginal loss ratio <i>C</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <mo>(</mo>
+         <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub> 
+      <mo>)</mo>
+   </mrow>
+    <mrow> <mn>d</mn>
+      <mo>(</mo>
+       <mn>d</mn> <mi>T</mi> <mn>&hairsp;.&hairsp;</mn> <mi>V</mi>
+      <mo>)</mo>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>C</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (10.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The inner "d"&thinsp;'s indicate ring values,
+ the outer "d"&thinsp;'s
+ are the symbols for the derivative.
+</p>
+<p>&emsp;
+ Since we are not varying flight conditions
+ like <i>&rho;</i> or <i>V</i>,
+ or any propeller geometrical parameters
+ like <i>R</i> or <i>X</i>,
+ then&nbsp;by (3.9) we can write the same equation
+ in non-dimensional form :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <mo>(</mo>
+         <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub> 
+         <mn>&prime;</mn>
+      <mo>)</mo>
+   </mrow>
+    <mrow> <mn>d</mn>
+      <mo>(</mo>
+       <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+      <mo>)</mo>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>C</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (10.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The ring thrust d<i>T</i>&thinsp;&prime;
+ is the variable driving the change.
+ We could express d<i>P</i><sub>m</sub>&prime;
+ as a function of d<i>T</i>&thinsp;&prime;,
+ and take the derivative of d<i>P</i><sub>m</sub>&thinsp;&prime;
+ with respect to
+  d<i>T</i>&thinsp;&prime; directly.
+</p>
+<p>&emsp;
+ But it is easier to use the local value
+ of the induction ratio <i>b&hairsp;</i>(<i>x</i>)
+ as the variable driving both d<i>T</i>&thinsp;&prime;
+ and d<i>P</i><sub>m</sub>&prime;.
+</p>
+<p>
+ The marginal loss then becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn>
+      <mo>(</mo>
+         <mn>d</mn> 
+     <msub> <mi>P</mi> <mn>m</mn> </msub> <mn>&prime;</mn>
+      <mo>)</mo>
+
+      <mo>/</mo> <mn>d</mn> <mi>b</mi>
+   </mrow>
+    <mrow>
+      <mn>&hairsp;</mn>
+      <mn>d</mn>
+      <mo>(</mo>
+       <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+      <mo>)</mo>
+
+      <mn>&thinsp;</mn>
+      <mo>/</mo> <mn>d</mn> <mi>b</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>C</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (10.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We will look at the light loading case first.
+  This will take the factor of
+   (&hairsp;1&hairsp;+&hairsp;&frac12;&hairsp;<i>b</i>&hairsp;) 
+ out of the d&hairsp;<i>P</i><sub>m</sub>&prime;  of (9.4).
+</p>
+<p> Taking the derivative with respect to <i>b</i> yields :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>d</mn> 
+    <mrow> <mn>d&hairsp;</mn> <mi>b</mi> </mrow>
+  </mfrac>
+
+  <mn>(</mn>
+    <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&hairsp;&prime;&hairsp;</mn>
+  <mn>)</mn>
+    
+   <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+  <mo>&thinsp;.&thinsp;</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>b</mi>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (10.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Taking the derivative of the 
+ d<i>T</i>&thinsp;&prime; of (7.14) yields :
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>d</mn> 
+    <mrow> <mn>d&hairsp;</mn> <mi>b</mi> </mrow>
+  </mfrac>
+
+  <mn>(</mn>
+    <mn>d</mn> <msub> <mi>T</mi> <mn>m</mn> </msub>
+      <mn>&hairsp;&prime;&hairsp;</mn>
+  <mn>)</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (10.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+ The results are so simple because the derivative of
+ &frac12;&thinsp;<i>b</i><sup>&hairsp;2</sup> is <i>b</i>,
+ and the derivative of <i>b</i> is 1.
+</p>
+<p> Subsitituting (10.4) and (10.5) into (10.3) yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mi>b</mi>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/> 
+
+  <mi>C</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (10.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(10.7)"></a>
+
+<p> For optimality, the marginal loss <i>C</i> must be a constant.
+ As a result the axial induction ratio <i>b</i>
+ will have to vary along the blade :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>=</mo> <mspace/> 
+
+  <mi>C</mi> 
+  <mo>&thinsp;.&thinsp;</mo>
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (10.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION 10.2 --------------------------------------------->
+
+<a name="10.2"></a>
+
+<h4> 10.2 &emsp; The shape of the reduction factor </h4>
+
+<p>The rotationally optimal induction (10.7)
+ contains a factor of
+   cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i>.
+ We will meet this factor in numerous places
+ in the theory of propellers.
+ We will give it a name, although we will also often
+ write it out in full :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/> 
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+s</math>
+
+<td style="width:50px; text-align:right">                (10.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> By (10.7),
+  <i>g</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ is a reduction factor
+ on the local induction,
+ relative to an ideal  actuator disk 
+ of uniform induction <i>C</i>.
+ The factor is always smaller than 1,
+ since the cosine is always smaller than 1.
+</p>
+<p>&emsp;
+ With (2.7) we can also express 
+ cos<sup>&hairsp;2</sup><i>&phi;</i> directly in <i>x</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+
+<math>
+  <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+    <mi>&phi;</mi>
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+    </mrow>
+    <mrow>
+      <mn>1</mn> <mo>+</mo> 
+      <msup> <mi>x</mi> <mn>2</mn> </msup>
+    </mrow>
+  </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mn> 1 </mn>
+  <mo> &minus; </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow> <mn>1</mn> <mo>+</mo> 
+      <msup> <mi>x</mi>  <mn>2</mn> </msup>
+   </mrow>
+  </mfrac>
+
+</math></td>
+
+<td style="width:50px; text-align:right">                (10.9)
+</td>
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(10.1)"></a>
+
+<p> For <i>x</i> = 1, we have
+ <i>g</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)&nbsp;=&nbsp;&frac12;.
+This fits with the cos<sup>&hairsp;2</sup><i>&phi;</i> formulation,
+ since the local pitch angle at <i>x</i>&nbsp;=&nbsp;1 is
+ <i>&phi;</i>&nbsp;=&nbsp;45&deg;,
+ and cos&thinsp;(45&deg;)&nbsp;=&nbsp;1/&radic;2.
+ For large <i>x</i>,  the fraction goes to 1 
+ by a difference of 1<i>&thinsp;/&thinsp;x&hairsp;</i><sup>2</sup>.
+</p>
+<p>&emsp;
+Figure 10.1 shows the shape of
+ cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
+ versus <i>x</i>.
+ On a finite propeller blade, <i>x</i> will vary
+ from <i>x</i>&nbsp;=&nbsp;0 at the root
+ to&nbsp;<i>x</i>&nbsp;=&nbsp;<i>X</i>
+ at the tip.
+</p>
+
+<!-- FIGURE --------------------------------------------------->
+<img width="600" alt="Cosine squared versus x";
+     style="margin-left :120px;
+            margin-top  : -2px;"
+      src="images/prop_cos2_plot_x.gif">
+<p style="margin-left:260px">
+    <i> Figure 10.1 : &ensp;
+       The optimal induction factor cos<sup>2</sup>&hairsp;&phi;.</i> 
+</p>
+<!------------------------------------------------------------->
+
+<!-- SECTION 10.3 --------------------------------------------->
+
+<h4> 10.3 &emsp; The optimal overall efficiency </h4>
+
+<p>
+Having found the marginal loss <i>C</i> 
+ for the lightly loaded propeller,
+ we are also interested in the <i>actual</i> overall loss ratio.
+ Substituting the rotationally optimal distribution of (10.7) 
+ into the local loss ratio (9.6),
+ the cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i> terms cancel,
+ to yield :  
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mn>&frac12;&thinsp;</mn> <mi>C</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (10.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This actual local loss ratio is exactly <i>half</i> the
+ marginal loss ratio <i>C</i> of (10.2).
+ This is not a coincidence.
+ The momen&shytum loss of (9.4), for light loading where
+ (&hairsp;1&hairsp;+&hairsp;&frac12;&thinsp;<i>b</i>&hairsp;)&nbsp;=&nbsp;1,
+ is just a quadratic in <i>b</i>, and we know that the local slope of
+ a quadratic (&hairsp;in this case, with the thrust <i>b</i>&hairsp;)
+ is exactly twice its local value.
+</p>
+<p>&emsp; Since the local momentum loss ratio is the same for
+ every ring, the overall loss ratio will be the same :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mn>&frac12;&thinsp;</mn> <mi>C</mi>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (10.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With (10.6) in (9.7), the overall momentum efficiency becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>η</mi> <mn>m</mn> </msub>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn> <mo>+</mo> <mn>&frac12;&thinsp;</mn> <mi>C</mi>
+   </mrow>
+  </mfrac> 
+
+</math> </td>
+
+<td style="width:50px; text-align:right">                 (10.12)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<p>&emsp;
+ We now have an expression for the optimal momentum efficiency
+ of the propeller which looks a lot like the efficiency
+  (4.18) of a uniform actuator disk
+ which had a <i>constant</i> induction of
+   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)&nbsp;=&nbsp;C.
+</p>
+<p>&emsp;
+ It would look for a moment as if the rotation did not 
+ harm the efficiency of the propeler at all.
+ But that is a bit misleading.
+ For by  (10.5), for the same efficiency
+ (&hairsp;i.e. for the same overall loss ratio
+    &frac12;&hairsp;<i>C</i>&hairsp;),
+ the <i>thrust</i> of this propeller
+ will be less than that of the actuator disk.
+</p>
+
+<!-- SECTION 10.2 --------------------------------------------->
+
+<h4> 10.4 &emsp; Heavy loading </h4>
+
+<p> We will briefly look at the case of heavy loading.
+Picking up the derivatives (10.4) and (10.5), using
+(7.13) and (7.17) for "heavy" loading, and omitting
+the terms of 2<i>x</i>.d<i>x / X</i><sup>&thinsp;2</sup>
+ which wil drop out later anyway, we note :
+ </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>d</mn>
+    <row> <mn>d</mn> <mi>b</mi>
+   </mrow>
+ </mfrac>
+<!--  <mn>&nbsp;(</mn>   -->
+    <mn>&nbsp;(</mn>
+      <mn> 1 + &frac12;&hairsp;</mn> <mi>b</mi>
+    <mn>)</mn>
+  <mo>.</mo> <mn>&frac12;&thinsp;</mn> 
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+<!--  <mn>&thinsp;)</mn>  -->
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mi>b</mi> <mo>+</mo>
+  <mn>&frac34;&thinsp;</mn> 
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (10.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>d</mn>
+    <row> <mn>d</mn> <mi>b</mi>
+   </mrow>
+ </mfrac>
+
+<!--  <mn>&nbsp;(</mn>  -->
+    <mn>&nbsp;(</mn>
+      <mn> 1 + &frac12;&hairsp;</mn> <mi>b</mi>
+    <mn>)</mn>
+  <mo>.</mo> 
+  <mi>b</mi>
+<!--  <mn>&thinsp;)</mn>  -->
+
+  <mspace/><mspace/><mspace/><mspace/>
+
+  <mo> = </mo> <mspace/> </mo>
+
+  <mn>1</mn> <mo>+</mo>
+  <mi>b</mi>
+</math>
+</td>
+
+<td style="width:50px; text-align:right">               (10.14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The ratio between the two is not the easy <i>b</i> of (10.6),
+ but it is close.
+</p>
+<p>&emsp;
+ However, in (9.4) there is also an additional term
+ 1&thinsp;<i>/&thinsp;</i>cos<sup>2</sup><i>&hairsp;&phi;</i>.
+Looking at figure 8.2 and equation (8.6), the local pitch
+ angle <i>&phi;</i> 
+ will also vary with <i>b</i>.
+ So we also need to take the derivative 
+of 1<i>/&thinsp;</i>cos<sup>2&hairsp;</sup><i>&phi;</i> 
+ with respect to <i>b</i>, and apply the chain rule in (10.4).
+</p>
+<p>&emsp;
+ Although this can all be done, and approximations are available,
+ the result will destroy the simplicity of the op&shytimal
+ induction (10.7) and make all subsequent equations opaque,
+ without adding significant accuracy or opti&shymality
+ to the results.
+</p>
+<p>&emsp;
+ This is the reason why the literature on classical
+ propeller theory invariably applies the "light loading"
+ assumption in all optimization problems, and so will we.
+</p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

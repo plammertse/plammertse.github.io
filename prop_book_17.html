@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_17.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-01-03  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+
+  <li> <a href="prop_book_17_TOC.html">&#x25C4 
+                                            Previous  </a> </li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_18.html">  Next &#x25BA</a> </li>
+</ul>
+
+<!-- PAGE HEADER ---------------------------------------------->
+
+<p style="margin-left : 320px">  <i> TIP LOSS </i>          </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 17 ----------------------------------------------->
+
+<h2> 17 &emsp; Tip loss                                    </h2>
+
+<!-- SECTION 17.1 --------------------------------------------->
+
+<h4> 17.1 &emsp; The nature of the tip loss                </h4>
+
+<p> Tip loss differs essentially from the losses we have
+ encountered so far.
+</p>
+<p>&emsp;
+ Consider the (&hairsp;ring&hairsp;)
+ thrust equation (7.5), repeated here :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mo>.</mo>
+  <mi>w</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (17.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> or its non-dimensional version
+(&hairsp;<a href="prop_book_07.html#(7.12)">7.12</a>&hairsp;) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn><mi>T</mi> <mn>&thinsp;&prime;</mn>
+  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+
+  <mo>=</mo>
+
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+  <mo>.</mo>
+  <mi>b</mi>
+  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+</math>
+
+<td style="width:50px; text-align:right">                (17.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+ Thrust is the product of mass flow and induction.
+</p>
+<p>&emsp;
+ All of the efficiency analyses and optimizations
+ we applied so far acted exclusively
+ on the induction term
+<nobr> <i>b</i>&hairsp;(<i>x</i>). </nobr>
+ Loss of (&hairsp;momentum&hairsp;) efficiency occurs only
+ when <i>b</i>&hairsp;(<i>x</i>)
+ is uniformly inflated back to restore the design thrust,
+ while maintaining the optimal shape of the distribution.
+</p>
+<p>&emsp;
+ Certainly in the case of light loading, the ring in&shyduction
+ does not influence the mass flow at all, so mass flow
+ and efficiency remain independent even if the induction changes.
+</p>
+<p>&emsp;
+ The <i>b</i>&hairsp;(<i>x</i>) schedulings
+ (&hairsp;<a href="prop_book_10.html#10.2">10.8</a>&hairsp;)
+ and
+ (&hairsp;<a href="prop_book_16.html#16.6">16.12</a>&hairsp;)
+ optimize rotational and viscous efficiency. 
+ These efficiencies are functions of the local pitch angle,
+ and by geometrical relations like (2.4)
+ of the non-dimensional radius <i>x</i>.
+ Changing the mass flow distribution does <i>not</i> change
+ the optimal distribution of the induction with blade radius.
+</p>
+<p>&emsp;
+ Tip loss does not change the shape 
+ of the induction distribution at all.
+ But it does affect the mass which re&shyceives that induction.
+ Some of the air in the original momentum tube escapes
+ around the blade tips, and is not accelerated.
+ By (17.1), for a given induction and therefore
+ for a given efficiency,
+ there will be less thrust.
+ To compensate,
+ the induction over the active part of the prop disk
+ will have to increase.
+ By this indirect route,
+ the tip loss reduces the efficiency for a given thrust after all.
+</p>
+
+<span style="color:darkgrey">
+
+<p>&emsp;    TODO - MENTION THAT IN THE END BOTH ARE REDUCTIONS
+ ON THE THRUST AT A GIVEN EFFICIENCY, 
+ AND THE LOSS OCCURS WHEN UNIFORMLY INFLATING IT BACK AGAIN.
+</p>
+
+</span>
+
+<!-- SECTION 17.2 --------------------------------------------->
+
+<h4> 17.2 &emsp; Thrust loss in the spaces between the blades </h4>
+
+<p> The previous chapters all gave velocity diagrams at the 
+ blade element. This was enough to deduce local efficiencies,
+ and to schedule an optimal shape for the distribution 
+ of the local induction.
+</p>
+<p>&emsp;
+ In the presence of tip loss, the axial induction velocities
+ in the spaces <i>between</i> the blades will be less
+ than the induced velocity <i>at</i> the blades,
+ but this does not affect
+ the reasoning at the blade elements themselves.
+</p>
+<p>&emsp;
+ However, it would seem proper to determine the average induction
+ in a full ring of the flow tube,
+ and find a reduced thrust from this in equation (17.1).
+</p>
+<p>&emsp; 
+ But it is not a simple matter to find the induction
+ in the spaces between the blades, and we will find that
+ in some way it will not be needed.
+</p>
+<p>&emsp;
+ The other option is to find an average,
+ "effective" value for the ring mass flow
+ d<i>m</i><sup>&#9679;</sup>.
+ Conceptually, the blades still give the local air
+ the full induction <i>b</i>(<i>x</i>),
+ but in
+ <span style="font-variant: small-caps;"> Newton</span>'s
+ law of (17.1) they do not "feel" the resistance
+ of the full mass flow through the ring pushing back on them.
+</p>
+<p>&emsp;
+ By this concept, (17.1) with the full induction 
+ <i>b</i>(<i>x</i>) applies for the whole ring,
+ provided we can find the reduced ring mass flow 
+ d<i>m</i><sup>&#9679;</sup>.
+</p>
+<p>&emsp;
+ Tip loss theory is built around this concept.
+</p>
+
+<!-- SECTION 17.3 --------------------------------------------->
+
+<a name="17.3"></a>
+
+<h4> 17.3 &emsp; A local mass flow ratio                   </h4>
+
+<p> We made the local thrust (7.4) non-dimensional in (7.5),
+ by introducing a non-dimensional mass flow
+ d<i>m</i>&thinsp;&prime;.
+</p>
+<p>&emsp;
+ We now define a function
+ <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>)
+ for the reduction
+ of the effective local mass flow, due to "tip loss".
+ This changes the light-loading momentum flow from (7.11) into :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mspace/> <mo> &equiv; </mo> <mspace/>
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+This equation defines the mass reduction factor
+   <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>).
+</p>
+<p>&emsp;
+Like before,  d<i>m</i>&thinsp;&prime; is just
+ the effective non-dimensional
+ frontal area of the ring at radius <i>x</i>.
+ Without <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>)
+ all the rings add up to a non-dimensional frontal area of 1,
+ or  (&hairsp;1&hairsp;+&hairsp;&frac12;&hairsp;<i>b</i>&hairsp;)
+ if we retain the heavy loading term in (7.10).
+</p>
+<p>&emsp;
+ With <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>),
+ the effective frontal area
+ of a ring is reduced by that factor.
+The local thrust (17.2) becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn><mi>T</mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>K</mi>
+  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+
+  <mo> . </mo>
+
+  <mi>b</mi>
+  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<a name="17.4"></a>
+
+<h4> 17.4 &emsp;
+   Combining <i>K&hairsp;</i>(&hairsp;<i>x</i>)
+                                 with the optimal rotation </h4>
+
+<p> Equation
+ (&hairsp;<a href="prop_book_10.html#(10.7)">10.7</a>&hairsp;) 
+ gave us the optimal axial induction
+ distribution <i>b</i>(<i>x</i>)
+ for a lightly loaded, rotationally optimal pro&shypeller
+ of constant marginal loss <i>C</i>, and constant 
+ overall loss ratio &frac12;&hairsp;<i>C</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mi>C</mi> 
+  <mo> . </mo>
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+s</math>
+
+<td style="width:50px; text-align:right">                (17.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> In (17.4) this yields :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/> 
+
+  <mi>C</mi> 
+
+  <mo> . </mo>
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+
+    <mo>.</mo>
+
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+ The ring thrust is reduced by a factor of
+ cos<sup>2</sup> <i>&phi;</i> on the induction by  (17.5),
+ and by the factor
+   <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ on the mass flow by (17.3).
+  Although the two reductions are very different in nature,
+ both reductinis are needed if we wish to maintain the basic
+ actuator disk efficiency.
+</p>
+<p>&emsp;
+  We define a notation for the combined
+ equal-efficiency thrust reduction factor :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>G</mi> 
+    <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/> 
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (17.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The symbol <i>G</i> for this factor
+ is a common convention in the literature.
+ It is probably named after Sidney 
+<span style="font-variant: small-caps;">Gold&shystein</span>,
+ who made the first rigorous analysis of it in 1929.
+</p>
+<p>&emsp;
+ We will find that unfortunately,
+ <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>)
+ is not completely independent of the distribution of 
+ <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;).
+ But clearly, the case for the optimal
+ cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i> distribution
+ is of special interest. 
+
+<!-- SECTION -------------------------------------------------->
+
+<a name="17.5"></a>
+
+<h4> 17.5 &emsp; The overall thrust reduction              </h4>
+
+<p> With  the tip reduction <i>K&hairsp;</i>(&hairsp;x&hairsp;),
+ the thrust integral for the rotationally optimal
+ propeller changes from  
+(&hairsp;<a href="prop_book_11.html#(11.2)">11.2</a>&hairsp;) to :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>C</mi>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
+  <mi>&phi;</mi>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> By (17.6), we can also write this as :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mi>C</mi>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> In (11.3), we defined the symbol
+ <i>&kappa;</i><sub>&phi;</sub> for the integral
+ of the local thrust reduction factor
+    cos<sup>&hairsp;2</sup><i>&phi;</i> over the prop disk.
+ We define a similar factor 
+ <i>&kappa;</i><sub>G</sub>
+ for the combined reduction
+<i>G</i>&hairsp;(<i>&hairsp;x&hairsp;</i>) :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&kappa;</mi> <mn>G&hairsp;</mn> </msub>
+  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+    
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+
+  <mn>&thinsp;.</mn>
+
+  <mstyle displaystyle="true">
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo>&hairsp;.</mo>
+
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (17.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="17.6"></a>
+
+<h4> 17.6 &emsp; Thrust and induction </h4>
+
+<p> By direct comparison with chapter 
+   <a href="prop_book_11.html#11.2">11.2</a>,
+ we can now write the same analysis with
+ <i>&kappa;</i><sub>G</sub> in the place of
+ <i>&kappa;</i><sub>&phi;</sub>&hairsp;. <br>
+From (17.9) and (17.10) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+    
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>C</mi> <mo>&hairsp;.&hairsp;</mo>
+  <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+
+</math>
+
+<td style="width:50px; text-align:right">                (17.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>C</mi>
+    
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+    <mrow> <msub> <mi>&kappa;</mi> <mn>G</mn> </msub> </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(17.13)"></a>
+
+<p> From (17.5) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mspace/> <mo> = </mo> <mspace/> 
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+  <mo> . </mo>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow><msup> <mn>cos</mn> <mn>2</mn> </msup>
+          <mi>&phi;</mi>
+    </mrow>
+    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+  </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> For the same thrust, the induction gets larger 
+ relative to 1<i>&hairsp;/&hairsp;&kappa;</i><sub>&phi;</sub>,
+ to compensate for the loss in mass flow.
+</p>
+<p>
+ From (17.6) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mspace/> <mo>=</mo> <mspace/> 
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo> . </mo>
+
+  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow><msup> <mn>cos</mn> <mn>2</mn> </msup>
+          <mi>&phi;</mi>
+    </mrow>
+    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+  </mfrac>
+
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+
+    <mo>.</mo>
+
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<!--
+<td style="width:50px; text-align:right">                (17.14)
+-->
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:8px;"> <tr> <td>
+<math>
+<!--
+  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+-->
+  <mspace width="1.5em"/>
+  <mspace/> <mo>=</mo> <mspace/> 
+
+  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+    </mrow>
+    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+  </mfrac>
+
+  <mo> . </mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+
+    <mo>.</mo>
+
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                (17.14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> These are the direct equivalents of
+ (&hairsp;<a href="prop_book_11.html#(11.11)">11.11</a>&hairsp;)
+ and
+ (&hairsp;<a href="prop_book_11.html#(11.11)">11.12</a>&hairsp;)
+ before tip loss.
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 17.7 &emsp; The effect on the efficiency </h4>
+
+<p> From 
+  (&hairsp;<a href="prop_book_09.html#(9.3)">9.3</a>&hairsp;),
+ the local loss ratio at any radius follows only
+ from the local induction,
+ regardless of the mass flow.
+</p>
+<p> Substituting the induction (17.13) into the efficiencies 
+  (&hairsp;<a href="prop_book_09.html#(9.2)">9.6</a>&hairsp;)
+and
+  (&hairsp;<a href="prop_book_09.html#(9.2)">9.7</a>&hairsp;),
+we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&thinsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/> </mo>
+
+  <mn>&frac12;</mn> <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+    <mrow> <msub> <mi>&kappa;</mi> <mn>G</mn> </msub> </mrow>
+ </mfrac>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">              (17.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:8px;"> <tr> <td>
+<math>
+  <msub> <mi>η</mi> <mn>m</mn> </msub>
+  <mspace/> <mspace/> 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn> <mo>+</mo>
+      <mn>&frac12;&thinsp;</mn>
+      <mn>&hairsp;.&hairsp;</mn>
+      <mstyle displaystyle="true">
+      <mfrac>
+        <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+        <mrow> 
+          <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+       </mrow>
+     </mfrac>
+   </mrow>
+  </mfrac> 
+
+</math> </td>
+
+<td style="width:50px; text-align:right">               (17.16)
+</td> </tr> </table>
+<!------------------------------------------------------------->
+
+<p> The combined tip and rotational loss of (17.11)
+ increases the momentum loss of the propeller
+ by&nbsp;a factor of
+ 1<i>&hairsp;/&thinsp;&kappa;</i><sub>G</sub>&hairsp;
+ relative to the ideal actuator disk efficiency (5.12).
+ This loss is larger than that of (11.9) for rotation alone.
+</p>
+<p>&emsp;
+The question now remains : how are we going to find the shape
+of <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>&hairsp;) c.q.
+ <i>G</i>&hairsp;(<i>&hairsp;x&hairsp;</i>&hairsp;), 
+and how are we going to integrate it into a 
+ <i>&kappa;</i><sub>G</sub>.
+
+<!-- SECTION --------------------------------------------------->
+
+<!--
+<h4> 17.7 &emsp; From reduction to redistribution / shape </h4>
+
+<p> TBW. Shape a la 10.1, inflated shape a la 11.3. </p>
+-->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>

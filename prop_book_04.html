@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : prop_book_04.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+  <link rel="stylesheet" href="plammertse.css">
+  <title>  Piet Lammertse on propeller theory  </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<ul>
+  <li> <a href="index.html">                 Home     </a> </li>
+  <li> <a href="prop_book_04_TOC.html">&#x25C4 Previous</a></li>
+  <li> <a style="background-color:#0000C0;"
+          href="prop_book_00_TOC.html"> 
+                                      Contents &#x25BC</a> </li>
+  <li> <a href="prop_book_05.html">  Next      &#x25BA</a> </li>
+</ul>
+
+<!--- TEXT BLOCK HEADER --------------------------------------->
+
+<p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
+<hr style="margin : 0 0;">
+
+<!-- CHAPTER 4 ------------------------------------------------>
+
+<h2> 4 &emsp; Axial momentum loss                          </h2>
+
+<!-- SECTION 4.1 ---------------------------------------------->
+
+<h4> 4.1 &emsp; The ideal actuator disk                    </h4>
+
+<p> Much of propeller theory is based on the idea that a propeller
+ influences only the air passing through the prop disk,
+ and that it influences none of the air outside it.
+ This model is surprisingly accurate,
+ but it is far from obvious. 
+ The real justification comes from a vortex view of the flow.
+ This view is given much later, in the section on vortex theory. 
+ For now it is best to accept 
+ the actuator disk as a working model.
+</p>
+<p>&emsp;
+ The ideal propeller acts like an imaginary disk of frontal area
+ <n>&pi;</n><i>&hairsp;R&hairsp;</i><sup>2</sup>,
+ exerting a uniform pressure on the air,
+ and accelerating the flow tube to a uniform velocity.
+ This idea is called the "actuator disk".
+
+</p>
+<p>&emsp; Figure 4.1 shows an actuator disk, halfway the length of a solid 
+ streamline tube. Later chapters will fill in the disk with more detail.
+</p>
+
+<!-- ACTUATOR DISK -------------------------------------------->
+<img  width="600";
+     style="margin-left:120px";
+     alt="Actuator tube";
+     src="images/prop_actuator_tube.png" >
+<p style="margin-left   :220px;
+          margin-bottom : 12px;">
+    <i> Figure 2.1 : &ensp; Actuator disk and flow tube. </i> 
+<!------------------------------------------------------------->
+
+<p>&emsp; In the stationary frame of reference, 
+ the disk moves forward through the air at the flying speed. It
+ exerts a small push force to the rear on the air passing through it.
+ The acceleration of the air 
+(&hairsp;at almost constant density&hairsp;) 
+ makes the tube contract a little. 
+ The contraction of the tube moves forward with the disk,
+ in a motion like swallowing. 
+ The disadvantage of using this frame of reference is
+ that the movement of the air at a given viewpoint
+ is time-varying as the disk passes by the observer.
+ The equations are much simpler if the observer moves alongside 
+ with the disk.
+</p>
+<p>&emsp; Relative to us, the disk will then be stationary,
+ and the whole atmosphere will be flowing by.
+ We might call this the "wind tunnel view",
+ or the view from the cockpit.
+ The relative motion is the same as for a propeller
+ moving through
+ a stationary atmosphere, but now the air at a given point
+ is flowing by continuously at the same speed.
+ The air far ahead of the propeller is
+ the undisturbed atmosphere
+ "flowing towards" the actuator disk. 	
+</p>
+<p>&emsp;
+ Far behind the actuator disk, the air flows at a slightly increased
+ velocity through the slightly contracted flow tube.
+ Since the walls of the flow tube far downstream of the disk are straight,
+ there can be no sideways pressure gradient.
+ Any sideways pressure on the air would curve the flow locally.
+ Therefore the pressure in the "far wake" must be identical
+ to the atmospheric pressure.
+ The air in the far wake flows straight to the rear at a constant velocity,
+ "induced" by the propeller.
+</p>
+<p>&emsp;
+ The actuator disk (&hairsp;like a wing&hairsp;) only creates
+ a pressure step.
+ The volume flow through the frontal area is the same just ahead of
+ and just aft of the disk, and so the velocity cannot
+ instantaneously change there. 
+ The pressure makes no difference to the volume, because air is
+ practically "incompressible", in the sense that the aerodynamic pressures
+ are so small relative to the massive static pressure
+ from the weight of the atmosphere above us, 
+ that the air hardly changes in density due to (&hairsp;subsonic&hairsp;)
+ flow conditions. 
+</p>
+<p>&emsp;
+ The pressure field ahead of, and aft of the disk induces a gradual
+ acceleration of the air to the rear. 
+ Because of the constant volume,
+ the downwind tube has a slightly smaller
+ cross-section than the upwind tube.
+  All of the acceleration,
+  and therefore all of the contraction of the tube,
+  takes place over a short distance
+  ahead and aft of the actuator disk.
+  The tube walls are curved in an S-curve
+ over this relatively short distance.
+</p>
+<p>&emsp;
+ We will call the axial velocity increase reached
+ at the disk <i>v</i>, 
+ and the final velocity increase
+ far behind the propeller <i>w</i>. 
+ We will use the letters <i>a</i> and <i>b</i> 
+for the non-dimensional versions
+ of these so-called "induction ratios" :
+ the first one locally at the disk,
+ and the other one in the "far wake" :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>a</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
+  <mstyle displaystyle="true">
+  <mfrac>   <mi>v</mi>  <mi>V</mi>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table style="margin-top:8px;"> <tr> <td>
+<math>
+  <mi>b</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
+ <mstyle displaystyle="true">
+ <mfrac>   <mi>w</mi>  <mi>V</mi>
+ </mfrac>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- SECTION 4.2 ---------------------------------------------->
+<h4> 4.2 &emsp; Newton's second law of notion </h4>
+
+<p> One of <span style="font-variant: small-caps;"> Newton</span>'s
+ laws asserts that action equals reaction.
+ An object can only push itself forward
+ by pushing something else back.
+ If that something else is not infinitely heavy,
+ it will start moving
+ in the opposite direction,
+ as anyone can testify who has ever tried
+ stepping ashore from a small boat.
+The mechanism applies equally to air.
+</p>
+<p>&emsp;
+ A propeller pushing an airplane forward will have to push
+ some quantity of air to the rear. This will give that air
+ a velocity increase. 
+  <span style="font-variant: small-caps;">Newton</span>’s
+ second law states that the force needed
+ to accelerate a mass
+ is proportional to the mass times its acceleration :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
+  <mi>m</mi>  <mo>.</mo>  <mi>a</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+</p>
+
+<p> This is not the a of (4.1), but the momentary acceleration.
+ Acceleration is  the change of velocity per second.
+ We&nbsp;can also write (4.3) as :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
+  <mi>m</mi>  <mo>.</mo> 
+    <msup> <mi>v</mi> <mn>&bull;</mn>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+
+<p> The raised dot <sup>&#9679;</sup> is
+ <span style="font-variant: small-caps;">
+ Newton</span>'s symbol for "per second".
+ A lesser known version of the same law is :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
+  <mn>(</mn> <mi>m</mi>  <mo>.</mo> 
+    <msup> <mrow> <mi>v</mi>  <mn>)</mn>  </mrow>
+    <mn>&bull;</mn>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Here the force equals the change in the "quantity of motion" 
+ (&hairsp;<i>m&hairsp;.&hairsp;v</i>&hairsp;),
+ which is also known as the "momentum".
+</p>
+<p>&emsp;
+ The momentum can change by a change of mass per second,
+ just as well as by a change of velocity per second.
+ Instead of accelerating the same mass to an ever higher velocity,
+ we can take a new mass <i>m</i><sup>&#9679;</sup> every second,
+ and give it the same velocity increase <i>v</i> every time.
+</p>
+<p>&emsp;
+  For example, we can exert a forward force on ourselves
+ by throwing a snowball of mass <i>m</i> to the rear every second,
+ or by squirting a continuous mass flow of water
+ <i>m</i><sup>&#9679;</sup>
+ out of a fire hose at a constant velocity <i>v</i>.
+</p>
+<p>&emsp;
+ We can write (4.5) as :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>v</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION 4.3 ---------------------------------------------->
+
+<h4> 4.3 &emsp; Newton's momentum law for the propeller </h4>
+
+<p> We use version (4.6) of <span style="font-variant: small-caps;">
+ Newton</span>'s law for the propeller.
+</p>
+<p>&emsp;
+ Let us say that each second an air mass <i>m</i><sup>&#9679;</sup>
+ flows through the prop disk.
+ From figure 4.1, this mass gets
+ a velocity increase from <i>V</i> to <i>V</i>+<i>w</i>, 
+ i.e. a net velocity increase of <i>w</i>.
+ The propeller exerts a constant rearward force
+ <i>F</i> on the flow,
+ and by <span style="font-variant: small-caps;">
+ Newton</span>'s  first law receives an equal but opposite
+ forward  reaction force which we will call the thrust <i>T</i>.
+  Then <span style="font-variant: small-caps;">
+ Newton</span>'s  second law for a propeller is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>w</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This is the basis of what is called the<i> </i>
+ "momentum theory" of the propeller. With the definition
+ for <i>b</i> in (4.2) we can also write :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>b</mi>
+    <mo>.</mo> 
+    <mi>V</mi>
+</math>
+
+<td style="width:50px; text-align:right">                 (4.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION 4.4 ---------------------------------------------->
+<h4> 4.4 &emsp; The efficiency at the actuator disk </h4>
+
+<p> We now look at the power.
+ First we calculate the power at the prop disk.
+ With (3.5)  for the net power and (4.7) or (4.8) for the thrust
+ we have : 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>P</mi>  <mn>net</n> </msub>
+    <mspace/> <mo>=</mo> <mspace/>
+    <mi>T</mi>
+    <mo>.</mo> 
+    <mi>V</mi>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>w</mi>
+    <mo>.</mo> 
+    <mi>V</mi>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>b</mi>
+    <mo>.</mo> 
+    <msup> <mi>V</mi> <mn>2</mn> </msup>
+
+</math>
+
+<td style="width:50px; text-align:right">                 (4.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From figure 4.1, the propeller works in a local flow 
+ of increased velocity of its own making,
+ (&hairsp;<i>V</i>&hairsp;+&hairsp;<i>v</i>&hairsp;). 
+ On this flow, the thrust of the propeller needs to exert
+ the following power, since power is force times velocity   :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>P</mi>  <mn>gross</n> </msub>
+    <mspace/> <mo>=</mo> <mspace/>
+    <mi>T</mi>
+    <mo>.</mo> 
+    <mn>(</mn> <mi>V</mi> <mo>+</mo> <mi>v</mi> <mn>)</mn>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>b</mi>
+    <mo>.</mo> 
+    <msup> <mi>V</mi> <mn>2</mn> </msup>
+    <mo>.</mo> 
+    <mn>(&hairsp;</mn> <mi>1</mi> <mo>+</mo> 
+       <mi>a</mi> <mn>&hairsp;)</mn>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The local momentum loss (&hairsp;actually,
+ the gross power increase&hairsp;) is :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>P</mi>  <mn>m</n> </msub>
+
+    <mspace/> <mo>=</mo> <mspace/>
+
+    <msub> <mi>P</mi>  <mn>gross</n> </msub>
+    <mo>-&hairsp;</mo>
+    <msub> <mi>P</mi>  <mn>net</n> </msub>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <mi>b</mi>
+    <mo>.</mo> 
+    <msup> <mi>V</mi> <mn>2</mn> </msup>
+    <mo>.</mo> <mi>a</mi>
+</math>
+
+<td style="width:50px; text-align:right">                (4.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Note that <i>P</i><sub>m</sub> 
+is not the total momentum power, 
+ but only the extra power due to the induction velocity
+ <i>v</i>,
+ on top of the power
+ <i>T&hairsp;.&hairsp;V</i> needed to drive
+ the airplane forward at its flying velocity <i>V</i>.
+</p>
+<p>&emsp;
+ The momentum loss ratio is the ratio
+ between (4.11) and (4.9)  :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>P</mi> <mn>m</mn> </msub>
+    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo> 
+      <mi>b</mi>
+      <mo>.</mo> 
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+    </mrow>
+      <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo> 
+      <mi>b</mi>
+      <mo>.</mo> 
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+   </mrow>
+  </mfrac> 
+  <mo>&nbsp;.</mo> <mi>a</mi>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>a</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> By (3.9), the non-dimensional form of this ratio is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+   <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
+                    </mi>  <mi>v </mi>
+          </msub> 
+  </mrow>
+   <mrow> <mi>T</mi> <mi>&prime;</mi>          </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>a</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> The propulsive efficiency is the ratio between net output power
+ and the gross input power. 
+ It does not depend on the mass flow,
+ only on the  induction ratio <i>a</i>.
+</p>
+<p>&emsp;
+ From (3.10), the momentum efficiency at the prop disk is :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
+
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+   <mn>1</mn>
+   <mrow> <mn>1</mn> <mo>+</mo> <mi>a</mi>
+  </mrow>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.14)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION 4.5 ---------------------------------------------->
+<h4> 4.5 &emsp; The efficiency in the far wake </h4>
+
+<p> 
+The wake velocity
+  <i>w</i> = <i>&hairsp;b&hairsp;.&hairsp;V&hairsp;</i>
+ dropped out of the momentum loss ratio 
+(4.12) when dividing (4.9)  by (4.10). 
+ But the wake velocity is interesting in its own right, 
+ so we derive it here from an energy argument.
+The propeller leaves behind a velocity <i>w</i>, 
+ and therefore also a kinetic energy,
+ in the atmosphere. The equation for kinetic energy is 
+ &frac12<i>m v</i><sup>2</sup> ,
+ but in this case the velocity is <i>w</i>, and the mass is
+ <i>m</i><sup>&#9679;</sup>  per second.
+</p>
+<p>&emsp;
+  Energy per second is the definition of a power,
+ and so the kinetic energy lost to the wake represents
+ the following power :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>P</mi>  <mn>m</n> </msub>
+    <mspace/> <mo>=</mo> <mspace/>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <mn>&frac12&nbsp;</mn> 
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <msup> <mi>w</mi> <mn>2</mn> </msup>
+
+    <mo>&nbsp;=&nbsp;</mo>
+
+    <mn>&frac12&nbsp;</mn> 
+    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+    <mo>.</mo> 
+    <msup> <mi>b</mi> <mn>2</mn> </msup>
+    <mo>.</mo> 
+    <msup> <mi>V</mi> <mn>2</mn> </msup>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With the net power (4.9), we have an alternative expression
+ for the loss ratio  :
+</p>
+
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <msub> <mi>P</mi> <mn>m</mn> </msub>
+    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+   </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mrow> 
+      <mn>&frac12&nbsp;</mn> 
+      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo> 
+      <msup> <mi>b</mi> <mn>2</mn> </msup>
+      <mo>.</mo> 
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+    </mrow>
+      <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+      <mo>.</mo> 
+      <mi>b</mi>
+      <mo>.</mo> 
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+   </mrow>
+  </mfrac> 
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mfrac>
+    <mrow> 
+      <mn>&frac12&nbsp;</mn> 
+      <msup> <mi>b</mi> <mn>2</mn> </msup>
+   </mrow>
+      <mi>b</mi>
+  </mfrac>
+ 
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mi>b</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.16)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The mass flow <i>m</i><sup>&#9679;</sup>
+  drops out of this ratio like it did in (4.12).
+ Once again, the efficiency does not depend on the mass flow. 
+ This time it only depends on the far wake induction ratio <i>b</i>.
+  By (3.9), the non-dimensional form yields&nbsp;:
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mstyle displaystyle="true">
+  <mfrac>
+   <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
+                    </mi>  <mi>m </mi>
+          </msub> 
+  </mrow>
+   <mrow> <mi>T</mi> <mi>&prime;</mi>          </mrow>
+  </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12&nbsp;</mn> <mi>b</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.17)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From (3.10), the far wake efficiency is :
+</p>
+
+<!-- EQUATION -------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
+
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mstyle displaystyle="true">
+  <mfrac>
+   <mn>1</mn>
+   <mrow> <mn>1</mn> <mo>+</mo> 
+     <mn>&frac12&nbsp;</mn>  <mi>b</mi>
+  </mrow>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.18)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION 4.6 ---------------------------------------------->
+<h4> 4.5 &emsp;
+     Equating the disk and the far wake efficiencies </h4>
+
+<p> 
+ We now have two ways of calculating the momentum loss ratio
+ and they must be equal, because the propeller can have
+ only one efficiency, whichever way you calculate it.
+</p>
+<p>&emsp;
+ Equating (4.13) to (4.17), or (4.14) to (4.18), we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table> <tr> <td>
+<math>
+  <mi>a</mi> 
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12&nbsp;</mn> <mi>b</mi>
+
+</math>
+
+<td style="width:50px; text-align:right">                (4.19)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The flow towards the disk and the flow away from it
+ are anti-symmetrical. Air accelerates towards
+ the oncoming propeller, as if it is "sucked in",
+ and then accelerates by the same amount aft of it,
+ as if it is "pushed off".
+ The propeller disk itself is exactly halfway this process. 
+</p>
+<p>&emsp;
+ There is a direct parallel with the downwash of a wing,
+ which we will discuss in a later chapter on vortex theory.
+</p>
+
+<!-- SECTION 4.7 ---------------------------------------------->
+
+<!--////////////////////////////////////////////////////////////
+
+<h4> 4.7 &emsp; The quadratic nature of the momentum loss </h4>
+
+<p> The momentum loss is a loss of kinetic energy to the atmosphere,
+ and the kinetic energy, basically ½&nbsp;<i>m&nbsp;v</i><sup>2</sup>,
+ is quadratic in the velocity.
+ Here <i>v</i> ( or rather, <i>w</i> ) is the velocity
+ left behind by the propeller
+ after it has passed, <i>not</i>&nbsp;the flying velocity <i>V</i>.
+ The thrust on the other hand, is proportional to the
+ momentum <i>m&hairsp;.&hairsp;v</i>&nbsp; “lost” to the atmosphere.
+ It is linearly, not quadratically proportional to the velocity increase.
+</p>
+<p>&emsp;
+ As a result, the momentum loss (4.15) is quadratic 
+in the thrust loading,
+ and the momentum loss ratio (4.16) is linear in it. 
+ We will find in chapter 16 that the viscous loss by contrast,
+ is linear in the thrust loading.
+</p>
+<p>&emsp;
+ The viscous loss ratio is constant relative to the thrust,
+ or at least, it is independent of the thrust loading.
+</p>
+/////////////////////////////////////////////////////////////-->
+
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+</body>
+</html>
