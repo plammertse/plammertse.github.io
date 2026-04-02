@@ -21,16 +21,34 @@
   <li> <a href="exoskeletons.html">  &#x25B2;Exoskeletons        </a> </li>
   <li> <a style="background-color:#0000B0;"
           href="armbot.html">                Armbot         </a> </li>
-<!--
-  <li> <a href="lopes.html">                 Lopes  &#x25BA </a> </li>
-  <li> <a href="hands.html">                 Hands  &#x25BA </a> </li>
--->
 </ul>
 
 <!-- TEXT PAGE --------------------------------------------------------->
 
 <h2> The Armbot exoskeleton </h2>
 
+<h4> introduction </h4>
+
+<p> The Armbot was an amazing arm exoskeleton
+which I developed between my times at Moog and Motek.
+The movie shows the "final", all-singing, all-dancing
+prototype #12.
+ It is a remarkably low cost, light, and free moving device,
+ all thanks to a few simple but unusual design ideas.
+</p>
+<p>&emsp;
+Unfortunately, the development was shelved when Motek
+was acquired by a Chinese investor who also in&shyvested
+in Hocoma, who in turn had in their portfolio an arm exoskeleton
+of six times the cost and complexity,
+ coupled to useless performance.
+</p>
+<p>&emsp;
+ This section documents a number of the 
+ more interesting design features.
+ These were never patented, and&nbsp;they can therefore 
+ be freely copied.
+</p>
 
 <!-- Armbot video ------------------------------------------------------>
 <video width="680" height="auto" autoplay muted controls loop
@@ -45,8 +63,173 @@
 <p style="margin-left :280px;">
     <i> Armbot final prototype ( 2017 ) </i> </p>
 
+<h4> torque only </h4>
 
-<h4> basic idea - pushrods only (&hairsp;2009&hairsp;) </h4>
+<p> The single most important idea in the final Armbot
+is that it drives the human joints
+ in <i>torque only</i>.
+</p>
+<p>&emsp;
+This includes not only elbow flexion,
+ but also the shoulder
+ degrees of freedom :
+shoulder abduction, shoulder flexion,
+ and internal-external rotation. 
+</p>
+<p>&emsp;
+ All <i>forces</i> are specifically excluded.
+ This feels com&shypletely natural,
+but it definitely requires an
+<a href="armbot_torque.html"> explanation</a>.
+</p>
+
+<h4> all other DOF's are <i>free</i> </h4>
+
+<p> As discussed in the 
+<a href="armbot_torque.html"> explanation</a>,
+a pure torque does not have a point of application.
+It does not apply a net force,
+and it does not need a <i>force</i> support point
+ to react against (&hairsp;it does require a torque
+reaction,
+ but this does not apply in any particular point&hairsp;).
+ This concept has surprisingly deep consequences,
+ which can be put to very good use in simplifying
+ both the exoskeleton itself and its use in practice.
+</p>
+<p>&emsp;
+ The torque-only actuation is decoupled
+ from all other movements,
+ in particular from the <i>translations</i>
+ of the shoul&shyder joint and of the torso.
+ Not only are these not driven,
+ but they are in fact left completely free floating.
+</p>
+
+<h4> the alignment problem in conventional exoskeletons </h4>
+
+<p> In conventional floor mounted exoskeletons,
+ the position of the human shoulder joint
+is pinned to a fixed position in space by the mechanism.
+ Typically, a therapy session will start with
+ some ten minutes of care&shyful readjustment
+ of the robot's shoulder pivot location
+ to coincide with that of the patient.
+ Even small misalignments can be painful during
+subsequent movements.
+</p>
+<p>&emsp;
+ But it gets worse : the human shoulder does 
+not even <i>have</i> a single pivot point.
+ When lifting the arm by more than about 30&deg
+of abduction,
+ the shoulder joint wants to rise,
+ and if constrained the shoulder feels forced 
+and even painful,
+even after careful "fitting".
+
+<h4> wearable exoskeletons </h4>
+
+<p> The "overconstraining" problem
+ goes away if we can drive
+ the shoulder rotations by a pure torque,
+ and leave the shoulder itself free to move in 
+ the three translational DOF's.
+</p>
+<p>&emsp;
+The first solution that comes to mind is to make
+a <i>wearable</i> exoskeleton for the human arm.
+There are how&shyever two major problems with 
+this solution.
+The first one is that the torque has to be
+reacted somewhere.
+This will almost have to be on a body har&shyness.
+These will never be very comfortable, 
+ and most likely re-introduce a fixed position
+ of the shoulder pivot rela&shytive
+to the torso.
+</p>
+<p>&emsp;
+The second problem is that the motors, and most likely
+ some batteries, will have to be worn as well.
+This will make the wearable exoskeleton
+very heavy and cumbersome.
+The Armbot is therefore still a floor fixed device.
+</p>
+
+<h4> the floor mounted mechanical solution </h4>
+
+<p> Designing a simple mechanism which can apply
+pure torques to the shoulder and elbow from a fixed base
+without constraining any of the other motions
+ is not trivial. In the Armbot it is achieved 
+ by a relatively simple pantograph mechanism.
+<p>
+<p>&emsp; 
+ The mechanism decouples the torques
+ from the translations by a 90&deg change
+in direction in some torque- and pushrods,
+ via small bellcranks
+ at the top of a swiveling column.
+ The resulting exoskeleton does not fight,
+ or even "see" any patient misalignments
+ or any of the natural synergies
+ such as the shoulder lifting during abduction.
+ The video shows the idea.
+A separate <b><i><u>page</i></b></u> gives more details.
+</p>
+<p>
+<span style="color:darkgrey">
+&emsp; TODO Add the bit about no motors and the Galloway mechanism.
+</span>
+</p>
+
+<h4> the original idea : skewed axes </h4>
+
+<p> The torque-only idea was not the one
+that started the development.
+The original motivation was to use the skewed axes
+ideas from the
+<a href="adl_gimbal.html"> ADL gimbal</a>
+ to eliminate the open circle segments, 
+ sometimes even big full ring bearings
+often seen near the human wrist interface,
+ and even somemetimes even around the upper arm.
+</p>
+<p>&emsp;
+ Eliminating these large bearings led to 
+ a mechanically so simple and lightweight
+ robot arm.
+</p>
+<p>&emsp;
+, with no motors moving 
+ with the limbs, and with no cable drives
+ or pulleys, only simple pushrods.
+</p>
+<p>&emsp;
+Several mechanical innovations were needed to make
+this ideal possible, as detailed below.
+ But the major breakthrough came with the
+torque-only idea.
+</p>
+
+<h4> pushrods only (&hairsp;2009&hairsp;) </h4>
+
+<p>&emsp;
+ Upper arm abduction, flexion and internal-external rotation,
+ as well as elbow flexion
+ are powered  without loading the shoulder joint
+ and are absolutely painless.
+ There is no setup or alignment time.
+ Any patient can put their arm into the 
+ upper arm- and elbow brackets without any need
+ for further adjustment.
+</p>
+<p>&emsp;
+ Motors and force sensors are located in the base.
+ The mechanism itself is very lightweight,
+ consisting only of a few lightweight aluminium tubes.
+ In addition, it is completely naturally balanced. 
 
 <p> While at Moog, around 2009 I started the development
  of a novel arm exoskeleton.
@@ -62,24 +245,8 @@ It is mechanically balanced. The mechanism gently floats
  &plusmn;&hairsp;45&deg joint angles are transmitted over a series
  of joints with a total added angle
  of over 180&deg, all the way from the motors
- to the elbow and even to the wrist
+ to the elbow and even to the wrist,
  by simple lightweight pushrods.
-</p>
-
-<h4> torque only </h4>
-
-<p> All the human joints are driven in torque only.
- This feels completely natural and unforced.
-The other DOF's <nobr>(&hairsp;trans&shylations</nobr>
- of all the joints,
- including the shoulder and the torso&hairsp;)
-are not driven, but instead freed up mechanic&shyally
- by the 90&deg angle at the top of the column.
-This eliminates the usual ten minutes of "fitting"
- the patient at the start of a session.
- The exoskeleton simply does not fight,
- or even see any patient misalignments or synergies
- such as the shoulder lifting during abduction.
 </p>
 
 <h4> natural skewed axes </h4>
@@ -94,32 +261,77 @@ and since there is no translational forcing
  to the shoulder.
 </p>
 <p>&emsp; This order of axes is far superior in 
-range of motion to a vertical first axis from the world,
- which is often used in other exoskeletons 
+range of motion to a vertical first axis from the world.
+This is often used in other exoskeletons 
  because it provides natural gravity balancing
  (&hairsp;or rather, indifference&hairsp;) to the first axis,
- which is not needed in an admittance controller.
-  
+ but this is not needed in an admittance controller,
+whcih only "sees" the weight suspended from the force sensor.
 </p>
 
 <h4> final prototype (&hairsp;2017&hairsp;) </h4>
 
 <p>The video shows the final prototype in action.
+
+<span style="color:darkgrey">
+<b> There is *no* powered weight support... </b>
 The weight of the upper arm and forearm combined
  is supported  by a settable vertical force,
  unloading the shoulder from the combined weight
  of the upper arm and forearm.
 This force comes (via the linkage) from the floor motor
  and the single push-pull force sensor dedicated to this DOF.
+</span>
 The weight of the forearm,
  suspended from the upper arm link,
  is supported by a fully adaptive 
 elbow flexion torque from a second chain of pushrods
  and motor plus force sensor.
-Shoulder abduction is driven by a third floor motor
+Shoulder abduction is driven by a third floor motor,
  rotating the red torque tube.
 <br> <br>
 </p>
+
+<span style="color:darkgrey">
+
+<p> - &ensp; skewed axes.
+</p>
+<p> - &ensp; abduction and eternal rotation mixed geometry.
+</p>
+<p> - &ensp; no vertical force on shoulder.
+</p>
+<p> - &ensp; torques only.
+</p>
+<p> - &ensp; free (unpowered) DOF's give shoulder joint
+     0.25&hairsp;m free range in all directions.
+</p>
+<p> - &ensp; automatic balancing.
+</p>
+<p> - &ensp; additive angles via the Galloway bellcrank.
+</p>
+<p> - &ensp; low mass, low friction pushrods.
+</p>
+<p> - &ensp; all motors and force sensors at ground level.
+</p>
+<p> - &ensp; simple plain leadscrew drives.
+</p>
+<p> - &ensp; admittance control for extremely sensitive haptics.
+</p>
+<p> - &ensp; rubber disks take the place of small angle pivots.
+</p>
+<p> - &ensp; simple thrust bearings allow infinite pushrod roll.
+</p>
+<p> - &ensp; low cost Hudson Teknic (&hairsp;ClearPath&hairps;) motors.
+</p>
+<p> - &ensp; one (&hairsp;independent&hairsp;) haptic channel per powered DOF.
+</p>
+
+
+
+
+
+
+</span>
 
 <!---------------------------------------------------------------------->
 <br> <br>
