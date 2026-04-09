@@ -29,26 +29,27 @@
 <h4> introduction </h4>
 
 <p> The Armbot is an amazing arm exoskeleton
-which I developed in a 
-<a href="armbot_history.html"> series of steps</a>
-from 2012 to 2017.
+which I developed in a series of
+<a href="armbot_history.html"> prototypes</a>
+from 2012 to 2017.<br>
 The&nbsp;movie shows the "final", all-singing, all-dancing
 prototype #12.
+</p>
+<p>&emsp;
  The Armbot is a remarkably effective, low&nbsp;cost
  and light&shyweight device,
  thanks to a few simple but unusual design ideas.
-</p>
-<p>&emsp;
- This website documents some of the 
+ This website documents some of its 
  more interesting design features.
 </p>
 <p>&emsp;
- The Armbot did not go into production because of
- company political considerations.
+ The Armbot did not go into production for
+ company political reasons.
  Since every cloud has a silver lining, 
- in the process the design ideas were never patented.
- They can therefore be freely copied,
- and I would encourage anyone to do so.
+ the&nbsp;patenting process was also abandoned.
+ The design ideas presented here can therefore 
+ be freely copied,
+ and&nbsp;I would encourage anyone to do so.
 </p>
 
 <!-- Armbot video --------------------------------------------->
@@ -91,7 +92,7 @@ but it definitely requires an
 
 <h4> all other DOF's are <i>free floating</i> </h4>
 
-<p> As discussed in the 
+<p> As discussed in the pure torque
 <a href="armbot_torque.html"> explanation</a>,
 a pure torque does not have a point of application.
 It does not apply a net force,
@@ -102,7 +103,12 @@ and it does not need a <i>force</i> support point
  This concept has surprisingly deep consequences,
  which can be put to very good use in simplifying
  both the exoskeleton itself and its use in practice.
+ The details are discussed
+<a href="armbot_floating.html"> here</a>.
 </p>
+
+<span style="color:darkgrey">
+
 <p>&emsp;
  The torque-only actuation is decoupled
  from all other movements,
@@ -110,15 +116,44 @@ and it does not need a <i>force</i> support point
  of the shoul&shyder joint and of the torso.
  Not only are these not driven,
  but they are in fact left completely free floating.
- This&nbsp;is discussed in more detail
-<a href="armbot_floating.html"> here</a>.
+</p>
+<p>&emsp;
+ This eliminates most of the disdavantages
+ of conventional exoskeletons, in particular
+ the lengthy and precise adjustment
+ at the start of every session,
+ but also the painful blocking of the 
+ natural synergies of the shoulder during
+ abduction and other motions.
 </p>
 
+</span>
+
+<!--
 <h4> the powered DOF's have a <i>natural</i>
    (&hairsp;non&hairsp;-&thinsp;ISB&hairsp;) order or rotation</h4>
-<p>
+-->
+<h4> the powered DOF's have a specific order or rotation</h4>
+
+<p> The shoulder abduction torque is driven along
+ a horizontal axis coming from 45&deg back.
+This fits the human range of motion (&hairsp;ROM&hairsp;) quite closely, 
+and since there is no translational forcing
+ of the shoulder at all,
+ the shoulder is free to lift and rotate
+ around any point internal (&hairsp;or even external&hairsp;)
+ to the shoulder.
+</p>
+<p>&emsp; This order of axes is far superior in 
+range of motion to a vertical first axis from the world.
+This is often used in other exoskeletons 
+ because it provides natural gravity balancing
+ (&hairsp;or rather, indifference&hairsp;) to the first axis,
+ but this is not needed in an admittance controller,
+whcih only "sees" the weight suspended from the force sensor.
 </p>
 
+<!--
 
 <h4> the alignment problem in conventional exoskeletons </h4>
 
@@ -170,6 +205,8 @@ This will make the wearable exoskeleton
 very heavy and cumbersome.
 The Armbot is therefore still a floor fixed device.
 </p>
+
+-->
 
 <h4> the floor mounted mechanical solution </h4>
 
@@ -263,26 +300,8 @@ It is mechanically balanced. The mechanism gently floats
  by simple lightweight pushrods.
 </p>
 
-<h4> natural skewed axes </h4>
 
-<p> The shoulder abduction torque is driven along
- a horizontal axis coming from 45&deg back.
-This fits the human range of motion (&hairsp;ROM&hairsp;) quite closely, 
-and since there is no translational forcing
- of the shoulder at all,
- the shoulder is free to lift and rotate
- around any point internal (&hairsp;or even external&hairsp;)
- to the shoulder.
-</p>
-<p>&emsp; This order of axes is far superior in 
-range of motion to a vertical first axis from the world.
-This is often used in other exoskeletons 
- because it provides natural gravity balancing
- (&hairsp;or rather, indifference&hairsp;) to the first axis,
- but this is not needed in an admittance controller,
-whcih only "sees" the weight suspended from the force sensor.
-</p>
-
+<!--
 <h4> final prototype (&hairsp;2017&hairsp;) </h4>
 
 <p>The video shows the final prototype in action.
@@ -305,6 +324,7 @@ Shoulder abduction is driven by a third floor motor,
  rotating the red torque tube.
 <br> <br>
 </p>
+-->
 
 <span style="color:darkgrey">
 
