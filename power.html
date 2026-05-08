@@ -63,7 +63,7 @@
 
       // pointer history
       let isPointerDown = false;
-      let xPointerDown  = 0;
+//      let xPointerDown  = 0;
       let yPointerDown  = 0;
       let xEffect       = 3;
       let xCutoff       = 2;
@@ -296,7 +296,7 @@
       function OnPointerDown(e) {
          isPointerDown = true;
          fillColor     = "red";
-         xPointerDown  = e.offsetX;
+//         xPointerDown  = e.offsetX;
          yPointerDown  = e.offsetY;
          select = "none  ";
          if ( yPointerDown > pYZero)  {
@@ -305,6 +305,9 @@
          if ( yPointerDown < pYZero)  {
             select = "cutoff";
          }
+		 let isMobile = 
+		   ( window.navigator.maxTouchPoints > 1 );
+		 if ( isMobile )  { pointerGain = 0.05 }
       }
 
       function OnPointerUp(e) {
@@ -316,8 +319,7 @@
          if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
-// 			      xEffect + pointerGain * e.movementX;
- 			      xEffect + pointerGain * 0.01*e.offsetX;
+ 			      xEffect + pointerGain * e.movementX;
 			   if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
 			}
          
