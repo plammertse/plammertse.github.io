@@ -1,0 +1,492 @@
+<!----------------------------------------------------------------
+-- file    : pdf.html
+-- purpose : Display two sliding Gaussian bumps
+-- status  : Under development, first UI attempt in Javascript.
+------------------------------------------------------------------
+-- history :
+--  2026-05-07 PL moving text labels, with values
+--  2026-05-06 PL added interactive cutoff
+--  2026-05-04 PL added pixelratio scaling with dpr
+--  2026-05-03 PL added click handler, and XY position in a <p>,
+--                  added mouseup/mousedown handlers.
+--  2026-04-31 PL new
+------------------------------------------------------------------>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Gaussian Bumps </title>
+
+  <!-- Quick style fix until own CSS is in place -->
+  <style>
+   body { font-family : arial, sans-serif }
+   h2 { margin-left   : 12px;
+        margin-top    : 6px;
+        margin-bottom : 3px; 	   }
+   h4 { margin-left   : 24px;
+        margin-top    : 6px;
+        margin-bottom : 4px; 	   }
+   p  { margin-left   : 24px;
+        margin-top    : 3px;
+        margin-bottom : 0px; 	   }
+  </style>
+  
+   <!-- letIABLES ------------------------------------------------>
+
+   <script>
+      let   canvas;
+      let   ctx;
+      let   dpr;                 // screen scaling
+                                 // against blur and zoom problems
+      const dT = 30;             // drawing interval
+
+      let fillColor = "yellow";
+
+      // screen scaling          // from canvas top left corner
+      const canvasWidth  =  600;
+      const canvasHeight =  400;
+      const pXZero       =  200;
+      const pXGain       =   50;
+      const pYZero       =  200;
+//      const pYGain       = -150  *  3/4;  
+      // p(0) is 0.4, same height as 3 sigma makes fx*3 = fy*0.4,
+	  // so fy = fx*3/0.4 = 40*3/0.4 = use pXgain*3/0.4
+//      const pYGain       = -150*4/5;  // 0.4 is 3 sigma, so use pXgain*3/0.4,
+//      const pYGain       = -150;
+      const pYGain       = -375;
+	  // but we have p(0) = 1, so fy = 0.4*300 = 120 , OK
+//	  pXGain =  50;
+//	  pYGain = 150;
+	  const mouseGain    =  0.005;   // increments, pixel to x
+
+      // mouse history
+      let isMouseDown   = false;
+      let xMouseDown    = 0;
+      let yMouseDown    = 0;
+      let xEffect       = 3;
+      let xCutoff       = 2;
+      let select        = "none  ";
+
+      // statistical data
+	  const sqrtTwoPi   = Math.sqrt( 2 * Math.PI );
+      let   effectSize  =  0;
+      let   cutoff      =  1;
+
+   </script>
+
+   <!-- DATA FUNCTIONS ------------------------------------------->
+
+   <script>
+      function xRange( xL, xR ) {
+         const N = 50;      // points per sigma
+         let x = [];
+         let x_ = xL;
+         while ( x_ <= xR  ) {
+            x_ = x_ + 1/N;
+            x.push( x_);
+         }
+         return x;
+		 // TODO  Make distribution denser near the peak.
+         // Use steps of x.dx for an x^2 distribution.
+	 }
+
+      function gaussBumpArray( x ) {
+	     // Unit amplitude (not unit area) Gauss bump.
+         let y = [];
+         for( let x_ of x ) {
+            y.push( Math.exp( -0.5 * x_*x_) / sqrtTwoPi);
+         }
+         return y;
+         // The area-normalized probability density function
+		 //   pdf() would be :
+         // const p1 = 1 / (stdDev * Math.sqrt(2 * Math.PI));
+         // const p2 = Math.exp( -0.5 *
+         //                       Math.pow((x - mean) / stdDev, 2));
+         // return p1 * p2;
+      }
+	  
+      function erf(x) {
+         // constants
+         let a1 =  0.254829592;
+         let a2 = -0.284496736;
+         let a3 =  1.421413741;
+         let a4 = -1.453152027;
+         let a5 =  1.061405429;
+         let p  =  0.3275911;
+
+         // Save the sign of x
+         let sign = 1;
+         if (x < 0) {
+            sign = -1;
+         }
+//         x = Math.abs(x);
+         x = Math.abs(x) / Math.sqrt(2);
+
+         // A&S formula 7.1.26
+         let t = 1.0/(1.0 + p*x);
+         let y = 1.0 - (((((a5*t + a4)*t) + a3)*t + a2)*t + a1)
+		           * t *Math.exp(-x*x);
+
+         return sign*y;
+         // from : picomath
+         // Greg Hewgill, from John D. Cook
+         // polynomial A&S formula 7.1.26
+         // Abramowitz and Stegun, Handbook of Mathematical Functions,
+         // with sign and Horner's function for O(n) performance.
+      }
+	  
+	  function cdf(x) {  
+	      return 0.5*( 1 + erf(x));
+	  }
+   </script>
+
+   <!-- DRAW FUNCTIONS --------------------------------------->
+
+   <script>
+      function setCanvas()  {
+         // Set actual size in memory (scaled for DPI)  (??)
+         canvas.width  = canvasWidth;
+         canvas.height = canvasHeight;
+		 
+         // Scaling ctx.scale by dpr is a known trick to prevent
+		 // blurry text and lines, but it makes the pixels
+		 // inside the canvas larger (TBC), zooming in on the scene,
+         // without increasing the canvas area, so an incrasing part
+		 // of the scene falls outside the canvas frame, whcih is 
+		 // undesirable.
+		 // The mouse event positions are still in external
+		 // canvas coordinates, so there is a mismatch there too.
+         // We will scale back the pixel drawing coordinates
+		 // by dpr to keep the drawing inside the canvas the same,
+		 // regardless of dpr. Not sure this is the best method.
+         dpr = window.devicePixelRatio || 1;
+
+         ctx.scale( dpr, dpr);
+	  }
+	  
+      // -- Scale and offset x and y to screen axes :
+
+      function sX( x ) {
+         return ( pXZero + pXGain*x )/dpr;
+      }   
+      function sY( y ) {
+         return ( pYZero + pYGain*y )/dpr;
+      }   
+
+      function drawLine( x, y, color = 'black' ) {
+         ctx.beginPath();
+         ctx.moveTo( sX( x[0]), sY( y[0]));
+         let i = 1;
+         while ( i < x.length ) {
+            ctx.lineTo( sX( x[i]), sY( y[i]) );
+            i++;
+         }
+		 ctx.strokeStyle = color;
+         ctx.stroke();
+      }
+
+	  function drawGrid() {
+	     // TODO Make a loop
+         ctx.beginPath();
+         ctx.moveTo( sX(-10), sY(0) );
+         ctx.lineTo( sX( 10), sY(0) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(-10), sY(0.4) );
+         ctx.lineTo( sX( 10), sY(0.4) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(-10), sY(-0.4) );
+         ctx.lineTo( sX( 10), sY(-0.4) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(0), sY(-10) );
+         ctx.lineTo( sX(0), sY( 10) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(3), sY(-10) );
+         ctx.lineTo( sX(3), sY( 10) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(-3), sY(-10) );
+         ctx.lineTo( sX(-3), sY( 10) );
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo( sX(6), sY(-10) );
+         ctx.lineTo( sX(6), sY( 10) );
+         ctx.stroke();
+      }
+
+	  
+      function fillToZero( x, y, fillColor = 'yellow' ) {
+         ctx.beginPath();
+         ctx.moveTo( sX( x[0]), sY(  0  ));
+         ctx.lineTo( sX( x[0]), sY( y[0]));
+         let i = 0;
+         while ( i < x.length ) {
+            ctx.lineTo( sX( x[i]), sY( y[i]) );
+            i++;
+         }
+         ctx.lineTo( sX( x[ x.length-1] ), sY( 0 ) );  // vertical end
+         ctx.lineTo( sX( x[0] ), sY(  0 )  );          // vertical begin
+         ctx.lineTo( sX( x[0] ), sY( y[0]) );  // close the fill area - NOT NEEDED !!??!!
+
+         ctx.fillStyle = fillColor;
+         ctx.fill();
+      }
+	  
+	  function addScalar( x, dx )  {  // TODO Check if this also bumps input x 
+        let i = 0;
+        while ( i < x.length ) {
+		  x[i] = x[i] + dx;
+		  i++;
+		}
+		return x;
+	  }
+	  
+	  function mulScalar( x, fx )  {
+        let i = 0;
+        while ( i < x.length ) {
+		  x[i] = x[i] * fx;
+		  i++;
+		}
+		return x;
+	  }
+	  
+	  function setText( text, x, y, FS = 12, color = 'black' )
+	  {
+         let FS_ = FS/dpr;
+         ctx.font = FS_.toString() + "px Arial";
+		 
+			// Experimentally add a white background. *)
+			// Dirty fix /2 because the block character is rather wide.	 
+			let temp = '\u2588';
+			for ( let i = 1; i<text.length/2; i++ )  {
+			temp = temp + '\u2588';
+			}
+			ctx.fillStyle = 'white';
+			ctx.fillText( temp, sX(x), sY(y) );
+		 
+         ctx.fillStyle = color;
+         ctx.fillText( text, sX(x), sY(y) );
+
+         // )* Highlight background : call fillText twice.
+         //    First a string of Unicode+2588 █ which is a black rectangle
+         //    repeated the same length as the text using the background color.
+         //    And then call fillText as normal with the foreground color.
+      }
+   </script>
+
+   <!-- EVENT LISTENERS------------------------------------------->
+
+   <script>
+      function OnClick(e) {
+         let pX = e.offsetX;
+         let pY = e.offsetY;
+      }
+
+      function OnMouseDown(e) {
+         isMouseDown = true;
+         fillColor   = "red";
+         xMouseDown = e.offsetX;
+         yMouseDown = e.offsetY;
+         select = "none  ";
+         if ( yMouseDown > pYZero)  {
+            select = "effect";
+         }
+         if ( yMouseDown < pYZero)  {
+            select = "cutoff";
+         }
+      }
+
+      function OnMouseUp(e) {
+         isMouseDown = false;
+         fillColor   = "yellow";
+      }
+
+      function OnMouseMove(e) {
+         if ( isMouseDown )  {
+            if ( select == "effect" )  {
+               xEffect =
+ 			      xEffect + mouseGain * e.movementX;
+			   if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
+			}
+         
+            if ( select == "cutoff" )  {
+               xCutoff =
+			   xCutoff + mouseGain * e.movementX;
+			}
+			if ( Math.abs( xCutoff) < 0.001 ) {
+			   xCutoff = 0;
+			}
+		}
+      }
+   </script>
+   
+   <!-- CANVAS MAIN DRAWING ----------------------------------------------------->
+
+   <script>
+      function Draw() {
+		setCanvas();
+
+         ctx.clearRect( 0, 0, canvas.width, canvas.height);
+
+         // Fill zero hypothesis confidence area
+		 let x = xRange( -10, xCutoff);
+         let y = gaussBumpArray( x );
+         fillToZero( x, y, 'aqua'  );
+
+         // Fill Type I error area
+         x = xRange( xCutoff, 10);
+         y = gaussBumpArray( x );
+         fillToZero( x, y, "#ff4400"  );
+
+         // Outline zero-hypothesis bump
+		 x = xRange( -10, 10);
+		 y = gaussBumpArray( x );
+		 drawLine( x, y );
+
+		// Fill Type II error area
+		 x = xRange( -10, xCutoff-xEffect);
+         y = gaussBumpArray( x );
+		 x = addScalar( x, xEffect);
+		 y = mulScalar( y, -1);
+         fillToZero( x, y, 'red'  );
+
+		// Fill Type II error area
+		 x = xRange( xCutoff-xEffect, 5);
+         y = gaussBumpArray( x );
+		 x = addScalar( x, xEffect);
+		 y = mulScalar( y, -1);
+         fillToZero( x, y, 'aqua'  );
+
+         // Outline effect-hypothesis bump
+		 x = xRange( -20, 20);
+		 y = gaussBumpArray( x );
+		 x = addScalar( x, xEffect);
+		 y = mulScalar( y, -1);
+		 drawLine( x, y );
+
+         // Grid axes
+		 ctx.lineWidth = 0.2;  // makes it grey
+		 drawGrid();
+
+         // Cutoff line dashed vertical
+		 ctx.lineWidth = 3;
+		 ctx.setLineDash([3,3]);
+		 x = [ xCutoff, xCutoff  ];
+		 y = [ -0.4, 0.4 ];
+		 drawLine( x, y, 'darkblue' );
+		 ctx.setLineDash([]);
+
+         // Cutoff line tick ends
+		 ctx.lineWidth = 2;
+		 x = [ xCutoff-0.12, xCutoff+0.12 ];
+		 y = [ -0.4, -0.4 ];
+ 		 drawLine( x, y, 'darkblue' );
+		 y = [  0.4,  0.4 ];
+		 drawLine( x, y, 'darkblue' );
+
+         // Zero hypothesis label
+		 ctx.textAlign = "center";
+		 ctx.fillColor = 'black';
+		 setText( '  zero hypothesis  ', 0,  0.42 );
+		 
+         // Effect hypothesis label
+		 let s = '   effect hypothesis = ' +
+                     xEffect.toPrecision(2).toString() + ' ' + '\u03c3' + '   ';
+		 setText( s , xEffect,  -0.44);
+		 
+         // Cutoff label
+		 ctx.textAlign = "center";
+		 ctx.fillColor = 'black';
+		 s = '  cutoff = ' + xCutoff.toPrecision(3).toString() + ' ' + '\u03c3' + '   ';
+		 setText(  s, xCutoff, 0.22 );
+
+         // Type I error label
+		 let tail = 1-cdf( xCutoff);       // one-sided, right tail
+		 if ( Math.abs( tail) < 0.01 ) { tail = 0 }
+		 s = ' type I error = ' + tail.toPrecision(3).toString() + '      ';
+		 ctx.textAlign = "left";
+//		 let xx = Math.max( 0.5, xCutoff+0.5);
+		 setText( s , xCutoff+0.3, +0.04 );
+		 
+         // Type II error label
+		 tail = cdf( xCutoff - xEffect);       // one-sided, left tail
+		 if ( tail < 0.01 )  { tail = 0 }
+		 s = '    type II error = ' + tail.toPrecision(2).toString() + '   ';
+		 ctx.textAlign = "right";
+//		 xx = Math.min( xEffect-0.6, xCutoff-0.5);
+		 setText( s, xCutoff-0.2, -0.06 );
+
+         // Power label
+		 ctx.textAlign = "start";
+		 let power = 1 - tail;       // one-sided, right tail
+		 if ( power < 0.001 )  { power = 0 }
+		 let xx = Math.max( xEffect+0.5, xCutoff+0.5);
+		 s = ' power = ' + power.toPrecision(2).toString() + '      ';
+		 setText( s, xx, -0.2 );
+
+//		 ctx.textAlign = "center";
+//		 setText( '   POWER   ', xCutoff+1, -0.5 );
+		 
+//		 setText( ' type II error ' + ' \u03A9'
+//                + '\u2588', xCutoff -0.5, -0.2 );
+      }
+   </script>
+</head>
+
+<!-- HTML BODY -------------------------------------------->
+
+<body>
+   <h2> May the power be with you </h2>
+
+   <h4> you go, girl </h4>
+   <p>  Lorem ipsum...  </p>
+
+   <!-- CREATE CANVAS (IN HTML) --------------------------->
+   <canvas id = "bumps";
+      style = "border           : 1px solid #000000;
+               background-color : #F0F0FF;
+               margin-top       : 12px;
+               margin-left      : 36px;" >
+   </canvas>
+
+   <!-- ADD SCRIPTS THAT USE CANVAS ----------------------->
+   <!-- These scripts need to come *after* the canvas ?! -->
+   <!--   ( and *therefore*, inside the body )           -->
+
+   <script>
+      canvas = document.getElementById( "bumps" );
+      ctx    = canvas.getContext( "2d" );
+
+      canvas.addEventListener( "click",      OnClick );
+      canvas.addEventListener( "mousemove",  OnMouseMove );
+      canvas.addEventListener( "mousedown",  OnMouseDown );
+      canvas.addEventListener( "mouseup",    OnMouseUp );
+      canvas.addEventListener( "mouseleave", OnMouseUp );    // OK 
+
+      setInterval( Draw, dT );          // main drawing loop
+   </script>
+
+<p style="margin-left   : 200px;
+          margin-top    :  6px;
+          margin-bottom :  0px;"> <b><i>
+		  Figure 1 : &emsp; Exploring power.
+		  </i></b>
+</p>
+<p style="margin-left   : 120px;
+          margin-top    :  2px;
+          margin-bottom :  0px;"> <i>
+		  Click in upper half to move cutoff, click in lower half to move effect size.
+		  </i>
+</p>
+</body>
+</html>
