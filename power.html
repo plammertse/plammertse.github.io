@@ -68,6 +68,7 @@
       let xEffect       = 3;
       let xCutoff       = 2;
       let select        = "none  ";
+	  let eMove = 0;
 
       // statistical data
 	  const sqrtTwoPi   = Math.sqrt( 2 * Math.PI );
@@ -316,6 +317,9 @@
       }
 
       function OnPointerMove(e) {
+	  
+	     eMove = e.movementX;  // DEBUG
+		 
          if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
@@ -436,13 +440,11 @@
 		 if ( power < 0.001 )  { power = 0 }
 		 let xx = Math.max( xEffect+0.5, xCutoff+0.5);
 		 s = ' power = ' + power.toPrecision(2).toString() + '      ';
-		 setText( s, xx, -0.2 );
-
-//		 ctx.textAlign = "center";
-//		 setText( '   POWER   ', xCutoff+1, -0.5 );
 		 
-//		 setText( ' type II error ' + ' \u03A9'
-//                + '\u2588', xCutoff -0.5, -0.2 );
+		 
+		 s = ' pointer gain = ' + pointerGain.toPrecision(2) + '  '  +
+		       eMove.toPrecision(2) + '  ';
+		 setText( s, xx, -0.2 );
       }
    </script>
 </head>
