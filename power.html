@@ -316,7 +316,8 @@
          if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
- 			      xEffect + pointerGain * e.movementX;
+// 			      xEffect + pointerGain * e.movementX;
+ 			      xEffect + pointerGain * 0.01*e.offsetX;
 			   if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
 			}
          
