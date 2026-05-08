@@ -289,14 +289,15 @@
    <!-- EVENT LISTENERS------------------------------------------->
 
    <script>
+/*
       function OnClick(e) {
          let pX = e.offsetX;
          let pY = e.offsetY;
       }
-
+*/
       function OnPointerDown(e) {
          isPointerDown = true;
-         fillColor     = "red";
+//         fillColor     = "red";
 //         xPointerDown  = e.offsetX;
          yPointerDown  = e.offsetY;
          select = "none  ";
@@ -310,7 +311,7 @@
 
       function OnPointerUp(e) {
          isPointerDown = false;
-         fillColor     = "yellow";
+//         fillColor     = "yellow";
       }
 
       function OnPointerMove(e) {
@@ -322,25 +323,28 @@
 		   
 		 isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		 
-		 isMobile = window.matchMedia("(any-hover:none)").matches; 
+//		 isMobile = window.matchMedia("(any-hover:none)").matches; 
 
 		 if ( isMobile )  { pointerGain = 5 }
-
+/*
 if (isMobile) {
   console.log("Dit is een mobiel apparaat");
 } else {
   console.log("Dit is een desktop");
 }
+*/
          if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
- 			      xEffect + pointerGain * e.movementX;
+				  xEffect + pointerGain * ( e.movementX - e.movementY );
+// 			      xEffect + pointerGain * e.movementX;
 			   if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
 			}
          
             if ( select == "cutoff" )  {
                xCutoff =
-			   xCutoff + pointerGain * e.movementX;
+			   xCutoff + pointerGain * ( e.movementX - e.movementY );
+//			   xCutoff + pointerGain * e.movementX;
 			}
 			if ( Math.abs( xCutoff) < 0.001 ) {
 			   xCutoff = 0;
