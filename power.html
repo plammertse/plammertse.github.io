@@ -1,9 +1,10 @@
 <!----------------------------------------------------------------
--- file    : pdf.html
+-- file    : power.html
 -- purpose : Display two sliding Gaussian bumps
 -- status  : Under development, first UI attempt in Javascript.
 ------------------------------------------------------------------
 -- history :
+--  2026-05-08 PL changed mouse to pointer, for mobile devices
 --  2026-05-07 PL moving text labels, with values
 --  2026-05-06 PL added interactive cutoff
 --  2026-05-04 PL added pixelratio scaling with dpr
@@ -58,12 +59,12 @@
 	  // but we have p(0) = 1, so fy = 0.4*300 = 120 , OK
 //	  pXGain =  50;
 //	  pYGain = 150;
-	  const mouseGain    =  0.005;   // increments, pixel to x
+	  const pointerGain  =  0.005;   // increments, pixel to x
 
-      // mouse history
-      let isMouseDown   = false;
-      let xMouseDown    = 0;
-      let yMouseDown    = 0;
+      // pointer history
+      let isPointerDown = false;
+      let xPointerDown  = 0;
+      let yPointerDown  = 0;
       let xEffect       = 3;
       let xCutoff       = 2;
       let select        = "none  ";
@@ -155,7 +156,7 @@
          // without increasing the canvas area, so an incrasing part
 		 // of the scene falls outside the canvas frame, whcih is 
 		 // undesirable.
-		 // The mouse event positions are still in external
+		 // The pointer event positions are still in external
 		 // canvas coordinates, so there is a mismatch there too.
          // We will scale back the pixel drawing coordinates
 		 // by dpr to keep the drawing inside the canvas the same,
@@ -292,36 +293,36 @@
          let pY = e.offsetY;
       }
 
-      function OnMouseDown(e) {
-         isMouseDown = true;
-         fillColor   = "red";
-         xMouseDown = e.offsetX;
-         yMouseDown = e.offsetY;
+      function OnPointerDown(e) {
+         isPointerDown = true;
+         fillColor     = "red";
+         xPointerDown  = e.offsetX;
+         yPointerDown  = e.offsetY;
          select = "none  ";
-         if ( yMouseDown > pYZero)  {
+         if ( yPointerDown > pYZero)  {
             select = "effect";
          }
-         if ( yMouseDown < pYZero)  {
+         if ( yPointerDown < pYZero)  {
             select = "cutoff";
          }
       }
 
-      function OnMouseUp(e) {
-         isMouseDown = false;
-         fillColor   = "yellow";
+      function OnPointerUp(e) {
+         isPointerDown = false;
+         fillColor     = "yellow";
       }
 
-      function OnMouseMove(e) {
-         if ( isMouseDown )  {
+      function OnPointerMove(e) {
+         if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
- 			      xEffect + mouseGain * e.movementX;
+ 			      xEffect + pointerGain * e.movementX;
 			   if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
 			}
          
             if ( select == "cutoff" )  {
                xCutoff =
-			   xCutoff + mouseGain * e.movementX;
+			   xCutoff + pointerGain * e.movementX;
 			}
 			if ( Math.abs( xCutoff) < 0.001 ) {
 			   xCutoff = 0;
@@ -467,11 +468,10 @@
       canvas = document.getElementById( "bumps" );
       ctx    = canvas.getContext( "2d" );
 
-      canvas.addEventListener( "click",      OnClick );
-      canvas.addEventListener( "mousemove",  OnMouseMove );
-      canvas.addEventListener( "mousedown",  OnMouseDown );
-      canvas.addEventListener( "mouseup",    OnMouseUp );
-      canvas.addEventListener( "mouseleave", OnMouseUp );    // OK 
+      canvas.addEventListener( "pointermove",  OnPointerMove );
+      canvas.addEventListener( "pointerdown",  OnPointerDown );
+      canvas.addEventListener( "pointerup",    OnPointerUp );
+      canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
 
       setInterval( Draw, dT );          // main drawing loop
    </script>
