@@ -306,9 +306,6 @@
          if ( yPointerDown < pYZero)  {
             select = "cutoff";
          }
-		 let isMobile = 
-		   ( window.navigator.maxTouchPoints > 1 );
-		 if ( isMobile )  { pointerGain = 5 }
       }
 
       function OnPointerUp(e) {
@@ -319,7 +316,21 @@
       function OnPointerMove(e) {
 	  
 	     eMove = e.movementX;  // DEBUG
+
+		 let isMobile = 
+		   ( window.navigator.maxTouchPoints > 1 );
+		   
+		 isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		 
+		 isMobile = window.matchMedia("(any-hover:none)").matches; 
+
+		 if ( isMobile )  { pointerGain = 5 }
+
+if (isMobile) {
+  console.log("Dit is een mobiel apparaat");
+} else {
+  console.log("Dit is een desktop");
+}
          if ( isPointerDown )  {
             if ( select == "effect" )  {
                xEffect =
