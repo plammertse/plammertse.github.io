@@ -354,7 +354,25 @@ if (isMobile) {
 		}
       }
    </script>
-   
+
+
+<script>
+   // The event listeners cannot be called directly here, it has to be
+   // either in the body or in this wrapper function.
+   function OnLoad()  {
+      canvas = document.getElementById( "bumps" );
+      ctx    = canvas.getContext( "2d" );
+
+      canvas.addEventListener( "pointermove",  OnPointerMove );
+      canvas.addEventListener( "pointerdown",  OnPointerDown );
+      canvas.addEventListener( "pointerup",    OnPointerUp );
+      canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
+
+      setInterval( Draw, dT );          // main drawing loop
+//      window.setInterval( Draw, dT );          // main drawing loop
+	}
+</script>
+  
    <!-- CANVAS MAIN DRAWING ----------------------------------------------------->
 
    <script>
@@ -469,7 +487,10 @@ if (isMobile) {
 
 <!-- HTML BODY -------------------------------------------->
 
+<body onload="OnLoad()">
+<!--
 <body>
+-->
    <h2> May the power be with you </h2>
 
    <h4> you go, girl </h4>
@@ -486,7 +507,7 @@ if (isMobile) {
    <!-- ADD SCRIPTS THAT USE CANVAS ----------------------->
    <!-- These scripts need to come *after* the canvas ?! -->
    <!--   ( and *therefore*, inside the body )           -->
-
+<!--
    <script>
       canvas = document.getElementById( "bumps" );
       ctx    = canvas.getContext( "2d" );
@@ -498,7 +519,7 @@ if (isMobile) {
 
       setInterval( Draw, dT );          // main drawing loop
    </script>
-
+-->
 <p style="margin-left   : 200px;
           margin-top    :  6px;
           margin-bottom :  0px;"> <b><i>
