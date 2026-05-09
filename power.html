@@ -302,17 +302,15 @@
 */
       function OnPointerDown(e) {
          isPointerDown = true;
-//         pXPointerDown  = e.offsetX;
-//         pYPointerDown  = e.offsetY;
 		 
-        let rect = canvas.getBoundingClientRect();
-        pX = e.clientX - rect.left;
-        pY = e.clientY - rect.top;
-        pXPointerDown = pX;
-        pYPointerDown = pY;
+         let rect = canvas.getBoundingClientRect();
+         pX = e.clientX - rect.left;
+         pY = e.clientY - rect.top;
+         pXPointerDown = pX;
+         pYPointerDown = pY;
 
-        pXPrev = pX;
-        pYPrev = pY;
+         pXPrev = pX;
+         pYPrev = pY;
 	 
          select = "none  ";
          if ( pYPointerDown > pYZero)  {
@@ -413,7 +411,7 @@
       
       function OnTouchEnd(e) {
          isPointerDown = false;
-         select = 'none';
+         select = 'nothing';
          if ( e.target == canvas ) e.preventDefault();
       }
 
