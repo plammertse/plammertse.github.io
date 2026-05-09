@@ -557,12 +557,14 @@
        
 		 s = '          pX, pXPrev = ' +
             pX.toPrecision(5).toString()     + '  ' +
-            pXPrev.toPrecision(5).toString() + '  ';
-		 setText( s, 7.5, 0.4 );
+            pXPrev.toPrecision(5).toString() + '  ' +
+            pXMove.toPrecision(5).toString() + '  ';
+            setText( s, 7.5, 0.4 );
        
 		 s = '          pY, pYPrev = ' +
             pY.toPrecision(5).toString()     + '  ' +
-            pYPrev.toPrecision(5).toString() + '  ';
+            pYPrev.toPrecision(5).toString() + '  ' +
+            pYMove.toPrecision(5).toString() + '  ';            
 		 setText( s, 7.5, 0.35 );
        
       } // end Draw()
