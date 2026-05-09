@@ -338,19 +338,17 @@
       function OnPointerMove(e) {
 	     // pXMove = e.movementX;  // TODO :  DEBUG FOR MOBILE
 
-        let rect = canvas.getBoundingClientRect();
-        pX     = e.clientX - rect.left;
-        pXMove = pX - pXPrev;
-        pXPrev = pX;
-        pY     = e.clientY - rect.top;
-        pYMove = pY - pYPrev;
-        pYPrev = pY;
+         let rect = canvas.getBoundingClientRect();
+         pX     = e.clientX - rect.left;
+         pXMove = pX - pXPrev;
+         pXPrev = pX;
+         pY     = e.clientY - rect.top;
+         pYMove = pY - pYPrev;
+         pYPrev = pY;
 
-		 // if ( IsMobile() )  { pointerGain = 5 }
-       
          if ( isPointerDown )  {
             if ( select == "effect" )  {
-               xEffect = xEffect + pointerGain * e.movementX;
+               xEffect = xEffect + pointerGain * pXMove;
                if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
             }
          
@@ -373,6 +371,21 @@
          pXPrev = pX;
          pYMove = pY - pYPrev;
          pYPrev = pY;
+         
+         if ( isPointerDown )  {
+            if ( select == "effect" )  {
+               xEffect = xEffect + pointerGain * pXMove;
+               if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
+            }
+         
+            if ( select == "cutoff" )  {
+               xCutoff = xCutoff + pointerGain * pXMove;
+            }
+            if ( Math.abs( xCutoff) < 0.001 ) {
+               xCutoff = 0;
+            }
+         } // end pointer down
+        
          if ( e.target == canvas ) e.preventDefault();
       }
 
