@@ -361,8 +361,20 @@
       } //end on pointer move
    </script>
 
+    <script>
+      function OnTouchMove(e) {
+         let rect = canvas.getBoundingClientRect();
+         pX = e.touches[0].clientX - rect.left;
+         pY = e.touches[0].clientY - rect.top;
+         pXMove = pX - pXPrev;
+         pXPrev = pX;
+         pYMove = pY - pYPrev;
+         pYPrev = pY;
+         if ( e.target == canvas ) e.preventDefault();
+      }
+   </script>
 
-<script>
+   <script>
    // The event listeners cannot be called directly here.
    // It has to be 
    // either in the body or in this wrapper function.
@@ -378,6 +390,8 @@
       canvas.addEventListener( "pointerdown",  OnPointerDown );
       canvas.addEventListener( "pointerup",    OnPointerUp );
       canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
+
+      canvas.addEventListener( "touchmove",  OnPointerMove );
 
       setInterval( Draw, dT );          // main drawing loop
 //      window.setInterval( Draw, dT );          // main drawing loop
