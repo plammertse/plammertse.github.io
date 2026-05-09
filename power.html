@@ -1,8 +1,8 @@
-<!----------------------------------------------------------------
+<!--------------------------------------------------------------
 -- file    : power.html
 -- purpose : Display two sliding Gaussian bumps
 -- status  : Under development, first UI attempt in Javascript.
-------------------------------------------------------------------
+----------------------------------------------------------------
 -- history :
 --  2026-05-08 PL changed mouse to pointer, for mobile devices
 --  2026-05-07 PL moving text labels, with values
@@ -11,7 +11,7 @@
 --  2026-05-03 PL added click handler, and XY position in a <p>,
 --                  added mouseup/mousedown handlers.
 --  2026-04-31 PL new
------------------------------------------------------------------->
+--------------------------------------------------------------->
 
 <!DOCTYPE html>
 <html>
@@ -33,57 +33,46 @@
         margin-bottom : 0px; 	   }
   </style>
   
-   <!-- letIABLES ------------------------------------------------>
+   <!-- VARIABLES --------------------------------------------->
 
    <script>
       let   canvas;
       let   ctx;
-      let   dpr;                 // screen scaling
-                                 // against blur and zoom problems
-      const dT = 30;             // drawing interval
+      let   dpr;                    // screen scaling
+                                    // against blur and zoom problems
+      const dT = 30;                // drawing interval
 
       let fillColor = "yellow";
 
-      // screen scaling          // from canvas top left corner
-      const canvasWidth  =  600;
-      const canvasHeight =  400;
-      const pXZero       =  200;
-      const pXGain       =   50;
-      const pYZero       =  200;
-//      const pYGain       = -150  *  3/4;  
-      // p(0) is 0.4, same height as 3 sigma makes fx*3 = fy*0.4,
-	  // so fy = fx*3/0.4 = 40*3/0.4 = use pXgain*3/0.4
-//      const pYGain       = -150*4/5;  // 0.4 is 3 sigma, so use pXgain*3/0.4,
-//      const pYGain       = -150;
-      const pYGain       = -375;
-	  // but we have p(0) = 1, so fy = 0.4*300 = 120 , OK
-//	  pXGain =  50;
-//	  pYGain = 150;
-	  const pointerGain  =  0.005;   // increments, pixel to x
+      // screen scaling             // from canvas top left corner
+      const canvasWidth    =  600;
+      const canvasHeight   =  400;
+      const pXZero         =  200;
+      const pXGain         =   50;
+      const pYZero         =  200;
+      const pYGain         = -375;    // square grid 3 sigma, pdf = 0.4
+      const pointerGain    =  0.005;  // increments, pixel movement to x
 
       // pointer history
-      let isPointerDown = false;
-      let pXPointerDown  = 0;
-      let pYPointerDown  = 0;
-      let pX  = 0;
-      let pY  = 0;
-      let pXPrev  = 0;
-      let pYPrev  = 0;
-      let pXMove  = 0;
-      let pYMove  = 0;
-      let xEffect       = 3;
-      let xCutoff       = 2;
-      let select        = "none  ";
-	  let eMove = 0;
+      let isPointerDown    = false;
+      let pXPointerDown    = 0;
+      let pYPointerDown    = 0;
+      let pX               = 0;
+      let pY               = 0;
+      let pXPrev           = 0;
+      let pYPrev           = 0;
+      let pXMove           = 0;
+      let pYMove           = 0;
+      let select           = "none  ";
 
       // statistical data
-	  const sqrtTwoPi   = Math.sqrt( 2 * Math.PI );
-      let   effectSize  =  0;
-      let   cutoff      =  1;
+      const sqrtTwoPi      = Math.sqrt( 2 * Math.PI );
+      let xEffect          = 3;
+      let xCutoff          = 2;
 
    </script>
 
-   <!-- DATA FUNCTIONS ------------------------------------------->
+   <!-- DATA FUNCTIONS ---------------------------------------->
 
    <script>
       function xRange( xL, xR ) {
@@ -95,9 +84,9 @@
             x.push( x_);
          }
          return x;
-		 // TODO  Make distribution denser near the peak.
-         // Use steps of x.dx for an x^2 distribution.
-	 }
+         // TODO  Make distribution denser near the peak.
+         //       Use steps of x.dx for an x^2 distribution.
+      }
 
       function gaussBumpArray( x ) {
 	     // Unit amplitude (not unit area) Gauss bump.
@@ -106,11 +95,10 @@
             y.push( Math.exp( -0.5 * x_*x_) / sqrtTwoPi);
          }
          return y;
-         // The area-normalized probability density function
-		 //   pdf() would be :
+         // The full probability density function is :
          // const p1 = 1 / (stdDev * Math.sqrt(2 * Math.PI));
          // const p2 = Math.exp( -0.5 *
-         //                       Math.pow((x - mean) / stdDev, 2));
+         //             Math.pow((x - mean) / stdDev, 2));
          // return p1 * p2;
       }
 	  
@@ -128,14 +116,12 @@
          if (x < 0) {
             sign = -1;
          }
-//         x = Math.abs(x);
-         x = Math.abs(x) / Math.sqrt(2);
+         x = Math.abs(x) / Math.sqrt(2);  // !!!
 
          // A&S formula 7.1.26
          let t = 1.0/(1.0 + p*x);
          let y = 1.0 - (((((a5*t + a4)*t) + a3)*t + a2)*t + a1)
 		           * t *Math.exp(-x*x);
-
          return sign*y;
          // from : picomath
          // Greg Hewgill, from John D. Cook
@@ -144,12 +130,14 @@
          // with sign and Horner's function for O(n) performance.
       }
 	  
-	  function cdf(x) {  
+	  function cdf(x) {
+         // erf() ranges from -0.5 to +0.5,
+         // cumulative probabilty density from 0 to 1
 	      return 0.5*( 1 + erf(x));
 	  }
    </script>
 
-   <!-- DRAW FUNCTIONS --------------------------------------->
+   <!-- DRAWING FUNCTIONS ------------------------------------->
 
    <script>
       function setCanvas()  {
@@ -158,22 +146,22 @@
          canvas.height = canvasHeight;
 		 
          // Scaling ctx.scale by dpr is a known trick to prevent
-		 // blurry text and lines, but it makes the pixels
-		 // inside the canvas larger (TBC), zooming in on the scene,
+         // blurry text and lines, but it makes the pixels
+         // inside the canvas larger (TBC), zooming in on the scene,
          // without increasing the canvas area, so an incrasing part
-		 // of the scene falls outside the canvas frame, whcih is 
-		 // undesirable.
-		 // The pointer event positions are still in external
-		 // canvas coordinates, so there is a mismatch there too.
+         // of the scene falls outside the canvas frame, which is 
+         // undesirable.
+         // The pointer event positions are still in external
+         // canvas coordinates, so there is a mismatch there too.
          // We will scale back the pixel drawing coordinates
-		 // by dpr to keep the drawing inside the canvas the same,
-		 // regardless of dpr. Not sure this is the best method.
+         // by dpr to keep the drawing inside the canvas the same,
+         // regardless of dpr. Not sure this is the best method.
          dpr = window.devicePixelRatio || 1;
 
          ctx.scale( dpr, dpr);
 	  }
 	  
-      // -- Scale and offset x and y to screen axes :
+      // -- Scale and offset x and y to screen (pixel) axes :
 
       function sX( x ) {
          return ( pXZero + pXGain*x )/dpr;
@@ -190,12 +178,12 @@
             ctx.lineTo( sX( x[i]), sY( y[i]) );
             i++;
          }
-		 ctx.strokeStyle = color;
+         ctx.strokeStyle = color;
          ctx.stroke();
       }
 
-	  function drawGrid() {
-	     // TODO Make a loop
+      function drawGrid() {
+         // TODO Make this a loop
          ctx.beginPath();
          ctx.moveTo( sX(-10), sY(0) );
          ctx.lineTo( sX( 10), sY(0) );
@@ -243,13 +231,14 @@
          }
          ctx.lineTo( sX( x[ x.length-1] ), sY( 0 ) );  // vertical end
          ctx.lineTo( sX( x[0] ), sY(  0 )  );          // vertical begin
-         ctx.lineTo( sX( x[0] ), sY( y[0]) );  // close the fill area - NOT NEEDED !!??!!
+         ctx.lineTo( sX( x[0] ), sY( y[0]) );          // close the fill area 
+         // This last statement is not needed in Chrome.
 
          ctx.fillStyle = fillColor;
          ctx.fill();
       }
 	  
-	  function addScalar( x, dx )  {  // TODO Check if this also bumps input x 
+	  function addScalar( x, dx ) { 
         let i = 0;
         while ( i < x.length ) {
 		  x[i] = x[i] + dx;
@@ -267,12 +256,11 @@
 		return x;
 	  }
 	  
-	  function setText( text, x, y, FS = 12, color = 'black' )
-	  {
+	  function setText( text, x, y, FS = 12, color = 'black' )  {
          let FS_ = FS/dpr;
          ctx.font = FS_.toString() + "px Arial";
 		 
-			// Experimentally add a white background. *)
+			// Kludge a white background box with block characters.
 			// Dirty fix /2 because the block character is rather wide.	 
 			let temp = '\u2588';
 			for ( let i = 1; i<text.length/2; i++ )  {
@@ -283,23 +271,25 @@
 		 
          ctx.fillStyle = color;
          ctx.fillText( text, sX(x), sY(y) );
-
-         // )* Highlight background : call fillText twice.
-         //    First a string of Unicode+2588 █ which is a black rectangle
-         //    repeated the same length as the text using the background color.
-         //    And then call fillText as normal with the foreground color.
       }
    </script>
 
    <!-- EVENT LISTENERS------------------------------------------->
 
    <script>
-/*
-      function OnClick(e) {
-         let pX = e.offsetX;
-         let pY = e.offsetY;
+   
+      // function OnClick(e) { }
+
+      // This function never detects a mobile phone !?!
+      function IsMobile() {
+         return ( window.navigator.maxTouchPoints > 1 );
+         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+         return window.matchMedia("(any-hover:none)").matches; 
       }
-*/
+
+      // pointermove X coordinate does not work well on mobiles,
+      // so use older mouse/touch fixes.
+      // TODO Test if movementX property works well in touchmove.
       function OnPointerDown(e) {
          isPointerDown = true;
 		 
@@ -325,17 +315,8 @@
          isPointerDown = false;
          select = 'none';
       }
-
-    // This function never detects a mobile phone !?!
-      function IsMobile() {
-         return ( window.navigator.maxTouchPoints > 1 );
-         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-         return window.matchMedia("(any-hover:none)").matches; 
-      }
 	
       function OnPointerMove(e) {
-	     // pXMove = e.movementX;  // TODO :  DEBUG FOR MOBILE
-
          let rect = canvas.getBoundingClientRect();
          pX     = e.clientX - rect.left;
          pXMove = pX - pXPrev;
@@ -360,7 +341,7 @@
       } //end on pointer move
    </script>
 
-    <script>
+   <script>
       function OnTouchMove(e) {
          let rect = canvas.getBoundingClientRect();
          pX = e.touches[0].clientX - rect.left;
@@ -388,7 +369,7 @@
       }
 
       function OnTouchStart(e) {
-         isMouseDown = true;
+         isPointerDown = true;
          let rect = canvas.getBoundingClientRect();
          pX = e.touches[0].clientX - rect.left;
          pY = e.touches[0].clientY - rect.top;
@@ -399,7 +380,7 @@
          pYMove = 0;
          pYPrev = pY;
          
-         select = "none  ";
+         select = "none";
          if ( pYPointerDown > pYZero)  {
             select = "effect";
          }
@@ -411,7 +392,7 @@
       
       function OnTouchEnd(e) {
          isPointerDown = false;
-         select = 'nothing';
+         select = 'none';
          if ( e.target == canvas ) e.preventDefault();
       }
 
@@ -419,10 +400,9 @@
 
    <script>
    // The event listeners cannot be called directly here.
-   // It has to be 
-   // either in the body or in this wrapper function.
-   // As far as I can see,you cannot add an argument to select a canvas.
-   // But you *can* set canvasId in the body, see commented code.
+   // It has to be either in the body or in this wrapper function.
+   // As far as I can see, you cannot add an argument to onload,
+   // but you *can* set canvasId in the body, see commented code.
    
    function OnLoad()  {
 	  let canvasId = "bumps";
@@ -432,7 +412,7 @@
 //      canvas.addEventListener( "pointermove",  OnPointerMove );
 //      canvas.addEventListener( "pointerdown",  OnPointerDown );
 //      canvas.addEventListener( "pointerup",    OnPointerUp );
-//      canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
+//      canvas.addEventListener( "pointerleave", OnPointerUp );
       canvas.addEventListener( "mousemove",  OnPointerMove );
       canvas.addEventListener( "mousedown",  OnPointerDown );
       canvas.addEventListener( "mouseup",    OnPointerUp );
@@ -443,20 +423,19 @@
       canvas.addEventListener( "touchend",   OnTouchEnd );
 
       setInterval( Draw, dT );          // main drawing loop
-//      window.setInterval( Draw, dT );          // main drawing loop
 	}
-</script>
+   </script>
   
-   <!-- CANVAS MAIN DRAWING ----------------------------------------------------->
+   <!-- CANVAS MAIN DRAWING ----------------------------------->
 
    <script>
       function Draw() {
-		setCanvas();
+         setCanvas();               // size and dpr scaling
 
          ctx.clearRect( 0, 0, canvas.width, canvas.height);
 
          // Fill zero hypothesis confidence area
-		 let x = xRange( -10, xCutoff);
+         let x = xRange( -10, xCutoff);
          let y = gaussBumpArray( x );
          fillToZero( x, y, 'aqua'  );
 
@@ -466,142 +445,143 @@
          fillToZero( x, y, "#ff4400"  );
 
          // Outline zero-hypothesis bump
-		 x = xRange( -10, 10);
-		 y = gaussBumpArray( x );
-		 drawLine( x, y );
-
-		// Fill Type II error area
-		 x = xRange( -10, xCutoff-xEffect);
+         x = xRange( -10, 10);
          y = gaussBumpArray( x );
-		 x = addScalar( x, xEffect);
-		 y = mulScalar( y, -1);
+         drawLine( x, y );
+
+         // Fill Type II error area
+         x = xRange( -10, xCutoff-xEffect);
+         y = gaussBumpArray( x );
+         x = addScalar( x, xEffect);
+         y = mulScalar( y, -1);
          fillToZero( x, y, 'red'  );
 
-		// Fill Type II error area
-		 x = xRange( xCutoff-xEffect, 5);
+         // Fill Type II error area
+         x = xRange( xCutoff-xEffect, 5);
          y = gaussBumpArray( x );
-		 x = addScalar( x, xEffect);
-		 y = mulScalar( y, -1);
+         x = addScalar( x, xEffect);
+         y = mulScalar( y, -1);
          fillToZero( x, y, 'aqua'  );
 
          // Outline effect-hypothesis bump
-		 x = xRange( -20, 20);
-		 y = gaussBumpArray( x );
-		 x = addScalar( x, xEffect);
-		 y = mulScalar( y, -1);
-		 drawLine( x, y );
+         x = xRange( -20, 20);
+         y = gaussBumpArray( x );
+         x = addScalar( x, xEffect);
+         y = mulScalar( y, -1);
+         drawLine( x, y );
 
          // Grid axes
-		 ctx.lineWidth = 0.2;  // makes it grey
-		 drawGrid();
+         ctx.lineWidth = 0.2;  // makes it grey
+         drawGrid();
 
          // Cutoff line dashed vertical
-		 ctx.lineWidth = 3;
-		 ctx.setLineDash([3,3]);
-		 x = [ xCutoff, xCutoff  ];
-		 y = [ -0.4, 0.4 ];
-		 drawLine( x, y, 'darkblue' );
-		 ctx.setLineDash([]);
+         ctx.lineWidth = 3;
+         ctx.setLineDash([3,3]);
+         x = [ xCutoff, xCutoff  ];
+         y = [ -0.4, 0.4 ];
+         drawLine( x, y, 'darkblue' );
+         ctx.setLineDash([]);
 
          // Cutoff line tick ends
-		 ctx.lineWidth = 2;
-		 x = [ xCutoff-0.12, xCutoff+0.12 ];
-		 y = [ -0.4, -0.4 ];
- 		 drawLine( x, y, 'darkblue' );
-		 y = [  0.4,  0.4 ];
-		 drawLine( x, y, 'darkblue' );
+         ctx.lineWidth = 2;
+         x = [ xCutoff-0.12, xCutoff+0.12 ];
+         y = [ -0.4, -0.4 ];
+         drawLine( x, y, 'darkblue' );
+         y = [  0.4,  0.4 ];
+         drawLine( x, y, 'darkblue' );
 
          // Zero hypothesis label
-		 ctx.textAlign = "center";
-		 ctx.fillColor = 'black';
-		 setText( '  zero hypothesis  ', 0,  0.42 );
+         ctx.textAlign = "center";
+         ctx.fillColor = 'black';
+         setText( '  zero hypothesis  ', 0,  0.42 );
 		 
          // Effect hypothesis label
-		 let s = '   effect hypothesis = ' +
+         let s = '   effect hypothesis = ' +
                      xEffect.toPrecision(2).toString() + ' ' + '\u03c3' + '   ';
-		 setText( s , xEffect,  -0.44);
+         setText( s , xEffect,  -0.44);
 		 
          // Cutoff label
-		 ctx.textAlign = "center";
-		 ctx.fillColor = 'black';
-		 s = '  cutoff = ' + xCutoff.toPrecision(3).toString() + ' ' + '\u03c3' + '   ';
-		 setText(  s, xCutoff, 0.22 );
+         ctx.textAlign = "center";
+         ctx.fillColor = 'black';
+         s = '  cutoff = ' + xCutoff.toPrecision(3).toString() + ' ' + '\u03c3' + '   ';
+         setText(  s, xCutoff, 0.22 );
 
          // Type I error label
-		 let tail = 1-cdf( xCutoff);       // one-sided, right tail
-		 if ( Math.abs( tail) < 0.01 ) { tail = 0 }
-		 s = ' type I error = ' + tail.toPrecision(3).toString() + '      ';
-		 ctx.textAlign = "left";
-//		 let xx = Math.max( 0.5, xCutoff+0.5);
-		 setText( s , xCutoff+0.3, +0.04 );
+         let tail = 1-cdf( xCutoff);       // one-sided, right tail
+         if ( Math.abs( tail) < 0.01 ) { tail = 0 }
+         s = ' type I error = ' + tail.toPrecision(3).toString() + '      ';
+         ctx.textAlign = "left";
+         setText( s , xCutoff+0.3, +0.04 );
 		 
          // Type II error label
-		 tail = cdf( xCutoff - xEffect);       // one-sided, left tail
-		 if ( tail < 0.01 )  { tail = 0 }
-		 s = '    type II error = ' + tail.toPrecision(2).toString() + '   ';
-		 ctx.textAlign = "right";
-//		 xx = Math.min( xEffect-0.6, xCutoff-0.5);
-		 setText( s, xCutoff-0.2, -0.06 );
+         tail = cdf( xCutoff - xEffect);       // one-sided, left tail
+         if ( tail < 0.01 )  { tail = 0 }
+         s = '    type II error = ' + tail.toPrecision(2).toString() + '   ';
+         ctx.textAlign = "right";
+         setText( s, xCutoff-0.2, -0.06 );
 
          // Power label
-		 ctx.textAlign = "start";
-		 let power = 1 - tail;       // one-sided, right tail
-		 if ( power < 0.001 )  { power = 0 }
-		 let xx = Math.max( xEffect+0.5, xCutoff+0.5);
-		 s = ' power = ' + power.toPrecision(2).toString() + '      ';
-		 setText( s, xx, -0.2 );
+         ctx.textAlign = "start";
+         let power = 1 - tail;       // one-sided, right tail
+         if ( power < 0.001 )  { power = 0 }
+         let xx = Math.max( xEffect+0.5, xCutoff+0.5);
+         s = ' power = ' + power.toPrecision(2).toString() + '      ';
+         setText( s, xx, -0.2 );
        
-       // Debug text boxes
-		 ctx.textAlign = "end";
-		 setText( '  select : '  + select + '   ', 7.5, 0.45 );
+         // Debug-text boxes
+         ctx.textAlign = "end";
+         setText( '  select : '  + select + '   ', 7.5, 0.45 );
        
-		 s = '          pX, pXPrev = ' +
+         s = '          pX, prev, move = ' +
             pX.toPrecision(5).toString()     + '  ' +
             pXPrev.toPrecision(5).toString() + '  ' +
             pXMove.toPrecision(5).toString() + '  ';
             setText( s, 7.5, 0.4 );
        
-		 s = '          pY, pYPrev = ' +
+         s = '          pY, prev, move = ' +
             pY.toPrecision(5).toString()     + '  ' +
             pYPrev.toPrecision(5).toString() + '  ' +
             pYMove.toPrecision(5).toString() + '  ';            
-		 setText( s, 7.5, 0.35 );
+         setText( s, 7.5, 0.35 );
        
       } // end Draw()
    </script>
 </head>
 
-<!-- HTML BODY -------------------------------------------->
+<!-- HTML BODY ------------------------------------------------>
 
 <body onload="OnLoad()">
-<!--
-<body>
--->
-   <h2> May the power be with you </h2>
 
-   <h4> you go, girl </h4>
-   <p>  Lorem ipsum...  </p>
+<!-- Do not indent the whole body -->
 
-   <!-- CREATE CANVAS (IN HTML) --------------------------->
-   <canvas id = "bumps";
-      style = "border           : 1px solid #000000;
-               background-color : #F0F0FF;
-               margin-top       : 12px;
-               margin-left      : 36px;" >
-   </canvas>
-   <!-- <script> let canvasId = "bumps"; </script> -->
+<h2> May the power be with you </h2>
+
+<h4> you go, girl </h4>
+<p>  Lorem ipsum...  </p>
+
+<!-- CREATE CANVAS (IN HTML) ---------------------------------->
+<canvas id = "bumps";
+     style = "border           : 1px solid #000000;
+              background-color : #F0F0FF;
+              margin-top       : 12px;
+              margin-left      : 36px;" >
+</canvas>
+
+<!-- <script> let canvasId = "bumps"; </script> -->
 
 <p style="margin-left   : 200px;
-          margin-top    :  6px;
+          margin-top    :  6px;  
           margin-bottom :  0px;"> <b><i>
-		  Figure 1 : &emsp; Exploring power.
-		  </i></b>
+  Figure 1 : &emsp; Exploring power.
+   </i></b>
 </p>
+
 <p style="margin-left   : 120px;
           margin-top    :  2px;
           margin-bottom :  0px;"> <i>
 		  Click in upper half to move cutoff, click in lower half to move effect size.
-		  </i>
+   </i>
 </p>
+
 </body>
 </html>
