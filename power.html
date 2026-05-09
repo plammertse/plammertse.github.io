@@ -69,6 +69,8 @@
       let pY  = 0;
       let pXPrev  = 0;
       let pYPrev  = 0;
+      let pXMove  = 0;
+      let pYMove  = 0;
       let xEffect       = 3;
       let xCutoff       = 2;
       let select        = "none  ";
@@ -323,6 +325,7 @@
 
       function OnPointerUp(e) {
          isPointerDown = false;
+         select = 'none';
       }
 
     // This function never detects a mobile phone !?!
@@ -372,6 +375,35 @@
          pYPrev = pY;
          if ( e.target == canvas ) e.preventDefault();
       }
+
+      function OnTouchStart(e) {
+         isMouseDown = true;
+         let rect = canvas.getBoundingClientRect();
+         pX = e.touches[0].clientX - rect.left;
+         pY = e.touches[0].clientY - rect.top;
+         pXPointerDown = pX;
+         pYPointerDown = pY;
+         pXMove = 0;
+         pXPrev = pX;
+         pYMove = 0;
+         pYPrev = pY;
+         
+         select = "none  ";
+         if ( pYPointerDown > pYZero)  {
+            select = "effect";
+         }
+         if ( pYPointerDown < pYZero)  {
+            select = "cutoff";
+         }
+         if ( evt.target == canvas ) evt.preventDefault();
+      }
+      
+      function OnTouchEnd(e) {
+         isPointerDown = false;
+         select = 'none';
+         if ( e.target == canvas ) e.preventDefault();
+      }
+
    </script>
 
    <script>
@@ -386,12 +418,18 @@
       canvas = document.getElementById( canvasId );
       ctx    = canvas.getContext( "2d" );
 
-      canvas.addEventListener( "pointermove",  OnPointerMove );
-      canvas.addEventListener( "pointerdown",  OnPointerDown );
-      canvas.addEventListener( "pointerup",    OnPointerUp );
-      canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
+//      canvas.addEventListener( "pointermove",  OnPointerMove );
+//      canvas.addEventListener( "pointerdown",  OnPointerDown );
+//      canvas.addEventListener( "pointerup",    OnPointerUp );
+//      canvas.addEventListener( "pointerleave", OnPointerUp );    // OK 
+      canvas.addEventListener( "mousemove",  OnPointerMove );
+      canvas.addEventListener( "mousedown",  OnPointerDown );
+      canvas.addEventListener( "mouseup",    OnPointerUp );
+      canvas.addEventListener( "mouseleave", OnPointerUp );    // OK 
 
       canvas.addEventListener( "touchmove",  OnTouchMove );
+      canvas.addEventListener( "touchstart", OnTouchStart );
+      canvas.addEventListener( "touchend",   OnTouchEnd );
 
       setInterval( Draw, dT );          // main drawing loop
 //      window.setInterval( Draw, dT );          // main drawing loop
@@ -504,10 +542,13 @@
        
        // Debug text boxes
 		 ctx.textAlign = "end";
+		 setText( '  select : '  + select + '   ', 7.5, 0.45 );
+       
 		 s = '          pX, pXPrev = ' +
             pX.toPrecision(5).toString()     + '  ' +
             pXPrev.toPrecision(5).toString() + '  ';
 		 setText( s, 7.5, 0.4 );
+       
 		 s = '          pY, pYPrev = ' +
             pY.toPrecision(5).toString()     + '  ' +
             pYPrev.toPrecision(5).toString() + '  ';
