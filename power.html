@@ -33,6 +33,12 @@
         margin-bottom : 0px; 	   }
   </style>
   
+  <style>
+      /* Fix for HTML bug, size not settable for number fields */
+      input[type=number]   {
+      width: 60px;         }      
+</style>
+  
    <!-- VARIABLES --------------------------------------------->
 
    <script>
@@ -329,6 +335,12 @@
             if ( select == "effect" )  {
                xEffect = xEffect + pointerGain * pXMove;
                if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
+                             
+               // Setting the effect size in the input field
+               // in the main loop doesn't work, because
+               // it overrides the typing :
+               //    let inEffect = document.getElementById("effect");
+               inEffect.value = xEffect.toFixed(2);
             }
          
             if ( select == "cutoff" )  {
@@ -398,6 +410,27 @@
 
    </script>
 
+
+   <script>
+      function DrawDebugTextBox()  {
+         // Debug-text boxes
+         ctx.textAlign = "end";
+         setText( '  select : '  + select + '   ', 7.5, 0.45 );
+       
+         s = '          pX, prev, move = ' +
+            pX.toPrecision(5).toString()     + '  ' +
+            pXPrev.toPrecision(5).toString() + '  ' +
+            pXMove.toPrecision(5).toString() + '  ';
+            setText( s, 7.5, 0.4 );
+       
+         s = '          pY, prev, move = ' +
+            pY.toPrecision(5).toString()     + '  ' +
+            pYPrev.toPrecision(5).toString() + '  ' +
+            pYMove.toPrecision(5).toString() + '  ';            
+            setText( s, 7.5, 0.35 );
+       }
+   </script>
+ 
    <script>
    // The event listeners cannot be called directly here.
    // It has to be either in the body or in this wrapper function.
@@ -528,22 +561,7 @@
          s = ' power = ' + power.toPrecision(2).toString() + '      ';
          setText( s, xx, -0.2 );
        
-         // Debug-text boxes
-         ctx.textAlign = "end";
-         setText( '  select : '  + select + '   ', 7.5, 0.45 );
-       
-         s = '          pX, prev, move = ' +
-            pX.toPrecision(5).toString()     + '  ' +
-            pXPrev.toPrecision(5).toString() + '  ' +
-            pXMove.toPrecision(5).toString() + '  ';
-            setText( s, 7.5, 0.4 );
-       
-         s = '          pY, prev, move = ' +
-            pY.toPrecision(5).toString()     + '  ' +
-            pYPrev.toPrecision(5).toString() + '  ' +
-            pYMove.toPrecision(5).toString() + '  ';            
-         setText( s, 7.5, 0.35 );
-       
+         // DrawDebugTextBox();
       } // end Draw()
    </script>
 </head>
@@ -579,9 +597,74 @@
 <p style="margin-left   : 120px;
           margin-top    :  2px;
           margin-bottom :  0px;"> <i>
-		  Click in upper half to move cutoff, click in lower half to move effect size.
+		  Click in upper half to move cutoff,
+        click in lower half to move effect size.
    </i>
 </p>
 
+
+<!-- Test numerical input field, see script below ----------------------->
+<p>&nbsp;</p>
+<label for="effect"> Effect size : </label>
+
+
+
+
+<input  placeholder=" suggestion : 3&thinsp;&sigma;"
+        type="number" step ="0.01"
+        name="effect" value=3 id = "effect" >
+
+<!-- <p id="logEffect"> &nbsp;</p>  -->
+
+<script>
+   const inEffect  = document.getElementById("effect");
+//   const logEffect = document.getElementById("logEffect");
+ 
+   inEffect.addEventListener("change", updateEffectSize);
+
+   function updateEffectSize(e) {
+      // This needs the 1 * to make it numerical..
+      xEffect = 1 * e.target.value;
+//      console.log( e.target.value ); 
+//      logEffect.textContent = e.target.value.toString();
+   }
+</script>
+
 </body>
 </html>
+
+
+
+
+
+<!-- Test text input field, see script below ----------------------->
+<!--
+
+<p>&nbsp;</p>
+<label for="name"> Name : </label>
+<input  placeholder="Enter your name"
+        name="name" value="Test" id = "name">
+
+<p id="log"> &nbsp;</p>
+
+<script>
+//const input = document.querySelector("input");  // first input field
+const input = document.getElementById("name");  // more specific by id
+const log   = document.getElementById("log");
+ 
+// This also fires if you click a suggested value :
+input.addEventListener("change", updateValue);
+
+let a = "tsja";
+let b = "vervangen";
+function updateValue(e) {
+  log.textContent = e.target.value;
+  e.target.value = "Vervangen";
+  e.target.value = b;
+  e.target.value = "";
+  if ( e.target.value.length == 0 )  { 
+       e.target.value = 'none';  }
+}
+</script>
+-->
+
