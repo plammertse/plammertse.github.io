@@ -360,7 +360,7 @@
       
       function OnTouchEnd(e) {
          mouseIsDown = false;
-         select = 'none';
+         mouseDownHandle();     
 
          // Do not also handle a mouse event
          if ( e.target == canvas ) e.preventDefault();
@@ -549,7 +549,7 @@
 <h2> May the power be with you </h2>
 
 <h4> you go, girl </h4>
-<p>  Lorem ipsum...  </p>
+<p>  Lorem ipsum 1...  </p>
 
 <!-- CREATE CANVAS (IN HTML) ---------------------------------->
 <canvas id = "bumps";
