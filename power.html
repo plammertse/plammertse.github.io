@@ -66,17 +66,16 @@
 
       // pointer history
       let mouseIsDown    = false;
-      let pXMouseDown    = 0;
-      let pYMouseDown    = 0;
-      let tX               = 0;
-      let tXM              = 0;
-      let pX               = 0;
-      let pY               = 0;
+      let tX               = 0; /////////
+      let tXM              = 0; //////////
+      
+      let pXMouse          = 0;
+      let pYMouse          = 0;
       let pXPrev           = 0;
       let pYPrev           = 0;
       let pXMove           = 0;
       let pYMove           = 0;
-      let select           = "none  ";
+      let select           = "none";
 
       // statistical data
       const sqrtTwoPi      = Math.sqrt( 2 * Math.PI );
@@ -300,20 +299,13 @@
          return window.matchMedia("(any-hover:none)").matches; 
       }
 
-      // pointermove X coordinate does not work well on mobiles,
-      // so use older mouse/touch fixes.
-      // TODO Test if movementX property works well in touchmove.
       function OnMouseDown(e) {
          mouseIsDown = true;
 		 
-         let rect = canvas.getBoundingClientRect();
-         pX = e.clientX - rect.left;
-         pY = e.clientY - rect.top;
-         pXMouseDown = pX;
-         pYMouseDown = pY;
-         pXPrev = pX;
-         pYPrev = pY;
-
+         pXMouse = e.offsetX;
+         pYMouse = e.offsetY;
+         pXMove  = e.movementX;
+         pYMove  = e.movementY;
          mouseDownHandle();     
       }
 
@@ -323,39 +315,44 @@
       }
 	
       function OnMouseMove(e) {
-         pX = e.offsetX;
-         pY = e.offsetY;
-         pXMove = e.movementX;
-         pYMove = e.movementY;
+         pXMouse = e.offsetX;
+         pYMouse = e.offsetY;
+         pXMove  = e.movementX;
+         pYMove  = e.movementY;
          mouseMoveHandle();
       }
    </script>
 
    <script>
+      // pointermove X coordinate does not work well on mobiles,
+      // so use older mouse/touch fixes.
+      // Tested if movementX property works well in touchmove. No!
       function OnTouchMove(e) {
          let rect = canvas.getBoundingClientRect();
-         pX = e.touches[0].clientX - rect.left;
-         pY = e.touches[0].clientY - rect.top;
-         pXMove = pX - pXPrev;
-         pXPrev = pX;
-         pYMove = pY - pYPrev;
-         pYPrev = pY;
+         pXMouse = e.touches[0].clientX - rect.left;
+         pYMouse = e.touches[0].clientY - rect.top;
+         pXMove  = pXMouse - pXPrev;
+         pXPrev  = pX;
+         pYMove  = pYMouse - pYPrev;
+         pYPrev  = pY;
          mouseMoveHandle();
 
          tX  = e.touches[0].offsetX;
 //         tXM = e.touches[0].movementX;  // looks like this fails (NaN?)
          tXM = 0;
 
+         // Do not also handle a mouse event
          if ( e.target == canvas ) e.preventDefault();
       }
 
       function OnTouchStart(e) {
          mouseIsDown = true;
+         
          let rect = canvas.getBoundingClientRect();
-         pX = e.touches[0].clientX - rect.left;
-         pY = e.touches[0].clientY - rect.top;
-         pXMouseDown = pX;
-         pYMouseDown = pY;
+         pXMouse = e.touches[0].clientX - rect.left;
+         pYMouse = e.touches[0].clientY - rect.top;
+//         pXMouseDown = pX;
+//         pYMouseDown = pY;
          pXMove = 0;
          pXPrev = pX;
          pYMove = 0;
@@ -363,12 +360,15 @@
          
          mouseDownHandle();
          
+         // Do not also handle a mouse event
          if ( evt.target == canvas ) evt.preventDefault();
       }
       
       function OnTouchEnd(e) {
          mouseIsDown = false;
          select = 'none';
+
+         // Do not also handle a mouse event
          if ( e.target == canvas ) e.preventDefault();
       }
 
@@ -384,12 +384,12 @@
       if ( !select == 'none' ) { return }
       
       // Mouse is down and nothing is selected.
-      // See if you can select something.
+      //   See if you can select something.
       
-      if ( pY > pYZero)  {
+      if ( pYMouse > pYZero)  {
          select = "effect";
       }
-      if ( pY < pYZero)  {
+      if ( pYMouse < pYZero)  {
          select = "cutoff";
       }
    }
@@ -418,8 +418,8 @@
 
    <script>
       function drawTouchTextBox()  {
-          s = '          tX, move = ' +
-            tX.toPrecision(5).toString()     + '  ' +
+          s = '          tX, tXM = ' +
+            tX.toPrecision(5).toString()  + '  ' +
             tXM.toPrecision(5).toString() + '  ';
             ctx.textAlign = "end";
             setText( s, 7.5, 0.4 );     
@@ -599,25 +599,24 @@
               margin-left      : 36px;" >
 </canvas>
 
-<!-- <script> let canvasId = "bumps"; </script> -->
-
 <p style="margin-left   : 200px;
           margin-top    :  6px;  
-          margin-bottom :  0px;"> <b><i>
-  Figure 1 : &emsp; Exploring power.
+          margin-bottom :  0px;">
+   <b> <i>
+      Figure 1 : &emsp; Exploring power.
    </i></b>
 </p>
 
 <p style="margin-left   : 120px;
           margin-top    :  2px;
-          margin-bottom :  0px;"> <i>
-		  Click in upper half to move cutoff,
-        click in lower half to move effect size.
+          margin-bottom :  0px;">
+   <i>
+      Click in upper half to move cutoff,
+      click in lower half to move effect size.
    </i>
 </p>
 
-
-<!-- Test numerical input field, see script below ----------------------->
+<!-- Numerical input fields ----------------------------------->
 <p>&nbsp;</p>
  <label for="effect"> 
    effect size :
