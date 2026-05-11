@@ -343,7 +343,8 @@
          mouseMoveHandle();
 
          tX  = e.touches[0].offsetX;
-         tXM = e.touches[0].movementX;
+//         tXM = e.touches[0].movementX;  // looks like this fails (NaN?)
+         tXM = 0;
 
          if ( e.target == canvas ) e.preventDefault();
       }
