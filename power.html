@@ -4,7 +4,10 @@
 -- status  : Under development, first UI attempt in Javascript.
 ----------------------------------------------------------------
 -- history :
+--  2026-05-11 PL pointer back to mouse, sync input fields
+--  2026-05-10 PL input fields for cutoff and effect
 --  2026-05-08 PL changed mouse to pointer, for mobile devices
+--                changed back, X unsatisfactory on mobile
 --  2026-05-07 PL moving text labels, with values
 --  2026-05-06 PL added interactive cutoff
 --  2026-05-04 PL added pixelratio scaling with dpr
@@ -17,7 +20,7 @@
 <html>
 
 <head>
-   <title> Gaussian Bumps </title>
+   <title> Exploring power </title>
 
   <!-- Quick style fix until own CSS is in place -->
   <style>
@@ -31,13 +34,15 @@
    p  { margin-left   : 24px;
         margin-top    : 3px;
         margin-bottom : 0px; 	   }
+   label { margin-left: 24px;
+           padding-right : 6px;   }
   </style>
   
   <style>
       /* Fix for HTML bug, size not settable for number fields */
       input[type=number]   {
       width: 60px;         }      
-</style>
+   </style>
   
    <!-- VARIABLES --------------------------------------------->
 
@@ -60,9 +65,11 @@
       const pointerGain    =  0.005;  // increments, pixel movement to x
 
       // pointer history
-      let isPointerDown    = false;
-      let pXPointerDown    = 0;
-      let pYPointerDown    = 0;
+      let mouseIsDown    = false;
+      let pXMouseDown    = 0;
+      let pYMouseDown    = 0;
+      let tX               = 0;
+      let tXM              = 0;
       let pX               = 0;
       let pY               = 0;
       let pXPrev           = 0;
@@ -296,61 +303,32 @@
       // pointermove X coordinate does not work well on mobiles,
       // so use older mouse/touch fixes.
       // TODO Test if movementX property works well in touchmove.
-      function OnPointerDown(e) {
-         isPointerDown = true;
+      function OnMouseDown(e) {
+         mouseIsDown = true;
 		 
          let rect = canvas.getBoundingClientRect();
          pX = e.clientX - rect.left;
          pY = e.clientY - rect.top;
-         pXPointerDown = pX;
-         pYPointerDown = pY;
-
+         pXMouseDown = pX;
+         pYMouseDown = pY;
          pXPrev = pX;
          pYPrev = pY;
-	 
-         select = "none  ";
-         if ( pYPointerDown > pYZero)  {
-            select = "effect";
-         }
-         if ( pYPointerDown < pYZero)  {
-            select = "cutoff";
-         }
+
+         mouseDownHandle();     
       }
 
-      function OnPointerUp(e) {
-         isPointerDown = false;
-         select = 'none';
+      function OnMouseUp(e) {
+         mouseIsDown = false;
+         mouseDownHandle();     
       }
 	
-      function OnPointerMove(e) {
-         let rect = canvas.getBoundingClientRect();
-         pX     = e.clientX - rect.left;
-         pXMove = pX - pXPrev;
-         pXPrev = pX;
-         pY     = e.clientY - rect.top;
-         pYMove = pY - pYPrev;
-         pYPrev = pY;
-
-         if ( isPointerDown )  {
-            if ( select == "effect" )  {
-               xEffect = xEffect + pointerGain * pXMove;
-               if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
-                             
-               // Setting the effect size in the input field
-               // in the main loop doesn't work, because
-               // it overrides the typing :
-               //    let inEffect = document.getElementById("effect");
-               inEffect.value = xEffect.toFixed(2);
-            }
-         
-            if ( select == "cutoff" )  {
-               xCutoff = xCutoff + pointerGain * pXMove;
-            }
-            if ( Math.abs( xCutoff) < 0.001 ) {
-               xCutoff = 0;
-            }
-         } // end pointer down
-      } //end on pointer move
+      function OnMouseMove(e) {
+         pX = e.offsetX;
+         pY = e.offsetY;
+         pXMove = e.movementX;
+         pYMove = e.movementY;
+         mouseMoveHandle();
+      }
    </script>
 
    <script>
@@ -362,57 +340,90 @@
          pXPrev = pX;
          pYMove = pY - pYPrev;
          pYPrev = pY;
-         
-         if ( isPointerDown )  {
-            if ( select == "effect" )  {
-               xEffect = xEffect + pointerGain * pXMove;
-               if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
-            }
-         
-            if ( select == "cutoff" )  {
-               xCutoff = xCutoff + pointerGain * pXMove;
-            }
-            if ( Math.abs( xCutoff) < 0.001 ) {
-               xCutoff = 0;
-            }
-         } // end pointer down
-        
+         mouseMoveHandle();
+
+         tX  = e.touches[0].offsetX;
+         tXM = e.touches[0].movementX;
+
          if ( e.target == canvas ) e.preventDefault();
       }
 
       function OnTouchStart(e) {
-         isPointerDown = true;
+         mouseIsDown = true;
          let rect = canvas.getBoundingClientRect();
          pX = e.touches[0].clientX - rect.left;
          pY = e.touches[0].clientY - rect.top;
-         pXPointerDown = pX;
-         pYPointerDown = pY;
+         pXMouseDown = pX;
+         pYMouseDown = pY;
          pXMove = 0;
          pXPrev = pX;
          pYMove = 0;
          pYPrev = pY;
          
-         select = "none";
-         if ( pYPointerDown > pYZero)  {
-            select = "effect";
-         }
-         if ( pYPointerDown < pYZero)  {
-            select = "cutoff";
-         }
+         mouseDownHandle();
+         
          if ( evt.target == canvas ) evt.preventDefault();
       }
       
       function OnTouchEnd(e) {
-         isPointerDown = false;
+         mouseIsDown = false;
          select = 'none';
          if ( e.target == canvas ) e.preventDefault();
       }
 
    </script>
+   
+   <script>
+   function mouseDownHandle()  {
+      // Handle mouse down state (not event)
 
+      if ( !mouseIsDown ) {
+         select = "none  "; return;
+      }
+      if ( !select == 'none' ) { return }
+      
+      // Mouse is down and nothing is selected.
+      // See if you can select something.
+      
+      if ( pY > pYZero)  {
+         select = "effect";
+      }
+      if ( pY < pYZero)  {
+         select = "cutoff";
+      }
+   }
+   
+   function mouseMoveHandle()  {
+      // Handle mouse moves
+      if ( select == "effect" )  {
+         xEffect = xEffect + pointerGain * pXMove;
+        if ( Math.abs(xEffect) < 0.001 ) { xEffect = 0 }
+      }   
+      if ( select == "cutoff" )  {
+         xCutoff = xCutoff + pointerGain * pXMove;
+         if ( Math.abs( xCutoff) < 0.001 )  { xCutoff = 0; }
+      }
+      syncInputFields();
+   }
+   
+   function syncInputFields()  {
+      inEffect.value = xEffect.toFixed(2);
+      inCutoff.value = xCutoff.toFixed(2);
+      // Call this(only) after mouse or calculation updates.
+      // Setting the field values in the main loop doesn't work,
+      // because it overrides the typing.
+   }
+   </script>
 
    <script>
-      function DrawDebugTextBox()  {
+      function drawTouchTextBox()  {
+          s = '          tX, move = ' +
+            tX.toPrecision(5).toString()     + '  ' +
+            tXM.toPrecision(5).toString() + '  ';
+            ctx.textAlign = "end";
+            setText( s, 7.5, 0.4 );     
+      }
+      function drawDebugTextBox()  {
          // Debug-text boxes
          ctx.textAlign = "end";
          setText( '  select : '  + select + '   ', 7.5, 0.45 );
@@ -442,15 +453,12 @@
       canvas = document.getElementById( canvasId );
       ctx    = canvas.getContext( "2d" );
 
-//      canvas.addEventListener( "pointermove",  OnPointerMove );
-//      canvas.addEventListener( "pointerdown",  OnPointerDown );
-//      canvas.addEventListener( "pointerup",    OnPointerUp );
-//      canvas.addEventListener( "pointerleave", OnPointerUp );
-      canvas.addEventListener( "mousemove",  OnPointerMove );
-      canvas.addEventListener( "mousedown",  OnPointerDown );
-      canvas.addEventListener( "mouseup",    OnPointerUp );
-      canvas.addEventListener( "mouseleave", OnPointerUp );    // OK 
+      canvas.addEventListener( "mousemove",  OnMouseMove );
+      canvas.addEventListener( "mousedown",  OnMouseDown );
+      canvas.addEventListener( "mouseup",    OnMouseUp );
+      canvas.addEventListener( "mouseleave", OnMouseUp );    // OK 
 
+      // Pointer routines do not give proper X in mobiles.
       canvas.addEventListener( "touchmove",  OnTouchMove );
       canvas.addEventListener( "touchstart", OnTouchStart );
       canvas.addEventListener( "touchend",   OnTouchEnd );
@@ -536,20 +544,24 @@
          // Cutoff label
          ctx.textAlign = "center";
          ctx.fillColor = 'black';
-         s = '  cutoff = ' + xCutoff.toPrecision(3).toString() + ' ' + '\u03c3' + '   ';
+         s = '  cutoff = ' +
+            xCutoff.toPrecision(3).toString() +
+            ' ' + '\u03c3' + '   ';
          setText(  s, xCutoff, 0.22 );
 
          // Type I error label
          let tail = 1-cdf( xCutoff);       // one-sided, right tail
          if ( Math.abs( tail) < 0.01 ) { tail = 0 }
-         s = ' type I error = ' + tail.toPrecision(3).toString() + '      ';
+         s = ' type I error = ' +
+              tail.toPrecision(3).toString() + '      ';
          ctx.textAlign = "left";
          setText( s , xCutoff+0.3, +0.04 );
 		 
          // Type II error label
          tail = cdf( xCutoff - xEffect);       // one-sided, left tail
          if ( tail < 0.01 )  { tail = 0 }
-         s = '    type II error = ' + tail.toPrecision(2).toString() + '   ';
+         s = '    type II error = ' +
+              tail.toPrecision(2).toString() + '   ';
          ctx.textAlign = "right";
          setText( s, xCutoff-0.2, -0.06 );
 
@@ -561,7 +573,8 @@
          s = ' power = ' + power.toPrecision(2).toString() + '      ';
          setText( s, xx, -0.2 );
        
-         // DrawDebugTextBox();
+         // drawDebugTextBox();
+         drawTouchTextBox();
       } // end Draw()
    </script>
 </head>
@@ -605,66 +618,38 @@
 
 <!-- Test numerical input field, see script below ----------------------->
 <p>&nbsp;</p>
-<label for="effect"> Effect size : </label>
-
-
-
-
-<input  placeholder=" suggestion : 3&thinsp;&sigma;"
-        type="number" step ="0.01"
-        name="effect" value=3 id = "effect" >
-
-<!-- <p id="logEffect"> &nbsp;</p>  -->
-
+ <label for="effect"> 
+   effect size :
+</label>
+<input  name="effect" id="effect"
+        type="number" value=3 step ="0.01"
+        placeholder=" suggestion : 3&thinsp;&sigma;" >
 <script>
-   const inEffect  = document.getElementById("effect");
-//   const logEffect = document.getElementById("logEffect");
- 
-   inEffect.addEventListener("change", updateEffectSize);
-
+   const inEffect = document.getElementById("effect");
+         inEffect.addEventListener("change", updateEffectSize);
    function updateEffectSize(e) {
       // This needs the 1 * to make it numerical..
       xEffect = 1 * e.target.value;
-//      console.log( e.target.value ); 
-//      logEffect.textContent = e.target.value.toString();
+   }
+</script>
+<br>
+<!--
+<span> &nbsp;&nbsp; Het kan wel &nbsp;&nbsp; </span>
+-->
+ <label for="inCutoff">
+    cutoff &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+</label>
+<input  name="cutoff" id="inCutoff"
+        type="number" value=2 step ="0.01"
+        placeholder=" suggestion : 2&thinsp;&sigma;" >
+<script>
+   const inCutoff = document.getElementById("inCutoff");
+         inCutoff.addEventListener("change", updateCutoff);
+   function updateCutoff(e) {
+      xCutoff = 1 * e.target.value;
    }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-<!-- Test text input field, see script below ----------------------->
-<!--
-
-<p>&nbsp;</p>
-<label for="name"> Name : </label>
-<input  placeholder="Enter your name"
-        name="name" value="Test" id = "name">
-
-<p id="log"> &nbsp;</p>
-
-<script>
-//const input = document.querySelector("input");  // first input field
-const input = document.getElementById("name");  // more specific by id
-const log   = document.getElementById("log");
- 
-// This also fires if you click a suggested value :
-input.addEventListener("change", updateValue);
-
-let a = "tsja";
-let b = "vervangen";
-function updateValue(e) {
-  log.textContent = e.target.value;
-  e.target.value = "Vervangen";
-  e.target.value = b;
-  e.target.value = "";
-  if ( e.target.value.length == 0 )  { 
-       e.target.value = 'none';  }
-}
-</script>
--->
 
