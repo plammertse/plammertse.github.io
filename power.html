@@ -329,9 +329,9 @@
          pXMouse = e.touches[0].clientX - rect.left;
          pYMouse = e.touches[0].clientY - rect.top;
          pXMove  = pXMouse - pXPrev;
-         pXPrev  = pX;
+         pXPrev  = pXMouse;
          pYMove  = pYMouse - pYPrev;
-         pYPrev  = pY;
+         pYPrev  = pYMouse;
          
          mouseMoveHandle();
 
@@ -345,12 +345,10 @@
          let rect = canvas.getBoundingClientRect();
          pXMouse = e.touches[0].clientX - rect.left;
          pYMouse = e.touches[0].clientY - rect.top;
-//         pXMouseDown = pX;
-//         pYMouseDown = pY;
          pXMove = 0;
-         pXPrev = pX;
+         pXPrev = pXMouse;
          pYMove = 0;
-         pYPrev = pY;
+         pYPrev = pYMouse;
          
          mouseDownHandle();
          
@@ -619,6 +617,7 @@
 </script>
 
 <p id="touch test"> gogogo </p>
+
 
 </body>
 </html>
