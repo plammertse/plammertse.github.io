@@ -538,6 +538,12 @@
          s = ' power = ' + power.toPrecision(2).toString() + '      ';
          setText( s, xx, -0.2 );
 
+   let test = document.getElementById( "touch test" );
+   test.innerHTML = ' select =  ' + select +
+                     '<br> mouseX = ' + pXMouse.toString() +
+                     '<br> moveX  = ' + pXMove.toString();
+
+
       } // end Draw()
    </script>
 </head>
@@ -549,7 +555,7 @@
 <h2> May the power be with you </h2>
 
 <h4> you go, girl </h4>
-<p>  Lorem ipsum 1...  </p>
+<p>  Lorem ipsum...  </p>
 
 <!-- CREATE CANVAS (IN HTML) ---------------------------------->
 <canvas id = "bumps";
@@ -611,6 +617,8 @@
       xCutoff = 1 * e.target.value;
    }
 </script>
+
+<p id="touch test"> gogogo </p>
 
 </body>
 </html>
