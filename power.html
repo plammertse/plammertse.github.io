@@ -56,31 +56,28 @@
       let fillColor = "yellow";
 
       // screen scaling             // from canvas top left corner
-      const canvasWidth    =  600;
-      const canvasHeight   =  400;
-      const pXZero         =  200;
-      const pXGain         =   50;
-      const pYZero         =  200;
-      const pYGain         = -375;    // square grid 3 sigma, pdf = 0.4
-      const pointerGain    =  0.005;  // increments, pixel movement to x
+      const canvasWidth   =  600;
+      const canvasHeight  =  400;
+      const pXZero        =  200;
+      const pXGain        =   50;
+      const pYZero        =  200;
+      const pYGain        = -375;    // square grid 3 sigma, pdf = 0.4
+      const pointerGain   =  0.005;  // increments, pixel movement to x
 
       // pointer history
-      let mouseIsDown    = false;
-      let tX               = 0; /////////
-      let tXM              = 0; //////////
-      
-      let pXMouse          = 0;
-      let pYMouse          = 0;
-      let pXPrev           = 0;
-      let pYPrev           = 0;
-      let pXMove           = 0;
-      let pYMove           = 0;
-      let select           = "none";
+      let mouseIsDown     = false;
+      let pXMouse         = 0;
+      let pYMouse         = 0;
+      let pXPrev          = 0;
+      let pYPrev          = 0;
+      let pXMove          = 0;
+      let pYMove          = 0;
+      let select          = "none";
 
       // statistical data
-      const sqrtTwoPi      = Math.sqrt( 2 * Math.PI );
-      let xEffect          = 3;
-      let xCutoff          = 2;
+      const sqrtTwoPi     = Math.sqrt( 2 * Math.PI );
+      let xEffect         = 3;
+      let xCutoff         = 2;
 
    </script>
 
@@ -326,7 +323,7 @@
    <script>
       // pointermove X coordinate does not work well on mobiles,
       // so use older mouse/touch fixes.
-      // Tested if movementX property works well in touchmove. No!
+      // Touchmove does not seem to support offsetX and movementX.
       function OnTouchMove(e) {
          let rect = canvas.getBoundingClientRect();
          pXMouse = e.touches[0].clientX - rect.left;
@@ -335,11 +332,8 @@
          pXPrev  = pX;
          pYMove  = pYMouse - pYPrev;
          pYPrev  = pY;
+         
          mouseMoveHandle();
-
-         tX  = e.touches[0].offsetX;
-//         tXM = e.touches[0].movementX;  // looks like this fails (NaN?)
-         tXM = 0;
 
          // Do not also handle a mouse event
          if ( e.target == canvas ) e.preventDefault();
@@ -417,52 +411,21 @@
    </script>
 
    <script>
-      function drawTouchTextBox()  {
-          s = '          tX, tXM = ' +
-            tX.toPrecision(5).toString()  + '  ' +
-            tXM.toPrecision(5).toString() + '  ';
-            ctx.textAlign = "end";
-            setText( s, 7.5, 0.4 );     
-      }
-      function drawDebugTextBox()  {
-         // Debug-text boxes
-         ctx.textAlign = "end";
-         setText( '  select : '  + select + '   ', 7.5, 0.45 );
-       
-         s = '          pX, prev, move = ' +
-            pX.toPrecision(5).toString()     + '  ' +
-            pXPrev.toPrecision(5).toString() + '  ' +
-            pXMove.toPrecision(5).toString() + '  ';
-            setText( s, 7.5, 0.4 );
-       
-         s = '          pY, prev, move = ' +
-            pY.toPrecision(5).toString()     + '  ' +
-            pYPrev.toPrecision(5).toString() + '  ' +
-            pYMove.toPrecision(5).toString() + '  ';            
-            setText( s, 7.5, 0.35 );
-       }
-   </script>
- 
-   <script>
-   // The event listeners cannot be called directly here.
-   // It has to be either in the body or in this wrapper function.
-   // As far as I can see, you cannot add an argument to onload,
-   // but you *can* set canvasId in the body, see commented code.
-   
+   // The event listeners have to be attached in, or by, the body.
+   // We use onload to package these calls.
+   // We will throw in setInterval here too.
    function OnLoad()  {
 	  let canvasId = "bumps";
       canvas = document.getElementById( canvasId );
       ctx    = canvas.getContext( "2d" );
 
-      canvas.addEventListener( "mousemove",  OnMouseMove );
-      canvas.addEventListener( "mousedown",  OnMouseDown );
-      canvas.addEventListener( "mouseup",    OnMouseUp );
-      canvas.addEventListener( "mouseleave", OnMouseUp );    // OK 
-
-      // Pointer routines do not give proper X in mobiles.
-      canvas.addEventListener( "touchmove",  OnTouchMove );
+      canvas.addEventListener( "mousemove",  OnMouseMove  );
+      canvas.addEventListener( "mousedown",  OnMouseDown  );
+      canvas.addEventListener( "mouseup",    OnMouseUp    );
+      canvas.addEventListener( "mouseleave", OnMouseUp    );    // OK 
+      canvas.addEventListener( "touchmove",  OnTouchMove  );
       canvas.addEventListener( "touchstart", OnTouchStart );
-      canvas.addEventListener( "touchend",   OnTouchEnd );
+      canvas.addEventListener( "touchend",   OnTouchEnd   );
 
       setInterval( Draw, dT );          // main drawing loop
 	}
@@ -477,36 +440,36 @@
          ctx.clearRect( 0, 0, canvas.width, canvas.height);
 
          // Fill zero hypothesis confidence area
-         let x = xRange( -10, xCutoff);
+         let x = xRange( -10, xCutoff );
          let y = gaussBumpArray( x );
          fillToZero( x, y, 'aqua'  );
 
          // Fill Type I error area
-         x = xRange( xCutoff, 10);
+         x = xRange( xCutoff, 10 );
          y = gaussBumpArray( x );
-         fillToZero( x, y, "#ff4400"  );
+         fillToZero( x, y, "#ff4400"  );  // reddish
 
          // Outline zero-hypothesis bump
-         x = xRange( -10, 10);
+         x = xRange( -10, 10 );
          y = gaussBumpArray( x );
          drawLine( x, y );
 
          // Fill Type II error area
-         x = xRange( -10, xCutoff-xEffect);
+         x = xRange( -10, xCutoff-xEffect );
          y = gaussBumpArray( x );
          x = addScalar( x, xEffect);
          y = mulScalar( y, -1);
          fillToZero( x, y, 'red'  );
 
-         // Fill Type II error area
-         x = xRange( xCutoff-xEffect, 5);
+         // Fill power area
+         x = xRange( xCutoff-xEffect, 5 );
          y = gaussBumpArray( x );
          x = addScalar( x, xEffect);
          y = mulScalar( y, -1);
          fillToZero( x, y, 'aqua'  );
 
          // Outline effect-hypothesis bump
-         x = xRange( -20, 20);
+         x = xRange( -20, 20 );
          y = gaussBumpArray( x );
          x = addScalar( x, xEffect);
          y = mulScalar( y, -1);
@@ -522,7 +485,7 @@
          x = [ xCutoff, xCutoff  ];
          y = [ -0.4, 0.4 ];
          drawLine( x, y, 'darkblue' );
-         ctx.setLineDash([]);
+         ctx.setLineDash([]);  // end dash
 
          // Cutoff line tick ends
          ctx.lineWidth = 2;
@@ -539,8 +502,9 @@
 		 
          // Effect hypothesis label
          let s = '   effect hypothesis = ' +
-                     xEffect.toPrecision(2).toString() + ' ' + '\u03c3' + '   ';
-         setText( s , xEffect,  -0.44);
+                     xEffect.toPrecision(2).toString() +
+                     ' ' + '\u03c3' + '   ';
+         setText( s , xEffect,  -0.44 );
 		 
          // Cutoff label
          ctx.textAlign = "center";
@@ -573,9 +537,7 @@
          let xx = Math.max( xEffect+0.5, xCutoff+0.5);
          s = ' power = ' + power.toPrecision(2).toString() + '      ';
          setText( s, xx, -0.2 );
-       
-         // drawDebugTextBox();
-         drawTouchTextBox();
+
       } // end Draw()
    </script>
 </head>
@@ -583,8 +545,6 @@
 <!-- HTML BODY ------------------------------------------------>
 
 <body onload="OnLoad()">
-
-<!-- Do not indent the whole body -->
 
 <h2> May the power be with you </h2>
 
@@ -616,13 +576,15 @@
    </i>
 </p>
 
-<!-- Numerical input fields ----------------------------------->
 <p>&nbsp;</p>
+
+<!-- Numerical input fields ----------------------------------->
+
  <label for="effect"> 
    effect size :
 </label>
 <input  name="effect" id="effect"
-        type="number" value=3 step ="0.01"
+        type="number" value="3" step ="0.01"
         placeholder=" suggestion : 3&thinsp;&sigma;" >
 <script>
    const inEffect = document.getElementById("effect");
@@ -640,7 +602,7 @@
     cutoff &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
 </label>
 <input  name="cutoff" id="inCutoff"
-        type="number" value=2 step ="0.01"
+        type="number" value="2" step ="0.01"
         placeholder=" suggestion : 2&thinsp;&sigma;" >
 <script>
    const inCutoff = document.getElementById("inCutoff");
