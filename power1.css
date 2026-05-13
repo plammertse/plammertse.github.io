@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+-- file    : power1.css
+-- purpose : Display two sliding Gaussian bumps
+-- status  : Under development, first UI attempt in Javascript.
+----------------------------------------------------------------
+-- history :
+--  2026-05-12 PL added local storage
+--  2026-05-11 PL pointer back to mouse, sync input fields
+--  2026-05-10 PL input fields for cutoff and effect
+--  2026-05-08 PL changed mouse to pointer, for mobile devices
+--                changed back, X unsatisfactory on mobile
+--  2026-05-07 PL moving text labels, with values
+--  2026-05-06 PL added interactive cutoff
+--  2026-05-04 PL added pixelratio scaling with dpr
+--  2026-05-03 PL added click handler, and XY position in a <p>,
+--                  added mouseup/mousedown handlers.
+--  2026-04-31 PL new
+---------------------------------------------------------------*/
+
+   body { font-family : arial, sans-serif
+         overflow-y: auto; /* Adds vertical scroll when needed */
+         overflow-x: auto; /* Adds horizontal scroll when needed */
+    }
+   h2 { margin-left   : 12px;
+        margin-top    : 6px;
+        margin-bottom : 3px; 	   }
+   h4 { margin-left   : 24px;
+        margin-top    : 6px;
+        margin-bottom : 4px; 	   }
+   p  { margin-left   : 24px;
+        margin-top    : 3px;
+        margin-bottom : 0px; 	   }
+   label { margin-left: 24px;
+           padding-right : 6px;   }
+
+      /* Fix for HTML bug, size is not settable for number fields */
+      input[type=number]   {
+      width: 60px;         }      
