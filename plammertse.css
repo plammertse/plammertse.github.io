@@ -162,7 +162,10 @@ ul {
   padding  : 0;
   overflow : hidden;
 /*  background-color: #38444d;  */      /* dark greyish blue */
-  background-color: #404040;
+/*  background-color: #404040;  */
+  background-color: #000060;            /* dark blue top banner  */
+  max-width   : 832px;                  /* limit top banner size */
+                                        /* like footer */
 }
 
 /* list items, left aligned */
@@ -175,8 +178,10 @@ li a, .dropbtn {
   display    : inline-block;
   color      : white;
   text-align : center;
-  padding    : 14px 16px;
-  text-decoration: none;
+  padding    : 10px 13px;           /* vertical, horizontal */
+  /* fit to fill <ul> width */
+  text-decoration : none;
+  font-size  : 17px;
 }
 
 /* Attempt at central color for "here" buttons, needs work : */
@@ -199,7 +204,9 @@ li.dropdown {
   display    : none;
   position   : absolute;
   background-color: #f9f9f9;
+  
   min-width  : 160px;
+  
 /* width:auto;  */
 /* width:max-content;  failed attempts to allow "Table of Contents" */
   box-shadow : 0px 8px 16px 0px rgba(0,0,0,0.2);
