@@ -20,13 +20,12 @@
 <!-- TOP NAVIGATION BAR MENU ---------------------------------->
 <ul>
 
-  <!-- HOME --------------------------------------------------->
-  <!-- Current page gets a blue button -->
-
+<!-- LEAVE OUT THE ( BLUE ) HOME BUTTON ------------------------
   <li class="dropdown">
     <a style="background-color:#0000B0;"
        href="index.html" >             Home                 </a>
   </li>
+-->
 
   <!-- AIRCRAFT ----------------------------------------------->
   <li class="dropdown">
@@ -76,6 +75,8 @@
                                             Flapping flight </a>
       <a style="color: grey;"
          href="seeds.html" >&emsp;          Flying seeds    </a>
+      <a style="color: grey;"
+         href="mccutchen.html" >&emsp;      McCutchen helicopters </a>
     </div>
   </li>
 
@@ -148,17 +149,6 @@
                                         Contents            </a>
       <a href="prop_book_preface">&ensp;
                                         Preface             </a>
-<!--
-      <a style="background-color:#E8E8E8"
-         href="prop_book_00_TOC.html"> 
-                                     Textbook               </a>
-      <a href="prop_book_frontispiece.html"> &ensp;
-                                        Frontispiece        </a>
-      <a href="prop_book_preface.html">&ensp;
-                                        Preface             </a>
-      <a href="prop_book_00_TOC.html">&ensp;
-                                        Table of contents   </a>
--->
     </div>
   </li>
 
@@ -227,25 +217,26 @@
     </div>
   </li>
 
-  <!-- HAPTICS ------------------------------------------------>
-  <li class="dropdown">
+   <!-- HAPTICS ------------------------------------------------>
+   <li class="dropdown">
     <a class="dropbtn"
       href="javascript:void(0)" >     Haptics               </a>
-    <div class="dropdown-content">
+   
+   <div class="dropdown-content">
 
       <a style="background-color:#E8E8E8;
                 color: grey;"
-         href="haptics_fcs.html">           Haptics at FCS  </a>
+         href="haptics_fcs.html">            Haptics at FCS </a>
       <a style="color: grey";
-         href="haptic_master.html">&ensp; Haptic Master     </a>
+         href="haptic_master.html">&ensp;    Haptic Master  </a>
       <a style="color: grey";
-         href="armbot.html">&ensp;               Armbot     </a>
+         href="armbot.html">&ensp;           Armbot         </a>
 
       <a style="background-color:#E8E8E8;
                 color: silver;"
-         href="#">                         Algorithms       </a>
+         href="#">                           Algorithms     </a>
       <a style="color: silver";
-         href="#" >&ensp;             Admittance            </a>
+         href="#" >&ensp;                    Admittance     </a>
 <!--
       <a style="color: silver";
          href="#">&ensp;               Realtime             </a>
@@ -282,14 +273,15 @@
                 color: grey";";
          href="treadmill.html">                3D treadmill  </a>
 
-    </div>
+   </div>
   </li>
-
-  <!-- PHYSICS AND MECHANICS ---------------------------------->
+  
+  <!-- MECHANICAl --------------------------------------------->
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">
-                                       Mechanics           </a>
+                                       Mechanical           </a>
     <div class="dropdown-content">
+    
       <a style="background-color:#E8E8E8;
                 color: silver"
          href="#" >                      Dynamics          </a>
@@ -297,7 +289,7 @@
          href="center_of_percussion.html">&ensp;
                                   Center of percussion      </a>
       <a href="pendulum.html"
-        style="color: grey">&ensp;      Pendulums           </a>
+        style="color: grey">&ensp;      Spring-mass systems </a>
       <a href="#"
          style="color: silver">&ensp;    Anti-resonance     </a>
       <a href="#"
@@ -305,58 +297,27 @@
 
       <a style="background-color:#E8E8E8;
                 color: silver"
-         href="#" >  Physics        </a> 
-      <a href="#"
-         style="color: silver">&ensp;    Electrical         </a>
-      <a href="#"
-         style="color: silver">&ensp;    Acoustical         </a>
-      <a href="#"
-         style="color: silver">&ensp;    Perception         </a>
-      <a style="background-color:#E8E8E8;"
-         href="structures.html">   Structures               </a>
-      <a style="background-color:#E8E8E8;"
-         href="linkages.html" >               Linkages      </a>
-    </div>
-  </li>
-
-  <!-- MECHANISMS / KINEMATICS -------------------------------->
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">
-                                             Kinematics     </a>
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;
-                color: silver"
          href="kinematics.html" >    Kinematics             </a> 
       <a style="color: silver"
          href="#" >&ensp;              Forward / inverse    </a>
       <a href="#" style="color: silver">&ensp;  DOF's       </a>
       <a href="#" style="color: silver">&ensp;  Skewed axes </a>
+      <a href="#" style="color: silver">&ensp;   Quaternions </a>
+         
+      <a style="background-color:#E8E8E8;"
+         href="linkages.html" >               Linkages      </a>
+      <a href="ADL_gimbal.html">&ensp;  ADL gimbal </a>
       <a style="color: grey;"
-         href="quaternion.html" >&ensp;         Quaternions </a>
+      <a href="galloway.html">&ensp;  Galloway </a>
+      
+      <a style="background-color:#E8E8E8;"
+         href="structures.html">   Structural design               </a>
 
     </div>
   </li>
 
-  <!-- MATH --------------------------------------------------->
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">
-                                                Math        </a>
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-         href="math.html" >              About math         </a>
-
-      <a style="background-color:#E8E8E8;"
-         href="linear_algebra.html" >    Linear algebra     </a>
-
-      <a style="background-color:#E8E8E8;;
-                color: grey"
-              href="quaternion.html" >   Quaternions        </a>
-      <a  style="background-color:#E8E8E8;"
-         href="matlab.html" >     Matlab scripts            </a>
-    </div>
-  </li>
-
-  <!-- CONTROL ------------------------------------------------>
+  <!-- CONTROL ( AND MATH ) ----------------------------------->
+  
   <li class="dropdown">
     <a class="dropbtn"
        href="javascript:void(0)">        Control            </a>
@@ -371,12 +332,6 @@
                               Feedforward or feedback      </a>
       <a style="color: silver"
                 href="#" >&ensp;     Measurement or control </a>
-<!--
-      <a style="color: silver"
-         href="#" >&ensp;              Reducing uncertainty </a>
-      <a style="color: silver"
-         href="#" >&ensp;              LQR and LQE          </a>
--->
       <a style="background-color:#E8E8E8;
                 color: Grey"
          href="#">               Linear control             </a>
@@ -398,41 +353,56 @@
       <a  style="color: silver"
          href="#">&ensp;                   Posicast         </a>
 
+      <a style="background-color:#E8E8E8;
+                color: Grey"
+         href="#">               Math             </a>
+      <a style="background-color:#E8E8E8;"
+         href="math.html" >&ensp;        About math         </a>
+
+      <a style="background-color:#E8E8E8;"
+         href="linear_algebra.html" >&ensp;
+                                          Linear algebra     </a>
+
+      <a style="background-color:#E8E8E8;;
+                color: grey"
+              href="quaternion.html" >&ensp;
+                                          Quaternions        </a>
+
     </div>
   </li>
 
   <!-- DESIGN, METHODOLOGY ------------------------------------>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">
-                                         Design  </a>
+                                          Designing         </a>
 
     <div class="dropdown-content">
       <a style="background-color:#E8E8E8;"
-                href="design.html" > Methods                </a>
-
-      <a href="inventors.html">&ensp;
-                                   Inventors                </a>
-      <a href="#" style="color: silver">&ensp;
-                                   Corporate innovation     </a>
-      <a href="#" style="color: silver">&ensp;
-                                   Skunk works              </a>
-      <a href="#" style="color: silver">&ensp;
-                                   Toyota                   </a>
-      <a href="#" style="color: silver">&ensp;
-                                   TRIZ                     </a>
+         href="money.html">               Money             </a>
 
       <a style="background-color:#E8E8E8;"
-         href="mind_maps.html">   Documenting               </a>
+                href="design.html" >      Methods           </a>
+
+      <a href="inventors.html">&ensp;
+                                          Against inventors </a>
+      <a href="#" style="color: silver">&ensp;
+                                       Corporate innovation </a>
+      <a href="#" style="color: silver">&ensp;
+                                          Skunk works       </a>
+      <a href="#" style="color: silver">&ensp;
+                                          Toyota            </a>
+      <a href="#" style="color: silver">&ensp;
+                                          TRIZ and the like </a>
+
+      <a style="background-color:#E8E8E8;"
+         href="mind_maps.html">           Documenting       </a>
       <a href="sketching.html">&ensp;     Sketching         </a>
       <a style="color: grey";
-         href="prototyping.html">&ensp;   Prototyping        </a>
+         href="prototyping.html">&ensp;   Prototyping       </a>
       <a href="config_control.html">&ensp;
                                           Config control    </a>
       <a href="memo_system.html" >&ensp;  Memo's            </a>
       <a href="website.html">&ensp;       Website           </a>
-
-      <a style="background-color:#E8E8E8;"
-         href="money.html">             Money               </a>
 
     </div>
   </li>
@@ -612,7 +582,7 @@ and
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br> <!-- Prevent text covering by footer -->
-<div class="footer"> P. Lammertse, 2025 </div>
+<div class="footer"> P. Lammertse, 2026 </div>
 
 <!-- Free visits tracker added (back in??) on 2026-04-19 :   -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js">

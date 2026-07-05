@@ -5,6 +5,8 @@
 --             This is unlike HTML, where it is <!-- -->   
 ---------------------------------------------------------------
 -- history :
+--     2026-06-22 body text now justified
+--     2026-06-19 add PDF print rules, video to poster, section
 --     2026-03-15 small, gradual developments
 --     2025-11-21 new
 --------------------------------------------------------------*/
@@ -18,6 +20,7 @@ body {
   margin      : 0;
   padding     : 0;
   font-family : Arial, Helvetica, sans-serif;
+  text-align  : justify;
 }
 
 /* all hyperlinks darker blue */
@@ -46,8 +49,11 @@ h4 {     /* default font desktop/tablet 20/18 */
   margin-top : 12px;
 }
 h5, h6 {
+  font-family : Arial, Helvetica, sans-serif;
+  font-size  : 16px;
+  font-weight: normal;
   margin     : 2px 32px;
-  margin-top : 16px;
+  margin-top : 8px;
 }
 
 /* paragraph : smaller vertical line distance,     */
@@ -81,10 +87,23 @@ sub {
         ( default is 12, main text is 16 )         */
 /* margin is absolute, not inside <p>              */
 pre {
-  font-size : 15px;
-  margin    : 4px 64px;
+  font-size       : 15px;
+  margin          : 4px 64px;
 }
 
+/* input field label not too tight with inuput box */
+label {
+   margin-left    : 24px;
+   padding-right  :  6px;
+}
+
+/* numerical input fields                          */
+/* Fix for HTML bug, size not settable for number fields */
+input[type=number] {
+   width          : 60px;
+} 
+
+/* table 50px narrower than <p and <hr max-width   */
 table {
    width       : 750px;
    margin-left :  48px;
@@ -111,6 +130,13 @@ math {
   font-size : 18px;
   margin : 0px 32px;
 }
+// AI advice for too deep fractions below sqrt :
+// doesn't seem to work.
+/*
+math, mrow {
+    font-family: "Latin Modern Math", STIXGeneral, DejaVu Math TeX Gyre, sans-serif;
+}
+*/
 
 /* Always use <mspace/> with the slash, else it won't work  */
 /* <mspace> width itself does not seem to allow an override */
@@ -213,3 +239,27 @@ li.dropdown {
    box-sizing : border-box;
    border-top : 1px solid black;
 }
+
+section {
+   break-before : page; }
+
+/* nicer PDF's */
+@media print {
+   .do-print {
+      display : block !important; }
+   /* Hide navigation and footers */
+   nav, footer, .no-print {
+      display : none !important; }
+   h2, h3, h4, h5 {
+      break-after  : avoid;  }
+   img,table {
+      break-inside : avoid; }
+   .new-page {
+      break-before : page;  }
+      
+  /* Verberg de volledige video en alle bijbehorende controls */
+  video {
+    display  : none !important;
+  }
+}
+
