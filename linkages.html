@@ -20,8 +20,13 @@
 
 <!-- Print-only header ---------------------------------------->
 <div class = "do-print"
-     style = "display:none; text-align:right">
-<h3> P. Lammertse, 2026 </h3> <hr>
+     style = "display:none; text-align:right;
+     margin-top : 0mm;">
+   <div style="float:left">
+      <h2> &ensp; LINKAGES </h2>
+   </div>
+   <h2> P. Lammertse, 2026 </h2> <hr>
+   <br>
 </div>
 
 <div class = "no-print">
@@ -35,7 +40,8 @@
 <!------------------------------------------------------------->
 </div>
 
-<h2>  &emsp; &ensp; <u> LINKAGES </u> </h2>
+<!-- Display header -->
+<h2 class="no-print">  &emsp; &ensp; <u> LINKAGES </u> </h2>
 
 <h2> 1 &emsp; Hand linkages </h2>
 
@@ -426,8 +432,9 @@ for the mode shape and see if it makes sense.
 </td> </tr> </table>
 <!-- /////////////////////////////////////////////////////// -->
 
-<div style="break-inside: avoid">
-<p> The result makes sense. The masses closest to the attachment (or drive) point 
+<div style="break-before: page"> </div>
+<p> &emsp;
+The result makes sense. The masses closest to the attachment (or drive) point 
 do not move nearly as much as the ones at the far end, and kinetic energy
  goes with the square of the motion, which on integrating explains the factor of &frac13;.
 With an external mass <i>M</i> attached to the far end of the linkage, 
@@ -446,7 +453,6 @@ the total oscillating mass becomes :
 </td> <td style="width:50px; text-align:right">            (3.5)
 </td> </tr> </table>
 <!-- /////////////////////////////////////////////////////// -->
-</div>
 
 <p> &emsp;
  This may not be exact, but it is one step better
@@ -652,7 +658,6 @@ then if the lever does not store energy, we need :
  is sometimes called the "mechanical advantage".
 </p>
 
-<div style="break-inside: avoid"> 
 <h4> 4.4 &emsp; Reflected stiffness </h4>
 
 <p> With the reflected force and displacement in hand,
@@ -661,21 +666,8 @@ one location to another.
 Figure 4.2 shows a stiffness and a mass applied at a point <i>A</i>.
 We will reflect them to a differently "geared" point <i>B</i>.
 </p>
-
-<!-- //////////////////////////////////////////////////////// -->
-<img src = "images/linkage_haptic_joystick.gif";
-   width = "320" alt="Haptic joystick";
-   style = "margin-left   : 250px;
-            margin-top    :   0px">
-<p style = "margin-left   : 250px;
-            margin-bottom :  8px;">
-    <i> Figure 4.2 : &ensp; Reflected stiffness and mass.</i> 
-</p>
-<!-- //////////////////////////////////////////////////////// -->
-</div>
-
-<p>
-The definition of the stiffness in a point <i>A</i>
+<p> &emsp; 
+ The definition of the stiffness in a point <i>A</i>
 is the force per displacement there :
 </p>
 
@@ -728,7 +720,10 @@ is the force per displacement there :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The gearing ratio <i>G</i><sub>AB</sub> appears squared in this relation.
+<div style="break-before:page"> </div>
+
+<p> &emsp;
+ The gearing ratio <i>G</i><sub>AB</sub> appears squared in this relation.
  The reason is that if point <i>B</i> moves more than point <i>A</i>
  by the gearing ratio, the spring in <i>A</i> will be less compressed in that ratio.
  At the same time, the spring force in <i>B</i> will be reduced by the same ratio.
@@ -765,6 +760,18 @@ is the force per displacement there :
  for a given deflection of the spring element.
 </p>
 
+<!-- //////////////////////////////////////////////////////// -->
+<img src = "images/linkage_haptic_joystick.gif";
+   width = "320" alt="Haptic joystick";
+   style = "margin-left   : 250px;
+            margin-top    :   0px">
+<p style = "margin-left   : 250px;
+            margin-bottom :  8px;">
+    <i> Figure 4.2 : &ensp; Reflected stiffness and mass.</i> 
+</p>
+<!-- //////////////////////////////////////////////////////// -->
+
+
 <!------------------------------------------------------------->
 
 <h4> 4.5 &emsp; Reflected mass </h4>
@@ -785,7 +792,6 @@ is the force per displacement there :
 </td> <td style="width:50px; text-align:right">            (4.8)
 </td> </tr> </table>
 <!-- /////////////////////////////////////////////////////// -->
-
 
 <p>
 The raised dot "<sup>&#9679;</sup>" is Newton's symbol for "derivative with respect to time",
@@ -829,9 +835,8 @@ only this time for the mass :
 </td> </tr> </table>
 <!-- /////////////////////////////////////////////////////// -->
 
-
-<p>
-Like for the stiffness, the mass of <i>A</i> "reflected" to <i>B</i>
+<p> &emsp; 
+ Like for the stiffness, the mass of <i>A</i> "reflected" to <i>B</i>
  is proportional to the square of the lever ratio.
 </p>
 <p>&emsp;
@@ -865,12 +870,14 @@ Like for the stiffness, the mass of <i>A</i> "reflected" to <i>B</i>
 </td> </tr> </table>
 <!-- /////////////////////////////////////////////////////// -->
 
-<p> Here <i>T</i> is the torque around the pivot point,
+<div style="break-before:page"> </div>
+
+<p> &emsp; Here <i>T</i> is the torque around the pivot point,
 <i>I</i> is the so-called moment of inertia, and <i>&theta;</i>
 (&thinsp;Greek letter theta&thinsp;) </i> is the angle of rotation,
 measured in radians.
 </p>
-<p>
+<p> &emsp;
  We can write the example of Figure 4.2 in terms of the rotation of the lever.
  For small angles of rotation
  <nobr> (&hairsp;like in&nbsp;the derivative&hairsp;) </nobr>
@@ -1277,6 +1284,8 @@ but some ballpark figures are : </p>
  be dominated by buckling.
  </p>
 
+<div style="break-before:page"> </div>
+
 <h4> 5.3 &emsp; Stranded steel wire (&hairsp;Carl Stahl&hairsp;)</h4>
 <p> Cables running over pulleys are used extensively in hand force linkages.
  The most common, and really the only suitable material is stainless steel wire rope.
@@ -1286,6 +1295,7 @@ but some ballpark figures are : </p>
  and in addition they are very hard to anchor securely
  since even the most complicated knots or clamps tend to slip.
 </p>
+
 <p> &emsp;
  Stainless steel wire rope is typically built from 
 many strands of very thin wire.
@@ -1362,7 +1372,8 @@ quotes an equivalent elasticity modulus <i>E</i> of 42.25 e9 N/m<sup>2</sup>
 <!-- //////////////////////////////////////////////////////// -->
 </section>
 
-<br>
+<div style="break-before:page"> </div>
+
 <!------------------------------------------------------------->
 <h2> 6 &emsp; Cross-sectional shape properties </h2>
 
@@ -1687,6 +1698,7 @@ for the "bandwidth of a pushrod" like in (2.1)&hairsp;:
  Pushrods are extremely effective linkage components.
 </p>
 
+<div style="break-before:page"> </div>
 
 <!------------------------------------------------------------->
  <h4> 7.3&emsp; Cables </h4>
@@ -1785,6 +1797,8 @@ on the surrounding structure "infinitely stiff"
  <p>
  </div>
 
+<div style="break-before:page"> </div>
+
 <h5> <b> end quadrants </b> </h5>
 
 <p> At the end of the linkage, the cable drive will 
@@ -1875,6 +1889,7 @@ Awkward moment at the end effector,large quadrants.
 Wind onto itself for winch drive. </p>
 </div>
 
+<div style="break-before:page"> </div>
 
 <h4> 7.4 &emsp; Torque tubes </h4>
 
@@ -2405,6 +2420,8 @@ The original stiffness and mass can be restored by using
 <br>
 </section>
 
+<div style="break-before:page"> </div>
+
 <!-- //////////////////////////////////////////////////////// -->
 <h2> 8 &emsp; Mechanical components - strength and weight   </h2>
 
@@ -2917,6 +2934,7 @@ the linear stiffness or Young's modulus <i>E</i>.
  the radius is that of the tube itself.
 </p>
 
+<div style="break-before:page"> </div>
 
 <h4> 12 &emsp; Bredt Batho </h4>
 
@@ -3349,7 +3367,11 @@ and the reflected mass becomes a factor of 25 lower.
 <p> TBW.
 </p>
 
+
 <!------------------------------------------------------------->
+
+<div style="break-before:page"> </div>
+
 <h2> 9 &emsp; Flexible lines  </h2>
 
 <h4> 9.1 &emsp; Last resorts </h4>
@@ -3402,6 +3424,7 @@ And trust me, it always leaks.
 
 </span>
 
+<div style="break-before:page"> </div>
 
 <h2> 10 &emsp; Typical applications </h2>
 
@@ -3464,7 +3487,7 @@ out of the "artifical feel" or "control loading" for flight simulator sticks,
 but it is now also taken to include tactile feedback.
 </p>
 
-
+<div style="break-before:page"> </div>
 
 <h2> 11 &emsp; An application in MRI </h2>
 <h4> 11.1 &emsp; A haptic joystick in MRI </h4>
@@ -3584,8 +3607,7 @@ but it is now also taken to include tactile feedback.
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
-<div class="footer no-print"> P. Lammertse, 2026 </div>
-<!-- <footer> P. Lammertse, 2026 </footer> -->
+<div class="footer">  P. Lammertse, 2026 </div>
 
 </body>
 </html>
@@ -3755,6 +3777,8 @@ but hard tools and objects.
  </p>
 </span>
 -->
+
+<div style="break-before:page"> </div>
 
 <div style="color:blue";>
 <!----------------------------------------------------------->

@@ -17,6 +17,7 @@
 
 <body>
 
+<div class = "no-print">
 <!-- NAVIGATION BAR MENU -------------------------------------->
 <ul>
   <li> <a href="index.html">                 Home     </a> </li>
@@ -26,11 +27,16 @@
                                       Contents &#x25BC</a> </li>
   <li> <a href="prop_book_03.html">  Next &#x25BA</a>      </li>
 </ul>
-
+</div>
 
 <!--- TEXT BLOCK HEADER --------------------------------------->
-<p style="margin-left : 320px">  <i> INTRODUCTION </i>      </p>
-<hr style="margin : 0 0;">
+<!--
+<div class="do-print"; style="display:none">
+<p style = "margin-left : 320px;
+margin-top : -32px">  <i> INTRODUCTION </i>      </p>
+<hr style= "margin : 0 0;">
+</div>
+-->
 
 <h2> 2 &emsp; Propeller geometry                           </h2>
 
@@ -118,7 +124,7 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p style="margin-bottom : 0 "> 
+<p style="break-before : page ">
  Most propellers are designed for a certain flying velocity 
  and shaft RPM. Expressing the velocity <i>V</i> 
 in meters per second
@@ -289,6 +295,7 @@ in capitals.
 
 
 <!-- VELOCITY DIAGRAM -->
+<div style="break-before : page ">
 <img width = "300" 
      style = "margin-left:210px";
      alt   = "Velocity diagram";
@@ -296,6 +303,7 @@ in capitals.
 <p  style  = "margin-left:240px">
            <i> Figure 2.4 : &ensp; The local speed ratio x. </i> 
 </p>
+</div>
 
 
 <!-- SECTION 2.5 ---------------------------------------------->

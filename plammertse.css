@@ -5,6 +5,8 @@
 --             This is unlike HTML, where it is <!-- -->   
 ---------------------------------------------------------------
 -- history :
+--     2026-07-07 unsuccessful : print headers and footers
+--     2026-07-05 top banner a bit less wide
 --     2026-06-22 body text now justified
 --     2026-06-19 add PDF print rules, video to poster, section
 --     2026-03-15 small, gradual developments
@@ -247,6 +249,21 @@ li.dropdown {
    border-top : 1px solid black;
 }
 
+.header {
+   position    : fixed;                /* fixed will print on every page   */
+   display     : none;                 /* only for printing, not on screen */
+   left        : 32px;
+   top         : 0;
+   width       : 800px;
+   background-color: white;
+   color       : black;
+   text-align  : center;
+   padding     : 0 16px;          /* from default 32px ? */
+   /* padding  : 20px 16px 0px 0px;  This just shifts the border up */
+   box-sizing  : border-box;
+   border-bottom : 1px solid black;
+}
+
 section {
    break-before : page; }
 
@@ -254,17 +271,26 @@ section {
 @media print {
    .do-print {
       display : block !important; }
-   /* Hide navigation and footers */
+   .header {
+      display : block !important; }
+   /* hide navigation and footers, define class .no-print */
    nav, footer, .no-print {
       display : none !important; }
+   /* no need for the h2 margin at top of a printed page */
+   h2 {
+      margin-top   : 0; }
    h2, h3, h4, h5 {
-      break-after  : avoid;  }
+      break-after  : avoid; }
    img,table {
       break-inside : avoid; }
    .new-page {
       break-before : page;  }
-      
+   /* print margins need to be in mm */
+   @page {
+      margin-top : 12mm; }
+
   /* Verberg de volledige video en alle bijbehorende controls */
+  /* In plaats hiervan komt een non-display video still       */
   video {
     display  : none !important;
   }

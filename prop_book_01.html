@@ -17,6 +17,7 @@
 
 <body>
 
+<div class = "no-print">
 <!-- NAVIGATION BAR MENU -------------------------------------->
 <ul>
   <li> <a href="index.html">                 Home     </a> </li>
@@ -27,11 +28,21 @@
                                       Contents &#x25BC</a> </li>
   <li> <a href="prop_book_02.html">  Next        &#x25BA</a></li>
 </ul>
+</div>
 
-<!-- TEXT BLOCK HEADER ---------------------------------------->
+<!-- TODO - TEXT BLOCK HEADER - THIS SHOULD BE ONLY FOR PRINT,
+  --          AND ON EVERY PAGE ------------------------------->
 
-<p style="margin-left : 320px">  <i> INTRODUCTION </i>      </p>
-<hr style="margin : 0 0;">
+<!--
+<div class="header"> <i> INTRODUCTION </i> </div>
+-->
+
+<!--
+<p style="margin-left:0; text-align :center"> 
+ <i> INTRODUCTION </i>      </p>
+<hr style="margin : 0 0; max-width:832px">
+-->
+
 
 <!-- CHAPTER 1 ------------------------------------------------>
 
@@ -125,11 +136,17 @@
 <p>&emsp;
  Using the capital <i>X</i> instead is more intuitive,
  and avoids any such confusion.
- </p>
+</p>
+
+<span class = "no-print"; style="float:right"> <&thinsp;
+<a href="prop_book_02.html">next </a>
+&thinsp;> </span>
+</p>
+ 
 
 <!-- FOOTER ----------------------------------------------------->
-<br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<br><br>
+<div class="footer">  P. Lammertse, 2026 </div>
 
 </body>
 </html>
