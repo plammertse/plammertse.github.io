@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-Friendly Dropdown Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="dropdown-menu">
+    
+         <!-- top bar is a <ul> styled as a dropdown-menu -->
+        <ul>
+            <!-- the first top bar list item is not a parent -->
+            <li><a href="#">Home</a></li>
+            
+            <!-- the second top bar item is a <li> styled as a dropdown-parent -->
+            <li class="dropdown-parent">
+            
+                <a href="#">Products ▾</a>
+                
+                <!-- this second level item is itself a <ul> -->
+                <ul class="dropdown">
+                    <li><a href="#">Laptops</a></li>
+                    
+                    <!-- this second level header is also a dropdown parent -->
+                    <li class="dropdown-parent">
+                        <a href="#">Accessories ▸</a>
+                        
+                        <!-- the second level dropdown menu is a <ul> again -->
+                        <!-- it doesn't work if you use a plain dropdown -->
+                        <ul class="dropdown-submenu">
+                            <li><a href="#">Keyboards</a></li>
+                            
+                           <li><a href="#">Mice</a></li>
+                            
+                    <!-- this third level header is also a dropdown parent -->                           <li class="dropdown-parent">
+                              <a href="#">Sub-sub ▸</a>
+                           <ul class="dropdown-submenu">
+                              <li><a href="#">Keyboards</a></li>
+                              <li><a href="#">Mice</a></li>
+                              <li><a href="#">Headphones</a></li>
+                           </ul>
+                     </li> <!-- end Accessories -->
+                            
+                            <li><a href="#">Headphones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Monitors</a></li>
+                </ul>
+            </li>  <!-- end "Products" + dropdown -->
+            
+            <li class="dropdown-parent">
+                <a href="#">Services ▾</a>
+                
+                <ul class="dropdown">
+                    <li><a href="#">Consulting</a></li>
+                    
+                    <li class="dropdown-parent">
+                        <a href="#">Support ▸</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="#">24/7 Help</a></li>
+                            <li><a href="#">Live Chat</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* Reset and base styles */
+* {
+    margin  : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------- */
+/* Top-level horizontal menu :  "dropdown-menu"               */
+/* This is applied to a <nav>                                 */
+.dropdown-menu {
+    background: #000070;       /* dark blue, from #333; */
+    width: 100%;
+}
+
+.dropdown-menu > ul {          /* ul inside a nav */
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dropdown-menu > ul > li {      /* li inside a ul inside a nav */
+    position: relative;
+}
+
+.dropdown-menu > ul > li > a {  /* a inside a li inside etc... */
+    display: block;
+    padding: 12px 18px;  /* from 15px 20px  */
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu > ul > li > a:hover {   /* and now its hover state .. */
+    background: #F00000;      /* red, from #555 */
+}
+
+/* ---------------------------------------------------------- */
+/* First-level dropdown :  "dropdown"                         */
+/* This is applied to a <li>  (inside a <nav> )               */
+.dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #E0E0E0;   /* light gray, from dark #444; */
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1;
+    list-style: none;
+    
+    box-shadow : 8px 8px 8px 0px rgba(0,0,0,0.2);  /* added */
+}
+
+/* dropdown-menu shows dropdown on hover ? */
+.dropdown-menu > ul > li:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown li {
+    position: relative;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    color: black;             /*  from white;  */
+    text-decoration: none;
+    transition: background 0.3s;
+    
+    outline-style: solid;     /* added */
+    outline-width: thin;      /* added */
+    outline-color: #C0C0C0;   /* added */
+}
+
+.dropdown li a:hover {
+    background: #F00000;      /*  red, from #966;          */
+    color: white;             /*  new, for red background  */
+}
+
+/* ---------------------------------------------------------- */
+/* Second-level dropdown (submenu)                            */
+.dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #F0F0F0; /*  from #555;   */
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 2;
+    list-style: none;
+    box-shadow : 8px 8px 8px 0px rgba(0,0,0,0.2);  /* added */
+}
+
+/* dropdown shows dropdown-submenu on hover */
+.dropdown li:hover > .dropdown-submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-submenu li a:hover {
+    /* background: #F00000; */   /*  #777;   */
+}
