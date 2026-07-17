@@ -1,3 +1,12 @@
+/*-------------------------------------------------------------
+-- file    : menu.css
+-- purpose : Style sheet for homepage Piet Lammertse
+-- note    : main style sheet is text.css   
+---------------------------------------------------------------
+-- history :
+--   2026-07-16 PL new, pattern by Claude, with small mods
+-------------------------------------------------------------->
+
 /* Reset and base styles */
 * {
     margin  : 0;
@@ -23,20 +32,21 @@ body {
     justify-content: flex-start;
 }
 
-.dropdown-menu > ul > li {      /* li inside a ul inside a nav */
+.dropdown-menu > ul > li {      /* li inside ul inside nav */
     position: relative;
 }
 
-.dropdown-menu > ul > li > a {  /* a inside a li inside etc... */
+.dropdown-menu > ul > li > a {   /* a inside li inside ... */
     display: block;
-    padding: 12px 18px;  /* from 15px 20px  */
+    padding: 10px 15px;          /* from 15px vert, 20px hor */
     color: white;
+    font-size : 17px;            /* added, PL */
     text-decoration: none;
     transition: background 0.3s;
 }
 
-.dropdown-menu > ul > li > a:hover {   /* and now its hover state .. */
-    background: #F00000;      /* red, from #555 */
+.dropdown-menu > ul > li > a:hover {   /* red on hover, PL */
+    background: #E90000;        /* red, from #555 */
 }
 
 /* ---------------------------------------------------------- */
@@ -46,7 +56,7 @@ body {
     position: absolute;
     left: 0;
     top: 100%;
-    background: #E0E0E0;   /* light gray, from dark #444; */
+    background: #F0F0F0;   /* light gray, from dark #444; */
     width: 200px;
     opacity: 0;
     visibility: hidden;
@@ -69,18 +79,18 @@ body {
 
 .dropdown li a {
     display: block;
-    padding: 10px 15px;
-    color: black;             /*  from white;  */
+    padding: 8px 15px;        /* vert, hor; lines closer, 10px to 8px */
+    color: #000030;           /*  from white;  */
     text-decoration: none;
     transition: background 0.3s;
     
     outline-style: solid;     /* added */
     outline-width: thin;      /* added */
-    outline-color: #C0C0C0;   /* added */
+    outline-color: #E0E0E0;   /* added */
 }
 
 .dropdown li a:hover {
-    background: #F00000;      /*  red, from #966;          */
+    background: #E90000;      /* red, from #966;          */
     color: white;             /*  new, for red background  */
 }
 
@@ -89,7 +99,8 @@ body {
 .dropdown-submenu {
     position: absolute;
     left: 100%;
-    top: 0;
+/*    top: 0;  */
+    top: 8px;  /* dropped this a little, PL */
     background: #F0F0F0; /*  from #555;   */
     width: 200px;
     opacity: 0;
@@ -106,9 +117,9 @@ body {
     visibility: visible;
 }
 
-.dropdown-submenu li a:hover {
+/*   .dropdown-submenu li a:hover {  */
     /* background: #F00000; */   /*  #777;   */
-}
+/*   }  */
 
 /* ---------------------------------------------------------- */
 /* Hamburger toggle button — hidden on desktop by default      */

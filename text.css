@@ -1,0 +1,232 @@
+/*-------------------------------------------------------------
+-- file    : text.css
+-- purpose : Style sheet for homepage Piet Lammertse
+-- note    : Beware : inside CSS, the comment symbol is / * etc.
+--             This is unlike HTML, where it is <!-- -->   
+---------------------------------------------------------------
+-- history :
+--     2026-07-16 renamed plammertse.css to text.css,
+--                added companion menu.css for menus
+--     2026-07-07 unsuccessful : print headers and footers
+--     2026-07-05 top banner a bit less wide
+--     2026-06-22 body text now justified
+--     2026-06-19 add PDF print rules, video to poster, section
+--     2026-03-15 small, gradual developments
+--     2025-11-21 new
+--------------------------------------------------------------*/
+
+/* Sans serif everywhere.                   */
+/*   Default font size seems to be 16px     */
+/* Don't do margin, it shifts the navbar :  */
+/*   margin-left : 32px;                    */
+
+body {
+  margin      : 0;
+  padding     : 0;
+  font-family : Arial, Helvetica, sans-serif;
+  text-align  : justify;
+}
+
+/* all hyperlinks darker blue */
+/* in Chrome, this briefly changed dead links
+   to black (they were lighter blue), but no more ? 
+   Also see the result in prop_book_00_TOC.html  */
+a {
+   color : #000040;    /* #000080  */
+}
+/* line spacing + indent for header         */
+
+h2 {     /* default font desktop/tablet 30/24 */
+  margin     : 6px 16px;
+  margin-top : 16px;
+}
+
+h3 {     /* default font desktop/tablet 24/20 */
+  font-size  : 20px;
+  margin     : 4px 16px;
+  margin-top : 16px;
+}
+
+h4 {     /* default font desktop/tablet 20/18 */
+  font-size  : 18px;
+  margin     : 2px 32px;
+  margin-top : 12px;
+}
+h5, h6 {
+  font-family : Arial, Helvetica, sans-serif;
+  font-size  : 16px;
+  font-weight: normal;
+  margin     : 2px 32px;
+  margin-top : 8px;
+}
+
+/* paragraph : smaller vertical line distance,     */
+/* larger left margin                              */
+/* Max. column width 800 gives some 108 letters.   */
+/* Word wraps can be helped with soft hyphens &shy */
+p {
+  margin    : 3px 32px;
+  max-width : 800px;
+/* font-size : 16px;  already the default, I think */
+}
+
+/* horizontal rulers text width */
+hr {
+  margin-left : 32px;
+  max-width   : 800px;" >
+}
+
+/* prevent sup and sub from increasing line height */
+sup, sub {
+  vertical-align:  baseline;
+  position       : relative;
+  top            : -0.2em;
+}
+
+sub {
+  top : 0.2em;
+}
+
+/*<pre> increase fixed-spacing font size 
+        ( default is 12, main text is 16 )         */
+/* margin is absolute, not inside <p>              */
+pre {
+  font-size       : 15px;
+  margin          : 4px 64px;
+}
+
+/* input field label not too tight with input box  */
+label {
+   margin-left    : 24px;
+   padding-right  :  6px;
+}
+
+/* numerical input fields                          */
+/* Fix for HTML bug, size not settable for number fields */
+input[type=number] {
+   width          : 60px;
+} 
+
+/* table 50px narrower than <p> and <hr> max-width   */  /* this was <p <hr */
+table {
+   width       : 750px;
+   margin-left :  48px;
+}
+
+/* table content (rows) spaced a little more       */
+td {
+  padding : 1px 0;
+}
+
+/* Two equal columns that float next to each other, for TOC */
+.column {
+  float        : left;
+  width        : 400px;    /* for now, half of 800 */
+  padding-left : 10px;
+}
+
+/* increase the math font size to look like 16px text.
+   The extra math margin (vertical + horizontal)
+   acts *inside* <p> ( and inside <td>, TBC ).                              
+   <mfrac> from inline to display style cannot be fixed here,
+   this needs <mstyle displaystyle="true"> first every time. */
+math {
+  font-size : 18px;
+  margin : 0px 32px;
+}
+// AI advice for too deep fractions below sqrt :
+// doesn't seem to work.
+/*
+math, mrow {
+    font-family: "Latin Modern Math", STIXGeneral, DejaVu Math TeX Gyre, sans-serif;
+}
+*/
+
+/* Always use <mspace/> with the slash, else it won't work  */
+/* <mspace> width itself does not seem to allow an override */
+mspace {
+   min-width : 0.5em;
+}
+
+img {
+   display       : inline-block;
+   /* margin-top    : 16px; margin-bottom : 16px;  */
+}
+
+video {
+   display       : inline-block;
+   margin-top    : 16px;
+   margin-bottom : 16px;
+}
+
+/* unordered lists (bullets, not numbered) */
+
+
+/* list items, left aligned */
+
+/* format for anchors <a>..</> and drpbtn's inside a list <li>*/
+
+/* dark red banner button on hover */
+
+
+.footer {
+   position   : fixed;
+   left       : 32px;
+   bottom     : 0;
+   width      : 800px;
+   background-color: white;
+   color      : black;
+   text-align : right;
+   padding    : 0 16px;          /* from default 32px ? */
+   /* padding  : 20px 16px 0px 0px;  This just shifts the border up */
+   box-sizing : border-box;
+   border-top : 1px solid black;
+}
+
+.header {
+   position    : fixed;                /* fixed will print on every page   */
+   display     : none;                 /* only for printing, not on screen */
+   left        : 32px;
+   top         : 0;
+   width       : 800px;
+   background-color: white;
+   color       : black;
+   text-align  : center;
+   padding     : 0 16px;          /* from default 32px ? */
+   /* padding  : 20px 16px 0px 0px;  This just shifts the border up */
+   box-sizing  : border-box;
+   border-bottom : 1px solid black;
+}
+
+section {
+   break-before : page; }
+
+/* nicer PDF's */
+@media print {
+   nav, footer, .no-print {
+      display : none !important; }
+   .do-print {
+      display : block !important; }
+   .header {
+      display : block !important; }
+   /* hide navigation and footers, define class .no-print */
+   /* no need for the h2 margin at top of a printed page */
+   h2 {
+      margin-top   : 0; }
+   h2, h3, h4, h5 {
+      break-after  : avoid; }
+   img,table {
+      break-inside : avoid; }
+   .new-page {
+      break-before : page;  }
+   /* print margins need to be in mm */
+   @page {
+      margin-top : 12mm; }
+
+  /* Verberg de volledige video en alle bijbehorende controls */
+  /* In plaats hiervan komt een non-display video still       */
+  video {
+    display  : none !important;
+  }
+}
+
