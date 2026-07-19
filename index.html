@@ -1,472 +1,580 @@
 <!DOCTYPE html>
-<html>
-
-<!--------------------------------------------------------------
--- file    : index.html
--- purpose : Homepage for website Piet Lammertse
-----------------------------------------------------------------
--- history :
---   2025-11-21 PL new
----------------------------------------------------------------> 
-
-<!-- FORMATTING ----------------------------------------------->
+<html lang="en">
 <head>
-  <link href="plammertse.css" rel="stylesheet" >
-  <title> Piet Lammertse on aerodynamics and haptics </title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> Piet Lammertse on aerodynamics and haptics </title>
+
+   <link href="text.css" rel="stylesheet" >
+   <link href="menu.css" rel="stylesheet" >
 </head>
 
 <body>
 
-<!-- TOP NAVIGATION BAR MENU ---------------------------------->
+   <nav class="dropdown-menu">
 
-<div class="no-print">
-<ul>
-  <!-- AIRCRAFT ----------------------------------------------->
-  <li class="dropdown">
-    <a class="dropbtn" 
-       href="javascript:void(0)">         Aircraft          </a>
+      <!-- Responsive hamburger button, see menu.js -->
+      <button class="nav-toggle"
+         aria-label="Toggle navigation menu" aria-expanded="false">
+         <span></span>  <span></span>  <span></span>
+      </button>
 
-    <div class="dropdown-content">
+<!------------------------------------------------------------------>
+<!-- TOP NAV BAR MENU -->
 
-      <a style="background-color:#E8E8E8";
-         href="aircraft.html">      About aircraft          </a>
+      <ul>
 
-      <a style="color: silver;"
-         href="people.html">&ensp;        People            </a>
-      <a style="color: silver";
-         href="case_studies.html">&ensp;  Case studies      </a>
-      <a style="background-color:#E8E8E8;"
-         href="fallacy.html">       Common fallacies        </a>
-      <a href="downwind_turn.html" >&ensp;  Downwind turn   </a>
-      <a href="T_tails.html" >&ensp;  T-tails   </a>
-      <a href="canards.html" >&ensp;  Canards   </a>
-      <a style="color: silver";
-         href="#.html" >&ensp;        Autogyro's            </a>
-      <a style="color: grey";
-         href="airships.html" >&ensp; Airships              </a>
-      <a style="color: silver";
-         href="#" >&ensp;             Biomimicry            </a>
+<!-- HOME -->
 
-      <a style="background-color:#E8E8E8;
-                color: silver;"
-         href="aerodynamics.html" >         Aerodynamics    </a>
+         <li class="dropdown-parent">
+        
+            <a href="personal.html">
+               Home</a>
 
-      <a style="color: silver";
-         href="aerodynamics.html" >&ensp;   Wings           </a>
-      <a style="color: grey;"
-         href="cowlings.html" >&ensp;       Cowlings        </a>
-      <a style="color: grey;"
-         href="cooling.html" >&ensp;        Cooling         </a>
-      <a style="color: silver";
-         href="wind_tunnels.html" >&ensp;   Wind tunnels    </a>
+            <ul class="dropdown">
 
+               <li> <a href="personal.html">
+                       <i> Vanity Fair </i> </a>
+               </li>
+          
+               <li>
+               
+                  <li class="dropdown-parent">             
+                     <a href="#">
+                        CV </a>
+                  <ul class="dropdown-submenu">
+                  
+                     <li class="dropdown-parent">
+                        <a href="delft.html">Delft</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="delft.html"> Polytechnic or university </a>
+                           </li>
+                           <li>
+                              <a href="design_exercise.html"> Design exercise </a>
+                           </li>
+                           <li>
+                              <a href="autopilot.html"> Autopilot thesis </a>
+                           </li>
+                        </ul>
+                     </li>
 
-      <a style="background-color:#E8E8E8;
-                color: grey";
-         href="#" >                     Rotors and flapping </a>
-      <a style="color: grey;"
-         href="nature.html" >&emsp;
-                                                     Nature </a>
-      <a style="color: grey;"
-         href="flapping_flight.html" >&emsp;
-                                            Flapping flight </a>
-      <a style="color: grey;"
-         href="seeds.html" >&emsp;          Flying seeds    </a>
-      <a style="color: grey;"
-         href="mccutchen.html" >&emsp;      McCutchen helicopters </a>
-    </div>
-  </li>
+                     <li class="dropdown-parent">
+                        <a href="fokker.html"> Fokker </a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="satellite_control.html">
+                                 Space </a>
+                           </li>
+                           <li>
+                              <a href="haptics_career.html"</a>
+                                 Haptics </a>
+                           </li>
+                        </ul>
+                     </li>
 
-  <!-- FLIGHT DYNAMICS AND SIMULATION ------------------------->
-  <li class="dropdown">
-    <a  class="dropbtn"
-      href="javascript:void(0)"> Stability </a>
+                     <li class="dropdown-parent">
+                        <a href=#>Various</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="recumbent.html">
+                                 Recumbents </a>
+                           </li>
+                           <li>
+                              <a href="hydrofoil.html">
+                                 Hydrofoil </a>
+                           </li>
+                        </ul>
+                     </li> 
+                     
+                  </ul>
+               </li>                   
+            
+               <li class="dropdown-parent">             
+                  <a href="website.html">
+                     Website </a>
+<!-- TODO -->
+<!--                     
+                  <ul class="dropdown-submenu">
+                     <li> <a href="website.html">
+                        Purpose</a>
+                     </li>
+                     <li> <a href="javascript.html">
+                        JavaScript</a>
+                     </li>
+                  </ul>
+ -->
+               </li>
 
-    <div class="dropdown-content">
+            </ul>          
+         </li>
 
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="trim.html" >          Trim drag              </a>
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="modes.html" >         Modes                  </a>
-      <a style="color: grey"
-         href="eigenvector.html" >&ensp;
-                                    Eigenvectors            </a>
+<!------------------------------------------------------------------>
+ <!-- AIRCRAFT -->
+ 
+         <li class="dropdown-parent">
+            <a href="aircraft.html">       <!-- AIRCRAFT HEADER   -->
+               Aircraft </a>
 
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="#" >                 Aircraft modes          </a>
-      <a href="#" style="color: silver">&ensp;
-                                           Short period     </a>
-      <a href="#" style="color: silver">&ensp;
-                                           Phugoid          </a>
-      <a href="#" style="color: silver">&ensp;
-                                          Dutch Roll       </a>
-      <a href="#" style="color: silver">&ensp;
-                                          Spiral           </a>
-      <a href="#" style="color: silver">&ensp;
-                                          Energy Mode      </a>
+            <ul class="dropdown">          <!-- AIRCRAFT DROPDOWN -->
 
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="#">                Flight simulation        </a>
-      <a href="#" style="color: silver">&ensp;
-                                        Motion cueing      </a>
-      <a href="#" style="color: silver">&ensp;
-                                        Specific force     </a>
-      <a href="#" style="color: silver">&ensp;
-                                        Hexapods           </a>
-      <a href="#" style="color: silver">&ensp;
-                                        Artificial feel    </a>
-      <a href="hand_linkages.html"> &ensp;
-                                        Control linkages   </a>
+               <li> <a href="aircraft.html">
+                   <i> Love affair </i> </a>
+               </li>
 
-      <a style="background-color:#E8E8E8";
-         href="etkin.html">             Etkin              </a>
-
-    </div>
-  </li>
-
-  <!-- PROPELLERS --------------------------------------------->
-  <li class="dropdown">
-    <a class="dropbtn"
-       href="javascript:void(0)" >   Propellers             </a>
-
-
-    <div class="dropdown-content">
-      <a href="prop_intro.html">     About propellers       </a>
-
-      <a style="background-color:#E8E8E8"
-         href="prop_book_00_TOC.html"> 
-                                     Textbook               </a>
-      <a href="prop_book_frontispiece.html">&ensp;
-                                        Frontispiece        </a>
-      <a href="prop_book_00_TOC.html">&ensp;
-                                        Contents            </a>
-      <a href="prop_book_preface">&ensp;
-                                        Preface             </a>
-    </div>
-  </li>
-
-  <!-- SHIPS -------------------------------------------------->
-  <li class="dropdown">
-  
-    <a class="dropbtn" 
-      href="javascript:void(0)">       Ships               </a>
-      
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-         href="ship.html">       Ship propulsion           </a>
-      <a style="color: silver"
-         href="ship_propellers.html">&ensp; Propellers     </a>
-      <a style="color: silver"
-         href="#">&ensp;               Whale tail          </a>
-      <a style="color: silver"
-         href="#">&ensp;               Paddle boats        </a>
-      <a href="sailing.html">&ensp;    Sailing             </a>
-
-      <a style="background-color:#E8E8E8;"
-         href="hydrofoil.html">          Hydrofoils        </a>
-<!--      <p> Hallo </p>   -->
-      </div>
-    
-  </li>
-
-  <!-- SPACE -------------------------------------------------->
-  <li class="dropdown">
-  
-    <a class="dropbtn"
-      href="javascript:void(0)" >        Space              </a>
-      
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-          href="satellite_control.html">  
-                                            Space projects  </a>
-
-      <a style="color: grey"
-         href="satellite_ISO.html" >&ensp;
-                                        The ISO satellite   </a>
-      <a style="color: grey"
-         href="satellite_SAX.html" >&ensp;
-                                        The SAX satellite   </a>
-
-      <a style="background-color:#E8E8E8;
-                color: silver;"
-         href="#" >        Zero-G                           </a>
-      <a style="color: silver"
-         href="#">&ensp;
-               Random Positioning Machine                   </a>
-      <a style="color: silver"
-         href="#">&ensp; Ballistocraft (UAV)                </a>
-      <a style="color: silver"
-         href="#">&ensp; Free wing                          </a>
-      <a style="color: silver"
-         href="#">&ensp; Citation                           </a>
-      <a style="color: silver"
-         href="#">&ensp; Flight director                    </a>
-
-      <a style="background-color:#E8E8E8;
-                color: silver"
-         href="#" >          Other                           </a>
-
-      <a style="color: silver"
-         href="#">&ensp; Laminar flow box                   </a>
-      <a style="color: silver"
-         href="#">&ensp; Thermal control                    </a>
-      <a style="color: silver"
-         href="optical_delay_line.html">&ensp;
-                                    VLT optical delay Line  </a>
-    </div>
-    
-  </li>
-
-   <!-- HAPTICS ------------------------------------------------>
-   <li class="dropdown">
-    <a class="dropbtn"
-      href="javascript:void(0)" >     Haptics               </a>
-   
-   <div class="dropdown-content">
-
-      <a style="background-color:#E8E8E8;
-                color: grey;"
-         href="#">            Portfolio </a>
-      <a style="color: grey";
-         href="haptics_fcs.html">&ensp;      Haptics at FCS  </a>
-      <a style="color: grey";
-         href="haptic_master.html">&ensp;    Haptic Master  </a>
-      <a style="color: grey";
-         href="lopes.html">&ensp;            Lopes          </a>
-      <a style="color: grey";
-         href="armbot.html">&ensp;           Armbot         </a>
-      <a style="color: grey";
-         href="simodont.html">&ensp;         Simodont         </a>
-      <a style="color: grey";
-         href="wristalyzer.html">&ensp;      Wristalyzer      </a>
-
-      <a style="background-color:#E8E8E8;
-                color: silver;"
-         href="#">                           Algorithms     </a>
-      <a style="color: silver";
-         href="#" >&ensp;                    Admittance     </a>
-<!--
-      <a style="color: silver";
-         href="#">&ensp;               Realtime             </a>
-      <a style="color: silver";
-         href="#" >&ensp;              Leapfrog             </a>
-      <a style="color: silver";
-         href="#" >&ensp;              End stops            </a>
--->
-      <a style="color: silver";
-         href="haptics_master_slave.html">&ensp;
-                                       Master / slave       </a>
-      <a style="background-color:#E8E8E8;
-                color: silver;"
-         href="#">                     API's and rendering  </a>
-      <a style="color: silver";
-         href="#">&ensp;               Web interface        </a>
-      <a style="color: silver";
-         href="#">&ensp;               Haptic API           </a>
-      <a style="color: silver";
-         href="#">&ensp;               Rendering            </a>
-<!--
-      <a style="color: silver";
-         href="#">&ensp;               Toolboxes            </a>
--->
-<!--
-      <a style="background-color:#E8E8E8;
-                color: grey";";
-         href="haptics.html">       Haptics as a field      </a>
-      <a style="background-color:#E8E8E8;
-                color: grey";";
-         href="#">       Pseudohaptics      </a>
--->
-      <a style="background-color:#E8E8E8;
-                color: grey";";
-         href="treadmill.html">                3D treadmill  </a>
-
-   </div>
-  </li>
-  
-  <!-- MECHANICAl --------------------------------------------->
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">
-                                       Mechanics           </a>
-                                       
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;
-                color: silver"
-         href="#" >                      Dynamics          </a>
-      <a style="color: grey"
-         href="center_of_percussion.html">&ensp;
-                                  Center of percussion      </a>
-      <a href="pendulum.html"
-        style="color: grey">&ensp;      Spring-mass systems </a>
-      <a href="#"
-         style="color: silver">&ensp;    Anti-resonance     </a>
-      <a href="#"
-         style="color: silver">&ensp;   Rigid body dynamics </a>
-
-      <a style="background-color:#E8E8E8;
-                color: silver"
-         href="kinematics.html" >    Kinematics             </a> 
-      <a style="color: silver"
-         href="#" >&ensp;              Forward / inverse    </a>
-      <a href="#" style="color: silver">&ensp;  DOF's       </a>
-      <a href="#" style="color: silver">&ensp;  Skewed axes </a>
-      <a href="#" style="color: silver">&ensp;  Quaternions </a>
          
-      <a style="background-color:#E8E8E8;"
-         href="#">                         Linkages         </a>
-      <a href="linkages.html">&ensp;          Hand linkages </a>
-      <a style="color: grey;"
-      <a href="ADL_gimbal.html">&ensp;        ADL gimbal    </a>
-      <a style="color: grey;"
-      <a href="galloway.html">&ensp;          Galloway     </a>
-      
-      <a style="background-color:#E8E8E8;"
-         href="structures.html">   Structural design         </a>
+   <!-- AERODYNAMICS -->
+               <li class="dropdown-parent">             
+                  <a href="aerodynamics.html">
+                     Aerodynamics</a>       <!-- AERODYNAMICS HEADER   -->
+                  <ul class="dropdown-submenu">
+                     <li class="dropdown-parent">
+                        <a href="fallacy.html">Common fallacies</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="T_tails.html">T-tails</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            
+   <!-- STABILITY AND CONTROL -->
+   
+               <li class="dropdown-parent">             
+                  <a href="#">
+                     Stability and control</a>       <!-- STABILITY HEADER   -->
+                  <ul class="dropdown-submenu">
+                     <li class="dropdown-parent">
+                        <a href="etkin.html">Etkin's book</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="etkin_editions.html">Editions</a>
+                           </li> 
+                           <li>
+                              <a href="etkin_typos.html">Typos</a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li> <a href="trim.html">
+                        Trim</a>
+                     </li>
+                  </ul>
+               </li>  <!-- end Stability -->
 
-    </div>
-  </li>
+<!-- ROTORS AND FLAPPING -->
+               <li><a href="flapping_flight.html">
+                     Rotors and flapping</a>
+               </li>
 
-  <!-- CONTROL ( AND MATH ) ----------------------------------->
-  
-  <li class="dropdown">
-    <a class="dropbtn"
-       href="javascript:void(0)">        Control            </a>
+            </ul>    <!-- end of aircraft dropdown -->           
+         </li>       <!-- END OF AIRCRAFT -->
 
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;
-                color: grey"
-         href="control.html">   Minimizing uncertainty   </a>
+<!-- PROPELLERS -->      
+            
+          <li class="dropdown-parent">             
+            <a href="ship.html">
+               Propellers</a>
+            <ul class="dropdown">
+               <li> <a href="aircraft.html">
+                  <i> Classical beauty </i> </a>
+               </li>
+               
+               <li class="dropdown-parent">             
+                  <a href="aerodynamics.html">
+                     New textbook </a>
+                  <ul class="dropdown-submenu">
+                  
+                     <li>
+                        <a href="prop_book_frontispiece.html">
+                           Frontispiece </a>
+                     </li>
+                     <li>
+                        <a href="prop_book_preface.html">
+                           Preface </a>
+                     </li>
 
-      <a style="color: silver"
-         href="feedforward.html">&ensp;
-                              Feedforward or feedback      </a>
-      <a style="color: silver"
-                href="#" >&ensp;     Measurement or control </a>
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="#">               Linear control             </a>
-      <a href="tuning.html">&ensp;  Simplified PD tuning    </a>
-      <a style="color: silver"
-         href="#" >&ensp;
-                               Differencing </a>
-      <a style="color: silver"
-         href="kalman.html" >&ensp;
-                               Kalman filters, LQR and LQE </a>
-      <a style="color: silver"
-         href="#">&ensp;           Cascaded control         </a>
+                     <li> <a href="prop_book_00_TOC.html">
+                        Table of Contents </a>
+                     </li>
+                    
+                     
+                     <li class="dropdown-parent">
+                        <a href="prop_book_01_TOC.html">
+                           &emsp; <i> Introduction </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_01.html">
+                              1 &ensp; Introduction </a>
+                           </li>
+                           <li> <a href="prop_book_02.html">
+                              2 &ensp; Propeller geometry </a>
+                           </li>
+                           <li> <a href="prop_book_03.html">
+                              3 &ensp; Thrust, power and efficiency </a>
+                           </li>
+                        </ul>
+                     </li>
+                     
+                     <li class="dropdown-parent">
+                        <a href="prop_book_04_TOC.html">
+                           &emsp; <i> Axial momentum</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_04.html">
+                              4&ensp; Axial momentum loss </a>
+                           </li>
+                           <li> <a href="prop_book_05.html">
+                              5 &ensp; Thrust and the mass flow </a>
+                           </li>
+                           <li> <a href="prop_book_06.html">
+                              6  &ensp; Heavy loading </a>
+                           </li>
+                           <li> <a href="prop_book_07.html">
+                              7  &ensp; Concentric tubes </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_08_TOC.html">
+                           &emsp; <i> Rotational loss </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_08.html">
+                              &thinsp; 8 &hairsp; &thinsp; Rotation </a>
+                           </li>
+                           <li> <a href="prop_book_09.html">
+                              &thinsp; 9 &hairsp; &thinsp; Rotational efficiency </a>
+                           </li>
+                           <li> <a href="prop_book_10.html">
+                              10  &ensp; Minimizing the rotational loss </a>
+                           </li>
+                           <li> <a href="prop_book_11.html">
+                              11  &ensp; The thrust at optimal efficiency </a>
+                           </li>
+                           <li> <a href="prop_book_12.html">
+                              12  &ensp; The spiral wake </a>
+                           </li>
+                           <li> <a href="prop_book_12.html">
+                              13  &ensp; Counterrotation </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_14_TOC.html">
+                           &emsp; <i> Viscous loss </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_14.html">
+                              14 &ensp; Viscous loss </a>
+                           </li>
+                           <li> <a href="prop_book_15.html">
+                              15 &ensp; Non-optimized viscous loss </a>
+                           </li>
+                           <li> <a href="prop_book_16.html">       
+                              16 &ensp; Optimizing the viscous loss - the exact solution </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_17_TOC.html">
+                           &emsp; <i> Tip loss - classical</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_17.html">
+                              17 &ensp; The nature of the tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_18.html">
+                              18 &ensp; Two solutions </a>
+                           </li>
+                           <li> <a href="prop_book_19.html">       
+                              19 &ensp; Prandtl's tip model </a>
+                           </li>
+                           <li> <a href="prop_book_20.html">       
+                              20 &ensp; Prandtl's tip with rotation </a>
+                           </li>
+                        </ul>
+                     </li>
 
-      <a style="background-color:#E8E8E8;"
-         href="nonlinear.html">  Nonlinear control          </a>
-      <a  style="color: grey"
-         href="phase_plane.html">&ensp; 
-                                   The phase plane          </a>
-      <a  style="color: grey"
-         href="dual_control_law.html">&ensp; 
-                                   The dual control law     </a>
-      <a  style="color: silver"
-         href="#">&ensp;                   Posicast         </a>
+                     <li class="dropdown-parent">
+                        <a href="prop_book_21_TOC.html">
+                           &emsp; <i> Tip loss - the exact vortex</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_21.html">
+                              21 &ensp; The vortex solution </a>
+                           </li>
+                           <li> <a href="prop_book_22.html">
+                              22 &ensp; The wing lifting line </a>
+                           </li>
+                           <li> <a href="prop_book_23.html">       
+                              23 &ensp; The propeller lifting line </a>
+                           </li>
+                           <li> <a href="prop_book_24.html">       
+                              24 &ensp; Finite blade spacing </a>
+                           </li>
+                           <li> <a href="prop_book_25.html">       
+                              25 &ensp; Applying Lerbs's solution </a>
+                           </li>
+                           <li> <a href="prop_book_26.html">       
+                              26 &ensp; Comparing Prandtl to Lerbs </a>
+                           </li>
+                        </ul>
+                     </li>
 
-      <a style="background-color:#E8E8E8;
-                color: Grey"
-         href="#">               Math             </a>
-      <a style="background-color:#E8E8E8;"
-         href="math.html" >&ensp;        About math         </a>
+                     <li class="dropdown-parent">
+                        <a href="prop_book_27_TOC.html">
+                           &emsp; <i> Optimal blade shape </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_27.html">
+                              27 &ensp; Blade chords before tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_28.html">
+                              28 &ensp; Blade chords with tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_29.html">
+                              29 &ensp; Tip sweepback </a>
+                           </li>
+                        </ul>
+                     </li>
+                     
+                  </ul>
+               </li>
+            </ul>
+         </li>   
 
-      <a style="background-color:#E8E8E8;"
-         href="linear_algebra.html" >&ensp;
-                                          Linear algebra     </a>
+<!-- SHIPS -->      
+            
+          <li class="dropdown-parent">             
+            <a href="ship.html">
+               Ships</a>
+            <ul class="dropdown">
+               <li> <a href="ship.html">
+                  <i> No love lost </i> </a>
+               </li>
+               <li><a href="hydrofoil.html">
+                  Hydrofoils</a>
+               </li>
+               <li><a href="sailing.html">
+                  Sailing </a>
+               </li>
+            </ul>
+         </li>   
 
-      <a style="background-color:#E8E8E8;;
-                color: grey"
-              href="quaternion.html" >&ensp;
-                                          Quaternions        </a>
+<!-- SPACE -->
 
-    </div>
-  </li>
+         <li class="dropdown-parent">
+            <a href="#">Space</a>             
+            <ul class="dropdown">
+               <li> <a href="space.html">
+                  <i> Love to hate </i> </a>
+               </li>           
+               <li class="dropdown-parent">
+                  <a href="satellite_control.html">
+                     Satellite control</a>          
+                  <ul class="dropdown-submenu">
+                     <li><a href="satellite_ISO.html">
+                        The ISO satellite</a>
+                     </li>
+                     <li><a href="satellite_SAX.html">
+                        The SAX satellite</a>
+                     </li>
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="satellite_control.html">
+                     Zero G</a>          
+                  <ul class="dropdown-submenu">
+                     <li><a href="satellite_ISO.html">
+                        Ballistocraft (UAV)</a>
+                     </li>
+                  </ul>
+               </li>
+               
+            </ul>
+         </li>
 
-  <!-- DESIGN, METHODOLOGY ------------------------------------>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">
-                                          Design        </a>
+<!-- HAPTICS -->
 
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-         href="money.html">               Money             </a>
+         <li class="dropdown-parent">
+            <a href="haptics.html">Haptics</a>             
+            <ul class="dropdown">
+            
+               <li> <a href="haptics.html">
+                  <i> Unrequited love </i> </a>
+               </li>           
 
-      <a style="background-color:#E8E8E8;"
-                href="design.html" >      Methods           </a>
+               <li class="dropdown-parent">
+                  <a href="haptics_fcs.html">
+                     Portfolio at FCS</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="haptic_master.html">
+                        Haptic Master </a> 
+                     </li>                     
+                     <li> <a href="lopes.html">
+                        Lopes </a> 
+                     </li>                     
+                     <li> <a href="armbot.html">
+                        Armbot </a> 
+                     </li>                     
+                     <li>
+                        <p style="margin-left:16px; color:gray;">  
+                           Simodont  </p>                        
+ <!--<a href="simodont.html">
+                        Simodont </a> 
+-->                        
+                     </li>                     
+                     <li> <a href="wristalyzer.html">
+                        Wristalyzer </a> 
+                     </li>                     
+                     <li> <p style="margin-left:16px; color:silver;">
+                        5-DOF gripper project </p> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Algorithms</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="admittance.html">
+                        Admittance</a> 
+                     </li>                     
+                     <li> <a href="master_slave.html">
+                        Master/slave</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     API's and rendering</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="#">
+                        Haptic API</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Rendering</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        User interface</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+            </ul>
+         </li>
+         
+<!-- MECHANICS -->
 
-      <a href="inventors.html">&ensp;
-                                          Against inventors </a>
-      <a href="#" style="color: silver">&ensp;
-                                       Corporate innovation </a>
-      <a href="#" style="color: silver">&ensp;
-                                          Skunk works       </a>
-      <a href="#" style="color: silver">&ensp;
-                                          Toyota            </a>
-      <a href="#" style="color: silver">&ensp;
-                                          TRIZ and the like </a>
+         <li class="dropdown-parent">
+            <a href="#">Mechanics</a>             
 
-      <a style="background-color:#E8E8E8;"
-         href="#">                      Documenting       </a>
-      <a href="mind_maps.html">&ensp;     Mind maps         </a>
-      <a href="sketching.html">&ensp;     Sketching         </a>
-      <a style="color: grey";
-         href="prototyping.html">&ensp;   Prototyping       </a>
-      <a href="config_control.html">&ensp;
-                                          Config control    </a>
-      <a href="memo_system.html" >&ensp;  Memo's            </a>
-      <a href="website.html">&ensp;       Website           </a>
+            <ul class="dropdown">
+               <li> <a href="haptics.html">
+                  <i> Old flames  never die </i> </a>
+               </li>           
+            
+               <li class="dropdown-parent">
+                  <a href="haptics_fcs.html">
+                     Dynamics</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="haptic_master.html">
+                        Haptic Master</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Kinematics</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="admittance.html">
+                        Admittance</a> 
+                     </li>                     
+                     <li> <a href="admittance.html">
+                        Master/slave</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Linkages</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="#">
+                        Web interface</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Haptic API</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Rendering</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li>  <a href="#">
+                     Structural design</a>
+               </li>
+               
+            </ul>
+         </li> <!-- end Mechanics -->
 
-    </div>
-  </li>
+<!-- CONTROL -->            
+            
+         <li class="dropdown-parent">             
+            <a href="#">
+               Control</a>
+            <ul class="dropdown">
+               <li> <a href="control.html">
+                  <i> Out of control </i> </a>
+               </li>           
+               <li><a href="#">
+                  Linear control</a>
+               </li>
+            </ul>
+         </li>           
+            
+<!-- METHODOLOGY, DESIGN -->            
+            
+         <li class="dropdown-parent">             
+            <a href="design.html">
+               Method</a>
+            <ul class="dropdown">
+               <li> <a href="method.html">
+                  <i> Though this be madness </i> </a>
+               </li>           
+               <li><a href="money.html">
+                  Money</a>
+               </li>
 
+               <li class="dropdown-parent">          
+                  <a href="design.html">
+                        Design methodology </a>
+                  <ul class="dropdown-submenu">                  
+                     <li>
+                        <a href="inventors.html"> Against inventors </a>
+                     </li>
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">             
+                  <a href="design.html">
+                        Documentation </a>
+                  <ul class="dropdown-submenu">                  
+                     <li>
+                        <a href="mind_maps.html"> Mind maps </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>           
+            
+      </ul>    <!-- end of top bar menu list -->
+   </nav>
 
-  <!-- CV ----------------------------------------------------->
-  <li class="dropdown">
-    <a class="dropbtn"
-         href="javascript:void(0)" >            CV          </a>
-
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-         href="#">                Delft            </a>
-      <a href="delft.html"</a>&ensp;
-                                 Polytechnic or University  </a>
-      <a href="design_exercise.html" </a>&ensp;
-                                           Design exercise  </a>
-      <a href="autopilot.html">&ensp;      Autopilot thesis </a>
-
-      <a style="background-color:#E8E8E8;
-                color: black"
-         href="#" >                        Fokker           </a>
-
-      <a style = "color: silver"
-         href  = "fokker.html" > &ensp;
-                                            History        </a>
-      <a href="#" style="color: gray">&ensp;
-                                            Aircraft       </a>
-      <a href="satellite_control.html">&ensp; 
-                                            Space           </a>
-      <a href="haptics_career.html" >&ensp; 
-                                            Haptics         </a>
-
-      <a style="background-color:#E8E8E8;
-                color: grey" href="#" >   
-                                         Various            </a>
-      <a href="#" style="color: silver">&ensp;
-                                        Model aircraft      </a>
-      <a href="recumbent.html">&ensp;   Recumbents          </a>
-      <a href="hydrofoil.html">&ensp;   Hydrofoil           </a>
-    </div>
-  </li>
-</ul>
-</div>            <!-- end no-print -->
-
-<!-- TEXT ----------------------------------------------------->
+<!---------------------------------------------------------------------->
+<!-- PAGE TEXT                                                        -->
 
 <h3> about </h3>
 
@@ -489,7 +597,7 @@
 
 <p> This site is really a personal blog.
  For easier reference, it is organized
- by subject, instead of chronologically.
+ by subject, instead of chrono&shylogically.
 </p>
 
 <p> Some parts are mere sketches of ideas,
@@ -606,9 +714,13 @@ and
 <br> <br> <!-- Prevent text covering by footer -->
 <div class="footer"> P. Lammertse, 2026 </div>
 
+<!-- Hamburger menu script                                   -->
+<script src="menu.js"></script>  
+
 <!-- Free visits tracker added (back in??) on 2026-04-19 :   -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js">
 </script>
+
 
 </body>
 </html>
