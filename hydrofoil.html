@@ -1,120 +1,726 @@
 <!DOCTYPE html>
-<html>
-
-<!--------------------------------------------------------------
--- file    : hydrofoil.html
--- purpose : Page for website Piet Lammertse
-----------------------------------------------------------------
---   history :
---     2025-11-23 new
----------------------------------------------------------------> 
-
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="text.css">
-  <title>  Piet Lammertse on hydrofoils  </title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> Piet Lammertse on aerodynamics and haptics </title>
+
+   <link href="text.css" rel="stylesheet" >
+   <link href="menu.css" rel="stylesheet" >
 </head>
 
 <body>
 
+   <nav class="dropdown-menu">
 
-<!-- TEXT ----------------------------------------------------->
+      <!-- Responsive hamburger button, see menu.js -->
+      <button class="nav-toggle"
+         aria-label="Toggle navigation menu" aria-expanded="false">
+         <span></span>  <span></span>  <span></span>
+      </button>
 
-<h2> Hydrofoils </h2>
+<!------------------------------------------------------------------>
+<!-- TOP NAV BAR MENU -->
 
-<h4> the challenge </h4>
+      <ul>
 
-<p> Around 1985 I attended a local publicity lecture
- from someone planning
- to build his own ocean going hydrofoil.
-He wanted to win the "Blue Riband" for the fastest
- transatlantic crossing
- by a passenger liner,
- so he needed at least one paying passenger.
-He had crossed the ocean before in a raft
- with a truck cabin on top
- and he felt that he was now ready for the next step,
- a 1,000 hp racing craft.
+<!-- HOME -->
+
+         <li class="dropdown-parent">
+        
+            <a href="personal.html">
+               Home</a>
+
+            <ul class="dropdown">
+
+               <li> <a href="personal.html">
+                       <i> Vanity Fair </i> </a>
+               </li>
+          
+               <li>
+               
+                  <li class="dropdown-parent">             
+                     <a href="#">
+                        CV </a>
+                  <ul class="dropdown-submenu">
+                  
+                     <li class="dropdown-parent">
+                        <a href="delft.html">Delft</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="delft.html"> Polytechnic or university </a>
+                           </li>
+                           <li>
+                              <a href="design_exercise.html"> Design exercise </a>
+                           </li>
+                           <li>
+                              <a href="autopilot.html"> Autopilot thesis </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="dropdown-parent">
+                        <a href="fokker.html"> Fokker </a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="satellite_control.html">
+                                 Space </a>
+                           </li>
+                           <li>
+                              <a href="haptics_career.html"</a>
+                                 Haptics </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="dropdown-parent">
+                        <a href=#>Various</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="recumbent.html">
+                                 Recumbents </a>
+                           </li>
+                           <li>
+                              <a href="hydrofoil.html">
+                                 Hydrofoil </a>
+                           </li>
+                        </ul>
+                     </li> 
+                     
+                  </ul>
+               </li>                   
+            
+               <li class="dropdown-parent">             
+                  <a href="website.html">
+                     Website </a>
+<!-- TODO -->
+<!--                     
+                  <ul class="dropdown-submenu">
+                     <li> <a href="website.html">
+                        Purpose</a>
+                     </li>
+                     <li> <a href="javascript.html">
+                        JavaScript</a>
+                     </li>
+                  </ul>
+ -->
+               </li>
+
+            </ul>          
+         </li>
+
+<!------------------------------------------------------------------>
+ <!-- AIRCRAFT -->
+ 
+         <li class="dropdown-parent">
+            <a href="aircraft.html">       <!-- AIRCRAFT HEADER   -->
+               Aircraft </a>
+
+            <ul class="dropdown">          <!-- AIRCRAFT DROPDOWN -->
+
+               <li> <a href="aircraft.html">
+                   <i> Love affair </i> </a>
+               </li>
+
+         
+   <!-- AERODYNAMICS -->
+               <li class="dropdown-parent">             
+                  <a href="aerodynamics.html">
+                     Aerodynamics</a>       <!-- AERODYNAMICS HEADER   -->
+                  <ul class="dropdown-submenu">
+                     <li class="dropdown-parent">
+                        <a href="fallacy.html">Common fallacies</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="T_tails.html">T-tails</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            
+   <!-- STABILITY AND CONTROL -->
+   
+               <li class="dropdown-parent">             
+                  <a href="#">
+                     Stability and control</a>       <!-- STABILITY HEADER   -->
+                  <ul class="dropdown-submenu">
+                     <li class="dropdown-parent">
+                        <a href="etkin.html">Etkin's book</a>
+                        <ul class="dropdown-submenu">
+                           <li>
+                              <a href="etkin_editions.html">Editions</a>
+                           </li> 
+                           <li>
+                              <a href="etkin_typos.html">Typos</a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li> <a href="trim.html">
+                        Trim</a>
+                     </li>
+                  </ul>
+               </li>  <!-- end Stability -->
+
+<!-- ROTORS AND FLAPPING -->
+               <li><a href="flapping_flight.html">
+                     Rotors and flapping</a>
+               </li>
+
+            </ul>    <!-- end of aircraft dropdown -->           
+         </li>       <!-- END OF AIRCRAFT -->
+
+<!-- PROPELLERS -->      
+            
+          <li class="dropdown-parent">             
+            <a href="ship.html">
+               Propellers</a>
+            <ul class="dropdown">
+               <li> <a href="aircraft.html">
+                  <i> Classical beauty </i> </a>
+               </li>
+               
+               <li class="dropdown-parent">             
+                  <a href="aerodynamics.html">
+                     New textbook </a>
+                  <ul class="dropdown-submenu">
+                  
+                     <li>
+                        <a href="prop_book_frontispiece.html">
+                           Frontispiece </a>
+                     </li>
+                     <li>
+                        <a href="prop_book_preface.html">
+                           Preface </a>
+                     </li>
+
+                     <li> <a href="prop_book_00_TOC.html">
+                        Table of Contents </a>
+                     </li>
+                    
+                     
+                     <li class="dropdown-parent">
+                        <a href="prop_book_01_TOC.html">
+                           &emsp; <i> Introduction </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_01.html">
+                              1 &ensp; Introduction </a>
+                           </li>
+                           <li> <a href="prop_book_02.html">
+                              2 &ensp; Propeller geometry </a>
+                           </li>
+                           <li> <a href="prop_book_03.html">
+                              3 &ensp; Thrust, power and efficiency </a>
+                           </li>
+                        </ul>
+                     </li>
+                     
+                     <li class="dropdown-parent">
+                        <a href="prop_book_04_TOC.html">
+                           &emsp; <i> Axial momentum</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_04.html">
+                              4&ensp; Axial momentum loss </a>
+                           </li>
+                           <li> <a href="prop_book_05.html">
+                              5 &ensp; Thrust and the mass flow </a>
+                           </li>
+                           <li> <a href="prop_book_06.html">
+                              6  &ensp; Heavy loading </a>
+                           </li>
+                           <li> <a href="prop_book_07.html">
+                              7  &ensp; Concentric tubes </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_08_TOC.html">
+                           &emsp; <i> Rotational loss </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_08.html">
+                              &thinsp; 8 &hairsp; &thinsp; Rotation </a>
+                           </li>
+                           <li> <a href="prop_book_09.html">
+                              &thinsp; 9 &hairsp; &thinsp; Rotational efficiency </a>
+                           </li>
+                           <li> <a href="prop_book_10.html">
+                              10  &ensp; Minimizing the rotational loss </a>
+                           </li>
+                           <li> <a href="prop_book_11.html">
+                              11  &ensp; The thrust at optimal efficiency </a>
+                           </li>
+                           <li> <a href="prop_book_12.html">
+                              12  &ensp; The spiral wake </a>
+                           </li>
+                           <li> <a href="prop_book_12.html">
+                              13  &ensp; Counterrotation </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_14_TOC.html">
+                           &emsp; <i> Viscous loss </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_14.html">
+                              14 &ensp; Viscous loss </a>
+                           </li>
+                           <li> <a href="prop_book_15.html">
+                              15 &ensp; Non-optimized viscous loss </a>
+                           </li>
+                           <li> <a href="prop_book_16.html">       
+                              16 &ensp; Optimizing the viscous loss - the exact solution </a>
+                           </li>
+                        </ul>
+                     </li>
+                  
+                     <li class="dropdown-parent">
+                        <a href="prop_book_17_TOC.html">
+                           &emsp; <i> Tip loss - classical</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_17.html">
+                              17 &ensp; The nature of the tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_18.html">
+                              18 &ensp; Two solutions </a>
+                           </li>
+                           <li> <a href="prop_book_19.html">       
+                              19 &ensp; Prandtl's tip model </a>
+                           </li>
+                           <li> <a href="prop_book_20.html">       
+                              20 &ensp; Prandtl's tip with rotation </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="dropdown-parent">
+                        <a href="prop_book_21_TOC.html">
+                           &emsp; <i> Tip loss - the exact vortex</i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_21.html">
+                              21 &ensp; The vortex solution </a>
+                           </li>
+                           <li> <a href="prop_book_22.html">
+                              22 &ensp; The wing lifting line </a>
+                           </li>
+                           <li> <a href="prop_book_23.html">       
+                              23 &ensp; The propeller lifting line </a>
+                           </li>
+                           <li> <a href="prop_book_24.html">       
+                              24 &ensp; Finite blade spacing </a>
+                           </li>
+                           <li> <a href="prop_book_25.html">       
+                              25 &ensp; Applying Lerbs's solution </a>
+                           </li>
+                           <li> <a href="prop_book_26.html">       
+                              26 &ensp; Comparing Prandtl to Lerbs </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li class="dropdown-parent">
+                        <a href="prop_book_27_TOC.html">
+                           &emsp; <i> Optimal blade shape </i> </a>
+                        <ul class="dropdown-submenu">
+                           <li> <a href="prop_book_27.html">
+                              27 &ensp; Blade chords before tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_28.html">
+                              28 &ensp; Blade chords with tip loss </a>
+                           </li>
+                           <li> <a href="prop_book_29.html">
+                              29 &ensp; Tip sweepback </a>
+                           </li>
+                        </ul>
+                     </li>
+                     
+                  </ul>
+               </li>
+            </ul>
+         </li>   
+
+<!-- SHIPS -->      
+            
+          <li class="dropdown-parent">             
+            <a href="ship.html">
+               Ships</a>
+            <ul class="dropdown">
+               <li> <a href="ship.html">
+                  <i> No love lost </i> </a>
+               </li>
+               <li><a href="hydrofoil.html">
+                  Hydrofoils</a>
+               </li>
+               <li><a href="sailing.html">
+                  Sailing </a>
+               </li>
+            </ul>
+         </li>   
+
+<!-- SPACE -->
+
+         <li class="dropdown-parent">
+            <a href="#">Space</a>             
+            <ul class="dropdown">
+               <li> <a href="space.html">
+                  <i> Love to hate </i> </a>
+               </li>           
+               <li class="dropdown-parent">
+                  <a href="satellite_control.html">
+                     Satellite control</a>          
+                  <ul class="dropdown-submenu">
+                     <li><a href="satellite_ISO.html">
+                        The ISO satellite</a>
+                     </li>
+                     <li><a href="satellite_SAX.html">
+                        The SAX satellite</a>
+                     </li>
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="satellite_control.html">
+                     Zero G</a>          
+                  <ul class="dropdown-submenu">
+                     <li><a href="satellite_ISO.html">
+                        Ballistocraft (UAV)</a>
+                     </li>
+                  </ul>
+               </li>
+               
+            </ul>
+         </li>
+
+<!-- HAPTICS -->
+
+         <li class="dropdown-parent">
+            <a href="haptics.html">Haptics</a>             
+            <ul class="dropdown">
+            
+               <li> <a href="haptics.html">
+                  <i> Unrequited love </i> </a>
+               </li>           
+
+               <li class="dropdown-parent">
+                  <a href="haptics_fcs.html">
+                     Portfolio at FCS</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="haptic_master.html">
+                        Haptic Master </a> 
+                     </li>                     
+                     <li> <a href="lopes.html">
+                        Lopes </a> 
+                     </li>                     
+                     <li> <a href="armbot.html">
+                        Armbot </a> 
+                     </li>                     
+                     <li>
+                        <p style="margin-left:16px; color:gray;">  
+                           Simodont  </p>                        
+ <!--<a href="simodont.html">
+                        Simodont </a> 
+-->                        
+                     </li>                     
+                     <li> <a href="wristalyzer.html">
+                        Wristalyzer </a> 
+                     </li>                     
+                     <li> <p style="margin-left:16px; color:silver;">
+                        5-DOF gripper project </p> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Algorithms</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="admittance.html">
+                        Admittance</a> 
+                     </li>                     
+                     <li> <a href="master_slave.html">
+                        Master/slave</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     API's and rendering</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="#">
+                        Haptic API</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Rendering</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        User interface</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+            </ul>
+         </li>
+         
+<!-- MECHANICS -->
+
+         <li class="dropdown-parent">
+            <a href="#">Mechanics</a>             
+
+            <ul class="dropdown">
+               <li> <a href="haptics.html">
+                  <i> Old flames  never die </i> </a>
+               </li>           
+            
+               <li class="dropdown-parent">
+                  <a href="haptics_fcs.html">
+                     Dynamics</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="haptic_master.html">
+                        Haptic Master</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Kinematics</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="admittance.html">
+                        Admittance</a> 
+                     </li>                     
+                     <li> <a href="admittance.html">
+                        Master/slave</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">
+                  <a href="#">
+                     Linkages</a>             
+                  <ul class="dropdown-submenu">
+                     <li> <a href="#">
+                        Web interface</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Haptic API</a> 
+                     </li>                     
+                     <li> <a href="#">
+                        Rendering</a> 
+                     </li>                     
+                  </ul>
+               </li>
+               
+               <li>  <a href="#">
+                     Structural design</a>
+               </li>
+               
+            </ul>
+         </li> <!-- end Mechanics -->
+
+<!-- CONTROL -->            
+            
+         <li class="dropdown-parent">             
+            <a href="#">
+               Control</a>
+            <ul class="dropdown">
+               <li> <a href="control.html">
+                  <i> Out of control </i> </a>
+               </li>           
+               <li><a href="#">
+                  Linear control</a>
+               </li>
+            </ul>
+         </li>           
+            
+<!-- METHODOLOGY, DESIGN -->            
+            
+         <li class="dropdown-parent">             
+            <a href="design.html">
+               Method</a>
+            <ul class="dropdown">
+               <li> <a href="method.html">
+                  <i> Though this be madness </i> </a>
+               </li>           
+               <li><a href="money.html">
+                  Money</a>
+               </li>
+
+               <li class="dropdown-parent">          
+                  <a href="design.html">
+                        Design methodology </a>
+                  <ul class="dropdown-submenu">                  
+                     <li>
+                        <a href="inventors.html"> Against inventors </a>
+                     </li>
+                  </ul>
+               </li>
+               
+               <li class="dropdown-parent">             
+                  <a href="design.html">
+                        Documentation </a>
+                  <ul class="dropdown-submenu">                  
+                     <li>
+                        <a href="mind_maps.html"> Mind maps </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>           
+            
+      </ul>    <!-- end of top bar menu list -->
+   </nav>
+
+<!---------------------------------------------------------------------->
+<!-- PAGE TEXT                                                        -->
+
+<h3> about </h3>
+
+<p> This site gives musings on things
+ that have caught my attention
+ over the years.
 </p>
-<p>&emsp;
- He had a friend helping him who had some doubts. 
- This friend asked me if I would have a look at the design. 
- We felt that it might be wise
- to build a smaller prototype first,
- but the adventurer would have none of it.
- So we decided to do it ourselves.
+<p> The intention is often to have
+ "simple" basic principles clarify "difficult" subjects.
+</p>
+<p> The selection tends to be purely personal,
+ and largely a matter of taste.
+</p>
+<p> Also, some autobiographical material 
+ plays a role in these selections.
 </p>
 
-<h4> fully submerged foil </h4>
+<!-- <h4> contents and organization </h4> -->
+<h3> contents </h3>
 
-<p> Since I did not like the spray and resistance
- of surface piercing foils,
- the wing was a fully submerged wooden plank,
- sanded to a Clark-Y type section.
- The "hull" was a lightweight plywood box. 
- My friend had a small outboard motor lying around.
- Depth and roll control was by two wooden feelers
- planing on the water,
- mechanically connected to piano-hinged strip ailerons. 
-The control was rock solid :
- one could lean outboard over the edge
- and the craft would not roll. 
-</p>
-<p>&emsp; 
-The picture shows the first version,
- which had a nose skid
- to keep the nose at a fixed height above the water. 
+<p> This site is really a personal blog.
+ For easier reference, it is organized
+ by subject, instead of chrono&shylogically.
 </p>
 
-<!-- FOTO -->
-<!--
-<img src="images/lammertse_hydrofoil_1_nose_skid_no_tailplane.jpg" 
-     width="600" alt="Early hydrofoil with nose skid"
-     style="margin-left   : 120px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
-
-<div style="break-before : page"> </div>
--->
-
-<p> The second version dispensed with the nose skid.
-It had a horizontal stabilizer fixed to the antiventilation plate. 
-With the clean bow flying above the surface, this gave less spray
-and a decidely more racy appearance. The second picture shows
-this version in full flight.
+<p> Some parts are mere sketches of ideas,
+ others are more elaborate,
+but all of them are works in  progress.
+</p>
+<p> 
+This site contains a serious text on  propeller theory,
+and there will be a similar text on haptics as well.
 </p>
 
-<!-- FOTO -->
-<!--
-<img src="images/piet_in_hydrofoil.jpg"
-     width="600" alt="Piet in hydrofoil"
-     style="margin-left   : 120px;
-            margin-top    : 12px;
-            margin-bottom :  8px;">
--->
-<h4> the result </h4>
+<h3> disclaimer </h3>
 
-<p> The craft left the water within a few lengths,
- and cruised at bicycle speeds.
- Unfortunately, it would not leave the water
- with two people on board.
-I ran circles around expensive motor yachts
- on the IJ river of Amsterdam
- with this version, cutting squarely
- through their bow and stern waves. 
-After hitting the square nose of the box
- on a particularly big stern wave,
- even though there was no damage,
- the main take home lesson was
- that I really needed to learn how to swim.
+<p> Please feel free to use any of this material,
+ but do so at your own risk&hairsp;&hairsp;:
 </p>
-<p style="margin-top : 12px">
- The adventurer barely got his 1,000 hp craft
- out of the water. He never gained the Blue Riband.
+<p> some of it is tested in practice,
+ but none of it is peer reviewed.
 </p>
+
+<p style="margin-top: 16px;"> 
+&emsp; --&ensp; Piet Lammertse &ensp;-- 
+</p>
+
+
+<!-- TEMPORARY DISCLAIMERS -- COLOR : GREY, ITALIC ------------>
+<span style = "color : grey">      <!--#808080-->
+<i>
+
+<!-- horizontal ruler ----------------------------------------->
+<hr style="margin-top:32px; margin-bottom:12px" >
+
+<!-- BUILD NOTE ----------------------------------------------->
+
+<p style="color : #909090">  <!-- bold face a bit lighter -->
+ <b> build note </b> </p>
+
+<p>&ensp; This site is my first attempt at a personal website.<br> 
+   &ensp; Currently it is mostly scaffolding, but content will follow
+ Real Soon Now...
+</p>
+<p> &ensp; (&thinsp;as Byte magazine
+ used to call such promises :-)&thinsp;).
+</p>
+
+<!-- horizontal ruler ----------------------------------------->
+<hr style="margin-top:12px;
+           margin-bottom:12px;" >
+
+<!-- STATUS --------------------------------------------------->
+<p style="color : #909090">
+   <b> status </b>
+</p>
+
+<p> 
+Some content is growing :
+</p>
+<p>
+ - &nbsp;
+ <a style="color: grey;"
+    href="prop_intro.html"> "propeller book"</a> :
+ this is 90% finished.
+ Viscous optimization&hairsp;! Comments are invited.
+</p> 
+
+<p style="color : grey;"> 
+ - &nbsp; 
+<a style="color: grey;"
+   href="linkages.html"> hand linkages</a>,
+   &ensp; with an application in
+  <a style="color: grey;"
+  href="MRI.html"> MRI</a>.
+</p>
+
+<p style="color : grey;">
+ - &nbsp; 
+<a style="color: grey";
+   href="fallacy.html"> common fallacies</a>,
+like
+<a style="color: grey";
+   href="downwind_turn.html"> the downwind turn</a>,
+<a style="color: grey";
+   href="T_tail.html"> T-tails</a>,
+<a style="color: grey";
+   href="canards.html"> canards</a>,
+and
+<a style="color: grey";
+   href="trim.html"> trim drag </a>.
+</p>
+
+<p style="color : grey;">
+ - &nbsp; 
+<a style="color: grey;"
+   href="sailing.html"> sails</a>.
+</p>
+
+<p> 
+ - &nbsp; a thread about  
+<a style="color: grey;"
+   href="design.html"> design</a>,
+<a style="color: grey;"
+   href="money.html"> money</a>,
+<a style="color: grey;"
+   href="inventors.html"> inventors</a>,
+and
+<a style="color: grey;",
+   href="delft.html"> Delft</a>.
+</i>
+</p>
+
+</i> </span>       <!-- end grey, italic span -->
 
 <!-- FOOTER --------------------------------------------------->
-<br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<br> <br> <!-- Prevent text covering by footer -->
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- Hamburger menu script                                   -->
+<script src="menu.js"></script>  
+
+<!-- Free visits tracker added (back in??) on 2026-04-19 :   -->
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js">
+</script>
+
 
 </body>
 </html>
