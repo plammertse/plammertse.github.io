@@ -1,0 +1,135 @@
+<! --------------------------------------------------------------
+// file    : b747_dutch_roll_test.html
+// purpose : Boeing B747 Dutch roll animation (Etkin 3d.ed.)
+// --------------------------------------------------------------
+//  2026-06-22 PL new, cloned from dumbbell.js
+// ------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
+  <title>  Piet Lammertse on modes  </title>
+</head>
+
+   <title> B747 Dutch roll test </title>
+</head>
+
+<body onload = "onLoad()">
+   
+<h3> &ensp; B747 Dutch roll test </h3>
+
+<p> Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja
+ jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja
+ Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja  Jaja jaja 
+ Jaja jaja  Jaja jaja  Jaja jaja </p>
+
+<div class = "center">
+   <canvas id    = "canvas"
+           width="500" height="300"
+           style = "border           : 1px solid #000000;
+               background-color : #FAFEFF;" >
+   </canvas>
+</div>
+
+<div class = "center">
+   <p> <b><i> Figure 1 : &ensp; B747 in the Dutch roll mode </i></b> </p>
+</div>
+
+<p> Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou
+ Ja nou Ja nou  Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou
+ Ja nou Ja nou Ja nou Ja nou Ja nou Ja nou</p>
+<!-- all in-line and included scripts go after  -->
+<!--   the HTML canvas, for scope reasons :     -->
+
+<script>
+   let canvas = document.getElementById("canvas"); 
+   let ctx    = canvas.getContext("2d");
+</script>
+
+<script src="mouse.js"> </script>
+<script src="b747_aft_view.js"> </script>
+
+<script>
+
+// -------------------------------------------------------------
+// For some reason, these lines cannot go into onLoad() :
+let b747 = new B747();     // airplane constructor
+let phi  = 0;
+let psi  = 0;
+
+// start simulation time
+let tSim  = 0;
+let tNow  = performance.now();
+let tPrev = tNow;
+let isRunning = true;
+
+// -------------------------------------------------------------
+function onLoad() {
+   attachMouse();    // from mouse.js
+   run();
+}
+
+// -------------------------------------------------------------
+function mouseDownHandle() {
+   isRunning = !mouseIsDown;
+}
+
+// -------------------------------------------------------------
+function run() {
+   mouseDownHandle();
+
+   simulate();
+   // use zoom scale == 1.5 for now
+   b747.draw( canvas.width/2, canvas.height/2, phi, psi, 1.5 );       // from b747.js
+ 
+   requestAnimationFrame( run);
+}
+
+// -------------------------------------------------------------
+function simulate() {
+
+   // find past dT
+   tNow   = performance.now();
+   let dT = tNow - tPrev;
+   tPrev  = tNow;
+   
+   // propagate simulation time, unless paused by mouse down
+   if ( isRunning )  {
+      tSim = tSim + dT;
+   }
+
+   // Dutch roll period [ms], Etkin 3d.ed., Table 6.8.
+   let T = 6640;           
+   
+   // phase of phi
+   let phasePhi  = tSim/T * 2 * Math.PI;
+   
+   // phase of psi w.r.t. phi, Table 6.9, p.188.
+   let dPhasePsi = 155.7 * Math.PI/180;
+   let phasePsi  = phasePhi + dPhasePsi;
+   
+   // magnitude of psi w.r.t. phi, Table 6.9, p.188.
+   let magPsi    = 0.31; 
+   
+   // choose nice roll angle amplitude
+   let phiMax = 0.5;
+   
+   // propagate phi and psi
+   //  Temporary, fix later :
+   //        convert psi down (Etkin) to psi up (my plot)
+   phi =  phiMax *          Math.sin( phasePhi );
+   psi = -phiMax * magPsi * Math.sin( phasePsi );
+}
+
+</script>
+
+</body>
+ 
+</html>
+

@@ -70,7 +70,7 @@ p {
 /* font-size : 16px;  already the default, I think */
 }
 
-/* horizontal rulers text width */
+/* horizontal rulers are text width */
 hr {
   margin-left : 32px;
   max-width   : 800px;" >
@@ -107,10 +107,10 @@ input[type=number] {
    width          : 60px;
 } 
 
-/* table 50px narrower than <p> and <hr> max-width   */  /* this was <p <hr */
+/* fit-in equations, and equation numbers */
 table {
-   width       : 750px;
-   margin-left :  48px;
+   width       : min( 90%, 775px);
+   margin-left : min(  4%,  48px)
 }
 
 /* table content (rows) spaced a little more       */
@@ -118,28 +118,46 @@ td {
   padding : 1px 0;
 }
 
-/* Two equal columns that float next to each other, for TOC */
+/* Two equal columns that float next to each other,
+   for propeller TOC */
 .column {
   float        : left;
-  width        : 400px;    /* for now, half of 800 */
+  /* surprisingly, this stacks responsive :         */
+  width        : 400px;   /* for now, half of 800   */
+/* failed responsive attempt, this does not stack : */  
+/*  width        : min( 50%, 400px); */
   padding-left : 10px;
 }
 
-/* increase the math font size to look like 16px text.
+/* Set this around figures and captions */
+.center {
+   display     : flex;
+   justify-content : center;
+   align-items	: center;
+   margin-left : min(  5%,  32px);
+ /* margin-top    : 8px; */ /* this falls outside the box border */
+ margin-bottom : 8px; /* this falls outside the box border */
+/*   padding     : 0 0;  */ /* no effect */
+   width  		: min( 90%, 800px);
+/*   border 		: solid; */   /* temporary debug tool */
+}
+
+/* Increase the math font size to look like 16px text.
    The extra math margin (vertical + horizontal)
    acts *inside* <p> ( and inside <td>, TBC ).                              
    <mfrac> from inline to display style cannot be fixed here,
-   this needs <mstyle displaystyle="true"> first every time. */
+   this needs <mstyle displaystyle="true" first every time.
+*/
+   
 math {
   font-size : 18px;
-  margin : 0px 32px;
+  margin    : 0px 32px;
 }
-// AI advice for too deep fractions below sqrt :
-// doesn't seem to work.
-/*
+/* 
+AI advice for too deep fractions below sqrt : doesn't seem to work.
 math, mrow {
-    font-family: "Latin Modern Math", STIXGeneral, DejaVu Math TeX Gyre, sans-serif;
-}
+    font-family: "Latin Modern Math", STIXGeneral,
+                  DejaVu Math TeX Gyre, sans-serif;
 */
 
 /* Always use <mspace/> with the slash, else it won't work  */
@@ -149,31 +167,34 @@ mspace {
 }
 
 img {
-   display       : inline-block;
+   /* This doesn't seem needed in a centered <div> : */
+   /*   display       : inline-block; */
    /* margin-top    : 16px; margin-bottom : 16px;  */
+/*   margin-top    : 0;
+   margin-bottom : 0;
+ */
 }
 
 video {
-   display       : inline-block;
-   margin-top    : 16px;
+/*   display       : inline-block;   */
+/*   width : 80%;  */
+/*   margin-top    : 16px;
    margin-bottom : 16px;
+ */
 }
 
-/* unordered lists (bullets, not numbered) */
-
-
-/* list items, left aligned */
-
-/* format for anchors <a>..</> and drpbtn's inside a list <li>*/
-
-/* dark red banner button on hover */
-
+/* New menu-things moved to menu.css. */
+/* Deleted here : */
+   /* unordered lists (bullets, not numbered) */
+   /* list items, left aligned */
+   /* format for anchors <a>..</> and drpbtn's inside a list <li>*/
+   /* dark red banner button on hover */
 
 .footer {
    position   : fixed;
    left       : 32px;
    bottom     : 0;
-   width      : 800px;
+   width      : min( 90%, 800px);   /* PL */
    background-color: white;
    color      : black;
    text-align : right;

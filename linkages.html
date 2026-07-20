@@ -3,6 +3,7 @@
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
 --   history :
+--     2026-07-20 new style responsive menu
 --     2026-06-21 added PDF formatting, like page breaks
 --     2026-06-03 serious update, chapter numbers
 --     2026-01-29 new
@@ -12,45 +13,59 @@
 <html>
 
 <head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title> Piet Lammertse on linkages </title>
 </head>
 
 <body>
 
-<!-- Print-only header ---------------------------------------->
+<!-- PRINT-ONLY HEADER ---------------------------------------->
+
 <div class = "do-print"
-     style = "display:none; text-align:right;
-     margin-top : 0mm;">
+     style = "display:none;
+              text-align:right;
+              margin-top : 0mm;">
    <div style="float:left">
       <h2> &ensp; LINKAGES </h2>
    </div>
+   <!-- default div right from above. -->
    <h2> P. Lammertse, 2026 </h2> <hr>
    <br>
 </div>
 
-<div class = "no-print">
 <!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li> <a href  = "index.html">         Home          </a> </li>
-  <li> <a style = "background-color:#0000C0;"
-          href  = "linkages.html">      Linkages      </a> </li>
-  <li> <a href  = "mri.html">           MRI           </a> </li>
-</ul>
-<!------------------------------------------------------------->
-</div>
 
-<!-- Display header -->
-<h2 class="no-print">  &emsp; &ensp; <u> LINKAGES </u> </h2>
+<nav class="dropdown-menu">
+   <!-- responsive hamburger button -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+   <!-- top menu -->
+   <ul>
+      <li> <a href = "index.html"> Home </a>
+      </li> 
+      <li> <a href = "mri.html">   MRI  </a>
+      </li>      
+   </ul>
+</nav>
+
+<!-- EXTRA SCREEN HEADER -------------------------------------->
+
+<h2 class="no-print"> &emsp; &ensp; <u> LINKAGES </u> </h2>
+
+<!-- MAIN TEXT ------------------------------------------------>
 
 <h2> 1 &emsp; Hand linkages </h2>
 
 <h4> 1.1 &emsp; Introduction </h2>
 
-<div style="text-align: justify;">
+<!-- <div style="text-align: justify;"> -->
     
 <p> These web pages primarily discuss <i>hand linkages</i>,
 as opposed to mechanisms and linkages in general.
@@ -71,36 +86,32 @@ We will analyze linkage components and their interactions
 in some detail below.
  </p>
 
-<!-- /////////////////////////////////////////////////////// -->
+<!-- display live video -->
+<div class = "center";
+     style = "margin-top : 10px" >
    <video controls muted autoplay loop
-      width="640" height="auto"
-      style="margin-left   : 120px;
-             margin-bottom : 0px;
-             margin-top    : 2px;
-             loop; >
-      <source type="video/mp4"
-         src="video/linkages_nuclear_lab_goertz.mp4" >
+          width = "65%" >
+      <source type = "video/mp4"
+              src  = "video/linkages_nuclear_lab_goertz.mp4" >
             Your browser does not support the video tag.
    </video>
+</div>
 
-  <!-- video still alternative for PDF printing -->
-  <img class = "do-print"; 
-       style = "display     : none;
-                margin-top  : 20px;
-                margin-left : 50px;"
-       width = "700px";
-       src   = "images/linkages_goertz_video_still.gif"
-       alt   = "Goertz video still" >
-  
-<p style= "margin-left  : 300px;
-           margin-bottom : 12px;">
-<b><i>Goertz nuclear lab manipulator.</i></b> </p>
-<!-- /////////////////////////////////////////////////////// -->
+<!-- video-still, needed for PDF printing -->
+<img class = "center do-print"; 
+     style = "display : none";
+     src   = "images/linkages_goertz_video_still.gif"
+     alt   = "Goertz video still" >
+
+<div class="center">
+   <p> <i> Figure 1.1 : &emsp; Goertz nuclear lab manipulator. </i> </p>
+</div>
 
 <h5> <b> haptic requirements </b> </h5>
 
 <p> The word "haptic" means : "relating to the sense of touch".
-As a technology, it means either "touching at a distance"
+</p>
+<p> As a technology, it means either "touching at a distance"
  or "artificial feel". 
  If the intermediary is anything more complex than a pointing stick,
  then it is called a "haptic device".
@@ -181,19 +192,18 @@ or it may be physical, as in so-called "master-slave" systems.
  If our hand would have no mass, then it would just move away from the force,
  and we would feel no contact force from the remote site, just a motion.
  </p>
- 
-<!-- /////////////////////////////////////////////////////// -->
-<img width="150" alt="Single mass";
-     style="margin-left   : 300px;
-            margin-top    :   8px"
-      src="images/linkages_single_mass.jpg">
-<p style="margin-left     : 150px;
-          margin-bottom   :  8px;">
-    <i> Figure 2.1 : &ensp; Mass flexibly connected to a reference position.</i> 
-</p>
-<!-- /////////////////////////////////////////////////////// -->
 
- <p>  Figure 2.1 shows a moving mass, connected to a reference position by a flexible mechanism.
+<div class = "center">
+<img src   = "images/linkages_single_mass.jpg";
+     width = "25%"
+     alt   = "Single mass">
+</div>
+<div class = "center">
+    <p> <i> Figure 2.1 : &ensp; Mass flexibly connected to a reference position.</i> 
+   </p>
+</div>
+
+<p>  Figure 2.1 shows a moving mass, connected to a reference position by a flexible mechanism.
   The mechanism is modelled as a single spring. 
   The reference position is shown as a fixed wall.
   It may be your hand, or an object in the remote or virtual world.
@@ -316,16 +326,15 @@ The final mass is that of a physical "feeler",
  or of the connection to a haptics device.
 </p>
 
-<!-- /////////////////////////////////////////////////////// -->
-<img width="550" alt="Lumped masses";
-     style="margin-left   : 120px;
-            margin-top    :   8px"
-      src="images/linkages_serial_spring_masses.jpg">
-<p style="margin-left     : 250px;
-          margin-bottom   :  8px;">
-    <i> Figure 3.1 : &ensp; A serial mechanism.</i> 
-</p>
-<!-- /////////////////////////////////////////////////////// -->
+<div class = "center">
+<img src   = "images/linkages_serial_spring_masses.jpg";
+     width = "80%"
+     alt   = "Lumped masses">
+</div>
+<div class = "center">
+    <p> <i> Figure 3.1 : &ensp; A serial mechanism. </i> 
+   </p>
+</div>
 
 <p> We will first establish what the mechanism is going to feel like
 for very slow movements.
@@ -577,7 +586,7 @@ between an "input"  displacement <i>A</i> and an
  This generalizes easily into the displacement ratio between
  motions in other linear directions, or even via gearboxes and pulleys.
  </p> 
- </div>
+ <!-- </div> -->
  <p> &emsp;
  As a sign convention we give all displacements
  the same sign when the mechanism
@@ -4014,3 +4023,8 @@ but hard tools and objects.
  to take the mass of the human hand into account
  when determining the band&shywidth.
 </div>     <!-- blue -->
+
+
+<!-- Hamburger menu script                                   -->
+<script src="menu.js"></script>  
+
