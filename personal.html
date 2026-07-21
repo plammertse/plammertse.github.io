@@ -41,21 +41,29 @@
 
 <h4> personal </h4>
 
-<p> My name is Piet Lammertse.
- <!-- This is pronounced somehwat as Pete <u>Lohm</u>mertsuh.  -->
- I was born in Amsterdam in 1951, and I have lived
- in the Netherlands all my life.
+<p> My name is Piet Lammertse, pronounced :
+
+   <audio id = "myName"   src   = "piet_lammertse.m4a">    </audio>
+   <span  id = "playName" style = "color: blue; cursor : pointer;">
+      <u>Piet Lammertse</u></span>.
+   <script>
+      const textElement  = document.getElementById( "playName");
+      const audioElement = document.getElementById( "myName"  );
+      textElement.addEventListener( "click", function() {
+         audioElement.play();
+      } );
+   </script>
+
 </p>
-<p> &emsp;
-I am an aircraft engineer by training
+<p> &emsp; I was born in Amsterdam in 1951, and I have always lived
+ in the Netherlands.
+I am an aircraft engineer by&nbsp;training
 (&hairsp;MSc Delft Technical University, 1985,
  Aircraft Stability &amp; Control&hairsp;).
- I&nbsp;spent the best part of my life in R&amp;D departments,
- first in aerospace and later in (haptic) robotics.
+ I&nbsp;spent the best part of my life in&nbsp;R&amp;D departments,
+ first in aerospace and then in (&hairsp;haptic&hairsp;) robotics.
  Over the years I&nbsp;supervised some 100 university level
  graduation theses from interns.
- </p>
- <p> &emsp;
  I am now retired, and I miss the work and the company.
  This website is my way to share what I think I learned,
  and would like to continue working on.
