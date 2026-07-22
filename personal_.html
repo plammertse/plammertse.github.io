@@ -43,14 +43,14 @@
 
 <p> My name is Piet Lammertse, pronounced :
 
-   <audio id = "nameAudio"  src  = "piet_lammertse.m4a"> </audio>
-   <span  id = "nameSpan"  style = "color: blue; cursor : pointer;">
+   <audio id = "myName"   src   = "piet_lammertse.m4a">    </audio>
+   <span  id = "playName" style = "color: blue; cursor : pointer;">
       <u>Piet Lammertse</u></span>.
    <script>
-      const nameAudio = document.getElementById( "nameAudio" );
-      const nameSpan  = document.getElementById( "nameSpan"  );
-      nameText.addEventListener( "click", function() {
-         nameAudio.play();
+      const textElement  = document.getElementById( "playName");
+      const audioElement = document.getElementById( "myName"  );
+      textElement.addEventListener( "click", function() {
+         audioElement.play();
       } );
    </script>
 
