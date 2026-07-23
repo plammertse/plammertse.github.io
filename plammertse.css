@@ -242,7 +242,8 @@ li.dropdown {
    width      : 800px;
    background-color: white;
    color      : black;
-   text-align : right;
+/*   text-align : right;  */
+   text-align : center;              /* NOT EASY TO OVERRULE ?  */
    padding    : 0 16px;          /* from default 32px ? */
    /* padding  : 20px 16px 0px 0px;  This just shifts the border up */
    box-sizing : border-box;

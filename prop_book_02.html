@@ -21,17 +21,22 @@
 
 <body>
 
-<div class = "no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_01.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_03.html">  Next &#x25BA</a>      </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_01.html">
+               &#x25C4 Previous </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_00_TOC.html">
+               TOC  &#x25BC </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_03.html">
+               Next  &#x25BA </a> </li>
+   </ul>
+</nav>
 
 <!--- TEXT BLOCK HEADER --------------------------------------->
 <!--
@@ -652,9 +657,18 @@ in capitals.
 <!-- END EQUATION --------------------------------------------->
 
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_01.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_03.html"> next </a>
+   </span>
+ </div>
 
 </body>
 </html>
