@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Boeing 747 pitch control demo</title>
+<style>
+  :root {
+    --text-primary: #1a1a1a;
+    --text-secondary: #5f5e5a;
+    --border-strong: #b4b2a9;
+    --surface-0: #ffffff;
+    --teal-fill: #9fe1cb;
+    --teal-stroke: #0f6e56;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #f1efe8;
+      --text-secondary: #b4b2a9;
+      --border-strong: #5f5e5a;
+      --surface-0: #1c1c1a;
+      --teal-fill: #085041;
+      --teal-stroke: #5dcaa5;
+    }
+  }
+  html, body {
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+  body {
+    background: var(--surface-0);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 { font-size: 18px; font-weight: 500; }
+  .hint { font-size: 13px; color: var(--text-secondary); margin-bottom: 0.75rem; }
+  #angle-out { font-weight: 500; color: var(--text-primary); }
+  svg { display: block; width: 100%; height: auto; touch-action: none; }
+  #elevator { cursor: grab; touch-action: none; }
+  #elevator path { fill: var(--teal-fill); stroke: var(--teal-stroke); }
+  #elevator-hit { fill: transparent; touch-action: none; }
+</style>
+</head>
+<body>
+
+<h1>Boeing 747 &mdash; drag the elevator to set pitch</h1>
+<div class="hint">
+  Drag the tail elevator (highlighted) &mdash; pitch: <span id="angle-out">0.0&deg;</span>
+</div>
+
+<svg width="100%" viewBox="0 0 680 300" role="img">
+<title>Draggable elevator pitch control</title>
+<desc>A Boeing 747 side-view silhouette whose pitch angle is controlled by dragging the tail elevator up or down.</desc>
+
+<line x1="40" y1="190" x2="640" y2="190" stroke="var(--border-strong)" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+<g id="plane" style="transform-origin:360px 188px;">
+  <g fill="var(--text-secondary)" stroke="var(--text-primary)" stroke-width="1" stroke-linejoin="round">
+    <path d="M 175 190
+             C 178 179, 188 172, 205 168
+             C 220 158, 248 150, 290 148
+             L 345 148
+             C 352 148, 356 152, 356 158
+             L 356 162
+             L 470 168
+             C 495 169, 512 174, 515 182
+             C 517 186, 512 190, 500 191
+             L 250 199
+             C 210 198, 185 195, 175 190 Z"/>
+    <path d="M 462 169 L 508 108 L 517 110 L 500 172 Z"/>
+    <path d="M 300 195 L 222 246 L 236 250 L 322 202 Z"/>
+    <rect x="234" y="216" width="8" height="16" transform="rotate(-24 238 224)"/>
+    <rect x="205" y="218" width="52" height="16" rx="8"/>
+    <rect x="266" y="228" width="8" height="16" transform="rotate(-24 270 236)"/>
+    <rect x="243" y="234" width="52" height="16" rx="8"/>
+  </g>
+
+  <g id="elevator" style="transform-origin:480px 180px;">
+    <path id="elevator-hit" d="M 465 155 L 555 185 L 545 215 L 460 195 Z"/>
+    <path d="M 480 176 L 540 190 L 538 196 L 472 183 Z"/>
+  </g>
+</g>
+
+<text x="640" y="206" text-anchor="end" font-size="12" fill="var(--text-secondary)">nose</text>
+</svg>
+
+<script>
+(function(){
+  const plane = document.getElementById('plane');
+  const elevator = document.getElementById('elevator');
+  const angleOut = document.getElementById('angle-out');
+  let dragging = false;
+  const pivotX = 360, pivotY = 188;
+
+  function svgPoint(svg, clientX, clientY) {
+    const rect = svg.getBoundingClientRect();
+    const scale = 680 / rect.width;
+    return {
+      x: (clientX - rect.left) * scale,
+      y: (clientY - rect.top) * scale
+    };
+  }
+
+  elevator.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    dragging = true;
+    elevator.style.cursor = 'grabbing';
+    elevator.setPointerCapture(e.pointerId);
+  });
+
+  elevator.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const svg = elevator.closest('svg');
+    const p = svgPoint(svg, e.clientX, e.clientY);
+    const angleRad = Math.atan2(p.y - pivotY, p.x - pivotX);
+    let angleDeg = angleRad * 180 / Math.PI;
+    angleDeg = Math.max(-25, Math.min(25, angleDeg));
+    plane.style.transform = 'rotate(' + angleDeg + 'deg)';
+    angleOut.textContent = (-angleDeg).toFixed(1) + '\u00b0';
+  });
+
+  elevator.addEventListener('pointerup', () => {
+    dragging = false;
+    elevator.style.cursor = 'grab';
+  });
+
+  elevator.addEventListener('pointercancel', () => {
+    dragging = false;
+    elevator.style.cursor = 'grab';
+  });
+})();
+</script>
+
+</body>
+</html>
