@@ -13,21 +13,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
 <!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_04_TOC.html">&#x25C4 Previous</a></li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_05.html">  Next      &#x25BA</a> </li>
-</ul>
+<nav class="dropdown-menu">
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_04_TOC.html">
+               &#x25C4 Previous </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_00_TOC.html">
+               TOC  &#x25BC </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_05.html">
+               Next  &#x25BA </a> </li>
+   </ul>
+</nav>
+
 
 <!--- TEXT BLOCK HEADER --------------------------------------->
 
@@ -150,7 +160,7 @@ for the non-dimensional versions
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>a</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
   <mstyle displaystyle="true">
@@ -158,13 +168,13 @@ for the non-dimensional versions
  </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.1)
+<td style="text-align:right">                 (4.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:8px;"> <tr> <td>
+<table class ="equation"; style="margin-top:8px;"> <tr> <td>
 <math>
   <mi>b</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
  <mstyle displaystyle="true">
@@ -172,7 +182,7 @@ for the non-dimensional versions
  </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.2)
+<td style="text-align:right">                 (4.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -201,13 +211,13 @@ The mechanism applies equally to air.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
   <mi>m</mi>  <mo>.</mo>  <mi>a</mi>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.3)
+<td style="text-align:right">                 (4.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -219,14 +229,14 @@ The mechanism applies equally to air.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
   <mi>m</mi>  <mo>.</mo> 
     <msup> <mi>v</mi> <mn>&bull;</mn>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.4)
+<td style="text-align:right">                 (4.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -240,7 +250,7 @@ The mechanism applies equally to air.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
   <mn>(</mn> <mi>m</mi>  <mo>.</mo> 
@@ -248,7 +258,7 @@ The mechanism applies equally to air.
     <mn>&bull;</mn>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.5)
+<td style="text-align:right">                 (4.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -276,7 +286,7 @@ The mechanism applies equally to air.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
     <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
@@ -284,7 +294,7 @@ The mechanism applies equally to air.
     <mi>v</mi>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.6)
+<td style="text-align:right">                 (4.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -312,7 +322,7 @@ The mechanism applies equally to air.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
     <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
@@ -320,7 +330,7 @@ The mechanism applies equally to air.
     <mi>w</mi>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.7)
+<td style="text-align:right">                 (4.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -330,7 +340,7 @@ The mechanism applies equally to air.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
     <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
@@ -340,7 +350,7 @@ The mechanism applies equally to air.
     <mi>V</mi>
 </math>
 
-<td style="width:50px; text-align:right">                 (4.8)
+<td style="text-align:right">                 (4.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -355,7 +365,7 @@ The mechanism applies equally to air.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>P</mi>  <mn>net</n> </msub>
     <mspace/> <mo>=</mo> <mspace/>
@@ -381,7 +391,7 @@ The mechanism applies equally to air.
 
 </math>
 
-<td style="width:50px; text-align:right">                 (4.9)
+<td style="text-align:right">                 (4.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -394,7 +404,7 @@ The mechanism applies equally to air.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>P</mi>  <mn>gross</n> </msub>
     <mspace/> <mo>=</mo> <mspace/>
@@ -415,7 +425,7 @@ The mechanism applies equally to air.
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.10)
+<td style="text-align:right">                (4.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -425,7 +435,7 @@ The mechanism applies equally to air.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>P</mi>  <mn>m</n> </msub>
 
@@ -445,7 +455,7 @@ The mechanism applies equally to air.
     <mo>.</mo> <mi>a</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (4.11)
+<td style="text-align:right">                (4.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -464,7 +474,7 @@ is not the total momentum power,
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -498,7 +508,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.12)
+<td style="text-align:right">                (4.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -506,7 +516,7 @@ is not the total momentum power,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -523,7 +533,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.13)
+<td style="text-align:right">                (4.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -539,7 +549,7 @@ is not the total momentum power,
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
 
@@ -554,7 +564,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.14)
+<td style="text-align:right">                (4.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -583,7 +593,7 @@ The propeller leaves behind a velocity <i>w</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>P</mi>  <mn>m</n> </msub>
     <mspace/> <mo>=</mo> <mspace/>
@@ -606,7 +616,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.15)
+<td style="text-align:right">                (4.15)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -616,7 +626,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -661,7 +671,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.16)
+<td style="text-align:right">                (4.16)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -673,7 +683,7 @@ The propeller leaves behind a velocity <i>w</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -690,7 +700,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.17)
+<td style="text-align:right">                (4.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -698,7 +708,7 @@ The propeller leaves behind a velocity <i>w</i>,
 </p>
 
 <!-- EQUATION -------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
 
@@ -714,7 +724,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.18)
+<td style="text-align:right">                (4.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -733,7 +743,7 @@ The propeller leaves behind a velocity <i>w</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>a</mi> 
 
@@ -743,7 +753,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="width:50px; text-align:right">                (4.19)
+<td style="text-align:right">                (4.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -791,7 +801,15 @@ in the thrust loading,
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_04_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_06.html"> next </a>
+   </span>
+ </div>
 
 </body>
 </html>

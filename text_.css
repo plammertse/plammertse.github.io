@@ -1,13 +1,10 @@
 /*-------------------------------------------------------------
 -- file    : text.css
--- purpose : Style sheet for personal website Piet Lammertse
--- note 1  : Beware : inside CSS, the comment symbol is / * etc.
---             This is unlike HTML, where it is <!-- -->
--- note 2  : Multilevel menu's defined in menu.css and menu.js 
+-- purpose : Style sheet for homepage Piet Lammertse
+-- note    : Beware : inside CSS, the comment symbol is / * etc.
+--             This is unlike HTML, where it is <!-- -->   
 ---------------------------------------------------------------
 -- history :
---     2026-07-26 new print headers and footers fall over a
---                text area cleared by a table header trick
 --     2026-07-16 renamed plammertse.css to text.css,
 --                added companion menu.css for menus
 --     2026-07-07 unsuccessful : print headers and footers
@@ -18,10 +15,10 @@
 --     2025-11-21 new
 --------------------------------------------------------------*/
 
-/* Sans serif everywhere.                        */
-/*   Default font size seems to be 16px          */
-/* Don't do body margin, it shifts the navbar :  */
-/*   margin-left : 32px;                         */
+/* Sans serif everywhere.                   */
+/*   Default font size seems to be 16px     */
+/* Don't do margin, it shifts the navbar :  */
+/*   margin-left : 32px;                    */
 
 body {
   margin      : 0;
@@ -30,21 +27,15 @@ body {
   text-align  : justify;
 }
 
-/* paragraph : smaller vertical line distance,     */
-/* larger left margin                              */
-/* Max. column width 800 gives some 108 letters.   */
-/* Word wraps can be helped with soft hyphens &shy */
-p {
-  margin    : 3px 32px;/* top, right, bottom, left */
-  max-width : 800px;
-/* font-size : 16px;  already the default, I think */
-}
-
 /* all hyperlinks darker blue */
+/* in Chrome, this briefly changed dead links
+   to black (they were lighter blue), but no more ? 
+   Also see the result in prop_book_00_TOC.html  */
 a {
    color : #000040;    /* #000080  */
 }
 /* line spacing + indent for header         */
+
 h2 {     /* default font desktop/tablet 30/24 */
   margin     : 6px 16px;      /* top, right, bottom, left */
 /*  margin-top : 16px;   */
@@ -69,6 +60,16 @@ h5, h6 {
   margin-top : 8px;
 }
 
+/* paragraph : smaller vertical line distance,     */
+/* larger left margin                              */
+/* Max. column width 800 gives some 108 letters.   */
+/* Word wraps can be helped with soft hyphens &shy */
+p {
+  margin    : 3px 32px;/* top, right, bottom, left */
+  max-width : 800px;
+/* font-size : 16px;  already the default, I think */
+}
+
 /* horizontal rulers are text width */
 hr {
   margin-left : 32px;
@@ -89,7 +90,6 @@ sub {
 /*<pre> increase fixed-spacing font size 
         ( default is 12, main text is 16 )         */
 /* margin is absolute, not inside <p>              */
-/* never used so far                               */
 pre {
   font-size       : 15px;
   margin          : 4px 64px;
@@ -102,24 +102,15 @@ label {
 }
 
 /* numerical input fields                          */
-/* Fix for HTML bug : size not settable for number fields */
+/* Fix for HTML bug, size not settable for number fields */
 input[type=number] {
    width          : 60px;
 } 
 
-/* whole page wrapped in this table for header trick */
-/* The 864px equals 800px plus two 32px margins     */
+/* fit-in equations, and equation numbers */
 table {
-   width       : min( 100%, 864px);
-   /* background-color : silver;  */  /* temporary test */
-}
-
-/* fit-in equations and equation numbers */
-/*table { */
-.equation {
-   width         : min( 90%, 775px);
-   margin-left   : min(  4%,  24px);
-   /*padding-right : 36px;*/  /* equation numbers */
+/*   width       : min( 90%, 775px);
+   margin-left : min(  4%,  48px) */
 }
 
 /* table content (rows) spaced a little more       */
@@ -132,44 +123,38 @@ td {
 .column {
   float        : left;
   /* surprisingly, this stacks responsive :         */
-  width        : 400px;            /* half of 800   */
-/* this does not stack : */  
-/*  width      : min( 50%, 400px); */
-  padding-left : 16px;
+  width        : 400px;   /* for now, half of 800   */
+/* failed responsive attempt, this does not stack : */  
+/*  width        : min( 50%, 400px); */
+  padding-left : 10px;
 }
 
-/* Use in a <div> around figures, margin above      */
+/* Set this around figures and captions */
 .center {
-   display         : flex;
+   display     : flex;
    justify-content : center;
-   align-items	    : center;
-   margin-left     : min(  5%, 32px);
-   margin-top      : 10px;   /* this falls outside the box border */
-   width  		    : min( 90%, 800px);
-/*   border 		 : solid; */   /* temporary box size debug tool */
-}
-/* Caption same as center / figure, only this time margin below */
-.caption {
-   display         : flex;
-   justify-content : center;
-   align-items	    : center;
-   margin-left     : min(  5%, 32px);
-   margin-bottom   : 8px;    /* this falls outside the box border */
-   width  		    : min( 90%, 800px);
-/*   border 		 : solid; */   /* temporary box size debug tool */
+   align-items	: center;
+   margin-left : min(  5%,  32px);
+ /* margin-top    : 8px; */ /* this falls outside the box border */
+ margin-bottom : 8px; /* this falls outside the box border */
+/*   padding     : 0 0;  */ /* no effect */
+   width  		: min( 90%, 800px);
+/*   border 		: solid; */   /* temporary debug tool */
 }
 
 /* Increase the math font size to look like 16px text.
    The extra math margin (vertical + horizontal)
    acts *inside* <p> ( and inside <td>, TBC ).                              
    <mfrac> from inline to display style cannot be fixed here,
-   this needs <mstyle displaystyle="true" first every time.   */
+   this needs <mstyle displaystyle="true" first every time.
+*/
+   
 math {
   font-size : 18px;
   margin    : 0px 32px;
 }
-
-/* AI advice for too deep fractions below sqrt doesn't seem to work.
+/* 
+AI advice for too deep fractions below sqrt : doesn't seem to work.
 math, mrow {
     font-family: "Latin Modern Math", STIXGeneral,
                   DejaVu Math TeX Gyre, sans-serif;
@@ -181,22 +166,22 @@ mspace {
    min-width : 0.5em;
 }
 
-/* img settings no longer needed in a centered <div> : */
-/* img {
-   display       : inline-block;
-   margin-top    : 16px;
-   margin-bottom : 16px;
+img {
+   /* This doesn't seem needed in a centered <div> : */
+   /*   display       : inline-block; */
+   /* margin-top    : 16px; margin-bottom : 16px;  */
+/*   margin-top    : 0;
+   margin-bottom : 0;
+ */
 }
-*/
 
-/* video settings no longer needed in a centered <div> : */
-/* video {
-   display       : inline-block;
-   width         : 80%;
-   margin-top    : 16px;
+video {
+/*   display       : inline-block;   */
+/*   width : 80%;  */
+/*   margin-top    : 16px;
    margin-bottom : 16px;
+ */
 }
-*/
 
 .footer {
    position   : fixed;
@@ -212,7 +197,7 @@ mspace {
    border-top : 1px solid black;
 }
 
-/* added footer a "buttons", PL : */
+/* added footer "buttons", PL : */
 .footer a  {
    background-color : #E9F0F0;         /* light blueish gray   */
    color            : #0000A0;         /* darkest blue         */
@@ -226,48 +211,31 @@ mspace {
    color            : white;  
 }
 
-/* TODO  This is a nice header for printing on every page   */
-/*       Trouble is, it covers the top of the normal text.  */
-/*       This necessitates the table trick                  */
+/* TODO  This is a nice header for printing onevery page   */
+/*       Trouble is, it covers the top of the normal text. */
 .header {
    position    : fixed;                /* fixed will print on every page   */
-   left        : 32px;
-   display     : none;                 /* only for printing, not on screen */
-   /* display     : visible;  */              /* test */
+/*   display     : none;   */              /* only for printing, not on screen */
+   display     : visible;                 /* only for printing, not on screen */
 /*   left        : 32px;  */
-   top         : 0;                    /* note @page margin below */
-   width       : min( 88%, 800px);
+   top         : 0;                 /* note @page margin below */
+   width       : min( 85%, 800px);
    background-color: white;
    color       : black;
    text-align  : center;
-   padding     : 0 16px;               /* from default 32px ? */
+   padding     : 0 16px;          /* from default 32px ? */
    box-sizing  : border-box;
    border-bottom : 1px solid black;
 }
 
 section {
-   break-before : page;
-}
-
-.print-only {
-   display : none;
-}
-
-/* temporary test code  */
-/*
-@media ( max-width : 768px )  {
-   table {
-      background-color : yellow;
-   }
-}
-*/
+   break-before : page; }
 
 /* nicer PDF's */
 @media print {
-
    nav, .footer a, .no-print {
       display : none !important; }
-   .print-only {
+   .do-print {
       display : block !important; }
    .header {
       display : block !important; }
@@ -275,14 +243,11 @@ section {
    /* hide navigation and footers, define class .no-print */
    /* no need for the h2 margin at top of a printed page */
    h2 {
-      margin-top : 0;            /* same space as text, for header table trick */
-/*      margin-top   : 8px; */ }  /* small space below header ruler */
+      margin-top   : 8px; }  /* small space below header ruler */
    h2, h3, h4, h5 {
       break-after  : avoid; }
-   /* This breaks the table page header trick :
    img,table {
       break-inside : avoid; }
-   */
    .new-page {
       break-before : page;  }
    /* print margins need to be in mm */
@@ -296,3 +261,4 @@ section {
     display  : none !important;
   }
 }
+

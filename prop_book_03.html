@@ -14,29 +14,51 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
 <!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_02.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_04_TOC.html">   Next &#x25BA</a> </li>
-</ul>
+<nav class="dropdown-menu">
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_02.html">
+               &#x25C4 Previous </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_00_TOC.html">
+               TOC  &#x25BC </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_04_TOC.html">
+               Next  &#x25BA </a> </li>
+   </ul>
+</nav>
 
 
 <!-- TEXT PAGE ------------------------------------------------>
 
 
-<!--- PAGE HEADER --------------------------------------------->
-<p style="margin-left : 320px">  <i> INTRODUCTION </i>      </p>
-<hr style="margin : 0 0;">
+<!--- PAGE HEADER - FIRST PAGE ONLY FOR NOW ------------------->
+<!-- top, right, bottom, left -->
+<!--
+<p style  = "text-align : center;
+   padding : 0 0 0 0;">
+      <i> INTRODUCTION </i> </p>
+<hr>
+-->
+<!-- This should give a header on every PDF page,
+     but it overlaps the text -->
+<div class="header">
+<p> Introduction </p>
+<hr>
+</div>
+
+
 
 <!-- CHAPTER 3 ------------------------------------------------>
 <h2> 3 &emsp; Thrust, power and efficiency                 </h2>
@@ -252,7 +274,7 @@ It follows that :
  This is why we still call these extra inputs "losses".
 </p>
 
-
+<div style = "break-before : page"> </div>
 <!-- SECTION 3.4 ---------------------------------------------->
 <h4> 3.4 &emsp; Loss ratios </h4>
 <p>
@@ -429,7 +451,17 @@ for a given thrust.
 
 <!-- FOOTER --------------------------------------------------->
 <br><br>
-<div class="footer"> P. Lammertse, 2025 </div>
+
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_02.html"> previous </a>
+   </span>
+      <i> P. Lammertse, 2026 </i>
+   <span style="float:right">
+      <a href="prop_book_04_TOC.html"> next </a>
+   </span>
+ </div>
+
 
 </body>
 </html>

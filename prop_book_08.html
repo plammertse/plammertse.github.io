@@ -15,7 +15,8 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
@@ -87,22 +88,25 @@
 
 <p>&emsp;
  Figure 8.1 shows the force diagram for a blade element.
-
+ </p>
+ 
 <!-- FIGURE --------------------------------------------------->
-<img width="290" alt="Ring force diagram";
-     style="margin-left :290px;
-            margin-top  :  8px;"
-      src="images/prop_force_diagram.gif">
-<p style="margin-left:270px">
-    <i> Figure 8.1 : &ensp; Force diagram for a ring.</i> 
+<div class = "center">
+<img src   = "images/prop_force_diagram.gif";
+     width = "290";
+     alt   = "Ring force diagram";>   
+</div>
+<div class = "center">
+<p> <i> Figure 8.1 : &ensp; Force diagram for a ring.</i> 
 </p>
+</div>
 <!------------------------------------------------------------->
 
 <p> The thrust is the forward component of the lift :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn><mi>T</mi>
 
@@ -112,8 +116,8 @@
   <mo> . cos</mo> <mi>&phi;</mi>
 
 </math>
-
-<td style="width:50px; text-align:right">                 (8.1)
+</td>
+<td style="text-align:right">                 (8.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -139,17 +143,17 @@
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img width="400" alt="Ring velocity diagram";
-     style="margin-left :180px;
-            margin-top  :  8px;"
-      src="images/prop_velocity_diagram_induced.png">
-<p style="margin-left:250px">
-    <i> Figure 8.2 : &ensp; Velocity diagram for a ring.</i> 
-</p>
+<div class = "center">
+<img src  = "images/prop_velocity_diagram_induced.png";
+    width = "400";
+    alt   = "Ring velocity diagram";>
+</div>
+<div class = "caption">
+<p> <i> Figure 8.2 : &ensp; Velocity diagram for a ring.</i> </p>
+</div>
 <!------------------------------------------------------------->
 
-<p>&emsp;
- The induced velocity is orthogonal to the local
+<p> The induced velocity is orthogonal to the local
  blade velocity <i>W</i>&thinsp;&prime;.
  Therefore, <i>v</i>&thinsp;&prime;
  is tilted relative to the flying velocity <i>V</i>.
@@ -174,7 +178,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>v</mi>
   <mo> = </mo>
@@ -183,7 +187,7 @@
 
 </math>
 
-<td style="width:50px; text-align:right">                  (8.2)
+<td style="text-align:right">                  (8.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -191,7 +195,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>v</mi> <mn>&thinsp;&prime;</mn>
   <mo> = </mo>
@@ -202,7 +206,7 @@
   </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                 (8.3)
+<td style="text-align:right">                 (8.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -210,14 +214,14 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>u</mi>
   <mo> = </mo>
   <mi>v</mi> <mo>.</mo> <mo>tan</mo> <mi>&phi;</mi>
 </math>
 
-<td style="width:50px; text-align:right">                 (8.4)
+<td style="text-align:right">                 (8.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -248,7 +252,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
   <mo> = </mo>
@@ -300,7 +304,7 @@
 </math>
 
 
-<td style="width:50px; text-align:right">                 (8.5)
+<td style="text-align:right">                 (8.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -311,7 +315,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
 
@@ -347,7 +351,7 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (8.6)
+<td style="text-align:right">                 (8.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -369,7 +373,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>tan</mo> <mi>&psi;</mi>
 
@@ -395,7 +399,7 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (8.7)
+<td style="text-align:right">                 (8.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -406,7 +410,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>tan</mo> <mi>&psi;</mi>
 
@@ -424,7 +428,7 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (8.8)
+<td style="text-align:right">                 (8.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 

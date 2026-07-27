@@ -15,21 +15,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
 <!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_06.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_08_TOC.html">  Next &#x25BA</a> </li>
-</ul>
+<nav class="dropdown-menu">
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_06.html">
+               &#x25C4 Previous </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_00_TOC.html">
+               TOC  &#x25BC </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_08_TOC.html">
+               Next  &#x25BA </a> </li>
+   </ul>
+</nav>
+
+
 
 <!--- TEXT PAGE HEADER ---------------------------------------->
 <p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
@@ -781,7 +792,15 @@ as we did for the thrust. The result is :
 
 <!-- FOOTER ----------------------------------------------->
 <br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_06.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_08_TOC.html"> next </a>
+   </span>
+ </div>
 
 </body>
 </html>

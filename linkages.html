@@ -3,6 +3,7 @@
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
 --   history :
+--     2026-07-27 new print headers with table trick
 --     2026-07-20 new style responsive menu
 --     2026-06-21 added PDF formatting, like page breaks
 --     2026-06-03 serious update, chapter numbers
@@ -23,19 +24,20 @@
 
 <body>
 
-<!-- PRINT-ONLY HEADER ---------------------------------------->
-
-<div class = "do-print"
+<!-- OLD PRINT-ONLY HEADER ----------------------------------->
+<!--
+<div class = "print-only"
      style = "display:none;
               text-align:right;
               margin-top : 0mm;">
    <div style="float:left">
       <h2> &ensp; LINKAGES </h2>
    </div>
-   <!-- default div right from above. -->
+   <!-- default div right from above. --
    <h2> P. Lammertse, 2026 </h2> <hr>
    <br>
 </div>
+-->
 
 <!-- NAVIGATION BAR ------------------------------------------->
 
@@ -55,9 +57,18 @@
    </ul>
 </nav>
 
-<!-- EXTRA SCREEN HEADER -------------------------------------->
+<table>
+	<!-- table header trick makes space for the true header   -->
+	<thead> <tr class="print-only"; style="margin-top:2px;">
+           <td> &nbsp; </td> </tr>
+   </thead>
+	<!-- see rest of trick for footer at end of body text     -->
 
+<tbody><tr><td>
+<!-- OLD EXTRA SCREEN HEADER ---------------------------------->
+<!--
 <h2 class="no-print"> &emsp; &ensp; <u> LINKAGES </u> </h2>
+-->
 
 <!-- MAIN TEXT ------------------------------------------------>
 
@@ -98,7 +109,7 @@ in some detail below.
 </div>
 
 <!-- video-still, needed for PDF printing -->
-<img class = "center do-print"; 
+<img class = "center print-only"; 
      style = "display : none";
      src   = "images/linkages_goertz_video_still.gif"
      alt   = "Goertz video still" >
@@ -227,10 +238,10 @@ the mass will not be able to follow at all.
  
 <p> &emsp;
  Without going into the math involved, the resonance frequency of a mass on a spring is :
- </p>
+</p>
  
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>&omega;</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -243,7 +254,7 @@ the mass will not be able to follow at all.
 
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>f</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -270,7 +281,7 @@ the mass will not be able to follow at all.
  </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>f</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -345,7 +356,7 @@ The mechanism will feel like the rigid sum of all the masses in the chain :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>m</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -371,7 +382,7 @@ It&nbsp;is the inverse of the stiffness :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>C</mi>
 <mspace/> <mo> &equiv; </mo> <mspace/>
@@ -392,7 +403,7 @@ but that does not affect the principle :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>C</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -433,7 +444,7 @@ for the mode shape and see if it makes sense.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>m</mi> <mn> effective </mn> </msub>
 <mspace/> <mo> = </mo> <mspace/>
@@ -454,7 +465,7 @@ the total oscillating mass becomes :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>m</mi> <mn> effective </mn> </msub>
 <mspace/> <mo> = </mo> <mspace/>
@@ -561,7 +572,7 @@ To keep our life simple, we look at the horizontal displacements
  </p>
  
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td style = "padding : 6px 0px;">
+<table class="equation"> <tr> <td style = "padding : 6px 0px;">
 <math>
    <msub> <mi>x</mi> <mn>B</mn> </msub>
 <mspace/> <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -612,7 +623,7 @@ For a stationary or massless lever, the output force at <i>B</i>
 </p>
  
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td style = "padding : 6px 0px;">
+<table class="equation"> <tr> <td style = "padding : 6px 0px;">
 <math>
    <msub> <mi>F</mi> <mn>B</mn> </msub>
 <mspace/> <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -648,7 +659,7 @@ then if the lever does not store energy, we need :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>F</mi> <mn>A</mn> </msub>
    <mo> . </mo>
@@ -684,7 +695,7 @@ is the force per displacement there :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>K</mi> <mn>A</mn> </msub>
 <mspace/> <mo> &nbsp; &equiv; &nbsp; </mo> <mspace/>
@@ -700,7 +711,7 @@ is the force per displacement there :
 <p> From (4.1) and (4.2) we have :
 </p>
 
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mstyle displaystyle="true">
    <mfrac>
@@ -744,7 +755,7 @@ is the force per displacement there :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>K</mi> <mn>B</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -793,7 +804,7 @@ is the force per displacement there :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>F</mi> <mn>A</mn> </msub>
 <mo> &nbsp; =  &nbsp; </mo>
@@ -817,7 +828,7 @@ only this time for the mass :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>m</mi> <mn>B</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -870,7 +881,7 @@ only this time for the mass :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>T</mi> <mn>A</mn> </msub>
 <mo> &nbsp; =  &nbsp; </mo>
@@ -897,7 +908,7 @@ measured in radians.
  </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msubsup> <mi>x</mi> <mn>A</mn>
      <mn> &thinsp;&bull;&bull;</mn> </msubsup>
@@ -916,7 +927,7 @@ measured in radians.
  </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>T</mi> <mn>A</mn> </msub>
 <mo> &nbsp; =  &nbsp; </mo>
@@ -933,7 +944,7 @@ measured in radians.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>I</mi> <mn>p, A</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -957,7 +968,7 @@ measured in radians.
 
 <!-- /////////////////////////////////////////////////////// -->
 
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>K</mi> <mn>t, A</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -995,7 +1006,7 @@ TODO Tell that we can use this to "prove" G_AB for a lever
 </p>
  
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>&omega;</mi>
 <mspace/> <mo> = </mo> <mspace/>
@@ -1069,7 +1080,7 @@ it spoils the smooth feeling of free motion.
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>B</mi> <mn>B</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -1107,7 +1118,7 @@ This has the following mechanical properties related to stiffness and mass :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>&rho;</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1118,7 +1129,7 @@ This has the following mechanical properties related to stiffness and mass :
 <!-- //////////////////////////////////////////////////////// -->
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>E</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1131,7 +1142,7 @@ This has the following mechanical properties related to stiffness and mass :
 <!-- //////////////////////////////////////////////////////// -->
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>G</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1153,7 +1164,7 @@ Strength (&hairsp;tensile and shear&hairsp;) does vary widely with the alloy.
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&sigma;</mi> <mn>0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1166,7 +1177,7 @@ Strength (&hairsp;tensile and shear&hairsp;) does vary widely with the alloy.
 
  
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&tau;</mi> <mn>0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1187,7 +1198,7 @@ The values for Al 6060 are quite very variable depending on the heat treat&shyme
 but some ballpark figures are : </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&sigma;</mi> <mn>0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1200,7 +1211,7 @@ but some ballpark figures are : </p>
 
  
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&tau;</mi> <mn>0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1235,7 +1246,7 @@ but some ballpark figures are : </p>
  </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>&rho;</mi>
 <mo> &emsp; &nbsp; = &nbsp; </mo>
@@ -1246,7 +1257,7 @@ but some ballpark figures are : </p>
 <!-- //////////////////////////////////////////////////////// -->
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>E</mi>
 <mo> &emsp; &nbsp; = &nbsp; </mo>
@@ -1259,7 +1270,7 @@ but some ballpark figures are : </p>
 <!-- //////////////////////////////////////////////////////// -->
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>G</mi>
 <mo> &emsp; &nbsp; = &nbsp; </mo>
@@ -1276,7 +1287,7 @@ but some ballpark figures are : </p>
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&sigma;</mi> <mn>break</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1350,7 +1361,7 @@ We will use the following conservative figure for the tensile strength :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>&sigma;</mi> <mn>allowed</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1371,7 +1382,7 @@ quotes an equivalent elasticity modulus <i>E</i> of 42.25 e9 N/m<sup>2</sup>
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>E</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1400,7 +1411,7 @@ The exact equations can be looked up in any text
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>A</mi>
 <mo> &nbsp;&thinsp; &cong; &nbsp; </mo>
@@ -1415,7 +1426,7 @@ The exact equations can be looked up in any text
 
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>p</mn> </msub>
 <mo> &nbsp; &cong; &nbsp; </mo>
@@ -1441,7 +1452,7 @@ The exact equations can be looked up in any text
  moment of inertia, and so : </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>xx</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1467,7 +1478,7 @@ These approximations can be improved slightly
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msup> <mi>R</mi> <mn>*</mn> </msup>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -1492,7 +1503,7 @@ These approximations can be improved slightly
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>I</mi> <mn>p, tube</mn> </msub>
 <mo> &nbsp; &cong; &nbsp; </mo>
@@ -1511,7 +1522,7 @@ These approximations can be improved slightly
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>I</mi> <mn>m, tube</mn> </msub>
 <mo> &nbsp; &cong; &nbsp; </mo> <mspace/> 
@@ -1535,7 +1546,7 @@ These approximations can be improved slightly
 
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>I</mi> <mn>m, solid</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1574,7 +1585,7 @@ The&nbsp;next chapter will discuss strength and structural weight.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>K</mi>
 <mo> &nbsp; &equiv; &nbsp; </mo> 
@@ -1597,7 +1608,7 @@ The&nbsp;next chapter will discuss strength and structural weight.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>K</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1622,7 +1633,7 @@ The&nbsp;next chapter will discuss strength and structural weight.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>m</mi>
 <mo> &nbsp; = &nbsp; </mo> 
@@ -1641,7 +1652,7 @@ With the cross-sectional area <i>A</i> from (6.1), this equals :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>m</mi>
 <mo> &nbsp; = &nbsp; </mo> 
@@ -1682,7 +1693,7 @@ for the "bandwidth of a pushrod" like in (2.1)&hairsp;:
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mstyle displaystyle="true"> <mfrac>
       <mi>K</mi>
@@ -1792,7 +1803,7 @@ on the surrounding structure "infinitely stiff"
  </p>
  
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>D</mi> <mn>pulley</mn> </msub>
 <mo> &nbsp; &ge; &nbsp; </mo> 
@@ -1916,7 +1927,7 @@ of a torque tube is as follows :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mn>d</mn> <mi>&theta;</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -1934,7 +1945,7 @@ of a torque tube is as follows :
 
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
  <msub> <mi>K</mi> <mn>t</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -1971,7 +1982,7 @@ This yields for the linear stiffness at the tip of the lever :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
 <mi>K</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2072,7 +2083,7 @@ If the tube turns on a bearing located on an arm of length
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>m</mn> </msub>
 <mspace/> <mo> = </mo> <mspace/>
@@ -2095,7 +2106,7 @@ so <i>R</i><sub>e</sub> is always larger than <i>R</i>.
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>m</mn> </msub>
 <mspace/> <mo> &cong; </mo> <mspace/>
@@ -2129,7 +2140,7 @@ so <i>R</i><sub>e</sub> is always larger than <i>R</i>.
  </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td style = "padding : 6px 0px;">
+<table class="equation"> <tr> <td style = "padding : 6px 0px;">
 <math>
   <msub> <mi>I</mi> <mn>m</mn> </msub>
 <mspace/> <mo> = </mo> <mspace/>
@@ -2183,7 +2194,7 @@ as the mass of the pushrods themselves.
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>x</mi> <mn>B</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2213,7 +2224,7 @@ it is usually sufficient to use the bending moment of inertia
 </p> 
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td style = "padding : 6px 0px;">
+<table class="equation"> <tr> <td style = "padding : 6px 0px;">
 <math>
    <msub> <mi>K</mi> <mn>AB</mn> </msub>
 <mo> &nbsp; &equiv; &nbsp; </mo>
@@ -2457,7 +2468,7 @@ The original stiffness and mass can be restored by using
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>&sigma;</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2473,7 +2484,7 @@ The original stiffness and mass can be restored by using
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>F</mi> <mn>0.2</mn></msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2499,7 +2510,7 @@ for a building grade aluminium tube of 20 x 1 mm gives an allowable push-pull fo
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>F</mi> <mn>Euler</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2528,7 +2539,7 @@ for a building grade aluminium tube of 20 x 1 mm gives an allowable push-pull fo
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <msub> <mi>F</mi> <mn>Euler</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2573,7 +2584,7 @@ Tell about inertial radius and slenderness.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>&tau;</mi>
 <mo> &nbsp; = &nbsp; </mo>
@@ -2594,7 +2605,7 @@ Tell about inertial radius and slenderness.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>T</mi> <mn>0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2614,7 +2625,7 @@ Tell about inertial radius and slenderness.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>F</mi> <mn>lever, 0.2</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2656,7 +2667,7 @@ Tell about inertial radius and slenderness.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>m</mi>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2680,7 +2691,7 @@ divided by (57) :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mstyle displaystyle="true"> <mfrac>
       <mi>T</mi> <mi>m</mi>
@@ -2719,7 +2730,7 @@ divided by (57) :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mstyle displaystyle="true"> <mfrac>
       <msub> <mi>K</mi> <mn>t</mn> </msub>
@@ -2773,7 +2784,7 @@ The rotational mass moment of inertia is:
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>m</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2801,7 +2812,7 @@ The rotational mass moment of inertia is:
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>K</mi> <mn>t</mn> </msub>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2839,7 +2850,7 @@ here (64) divided by (63) :
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
    <mi>f</mi>
 <mo> &nbsp; = &nbsp; </mo> <mspace/>
@@ -2865,7 +2876,7 @@ the linear stiffness or Young's modulus <i>E</i>.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>G</mi>
 <mo> &nbsp; &cong; </mo> <mspace/>
@@ -2893,7 +2904,7 @@ the linear stiffness or Young's modulus <i>E</i>.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <mi>f</mi>
 
@@ -2957,7 +2968,7 @@ the linear stiffness or Young's modulus <i>E</i>.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
  <msub> <mi>K</mi> <mn>t</mn> </msub>
 
@@ -3026,7 +3037,8 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<!--
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>J</mi> <mn>p</mn> </msub>
 
@@ -3058,10 +3070,12 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 
 <td style="width:50px; text-align:right">                  (A.2)
 </td> </tr> </table>
+-->
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<!--
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>K</mi> <mn>t</mn> </msub>
 
@@ -3094,12 +3108,14 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 
 <td style="width:50px; text-align:right">                  (A.3)
 </td> </tr> </table>
+-->
 <!-- END EQUATION --------------------------------------------->
 
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<!--
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>I</mi> <mn>m</mn> </msub>
 
@@ -3131,6 +3147,7 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 
 <td style="width:50px; text-align:right">                  (8.17)
 </td> </tr> </table>
+-->
 <!-- END EQUATION --------------------------------------------->
 
 <p> Reflected by (27) to a point A by lever of 0.05 m, this is :
@@ -3138,7 +3155,7 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
   <msub> <mi>K</mi> <mn>A</mn> </msub>
 
@@ -3167,7 +3184,7 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 <math>
     <msub> <mi>m</mi> <mn>A</mn> </msub>
 
@@ -3197,7 +3214,7 @@ SAY SOMETHING ABOUT STAR SHAPES VERSUS CIRCLES, R^3
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 
 <math>
   <msub> <mi>f</mi> <mn>A</mn> </msub>
@@ -3252,7 +3269,7 @@ is a factor of 25 lower :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 
 <math>
   <mstyle displaystyle = "true">
@@ -3298,7 +3315,7 @@ which confirms the result of our earlier long detour :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class="equation"> <tr> <td>
 
 <math>
   <mstyle displaystyle = "true">
@@ -3617,8 +3634,17 @@ but it is now also taken to include tactile feedback.
 </p>
 </span>          <!-- end of grey -->
 
-<!-- FOOTER --------------------------------------------------->
+	<!-- Second part of trick to clear space for the real footer -->
+	</tbody>
+	<tfoot> <tr><td> <br><br> </td></tr> </tfoot>
+	</table>
+   
 <br> <br>
+
+<!-- HEADER --------------------------------------------------->
+<div class="header">  LINKAGES </div>
+
+<!-- FOOTER --------------------------------------------------->
 <div class="footer">  P. Lammertse, 2026 </div>
 
 </body>
@@ -3790,239 +3816,6 @@ but hard tools and objects.
 </span>
 -->
 
-<div style="break-before:page"> </div>
-
-<div style="color:blue";>
-<!----------------------------------------------------------->
-
-<h2> X &emsp; A spring loaded joystick </h2>
-
-<p> The simplest form of a haptic manipulandum 
- is a joystick like the one shown in figure 4.1.
- The handle is driven by a force-sensitive motor,
- via a mechanical transmission.
- The transmission has stiffness,
- mass, friction and play.
- The stiffness and the mass together form
- a spring-mass system
- with at least one natural frequency.
-</p>
-<p>&emsp;
- In practice, the handle also has its own mass,
- as does the human hand holding it,
- although the user is free to let go of the joystick.
- The controlled servo motor will also behave
- like a spring-mass system,
- although we can also block the output shaft.
-</p>
-
-<h4> X.2 &emsp; The mass presented to the user's hand </h4>
-
-<p> Torques and moments of inertia do not mean much
- to most people.
- Force and mass are more familiar.
-</p>
-<p>&emsp;
- With a joystick-like manipulandum comes a lever length.
- A lever of one metre would be nice for calculations,
- but it is not a common size for a joystick,
- and therefore still not very intuitive.
- A common lever length for a joystick is :
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
-
-<math>
-  <msub> <mi>R</mi> <mn>m</mn> </msub>
-
-  <mo> = </mo> <mspace/>
-
-  <mn>0.05</mn>
-  <mspace width="12em"/>
-  <mn>[ m ]</mn>
-</math>
-</td>
-
-<td style="width:50px; text-align:right">                   (X.1)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> This is the distance between the pivot point
- of the joystick and the "point of contact"
- of the hand gripping it.
-</p>
-<p>&emsp;
- The mass of the human hand itself is approximately 
- 0.5&nbsp;[&hairsp;kg&hairsp;],
- and is located on a "lever length"
- of approx&shyimately 0.05&nbsp;[&hairsp;m&hairsp;]
- around the wrist.
-</p>
-
-<h4> 3.4 &emsp; Typical requirements on stiffness and mass</h4>
-
-<p> It is not trivial to set requirements
- for the stiffness and mass of a haptic manipulandum.
- Bandwidth appears to be not the only criterion.
- We will see that it is largely determined
- by material properties and the distance to be covered,
- rather than by geometry.
- Also, the same bandwidth can be achieved
- with large forces and large masses,
- or with small forces and small masses.
-</p>
-<p>&emsp;
- As a first example let us take the Haptic Master,
- a relatively large admittance-controlled device.
- In free motion, this device has a stable
- "apparent mass" (&hairsp;the perceived mass,
- equal to the virtual mass
- set in the admittance controller,
- plus the physical mass of the end effector
- attached outside the force sensor&hairsp;)
- of approximately 3 kg :
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
-
-<math>
-  <mi>m</mi>
-
-  <mo> = </mo> <mspace/>
-
-  <mn>3</mn>
-  <mspace width="12em"/>
-  <mn>[ kg ]</mn>
-</math>
-</td>
-
-<td style="width:50px; text-align:right">  (X.2)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> With a blocked motor
- (&emsp;or with an infinitely rigid virtual wall
- or perturbation&hairsp;),
- the perceived stiffness is approximately:
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
-
-<math>
-  <mi>K</mi>
-
-  <mo> = </mo> <mspace/>
-
-  <mn>20,000</mn>
-  <mspace width="12em"/>
-  <mn>[ N/m ]</mn>
-</math>
-</td>
-
-<td style="width:50px; text-align:right">                   (X.3)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> Expressing this in terms of the bandwidth
- that the virtual controller
- can impose on the end effector, we have :
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
-
-<math>
-  <mi>f</mi>
-
-  <mo> = </mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mn>2&hairsp;&pi;</mn>
-  </mfrac>
-
-  <mo>.</mo>
-
-  <msqrt>
-  <mn>20,000</mn> <mn>/</mn> <mn>3</mn>
- </msqrt>
-
-   <mspace/> <mo>&cong; </mo> <mspace/>
-
-  <mn>13</mn>
-
-  <mspace width="4em"/>
-  <mn>[ Hz ]</mn>
-</math>
-</td>
-
-<td style="width:50px; text-align:right">                   (X.4)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> Our second example is the Sensable Phantom,
- a much smaller, impedance-controlled device.
- This type of device has a much lower stiffness
- of approximately 2,000 [N/m].
- It does not feel like a hard wall or tabletop,
- but rather like a rubber eraser.
- On the other hand, the perceived mass is also much lower&nbsp;:
- approximately 50 grams with a pen-shaped handle
- (&hairsp;"stylus"&hairsp;).
- The bandwidth of the Phantom as a perturbator is then :
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
-
-<math>
-  <mi>f</mi>
-
-  <mo> = </mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mn>2&hairsp;&pi;</mn>
-  </mfrac>
-
-  <mo>.</mo>
-
-  <msqrt>
-  <mn>2,000</mn> <mn>/</mn> <mn>0.05</mn>
- </msqrt>
-
-   <mspace/> <mo>&cong; </mo> <mspace/>
-
-  <mn>30</mn>
-
-  <mspace width="4em"/>
-  <mn>[ Hz ]</mn>
-</math>
-</td>
-
-<td style="width:50px; text-align:right">                   (XXX)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> This may sound great, but the forces are very small.
- You can feel them in your fingertips,
- but they wil not perturb your whole hand.
-</p>
-<p>&emsp;
- The human hand weighs approximately 0.5 [kg].
- With the Haptic Master,
- this is much less than the total virtual mass of 3 [kg],
- and you can use the HM to perturb the entire hand.
- This would be impossible with a Sensable Phantom,
- so perhaps it is better
- to take the mass of the human hand into account
- when determining the band&shywidth.
-</div>     <!-- blue -->
 
 
 <!-- Hamburger menu script                                   -->

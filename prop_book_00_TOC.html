@@ -13,60 +13,34 @@
 
 <!-- FORMATTING  ---------------------------------------------->
 <head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="plammertse.css">
-<!--
-  <link rel="stylesheet" href="text.css">
-  <link rel="stylesheet" href="menu.css">
-  -->
-  <title> Piet Lammertse on propeller theory </title>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-   <nav class="dropdown-menu">
+<!-- NAV BAR TOP MENU ----------------------------------------->
 
-      <!-- Responsive hamburger button, see menu.js -->
-<!--      
-      <button class="nav-toggle"
-         aria-label="Toggle navigation menu" aria-expanded="false">
-         <span></span>  <span></span>  <span></span>
-      </button>
--->
-<!------------------------------------------------------------------>
-<!-- TOP NAV BAR MENU -->
+<nav class="dropdown-menu">
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
 
-      <ul>
-
-<!-- HOME -->
-
-         <li class="dropdown-parent">
-        
-            <a href="index.html">
-               Home</a>
-         </li>
-      <ul>
-   </nav>
-
-<!-- Dit werkt niet meer nadat <a> is bijgekleurd
-    in plammertse.css -->
-<!-- Maak alle links en tekst op deze pagina donkerblauw --> 
-<!-- <body text="#00060" link="#00060" vlink="#000060"> -->
-
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_preface.html">&#x25C4 
-                                             Previous </a> </li>
-  <li> <a style="background-color:#0000B0";
-          href="prop_book_00_TOC.html">
-                                    Contents  &#x25BC;</a> </li>
-  <li> <a href="prop_book_01_TOC.html">
-                                     Next     &#x25BA;</a> </li>
-</ul>
-
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_intro.html">
+               About </a> </li>
+   </ul>
+</nav>
 
 <!-- "TABLE OF CONTENTS" HEADER ------------------------------->
 
@@ -299,17 +273,18 @@
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
-<!-- <div class="footer"> -->
-<div>
-   <span style="text-align:left;">
-<!--         <li class="dropdown-parent"> -->
-            <a href="index.html">
-               Home</a>
-<!--         </li>   -->
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_preface.html"> previous </a>
    </span>
-   <span style="text-align:right;">
-         P. Lammertse, 2025
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_01.html"> next </a>
    </span>
-</div>
+ </div>
+ 
+  <!-- script must be at end of body -->
+  <script src="menu.js"></script>
+
 </body>
 </html>

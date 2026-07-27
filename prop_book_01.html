@@ -11,29 +11,40 @@
 
 <!-- FORMATTING  ---------------------------------------------->
 <head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-<!--  <link rel="stylesheet" href="plammertse.css">  -->
-  <link rel="stylesheet" href="text.css">
-  <link rel="stylesheet" href="menu.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<div class = "no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
 
-  <li> <a href="prop_book_01_TOC.html">&#x25C4 Previous </a></li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_02.html">  Next        &#x25BA</a></li>
-</ul>
-</div>
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_01_TOC.html">
+               &#x25C4 Previous </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_00_TOC.html">
+               TOC  &#x25BC </a> </li>
+      <li class="dropdown-parent">
+         <a href="prop_book_02.html">
+               Next  &#x25BA </a> </li>
+   </ul>
+</nav>
 
 <!-- TODO - TEXT BLOCK HEADER - THIS SHOULD BE ONLY FOR PRINT,
   --          AND ON EVERY PAGE ------------------------------->
@@ -156,6 +167,9 @@
       <a href="prop_book_02.html"> next </a>
    </span>
  </div>
+
+  <!-- script must be at end of body -->
+  <script src="menu.js"></script>
  
 </body>
 </html>
