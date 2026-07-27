@@ -1,0 +1,119 @@
+<!-- --------------------------------------------------------------
+ file    : b747_short_period_test_svg.html
+ purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+           SVG version — same simulate() as the canvas original,
+           rendering via B747.updatePose() instead of B747.draw()
+           recomputing every point every frame.
+ --------------------------------------------------------------
+  2026-07-26 PL converted to SVG rendering
+  2026-07-12 PL more or less finished (canvas version)
+  2026-06-22 PL new, cloned from dumbbell.js
+-------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
+   <title> B747 short period test (SVG) </title>
+</head>
+
+<body onload = "onLoad()">
+
+<p> B747 short period test — SVG version. Click and hold to pause. </p>
+
+<div class="center"; style="border:solid;">
+<svg id="svg" width="50%" height="50%" viewBox="0 0 400 400"
+     style = "border           : 1px solid #000000;
+              background-color : #FAFEFF;
+              margin-top       : 12px;
+              margin-left      : 36px;" >
+</svg>
+</div>
+
+<!-- all scripts go after the SVG element, for scope reasons : -->
+
+<script>
+   // shim: the (unmodified) B747 constructor still does
+   //   this.setCenter( canvas.width/2, canvas.height/2 )
+   // on construction, so give it something canvas-shaped to
+   // read from. The real target for drawing/mouse is "svg" below.
+   let canvas = { width: 400, height: 400 };
+   let svg    = document.getElementById("svg");
+</script>
+
+<script src="mouse.js">              </script>
+<script src="b747_side_view_svg.js"> </script>
+
+<script>
+
+// -------------------------------------------------------------
+// For some reason, these lines cannot go into onLoad() :
+let b747 = new B747();     // airplane constructor, defaults
+b747.setScale( 1.8 );
+b747.setCenter( 200, 200 ); // svg viewBox is 400x400, so center at 200,200
+b747.createSVG( svg );      // build the <path> elements once
+let theta  = 0;
+
+// start simulation time
+let tSim  = 0;
+let tNow  = performance.now();
+let tPrev = tNow;
+let isRunning = true;
+
+// -------------------------------------------------------------
+function onLoad() {
+   attachMouse( svg );    // from mouse.js
+   run();
+}
+
+// -------------------------------------------------------------
+function mouseDownHandle() {
+   isRunning = !mouseIsDown;
+}
+
+// -------------------------------------------------------------
+function run() {
+   mouseDownHandle();
+
+   simulate();
+   b747.draw( 0, 0, theta);       // from b747_side_view_svg.js
+
+   requestAnimationFrame( run);
+}
+
+// -------------------------------------------------------------
+function simulate() {
+
+   // find past dT
+   tNow   = performance.now();
+   let dT = tNow - tPrev;
+   tPrev  = tNow;
+
+   // propagate simulation time, unless paused by mouse down
+   if ( isRunning )  {
+      tSim = tSim + dT;
+   }
+
+   // Short period time [ms], Etkin 3d.ed., Table 6.3.
+   let T = 7080;
+
+   // phase of phi
+   let phaseTheta  = tSim/T * 2 * Math.PI;
+
+   // choose nice pitch angle amplitude
+   let thetaMax = 0.2;
+
+   // propagate theta
+   theta =  thetaMax *  Math.sin( phaseTheta );
+}
+
+</script>
+
+</body>
+
+</html>
