@@ -14,26 +14,27 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title> Piet Lammertse </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-<!--
-  <li> <a style="background-color:#0000B0";
-          href="delft.html">
-                                  Delft               </a> </li>
-  <li> <a href="design_exercise.html">
-                                  Design exercise     </a> </li>
-  <li> <a href="autopilot.html">  Autopilot thesis    </a> </li>
-  -->
-</ul>
-</div>
+<nav class="dropdown-menu">
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+   <!-- top menu -->
+   <ul>
+      <li> <a href = "index.html">  Home </a>
+      </li> 
+   </ul>
+</nav>
+
 
 <!------------------------------------------------------------->
 
@@ -97,6 +98,9 @@ and which flew successfully on the ISO satellite from 1995 to 1996.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

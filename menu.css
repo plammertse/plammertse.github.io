@@ -25,70 +25,71 @@ body {
 /* ---------------------------------------------------------- */
 /* Top-level horizontal menu :  "dropdown-menu"               */
 /* This is applied to a <nav>                                 */
+
 .dropdown-menu {
-    background: #000070;       /* dark blue, from #333; */
-    width: 100%;
+    background : #000070;       /* dark blue, from #333; */
+    width      : min( 832px, 100%);
 }
 
 .dropdown-menu > ul {          /* ul inside a nav */
-    list-style: none;
-    display: flex;
+    list-style : none;
+    display    : flex;
     justify-content: flex-start;
 }
 
 .dropdown-menu > ul > li {      /* li inside ul inside nav */
-    position: relative;
+    position   : relative;
 }
 
 .dropdown-menu > ul > li > a {   /* a inside li inside ... */
-    display: block;
-    padding: 10px 15px;          /* from 15px vert, 20px hor */
-    color: white;
-    font-size : 17px;            /* added, PL */
+    display    : block;
+    padding    : 10px 15px;          /* from 15px vert, 20px hor */
+    color      : white;
+    font-size  : 17px;            /* added, PL */
     text-decoration: none;
-    transition: background 0.3s;
+    transition : background 0.3s;
 }
 
 .dropdown-menu > ul > li > a:hover {   /* red on hover, PL */
-    background: #E90000;        /* red, from #555 */
+    background : #E90000;        /* red, from #555 */
 }
 
 /* ---------------------------------------------------------- */
 /* First-level dropdown :  "dropdown"                         */
 /* This is applied to a <li>  (inside a <nav> )               */
 .dropdown {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background: #F0F0F0;   /* light gray, from dark #444; */
+    position   : absolute;
+    left       : 0;
+    top        : 100%;
+    background   : #F0F0F0;   /* light gray, from dark #444; */
 /*   modified to max-content and min-width, PL*/
-    width: max-content;
-    min-width: 90px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1;
-    list-style: none;
+    width      : max-content;
+    min-width  : 90px;
+    opacity    : 0;
+    visibility : hidden;
+    transition : opacity 0.3s, visibility 0.3s;
+    z-index    : 1;
+    list-style : none;
     
     box-shadow : 8px 8px 8px 0px rgba(0,0,0,0.2);  /* added */
 }
 
 /* dropdown-menu shows dropdown on hover ? */
 .dropdown-menu > ul > li:hover > .dropdown {
-    opacity: 1;
-    visibility: visible;
+    opacity    : 1;
+    visibility : visible;
 }
 
 .dropdown li {
-    position: relative;
+    position   : relative;
 }
 
 .dropdown li a {
-    display: block;
-    padding: 8px 15px;        /* vert, hor; lines closer, 10px to 8px */
-    color: #000030;           /*  from white;  */
+    display     : block;
+    padding    : 8px 15px;        /* vert, hor; lines closer, 10px to 8px */
+    color      : #000030;           /*  from white;  */
     text-decoration: none;
-    transition: background 0.3s;
+    transition : background 0.3s;
     
     outline-style: solid;     /* added */
     outline-width: thin;      /* added */

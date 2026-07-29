@@ -12,7 +12,8 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title>
        Piet Lammertse on aircraft
   </title>
@@ -20,26 +21,27 @@
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home                 </a>
- </li>
-  <li> <a href="delft.html">              Delft             </a>
- </li>
+<nav class="dropdown-menu">
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+   <!-- top menu -->
+   <ul>
+      <li> <a href = "index.html">  Home </a>
+      </li> 
+      <li> <a href = "delft.html">  Delft  </a>
+      </li>      
+      <li> <a href = "autopilot.html">
+         Autopilot thesis </a>
+      </li>      
+   </ul>
+</nav>
 
-  <li> <a style="background-color:#0000C0;"
-          href="design_exercise.html"> Design exercise      </a>
- </li>
-  <li> <a href="autopilot.html"> Autopilot thesis           </a>
- </li>
-</ul>
-</div>
 
-<!------------------------------------------------------------->
-
-<h2> Four seat touring aircraft 
-      (&thinsp;design exercise 1979&thinsp;) </h2>
+<h2> Four seat touring aircraft </h2>
 
 <h4> design exercise 1979 </h4>
 
@@ -62,16 +64,19 @@ In this case, all requirements
  but the cruise speed was about 10 mph higher,
  if I remember correctly.
  The side view shows the resulting design.
+ </p>
 
 <!-- SIDE VIEW IMAGE ------------------------------------------>
-<img width="600" alt="Voorontwerp"
-     style="margin-left:120px" 
-     src="images/lammertse_1979_design_exercise.gif">
+<div class="center">
+<img src  ="images/lammertse_1979_design_exercise.gif";
+    width = "80%";
+    alt   = "Voorontwerp">
 </img>
-<p style="margin-left:160px"> 
-   <i> Four seat tourer in the Piper Arrow
- / Mooney 201 class (&hairsp;1979&hairsp;).</i>
-</p>
+</div>
+<div class="caption">
+<p> <i> Four seat tourer in the Piper Arrow
+ / Mooney 201 class (&hairsp;1979&hairsp;).</i> </p>
+</div>
 
 <h4> Torenbeek </h4>
 
@@ -131,9 +136,8 @@ visits to local airports. I decided to go for the new,
 <p> The design gained me the year's
  $&thinsp;500 prize for the best
  project report. 
-Professor Dobbinga, who handed out the prize,
- joked that we all know that
- there are far easier ways to earn
+ My all time favourite professor Dobbinga, who handed out the prize,
+ joked that we all know that there are far easier ways to earn
  $&thinsp;500, like working
  as a supermarket cashier.
 How right he was...
@@ -142,6 +146,9 @@ How right he was...
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

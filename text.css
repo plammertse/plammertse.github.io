@@ -146,7 +146,7 @@ td {
    margin-left     : min(  5%, 32px);
    margin-top      : 10px;   /* this falls outside the box border */
    width  		    : min( 90%, 800px);
-/*   border 		 : solid; */   /* temporary box size debug tool */
+/*   border 		 : solid;  */  /* temporary box size debug tool */
 }
 /* Caption same as center / figure, only this time margin below */
 .caption {
@@ -253,14 +253,17 @@ section {
    display : none;
 }
 
+@media ( max-width : 768px )  {
+   .center {
+      margin-left : 32px;
+   }
 /* temporary test code  */
 /*
-@media ( max-width : 768px )  {
    table {
       background-color : yellow;
    }
-}
 */
+}
 
 /* nicer PDF's */
 @media print {
@@ -283,6 +286,7 @@ section {
    img,table {
       break-inside : avoid; }
    */
+   
    .new-page {
       break-before : page;  }
    /* print margins need to be in mm */

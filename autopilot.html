@@ -14,49 +14,62 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+  <link rel="stylesheet" href="text.css">
+  <link rel="stylesheet" href="menu.css">
   <title> Piet Lammertse on the autopilot </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
+<nav class="dropdown-menu">
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+   <!-- top menu -->
+   <ul>
+      <li> <a href = "index.html"> Home </a>
+      </li> 
+      <li> <a href = "delft.html">  Delft  </a>
+      </li>      
+      <li> <a href = "design_exercise.html">
+         Design exercise  </a>
+      </li>      
+   </ul>
+</nav>
 
-  <li> <a href="delft.html">           Delft </a> </li>
-  <li> <a href="design_exercise.html"> Design exercise </a> </li>
-
-  <li> <a style="background-color:#0000B0;"
-          href="autopilot.html">      Autopilot       </a> </li>
-</ul>
-</div>
 
 <!-- TEXT PAGE ------------------------------------------------>
 
 <h2> Autopilot - energy mode </h2>
 
 <p> I graduated from Delft in 1985 as an aeronautical
- control engineer on two separate theses.
+ control engineer on two separate theses, because of a tiff
+ with professor Gerlach who was a nasty piece of work.
+ And maybe I was just a little cocky.
 </p>
 
 <!------------------------------------------------------------>
 
 <h4> asymmetric autopilot </h4>
 
-<p> The first thesis was on an asymmetrical autopilot
+<p> My first thesis was on an asymmetrical autopilot
   (&hairsp;i.e. for left&thinsp;/&thinsp;right turns&hairsp;), 
- for the DHC-3 "Beaver" laboratory aircraft,
-which had recently been fully identified in flight.
+ for the DHC-3 "Beaver" laboratory aircraft which had recently
+ been fully identified in flight.
  The thesis was in Dutch, which was the standard at the time.
 </p>
 <p>&emsp; I used an interesting feedforward take
  on turn co&shyordination when rolling into a turn,
  and a charming cascaded setup for the localiser approach,
  starting from an innermost loop for the roll angle,
- then the course angle, and finally the offset from
- the runway centerline, with natural settable limiters on every step
+ around that a loop for the course angle, and aroudn that again
+ a loop over the offset from  the runway centerline.
+ This gave good insight on the gains and time constants
+ for each loop, and equally importatn, it allowed natural
+ settable limiters on every level
  in the nested loops : first a limit on roll rate, then a limit 
  on the roll angle (&nbsp;set to 30&deg&hairsp;),
  and finally a limit on the intercept course towards
@@ -151,6 +164,9 @@ On approach, the energy management and in particular
 <!-- FOOTER ---------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>
