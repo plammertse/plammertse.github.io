@@ -10,35 +10,47 @@
 
 <!-- FORMATTING ----------------------------------------------->
 <head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on sailing  </title>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on sailing  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li><a href="index.html">           Home            </a> </li>
-  <li> <a href="ship.html">           Ships           </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="sailing.html">        Sailing         </a> </li>
-</ul>
+<nav class="dropdown-menu">
 
-<!-- TEXT PAGE ------------------------------------------------>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 
 <h2> Sailing </h2>
 
-<h4> my involvement </h4>
+<h4> sails for commercial shipping </h4>
 
 <p> For a while, I was interested in the attempts of a
  former colleague to start up a business in wing sails
  for com&shymercial shipping.
  We drifted apart, but it gave me pause for some 
- independent thinking about sails and sailing.
+ independent thinking about sails.
 </p>
 
 <h4> a sailboat is two half airplanes </h4>
@@ -73,24 +85,26 @@ sym&shymet&shyrical
  Still, the idea is sound.
 </p>
 
+<div class = "center">
 <!-- FIGURE --------------------------------------------------->
-<img src="images/platz_glider_3_view.jpg" 
-     width="300" alt="Platz glider 3-view"
-     style="margin-left   : 70px;
-            margin-top    : 24px;
-            margin-bottom :  40px;" >
+<img src   = "images/platz_glider_3_view.jpg"; 
+     width = "50%";
+     alt   = "Platz glider 3-view"
+     style = "margin-top    : 24px;
+              margin-bottom :  40px;" >
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/platz_glider_flying.jpg" 
-     width="300" alt="Platz glider photo"
-     style="margin-left   : 60px;
-            margin-top    :  8px;
-            margin-bottom :  0px;" >
+<img src   = "images/platz_glider_flying.jpg"; 
+     width = "40%";
+     alt   = "Platz glider photo"
+     style = "margin-left   : 3%;
+              margin-top    :  8px;
+              margin-bottom :  0px;" >
+</div>
 
-<p style="margin-left     : 250px;
-          margin-top      :  6px;">
-    <b><i> Figure 1 : &ensp; Platz glider, mirrored sloop rig </i></b> 
-</p>
+<div class = "caption">
+<p> <i> Figure 1 : &ensp; Platz glider, mirrored sloop rig </i> 
+</p> </div>
 
 <h4> the 3D wing </h4>
 
@@ -127,6 +141,8 @@ for a simple, but very instructive view
  on sails and sailing.
 </p>
 
+<div style="break-before:page"> </div>
+         
 <h4> the lift coefficient </h4>
 
 <p> The lift on a wing is traditionally expressed in
@@ -135,7 +151,7 @@ a non-dimensional "lift coefficient"
 We just give the definition :
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>  <mspace/> <mo> = </mo> <mspace/>
 
@@ -196,7 +212,7 @@ We just give the definition :
  that persists <i>far behind</i> the wing is :
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mstyle displaystyle="true">
  <mfrac>
@@ -236,7 +252,7 @@ this is exactly half the value in the far wake.
 The&nbsp;definition is &thinsp;: 
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>A</mi> 
 
@@ -273,7 +289,7 @@ The&nbsp;definition is &thinsp;:
 
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mstyle displaystyle="true">
  <mfrac>
@@ -306,7 +322,7 @@ The&nbsp;definition is &thinsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
   <mspace/> <mo> = </mo> <mspace/>
@@ -345,11 +361,11 @@ in the light of Newton's law,
 <p>&emsp;
 Newton's symbol for the mass flow d<i>m&hairsp;/&hairsp;</i>d<i>t</i> 
  was <i>m</i><sup>&#9679;</sup>.
-From (5), apparently the wing deflects
-a mass flow of :
+From (5), the wing deflects a mass flow of :
+</p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
   <mspace/> <mo> = </mo> <mspace/>
@@ -379,17 +395,15 @@ is not that sharp. But the effective frontal area is correct.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/wing_slice_elliptical.gif" 
-     width="200" alt="Wing downwash circle"
-     style="margin-left   : 270px;
-            margin-top    :  0px;
-            margin-bottom :  0px;" >
+<div class = "center">
+<img src   = "images/wing_slice_elliptical.gif" 
+     width = "30%";
+     alt   = "Wing downwash circle" >
+</div>
 
-<p style="margin-left     : 220px;
-          margin-top      :  6px;">
-    <b><i> Figure 2 : &ensp;
-              Wing effective frontal area. </i></b> 
-</p>
+<div class = "caption">
+<p> <i> Figure 2 : &ensp; Wing effective frontal area. </i> </p>
+</div>
 
 <h4> the deflected mass flow of a sail </h4>
 
@@ -408,7 +422,7 @@ the top half of a circle with radius <i>h</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
 
@@ -464,25 +478,26 @@ larger angle of attack accordingly
 This is all easily calculated.
 </p>
 
+<!-- TODO   Clean up this two column figure for mobile -->
 <!-- FIGURE --------------------------------------------------->
-<img src="images/sails_mirrored.gif" 
-     width="280" alt="Sails mirrorred"
-     style="margin-left   : 100px;
-            margin-top    :  0px;
-            margin-bottom :  0px;" >
+<div class = "center">
+<img src   = "images/sails_mirrored.gif" 
+     width = "40%";
+     alt   = "Sails mirrorred"
+     style = "margin-top    : 0px;
+              margin-bottom   0px;" >
 
 <!-- FIGURE --------------------------------------------------->
 <img src="images/sails_not_mirrored.gif" 
-     width="240" alt="Sails not mirrorred"
-     style="margin-left   : 100px;
+     width="35%" alt="Sails not mirrorred"
+     style="margin-left   :  5%;
             margin-top    :  0px;
-            margin-bottom :  55px;" >
+            margin-bottom : 55px;" >
+</div>
 
-<p style="margin-left     : 280px;
-          margin-top      :  6px;">
-    <b><i> Figure 3 : &ensp;
-              Sail effective frontal area. </i></b> 
-</p>
+<div class = "caption">
+<p> <i> Figure 3 : &ensp; Sail effective frontal area. </i> 
+</p> </div>
 
 <h4> the optimum deflection angle </h4>
 
@@ -498,6 +513,9 @@ the ship speed and the undisturbed wind speed.
  is somewhat higher and somewhat more from the front
  than when the ship lies anchored.
 </p>
+
+<div style="break-before:page"> </div>      
+
 <p>&emsp;
 The relative wind is the only mass flow available
 for the ship to deflect.
@@ -545,17 +563,15 @@ Figure 4 gives the idea.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/sail_deflection_straight_back.gif" 
-     width="500" alt="Sail deflects straight back"
-     style="margin-left   : 160px;
-            margin-top    :   0px;
-            margin-bottom :   0px;" >
-
-<p style="margin-left     : 180px;
-          margin-top      :  6px;">
-    <b><i> Figure 4 : &ensp;
-        The optimum deflection is straight to the rear. </i></b> 
-</p>
+<div class = "center">
+<img src   = "images/sail_deflection_straight_back.gif" 
+     width = "65%";
+     alt   = "Sail deflects straight back">
+</div>
+<div class = "caption">
+<p> <i> Figure 4 : &ensp;
+        The optimum deflection is straight to the rear. </i>
+</p> </div>
 
 <h4> the maximum thrust for a given wind angle </h4>
 
@@ -569,7 +585,7 @@ Figure 4 gives the idea.
 The ideal thrust will be :
 
 <!-- EQUATION ----------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
 
@@ -613,17 +629,17 @@ for a reason.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/sail_thrust_1_min_cos_phi.gif" 
-     width="400" alt="Sail thrust"
-     style="margin-left   : 230px;
-            margin-top    :  0px;
-            margin-bottom :  0px;" >
-
-<p style="margin-left     : 220px;
-          margin-top      :  6px;">
-    <b><i> Figure 5 : &ensp;
-  Sail thrust factor with relative wind angle. </i></b> 
-</p>
+<div class = "center">
+<img src   = "images/sail_thrust_1_min_cos_phi.gif" 
+     width = "65%"
+     alt   = "Sail thrust"
+     style = "margin-top    :  0px;
+              margin-bottom :  0px;" >
+</div>
+<div class = "caption">
+<p> <i> Figure 5 : &ensp;
+  Sail thrust factor with relative wind angle. </i>
+</p> </div>
 
 <!------------------------------------------------------------------>
 <h4> the thrust is limited <i>only</i> by the mast height </h4>
@@ -632,7 +648,7 @@ for a reason.
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
 
@@ -689,7 +705,7 @@ the relation between lift and thrust is :
 </p>
 
 <!-- EQUATION ------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
 
@@ -708,7 +724,7 @@ the relation between lift and thrust is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
 
@@ -762,7 +778,7 @@ therefore be very poor, and it will always start out negative.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
 
@@ -792,7 +808,7 @@ therefore be very poor, and it will always start out negative.
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>  <mspace/> <mo> = </mo> <mspace/>
 
@@ -816,7 +832,7 @@ therefore be very poor, and it will always start out negative.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>C</mi> <mn>L</mn> </msub>
   <mo>.</mo> <mi>c</mi>
@@ -836,6 +852,8 @@ therefore be very poor, and it will always start out negative.
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style="break-before:page"> </div>
+         
 <p> The necessary sail area will depend on the angle of the
  incoming wind, and on the optimum (&hairsp;or achievable&hairsp;)
  lift coefficient.
@@ -849,7 +867,7 @@ The maximum situation is a pure crosswind, with
 Substituting these values into (14) gives :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -878,17 +896,14 @@ This sheds some light on the amount of overlapping sail area
 </p>
 
 <!-- FIGURE --------------------------------------------------->
+<div class = "center">
 <img src="images/sail_cutty_sark.jpg" 
-     width="400" alt="Cutty Sark"
-     style="margin-left   : 180px;
-            margin-top    :  8px;
-            margin-bottom :  0px;" >
-
-<p style="margin-left     : 220px;
-          margin-top      :  6px;">
-    <b><i> Figure 6 : &ensp;
-              Cutty Sark sail area. </i></b> 
-</p>
+     width="55%";
+     alt="Cutty Sark">
+</div>
+<div class = "caption">
+<p> <i> Figure 6 : &ensp; Cutty Sark full sail area. </i>
+</p> </div>
 
 <h4 style="color:#909090"> planned text </h4>
 
@@ -911,6 +926,9 @@ This sheds some light on the amount of overlapping sail area
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

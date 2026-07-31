@@ -13,38 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="text.css">
-  <title> Piet Lammertse on Etkin </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Piet Lammertse on Etkin </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU ---------------------------------------
-<ul>
-  <li> <a href="index.html">           Home            </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a href="flight_dynamics_books.html">&#x25C4;
-                                      Previous  </a> </li>
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0";
-       href="javascript:void(0)" >         Etkin     &#x25BC;</a>
-    <div class="dropdown-content">
-      <a href="etkin_editions.html">&emsp; Editions          </a>
-      <a href="etkin_typos.html">&emsp;    Typos             </a>
-      <a href="#">&emsp;      Boeing 747 model               </a>
+<nav class="dropdown-menu">
 
-  <li> <a href="etkin_editions.html"> Editions          </a></li>
-  <li> <a href="etkin_typos.html">    Typo's            </a></li>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-    </div>
-  </li>
+<!-- TOP BAR MENU --------------------------------------------->
 
-</ul>
--->
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
-
-<!------------------------------------------------------------->
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Etkin </h2>
 
@@ -112,6 +107,9 @@ which he also used for the asymmetric part of the system equations
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

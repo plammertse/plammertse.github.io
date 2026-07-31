@@ -3,10 +3,10 @@
 -- purpose : Toggle hamburger button for mobiles
 --
 -- note    : See the HTML file for the button itself.
---      Each span is a small bar.
+--      Each span is a small bar, see CSS.
 --      The hamburger collapses the vertical menu on small
 --      screens (mobiles) so you don't have to scroll
---      all the way past the menu, to the text below it.
+--      all the way past the menu to the text below it.
 ---------------------------------------------------------------
 -- history :
 --   2026-07-18 PL new, code first by Mistral, then Claude

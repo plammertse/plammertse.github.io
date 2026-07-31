@@ -13,22 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on the Haptic Master </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on the Haptic Master </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li><a href="index.html">            Home           </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000B0;"
-          href="armbot.html">          Haptic Master  </a> </li>
-  <li> <a href="ADL_gimbal.html"> ADL gimbal          </a> </li>
-</ul>
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> The Haptic Master </h2>
 
@@ -39,15 +50,14 @@
 <p> TBW.
 </p>
 
-
 <!-- HM promo video ------------------------------------------->
-<video autoplay muted controls loop
-    width="700" height="auto" style="margin-left:40px"
-    loop; >
-  <source src="video/haptic_master_motek_promo.mp4";
-          type="video/mp4";>
-  Your browser does not support the video tag.
-</video>
+<div class = "center">
+<video width="95%"; height="auto";
+      autoplay muted controls loop>
+  <source src  = "video/haptic_master_motek_promo.mp4";
+          type = "video/mp4";>
+  Your browser does not support the video tag. </video>
+</div>
 
 <h4 style="color:#909090"> origins </h4>
 
@@ -65,6 +75,9 @@
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

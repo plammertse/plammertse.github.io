@@ -21,19 +21,29 @@
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-  <li> <a href="fallacy.html">    Common fallacies    </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000B0;";
-       href="canards.html" >     Canards              </a> </li>
-  <li> <a href="trim.html">      Trim                 </a> </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "fallacy.html">
+         Common fallacies </a>                             </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 
 <h2> Canards </h2>
 
@@ -405,8 +415,8 @@ This should put an end to any remaining illusions
 about a&nbsp;possible advantage for the canard layout.
 </p>
 
-<div class = "center">
-   <img src   = "images/trim_canard_munk_stagger.gif";
+<div  class = "center">
+   <img src = "images/trim_canard_munk_stagger.gif";
       width = "67%";
       alt   ="Canard Munk stagger";>
 </div>     
@@ -417,6 +427,9 @@ about a&nbsp;possible advantage for the canard layout.
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

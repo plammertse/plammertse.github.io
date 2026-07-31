@@ -13,29 +13,14 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>
-       Piet Lammertse aircraft case studies
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>
+       Piet Lammertse on aircraft case studies
   </title>
 </head>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<body>
-
-<ul>
-  <li> <a href="index.html">                 Home           </a>
- </li>
-
-  <li> <a href="people.html">                Personalities  </a>
- </li>
-
-  <!-- CASE STUDIES -->
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn"
-       style="background-color:#0000B0;"> 
-                                       Case studies  &#x25BC;</a>
-
-    <div class="dropdown-content">
+<!--
       <a href="nasa_X57.html">      NASA Maxwell X-57        </a>
       <a href="taylor_bullet.html"> Taylor Bullet            </a>
       <a href="vari_eze.html"> Rutan Vari-Eze                </a>
@@ -43,11 +28,29 @@
       <a href="TU_144.html">            TU-144               </a>
       <a href="vmax_probe.html"> VmaxProbe                   </a>
       <a href="questair_venture.html"> Questair Venture      </a>
-    </div>
-  </li>
-</ul>
+-->
+<!-- NAVIGATION BAR ------------------------------------------->
 
-<!-- TEXT PAGE ------------------------------------------------>
+<body>
+
+<!-- HAMBURGER MENU ------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
 <span style="color:darkgrey">
 
@@ -89,6 +92,9 @@ it contains some seeds worth growing.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

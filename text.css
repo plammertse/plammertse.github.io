@@ -42,11 +42,12 @@ p {
 
 /* all hyperlinks darker blue */
 a {
-   color : #000040;    /* #000080  */
+   color      : #000040;    /* #000080  */
 }
+
 /* line spacing + indent for header         */
 h2 {     /* default font desktop/tablet 30/24 */
-  margin     : 6px 16px;      /* top, right, bottom, left */
+  margin     : 12px 0 0 16px;      /* top, right, bottom, left */
 /*  margin-top : 16px;   */
 }
 

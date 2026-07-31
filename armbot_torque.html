@@ -9,24 +9,36 @@
 ---------------------------------------------------------------> 
 
 <head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the Armbot  </title>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the Armbot  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li><a href="index.html">                  Home     </a> </li>
-  <li> <a href="armbot.html">                Armbot   </a> </li>
-  <li> <a style="background-color:#0000B0;"
-          href="armbot_torque.html">         Torque   </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!------------------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Torque only </h2>
 
@@ -51,17 +63,15 @@ weight of passive limbs hanging from
  the shoulder and elbow.
 </p>
 
+<div class = "center">
 <!---------------------------------------------------------------------->
-<img src="images/armbot_torque_dyon.jpg" 
-     width="500" alt="Armbot torque Dyon"
-     style="margin-left   : 180px;
-            margin-top    : 12px;
-            margin-bottom : 12px;" >
-<p style="margin-left   :200px;
-          margin-bottom :  8px;">
-<b><i>
-   Figure 1 : &emsp; Applying a pure torque to the upper arm.
-</b></i></p>
+<img src  ="images/armbot_torque_dyon.jpg" 
+    width = "65%";
+    alt   = "Armbot torque Dyon" >
+</div>
+<div class = "caption">
+<p> <i> Figure 1 : &emsp; Applying a pure torque to the upper arm.
+   </i> </p> </div>
 
 <h4> the weight argument </h4>
 
@@ -179,19 +189,20 @@ After all, the weight of the forearm is always
 carried by the shoulder in normal life too.
 </p>
 
+<div class = "center">
 <img src="images/armbot_torque_wilmer_pads.jpg" 
-     width="360" alt="Armbot pitch fork Wilmer pads"
-     style="margin-left   : 240px;
-            margin-top    :  0px;
-            margin-bottom :  8px;" >
-<p>
-<p style="margin-left:240px;"><b><i>
-   Figure 3 : &emsp; Upper arm pure torque tool.
-</b></i></p>
+     width="50%" alt="Armbot pitch fork Wilmer pads">
+</div>
+<div class = "caption">
+<p> <i> Figure 3 : &emsp; Upper arm pure torque tool.
+   </i> </p> </div>
 
 <!---------------------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

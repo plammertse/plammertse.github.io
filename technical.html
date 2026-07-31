@@ -14,20 +14,35 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Website technicalities </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Website technicalities </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-</ul>
-</div>
+<!-- HAMBURGER MENU ------------------------------------------->
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "website.html">
+         Website </a>                                      </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 
 <h2> Website technicalities </h2>
 
@@ -38,6 +53,9 @@
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

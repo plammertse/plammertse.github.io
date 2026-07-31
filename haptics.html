@@ -13,26 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on haptics  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR ------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a style="background-color:#0000B0;"
-         href="haptics.html">         Haptics         </a> </li>
-  <li> <a href="haptic_master.html">  Haptic Master   </a> </li>
-  <li> <a href="armbot.html">         Armbot          </a> </li>
-</ul>
-</div>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!------------------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Haptics </h2>
 
@@ -77,6 +84,9 @@ in hindsight.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

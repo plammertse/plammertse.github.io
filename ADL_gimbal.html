@@ -12,23 +12,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the haptic ADL gimbal  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the haptic ADL gi mbal  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-  <li> <a href="haptic_master.html">   Haptic Master  </a> </li>
-  <li> <a style="background-color:#0000B0;"
-          href="ADL_gimbal.html">      ADL gimbal     </a> </li>
-  <li> <a href="skewed_axes.html">     Skewed axes    </a> </li>
-</ul>
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> ADL gimbal </h2>
 
@@ -65,12 +75,16 @@
 </p>
 
 <!-- video --------------------------------------------------->
-<video width="700" height="auto" autoplay muted controls loop
-    style="margin-left:40px"; loop >
+<div class = "center">
+<video width="70%";
+       height="auto" autoplay muted controls loop >
   <source src="video/ADL_gimbal.mp4"
           type="video/mp4">
   Your browser does not support the video tag.
 </video>
+</div>
+
+<!-- TODO add print still ------------------------------------>
 
 <h4> poor man's version </h4>
 <p>
@@ -82,6 +96,9 @@
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

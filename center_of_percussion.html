@@ -13,22 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>
        Piet Lammertse on centers of percussion
   </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000C0;"
-          href="center_of_percussion.html">
-                                Center of Percussion  </a> </li>
-</ul>
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
 
 <!-- TEXT ----------------------------------------------------->
@@ -50,14 +61,12 @@ or impulse.
  But&nbsp;the concept is also useful in understanding
  airplane dynamic modes.
 </p>
-<!--
-<p style="margin-top:16px"> . . .
-</p>
--->
-<img src="images/tumbler.gif"
-   width="600" alt="Tumbling dumbbell"
-   style="margin-left : 8%;
-          margin-top  : 8px" >
+
+<div class = "center">
+<img src = "images/tumbler.gif";
+   width = "80%" ;
+   alt="Tumbling dumbbell"; >
+</div>
  
 <h4> animation </h4>
 
@@ -141,6 +150,9 @@ is "really" rotating around its center of mass,
 and that it is somehow wrong to say
 that it rotates around some other "pole".
 <p>
+
+<div style="break-before:page"> </div>
+         
 <p>&emsp;
 Taking the COM as the inertial reference
 is sometimes convenient, and sometimes not,
@@ -200,6 +212,9 @@ an airplane in some of its eigenmodes.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer">  P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

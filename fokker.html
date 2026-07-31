@@ -20,17 +20,26 @@
 
 <body>
 
-<div class = "no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000B0";
-          href="fokker.html">    Fokker               </a> </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <span style = "color:darkgrey">
 
@@ -68,6 +77,9 @@ maintenance is the cash cow for the next 30 years.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

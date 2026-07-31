@@ -12,43 +12,35 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on aerodynamics  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+
+   <title>  Piet Lammertse on aerodynamics  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR--------------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">                 Home                  </a>
- </li>
+<nav class="dropdown-menu">
 
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0;"
-       href="javascript:void(0)">            Aerodynamics &#x25BC; </a>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;"
-         href="wings.html" >                Wings                  </a>
-      <a href="#" style="color: silver"> Cooling                   </a>
-      <a href="#" style="color: silver"> Wind tunnels              </a>
-    </div>
-  </li>
+<!-- TOP BAR MENU --------------------------------------------->
 
-  <li> <a href="nature.html">            Nature &#x25BA;       </a>
- </li>
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
-  <li> <a href="aircraft.html">            Aircraft &#x25BA;       </a>
- </li>
+<!-- PAGE TEXT ------------------------------------------------>
 
-
-
-</ul>
-
-
-<!-- TEXT PAGE --------------------------------------------------------->
 <h2> Aerodynamics </h2>
 
 <p> TBW.
@@ -58,6 +50,9 @@ Tell about Prandtl.
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

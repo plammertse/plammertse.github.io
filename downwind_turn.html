@@ -14,24 +14,35 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on the downwind turn syndrome </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Piet Lammertse on the downwind turn syndrome </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-  <li> <a href="fallacy.html">    Common fallacies    </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000B0;";
-       href="downwind_turn.html" >      Downwind turn </a> </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
 
-<!------------------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "fallacy.html">
+         Common fallacies </a>                             </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Downwind turn </h2>
 
@@ -76,16 +87,15 @@ And here's where it gets dangerous.
 </p>
 
 <!------------------------------------------------------------->
-<img src="images/downwind_pattern.gif" 
-     width="500" alt="Downwind pattern"
-     style="margin-left   : 140px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
+<div class = "center">
+<img src   = "images/downwind_pattern.gif" 
+     width = "500";
+     alt = "Downwind pattern" >
+</div>
+<div class = "caption">
+<p> <i> Fig. 1 : &thinsp; The "pattern". </i> </p>
+</div>
 
-<p style="margin-left : 300px;
-          margin-bottom:  8px;">
-<b><i> Fig. 1 : &thinsp; The "pattern". </i></b> </p>
-</p>
 <p>
  Figure 1 shows the flight path in the pattern in three ways.
  The first way is the circle that the pilot intended.
@@ -135,7 +145,9 @@ before reaching the runway threshold.
 This puts them into a spin at very low altitude,
  and they die.
 </p>
-         <div style="break-before:page"> </div>
+
+<div style="break-before:page"> </div>
+         
 <h4> the energy debate </h4>
 
 <p> So far, everyone agrees what the problem is,
@@ -221,17 +233,15 @@ Clearly someone has to accelerate the aircraft from zero
 to 2&hairsp;<i>V</i> once per cycle, and decelerate it back again.
 </p>
 
-<!------------------------------------------------------------->
-<img src="images/downwind_epicycle.gif" 
-     width="550" alt="Downwind epicycle"
-     style="margin-left   : 140px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
- 
-<p style="margin-left : 220px;">
-<b><i> Fig. 2 : &thinsp; Ground trajectory for wind&thinsp;=&thinsp;0 
-   and for wind&thinsp;=&thinsp;V </i></b>.</p>
-</p>
+<div class = "center">
+<img src   = "images/downwind_epicycle.gif" 
+     width = "550";
+     alt   = "Downwind epicycle" >
+</div> 
+<div class = "caption">
+<i> Fig. 2 : &thinsp; Ground trajectory for wind&thinsp;=&thinsp;0 
+   and for wind&thinsp;=&thinsp;V </i>.</p>
+</div>
 
 <div style="break-before:page"> </div>
 
@@ -269,6 +279,9 @@ If you cannot answer <i>their</i> concern in <i>their</i>
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

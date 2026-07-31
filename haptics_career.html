@@ -13,30 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on a career in haptics  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on a career in haptics  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a style="background-color:#0000B0;"
-         href="haptics.html">        Haptics          </a> </li>
-  <li> <a href="haptic_master.html"> Haptic Master    </a> </li>
-<!--
-  <li> <a href="#" style="color: silver">
-    Devices          </a> </li>
-  <li> <a href="#" style="color: silver">
-                                     Software         </a> </li>
-  <li> <a href="exoskeletons.html">  Exoskeletons     </a> </li>
--->
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!------------------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> A career in haptics </h2>
 
@@ -166,6 +169,8 @@ of a pair of Haptic Masters into a "single"
 for Pininfarina and others
  with the Politecnico di Milano.
 
+<div style = "break-before:page"> </div>
+         
 <h4> Simodont </h4>
 
 <p> The real plan for the FCS "medical" group
@@ -196,6 +201,9 @@ This was the
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

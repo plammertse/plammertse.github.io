@@ -15,21 +15,34 @@
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
    <title> Piet Lammertse on T_tails </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR-------------------------------------------->
-<!--
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
-  <li> <a href="fallacy.html">    Common fallacies    </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000B0;";
-       href="T_tails.html" >      T-tails             </a> </li>
-</ul>
--->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "fallacy.html">
+         Common fallacies </a>                             </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> T-tails </h2>
 
@@ -213,20 +226,19 @@ The&nbsp;picture shows an early artist's impression.
 </p>
 
 <div class="center">
-<img src = "images/DH125_artists_impression.jpg" 
-     alt = "DH125" 
-     style="width : 65%" >
+<img src   = "images/DH125_artists_impression.jpg" 
+     width = "65%";
+     alt   = "DH125";
+ >
 </div>
-<div class="center">
-   <p> <b> <i>
-      Figure 1 : &emsp; DH.125 artist's impression.
-   </i></b> </p>
-</div>
+<div class="caption">
+   <p> <i> Figure 1 : &emsp; DH.125 artist's impression.
+</i> </p> </div>
 
-<p>
+<p> &emsp;
 The idea was once again, that a short fin
  with a stabilizer on top would 
- be as effective as a longer fin without it.
+ be as effective as a longer fin without the T-tail.
 De Havilland revised their plan even before building 
  the first prototype, adding a bit of fin
  on top of the stabi&shylizer, which defeats
@@ -253,6 +265,7 @@ The HS125 is also a case in point. It has been flying
  based on some 1961 wishful thinking.
 </p>
 
+<div style = "break-before : page"> </div>
 
 <h4> the Beech King Air </h4>
 
@@ -380,6 +393,9 @@ and&nbsp;otherwise they are inferior
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

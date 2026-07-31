@@ -13,26 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on mind maps </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Piet Lammertse on mind maps </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR -------------------------------------------->
-<ul>
-  <li> <a href="index.html">          Home              </a></li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0";
-       href="javascript:void(0)" >    Mind maps         </a></li>
-  <li> <a href="memo_system.html">    Memo's            </a></li>
-  <li> <a href="website.html">        Website           </a></li>
-</ul>
-</div>
+<nav class="dropdown-menu">
 
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 <!-------------------------------------------------------------->
 
 <h2> Mind maps </h2>
@@ -56,7 +63,7 @@ and dictated them to his scribe.
  It is comforting for me to know that someone like Leibniz
  carried around with him a cabinet with scraps of paper
  pinned to rows of nails,
- and someone like Newton rewrote his Principia dozens of times.
+ and someone like Newton re-wrote his Principia dozens of times.
 </p>
 
 <h4> hypertext </h4>
@@ -102,6 +109,9 @@ by Ann Blair.
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

@@ -12,33 +12,34 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>
-       Piet Lammertse on flight dynamics books
-  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on flight dynamics books </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU ---------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home                   </a> </li>
 
-  <!-- books dropdown -->
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0";
-       href="javascript:void(0)" >       Books &#x25BC;  </a>
-    <div class="dropdown-content">
-      <a href="etkin.html">             Etkin                    </a>
-    </div>
-  </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a href="etkin.html">           Etkin           &#x25BA</a> </li>
-</ul>
+<nav class="dropdown-menu">
 
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!-- TEXT PAGE -------------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Books on flight dynamics ( stability and control ) </h2>
 
@@ -69,6 +70,9 @@ which he also used for the asymmetric part of the system equations
 <!-- FOOTER ------------------------------------------------------->
 <br> <br>
 <div class="footer">  P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

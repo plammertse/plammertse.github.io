@@ -12,20 +12,34 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the Armbot  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the Armbot  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li><a href="index.html">            Home           </a> </li>
-  <li> <a style="background-color:#0000B0;"
-          href="armbot.html">          Armbot         </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-- TEXT ----------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 
 <h2> The Armbot exoskeleton </h2>
 
@@ -56,17 +70,17 @@ prototype #12.
 </p>
 
 <!-- Armbot video --------------------------------------------->
-<video width="680" height="auto" autoplay muted controls loop
-    style="margin-left   : 80px;
-           margin-bottom : 0px";
-           loop >
-  <source type="video/mp4"
-     src="video/arm_exoskeleton_piet_lammertse.mp4" >
+<div class = "center">
+<video width = "90%" autoplay muted controls loop >
+  <source type = "video/mp4"
+     src = "video/arm_exoskeleton_piet_lammertse.mp4" >
   Your browser does not support the video tag.
 </video>
+</div>
 
-<p style="margin-left :280px;">
-    <i> Armbot final prototype ( 2017 ) </i> </p>
+<div class = "caption">
+   <p> <i> Armbot final prototype ( 2017 ) </i> </p>
+</div>
 
 <h4> powered DOF's are <i>torque only</i> </h4>
 
@@ -369,6 +383,9 @@ Shoulder abduction is driven by a third floor motor,
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

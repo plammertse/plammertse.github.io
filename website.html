@@ -13,24 +13,36 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on this website  </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title>  Piet Lammertse on this website  </title>
 </head>
 
 <body>
 
-<div class = "no-print">
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li> <a href  = "index.html">        Home            </a> </li>
-  <li> <a href  = "mind_maps.html">    Mind maps       </a> </li>
-  <li> <a href  = "memo_system.html">  Memo's          </a> </li>
-  <li> <a style = "background-color:#0000B0;"
-          href  = "website.html">      Website         </a> </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
 
-<!-- TEXT ------------------------------------------------------>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "mind_maps.html">
+         Mind maps </a>                                    </li>
+      <li> <a href = "memo_system.html">
+         Memo's </a>                                       </li>      
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 <h2> Website </h2>
 
 <h4> the website as a view on my memo system </h4>
@@ -104,6 +116,9 @@ I hope it works.
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer">  P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

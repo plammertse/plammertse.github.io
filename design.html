@@ -13,36 +13,27 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on design methodology  </title>
+      <link rel="stylesheet" href="text.css">
+      <link rel="stylesheet" href="menu.css">
+   <title>  Piet Lammertse on design methodology  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li> <a href="index.html">         Home             </a> </li>
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<nav class="dropdown-menu">
 
-  <!-- methodology dropdown -->
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0";
-       href="javascript:void(0)" >   Design         &#x25BC;</a>
-    <div class="dropdown-content">
-      <a style= "color : silver";
-         href="#">  Patterns </a>
-      <a style= "color : silver";
-         href="#">  Sketching </a>
-      <a style= "color : silver";
-         href="#">  Planning and estimating </a>
-      <a style= "color : silver";
-         href="#">  Toyota </a>
-    </div>
-  </li>
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
 
-  <li> <a href="inventors.html">   Inventors         </a> </li>
-</ul>
-
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
 <!-- TEXT PAGE ------------------------------------------------>
 
@@ -52,28 +43,6 @@
 
 <p> "Good judgement comes from experience,
  and experience comes from bad judgement."
-</p>
-
-<h4> the meta level </h4>
-
-<p> I have noticed in the past that when designers
- (&hairsp;and scientists&hairsp;)  get older,
- they start writing and talking about "meta" issues,
- rather than about hardcore technical designs
- and scientific theories
-that people expect them to solve.
- So when I noticed that the feedback I gave to students became
- more and more on the methods to achieve something than on 
- the somethings they wanted to learn about, I knew I was getting old.
-</p>
-
-<h4> the Pareto principle </h4>
-
-<p> The meta level is where 80% of the result
- (&hairsp;cost, quality, performance&hairsp;) is determined,
- in 5% of the time that a project, product or service takes to develop.
-This is also known as the the 80-20 rule, but in design
-I think the ratio is more like 80 to 5.  
 </p>
 
 <h4> design patterns </h4>
@@ -86,10 +55,42 @@ I think the ratio is more like 80 to 5.
  and what have you.
 </p>
 <p>&emsp;
- It is important to be aware of such patterns
- and to lean back every now and then to consider if you are
+ It is however incredibly important to be aware of such patterns,
+ and to lean back every now and then to&nbsp;consider if you are
  stuck in a rut, sub-optimizing, forgot to zoom out to
  a higher level of requirements, etcetera.
+</p>
+
+<h4> the Pareto principle </h4>
+
+<p> The Pareto principle states that 80% of a result
+ (&hairsp;cost, quality, performance&hairsp;) is determined
+ by 20% of the input, give or take.
+ This is also known as the the 80-20 rule.
+ In design, I would say that the first 5% of the time
+ put into a project rules 95% of the result.
+ </p>
+ <p> &emsp;
+  The haste by young designers to cling to the first solution
+  that comes to mind is only matched by the panic in young managers
+  when it comes to accepting that a first
+  investment of 1% may be best considered as a necessary,
+  but in hindsight false step into a dead alley.
+  This is better known as the "sunk cost fallacy".
+</p>
+<p> &emsp;
+ The hallmark of a good designer (&hairsp;and manager&hairsp;)
+ is that at every stage of the process it is necessary to 
+ identify a number of alternatives, spend some time to explore
+ each of them, and only then choose one.
+ </p>
+<h4> plan "A" and plan "B" </h4>
+
+ <p> &emsp;
+ Or better, choose two : the official plan "A", and the slightly
+ less official plan "B" which should be kept simmering on a back burner
+ all the time, so it is as ready as plan "A" when the shit
+ hits the fan, which happens in over 50% of cases if I am well informed. 
 </p>
 
 <h4> formal methods to force creativity </h4>
@@ -161,9 +162,9 @@ to break down in two-week "sprints" with a
  to large, integrated design problems. 
 </p>
 
-<h4> make your best estimate, then multiply by pi</h4>
+<h4> make your best estimate, then multiply by 3.14</h4>
 
-<p> Invariably, at the start of the design
+<p> Invariably, at the start of a design
  you will be asked to give an estimate of
  the time that the project will take to complete.
  The&nbsp;classical method, which has been found to work
@@ -195,6 +196,12 @@ to break down in two-week "sprints" with a
  for every design idea or design step.
  Do not try to take two steps at once, because the next
  prototype will become too nice, and take four times as long. 
+ The urge to "improve" a protype because it is already there,
+ and it seems quicker than making a new one, and it has been used
+ for only fifteen minutes, and it is not needed anymore,
+ is incredibly strong.
+ Resist it at all cost.
+ </p>
  
 <h4> the Toyota way </h4>
 
@@ -226,9 +233,7 @@ to break down in two-week "sprints" with a
  would recount an erotic movie. All the
  facts are there, but the story can only 
  be understood by an adult.
-<br>
 </p>
-
 
 <!--
 kill your darlings
@@ -237,12 +242,12 @@ it was not invented here
 better well stolen than badly developed
 -->
 
-
-
-
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
 
+ <!-- script must be at end of body -->
+ <script src="menu.js"></script>
+ 
 </body>
 </html>

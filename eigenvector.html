@@ -13,32 +13,40 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on eigenvectors  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on eigenvectors  </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li><a href="index.html">         Home              </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li><a href="modes.html">         Modes             </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a style="background-color:#0000C0;"
-          href="eigenvector.html">  Eigenvectors      </a> </li>
-</ul>
-</div>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!------------------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Eigenvectors </h2>
 
 <h4> modes </h4>
 
 <p> The idea of a mode was discussed 
-<a href = "modes.html"> elsewhere</a>.
+<a href = "modes.html"> <i>elsewhere</i></a>&hairsp;.
  Briefly, it is a certain motion 
 (&thinsp;an "eigenmotion", if you like&hairsp;)
 of a mechanical or electrical system.
@@ -96,17 +104,17 @@ We will leave that to proper textbooks.
 may stop, leaving the reader with a few practical questions.
 </p>
 
-<!-- ---------------------------------------------------------->
-<img src="images/pendulum_eig.gif" 
-     width="400" alt="Pendulum eigenvector"
-     style="margin-left   : 120px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
-
-<p style = "margin-left:100px;">
-<i> The rotating eigenvector of a pendulum</i> </p>
+<div class = "center">
+<img src = "images/pendulum_eig.gif" 
+   width = "50%";
+   alt   = "Pendulum eigenvector">
+</div>
+<div class = "caption">
+<p> <i> The rotating eigenvector of a pendulum</i> </p>
+</div>
 
 <div style="break-before:page"> </div>
+
 <h4> eigenvectors </h4>
 
 <p> Eigenvectors are a part of 
@@ -160,12 +168,11 @@ And the idea generalizes to N dimen&shysions.
  of the relation between modes and eigenvectors.
 
 <!-- ---------------------------------------------------------->
-<img src="images/pendulum_eig.gif" 
-     width="400" alt="Pendulum eigenvector"
-     style="margin-left   : 120px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
-
+<div class = "center">
+<img src = "images/pendulum_eig.gif";
+   width = "50%";
+   alt   = "Pendulum eigenvector" >
+</div>
 
 <p>
 - pendulum example.
@@ -196,6 +203,9 @@ tangent line.
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

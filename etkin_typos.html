@@ -13,20 +13,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on Etkin </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Piet Lammertse on Etkin typo's </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">     Home                 </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a href="etkin_editions.html"> Editions </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a style="background-color:#0000E0;"> Typo's   </a> </li>
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                          </li> 
+   </ul>
+</nav>
 
 
 <!------------------------------------------------------------->
@@ -82,7 +93,7 @@ This makes his notation sometimes hard to track.</p>
  This is a leftover from previous editions,
  and it is very poorly documented in the third edition.
 </p>
-<p>&emsp; For the eagle eyed,
+<p>&emsp; For the eagle-eyed,
  there is a caret on top of the dot
  in the <i>&alpha;</i>&hairsp;<super>&bull;</super>
  of Table 6.1.
@@ -96,6 +107,9 @@ This non-dimensional time can be reconstructed
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

@@ -20,20 +20,27 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on research investments  </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title>  Piet Lammertse on research investments  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<ul>
-  <li> <a href="index.html">        Home             </a> </li>
-  <li> <a href="design.html">       Designing        </a> </li>
-  <li> <a style="background-color:#0000B0";
-          href="inventors.html" >   Money             </a> </li>
-</ul>
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<nav class="dropdown-menu">
 
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
 <!-- TEXT PAGE ------------------------------------------------>
 
@@ -47,7 +54,7 @@
  whose primary concern has not been cash flow, no matter how high their birth.
  </p>
  <p>&emsp;
- Some fields are more notorious than others. There is a famous quote that goes :
+ Some fields are more notorious than others. A famous maxim is :
  "Want to make a small fortune in aviation ?
  Start with a big one".
 </p>
@@ -159,6 +166,8 @@ it can be useful to consider that an hour can be spent
 only once.
 </p>
 
+<div style="break-before:page"> </div>
+         
 <h4> make or buy </h4>
 
 <p> Returning to the bare cost
@@ -240,5 +249,8 @@ product, particularly hardware products.
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
 
-</body>
+<!-- script must be at end of body -->
+<script src="menu.js"> </script>
+ 
+ </body>
 </html>

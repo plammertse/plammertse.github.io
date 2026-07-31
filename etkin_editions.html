@@ -13,23 +13,34 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="plammertse.css">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
    <title> Piet Lammertse on Etkin editions </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a href="etkin.html">           Etkin          </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a style="background-color:#0000B0;"
-          href="etkin_editions.html">  Editions       </a> </li>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-  <li> <a href="etkin_typos.html">   Typo's           </a> </li>
-</ul>
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                          </li> 
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 
 
 <!-- TEXT PAGE ------------------------------------------------>
@@ -48,13 +59,19 @@ The first edition (&hairsp;naturally&hairsp;)
 I think the 2nd edition called "Dynamics of Atmospheric Flight" 
 is the classic.
 The 3d edition was recently new to me.
- I feel it is by far the best version.
+ I feel it is by far the best version. The distinct versions are :
 </p>
 
-<h4> Dynamics of Flight - Stability and Control </h4>
-<h4 style="margin-top : 0"> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      1st edition,&nbsp; 1958 </h4>
+<div class = "center";
+     style = "margin-bottom : 0;" >
+<h4  style = "margin-top : 0; margin-bottom : 0;">
+      Dynamics of Flight - Stability and Control </h4>
+</div>
+<div class = "center";
+     style = "margin-top : 0" >
+<h4  style = "margin-top : 0"> 
+      -- &ensp; 1st edition,&nbsp; 1958 &ensp; -- </h4>
+</div>
 
 <p> This is a pleasant textbook on "Stability and Control".
  The cover sports a B-58 Hustler in climbing flight.
@@ -63,10 +80,16 @@ Etkin's reputation as a textbook author.
 </p>
 </p>
 
-<h4> Dynamics of Atmospheric Flight </h4>
-<h4 style="margin-top : 0"> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      2nd edition, 1972 </h4>
+<div class = "center";
+     style = "margin-bottom : 0;" >
+<h4  style = "margin-top : 0; margin-bottom : 0;">
+      Dynamics of Atmospheric Flight </h4>
+</div>
+<div class = "center";
+     style = "margin-top : 0" >
+<h4  style = "margin-top : 0"> 
+      -- &ensp; 2nd edition, 1972 &ensp; -- </h4>
+</div>
 
 <p> This is the classic that we all knew and feared.
  It is a complete overhaul of the first edition.
@@ -81,10 +104,16 @@ Etkin's reputation as a textbook author.
  as an (&hairsp;undergraduate&hairsp;) textbook.
 </p>
 
-<h4> Dynamics of Flight - Stability and Control </h4>
-<h4 style="margin-top : 0"> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      2nd edition,&nbsp; 1982 </h4>
+<div class = "center";
+     style = "margin-bottom : 0;" >
+<h4  style = "margin-top : 0; margin-bottom : 0;">
+      Dynamics of Flight - Stability and Control </h4>
+</div>
+<div class = "center";
+     style = "margin-top : 0" >
+<h4  style = "margin-top : 0"> 
+      -- &ensp; 2nd edition,&nbsp; 1982 &ensp; -- </h4>
+</div>
 
 <p> In his preface to this "other" second edition,
  Etkin confesses that he had received
@@ -113,11 +142,16 @@ Etkin's reputation as a textbook author.
  spelling out “second edition”.
  However, internally they are very different. 
 
-<h4> Dynamics of Flight - Stability and Control </h4>
-<h4 style="margin-top : 0"> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      3d edition,&nbsp; 1995 </h4>
-     
+<div class = "center";
+     style = "margin-bottom : 0;" >
+<h4  style = "margin-top : 0; margin-bottom : 0;">
+ Dynamics of Flight - Stability and Control </h4>
+</div>
+<div class = "center";
+     style = "margin-top : 0" >
+<h4  style = "margin-top : 0"> 
+      -- &ensp; 3d edition,&nbsp; 1995 &ensp; -- </h4>
+</div>     
 <p> The 3d edition is a true revision
  of the 2nd edition of the first book.
 </p>
@@ -173,6 +207,9 @@ The model used is the Boeing 747 this time.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>

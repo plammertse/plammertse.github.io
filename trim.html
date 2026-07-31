@@ -14,22 +14,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on stabilizer and canard trim </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Piet Lammertse on stabilizer and canard trim </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home           </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a href="canards.html" >      Canards          </a> </li>
-  <li> <a style="background-color:#0000B0;";
-       href="trim.html" >            Trim             </a> </li>
-</ul>
-</div>
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <!------------------------------------------------------------->
 
@@ -148,17 +159,14 @@ of the aircraft CG, so
 so <i>x</i><sub>h</sub> will always be negative.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img src="images/trim_sign_convention.gif" 
-     width="440" alt="Trim sign convention"
-     style="margin-left   : 190px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
-<p style="margin-left  : 250px;
-         margin-bottom:   8px">
- <b><i> Figure 1 : &emsp; Trim sign convention </i></b>
-</p>
-
+<div class = "center">
+<img src   = "images/trim_sign_convention.gif" 
+     width = "440"
+     alt   = "Trim sign convention" >
+</div>
+<div class = "caption">
+<p> <i> Figure 1 : &emsp; Trim sign convention </i> </p>
+</div>
 
 <h4> zero moment at zero lift </h4>
 
@@ -197,7 +205,7 @@ The total moment in equilibrium must be zero :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
     <msub>
     <msub> <mi>C</mi> <mn>m</mn> </msub> 
@@ -222,6 +230,7 @@ The total moment in equilibrium must be zero :
   <mn>0</mn>
 
 </math>
+</td>
 
 <td style="width:50px; text-align:right">                 (1)
 </td> </tr> </table>
@@ -231,7 +240,7 @@ The total moment in equilibrium must be zero :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>l</mi> <mn>h</mn> </msub> 
 
@@ -251,7 +260,7 @@ The total moment in equilibrium must be zero :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;</mn> <msub> <mi>L</mi> <mn>w</mn> </msub> 
   <mspace/><mo> = </mo> <mspace/>
@@ -267,7 +276,7 @@ The total moment in equilibrium must be zero :
 </p> 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;</mn> <msub> <mi>L</mi> <mn>h</mn> </msub> 
   <mo>.</mo>
@@ -317,7 +326,7 @@ the definition of a tail lift coefficient
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub>
     <msub> <mi>C</mi> <mn>m</mn> </msub> 
@@ -343,7 +352,7 @@ the definition of a tail lift coefficient
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;&hairsp;</mn>
   <msub> <mi>C</mi> <mn>Lh</mn> </msub>
@@ -386,7 +395,7 @@ Such typical values lead to :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;&hairsp;</mn>
   <msub> <mi>C</mi> <mn>Lh</mn> </msub>
@@ -412,7 +421,7 @@ tailplane AC, or working through (3) and (4), or simply
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;&hairsp;</mn>
   <msub> <mi>C</mi> <mn>L</mn> </msub>
@@ -541,7 +550,7 @@ is provided by the wing lift
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mi>L</mi> 
 
@@ -564,7 +573,7 @@ We will call these new lift terms <i>L</i><sub>w+</sub>
 and <i>L</i><sub>h+</sub> : 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mi>L</mi> 
 
@@ -588,7 +597,7 @@ and <i>L</i><sub>h+</sub> :
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mi>L</mi> 
 
@@ -608,7 +617,7 @@ with the new terms :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub>
     <msub> <mi>C</mi> <mn>m</mn> </msub> 
@@ -651,7 +660,7 @@ the more or less obvious result :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>w+</mn> </msub>
   <mo>.</mo>
@@ -679,7 +688,7 @@ the more or less obvious result :
   <i>l&hairsp;</i><sub>h</sub> was defined in (2)&nbsp;) :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>h+</mn> </msub>
 
@@ -703,7 +712,7 @@ the more or less obvious result :
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top : 8px;"> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>w+</mn> </msub>
   <mo> = </mo>
@@ -738,16 +747,14 @@ and in a canard.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
+<div class = "center">
 <img src="images/trim_tail_load_with_V.gif" 
-     width="440" alt="Tailplane load"
-     style="margin-left   : 190px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
-
-<p style="margin-left  : 250px;
-         margin-bottom:   8px">
- <b><i> Figure 2 : &emsp; Stabilizer load with flying speed </i></b>
-</p>
+     width="440";
+     alt="Tailplane load" >
+</div>
+<div class = "caption">
+<p> <i> Figure 2 : &emsp; Stabilizer load with flying speed </i>
+</p> </div>
 
 <p> In a conventional airplane, the CG may be ahead of the wing
 or behind it. We will study this below.
@@ -804,7 +811,7 @@ contributors.
  weighted by their surface area :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>AC</mn> </msub> 
 
@@ -845,7 +852,7 @@ and using (2) for the definition of
  we have : </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>AC</mn> </msub> 
   <mo> &minus; </mo>
@@ -883,7 +890,7 @@ of the average wing chord, or MAC
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -924,7 +931,7 @@ of the average wing chord, or MAC
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -972,7 +979,7 @@ The definition  is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>s</mi> 
 
@@ -995,7 +1002,7 @@ The definition  is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -1059,7 +1066,7 @@ then we have, from (19) in (21) :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -1098,7 +1105,7 @@ at "zero airspeed".
 Applying this to (14) we have for the tailplane load :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>h+</mn> </msub>
 
@@ -1129,7 +1136,7 @@ we have from (15) for the wing load, as a check :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>w+</mn> </msub>
 
@@ -1198,7 +1205,7 @@ for the stabilizer is ahead of the main wing.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>l</mi> <mn>h</mn> </msub>
   <mspace/><mo> &cong; </mo> <mspace/>
@@ -1215,7 +1222,7 @@ for <i>S</i><sub>h</sub> / <i>S</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -1255,7 +1262,7 @@ for <i>S</i><sub>h</sub> / <i>S</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -1295,7 +1302,7 @@ where <i>x</i><sub>w</sub> and
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>h+</mn> </msub>
 
@@ -1328,7 +1335,7 @@ negative
 the main wing load (15) becomes :
 </p> 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>L</mi> <mn>w+</mn> </msub>
 
@@ -1441,6 +1448,9 @@ always in that same ratio.
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
 
 </body>
 </html>
