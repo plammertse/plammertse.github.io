@@ -15,21 +15,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on Kalman filters  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on Kalman filters  </title>
 </head>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<body>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
+<nav class="dropdown-menu">
 
-  <li> <a href="kalman.html"> Kalman filters          </a> </li>
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
+<!-- TOP BAR MENU --------------------------------------------->
 
-<!------------------------------------------------------------->
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 <h2> Kalman filters </h2>
 
 <h4> measurement versus control </h4>
@@ -73,6 +84,9 @@ like the mass of an object.
 <!------------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  \2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

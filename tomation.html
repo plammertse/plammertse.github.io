@@ -12,7 +12,8 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
   <title>
        Piet Lammertse on tomato picking
   </title>
@@ -20,19 +21,26 @@
 
 <body>
 
-<!---------------------------------------------------------------------
--- Navigation bar
----------------------------------------------------------------------->
-<ul>
-  <li><a href="index.html">                  Home           </a> </li>
-  <li> <a href="haptic_master.html">         Haptic Master  </a> </li>
-  <li> <a style="background-color:#0000B0;"
-          href="tomation.html">              Tomation       </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-----------------------------------------------------------------------
--- Text page
------------------------------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 <h2> Tomation </h2>
 <p> In 2004 we were approached for a workshop on agricultural robotics.
 There is an area under Rotterdam called "the Westland" which is
@@ -80,17 +88,21 @@ Maybe comment a bit on the politics here, or preferably elsewhere. </i>
 </p>
 
 <!-- Tomation video ------------------------------------------------------>
-<video width="480" height="auto" autoplay muted controls
-    style="margin-left:120px" >
+<div class = "center">
+<video width="60%" height="auto" autoplay muted controls >
   <source src="video/tomation.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+</div>
 
 <!---------------------------------------------------------------------->
 <p> <br> <br> </p> <!-- Prevent text covering by footer -->
 <div class="footer">
   <p> P. Lammertse,  2025 </p>
 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

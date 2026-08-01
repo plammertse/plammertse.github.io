@@ -13,22 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on recumbent bicycles </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on recumbent bicycles </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li><a href="index.html">           Home            </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="recumbent.html">      Recumbents      </a> </li>
-</ul>
-</div>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!------------------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Recumbent bicycles </h2>
 
@@ -53,12 +64,11 @@
  A friend welded up the frame for me, from some square tubing.
 </p>
 
-<!-- FOTO -->
-<img src="images/recumbent_1985_lammertse.jpg" 
-     width="600" alt="Recumbent bike"
-     style="margin-left   : 120px;
-            margin-top    : 12px;
-            margin-bottom :  8px;" >
+<div class = "center">
+<img src = "images/recumbent_1985_lammertse.jpg";
+   width = "80%";
+   alt   = "Recumbent bike">
+</div>
 
 <p>&emsp;
  I turned the front fork backwards for stability
@@ -258,6 +268,9 @@ can be found here :
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

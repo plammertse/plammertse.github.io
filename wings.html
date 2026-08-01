@@ -12,55 +12,44 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on aerodynamics  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+  <title>  Piet Lammertse on wings  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR--------------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">                 Home                  </a>
- </li>
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- 
 
   <li> <a href="aerodynamics.html">         Aerodynamics &#x25B2;  </a>
- </li>
-
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0;"
-       href="javascript:void(0)">            Wings  &#x25BC;       </a>
-    <div class="dropdown-content">
-      <a style="background-color:#E8E8E8;
-         color: silver"
          href="#" >                          Induced drag       </a>
       <a href="#" style="color: silver">&emsp;     Tailless aircraft     </a>
       <a href="#" style="color: silver">&emsp;     Canard aircraft       </a>
       <a href="#" style="color: silver">&emsp;     Trim drag             </a>
       <a href="#" style="color: silver">&emsp;     Aspect ratio          </a>
-      <a href="#" style="color: silver">&emsp;     Formation flying      </a>
-    </div>
-  </li>
-<!--
-  <li class="dropdown">
-    <a class="dropbtn";
-       href="javascript:void(0)">            Cooling               </a>
-
-    <div class="dropdown-content">
-      <a href="cooling.html">                Engine Cooling        </a>
-      <a href="cowlings.html" >              Cowlings              </a>
-    </div>
-  </li>
-
-  <li> <a href="wind_tunnels.html">         Wind tunnels               </a>
- </li>
 -->
 
-</ul>
-
-
 <!-- TEXT PAGE --------------------------------------------------------->
+
 <h2> Aerodynamics </h2>
 
 <p> TBW.
@@ -70,6 +59,9 @@ Tell about Prandtl.
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

@@ -13,22 +13,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the Tupolev 144 crash  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the Tupolev 144 crash  </title>
 </head>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<body>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">            Home           </a></li>
-  <li> <a href="case_studies.html">    Case studies    </a></li>
-  <li> <a style="background-color:#0000B0;"
-     href="TU_144.html">     Tupolev TU-144            </a></li>
+<nav class="dropdown-menu">
 
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!-- TEXT PAGE ------------------------------------------------>
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <span style="color:darkgrey">
 
@@ -102,6 +111,9 @@ although I think they all miraculously survived the crash.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

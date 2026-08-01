@@ -9,31 +9,37 @@
 --     2026-03-01 new
 ---------------------------------------------------------------> 
 
-<!-- FORMATTING-------- --------------------------------------->
-
 <head>
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the phase plane  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the phase plane  </title>
 </head>
 
-
-<!-- NAVIGATION BAR MENU -------------------------------------->
 <body>
 
-<ul>
-  <li> <a href="index.html">       Home               </a> </li>
-  <li> <a href="nonlinear.html">   Nonlinear          </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="phase_plane.html"> Phase plane        </a> </li>
-  <li> <a href="dual_control_law.html"> 
-                                   Dual control       </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!------------------------------------------------------------->
+<nav class="dropdown-menu">
 
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 <h2> The phase plane </h2>
 
 <h4> position and velocity </h4>
@@ -101,14 +107,15 @@ since <i>v</i>&nbsp;=&nbsp0 means
  cross&nbsp;the horizontal axis orthogonally.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img src="images/phase_plane_acc.gif" 
-     width="260" alt="Phase plane acceleration"
-     style="margin-left   : 220px;
-            margin-bottom :  8px;" >
-<p style="margin-left   : 200px;">
-<b><i> Figure 1 : &ensp; Phase plane acceleration. </i></b>
-</p>
+<div class = "center">
+<img src = "images/phase_plane_acc.gif";
+   width = "40%";
+   alt   = "Phase plane acceleration" >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 1 : &ensp; Phase plane acceleration. </i> </p>
+</div>
 
 <h4> minimum time trajectory under
     a maximum acceleration / deceleration </h4>
@@ -196,6 +203,9 @@ For the maximum acceleration that was available,
 this distance could not have been covered faster.
 This is why this is called a "minimum time manoeuver".
 </p>
+
+<div style = "break-before:page"> </div>
+         
 <p>&emsp;
 The "control law", if you like, that underlies
  this manoeuver is : maximum to halfway,
@@ -207,14 +217,15 @@ It&nbsp;is&nbsp;highly nonlinear.
  to the analysis of nonlinear control laws.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img src="images/phase_plane_minimum_time.gif" 
-     width="300" alt="Phase plane minimum time"
-     style="margin-left   : 200px;
-            margin-bottom :  8px;" >
-<p style="margin-left   : 200px;">
-<b><i> Figure 2 : &ensp; Minimum time manoeuvre. </i></b>
-</p>
+<div class= "center">
+<img src = "images/phase_plane_minimum_time.gif";
+   width = "50%";
+   alt   = "Phase plane minimum time" >
+</div>
+
+<div class= "caption">
+<p> <i> Figure 2 : &ensp; Minimum time manoeuvre. </i> </p>
+</div>
 
 <h4> minimum time under a speed limit </h4>
 
@@ -243,14 +254,18 @@ is the coasting period.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/phase_plane_coast.gif" 
-     width="360" alt="Phase plane coasting"
-     style="margin-left   : 200px;
-            margin-bottom :  8px;" >
-<p style="margin-left   : 200px;">
-<b><i> Figure 3 : &ensp; Minimum time with coasting phase. </i></b>
-</p>
+<div class= "center">
+<img src = "images/phase_plane_coast.gif"; 
+   width = "50%";
+   alt   ="Phase plane coasting" >
+</div>
 
+<div class= "caption">
+<p> <i> Figure 3 : &ensp; Minimum time with coasting phase. </i> </p>
+</div>
+
+<div style = "break-before:page"> </div>
+         
 <h4> the pendulum, or mass-spring-damper system </h4>
 
 <p> We briefly discuss the case of a pendulum,
@@ -333,19 +348,22 @@ which by convention rotates anti-clockwise.
 </p>
 
 <!-- FIGURE --------------------------------------------------->
-<img src="images/phase_plane_spiral.gif" 
-     width="300" alt="Phase plane spiral"
-     style="margin-left   : 240px;
-            margin-bottom :  8px;" >
-<p style="margin-left   : 200px;">
-<b><i> Figure 3 : &ensp; Mass-spring-damper system. </i></b>
-</p>
-
+<div class = "center">
+<img src = "images/phase_plane_spiral.gif";
+   width ="40%";
+   alt   = "Phase plane spiral">
+</div>
+<div class = "caption">
+<p> <i> Figure 3 : &ensp; Mass-spring-damper system. </i> </p>
+</div>
 
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

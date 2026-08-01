@@ -13,42 +13,45 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
   <title>  Piet Lammertse on mechanisms </title>
 </head>
 
-<!-- NAVIGATION BAR ------------------------------------------->
+<!--
 <body>
 
-<ul>      <!-- navbar -->
-
-  <li> <a href="index.html">          Home            </a> </li>
- 
-  <li class="dropdown">
-    <a class="dropbtn"
-       style="background-color:#0000B0;
-       href="javascript:void(0)">
                               Kinematics  &hairsp;&#x25BC;  </a>
 
-    <div class="dropdown-content">
-      <a href="#" style="color: silver">
                          Forward&hairsp;/&hairsp;inverse    </a>
-      <a href="#" style="color: silver">
                          Parallel&hairsp;/&hairsp;serial    </a>
       <a href="#" style="color: silver"> DOF's              </a>
-      <a href="#" style="color: silver">
                                      Straight line linkages </a>
       <a href="#" style="color: silver"> Skewed axes        </a>
       <a href="quaternion.html">   Quaternions              </a>
-    </div>
-  </li>
-
   <li> <a href="linkages.html">   Linkages            </a> </li>
- 
-</ul>
+-->
+<!-- HAMBURGER MENU ------------------------------------------->
 
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
 
 <!-------------------------------------------------------------->
+
 <h2> Kinematics </h2>
 
 <h4> what is kinematics </h4>
@@ -101,6 +104,9 @@ These&nbsp;are included following Boltzmann's famous creed :
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

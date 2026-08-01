@@ -15,33 +15,44 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on quaternions  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on quaternions  </title>
 </head>
 
 <!-- NAVIGATION BAR MENU -------------------------------------->
 <body>
 
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
 
-  <li class="dropdown">
-    <a class="dropbtn"
-       style="background-color:#0000B0;
-       href="javascript:void(0)">
-                            Quaternions&hairsp;&#x25BC;     </a>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-    <div class="dropdown-content">
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<!--    <div class="dropdown-content">
       <a href="#" style="color: silver"> Definition         </a>
       <a href="#" style="color: silver"> Consecutive rotations  </a>
       <a href="#" style="color: silver"> Attitude propagation   </a>
       <a href="#" style="color: silver"> Back to Euler, Amy de Butléir </a>
       <a href="#" style="color: silver"> Wertz, wrong element order </a>
-    </div>
-  </li>
-
   <li> <a href="skewed_axes.html"> Skewed axes         </a> </li>
-</ul>
+-->
 
 <span style="color:darkgrey">
 
@@ -135,6 +146,9 @@ and the full 180&deg; slewing range.
 <!------------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  \2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

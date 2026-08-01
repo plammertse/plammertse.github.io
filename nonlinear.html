@@ -15,22 +15,37 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on nonlinear control  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on nonlinear control  </title>
 </head>
 
 
 <!-- NAVIGATION BAR MENU -------------------------------------->
 <body>
 
-<ul>
-  <li> <a href="index.html">             Home         </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="nonlinear.html">   Nonlinear control  </a> </li>
-  <li> <a href="phase_plane.html">     Phase plane    </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!------------------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "phase_plane.html">
+         Phase plane </a>                                  </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Nonlinear control </h2>
 
@@ -94,6 +109,9 @@ We will discuss one of these in the sections on the
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

@@ -12,23 +12,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on Lopes  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on Lopes  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -------------------------------------------------->
-<ul>
-  <li><a href="index.html">                  Home            </a> </li>
-  <li> <a href="exoskeletons.html">   Exoskeletons    &#x25B2</a> </li>
-<!--  <li> <a href="armbot.html">                Armbot          </a> </li>  -->
-  <li> <a style="background-color:#0000B0;"
-          href="lopes.html">                 Lopes           </a> </li>
-<!--  <li> <a href="hands.html">                 Hands           </a> </li> -->
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-- TEXT PAGE ------------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> The LOPES exoskeleton </h2>
 
@@ -37,16 +47,20 @@ The video below shows the final prototype in action.
 </p>
 
 <!-- Video ------------------------------------------------------------>
-<video width="640" autoplay muted controls
-    style="margin-left:80px" >
- type="video/mp4"
-  <source src="video/piet_in_lopes_cropped.mp4">
+<div class = "center">
+<video width = "80%"; autoplay muted controls>
+   <source src =  "video/piet_in_lopes_cropped.mp4";
+           type = "video/mp4">
   Your browser does not support the video tag.
 </video>
+</div>
 
 <!---------------------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

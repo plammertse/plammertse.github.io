@@ -13,23 +13,34 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on sketching </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on sketching </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -------------------------------------------->
-<ul>
-  <li> <a href="index.html">          Home              </a></li>
-  <li> <a style="background-color:#0000B0";
-          href="sketching.html">      Sketching         </a></li>
-  <li> <a href="prototyping.html">    Prototyping       </a></li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-------------------------------------------------------------->
+<nav class="dropdown-menu">
 
-<!-- <h2> <u> SKETCHING </u> </h2>  -->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 <h2> Sketching </h2>
 
 <h4> about sketching </h4>
@@ -315,6 +326,9 @@ to recognize is by making a sine-wave cut,
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

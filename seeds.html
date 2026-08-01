@@ -14,23 +14,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on rotors and seeds  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on rotors and seeds  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR-------------------------------------------->
-<ul>
-  <li> <a href="index.html">        Home              </a> </li>
-  <li> <a href="nature.html">       Nature            </a> </li>
-  <li> <a href="flapping_flight.html">
-                                    Flapping flight   </a> </li>
-  <li> <a style="background-color:#0000B0";
-          href="seeds.html">        Flying seeds  </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-- TEXT PAGE -------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Flying seeds </h2>
 
@@ -47,6 +57,9 @@
 <!-- FOOTER ----------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

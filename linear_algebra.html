@@ -13,23 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on eigenvectors  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on eigenvectors  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li><a href="index.html">           Home            </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-  <li> <a style="background-color:#0000C0;"
-          href="linear_algebra.html"> Linear algebra  </a> </li>
-  <li> <a href="eigenvector.html">   Eigenvectors     </a> </li>
+<nav class="dropdown-menu">
 
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!------------------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Linear algebra </h2>
 
@@ -255,6 +265,9 @@ concept.
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

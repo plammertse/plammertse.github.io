@@ -12,24 +12,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on the Simodont  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on the Simodont  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -------------------------------------------->
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<ul>
-  <li> <a href="index.html">                 Home             </a> </li>
+<nav class="dropdown-menu">
 
-<!--  <li> <a href="haptics.html">&#x25B2;&hairsp;  -->
-  <li> <a href="haptics.html">               Haptics          </a> </li>
-  <li> <a style="background-color:#0000B0;"
-          href="simodont.html">            Simodont     </a> </li>
-</ul>
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
 
-<!-- TEXT ----------------------------------------------------->
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <h2> Simodont </h2>
 
@@ -62,6 +71,9 @@
 <!-- FOOTER ------------------------------------------------------>
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

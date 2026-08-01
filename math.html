@@ -14,34 +14,43 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
   <title>  Piet Lammertse on math </title>
 </head>
 
-<!-- NAVIGATION BAR ------------------------------------------->
-<body>
-
-<ul>
-  <li> <a href="index.html">          Home           </a> </li>
- 
-  <li class="dropdown">
-    <a class="dropbtn"
-       style="background-color:#0000B0;
-       href="javascript:void(0)">   Math	  </a>
-
-    <div class="dropdown-content">
-      <a href="#" style="color: silver">
+<!--      <a href="#" style="color: silver">
                                    Problem solving         </a>
       <a href="#" style="color: silver">
                                    Analytical integrals    </a>
       <a href="#" style="color: silver">
                                    Eigenvectors            </a>
       <a href="quaternion.html">   Quaternions             </a>
-    </div>
-  </li>
+-->
 
-</ul>
+<!-- NAVIGATION BAR ------------------------------------------->
+<body>
 
+<!-- HAMBURGER MENU ------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <!------------------------------------------------------------->
 <h2> Math </h2>
@@ -192,6 +201,9 @@ the road less travelled.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

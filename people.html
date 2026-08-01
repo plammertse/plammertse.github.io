@@ -13,16 +13,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on aircraft people </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on aircraft people </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR--------------------------------------------------->
-<ul>
-  <li> <a href="index.html">           Home                  </a> </li>
+<!-- HAMBURGER MENU ------------------------------------------->
 
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <!-- Alternative captions :
         individuals personalities persons innovators developers
@@ -38,16 +55,7 @@
 <!-- Maybe the rule should be : only if I have something to add . -->
 <!-- Mignet, biographies, bibliographies ??                      -->
 <!-- Cultural diversity, touchy subject !                        -->
-
-
-
-  <!-- PEOPLE -->
-  <li class="dropdown">
-    <a class="dropbtn"
-       style="background-color:#0000C0;"
-       href="javascript:void(0)" >       Personalities    &#x25BC;</a>
-
-    <div class="dropdown-content">
+<!--
       <a href="#" style="color: silver"> The Wright Brothers </a>
       <a href="#" style="color: silver"> Fokker - the creative years </a>
       <a href="#" style="color: silver"> Ludwig Prandtl     </a>
@@ -73,11 +81,7 @@
 
   <li> <a href="case_studies.html"> Case studies </a>
  </li>
-
-</ul>
-
-
-<!------------------------------------------------------------->
+-->
 
 <span style="color:darkgrey">
 
@@ -110,6 +114,9 @@
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

@@ -15,7 +15,8 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
   <title>
        Piet Lammertse on haptics in MRI.
   </title>
@@ -23,16 +24,26 @@
 
 <body>
 
-<!-- BAR MENU ------------------------------------------------->
-<ul>
-  <li><a href="index.html">            Home           </a> </li>
-  <li> <a href="linkages.html">        Linkages       </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="mri.html">             MRI            </a> </li>
-  <li> <a href="wristalyzer.html"> Wristalyzer        </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<!-- TEXT ----------------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <span style = "color : silver"> 
 
@@ -63,20 +74,15 @@
 </p>
 
 <!-- VIDEO ---------------------------------------------------->
+<div class = "center">
 <video controls autoplay muted loop;
-    width="640"; height="auto";
-    style  ="margin-left   : 80px;
-             margin-top    :  8px;
-             margin-bottom :  0px;"; 
-    loop; >
+    width="85%";>
   <source src="video/mri_pushrods_2012.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-<p style= "margin-left   : 300px;
-           margin-top    : 0 px;
-           margin-bottom : 12px;">
-<b><i> MRI compatible shaker (&hairsp;2012&hairsp;).</i></b> </p>
+</div>
+<div class = "caprion">
+<p> <i> MRI compatible shaker (&hairsp;2012&hairsp;).</i> </p>
 
 <p>
 <br> <br>
@@ -105,6 +111,9 @@
 <!-- FOOTER -------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

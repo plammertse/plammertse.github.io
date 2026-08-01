@@ -15,24 +15,33 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on skewed axes </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on skewed axes </title>
 </head>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<body>
 
-<ul>
-  <li> <a href="index.html">          Home            </a> </li>
-  <li> <a href="quaternion.html"> Quaternions         </a> </li>
-  <li> <a style="background-color:#0000B0;
-          href="skewed_axes.html"> Skewed axes        </a> </li>
-  <li> <a href="ADL_gimbal.html">    ADL gimbal       </a> </li>
-</ul>
+<!-- HAMBURGER MENU ------------------------------------------->
 
-<span style="color:darkgrey">
+<nav class="dropdown-menu">
 
-<!-- TEXT ----------------------------------------------------->
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
 <h2> Skewed axes </h2>
 
 <h4> ADL gimbal </h4>
@@ -68,6 +77,9 @@
 <!--------------------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

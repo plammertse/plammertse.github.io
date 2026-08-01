@@ -12,32 +12,40 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on the SAX satellite </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on the SAX satellite </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR -------------------------------------------->
-<ul>
-  <li> <a href="index.html">      Home                 </a> </li>
-
-  <!-- satellite SAX dropdown -->
-  <li class="dropdown">
-    <a class="dropbtn";
-       style="background-color:#0000B0";
-       href="javascript:void(0)" >
-                               The SAX satellite &#x25BC;    </a>
-
-    <div class="dropdown-content">
+<!-- 
       <a style = "color:silver;"
          href="#">    No-gyro control                 </a>
       <a style = "color:silver;"
          href="#">    Kalman filter tuning            </a>
-    </div>   
-  </li>
-</ul>
+-->
 
+<!-- HAMBURGER MENU ------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
 
 <!------------------------------------------------------------->
 
@@ -74,6 +82,9 @@ Sensor fusion.
 <div class="footer">
   <p> P. Lammertse, 2025 </p>
 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>
