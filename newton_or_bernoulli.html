@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : newtono_or_bernoulli.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-03-02 new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING------------------------------------------------>
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on common fallacies </title>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR-------------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li class="dropdown-parent">
+         <a href="index.html">
+               Home </a> </li>
+   </ul>
+</nav>
+
+
+<!------------------------------------------------------------->
+
+<h2> Newton or Bernoulli </h2>
+
+<p> The most common disagreement in aircraft engineering
+is about the "cause" of wing lift.
+</p>
+<p> &emsp;
+ There is a perceived conflict between the "Newtonian"
+and the "Bernoulli" view.
+Of course the contradiction is spurious, because the Bernoulli
+equations are derived directly from Newton's equa&shytions.
+The two are in full accord, and they are both equally accurate.
+</p>
+
+<h4> Newton </h4>
+
+<p> The "Newtonian" view is that a wing generates lift
+ by continuously trampling air down. The lift is generated
+ by the reaction force. 
+ The problem is in determining how much of the surrounding air
+ is influenced by the wing.
+ This is not trivial, but it is well understood
+ ever since the days of Prandlt and Betz.
+ </p>
+ <p> &emsp;
+  The Newtonian view is most enlightening when 
+considering finite wings, including tip losses.
+We might call this 3D flow.
+There are chapters on this website, in particular
+the ones on propellers, which dive deeper into
+this view. These ideas can only be fully appreciated
+by a long, hard look at vortex theory.
+</p>
+
+<h4> Bernoulli </h4>
+
+<p> The "Bernoulli" view is that it is all due to pressure
+ differences between regions of faster and slower local flow.
+ This is of course also true, but finding the velocities
+ around a wing or a streamline body is, again, not trivial.
+</p>
+<p> &emsp;
+ The Bernoulli view is more instructive when looking at
+details of the flow around 2D wing sections
+ (&hairsp;but also fuselages and other
+ streamline bodies&hairsp;).
+ Local pressures and velocities are needed to understand
+boundary layer separation and viscous drag.
+</p>
+<p> &emsp; Both views are needed for a full picture,
+but they never contradict.
+</p>
+
+
+<!-- FOOTER ------------------------------------------------------------>
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
+
+</body>
+</html>
+.
