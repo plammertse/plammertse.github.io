@@ -14,21 +14,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_22.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_24.html">  Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 
 <!-- PAGE HEADER ---------------------------------------------->
@@ -59,18 +70,17 @@
 "<span style="font-variant: small-caps;">Joukowsky</span>" rotor.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="560";
-     style="margin-left:100px";
-     alt="Joukowsky rotor";
-     src="images/prop_spiral_vortex_joukowsky.gif" >
-<p style="margin-left   : 100px;
-          margin-bottom : 12px;">
-    <i> Figure 23.1 : &ensp;
+<div class = "center">
+<img src = "images/prop_spiral_vortex_joukowsky.gif";
+   width = "60%";
+     alt = "Joukowsky rotor"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 23.1 : &ensp;
     Joukowsky rotor : core, bound, and tip vortex
-    of a single "horseshoe". </i>
-</p>
-<!------------------------------------------------------------->
+    of a single "horseshoe". </i </p>
+</div>
 
 <p> Both the bound vortex and the root vortex
  (&hairsp;i.e. the inner tip vortex&hairsp;) are straight lines,
@@ -128,7 +138,7 @@
  force (21.3), this axial thrust is :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>T</mi>
 
@@ -165,7 +175,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi>
 
@@ -200,6 +210,7 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style = "break-before:page"> </div>
 
 <!-- SECTION -------------------------------------------------->
 
@@ -210,7 +221,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi> <mn>&hairsp;&prime;</mn>
 
@@ -268,7 +279,7 @@
 <p/>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi> <mn>&hairsp;&prime;</mn>
 
@@ -292,7 +303,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
 
@@ -314,7 +325,7 @@
 <p> This changes (23.4) to :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi> <mn>&hairsp;&prime;</mn>
 
@@ -365,17 +376,16 @@
  and uniform inside the coil, and zero outside it. 
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:180px";
-     alt="Solenoid";
-     src="images/prop_solenoid_magnetic_field.jpg" >
-<p style="margin-left   : 160px;
-          margin-bottom : 12px;">
-    <i> Figure 23.2 : &ensp;
-        Magnetic field lines inside and outside a solenoid. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_solenoid_magnetic_field.jpg";
+   width = "50%";
+     alt = "Solenoid"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 23.2 : &ensp;
+        Magnetic field lines inside and outside a solenoid. </i> </p>
+</div>
 
 <p> We are going to use the solenoid as an analog
  for the spiral vortices wound around a flow tube.
@@ -384,7 +394,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Gamma;</mi>
   <mspace/> <mn>&emsp;&harr;&emsp;</mn> <mspace/>
@@ -399,7 +409,7 @@
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>v</mi>
   <mspace/>  <mn>&emsp;&harr;&emsp;</mn>  <mspace/>
@@ -417,7 +427,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -435,6 +445,8 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style = "break-before:page"> </div>
+
 <p> The direct derivation by the law of
  <span style="font-variant: small-caps;"> Biot-Savart</span>
  is relatively straightforward,
@@ -451,7 +463,7 @@
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>s</mi>
 
@@ -474,7 +486,7 @@
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -503,7 +515,7 @@
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -539,7 +551,7 @@
 <p> With (23.6) we have :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -623,7 +635,7 @@ turns" per length&hairsp;).
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
 
@@ -681,7 +693,7 @@ turns" per length&hairsp;).
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
 
@@ -714,8 +726,11 @@ turns" per length&hairsp;).
 </p>
 
 <!-- FOOTER ------------------------------------------------------->
-<br> <br>
+<br> <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

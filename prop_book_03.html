@@ -21,44 +21,25 @@
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
+<!-- TOP NAV BAR  --------------------------------------------->
+
 <nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
    <ul>
-      <li class="dropdown-parent">
-         <a href="index.html">
-               Home </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_02.html">
-               &#x25C4 Previous </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_00_TOC.html">
-               TOC  &#x25BC </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_04_TOC.html">
-               Next  &#x25BA </a> </li>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
    </ul>
 </nav>
 
-
 <!-- TEXT PAGE ------------------------------------------------>
-
-
-<!--- PAGE HEADER - FIRST PAGE ONLY FOR NOW ------------------->
-<!-- top, right, bottom, left -->
-<!--
-<p style  = "text-align : center;
-   padding : 0 0 0 0;">
-      <i> INTRODUCTION </i> </p>
-<hr>
--->
-<!-- This should give a header on every PDF page,
-     but it overlaps the text -->
-<div class="header">
-<p> Introduction </p>
-<hr>
-</div>
-
-
 
 <!-- CHAPTER 3 ------------------------------------------------>
 <h2> 3 &emsp; Thrust, power and efficiency                 </h2>
@@ -79,8 +60,8 @@
  This is especially useful when applying the propeller in an aircraft :
 </p>
 
-<!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>C</mi> <mi>T </mi> </msub>
  <mspace/> <mo> ≡ </mo> <mspace/>
@@ -97,7 +78,7 @@
 
 <td style="width:50px; text-align:right">                 (3.1)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
+
 
 <p>&emsp;
 This definition is based on <i>V</i> instead of on
@@ -124,7 +105,7 @@ This definition is based on <i>V</i> instead of on
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi> <mi>&hairsp;&prime;</mi>
  <mspace/> <mo> ≡ </mo> <mspace/>
@@ -149,7 +130,7 @@ It follows that :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi> <mi>&hairsp;&prime;</mi>
   <mspace/> <mo> = </mo> <mspace/>
@@ -166,7 +147,7 @@ It follows that :
  <i>V</i>&hairsp;<sup>2</sup> :
 </p>
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>P</mi> <mi>&hairsp;&prime;</mi>
  <mspace/> <mo> ≡ </mo> <mspace/>
@@ -204,7 +185,7 @@ It follows that :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>P</mi> <mspace/> <mo>=</mo> <mi>T</mi> <mo>.</mo> <mi>V</mi>
 </math>
@@ -218,7 +199,7 @@ It follows that :
 </p>
 
 <!-- EQUATION -------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 
 <math>
   <mi>T</mi> <mi>&hairsp;&prime;</mi>
@@ -290,7 +271,7 @@ The propeller's efficiency then becomes :
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td> <math>
+<table class = "equation"> <tr> <td> <math>
   <mi>η</mi>
 
   <mspace/> <mo>&equiv;</mo> <mspace/>
@@ -325,7 +306,7 @@ The propeller's efficiency then becomes :
 </p>
 
 <!-- equation table --------------------------------------------->
-<table> <tr> <td> <math>
+<table class = "equation"> <tr> <td> <math>
   <mi>η</mi> <mspace style="width:1ex"/>  <mo>=</mo> 
 
   <mstyle displaystyle="true"> 
@@ -365,7 +346,7 @@ The propeller's efficiency then becomes :
 </p>
 
 <!-- equation table ------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -385,7 +366,7 @@ The propeller's efficiency then becomes :
 
 
 <!-- equation table ------------------------------------------->
-<table> <tr> <td> <math>
+<table class = "equation"> <tr> <td> <math>
   <mspace/> 
   <mi>η</mi>
   <mspace/>  <mspace/> <mo>=</mo> <mspace/> <mspace/> 
@@ -461,6 +442,9 @@ for a given thrust.
       <a href="prop_book_04_TOC.html"> next </a>
    </span>
  </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 
 </body>

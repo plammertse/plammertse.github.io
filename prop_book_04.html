@@ -20,21 +20,21 @@
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
+<!-- TOP NAV BAR  --------------------------------------------->
+
 <nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
    <ul>
-      <li class="dropdown-parent">
-         <a href="index.html">
-               Home </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_04_TOC.html">
-               &#x25C4 Previous </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_00_TOC.html">
-               TOC  &#x25BC </a> </li>
-      <li class="dropdown-parent">
-         <a href="prop_book_05.html">
-               Next  &#x25BA </a> </li>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
    </ul>
 </nav>
 
@@ -68,23 +68,25 @@
  exerting a uniform pressure on the air,
  and accelerating the flow tube to a uniform velocity.
  This idea is called the "actuator disk".
-
 </p>
 <p>&emsp; Figure 4.1 shows an actuator disk, halfway the length of a solid 
  streamline tube. Later chapters will fill in the disk with more detail.
 </p>
 
 <!-- ACTUATOR DISK -------------------------------------------->
-<img  width="600";
-     style="margin-left:120px";
-     alt="Actuator tube";
-     src="images/prop_actuator_tube.png" >
-<p style="margin-left   :220px;
-          margin-bottom : 12px;">
-    <i> Figure 2.1 : &ensp; Actuator disk and flow tube. </i> 
+<div class = "center">
+<img src = "images/prop_actuator_tube.png" ;
+   width = "80%";
+   alt   = "Actuator tube"; >
+</div>
+
+<div class = "caption">
+   <p> <i> Figure 2.1 : &ensp; Actuator disk and flow tube. </i> </p>
+</div>
 <!------------------------------------------------------------->
 
-<p>&emsp; In the stationary frame of reference, 
+<p>&emsp; 
+ In the stationary frame of reference, 
  the disk moves forward through the air at the flying speed. It
  exerts a small push force to the rear on the air passing through it.
  The acceleration of the air 
@@ -803,13 +805,16 @@ in the thrust loading,
 <br> <br>
 <div class = "footer">
    <span style="float:left">
-      <a href="prop_book_04_TOC.html"> previous </a>
+      <a href="prop_book_03_TOC.html"> previous </a>
    </span>
       P. Lammertse, 2026
    <span style="float:right">
-      <a href="prop_book_06.html"> next </a>
+      <a href="prop_book_05.html"> next </a>
    </span>
- </div>
+</div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

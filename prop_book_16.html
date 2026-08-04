@@ -14,21 +14,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_15.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_17_TOC.html">  Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -130,7 +140,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </msub>
 
@@ -159,7 +169,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -201,6 +211,8 @@ Formally, we can write (15.21) as :
  give us simpler and more accurate results.
 </p>
 
+<div style = "break-before:page"> </div>
+
 <!-- SECTION 16.4 --------------------------------------------->
 
 <h4> 16.4 &emsp; The combined marginal loss </h4>
@@ -211,7 +223,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -286,7 +298,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -361,18 +373,17 @@ Formally, we can write (15.21) as :
  should improve the efficiency. 
 </p>
 
-<!-- COMBINED VISCOUS LOCAL LOSS DIAGRAM ---------------------->
-<img  width="560";
-     style="margin-left:160px";
-     alt="Viscous loss diagram";
-     src="images/prop_viscous_combined_marginal_loss_non_optimized.gif" >
+<div class = "center">
+<img src = "images/prop_viscous_combined_marginal_loss_non_optimized.gif";
+   width = "70%";
+     alt = "Viscous loss diagram"; >
+</div>
+<div class = "caption">
+<p> <i> Figure 16.1 : &ensp; The combined marginal loss (16.4) in the
+         rotationally optimal propeller. </i> </p>
+</div>
 
-<p style="margin-left   :120px;
-          margin-bottom : 12px;">
-    <i> Figure 16.1 : &ensp; The combined marginal loss (16.4) in the
- rotationally optimal propeller.
- </i> 
-<!------------------------------------------------------------->
+<div style = "break-before:page"> </div>
 
 <!-- SECTION 16.5 --------------------------------------------->
 
@@ -386,7 +397,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -427,11 +438,12 @@ Formally, we can write (15.21) as :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+
 <p> With (16.3) this gives :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
   <mstyle displaystyle="true">
   <mfrac>
@@ -466,7 +478,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>(</mn> <mi>x</mi>  <mn>)</mn>
@@ -496,7 +508,7 @@ Formally, we can write (15.21) as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>(</mn> <mi>x</mi>  <mn>)</mn>
@@ -557,7 +569,7 @@ for the same thrust, <i>A</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>T</mi> <mn>&thinsp;&prime;</mn>
@@ -605,7 +617,7 @@ for the same thrust, <i>A</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>T</mi> <mn>&thinsp;&prime;</mn>
@@ -630,7 +642,7 @@ for the same thrust, <i>A</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>A</mi>
@@ -660,7 +672,7 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>&thinsp;(</mn> <mi>x</mi> <mn>)</mn>
@@ -707,6 +719,8 @@ Substituting  this into (16.7) gives the optimal
  but first we look at the two components of the marginal loss.
 </p>
 
+<div style = "break-before:page"> </div>
+
 <!-- SECTION 16.7 --------------------------------------------->
 
 <h4> 16.7 &emsp; 
@@ -721,7 +735,7 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mstyle displaystyle="true">
@@ -788,17 +802,15 @@ Substituting  this into (16.7) gives the optimal
  a momentum loss varying with the radius.
 </p>
 
-<!-- COMBINED LOCAL LOSS DIAGRAM ------------------------------>
-<img  width="540";
-     style="margin-left:160px";
-     alt="Viscous loss diagram";
-     src="images/prop_viscous_combined_marginal_loss_optimized.gif" >
-
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 16.2 : &ensp;
-           Constant combined marginal loss, optimized by (16.3).
- </i> 
+<div class = "center">
+<img src = "images/prop_viscous_combined_marginal_loss_optimized.gif";
+   width = "70%";
+     alt = "Viscous loss diagram"; >
+</div>
+<div class = "caption">
+<p> <i> Figure 16.2 : &ensp;
+        Constant combined marginal loss, optimized by (16.3). </i> </p>
+ </div>
 <!------------------------------------------------------------->
 
 <!-- SECTION 16.8 --------------------------------------------->
@@ -813,7 +825,7 @@ Substituting  this into (16.7) gives the optimal
  into the generic momentum loss (8.4) gives :
 </p>
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mstyle displaystyle="true">
@@ -912,18 +924,16 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 
-<!-- COMBINED LOCAL OPTIMIZED --------------------------------->
-<img  width="580";
-     style="margin-left:140px";
-     alt="Viscous loss diagram";
-     src="images/prop_viscous_combined_local_loss_optimized.gif" >
+<div class = "center">
+<img src = "images/prop_viscous_combined_local_loss_optimized.gif";
+   width = "70%";
+     alt = "Viscous loss diagram"; >
+</div>
 
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 16.3 : &ensp;
- Combined local loss, optimized by (16.3).
- </i> 
-<!------------------------------------------------------------->
+<div class = "caption">
+<p> <i> Figure 16.3 : &ensp;
+ Combined local loss, optimized by (16.3). </i> </p>
+ </div>
 
 
 <!-- SECTION 16.9 --------------------------------------------->
@@ -943,7 +953,7 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>&thinsp;(</mn> <mi>x</mi> <mn>)</mn>
@@ -1012,7 +1022,7 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>x</mi>
@@ -1062,7 +1072,7 @@ This is just over two thirds of the prop radius,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>&thinsp;(</mn> <mi>X</mi> <mn>)</mn>
@@ -1124,7 +1134,7 @@ This is just over two thirds of the prop radius,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <mi>b</mi> <mn>&thinsp;(</mn> <mi>X</mi> <mn>)</mn>
@@ -1160,22 +1170,21 @@ This is just over two thirds of the prop radius,
 </p>
 
 
-<!-- COMBINED VISCOUS LOCAL LOSS DIAGRAM ---------------------->
-<img  width="500";
-     style="margin-left:160px";
-     alt="Viscous loss diagram";
-     src="images/prop_viscous_combined_varying_epsilon.gif" >
+<div class = "center">
+<img src = "images/prop_viscous_combined_varying_epsilon.gif";
+   width = "60%";
+     alt = "Viscous loss diagram"; >
+</div>
 
-<p style="margin-left   :120px;
-          margin-bottom : 0">
-    <i> Figure 16.4 : &ensp; Thrust distribution after viscous optimization (16.12).
- </i> 
-<p style="margin-left   :240px;
-          margin-bottom : 12px;">
-    <i> T&prime; = 0.1.  Red : &epsilon; = 0.  Blue : &epsilon; = 0.02. 
- </i> 
-<!------------------------------------------------------------->
+<div class = "caption">
+<p> <i> Figure 16.4 : &ensp; Thrust distribution
+         after viscous optimization (16.12). </i> </p>
+</div>
 
+<div class = "caption">
+<p> <i> T&prime; = 0.1.  Red : &epsilon; = 0.  
+         Blue : &epsilon; = 0.02. </i> </p>
+</div>
 
 <!-- SECTION 16.10 -------------------------------------------->
 
@@ -1208,7 +1217,7 @@ This is just over two thirds of the prop radius,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <msub> <mi>P</mi> <mn>v</mn>  </msub> <mn>&thinsp;&prime; </mn>
@@ -1278,7 +1287,7 @@ This is just over two thirds of the prop radius,
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math> 
 
   <msub> <mi>P</mi> <mn>v</mn>  </msub> <mn>&thinsp;&prime; </mn>
@@ -1354,6 +1363,9 @@ This is just over two thirds of the prop radius,
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

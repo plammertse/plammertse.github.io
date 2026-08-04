@@ -13,21 +13,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_19.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_21_TOC.html">   Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -67,7 +78,7 @@ With
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td style="padding-top : 4px;">
+<table class = "equation"> <tr> <td style="padding-top : 4px;">
 <math>
   <mi>G</mi> <mn>&thinsp;&prime;</mn>
   <mn>(</mn> <mi>x</mi> <mn>)</mn> 
@@ -132,19 +143,20 @@ With
 </p>
 -->
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="720";
-     style="margin-left : 50px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_prandtl_tips_x_with_cos2.gif" >
+<div class = "center">
+<img src = "images/prop_prandtl_tips_x_with_cos2.gif";
+   width = "85%";
+     alt = "Tip sketch Prandtl"; >
+</div>
+
+<div class = "caption">
 <p style="margin-left   : 200px;
           margin-bottom :  12px;">
     <i> Figure 20.1 : &ensp;
        <span style="font-variant: small-caps;">Prandtl</span>'s
  tip shape and cos<sup>2&hairsp;</sup>&phi; on the x scale.
  </i> 
-<!------------------------------------------------------------->
+</div>
 
 
 <!-- SECTION -------------------------------------------------->
@@ -189,20 +201,19 @@ With
 </p>
 -->
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="720";
-     style="margin-left : 60px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_prandtl_with_rotation_x.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 20.2 : &ensp;
+<div class = "center">
+<img src = "images/prop_prandtl_with_rotation_x.gif";
+   width = "80%";
+     alt = "Tip sketch Prandtl"; >
+</div>
+
+<div class = "center">
+<p> <i> Figure 20.2 : &ensp;
        <span style="font-variant: small-caps;">Prandtl</span>'s
  tip shape combined with cos<sup>2&hairsp;</sup>&phi;.
- </i> 
-<!------------------------------------------------------------->
-
+ </i>  </p>
+ </div>
+ 
 <!-- SECTION -------------------------------------------------->
 
 <a name="20.3"</a>
@@ -222,7 +233,7 @@ With
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>&kappa;</mi>
     <mn>G&hairsp;&prime;</mn> </msub>
@@ -271,7 +282,7 @@ With
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>&kappa;</mi>
     <mn>G&hairsp;&prime;</mn> </msub>
@@ -334,7 +345,7 @@ by the inverse of the overall thrust loss factor
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -382,17 +393,17 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
 -->
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img width="580" alt="Cos2.F normalized";
-     style="margin-left :120px;
-            margin-top  : -2px;"
-      src="images/prop_prandtl_with_rotation_x_inflated_TEMP.gif">
-<p style="margin-left   : 120px;
-          margin-bottom :  12px">
-    <i> Figure 20.4 : &ensp;
+<div class = "center">
+<img src = "images/prop_prandtl_with_rotation_x_inflated_TEMP.gif";
+   width = "65%";
+   alt   = "Cos2.F normalized"; >
+</div>
+   
+<div class = "caption">
+<p> <i> Figure 20.4 : &ensp;
        Optimal local thrust for normalized overall thrust, with tip loss. 
-</i> </p>
-<!------------------------------------------------------------->
+   </i> </p>
+</div>
 
 <span style="color:darkgrey">
 
@@ -413,7 +424,7 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <<mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
 
@@ -466,6 +477,9 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

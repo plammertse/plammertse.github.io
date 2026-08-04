@@ -14,21 +14,30 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on propeller theory </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_23.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_25.html">       Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -64,17 +73,16 @@
 </p>
 
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px";
-     alt="Multiplane";
-     src="images/prop_multiplane_downwash.gif" >
-<p style="margin-left   : 160px;
-          margin-bottom : 12px;">
-    <i> Figure 24.1 : &ensp;
-               The downwash of an infinite multiplane wing. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_multiplane_downwash.gif";
+   width = "50%";
+     alt = "Multiplane"; >
+</div>
+     
+<div class = "center">
+<p> <i> Figure 24.1 : &ensp;
+        The downwash of an infinite multiplane wing. </i> </p>
+</div>
 
 <p>&emsp;
  The tip vortices in the two vertical tip planes
@@ -155,6 +163,8 @@
  in all design texts. 
 </p>
 
+<div style = "break-before:page"> </div>
+
 <!-- SECTION -------------------------------------------------->
 
 <h4> 24.3 &emsp; Lerbs's solution                          </h4>
@@ -222,7 +232,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>v</mi>
   <mn>&thinsp;(</mn>
@@ -282,7 +292,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -358,7 +368,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -437,17 +447,16 @@
  action of any ring inside it.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="500";
-     style="margin-left:160px";
-     alt="Multiplane";
-     src="images/prop_lerbs_induction.gif" >
-<p style="margin-left   : 120px;
-          margin-bottom : 12px;">
-    <i> Figure 24.2 : &ensp;
-      Lerbs's axial induction in x, from B spiral vortices. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_lerbs_induction.gif";
+   width = "65%";
+     alt = "Lerb"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 24.2 : &ensp;
+      Lerbs's axial induction in x, from B spiral vortices. </i> </p>
+</div>
 
 <p>&emsp;
  Like in
@@ -524,7 +533,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table>
+<table class = "equation">
 <tr> <td>
 <math>
   <mi>&theta;</mi>
@@ -546,7 +555,7 @@
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:6px">
+<table class = "equation"; style="margin-top:6px">
 <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>t</mn> </msub>
@@ -574,7 +583,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table>
+<table class = "equation">
 <tr> <td>
 <math>
   <mi>&phi;</mi>
@@ -597,7 +606,7 @@
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:6px">
+<table class = "equation"; style="margin-top:6px">
 <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>w</mn> </msub>
@@ -620,6 +629,8 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style = "break-before:page"> </div>
+
 <p> This places the downwash (&hairsp;and bound vortex&hairsp;)
  control points halfway between
  the trailing vortex radius points, giving N control points
@@ -634,17 +645,16 @@
 </p>
 
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:220px";
-     alt="Multiplane";
-     src="images/prop_full_cosine_blade.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom : 12px;">
-    <i> Figure 24.2 : &ensp;
-         Full cosine distribution in the propeller. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_full_cosine_blade.gif";
+   width = "50%";
+     alt = "Full cosine"; >
+</div>
+     
+<div class = "caption">
+<p> <i> Figure 24.2 : &ensp;
+         Full cosine distribution in the propeller. </i> </p>
+</div>
 
 
 <!-- SECTION -------------------------------------------------->
@@ -660,7 +670,7 @@ into an influence matrix <i>A</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>A</mi>
   <mn>&thinsp;(</mn>
@@ -700,7 +710,7 @@ into an influence matrix <i>A</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">        <!-- !!!!!!!!!!!!!!! -->
 
@@ -725,7 +735,7 @@ into an influence matrix <i>A</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">
 
@@ -774,6 +784,9 @@ into an influence matrix <i>A</i> :
  do not "see" each other,
  and they cannot be derived from each other.
 </p>
+
+<div style = "break-before:page"> </div>
+
 <p>&emsp;
  Omitting the last column of the matrix <b><i>A</i></b>
  leaves only N trailing vortices, to match
@@ -787,7 +800,7 @@ into an influence matrix <i>A</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn>
     <msub> <mi>&Gamma;</mi> <mn>N</mn> </msub>
@@ -821,17 +834,16 @@ The root vortex value is redundant.
  of the matrix equation.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:220px";
-     alt="Multiplane";
-     src="images/prop_matrix_N_N.gif" >
-<p style="margin-left   : 220px;
-          margin-bottom : 12px;">
-    <i> Figure 24.4 : &ensp;
-         The transfer matrix <b>A</b> in the propeller. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_matrix_N_N.gif";
+   width = "50%";
+     alt = "Prop N-N"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 24.4 : &ensp;
+         The transfer matrix <b>A</b> in the propeller. </i> </p>
+</div>
 
 
 <!-- SECTION -------------------------------------------------->
@@ -844,7 +856,7 @@ The root vortex value is redundant.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>&Gamma;</mi> <mn>k+1</mn> </msub>
   <mspace/> <mo>=</mo> <mspace/>
@@ -902,7 +914,7 @@ The root vortex value is redundant.
 </span>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>T</mi>
 
@@ -934,6 +946,9 @@ The root vortex value is redundant.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

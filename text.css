@@ -40,9 +40,9 @@ p {
 /* font-size : 16px;  already the default, I think */
 }
 
-/* all hyperlinks darker blue */
+/* all hyperlinks darker blue (see also .crossref) */
 a {
-   color      : #000040;    /* #000080  */
+   color     : */  #000040;    /* #000080  */
 }
 
 /* line spacing + indent for header         */
@@ -62,12 +62,21 @@ h4 {     /* default font desktop/tablet 20/18 */
   margin     : 2px 32px;
   margin-top : 12px;
 }
+
 h5, h6 {
   font-family : Arial, Helvetica, sans-serif;
   font-size  : 16px;
   font-weight: normal;
   margin     : 2px 32px;
   margin-top : 8px;
+}
+
+a h3 {
+   color      : #000040;    /* #000080  */
+}
+
+a h4 {
+   color      : #000040;    /* #000080  */
 }
 
 /* horizontal rulers are text width */
@@ -115,12 +124,12 @@ table {
    /* background-color : silver;  */  /* temporary test */
 }
 
-/* fit-in equations and equation numbers */
-/*table { */
+/* fit equations and equation numbers in a table   */
 .equation {
    width         : min( 90%, 775px);
    margin-left   : min(  4%,  24px);
-   /*padding-right : 36px;*/  /* equation numbers */
+   /* padding-right : 36px;                        */
+   /* use margin-right in column with eq. numbers  */
 }
 
 /* table content (rows) spaced a little more       */
@@ -132,14 +141,23 @@ td {
    for propeller TOC */
 .column {
   float        : left;
-  /* surprisingly, this stacks responsive :         */
-  width        : 400px;            /* half of 800   */
+  /* surprisingly, this stacks responsive :        */
+  width        : 400px;            /* half of 800  */
 /* this does not stack : */  
 /*  width      : min( 50%, 400px); */
   padding-left : 16px;
 }
 
-/* Use in a <div> around figures, margin above      */
+/* Use in <a> referring to sections and equations  */
+.crossref {
+   color            : #145680;      /* #000080     */
+   text-decoration  : none;
+   background-color : #F3F4F9;      /* light gray  */
+   padding-left     : 3px;
+   padding-right    : 3px;
+}
+
+/* Use in a <div> around figures, has margin above */
 .center {
    display         : flex;
    justify-content : center;

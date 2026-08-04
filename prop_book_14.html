@@ -14,22 +14,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_14_TOC.html">&#x25C4
-                                            Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_15.html">  Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -81,16 +91,16 @@
  numbers. These are best solved by numerical methods.
 </p>
 
-<!-- SLIDING BLOCK -------------------------------------------->
-<img  width="260";
-     style="margin-left:260px";
-     alt="Sliding block";
-     src="images/prop_viscous_weight.gif" >
-<p style="margin-left   :220px;
-          margin-bottom : 12px;">
-    <i> Figure 14.1 : &ensp; 
-            Horizontal force pushing a block up a slope. </i> 
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_viscous_weight.gif";
+   width = "35%";
+     alt = "Sliding block"; >
+</div>
+
+<div class = "caption">
+<p <i> Figure 14.1 : &ensp; 
+         Horizontal force pushing a block up a slope. </i> </p>
+</div>
 
 <p>&emsp; Figure 14.1 shows a horizontal force
  pushing a block up a slope.
@@ -134,7 +144,8 @@
  where the load applies,
  and on the local friction coefficient.
 </p>
-<p>
+
+<div style = "break-before:page"> </div>
 
 <!-- SECTION 14.2 --------------------------------------------->
 <h4> 14.2 &emsp; Leadscrew efficiency </h4>
@@ -152,16 +163,16 @@
  for <i>&phi;</i>.
 </p>
 
-<!-- VISCOUS FORCE DIAGRAM ------------------------------------>
-<img  width="400";
-     style="margin-left:220px";
-     alt="Viscous force diagram";
-     src="images/prop_viscous_force_diagram.gif" >
-<p style="margin-left   :180px;
-          margin-bottom : 12px;">
-    <i> Figure 14.2 : &ensp; 
-            Thrust and torque on a blade element. </i> 
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_viscous_force_diagram.gif";
+   width = "50%";
+   alt   = "Viscous force diagram"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 14.2 : &ensp; 
+         Thrust and torque on a blade element. </i> </p>
+</div>
 
 <p> The forward velocity of the airplane is <i>V</i>,
  and the propeller rate of rotation is <i>&Omega;</i> 
@@ -182,7 +193,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>tan</mo> <mi>&epsilon;</mi>
 
@@ -210,9 +221,10 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
  and the tangential force d<i>S</i>,
  the "d" prefix meaning "for a ring" as in (6.1).
  From figure 14.2 we have :
+ </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>T</mi>
 
@@ -234,7 +246,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:4px;">
+<table  class = "equation"; style="margin-top:4px;">
 <tr> <td>
 <math>
   <mn>d</mn> <mi>S</mi>
@@ -261,7 +273,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
 
@@ -286,7 +298,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
  at radius <i>r</i>&thinsp; the torque <i>Q</i> is :
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>Q</mi>
 
@@ -311,7 +323,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>Q</mi> <mo>.</mo> <mi>&Omega;</mi>
 
@@ -335,13 +347,12 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 </td> </tr> </table>
 <!-- END EQUATION -------------------------------------------------->
 
-<p>
-The viscous efficiency of the blade element is net output power
+<p> The viscous efficiency of the blade element is net output power
  over shaft input power : 
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
 
@@ -391,12 +402,14 @@ The viscous efficiency of the blade element is net output power
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style = "break-before:page"> </div>
+
 <p> With  tan <i>&phi;</i> = 
  <i>V&thinsp;/&thinsp;Ω&hairsp;r</i>, we have :
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
 
@@ -431,19 +444,22 @@ The viscous efficiency of the blade element is net output power
  the efficiency becomes zero.
  The leadscrew seizes, or "locks up".
 </p>
+
 <p>&emsp;  In propellers, this condition occurs close to the hub.
  We will ignore it, and analyze the efficiency only for moderate
  angles of <i>&phi;</i> and small angles of <i>&epsilon;</i>.
-
 </p>
+
 <!-- SECTION 14.3 --------------------------------------------->
+
 <h4> 14.3 &emsp; The viscous loss ratio </h4>
+
 <p> We can find the local power loss ratio from the viscous efficiency.
  Equating (14.8) to the efficiency definition of (3.8) we have :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
 
   <mstyle displaystyle="true">
@@ -483,7 +499,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
 
   <mstyle displaystyle="true">
@@ -546,7 +562,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&mu;</mi>  <mn>(</mn> <mi>&phi;</mi>  <mn>)</mn> 
 
@@ -575,16 +591,16 @@ The viscous efficiency of the blade element is net output power
  </p>
 
 
-<!-- IMAGE MU ( PHI ) ----------------------------------------->
-<img  width="480";
-     style="margin-left:180px";
-     alt="Viscous mu(phi)";
-     src="images/prop_viscous_mu_phi.gif" >
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 14.3 : &ensp; 
-            The local leadscrew loss ratio &mu;(&phi;). </i> 
-<!------------------------------------------------------------->
+<div class = "center">
+<img src ="images/prop_viscous_mu_phi.gif";
+   width = "60%";
+   alt   = "Viscous mu(phi)"; >
+</div>
+
+<div class = "center">
+<p> <i> Figure 14.3 : &ensp; 
+         The local leadscrew loss ratio &mu;(&phi;). </i> </p> 
+</div>
 
 <p>&emsp; The viscous efficiency is optimal for a pitch angle of
  (&hairsp;45&deg; - &frac12;&thinsp;<i>&epsilon;</i>&thinsp;).
@@ -609,6 +625,8 @@ The viscous efficiency of the blade element is net output power
  in fact use exactly this arrangement.
 
 
+<div style = "break-before:page"> </div>
+
 <!-- SECTION 14.4 --------------------------------------------->
 
 <h4> 14.4 &emsp; A near-perfect approximation </h4>
@@ -625,7 +643,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
  <mo>tan</mo>
    <mn>(</mn>
@@ -660,7 +678,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -700,7 +718,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -725,7 +743,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -759,16 +777,16 @@ The viscous efficiency of the blade element is net output power
  as&nbsp;a&nbsp;dashed line.
 </p>
 
-<!-- IMAGE MU ( x ) ------------------------------------------->
-<img  width="600";
-     style="margin-left:100px";
-     alt="Viscous mu(x)";
-     src="images/prop_viscous_mu_x.gif" >
-<p style="margin-left   :180px;
-          margin-bottom : 12px;">
-    <i> Figure 14.4 : &ensp; 
-            The local leadscrew loss ratio &mu;(x). </i>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_viscous_mu_x.gif";
+   width = "60%";
+   alt   = "Viscous mu(x)"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 14.4 : &ensp; 
+        The local leadscrew loss ratio &mu;(x). </i> </p>
+</div>
 
 <p> For all but the smallest values of <i>x</i>,
  i.e. for all pitch angles except  <i>&phi;</i> ≅ 90&deg;,
@@ -783,7 +801,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&mu;</mi>  <mn>&hairsp;(</mn> <mi>x</mi>  <mn>)</mn> 
 
@@ -809,6 +827,8 @@ The viscous efficiency of the blade element is net output power
  In the same way, a small friction force becomes a large drag force.
 </p>
 
+<div style = "break-before:page"> </div>
+
 <!-- SECTION 14.5 --------------------------------------------->
 <h4> 14.5 &emsp; Vector derivation of the same approximation </h4>
 
@@ -824,7 +844,7 @@ The viscous efficiency of the blade element is net output power
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
 
@@ -858,7 +878,7 @@ The viscous efficiency of the blade element is net output power
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
 
@@ -901,7 +921,7 @@ The viscous efficiency of the blade element is net output power
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn>
   <msub> <mi>P</mi> <mn>v</mn> </msub>
@@ -925,7 +945,7 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -980,7 +1000,7 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -1059,6 +1079,9 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

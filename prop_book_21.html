@@ -14,21 +14,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                Home      </a> </li>
-  <li> <a href="prop_book_21_TOC.html">&#x25C4 Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_22.html">        Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 <!--- PAGE HEADER --------------------------------------------->
 <p style="margin-left : 320px">  <i> VORTEX THEORY </i> </p>
@@ -104,7 +115,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Gamma;</mi>  <mspace/> <mo>&equiv;</mo> <mspace/>
   <mn>2&hairsp;&pi;</mn>
@@ -120,7 +131,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>v</mi>  <mspace/> <mo>&equiv;</mo> <mspace/>
   <mstyle displaystyle="true">
@@ -141,19 +152,18 @@
  This makes the concept very clean, but it complicates the math.
 </p>
 
-<!-- FIGURE  ------------------------------------------------->
-<img  width="300";
-     style="margin-left:250px";
-     alt="Actuator tube";
-     src="images/prop_vortex_2D.webp" >
-<p style="margin-left   :250px;
-          margin-bottom : 12px;">
-    <i> Figure 21.1 : &ensp;
-                     The vertical velocity around a vortex. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_vortex_2D.webp";
+   width = "35%";
+     alt = "Actuator tube"; >
+</div>
 
+<div class = "center">
+<p> <i> Figure 21.1 : &ensp;
+        The vertical velocity around a vortex. </i></p>
+</div>
 
+<div style = "break-before:page"> </div>
 
 <!------------------------------------------------------------->
 
@@ -200,24 +210,23 @@
  but it is not caused by the vortex around the lifting line.
 </p>
 
-<!-- FIGURE  ------------------------------------------------->
-<img  width="360";
-     style="margin-left:250px";
-     alt="Actuator tube";
-     src="images/prop_naca_curved_blade_lift.webp" >
-<p style="margin-left   :250px;
-          margin-bottom : 12px;">
-    <i> Figure 21.2 : &ensp;
-           The lift on a vortex placed in a parallel flow. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_naca_curved_blade_lift.webp";
+   width = "35%";
+     alt = "Actuator tube"; >
+</div>
+
+<div class = "caption">     
+<p> <i> Figure 21.2 : &ensp;
+       The lift on a vortex placed in a parallel flow. </i> </p>
+</div>
 
 <p> The force per unit length of vortex follows
  from the remarkably simple equation :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>F</mi>
   <mspace/> <mo>=</mo> <mspace/> 
@@ -239,6 +248,8 @@
  is the analog of the local airflow.
 </p>
 
+<div style = "break-before:page"> </div>
+
 <!------------------------------------------------------------->
 
 <h4> 21.4 &emsp; The horseshoe vortex </h4>
@@ -255,17 +266,17 @@
  but sharply kinked.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="600";
-     style="margin-left:120px";
-     alt="Actuator tube";
-     src="images/prop_junkers_tip_vortices.webp" >
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 21.3 : &ensp;
-           The horseshoe vortex for a constant lifting line. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_junkers_tip_vortices.webp";
+   width = "75%";
+     alt = "Actuator tube"; >
+</div> 
+
+<div class = "caption">    
+<p> <i> Figure 21.3 : &ensp;
+           The horseshoe vortex for a constant lifting line. </i> </p>
+</div>
+
 
 <p> The physical wing is represented by the crosswind section
  of the vortex, shown in red in the picture.
@@ -281,7 +292,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn> <mi>L</mi>
   <mspace/> <mo>=</mo> <mspace/> 
@@ -320,6 +331,9 @@
  as shown in the wake cross-section in figure 21.3.
 </p>
 
+<div style = "break-before:page"> </div>
+
+
 <!-- SECTION -------------------------------------------------->
 
 <h4> 21.5 &emsp; 
@@ -330,7 +344,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
   <mspace/> <mo>=</mo> <mspace/> 
@@ -372,7 +386,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>d&hairsp;</mn><mi>w</mi>
   <mspace/> <mo>=</mo> <mspace/>
@@ -413,17 +427,17 @@
  in the far wake.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="600";
-     style="margin-left:120px";
-     alt="Actuator tube";
-     src="images/prop_lift_downwash_constant_lift.gif" >
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 21.4 : &ensp;
-           Lift and downwash for a single horseshoe vortex. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_lift_downwash_constant_lift.gif";
+   width = "75%";
+     alt = "Actuator tube"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 21.4 : &ensp;
+           Lift and downwash for a single horseshoe vortex. </i> </p>
+</div>
+
 
 <p> At the center of the far wake, both tip vortices stretch
  from (&hairsp;almost&hairsp;) minus to plus infinity. 
@@ -435,7 +449,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -478,6 +492,9 @@
  difficult to calculate, due to the infinities at the tips.
 </p>
 
+<div style = "break-before:page"> </div>
+
+
 <!------------------------------------------------------------->
 
 <h4> 21.7 &emsp; The elliptical wing </h4>
@@ -507,6 +524,7 @@
  the corres&shypond&shying lift distribution turned out to be 
  a simple elliptical shape.
 </p>
+
 <p>&emsp;
   By a non-trivial integration, the following result was found
  for the downwash from an elliptical vortex distribution
@@ -518,7 +536,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -547,7 +565,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mover>
    <mi>&Gamma;</mi>
@@ -576,7 +594,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -616,7 +634,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
 
@@ -653,18 +671,19 @@
  i.e. for the same overall lift.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="620";
-     style="margin-left:120px";
-     alt="Actuator tube";
-     src="images/prop_lift_downwash_elliptical_lift.gif" >
-<p style="margin-left   :160px;
-          margin-top    :  8px;
-          margin-bottom : 12px;">
-    <i> Figure 21.5 : &ensp;
-           Lift and downwash for the elliptical wing. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_lift_downwash_elliptical_lift.gif";
+   width = "75%";
+     alt = "Actuator tube"; >
+</div>
+     
+<div class = "caption">
+<p> <i> Figure 21.5 : &ensp;
+           Lift and downwash for the elliptical wing. </i> </p>
+</div>
+
+<div style = "break-before:page"> </div>
+
 
 <!-- SECTION -------------------------------------------------->
 
@@ -681,7 +700,7 @@
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
 
@@ -797,6 +816,9 @@ for a given span.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

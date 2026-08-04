@@ -14,21 +14,30 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on propeller theory </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-<! --NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                Home      </a> </li>
-  <li> <a href="prop_book_24.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_26.html">  Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -74,7 +83,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">
   <mi>w</mi>
@@ -102,19 +111,17 @@
 </p>
 
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="500";
-     style="margin-left:160px";
-     alt="Lerbs uniform";
-     src="images/prop_lerbs_B2_X5_uniform.gif" >
-<p style="margin-left   : 120px;
-          margin-bottom : 12px;">
-    <i> Figure 25.1 : &ensp;
+<div class = "center">
+<img src = "images/prop_lerbs_B2_X5_uniform.gif";
+   width = "60%";
+     alt = "Lerbs uniform"; >
+</div>
+
+<div class = "caption">
+<p  <i> Figure 25.1 : &ensp;
                  The Lerbs solution for uniform induction.
- B = 2,   X = 5, N = 1000. Crosses for N = 6.
- </i>
-</p>
-<!-------------------------------------------------------------->
+ B = 2, X = 5, N = 1000. Stairs for N = 6.</i></p>
+</div>
 
 <p> Like in the wing, the outcomes for N = 6, or even N = 4,
  are already nearly on the line for "infinitely many" points.
@@ -150,22 +157,21 @@
  cos<sup>2</sup><i>&phi;</i> condition for minimal rotational loss.
 </p>
 
-<!-- FIGURE -------------------------------------------------->
-<img  width="700";
-     style="margin-left : 60px";
-     alt="Lerbs Prandtl";
-     src="images/prop_lerbs_prandtl_range.gif" >
-<p style="margin-left   : 80px;
-          margin-bottom : 12px;">
-    <i> Figure 25.1 : &ensp;
+<div class = "center">
+<img src = "images/prop_lerbs_prandtl_range.gif";
+   width = "85%";
+     alt = "Lerbs Prandtl"; >
+</div>
+     
+<div class = "caption">
+<p> <i> Figure 25.1 : &ensp;
        The Lerbs solution for uniform induction
   compared to Prandtl (dashed). <br>
      &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
-  Also compare to Prandtl figure 21.6.
- </i>
-</p>
-<!------------------------------------------------------------->
+  Also compare to Prandtl figure 21.6.</i> </p>
+</div>
 
+<div style = "break-before:page"> </div>
 
 <!-- SECTION -------------------------------------------------->
 
@@ -242,7 +248,7 @@ We now apply the discrete vortex solution to the rotationally
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi>
 
@@ -278,7 +284,7 @@ This <i>&phi;</i> is not the cosine parameter of (24.5),
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
 
@@ -296,23 +302,23 @@ This <i>&phi;</i> is not the cosine parameter of (24.5),
 <!-- END EQUATION --------------------------------------------->
 
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="500";
-     style="margin-left:160px";
-     alt="Lerbs cos2";
-     src="images/prop_lerbs_X5_B2_cos2.gif" >
-<p style="margin-left   : 120px;
-          margin-bottom : 12px;">
-    <i> Figure 25.3 : &ensp;
+<div class = "center">
+<img src = "images/prop_lerbs_X5_B2_cos2.gif";
+   width = "60%";
+     alt = "Lerbs cos2"; >
+</div>
+
+<div class = "caption">     
+<p> <i> Figure 25.3 : &ensp;
                  G(x) for cos<sup>2</sup>&phi; induction. 
 &emsp; B = 2,  X = 5.<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
  Line for N = 1000, crosses for N = 6. <br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
- Mass factor K(x) shown in green.
- </i>
-</p>
-<!-------------------------------------------------------------->
+ Mass factor K(x) shown in green. </i> </p>
+</div>
+
+<div style = "break-before:page"> </div>
 
 <p>&emsp;
  There is a qualitative difference between the two solutions,
@@ -394,6 +400,9 @@ TBW.
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer">  P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

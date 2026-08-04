@@ -14,21 +14,30 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on propeller theory </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_28.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <!--  //////   CURRENTLY NO NEXT CHAPTER  ////////// -->
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -120,7 +129,7 @@ and <i>&kappa;</i><sub>G</sub>, the chord
 becomes :
 </p>
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>B</mi> <mo>.</mo> 
   <mstyle displaystyle="true">
@@ -193,21 +202,18 @@ Or rather, it follows the gently curved outline
 from before the tip loss function was applied.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="600";
-     style="margin-left : 100px;
-            margin-top  :  0px";
-     alt="Chords with tips";
-     src="images/prop_chord_swept_prandtl.gif" >
+<div class = "center">
+<img src = "images/prop_chord_swept_prandtl.gif";
+   width = "75%";
+     alt = "Chords swept"; >
+</div>
 
-<p style="margin-left   :180px;
-          margin-bottom : 12px;">
-    <i> Figure 29.1 : &ensp;
+<div class = "caption">
+<p> <i> Figure 29.1 : &ensp;
             Prandtl tip reduction applied around the centerline, <br>
             &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;
-            or from the trailing edge. </i>
-</p> 
-<!------------------------------------------------------------->
+            or from the trailing edge. </i> </p> 
+</div>
 
 <span style="color:darkgrey">
 
@@ -250,7 +256,7 @@ Leaving out <i>F</i>&thinsp;&prime;(<i>x</i>) gives :
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
 
   <mi>B</mi> <mo>.</mo> <mi>c</mi> <mn>&thinsp;&prime;</mn>
@@ -301,7 +307,7 @@ The difference with (28.2) will be :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
 
   <mi>B</mi> <mo>.</mo> <mi>c</mi> <mn>&thinsp;&prime;</mn>
@@ -376,26 +382,26 @@ Until now, we applied this difference symmetrically
   before the tip reduction.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="600";
-     style="margin-left : 100px;
-            margin-top  :  0px";
-     alt="Chords with tips";
-     src="images/prop_chord_sweepback.gif" >
+<div class = "center">
+<img src = "images/prop_chord_sweepback.gif";
+   width = "75%";
+     alt = "Sweepback"; >
+</div>
 
-<p style="margin-left   :180px;
-          margin-bottom : 12px;">
-    <i> Figure 29.1 : &ensp;
+<div class = "caption">
+<p> <i> Figure 29.1 : &ensp;
             Sweepback (29.2), applied to the exact solution.<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
- Envelope  (29.1) shown in red dashes. </i>
-</p> 
-<!------------------------------------------------------------->
+ Envelope  (29.1) shown in red dashes. </i> </p> 
+</div>
 
 
 <!-- FOOTER --------------------------------------------------->
-<br> <br>
+<br> <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

@@ -14,21 +14,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_11.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_13.html">       Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 <!--- PAGE HEADER --------------------------------------------->
 <p style="margin-left : 320px">  <i> ROTATION </i> </p>
@@ -73,7 +84,7 @@ A large part of propeller theory, including the tip loss,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
    <mi>v</mi>
 
@@ -100,7 +111,7 @@ A large part of propeller theory, including the tip loss,
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
    <mi>u</mi>
 
@@ -127,7 +138,7 @@ A large part of propeller theory, including the tip loss,
 </p>
 
 <!-- EQUATION ------------------------------------------------------>
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
    <mi>u</mi>
 
@@ -151,16 +162,17 @@ A large part of propeller theory, including the tip loss,
  and “phase” 2&hairsp;<i>&phi;</i>.
 
 <!-- FIGURE --------------------------------------------------->
-<img  width="520";
-     style="margin-left : 160px;
-            margin-top  :  8px";
-     alt="Betz_arc";
-     src="images/prop_cos2_arc_C.gif" >
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 12.1 : &ensp;
-The optimal induction as a function of the local pitch angle. </i> 
-<!------------------------------------------------------------->
+<div class = "center">
+<img  src = "images/prop_cos2_arc_C.gif";
+    width = "70%";
+    alt   = "Betz_arc"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 12.1 : &ensp;
+   The optimal induction as a function of the local pitch angle. </i> </p>
+</div>
+
 
 <p>&emsp; Far from the hub, the local pitch angle <i>&phi;</i>
  is nearly zero.
@@ -191,6 +203,8 @@ The optimal induction as a function of the local pitch angle. </i>
  but rather a non-obvious assump&shytion
  in the theory of the optimal propeller.
 </p>
+
+<div style = "break-before:page"> </div>
 
 <!-- SECTION 12.3 ----------------------------------------------------->
 
@@ -243,19 +257,18 @@ The optimal induction as a function of the local pitch angle. </i>
  as we shall see in later chapters.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="640";
-     style="margin-left : 100px;
-            margin-top  :  8px"     alt="Betz_arc";
-     src="images/prop_cos2_betz_sheet.gif" >
-<p style="margin-left   : 100px;
-          margin-bottom : 12px;">
-    <i> Figure 12.2 : &ensp;
-The apparent axial sheet velocity of the spirals,
-partly barber pole illusion.
- </i> 
-<!------------------------------------------------------------->
 
+<div class = "center">
+<img src = "images/prop_cos2_betz_sheet.gif";
+   width = "80%";
+     alt = "Betz_arc"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 12.2 : &ensp;
+   The apparent axial sheet velocity of the spirals,
+   partly barber pole illusion. </i> </p>
+</div>
 
 <!-- SECTION 12.4 ----------------------------------------------------->
 
@@ -302,19 +315,19 @@ partly barber pole illusion.
  the blade velocity <i>W</i> approximately equals <i>&Omega;&hairsp;r</i>.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="640";
-     style="margin-left : 100px;
-            margin-top  :  8px";
-     alt="viscous spiral";
-     src="images/prop_spiral_zero_thrust.gif" >
-<p style="margin-left   : 120px;
-          margin-bottom :   8px;">
-    <i> Figure 12.3 : &ensp;
-Purely viscous wake of a propeller at zero thrust.
-Two blades,  X = 5
- </i> 
-<!------------------------------------------------------------->
+
+<div class = "center">
+<img src = "images/prop_spiral_zero_thrust.gif";
+   width = "80%";
+   alt   = "viscous spiral"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 12.3 : &ensp;
+   Purely viscous wake of a propeller at zero thrust.
+   Two blades,  X = 5 </i> </p>
+</div>   
+
 
 <p> The thickness of the viscous trailing sheet roughly equals
  the local viscous drag coefficient <i>C</i><sub>d</sub>
@@ -398,20 +411,18 @@ Two blades,  X = 5
  relative to the direction of flight.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="640";
-     style="margin-left : 100px;
-            margin-top  :  8px";
-     alt="viscous spiral";
-     src="images/prop_spiral_momentum_wake.gif" >
-<p style="margin-left   : 120px;
-          margin-bottom :   8px;">
-    <i> Figure 12.4 : &ensp;
- Momentum wake of a two-bladed propeller
-     delivering thrust ( X = 5 ).
 
- </i> 
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_spiral_momentum_wake.gif";
+   width = "640";
+   alt   = "viscous spiral"; >
+</div>
+<div class = "caption">
+<p> <i> Figure 12.4 : &ensp;
+   Momentum wake of a two-bladed propeller
+     delivering thrust ( X = 5 ). </i> </p>
+ </div>
+
 
 <p>&emsp;
 The same wake looks very different when viewed from the airplane,
@@ -438,6 +449,9 @@ The same wake looks very different when viewed from the airplane,
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

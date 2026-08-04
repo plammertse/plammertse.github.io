@@ -14,21 +14,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_18.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_20.html">       Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -58,21 +68,17 @@
  optimal spiral wake.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="400";
-     style="margin-left : 200px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_blade_slice_elliptical_prandtl.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 18.1 : &ensp;
+<div class = "center">
+<img src = "images/prop_blade_slice_elliptical_prandtl.gif";
+   width = "50%";
+     alt = "Tip sketch Prandtl"; >
+</div>
+<div class = "center">
+<p> <i> Figure 18.1 : &ensp;
      Typical
    <span style="font-variant: small-caps;">Prandtl</span>
- mass flow reduction F(x).
- </i> 
-<!------------------------------------------------------------->
-
+ mass flow reduction F(x). </i> </p>
+</div>
 
 <p>&emsp;
  Figure 12.4 showed
@@ -168,30 +174,27 @@ And it's much better than a vortex model.
  Betz's
  helical wake sheet is much more similar
  to the constant downflow wing model,
- than the isolated tip vortex is.
+ than the isolated tip vo3tex is.
  Refer to section **** on vortex methods.
 </i>
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="280";
-     style="margin-left : 130px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_prandtl_disk_skewer.gif" >
-<!------------------------------------------------------------->
+<div class ="center">
+<img src = "images/prop_prandtl_disk_skewer.gif";
+   width = "35%";
+     alt = "Tip sketch Prandtl"; >
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="280";
-     style="margin-left : 60px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_prandtl_heatsink_no_floor.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 19.2 : &ensp;
+<span> &emsp; &emsp; &emsp; </span>
+<img src ="images/prop_prandtl_heatsink_no_floor.gif";
+   width ="35%";
+     alt ="Tip sketch Prandtl"; >
+</div>
+     
+<div class ="caption">
+<p> <i> Figure 19.2 : &ensp;
      Spiral sheet simplified to infinite heats sink fins.
- </i> 
+ </i> </p>
+ </div>
 <!------------------------------------------------------------->
 
 <!-- SECTION 19.2 --------------------------------------------->
@@ -218,7 +221,7 @@ The Notes section discusses the shape, and
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>F</mi>
   <mn>&hairsp;(</mn> <mi>y</mi> <mn>)</mn>
@@ -295,20 +298,20 @@ The Notes section discusses the shape, and
  and the optimal propeller.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px";
-     alt="Glauert in Durand";
-     src="images/prop_prandtl_quarter_circle.gif" >
+<div class ="center">
+<img src = "images/prop_prandtl_quarter_circle.gif";
+   width = "50%";
+     alt = "Glauert in Durand"; >
+</div>
 
-<p style="margin-left   :160px;
-          margin-bottom : 12px;">
-    <i> Figure 19.1 : &ensp; 
+<div class ="caption">
+<p> <i> Figure 19.1 : &ensp; 
  <span style="font-variant: small-caps;">Prandtl</span>'s
- tip shape scaled to a quarter circle.
- </i> 
-<!------------------------------------------------------------->
+ tip shape scaled to a quarter circle. </i> </p> 
+</div>
 
+<div style = "break-before:page"> </div>
+         
 <!-- SECTION 19.3 --------------------------------------------->
 
 <h4> 19.3 &emsp; The non-dimensional sheet spacing         </h4>
@@ -334,18 +337,17 @@ The Notes section discusses the shape, and
  the exact vortex solution slightly better.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="600";
-     style="margin-left:120px";
-     alt="tip sheet distance";
-     src="images/prop_prandtl_tip_sheet_distance.gif" >
+<div class = "center">
+<img src = "images/prop_prandtl_tip_sheet_distance.gif";
+   width = "75%";
+     alt = "tip sheet distance"; >
+</div>
 
-<p style="margin-left   :120px;
-          margin-bottom : 12px;">
-    <i> Figure 19.3 : &ensp; 
- The non-dimensional spacing between the tip spirals.
- </i> 
-<!------------------------------------------------------------->
+<div class = "caption">
+<p> <i> Figure 19.3 : &ensp; 
+   The non-dimensional spacing between the tip spirals. </i> </p>
+ </div>
+
 
 <p> Figure 19.3 shows the "unrolled" outer surface
  of the original, smooth flow tube
@@ -357,8 +359,8 @@ The Notes section discusses the shape, and
 <p> The radius of the propeller is <i>X</i>,
  and the circumference of the flow tube is
  2&hairsp;&pi;&hairsp;<i>X</i>.
- By figure 2.4,
- this makes the non-dimensional tip pitch 2&hairsp;&pi;.
+ By figure 2.4,  this makes the non-dimensional tip pitch
+ 2&hairsp;&pi;.
  In a propeller with <i>B</i> blades,
  the tip spirals are spaced in the axial direction
  by the non-dimensional distance <i>s</i>&hairsp;&prime; :
@@ -366,7 +368,7 @@ The Notes section discusses the shape, and
 </i>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>s</mi> <mn>&hairsp;&prime;</mn>
  
@@ -393,7 +395,7 @@ The Notes section discusses the shape, and
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>s</mi>
  
@@ -457,7 +459,7 @@ The Notes section discusses the shape, and
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr>
+<table class = "equation"> <tr>
  <td style = "padding: 4px 0px;">
 <math>
   <mi>F</mi> <mn>&hairsp;&prime;</mn>
@@ -541,19 +543,17 @@ and <i>B</i>&thinsp;=&thinsp;2
  relatively small tip ratios and hence lower tip loss.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="600";
-     style="margin-left: 120px";
-     alt="Prandtl tips stacked";
-     src="images/prop_prandtl_tip_only_stacked.gif" >
+<div class = "center">
+<img src = "images/prop_prandtl_tip_only_stacked.gif";
+   width = "75%";
+     alt = "Prandtl tips stacked"; >
+</div>
 
-<p style="margin-left   : 170px;
-          margin-bottom :  12px;">
-    <i> Figure 19.6 : &ensp; 
- <span style="font-variant: small-caps;">Prandtl</span>'s
-    tip length versus B&hairsp;.&hairsp;X.
- </i> 
-<!------------------------------------------------------------->
+<div class = "caption">
+<p> <i> Figure 19.6 : &ensp; 
+   <span style="font-variant: small-caps;">Prandtl</span>'s
+    tip length versus B&hairsp;.&hairsp;X. </i> </p>
+</div>
 
 <!-- SECTION 19.4 --------------------------------------------->
 
@@ -565,18 +565,17 @@ and <i>B</i>&thinsp;=&thinsp;2
  ( X - x ) = 2π/B from the tip.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="600";
-     style="margin-left: 120px";
-     alt="cropped tip";
-     src="images/prop_prandtl_ellipse_cropped.gif" >
+<div class = "center">
+<img src = "images/prop_prandtl_ellipse_cropped.gif";
+   width = "75%";
+     alt = "cropped tip"; >
+</div>     
 
-<p style="margin-left   : 170px;
-          margin-bottom :  12px;">
-    <i> Figure 19.4 : &ensp; 
-           Equivalent cropped tip for X = 5, B = 2.
- </i> 
-<!------------------------------------------------------------->
+<div class = "caption">
+<p> <i> Figure 19.4 : &ensp; 
+           Equivalent cropped tip for X = 5, B = 2. </i> </p> 
+ </div>
+
 
 <p>&emsp;
  Figure 19.4 shows the result.
@@ -617,7 +616,7 @@ speed ratio of 5.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mn>&Delta;</mn> <mi>X</mi> 
  
@@ -663,7 +662,7 @@ The function value of <i>F</i>(<i>x</i>)
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>X</mi> 
  
@@ -711,7 +710,7 @@ The function value of <i>F</i>(<i>x</i>)
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>X</mi> <mn>&hairsp;&prime;</mn> 
  
@@ -758,19 +757,17 @@ The function value of <i>F</i>(<i>x</i>)
  of a two-bladed propeller of tip speed ratio 5. 
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img  width="540";
-     style="margin-left : 200px;
-            margin-top  :  8px;";
-     alt="Tip sketch Prandtl";
-     src="images/prop_prandtl_tube_reduction.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 19.3 : &ensp;
+<div class = "center">
+<img src = "images/prop_prandtl_tube_reduction.gif";
+   width = "70%";
+     alt = "Tip sketch Prandtl"; >
+</div>     
+
+<div class = "caption">
+<p> <i> Figure 19.3 : &ensp;
        Equivalent duct radius
- for X&thinsp;=&thinsp;5, B&thinsp;=&thinsp;2.
- </i> 
-<!------------------------------------------------------------->
+ for X&thinsp;=&thinsp;5, B&thinsp;=&thinsp;2. </i> </p> 
+</div>
 
 <!-- SECTION 19.5 --------------------------------------------->
 
@@ -811,6 +808,9 @@ The function value of <i>F</i>(<i>x</i>)
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

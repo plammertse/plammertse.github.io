@@ -13,21 +13,32 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on propeller theory </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_09.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_11.html">       Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+
 
 <!-- TEXT BLOCK HEADER ---------------------------------------->
 
@@ -93,7 +104,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -132,7 +143,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -177,7 +188,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -218,7 +229,7 @@
 <p> Taking the derivative with respect to <i>b</i> yields :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac> 
@@ -265,7 +276,7 @@
  d<i>T</i>&thinsp;&prime; of (7.14) yields :
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac> 
@@ -302,11 +313,12 @@
  &frac12;&thinsp;<i>b</i><sup>&hairsp;2</sup> is <i>b</i>,
  and the derivative of <i>b</i> is 1.
 </p>
+
 <p> Subsitituting (10.4) and (10.5) into (10.3) yields :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -327,6 +339,9 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div style = "break-before:page"> </div>
+         
+
 <a name="(10.7)"></a>
 
 <p> For optimality, the marginal loss <i>C</i> must be a constant.
@@ -335,7 +350,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -368,7 +383,7 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -397,7 +412,7 @@ s</math>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 
 <math>
   <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
@@ -463,16 +478,18 @@ Figure 10.1 shows the shape of
  at the tip.
 </p>
 
-<!-- FIGURE --------------------------------------------------->
-<img width="600" alt="Cosine squared versus x";
-     style="margin-left :120px;
-            margin-top  : -2px;"
-      src="images/prop_cos2_plot_x.gif">
-<p style="margin-left:260px">
-    <i> Figure 10.1 : &ensp;
-       The optimal induction factor cos<sup>2</sup>&hairsp;&phi;.</i> 
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_cos2_plot_x.gif";
+   width = "70%";
+   alt="Cosine squared versus x"; >
+</div>
+      
+<div class = "center">
+<p> <i> Figure 10.1 : &ensp;
+       The optimal induction factor
+         cos<sup>2</sup>&hairsp;&phi;.</i> </p>
+</div>
+
 
 <!-- SECTION 10.3 --------------------------------------------->
 
@@ -489,7 +506,7 @@ Having found the marginal loss <i>C</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -525,7 +542,7 @@ Having found the marginal loss <i>C</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -562,7 +579,7 @@ Having found the marginal loss <i>C</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>η</mi> <mn>m</mn> </msub>
 
@@ -612,7 +629,7 @@ the terms of 2<i>x</i>.d<i>x / X</i><sup>&thinsp;2</sup>
  </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -644,7 +661,7 @@ the terms of 2<i>x</i>.d<i>x / X</i><sup>&thinsp;2</sup>
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle displaystyle="true">
   <mfrac>
@@ -703,6 +720,9 @@ of 1<i>/&thinsp;</i>cos<sup>2&hairsp;</sup><i>&phi;</i>
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>

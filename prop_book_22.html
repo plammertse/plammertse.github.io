@@ -14,21 +14,31 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title> Piet Lammertse on propeller theory </title>
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
 
-<!-- NAVIGATION BAR MENU -------------------------------------->
-<ul>
-  <li> <a href="index.html">                 Home     </a> </li>
-  <li> <a href="prop_book_21.html">&#x25C4  Previous  </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_23.html">  Next &#x25BA</a> </li>
-</ul>
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
 
 <!-- PAGE HEADER ---------------------------------------------->
 
@@ -146,7 +156,7 @@ from the wing section properties will not match
 
 <p>
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mo>cos</mo> <mi>&phi;</mi>
 
@@ -165,17 +175,18 @@ from the wing section properties will not match
 <!-- END EQUATION --------------------------------------------->
 
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="320";
-     style="margin-left:250px";
-     alt="Cosine transformation";
-     src="images/prop_cosine_wing.gif" >
-<p style="margin-left   :140px;
-          margin-bottom : 12px;">
-    <i> Figure 22.1 : &ensp;
- Cosine transformation for the spanwise coordinate. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center"; style = "margin-top : 0">
+<img src = "images/prop_cosine_wing.gif";
+   width = "40%";
+     alt = "Cosine transformation"; >
+</div>
+
+<div class = "center">     
+<p> <i> Figure 22.1 : &ensp;
+ Cosine transformation for the spanwise coordinate. </i> </p>
+</div>
+
+<div style = "break-before:page"> </div>
 
 <p> The first
   <span style="font-variant: small-caps;"> Fourier</span>
@@ -183,7 +194,7 @@ from the wing section properties will not match
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>&Gamma;</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
 
@@ -300,17 +311,18 @@ from the wing section properties will not match
 <p> Figure 22.1 shows two nested horseshoes as an example.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="320";
-     style="margin-left:250px";
-     alt="Actuator tube";
-     src="images/prop_wing_discrete_vortices_perspective.gif" >
-<p style="margin-left   :140px;
-          margin-bottom : 12px;">
-    <i> Figure 22.2 : &ensp;
-                          Nested horseshoe vortices. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_wing_discrete_vortices_perspective.gif";
+   width = "50%";
+     alt = "Horseshoe perspective"; >
+</div>
+
+<div class = "caption">     
+<p> <i> Figure 22.2 : &ensp;
+          Nested horseshoe vortices. </i> </p>
+</div>                          
+
+<div style = "break-before:page"> </div>
 
 <p>  The resulting bound vortex  is a staircase function.
  From figure 21.4XXXXXXXXXXXXXXXX we see that in the ellipse
@@ -329,17 +341,16 @@ from the wing section properties will not match
  Figure 22.3 shows the idea.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:250px";
-     alt="Actuator tube";
-     src="images/prop_discrete_cosine_wing.gif" >
-<p style="margin-left   :140px;
-          margin-bottom : 12px;">
-    <i> Figure 22.3 : &ensp;
-               Discrete full cosine distribution for the wing. </i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_discrete_cosine_wing.gif";
+   width = "50%";
+     alt = "Cosine wing"; >
+</div>
+
+<div class = "caption">     
+<p> <i> Figure 22.3 : &ensp;
+        Discrete full cosine distribution for the wing. </i> </p>
+</div>
 
 <p> The trailing vortices are spaced equally
  over the unit circle.
@@ -355,7 +366,7 @@ from the wing section properties will not match
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table>
+<table class = "equation">
 <tr> <td>
 <math>
   <mi>&theta;</mi>
@@ -377,7 +388,7 @@ from the wing section properties will not match
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:6px">
+<table  class = "equation"; style = "margin-top : 6px">
 <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>t</mn> </msub>
@@ -399,7 +410,7 @@ from the wing section properties will not match
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table>
+<table class = "equation">
 <tr> <td>
 <math>
   <mi>&phi;</mi>
@@ -422,7 +433,7 @@ from the wing section properties will not match
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
-<table style="margin-top:6px">
+<table class = "equation"; style="margin-top:6px">
 <tr> <td>
 <math>
   <msub> <mi>x</mi> <mn>w</mn> </msub>
@@ -457,6 +468,9 @@ from the wing section properties will not match
  the infinite up-and-down spikes of (21.1XXXXXXXXXX)
  around the trailing vortex locations. 
 </p>
+
+<div style = "break-before:page"> </div>
+
 <p>&emsp;
 With the control points always (&hairsp;"midway"&hairsp;) 
  between two trailing vortices,
@@ -471,7 +485,7 @@ With the control points always (&hairsp;"midway"&hairsp;)
 
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>A</mi>
   <mn>(&hairsp;</mn> 
@@ -512,7 +526,7 @@ With the control points always (&hairsp;"midway"&hairsp;)
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>w</mi> <mn>&hairsp;(</mn>
     <msub> <mi>x</mi> <mn>w</mn> </msub> 
@@ -564,7 +578,7 @@ at a single spanwise location.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">        <!-- !!!!!!!!!!!!!!! -->
 
@@ -602,18 +616,17 @@ at a single spanwise location.
  in the resulting downwash at the control points.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px";
-     alt="Actuator tube";
-     src="images/prop_wing_matrix_N_N1.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 22.4 : &ensp;
+<div class = "center">
+<img src = "images/prop_wing_matrix_N_N1.gif";
+   width = "400";
+     alt = "N1 N1"; >
+</div>
+
+<div class = "caption">     
+<p> <i> Figure 22.4 : &ensp;
                Transfer matrix <b>A</b>
-                from <b>d&Gamma;</b> to <b>w</b>. </i>
-</p>
-<!------------------------------------------------------------->
+                from <b>d&Gamma;</b> to <b>w</b>. </i> </p>
+</div>
 
 
 <!-- SECTION -------------------------------------------------->
@@ -656,7 +669,7 @@ If we wish to find the vector
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msubsup> <mo>&sum;</mo> <mn>0</mn> <mn>N</mn> 
  </msubsup>
@@ -689,18 +702,16 @@ If we wish to find the vector
  added in yellow.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px";
-     alt="Actuator tube";
-     src="images/prop_wing_matrix_N1_N1.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 22.5 : &ensp;
-          Matrix <b>A</b>
- expanded by a row for S = Σ&thinsp;(d&thinsp;&Gamma;&thinsp;).</i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_wing_matrix_N1_N1.gif";
+   width = "50%";
+     alt = "N1 N1"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 22.5 : &ensp; Matrix <b>A</b>
+         expanded by a row for S = Σ&thinsp;(d&thinsp;&Gamma;&thinsp;).</i> </p>
+</div>
 
 <p>&emsp;
  The resulting matrix is square,
@@ -708,7 +719,7 @@ If we wish to find the vector
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">
 
@@ -735,18 +746,18 @@ If we wish to find the vector
  of the sum of the trailing vortices, which is zero.
  </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px";
-     alt="Actuator tube";
-     src="images/prop_wing_matrix_N1_N1_inverse.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 22.6 : &ensp;
+<div class = "center">
+<img src = "images/prop_wing_matrix_N1_N1_inverse.gif";
+   width = "50%";
+     alt = "N1 N1 inverse"; >
+</div>
+     
+<div class = "caption">     
+<p> <i> Figure 22.6 : &ensp;
           Finding <b>dΓ</b> from a desired <b>w</b>,
-          extended by a zero.</i>
-</p>
-<!------------------------------------------------------------->
+          extended by a zero.</i> </p>
+</div>
+
 
 <p> By the rules of matrix multiplication,
  the values in the final column of the inverse matrix 
@@ -767,7 +778,7 @@ are irrelevant,
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mstyle style="font-weight: bold;">
 
@@ -810,7 +821,7 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>&Gamma;</mi> <mn>1</mn> </msub>
   <mspace/> <mo>=</mo> <mspace/>
@@ -828,7 +839,7 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <msub> <mi>&Gamma;</mi> <mn>k+1</mn> </msub>
   <mspace/> <mo>=</mo> <mspace/>
@@ -887,7 +898,7 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mi>L</mi>
 
@@ -945,18 +956,16 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
  is zero from symmetry.
 </p>
 
-<!-- FIGURE  -------------------------------------------------->
-<img  width="400";
-     style="margin-left:200px;
-            margin-top: 8px;"
-     alt="Wing discrete constant downwash";
-     src="images/prop_wing_discrete_constant_downwash.gif" >
-<p style="margin-left   : 200px;
-          margin-bottom :  12px;">
-    <i> Figure 22.7 : &ensp;
-          Discretized lift for constant downwash, N = 6.</i>
-</p>
-<!------------------------------------------------------------->
+<div class = "center">
+<img src = "images/prop_wing_discrete_constant_downwash.gif";
+   width = "50%";
+     alt = "Wing discrete constant downwash"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 22.7 : &ensp;
+          Discretized lift for constant downwash, N = 6.</i> </p>
+</div>
 
 
 <p> Even at N = 6 the circulation at the control points
@@ -975,7 +984,7 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table> <tr> <td>
+<table class = "equation"> <tr> <td>
 <math>
   <mover>
    <mi>&Gamma;</mi>
@@ -1009,12 +1018,16 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 <br> &emsp; &emsp; &emsp; &ensp;
  Shiver at the lines in-between the control points.
 </p>
+<p> <i> TODO &emsp; Fix restart of equation numbers.
 
 </span>
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
 
 </body>
 </html>
