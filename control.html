@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : control.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-24 new
+---------------------------------------------------------------> 
+
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on controller tuning </title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU ------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<!--
+      <a href="#">                          Feedforward            </a>
+      <a href="#">                          Feedback               </a>
+      <a href="#">                          Reducing Uncertainty   </a>
+      <a href="#">                          Kalman Filters         </a>
+      <a href="#">                          Saturation             </a>
+      <a href="#">                          Encoder differencing   </a>
+      <a href="tuning.html">                Tuning                 </a>
+-->
+
+
+<h2> Out of control </h2>
+
+<h4> why I studied control </h4>
+
+<p> After I got my BSc in aeronautical engineering,
+ I had a choice of going into structures, aerodynamics or control.
+  I&nbsp;chose control because it was closest to flying aircraft,
+   and because it was known to be the hardest subject.
+   I&nbsp;also knew it had a ruthless and domineering professor,
+   but I thought I could probably handle that.
+ I came to regret that decision. 
+</p>
+<p> &emsp;
+ But there it is, control engineering is my chosen profession.
+ I think I never really got the hang of it, and I&nbsp;certainly
+ never learned to like it.
+ But maybe that has given me a somewhat "off" perspective on control
+ that may be worth listening to.
+</p>
+<h4> the purpose of control </h4>
+
+<p> Control means taking a system to a target,
+ either in the literal sense in warfare, 
+ or in the figurative sense of taking a system to a new setpoint
+ and keeping it there.
+ I will mainly discuss flying an airplane
+ (or pointing a spacecraft) somewhere, and stopping
+ and moving a haptic device.
+ </p>
+ <h4> feedforward </h4>
+ 
+ <p> The obvious way to steer a system to a new place is to adjust 
+ some input, like a glorified steering wheel, and wait for the result.
+ In the simplest case, that's it.
+ You know approximately what the result will be, and that's good enough for you.
+ This method of control is called 
+ <a href = "feedforward.html"> <i>feedforward</i></a>.
+ If you know enough about your system, this may be all you need.
+ If you want to sell five bags of rice, you put five bags on the counter.
+ No need to weigh them.
+ </p>
+ 
+<h4> feedback </h4>
+
+<p> The outcome of your adjustment may not always satisfy you.
+The result may be off, because :
+</p>
+<p> - &emsp; you do not know your system well enough.
+</p>
+<p> &emsp;&emsp;&emsp; <i> This is called the "modelling error".</i></p>
+
+<p> - &emsp; there may be unknown external inputs, like a gust of wind.
+</p>
+<div style = "margin-left: 48px;">
+<p> <i> These are called "external disturbances".
+    If you can measure these disturb&shyances, <br> they can be corrected by&nbsp;feedforward.
+    If you can't, these are un&shymodelled inputs. </i></p>
+</div>
+    
+<p> To remedy this you can measure the outcome and correct it 
+by an extra input. This is called <i> feedback</i>.
+</p>
+<p> Feedback can reduce the error, but it introduces two new problems :
+<p> - &emsp; the outcome is always delayed a bit with respect to the input. </p>
+<p> &emsp;&emsp;&emsp; <i> The delay may come from the system,
+      or from the measurement, or both.</i></p>
+<p> - &emsp; the measurement may be imperfect in other ways. </p>
+<p> &emsp;&emsp;&emsp; <i> It may have a fixed offset,
+      or it may fluctuate randomly.</i></p>
+
+<p> If your feedback is wrong or out of sync, then the outcome will be wrong,
+ or even unstable. </p>
+ 
+ <h4> time domain or frequency domain </h4>
+ <p> TBW </p>
+
+<h4> state space </h4>
+ <p> TBW </p>
+
+<!-- FOOTER --------------------------------------------------------->
+<br><br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
+
+</body>
+</html>

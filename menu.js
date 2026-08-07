@@ -36,10 +36,11 @@
           e.preventDefault();
           const isOpen = parentLi.classList.toggle('open');
 
+          /* Comment this out keep trace open : */
           // close sibling menus at the same level
           Array.from(parentLi.parentElement.children).forEach(sib => {
          if (sib !== parentLi) sib.classList.remove('open');
-          });
+          });  
       }
        });
    });
