@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_054.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+</head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="haptics_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 5 ------------------------------------------------>
+
+<h2> 5 &emsp; Closed loop control      </h2>
+
+<!-- SECTION 5.1 ---------------------------------------------->
+
+<h4> 5.1 &emsp; Introduction </h4>
+
+<p> This chapter offers a brief introduction to
+ closed loop control theory,
+ since it is at the heart of all stability problems
+ in both impedance controlled and  admittance controlled haptics.
+ Readers already familiar with control theory can skip this chapter.
+</p>
+
+<h4> 5.2 &emsp; Feedback control </h4>
+
+<p> Haptic devices react to the user's inputs,
+ and the user responds to the device's outputs.
+ This makes the device a closed loop control system,
+ which means there is feedback going round between output and input.
+ </p>
+ <p> &emsp;
+ Figure 6.1 gives the block diagram for a basic closed loop control system.
+ It has a block <i>K</i> which is the "controller",
+ and a block <i>G</i> which is the system to be controlled.
+ For the moment we will assume that <i>K</i> is just a multiplication factor,
+ or "gain".
+ The block <i>G</i> usually has all sorts of dynamics.
+ The signal <i>r</i> is an outside reference.
+This is the moving setpoint which we wish
+ the output <i>y</i> of the system to follow.
+</p>
+
+<div class = "center">
+<img src = "images/closed_loop.gif";
+   width = "65%">
+</div>
+
+<div class = "caption";
+     style = "margin-top : 16px">
+   <i> Figure 5.1 &emsp; Closed loop control </i>
+</div>
+
+<h4> 5.3 &emsp; Input and output signals </h4>
+
+<p> If we do not close the feedback loop,
+ then input <i>u</i> to the block <i>K</i>
+ will be the same as the external reference <i>r</i>.
+ The&nbsp;"open loop" output will be :
+ </p>
+ 
+
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>

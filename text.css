@@ -137,6 +137,18 @@ td {
   padding : 1px 0;
 }
 
+.tdcenter {
+   border     : 1px solid black;
+   text-align : center;
+   padding    : 3px 0px 3px 0px;
+}   
+
+.tdleft {
+   border     : 1px solid black;
+   text-align : left;
+   padding    : 3px 0px 3px 16px;
+}   
+
 /* Two equal columns that float next to each other,
    for propeller TOC */
 .column {

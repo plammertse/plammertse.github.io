@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_02.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+</head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="haptics_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 2 ------------------------------------------------>
+
+<h2> 2 &emsp; "Other" haptics                              </h2>
+
+<!-- SECTION 2.1 ---------------------------------------------->
+
+<h4> 2.1 &emsp; Introduction </h4>
+
+<p> Haptic admittance controlled devices are a small sub-species
+ of the of classical haptic displays.
+ The classical haptics displays themselves are a small sub-species of “haptics”.
+<!-- other types used as an end effector or as extra DOF’s -->
+</p>
+<p> &emsp;
+In a wider sense, “haptics” is the technology that gives a person
+ the sense that they are physically interacting
+ with a remote or virtual world.
+ Haptics was once a hype, but it never took off.
+ It looks like it crashed somewhere in the take-off phase
+ of Gartner's hype cycle.
+ </p>
+ <p> &emsp;
+ In all honesty, the killer application has not been found.
+ Still, haptic devices offer a compelling experience
+ of presence in a virtual or remote environment,
+ and maybe their day will come.
+ </p>
+ <p> &emsp;
+This textbook is about admittance control.
+ But it may help to put that into the perspective
+ of the overall haptic experience.
+ This chapter makes that effort.
+ Readers only interested in admittance control itself can skip it.
+</p>
+
+<!-- SECTION 2.2 ---------------------------------------------->
+
+<h4> 2.2 &emsp; Gestures </h4>
+
+<p> The most basic kinesthetic interaction
+ with a virtual or remote world is by gestures only,
+ without any physical contact.
+</p>
+<p> &emsp;
+  Gestures can be tracked by camera or other means,
+  and used as an input to a VR or remote world.
+  This is not haptics, but it comes close enough
+  to deserve a mention.
+  Gestures can be naturalistic,
+  like grabbing a remote or virtual object,
+  or an abstract signal, like in a simple sign language.
+</p>
+ 
+<!-- SECTION 2.3 ---------------------------------------------->
+
+<h4> 2.3 &emsp; Props </h4>
+
+<p> Gestures can be made to feel more naturalistic
+ by handling a physical dummy object, called a prop.
+ There is usually no need to make the object
+ a copy of something real. A simple cube is sufficient.
+ It will feel more realistic, and make the tracking easier.
+ In the virtual world, the object can be shown
+ as something more easily related to,
+ like a gripper or a tool.
+</p>
+
+<h4> 2.4 &emsp; Pseudohaptics </h4>
+
+<p> Sometimes the reaction of the virtual world
+ to the handling of the prop can give a person the impression
+ of feeling a force or a torque.
+ If done deliberately, this is called pseudohaptics. 
+Pseudohaptics can create the impression
+ of feeling of a torque on a freely rotating degree of freedom.
+ This can virtually increase the number of “haptic” DOF’s
+ on a conventional haptics device.
+ The effect can be quite convincing.
+</p>
+
+<h4> 2.5 &emsp; Joysticks </h4>
+ 
+ <p style = "color : red">
+ Transformation between DOF’s. Levers of a digger or dragline.
+Controls : steering wheel, rudder pedal.
+</p>
+
+<h4> 2.6 &emsp; Spring loaded grippers or joysticks </h4>
+ 
+<p> Actual force feedback can be added to a gripper 
+(&hairsp;or a joystick&hairsp;) by a simple passive spring.
+ This is the first step towards actual force feedback, or haptics.
+ 
+<h4> 2.7 &emsp; Encountered devices </h4>
+ 
+<p> Encountered devices have settable stops
+ on the arms of a passive robot to represent virtual walls.
+ They can even have moveable walls in an open workspace,
+ but this is only possible with careful tracking
+ of the path of an  approaching finger,
+ and even then sliding along two orthogonal walls
+ which are supposed to feel like a single diagonal wall will not work.
+A gripper with an inner end stop
+ settable to the size of a virtual object to be grasped
+ is the simplest,
+ and probably the most useful example of an “encountered” device. 
+</p>
+ 
+<h4> 2.8 &emsp; Shape displays </h4>
+ 
+<p> Shape displays, or shape changing objects,
+ are a generalization of the en-countered idea
+ mixed with the passive prop,
+ or possibly as an end effector on a “true” haptic device.
+</p>
+ <p style = "color:red">  Tangible bits. Phicons ? 
+</p>
+
+<h4> 2.9 &emsp; Tactile displays </h4>
+
+<p style = "color:red"> 
+TBW. Pin cushion or skin stretch. Can be combined with other types of haptics
+</p>
+
+<h4> 2.10 &emsp; Buzzers </h4>
+
+<p> The term haptics also seems to cover cell phone buzzers
+. These buzzers make no attempt to mimic any real life experience.
+ They just give coded feedback as a confirmation of events
+ like sliding over an icon, or pushing a button.
+Patterns may vary between naturalistic, simulated stick-slip friction 
+or a simulated mechanical button click,
+ or abstract patterns similar to an audio tune,
+ sometimes called “haptic icons”. 
+ </p>
+ <p style = "color:red">
+Can be used to simulate a ball rolling in a tube
+ and bouncing at the ends, since HF feel is non-directional.
+Hapticons, phicons.
+</p>
+
+<h4> 2.11 &emsp; Sandbags </h4>
+
+<p style = "color:red"> 
+Admittance control is a natural interface for moving large loads,
+ and it is useful in stroke rehab,
+ although the extra functionality of gently guiding
+ someone's motions may not useful enough
+ to warrant the extra outlay relative to
+ a sandbag and a pulley to lift the weight of the arm.
+ </p>
+
+<h4> 2.12 &emsp; Motion platforms </h4>
+
+<p style = "color:red"> 
+Whole body motion, Stewart platforms.
+</p>
+
+<h4> 2.13 &emsp; Treadmills </h4>
+
+<p style = "color:red"> 
+Whole body experiences.
+We will not discuss kinesthetic or tactile interfaces
+ for other parts of the body,
+ if only for prudish reasons.
+</p>
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>

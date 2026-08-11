@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_04.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+</head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="haptics_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 4 ------------------------------------------------>
+
+<h2> 4 &emsp; Impedance control and admittance control      </h2>
+
+<!-- SECTION 4.1 ---------------------------------------------->
+
+<h4> 4.1 &emsp; Causality </h4>
+
+<p> There are two distinct control strategies in classical haptic devices :
+ impedance control and admittance control.
+</p>
+<p> &emsp; 
+As the saying goes in set theory,
+ the world consists of bananas and non-bananas.
+ Almost all haptic devices use impedance control,
+ and almost none of them use admittance control.
+ The present text is partly an effort to restore the balance.
+ </p>
+ 
+ <p> <b> impedance control </b> </p>
+ 
+ <p> Impedance control is the easy one.
+ It uses the motor torque to directly control the force at the end effector.
+ It is easier to implement in the sense that it does not use a force sensor.
+ Mechanically though, it is delicate.
+ </p>
+ 
+ <p> <b> admittance control </b> </p>
+ 
+ <p> Admittance control is in many ways a "dual" to impedance control.
+ The advantages of the one are the disadvantages or the other,
+ and vice versa.
+ Admittance control is mechanically undemanding and robust,
+ but it requires a delicate force sensor,
+ and careful attention to control.
+ </p>
+ <p> &emsp;
+ The two are also mirror images in their software implementation.
+ The usual view is one of "opposite causality"&hairsp;:
+ </p>
+ <p> -	&emsp; in impedance control, the user inputs a displacement
+ to the device, and the device responds with a force.
+ </p>
+ <p> -	&emsp; in admittance control, the user inputs a force to the device,
+ and the device responds with a displacement.
+ </p>
+ <p> The block diagrams in figure 4.1 show the idea.
+ We will have something to say about this view of things,
+ but for&nbsp;now it is the traditional one.
+ </p>
+ 
+ <div class = "center">
+ <img src = "images/causality_impedance.gif"
+    width = "41%";>
+ <img src = "images/causality_admittance.gif"
+    width = "41%";
+    style = "margin-left:8%";>
+ </div>
+ 
+ <div class = "caption";
+      style = "margin-top : 16px">
+ <p> <i> Figure 4.1 :&ensp; Causality in impedance control (&hairsp;left&hairsp;)
+         and admittance control (&hairsp;right&hairsp;).</i> </p>
+ </div>
+ 
+
+<!-- SECTION 4.2 ---------------------------------------------->
+
+<h4> 4.2 &emsp; Duality </h4>
+
+<p> The duality between impedance control and admittance control
+ follows from the mirroring in the roles of the physical
+ and the virtual world. 
+ In admittance control, the ideal control loop
+ is the one in the virtual world.
+ The imperfect, delayed powered loop is on the physical environment.
+ In impedance control, the contact with the physical world is direct
+ and almost trivial, and the loop delay is in the transfer
+ from the device state to the virtual world.
+ </p>
+ 
+ <p> <b> impedance control </b> </p>
+ 
+ <p> Impedance control is the better option in the following cases :
+ </p>
+<p> - &ensp; small, low-cost devices.                 </p>
+<p> - &ensp; safe and light passive movements.        </p>
+<p> - &ensp; physical contact with hard surfaces.     </p>
+
+<p> <b> admittance control </b> </p>
+
+<p> Admittance control is the paradigm of choice
+ in the following cases :
+<p> - &ensp; robust devices
+         (&hairsp;rehab, manufacturing&hairsp;)       </p>
+<p> - &ensp; rendering hard virtual
+         (&hairsp;or remote&hairsp;) surfaces.        </p>
+
+<p> Admittance control  occupies a niche in the haptics world.
+ It is particularly suited to the following applications :
+ </p>
+<p> - &ensp; force sensitive handling of large loads. </p>
+<p> - &ensp; assistive robotics for stroke rehab.     </p>
+<p> - &ensp; remote master-slave operations.          </p>
+<p> - &ensp; haptic VR display of stiff environments. </p>
+
+<p> This has strong implications for device design.
+ Impedance control can only be used in devices
+ which have very low mechanical friction.
+ They are typically driven by very light motors
+ with capstan cable drives. 
+ Forces delivered are typically low. 
+ This limits the use to small devices. 
+ </p>
+ <p> &emsp;
+ Admittance control by its very nature eliminates
+ the device's own friction.
+ This allows robust devices, with gearboxes and leadscrews,
+ large workspace, and the potential to support the user.
+</p>
+<p> &emsp;
+ The downside is that such machines can be unsafe.
+ Table 4.1 summarizes the main points.
+</p>
+
+<div class = "caption";>                       <!-- centered -->
+
+<div style = "border     : 2px solid black;
+              width      : min( 100%, 600px);
+              margin-top : 12px;">
+
+   <table style="border-collapse: collapse;">   <!-- single border lines -->
+              
+   <h4>
+      &emsp; Table 4.1: &emsp; The duality of admittance control
+   </h4>
+   <h4 style = "margin-top    : 0px; 
+                margin-bottom : 8px;">
+      &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &ensp;
+      and impedance control
+   </h4>
+      
+   <tr>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> <i> impedance  </i> </b> </td>
+      <td class = "tdcenter"> <b> <i> admittance </i> </b> </td>
+   </tr>
+   
+   <tr> <td style = "height:1px">  </td> </tr>
+   
+   <tr>
+      <td class = "tdleft"> low cost </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+      <td class = "tdcenter"> </td>
+   </tr>               
+
+   <tr>
+      <td class = "tdleft"> low mass </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+      <td class = "tdcenter"> </td>
+   </tr>               
+
+   <tr>
+      <td class = "tdleft"> safety </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+      <td class = "tdcenter"> </td>
+   </tr>               
+
+   <tr>
+      <td class = "tdleft"> stable on user and environment </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+      <td class = "tdcenter"> </td>
+   </tr>               
+
+   <tr> <td style = "height:9px">  </td> </tr>
+   
+   <tr>
+      <td class = "tdleft"> mechanically robust </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+   
+   <tr>
+      <td class = "tdleft"> large workspace </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+   
+   <tr>
+      <td class = "tdleft"> zero friction </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+      
+   <tr>
+      <td class = "tdleft"> (&hairsp;rendering&hairsp;) high mass and stiffness </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+   
+   <tr>
+      <td class = "tdleft"> crisp master-slave control </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+   
+   <tr>
+      <td class = "tdleft"> man amplifier (&hairsp;exoskeletons etc.&hairsp;) </td>
+      <td class = "tdcenter"> </td>
+      <td class = "tdcenter"> <b> + </b> </td>
+   </tr>
+   
+</table>
+
+</div>
+</div>
+
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>

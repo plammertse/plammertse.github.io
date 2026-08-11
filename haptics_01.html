@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_01.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+</head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="prop_book_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 1 ------------------------------------------------>
+
+<h2> 1 &emsp; Introduction                                 </h2>
+
+<!-- SECTION 1.1 ---------------------------------------------->
+
+<h4> 1.1 &emsp; How to read </h4>
+
+<p> This text is an introduction to admittance controlled haptics.
+</p>
+<p> The book starts off with a series of preliminary chapters,
+ which the reader can skip on a first reading if desired.
+ </p>
+ <p> &emsp;
+First comes an introduction to haptics in general,
+ and the place of admittance control in this field.
+Then there is an introduction  to control theory which is needed
+ to appreciate the difference between impedance and admittance control,
+ especially as regards contact stability.
+ Impedance control is discussed separately
+ because it is probably the background for many readers,
+ and it helps the understanding to frame it in words
+ which will carry over to admittance control in a more natural way
+ than is offered by the traditional view of impedance control. 
+ </p>
+ <p> &emsp;
+Chapter 6 gives a brief introduction to the history
+ and  types of admittance control and its applications.
+ </p>
+ <p> &emsp;
+Chapter 7 starts the real discussion of haptic admittance control
+ with the virtual mass model. 
+ Expert readers can skip directly to this chapter if desired.
+</p>
+
+<!-- SECTION 1.2 ---------------------------------------------->
+
+<h4> 1.2 &emsp; Historical note </h4>
+
+<p> Admittance control is loosely defined as that form of force control
+ which uses a force sensor as an input, and displacement as an output.
+</p>
+<p> &emsp;
+ This method of force control has been re-invented many times
+ since at least he 1980's, in different guises, and under different names. 
+This report defines admittance control more restrictively
+ as the method using a pure virtual mass  as the virtual model.
+</p>
+<p>&emsp;
+ A large fraction of the literature however adds a damping term
+ to the basic virtual mass model, and some authors even leave out
+ the mass term altogether and just use a virtual damper as the model.
+ This latter form of admittance control is sometimes called
+ "accommodation control".
+ The user force is then interpreted as a velocity command,
+ instead of as an acceleration command.
+ The user has to push, usually  quite hard, to keep the device moving.
+</p>
+ <p> &emsp;
+ Accommodation control is more suited to industrial tasks,
+ because it is more stable against hard surfaces.
+ However, it is not suited to human interaction,
+ since the robot feels like it has massive friction.
+ </p>
+<p> &emsp;
+The virtual mass idea can also be seen as an extension to
+ accommodation control, where the "intent of the user"
+ is identified and turned into a more permanent command
+ by an extra integrator on the velocity.
+</p>
+<p style = "color : red"> &emsp;
+Dubbele integrator was duur ! Dus het bleef bij tamme D" :
+ lead-lag en lag-lead networks in plaats van
+ zuivere integratoren (en differentiatoren.).
+At one time, lead-lag instead of P and D.
+ Analog integrators $1000 in 1980,
+ one reason why the virtual mass model
+ was not implemented before.
+</p>
+ 
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="prop_book_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="prop_book_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>
