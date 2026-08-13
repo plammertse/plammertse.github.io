@@ -2,7 +2,7 @@
 <html>
 
 <!--------------------------------------------------------------
--- file    : haptics_054.html
+-- file    : haptics_05.html
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
 --   history :
@@ -62,7 +62,7 @@
  which means there is feedback going round between output and input.
  </p>
  <p> &emsp;
- Figure 6.1 gives the block diagram for a basic closed loop control system.
+ Figure 5.1 gives the block diagram for a basic closed loop control system.
  It has a block <i>K</i> which is the "controller",
  and a block <i>G</i> which is the system to be controlled.
  For the moment we will assume that <i>K</i> is just a multiplication factor,
@@ -91,6 +91,276 @@ This is the moving setpoint which we wish
  The&nbsp;"open loop" output will be :
  </p>
  
+ <!-- EQUATION ------------------------------------------------->
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo>.</mo> <mi>G</mi> <mo>.</mo> <mi>u</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo>.</mo> <mi>G</mi> <mo>.</mo> <mi>r</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.1)
+</td> 
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> When we close the feedback loop,
+ the signal <i>u</i> going into block <i>K</i> changes to :
+ </p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>u</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>r</mi> <mo> &minus; </mo> <mi>y</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.2)
+</td> 
+</tr> </table>
+
+<p> The "closed loop" output is :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo> . </mo> <mi>G</mi> <mo> . </mo> <mi>u</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo> . </mo> <mi>G</mi> <mo> . </mo>
+      <mo>(</mo> <mi>r</mi> <mo> &minus; </mo> <mi>y</mi> <mo>)</mo>
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.3)
+</td> 
+</tr> </table>
+
+<p> The output y has become partly dependent on itself.
+ We can bring it to the left hand side and write :
+ </p>
+ 
+ <table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi> <mo>.</mo>
+   <mo>(</mo> <mn>1</mn> <mo> +
+      </mo> <mi>K</mi> <mo>.</mo> <mi>G</mi> <mo>)</mo>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo> . </mo> <mi>G</mi> <mo> . </mo> <mi>r</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.4)
+</td> 
+</tr> </table>
+
+<p> or </p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mi>K</mi> <mo> . </mo> <mi>G</mi> <mo> </mr>
+      <mr> <mo>(</mo> <mn>1</mn> <mo> + </mo>
+      <mi>K</mi> <mo>.</mo> <mi>G</mi> <mo>)</mo>  </mr>
+      </mfrac>
+      <mo> &nbsp; . &nbsp; </mo> <mi>r</mi> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.5)
+</td> 
+</tr> </table>
+
+<h4> 5.4 &emsp; The transfer from input to output </h4>
+
+<p> The mechanical systems that we are dealing with
+ (&hairsp;small robots&hairsp;), will usually have
+ a more or less fixed numerical gain of <i>G</i>
+ for movements which are not too fast (&hairsp;i.e.,
+ for "low frequencies"&hairsp;).
+ This will make (5.5) just an algebraic equation
+ in real numbers.
+ At these low frequencies, we can increase the control gain <i>K</i> 
+ indefinitely without running into stabilty problems.
+ When <i>K . G</i>  goes to infinity, the fraction in (5.5)
+ will approach <i>K / K</i> = 1, which yields :
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> &cong; </mo> <mspace/>
+    <mi>r</mi> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.6)
+</td> 
+</tr> </table>
+
+<p> In other words, for slow motions and a very high 
+feedback gain <i>K</i>, 
+ the output will follow the reference perfectly,
+ more or less independently of the gain and dynamics
+ of the actual system <i>G</i>.
+   This is the first big advantage of feedback control. 
+ </p>
+ 
+<h4> 5.5 &emsp; Disturbance rejection </h4>
+
+<p> "Disturbance" signals <i>d</i>, like the friction of a robot,
+ will enter into the system <i>G</i> directly,
+ not via the control gain <i>K</i>. 
+ Here the "forward path" in (5.4) is not <i>K . G . u</i>,
+ but <i>G . d</i>. This changes  (5.5) to :
+
+ <table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mi>G</mi> <mo> </mr>
+      <mr> <mo>(</mo> <mn>1</mn> <mo> + </mo>
+      <mi>K</mi> <mo>.</mo> <mi>G</mi> <mo>)</mo>  </mr>
+      </mfrac>
+      <mo> &nbsp; . &nbsp; </mo> <mi>d</mi> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.7)
+</td> 
+</tr> </table> 
+
+<p>
+For the disturbance <i>d</i>, if we let <i>K</i> go
+ to an infinitely large gain, we have :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>y</mi>
+   <mspace/>  <mo> &cong; </mo> <mspace/>
+    <mn>0</mn> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.8)
+</td> 
+</tr> </table>
+
+
+<p> The disturbance signal has no influence
+ on the output of the system.
+ Its effects are completely suppressed.
+ This&nbsp;is the second big advantage of feedback control.
+ </p>
+
+<h4> 5.6 &emsp; Stability </h4>
+
+<p>Feedback has a downside too. It can cause instability.
+ This instability usually takes the form of a violent,
+ spon&shytaneous oscillation at the maximum amplitude
+ that the system can generate, sometimes breaking or damaging it. 
+ </p>
+ <p> &emsp;
+ Textbooks will give a formal derivation of this instability
+ using the Nyquist criterion.
+ A simplistic explanation of this is as follows.
+ If the input to the system is a sine wave,
+ there will be a frequency where the delay of the system
+ is exactly one half of a cycle,
+ creating the opposite peaks of the input sine wave at the output.
+ </p>
+ <p> &emsp;
+ Entering the output as feedback into the system’s input,
+ each peak shows up at the output again with the original sign.
+ At this frequency, the negative feedback acts as positive feedback,
+ delayed by one cycle.
+ This amounts to having a plus sign on the feedback loop
+ instead of the minus sign of figure 5.1.
+ If we look at ( 5.7) with ( 1 - <i>K . G</i> ) in the denominator,
+ then we can almost say that <i>K</i> has effectively become 
+ a negative number in the original equation (5.7),
+ The feedback will increase the disturbances instead of 
+ subtracting from them them.
+ When <i>K . G</i> reaches -1, the denominator becomes zero.
+ Dividing by zero, for this frequency and gain the transfer ratio
+ will explode to infinity. 
+ Hence, instability will occur at this gain :
+ </p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>K</mi> <mo> . </mo> <mi>G</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+    <mn>&minus; 1</mn> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (5.9)
+</td> 
+</tr> </table>
+
+<h4> 5.7 &emsp; Stability margins </h4>
+
+<p> It is wise in practice to stay well below this gain.
+ Control theory defines a number of relative distance measures
+ called "gain margin", "phase margin", "modulus margin" etc. for this.
+ We will just remember that K . G = -1 means instability,
+ and that we need to stay away from it.
+</p>
+
+<h4> 5.8 &emsp; Laplace </h4>
+
+<p> Textbooks usually write transfer functions in terms of sine waves.
+ The unit of frequency is called the "Laplace variable" <i>s</i>.
+ This <i>s</i> is shorthand for a purely complex number
+  j<i>&omega;</i> , where j = √-1 and <i>&omega;</i> is the frequency
+  in radians per second, i.e. <i>&omega;</i> = 2&pi;<i>&hairsp;f</i>
+  with <i>f&hairsp;</i>  in Hertz, i.e. in oscillations per second.
+  </p>
+  <p> &emsp;
+  Using math not repeated here, multiplying a sine wave
+  by <i>s</i> is the same thing as taking the derivative of the sine wave.
+  Multiplying by 1<i>/s</i> is the same thing as taking the time integral
+  of the sine wave. We will use these results without proof. 
+  </p>
+
+<h4> 5.9 &emsp; Integrators and differentiators </h4>
+
+<p> Most of control theory deals with linear systems of pure 
+ differentiators and pure integrators,
+ and the transfer functions for those are simple polynomials in <i>s</i>.
+ Pure time delays unfortunately become exponentials.
+
+<h4> 5.10 &emsp; Further reading </h4>
+
+<p> There are many textbooks on control theory, often called
+ "Feedback Control" or some similar title.
+ They will tell this same story in considerably more detail.
+ </p>
+ <p style = "color : red">
+ Reference Franklin & Powell.
+Gain and phase margin, delay. Bode. Asymptotes.
+</p>
+
 
 
 <!-- FOOTER ----------------------------------------------------->
@@ -99,11 +369,11 @@ This is the moving setpoint which we wish
 <!--
 <div class = "footer">
    <span style="float:left">
-      <a href="prop_book_01_TOC.html"> previous </a>
+      <a href="haptics_01_TOC.html"> previous </a>
    </span>
       P. Lammertse, 2026
    <span style="float:right">
-      <a href="prop_book_02.html"> next </a>
+      <a href="haptics_02.html"> next </a>
    </span>
 </div>
 -->

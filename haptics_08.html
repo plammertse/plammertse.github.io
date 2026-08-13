@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_08.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+ </head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="haptics_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 8 ------------------------------------------------>
+
+<h2> 8 &emsp; Admittance control and the virtual mass </h2>
+
+<!-- SECTION 8.1 ---------------------------------------------->
+
+<h4> 8.1 &emsp; Newton's law </h4>
+
+<p> Admittance control is a model-following control scheme.
+ For the device to feel free and weightless,
+ it must follow the model of a free floating mass.
+ The basic model of a free floating mass is Newton's second law of motion :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>F</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>m</mi> <mo>.</mo> <mi>a</mi> 
+ </math>
+</td>
+
+<td style="text-align:right">                 (8.1)
+</td> 
+</tr> </table>
+
+<p> For a given force and mass, the acceleration is :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>a</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>F</mi> <mi>m</mi> 
+   </mfrac>
+ </math>
+</td>
+
+<td style="text-align:right">                 (8.2)
+</td> 
+</tr> </table>
+
+<p>The admittance controller uses the measured force
+ as an input to calculate a  model acceleration.
+ This acceleration is based on a theoretical,
+ imaginary mass <i>m</i>,
+ which is called the "virtual" mass.
+</p>
+<p> &emsp;
+ The measured force is thus interpreted
+ as an acceleration command,
+ with 1<i>/<&thinsp;m</i> as scaling factor, or "gain".
+ High gain (&hairsp;low mass&hairsp;)
+ gives the lightest motion,
+ but there is a stability limit to the maximum possible gain,
+ hence to the lowest virtual mass.
+When the end effector is pushed lightly,
+ the device will start moving.
+ When the force sensor is left untouched,
+ the end effector will float on in a straight line
+ until one of the device end stops is reached. 
+ 
+A 2D device will feel like an air bearing table.
+ A 3D device will feel like an object floating in space.
+ </p>
+ <p> &emsp;
+ With zero damping in the virtual model,
+ the virtual mass is not strictly passive or “stable”,
+ in the sense that it does not come to an automatic stop.
+ But it does not accelerate by itself either :
+ both the position and the velocity are indifferent,
+ or neutrally stable.
+ </p>
+
+<p>&emsp;
+ Figure 8.1 shows the admittance control block diagram.
+ It differs from the impedance control diagram of figure 6.1
+ in having two nested loops, instead of just one. 
+ The inner loop is a position controlled robot.
+ The outer loop is an "ideal" model of a virtual mass
+ in a virtual world.
+ This loop generates a PVA command (&hairsp;position,
+ velocity and acceleration&hairsp;) command for the inner loop.
+ This is a model-following system. 
+ </p>
+ <p> &emsp;
+ Like in figure 6.1, both the haptic renderer and the user
+ react to displacements by forces. 
+ Contrary to popular belief, the renderer is an "impedance",
+ exactly like it was in impedance control.
+ </p>
+ 
+ <div class = "center"; style = "margin-top : 0">
+<img src = "images/admittance_block_diagram.gif";
+   width = "85%">
+</div>
+
+<div class = "caption";
+     style = "margin-top    : 16px;
+              margin-bottom : 0">
+   <i> Figure 8.1 &emsp; Admittance control block diagram. </i>
+</div>
+<div class  = "caption";
+      style = "margin-top    : 3px;
+               margin-bottom : 0">
+   <i> &emsp; &emsp; &emsp; &emsp; 
+      (&hairsp;PVA &equiv; position,
+         velocity, acceleration&hairsp;) </i>
+</div>         
+         
+<h4> 8.3 &emsp; The virtual world </h4>
+
+<p> The left hand block of figure 8.1
+ contains the virtual mass model
+ and the haptic renderer.
+ Together, they completely define the reactions of the device.
+ </p>
+ <p> &emsp;
+ The virtual mass often represents a hand held tool
+ moving in the virtual world.
+ Via this tool, the user interacts with a virtual
+ (&hairsp;or remote&hairsp;) environment.
+ The "haptic renderer" calculates all the reaction forces
+ which the virtual environment exerts on the virtual tool.
+ These forces are based solely on the position and velocity
+ of the virtual tool in the virtual environment.
+ </p>
+ <p> &emsp;
+ The virtual environment is an <i>impedance</i>.
+ Its paradigm is : displacement in, force out.
+ </p>
+
+<h4> 8.4 &emsp; The position controlled robot </h4>
+
+<p> The middle block of figure 8.1 represents
+ a position controlled robot.
+ This robot is simply a slave to the virtual model.
+ It just needs to realize the calculated motions
+ of the virtual mass.
+ </p>
+ <p style = "color:darkgray">
+ Since there is no real hard reference
+ for the motion of the virtual tool,
+ the user will accept it as it is,
+ even if it does not exactly follow an ideal model.
+ </p>
+ <p style = "color:red"> &emsp;
+ Do not use a velocity command and then accept
+ what the robot makes of the integrated position,
+ and use that in your virtual renderer.
+</p>
+<p>
+Human perception of perceived position and velocity
+ is not very precise,
+ and it does not put high demands on the robot's accuracy.
+ Provided the robot does not generate
+ any unpleasant extra motions like sagging,
+ bumping and vibrating,
+ the user will not be very critical of the performance. 
+ However, like in the impedance controller,
+ there will be stability problems
+ when the robot fails to realize the bandwidth
+ that the virtual model commands in a closed force loop.
+ </p>
+ <p style = "color:red">
+This time you can have strong servo damping (or viscous damping).
+</p>
+
+<h4> 8.5 &emsp; The user and the physical environment </h4>
+
+<p> TBW. </p>
+
+<h4> 8.6 &emsp; Motion in "free air" </h4>
+
+<p> Since friction can be fully eliminated in
+ admittance controlled devices,
+ designers tend to accept relatively high
+ mechanical device friction,
+ because this allows high gearing ratios and a robust mechanical design.
+ Such a machine cannot simulate frictionless motion in free air until it is active. 
+ </p>
+ <p> &emsp;
+Once it is switched on, the device adopts the behaviour of a free floating mass.
+ This virtual mass will accelerate and decelerate at the push or pull of the user,
+ and keep floating if they no longer touch the force sensor.
+ The robot will follow the virtual mass model,
+ up to the frequencies that the device can reproduce. 
+Low frequencies are like chapter 3. PVA to PVA.
+</p>
+<p> &emsp;
+Physical gravity on the end effector,
+ and friction in the device, will not affect the feel,
+ because these do not feed into the virtual model.
+ Gravity is normally calibrated out of the force measurement
+ by a zero measurement at startup of the system.
+</p>
+<p> &emsp; Even the direct force of the user's hand
+ (&hairsp;via the stiff force sensor&hairsp;)
+ will not affect the motion.
+ To the position controlled robot it is just
+ another disturbance to be cancelled.
+ This is just as well : in the FCS HapticMaster,
+ the virtual mass is usually set to 3 kg,
+ while the robot inertia including the reflected inertia
+ of the motor via a high gearing is closer to 30 kg.
+ The direct user's push may help the motor a little
+ while following the virtual mass,
+ but the control loop does not really see this, or care.
+ </p>
+ <p> &emsp;
+At higher frequencies the picture is less ideal.
+  The next chapter will discuss the effect
+  of delays in the robot's response.
+  These will affect the contact stability
+  on stiff physical environments.
+ </p>
+
+ <h4> 8.7 &emsp; The leapfrog (&hairsp;double&hairsp;) integrator </h4>
+ 
+<p> Before discussing virtual walls or dampers,
+ we look at the software implementation of the double integrator
+ in the left hand block of figure 8.1.
+</p>
+<p> &emsp;
+ In the discrete time domain, the code which runs
+ once every software cycle looks like this :
+ </p>
+ 
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>a</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <<mi>F</mi> <mo>/</mo> <mi>m</mi>
+ </math>
+</td>
+</tr> </table>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>v</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <<mi>v</mi> <mo>+</mo> <mi>a</mi> 
+      <mo> . </mo> <mn>&Delta;</mn> <mi>T</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (8.3)
+</td> 
+</tr> </table>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>x</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <<mi>x</mi> <mo>+</mo> <mi>v</mi>
+      <mo> . </mo> <mn>&Delta;</mn> <mi>T</mi>
+ </math>
+</td>
+</tr> </table>
+
+<p> Here <i>F</i> is the sum of the forces
+ from the force sensor and from the haptic renderer,
+ possibly limited by a so-called PVA limiter
+ discussed in a later chapter.
+</p>
+<p> &emsp; The haptic renderer force is calculated
+ from the "current" values of<i>v</i> and <i>x</i>,
+ which are inherited from the previous cycle,
+ so they in the current cycle they are really the "previous" values.
+ The current force <i>F</i> is divided by the virtual mass
+ to get the "current" acceleration.
+ This is then used to update the virtual velocity <i>v</i>
+ (&hairsp;the proper term is "propagated"&hairsp;).
+ The current value of <i>v</i> is simply overwritten by the new one.
+ In the last line of code,
+ the&nbsp;"current" position <i>x</i> gets the same treatment.  
+</p>
+<p> &emsp;
+ Equation (8.3) looks like a simple forward Euler integrator,
+ but there is an important difference :
+ in Euler, <i>x</i> is propagated first by the current ("old") velocity.
+ Here, we propagate it last, by the new velocity.
+ This modified Euler integrator is called the "leapfrog",
+ because one interpretation is that the steps in the velocity
+ and the steps in the position take turns, like in the children's game.
+ The "new" velocity can be interpreted as the velocity
+ midway between the old position and the new position.
+ In this sense, the haptic renderer calculates the "current"
+ force <i>F</i> from a velocity and a position which fit
+ moments in time differing by half a time step.
+ It is a valid and helpful mental image, 
+ but it is best to forget it immediately. 
+ </p>
+ <p> &emsp;
+ In particular, it is important to resist the temptation
+ to "correct" or "improve" the time difference 
+ by changing the inputs to the haptic renderer to be
+ "at the same time".
+  This will turn the leapfrog into a forward Euler integrator,
+  which is highly unstable on undamped springs.
+  </p>
+  <p> &emsp;
+  The leapfrog is a wonderfully simple implementation
+  of the "Verlet type" integrator which was devised
+  for astronomical and molecule simulations because it is "symplectic" :
+  it models mass-spring-damper systems with exactly the proper damping.
+  This same property makes it very suitable for virtual haptic rendering.
+  In spring-like virtual force fields with no damping,
+  the device can oscillate (&hairsp;or orbit, in 2D or 3D&hairsp;)
+  for hours on end without ever diverging or converging,
+  and the damping of virtual walls will be modelled exactly.
+  </p>
+   
+<h4> 8.8 &emsp; Virtual damping </h4>
+
+<p> Unlike the impedance control renderer,
+ the admittance control haptic renderer has perfect information
+ about the velocity of the moving (&hairsp;virtual&hairsp;) mass.
+ Using this exact velocity will give the device perfectly smooth damping.
+ </p>
+<p style = "margin-top:6px;">
+ <b> continuous-time exponential response </b> </p>
+
+<p> The continuous-time deceleration of a damped mass is :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>a</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>F</mi> <mi>m</mi> 
+   </mfrac>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mn>&minus;&thinsp;</mn> <mi>D</mi> <mo> . </mo> <mi>v</mi>
+      </mr>
+      <mr> <mn> &nbsp; </mn> <mi>m</mi>  </mr>
+   </mfrac>
+</math>
+</td>
+
+<td style="text-align:right">                 (8.4)
+</td> 
+</tr> </table>
+
+<p> The theoretical response is an exponential decay,
+ with a time constant of : 
+ </p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>&tau;</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>m</mi> <mi>D</mi> 
+   </mfrac>
+</math>
+</td>
+
+<td style="text-align:right">                 (8.5)
+</td> 
+</tr> </table>
+
+ 
+<p style = "margin-top:6px;">
+   <b> piecewise linear decay </b> </p>
+ 
+ <p> In the discrete-time implementation 
+ of the leapfrog integrator (8.3),
+ the decay in every time step is a straight line approximation
+ of the exponential :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>v</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mi>v</mi>
+   <mo> &thinsp;&minus;&thinsp; </mo>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mi>D</mi> <mo> . </mo> <mi>v</mi>
+      </mr>
+      <mr> <mn> &nbsp; </mn> <mi>m</mi>  </mr>
+   </mfrac>
+   <mo> . </mo>
+   <mn>&Delta;</mn> <mi>T</mi>
+</math>
+</td>
+
+<td style="text-align:right">                 (8.6)
+</td> 
+</tr> </table>
+
+<p> Applying these small straight line velocity steps
+ in quick succession
+ gives a good approximation to the continuous-time exponential,
+ by a series of small straight-line segments.
+</p> 
+
+<p style = "margin-top:6px;">
+   <b> deadbeat response </b>
+</p>
+
+<p> The straight-line approximation will become too coarse
+ if the time steps get to the order of the exponential decay time.
+ In fact, (8.5) brings the velocity to zero in a single time step
+ when &Delta;<i>T</i> becomes equal to &tau;.
+ This is called the "deadbeat" response.
+ From (8.6), this will occur when :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <msub> <mi>D</mi> <mn>deadbeat</mn> </msub>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>m</mi>
+      <mr> <mn>&Delta;</mn> <mi>T</mi> </mr>
+   </mfrac>
+</math>
+</td>
+
+<td style="text-align:right">                 (8.7)
+</td> 
+</tr> </table>
+
+<p> At twice this damping, the velocity will oscillate
+ between  +&hairsp;<i>v</i> and &minus;&thinsp;<i>v</i>,
+ and for even higher values the oscillation will be divergent.
+ </p>
+
+<p style = "margin-top:6px;">
+   <b> a practical damping limit </b>
+</p>
+
+ </p>
+ <p>  For a virtual mass of 3 kg and an update frequency
+  of 2,000 Hz, (8.7) yields
+  <nobr> <i>D</i><sub>deadbeat</sub> &thinsp;&cong;&thinsp;
+  6,000 [&hairsp;N&hairsp;.&hairsp;s&hairsp;/&hairsp;m&hairsp;].
+  </nobr>
+  </p>
+<p> &emsp;  
+ It is best to stay a factor of 10 away from this limit,
+ to get a good approximation of the exponential decay.  
+  This&nbsp;puts the practical maximum damping at
+  600 [&hairsp;N&hairsp;.&hairsp;s&hairsp;/&hairsp;m&hairsp;],
+ which is still extremely "stiff".
+ It will take 6 [&hairsp;N&hairsp;] of con&shy;tinu&shy;ous push force
+ to keep the device moving at a constant velocity of
+ 0.01 [&hairsp;m&hairsp;/&hairsp;s&hairsp;].
+ </p>
+ <p> &emsp;
+ Pleasant maximum dampings for human use are on the order of
+ 100 [&hairsp;N&hairsp;.&hairsp;s&hairsp;/&hairsp;m&hairsp;]. 
+ Higher values are rarely needed.
+ Values of 10 or 30 are best for normal use.
+ </p>
+
+<h4> 8.4 &emsp; Virtual walls </h4>
+
+<p> Virtual walls are one-sided springs,
+ with the  spring force according to (6.1).
+ The leapfrog integrator renders such springs "perfectly",
+ i.e. with the proper damping, zero or otherwise.
+ But the previous section showed that there is a numerical limit
+ to the maximum damping.
+ This also puts a limit to the attainable spring stiffness.
+ </p>
+
+<p style = "margin-top:6px;">
+   <b> maximum stiffness derived from the damping ratio </b>
+</p>
+
+<p> A pleasantly damped spring has a so-called "damping ratio"
+ &zeta; of 0.7. This non-dimensional number
+ follows from the eigenvalues of the solution.
+ With some manipulation the solution yields :
+ </p>
+ 
+ <table class="equation"> <tr>
+<td>
+ <math>
+   <mi>K</mi>   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>1</mi>
+      <mi>m</mi>
+   </mfrac>
+   <mo> . </mo>
+   <msup>
+   <mr> <mo>(</mo>
+      <mstyle displaystyle="true">  
+      <mfrac>
+         <mi>D</mi>
+         <mn>2&thinsp;&zeta;</mi>
+      </mfrac>
+   <mo>)</mo> </mr>
+   <mn style = "font-size : 1em;">2</mn>
+   </msup>
+</math>
+</td>
+
+<td style="text-align:right">                 (8.8)
+</td> 
+</tr> </table>
+
+<p> Typical values for the FCS HapticMaster are
+ <i>m</i> ≥ 3 kg and <i>D</i> ≤ 600
+ [&hairsp;N&hairsp;.&hairsp;s&hairsp;/&hairsp;m ].
+ </p>
+ <p>  With &zeta; = 0.7, this translates
+ into a maximum virtual spring stiffness of :
+
+ <table class="equation"> <tr>
+<td>
+ <math>
+   <msub> <mi>K</mi> <mn>max</mn> </msub>
+   <mspace/>  <mo> &cong; </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mn>1</mn>
+      <mn>3.0</mi>
+   </mfrac>
+   <mo> . </mo>
+   <msup>
+   <mr> <mo>(</mo>
+      <mstyle displaystyle="true">  
+      <mfrac>
+         <mi>600</mi>
+         <mn>1.4142</mi>
+      </mfrac>
+   <mo>)</mo> </mr>
+   <mn style = "font-size : 1em;">2</mn>
+   </msup>
+   <mspace/>  <mo> &cong; </mo> <mspace/>
+   <mn> &emsp; 60,000 &emsp; &emsp; [&hairsp;N&hairsp;/&hairsp;m&hairsp;]
+   
+</math>
+</td>
+
+<td style="text-align:right">                 (8.9)
+</td> 
+</tr> </table>
+
+<p style = "margin-top:6px;">
+   <b> human perception limit for the stiffness </b>
+ </p>
+
+<p> The virtual stiffness can go beyond this value
+ by a very large factor before going unstable,
+ but the spring will have a bit too much damping
+ at these larger stiffnesses.
+ This could be corrected for by reducing the damping ratio accordingly,
+ but in practice,
+   <i>K</i> = 50,000 [&hairsp;N&hairsp;/&hairsp;m&hairsp;]
+is "infinitely stiff" to the human touch,
+ and higher stiffness values are rarely useful.
+</p>
+<p style = "color:red">
+	How does it feel, 2,000, 20,000.
+</p>
+
+
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="haptics_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="haptics_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<!--------------------------------------------------------------
+-- file    : haptics_06.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-12-07  new
+---------------------------------------------------------------> 
+
+<!-- FORMATTING  ---------------------------------------------->
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title>  Piet Lammertse on haptics  </title>
+
+</head>
+
+<body>
+
+<!-- TOP NAV BAR  --------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href="index.html">
+               Home </a>                                   </li>
+      <li> <a href="haptics_00_TOC.html">
+               Table of Contents</a>                       </li>
+   </ul>
+</nav>
+
+<!-- CHAPTER 6 ------------------------------------------------>
+
+<h2> 6 &emsp; Impedance control      </h2>
+
+<!-- SECTION 6.1 ---------------------------------------------->
+
+<h4> 6.1 &emsp; Introduction </h4>
+
+<p> Most of the literature on classical haptics tacitly assumes
+ impedance control as a paradigm when discussing device design,
+ stability, rendering and software architecture.
+ This sometimes leads to conclusions presented as generic,
+ which are completely in error for admittance controlled devices.
+ </p>
+ <p> &emsp;
+	We will briefly discuss impedance control here
+   so we make the distinction between what is actually generic,
+   and what is specific to impedance control.
+   Readers purely interested in admittance control
+   can skip this chapter.
+</p>
+
+<h4> 6.2 &emsp; The impedance control block diagram </h4>
+
+<p>The assumption in the left hand figure 4.1 was
+ that the user inputs a desired movement of the device and
+ perceives the force needed to do that.
+ Due to the small device mass and hopefully small friction, 
+ the user will hardly notice the dynamics of the device itself,
+ and "feel" the force from the haptic renderer
+ as though the device were transparent to it.
+</p>
+<p> &emsp;
+ The device mass itself is usually neglected in the analysis. 
+For easier comparison to admittance control however,
+ the impedance control block diagram of figure 6.1 below
+ includes the physical device mass.
+ We do not assume that the user directly inputs a displacement.
+ Instead, the user moves the device mass by a hand force.
+ This force adds to the motor force and the friction force.
+ Together they control the passive device mass according to Newton's law.
+The haptic renderer and the "user" both react
+ to a displacement by a force.
+ From the device's point of view, they are both "impedances".
+ </p>
+ 
+<div class = "center">
+<img src = "images/impedance_block_diagram.gif";
+   width = "65%">
+</div>
+
+<div class = "caption";
+     style = "margin-top : 16px">
+   <i> Figure 6.1 &emsp; Impedance control block diagram. </i>
+</div>
+
+<h4> 6.3 &emsp; Impedance control is passively stable in "free air" </h4>
+
+<p> When an impedance controlled device is switched off,
+ the driving force from the motor is zero.
+ The user's hand, plus the device friction and gravity forces,
+ accelerate the device mass.
+</p>
+<p> &emsp;
+ This is the state in which impedance controlled devices
+ simulate free motion, “in free air”. 
+Impedance controlled devices are therefore normally designed
+ to have mechanically low mass and low friction.
+ A small desktop device will have an effective
+ end effector mass of 20 grams, i.e. 0.02 kg ,
+ and an effective friction force of 5 grams, i.e. 0.05 N.
+ </p>
+ <p> &emsp;
+The "control gain" <i>K</i> in figure 5.1,
+ from physical device position to motor force,
+ is zero since the motor force is always zero.
+ The loop is simply not closed. 
+ <p> &emsp;
+ The end effector can be held against a hard physical surface
+ and it will make no difference in the motor torque. 
+Hard physical surfaces do not present a stability problem
+ to an impedance controlled device.
+ This is a major advantage of impedance control
+ over admittance control.
+</p>
+
+<h4> 6.4 &emsp; Gravity compensation is hard in impedance control </h4>
+
+<p>In a passive device, the user will feel the weight
+ of the end effector and the mechanism behind it.
+ While these are usually light in weight, this may become a problem
+ if the end effector has a powered gripper,
+ or a similarly heavy appendage. 
+ </p>
+ <p> &emsp;
+	It is possible to add a motor force compensating for the weight,
+   to make the end effector "float",
+   but in practice the linkage forces are very dependent
+   on the pose of the mechanism,
+   since each link contributes to the bias force at the end effector
+   in its own way.
+   Imperfect balancing will cause the end effector to float up or down,
+   or sideways which is even more disturbing.
+   This is one more reason why the end effector in an impedance
+   controlled device is preferably kept light.
+</p>
+
+<h4> 6.5 &emsp; Device design and friction </h4>
+
+<p> Friction compensation is nearly impossible
+ in an impedance controlled device,
+ because at standstill there is no way of telling
+ the intention of the user :
+ the device cannot know in which direction
+ the user will wish to move next.
+</p>
+<p> &emsp;
+ Once in motion, a "helping" motor force
+ in the direction of motion can be added,
+ but the transition from hard stiction to active friction compensation
+ will always be felt.
+ A later chapter will go more deeply into the psychophysics of friction.
+ </p>
+ <p> &emsp;
+The practical solution is to design impedance controlled devices
+ for low friction between the motor and the end effector.
+ In practice, this rules out high gearing.
+ Impedance controlled devices typically have light,
+ low-friction cable quadrant drives (&hairsp;"capstan drives"&hairsp;)
+ with maximum transmission ratios of 15 : 1.
+ This limits the maximum rendered force to the order of 1 N 
+ (&hairsp;0.1 kg<sub>f</sub>&hairsp;), 
+ which limits the use to lightweight and small applications.
+</p>
+
+<h4> 6.5 &emsp; Virtual walls in impedance control</h4>
+
+<p> Once the impedance controlled device is switched on,
+ it can "display" virtual forces to the user.
+ A haptic rendering software model will compute virtual forces
+ acting on the stylus in a virtual world,
+ and the controller will command these forces directly to the motor. 
+Maybe the simplest effect that a haptic device can render
+ is a virtual spring (&hairsp;or, if the spring is one-sided, a virtual wall&hairsp;).
+ Unlike the admittance controller discussed later,
+ the impedance controller has a problem
+ in rendering such stiff virtual springs.
+ A spring returns this force when stretched :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>F</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mn> &minus; &nbsp; </mn> <mi>K</mi> <mo>.</mo> <mi>x</mi> 
+   <mspace/>  <mo> &minus; </mo>
+   <mi>D</mi> <mo>.</mo> < <mi>v</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.1)
+</td> 
+</tr> </table>
+
+<p> Here <i>F</i> is the spring force, <i>x</i> is the extension of the spring,
+ <i>v</i> is the extension velocity, <i>K</i> is the spring stiffness,
+ and <i>D</i> is the damping.
+ When a mass is attached to the spring,
+ then from Newton's law <i>F</i> = <i>m&thinsp;.&thinsp;a</i>, the dynamic equation is :
+</p>
+
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>a</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>  <mi>F</mi> <mi>m</mi> </mfrac>
+   
+   <mspace/>  <mo> = </mo> <mspace/>
+   
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mn> &minus; &nbsp; </mn> <mi>K</mi> <mo>.</mo> <mi>x</mi> 
+      <mspace/>  <mo> &minus; </mo> <mi>D</mi> <mo>.</mo> <mi>v</mi> </mr>
+      <mi>m</mi>
+   </mfrac>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.2)
+</td> 
+</tr> </table>
+
+<p> There is a standard solution for this equation.
+ From mechanics texts, we know that if the mass is pulled back
+ on the spring and then released,
+ it will oscillate back and forth 
+ with the following frequency :
+</p>
+
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>f</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>  <mn>1</mn> <mn>2&hairsp;&pi;</mn> </mfrac>
+   
+   <mo> . </mo>
+   
+   <mstyle displaystyle="true">
+<!--   <msqrt> <mfrac> <mi>K</mi> <mi>m</mi> </mfrac> </msqrt>  -->
+   <mn style = "font-size : 1.8em;
+                font-weight : lighter;
+                transform: translateY(-1px);   /* minus is up */             
+                padding-right: 2px;">
+   &radic; </mn>
+   <mfrac style = "border-top : 2px solid;
+                   padding    : 4px 0;"> 
+      <mi>K</mi> <mi>m</mi>
+   </mfrac>
+   <mn> &emsp; &emsp; &emsp; [Hz] </mn>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.3)
+</td> 
+</tr> </table>
+
+<p> This is the undamped frequency.
+ With damping present, there will be a small correction,
+ but (6.3) is the resonance frequency
+ of an undamped spring-mass system.
+ </p>
+ <p> &emsp;
+	One way of looking at the stability of this system is
+   to think of a loop with a small delay.
+   The spring force simulated by the motor,
+   based on the measured position,
+   will lag the ideal model value a bit.
+   In an oscillation, the spring force will
+   persist a while on the return path,
+   and during the zero crossing. 
+   This accelerates the return velocity.
+   A force which increases a velocity 
+   is the opposite of a damping.
+   Any mechanical damping that may have been present
+   will soon be cancelled,
+   and the oscillation will diverge and become unstable. 
+   </p>
+   <p> &emsp;
+ The device is trying to emulate a pure undamped spring
+ acting on the physical device mass,
+ and it cannot live up to this ambition
+ beyond a certain frequency.
+
+	We can cast the same argument in the form
+   of the closed loop control equations of chapter 5.
+    </p>
+ <p> &emsp;
+   The device <i>G</i> in figure 5.1 is a small robot
+   which turns an input force <i>u</i> into an output <i>y</i>.
+   We will call the output <i>x</i> here, because it is a position.
+   With the Laplace variable <i>s</i> meaning “take the derivative”,
+   the velocity is <i>v</i> =  <i>x . s</i>,
+   and the acceleration becomes
+   <i>a</i> = <i>v . s</i> = <i>x . s</i><sup>2</sup>.
+   </p>
+   <p> &emsp;
+   Then Newton’s law <i>F</i> = <i>m . a</i> becomes
+   <i>F</i> = <i>m . x . s</i><sup>2</sup>,
+   and from this  <i>x / F</i> = 1<i> / m .  s</i><sup>2</sup>,
+   with <i>m</i> the device mass.
+   The system <i>G</i> has just become
+   a double integrator :
+ </p>
+
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>G</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>x</mi>  <mi>F</mi>
+   </mfrac>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mn>1</mn>
+      <mr> <mi>m</mi> <mo>.</mo> <msup><mi>s</mi> <mn>2</mn> </msup>
+      </mr>
+   </mfrac>
+   
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.4)
+</td> 
+</tr> </table>
+
+<p> The stiffness <i>K</i> converts the output position
+  <i>x</i> into a desired input force to <i>G</i> :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mi>F</mi>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mi>K</mi> <mo>.</mo> <mi>x</mi>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.5)
+</td> 
+</tr> </table>
+
+<p> The closed loop transfer of (5.5) becomes :
+</p>
+
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mstyle displaystyle="true">
+   <mfrac>
+   <mi>x</mi> <mi>F</mi>
+   </mfrac>
+
+   <mspace/>  <mo> = </mo> <mspace/>
+   
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mr> <mi>K</mi> <mo> . </mo> <mi>G</mi> <mo> </mr>
+      <mr> <<mn>1</mn> <mo> + </mo>
+      <mi>K</mi> <mo>.</mo> <mi>G</mi> </mr>
+   </mfrac>
+
+   <mspace/>  <mo> = </mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <mr> <mi>m</mi> <mo>.</mo> <msup><mi>s</mi> <mn>2</mn> </msup>
+      <mo> + </mo> <mi>K</mi>
+      </mr>
+   </mfrac>
+   
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.6)
+</td> 
+</tr> </table>
+
+<p> From (5.9) the system is unstable
+ if <i>K . G</i> = -1, which yields here :
+ </p>
+ 
+<table class="equation"> <tr>
+<td>
+ <math>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mn>K</mn>
+      <mr> <mi>m</mi> <mo>.</mo> <msup><mi>s</mi> <mn>2</mn> </msup>
+      </mr>
+   </mfrac>
+
+   <mspace/>  <mo> = </mo> <mspace/>
+   
+      <mn>&minus;&hairsp;1</mn>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.7)
+</td> 
+</tr> </table>
+
+<p> Recalling from section 5.8 that
+ <i>s</i> = -&thinsp;j&thinsp;.&thinsp;<i>&omega;</i> and therefore
+  <i>s</i><sup>2</sup> = &minus;&thinsp;<i>&omega;</i><sup>2</sup>,
+  we have : 
+ </p>
+
+ <table class="equation"> <tr>
+<td>
+ <math>
+   <msup> <mi>&omega;</mi> <mn>2</mn> </msup>
+   <mspace/>  <mo> = </mo> <mspace/>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>K</mi> <mi>m</mi>
+   </mfrac>
+ </math>
+</td>
+
+<td style="text-align:right">                 (6.8)
+</td> 
+</tr> </table>
+
+<p> This is the same result as in (6.3).
+</p>
+<p> &emsp;
+ Another way to get the same result is by directly solving
+ for the frequency where the denominator
+ <i>m&thinsp;.&thinsp;s</i><sup>2</sup> + <i>K</i> 
+ of&nbsp;the closed loop transfer function (6.6) becomes zero.
+ These zeros of the denominator are called
+ the "poles" of&nbsp;the closed loop system.
+</p>
+<p style = "color:red"> TBW  &emsp; Numerical example </p>
+
+<h4> 6.7 &emsp; Device damping </h4>
+
+<p style = color:red">
+Impedance control device damping - passive or active.
+Unusual to have a high quality velocity sensing. Viscous dampers, best without a flywheel because you will feel the extra mass.
+</p>
+
+<h4> 6.8 &emsp; Virtual damping </h4>
+
+<p> The position and velocity of the virtual model in impedance control
+ is obtained from the device.
+ The velocity is obtained by differencing the encoder signal.
+ The encoder position has discrete steps (&hairsp;it is "quantized"&hairsp;).
+ Differencing makes for a very noisy signal.
+ This can be smoothed by realtime filtering,
+ but this comes at the cost of large delays which impact stability.
+ </p>
+ <p> &emsp;
+ As a result, haptic renderers for impedance controlled devices
+ usually do not implement virtual damping at all.
+ They rely completely on the device Coulomb friction for damping.
+ </p>
+ <p style = "color:red"> &emsp;
+	Differencing increases position noise
+   by 1<i>&hairsp;/&hairsp;T</i>
+   as opposed to <i>decreasing</i> force sensor noise
+   by 1<i>&hairsp;/&hairsp;T</i> on admittance control
+(&hairsp;due to the virtual mass integration&hairsp;).
+</p>
+
+<h4> 6.9 &emsp; Adding virtual mass </h4>
+
+<p style = "color:red">  TBW. Confusing.
+ Useful for stability.
+ Seems limited to twice the device mass.
+</p>
+
+<h4> 6.10 &emsp; Position control </h4>
+
+<p> Due to the usual lack of active velocity feedback,
+ large scale motions of im-pedance controlled devices
+ tend to be poorly damped.
+ Position control of the device
+ (&hairsp;moving it to a specific location,
+ especially without a user holding the end effector&hairsp;)
+ is normally not possible without undue jerks and oscillations.
+ </p>
+
+
+
+<!-- FOOTER ----------------------------------------------------->
+<br><br>
+
+<!--
+<div class = "footer">
+   <span style="float:left">
+      <a href="haptics_01_TOC.html"> previous </a>
+   </span>
+      P. Lammertse, 2026
+   <span style="float:right">
+      <a href="haptics_02.html"> next </a>
+   </span>
+</div>
+-->
+
+<!-- script must be at end of body -->
+<script src="menu.js"></script>
+ 
+</body>
+</html>
