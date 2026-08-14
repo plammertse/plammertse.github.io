@@ -13,38 +13,45 @@
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="plammertse.css">
-  <title>  Piet Lammertse on propeller theory  </title>
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title>  Piet Lammertse on propeller theory  </title>
 </head>
 
 <body>
 
-<div class="no-print">
-<!-- NAVIGATION BAR MENU --------------------------------------------->
-<ul>
-  <li> <a href="index.html">                Home             </a> </li>
-  <li> <a href="prop_book_frontispiece.html">&#x25C4
-                                            Frontispiece     </a> </li>
-  <li> <a style="background-color:#0000C0;"
-          href="prop_book_00_TOC.html"> 
-                                      Contents &#x25BC</a> </li>
-  <li> <a href="prop_book_01_TOC.html">     Next     &#x25BA </a> </li>
-</ul>
-</div>
+<!-- NAVIGATION BAR MENU -------------------------------------->
+<nav class="dropdown-menu">
+
+   <!-- Responsive hamburger button, see menu.js -->
+   <button class="nav-toggle"
+      aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>  <span></span>  <span></span>
+   </button>
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "prop_book_00_TOC.html">
+         Table of Contents </a>                            </li>
+   </ul>
+</nav>
+
+
 
 <!--- PAGE HEADER ---------------------------------------------------->
 <p style="margin-left : 320px">  <i> PREFACE </i> </p>
 <hr style="margin : 0 0;">
 
 <!-------------------------------------------------------------------->
-<h2> <i> Preface</i> </h2>
+<h2> Preface </h2>
 
 <h4> purpose of the book </h4>
 
 <p> This text is a basic introduction to classical propeller theory.
  It offers the reader an intuitive grasp of the most im&shyportant concepts.
  This allows sensible preliminary designs, well informed sanity checks 
- on existing design pro&shyposals, and parameter studies from very basic data.
+ on existing design proposals, and parameter studies from very basic data.
 </p>
 <p>&emsp;
  No prior knowledge is assumed except for high school physics,
@@ -64,11 +71,10 @@
  1935 classic synthesis in 
  <span style="font-variant: small-caps;">Durand</span>,
  and the&nbsp;present text is no exception.
+ However, there are two significant modernizations :
 </p>
-<p>&emsp;
- But there are two modernizations : a novel,
- definitive viscous optim&shyization,
- and an equally solid, yet simple, lifting line code.
+<p> - &emsp; a novel, exact viscous optimization. </p>
+<p> - &emsp; and a solid, simple lifting line code. </p>
 
 <h4> viscous optimization </h4>
 
@@ -76,18 +82,24 @@
  <span style="font-variant: small-caps;">Glauert</span>'s
  optimization of the viscous drag to its logical
  conclusion. I believe this material is new.
- This optimization may not lead to much better propellers by itself,
- but the derivation helps to get a better intuition
- of the balance between the viscous and momentum loss,
- and the optimal value for the tip speed ratio.
+ </p>
+ <p> &emsp;
+ This optimization by itself gives only a very minor increase
+ in the efficiency of the propeller.
+ But it is not just about dotting the i's in the theory. 
+ Somewhat unexpectedly, the viscous optimization gives
+ a very noticeable modification to the blade shape,
+ which may have some useful side benefits. 
+ </p> 
+ <p> &emsp;
+ The viscous derivation also helps to get a better intuition
+ of the balance between viscous and momentum loss,
+ and on the optimal value for the tip speed ratio.
 </p>
-<p>
-It also gives a noticeable modification to the blade shape,
- which may give some useful side benefits. 
-</p>
+
 <h4> simple lifting line code </h4>
 
-<p> This text gives an exact, yet extremely simple lifting line code
+<p> The text gives an exact, yet extremely simple lifting line code
  based on 
    <span style="font-variant: small-caps;">Lerbs</span>'s
  1952 version of
@@ -105,12 +117,9 @@ It also gives a noticeable modification to the blade shape,
 <p> A running example for a typical lightplane serves
  as a guide for the order of magnitude of various effects.
 </p>
-<p style="margin-top:12px;"> 
---&emsp; P. Lammertse, 2025 &emsp;-- 
-</p>
 
+<h4> book or website </h4>
 
-<h2> <i> website version </i> </h2>
 <p> The Propeller Theory text on this website was
 originally written as a small book which was never published.
 </p>
@@ -118,10 +127,17 @@ originally written as a small book which was never published.
 since it captures the orginal intention quite well.
 </p>
 
+<p style="margin-top:12px;"> 
+--&emsp; P. Lammertse, 2025 &emsp;-- 
+</p>
+
 
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
 <div class="footer">  P. Lammertse,  2025  </div>
+
+<!-- Responsive hamburger menu script                        -->
+<script src="menu.js"></script>
 
 </body>
 </html>
