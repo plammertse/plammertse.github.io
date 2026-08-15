@@ -12,47 +12,44 @@
 
 <body>
 
-   <nav class="dropdown-menu">
+<nav class="dropdown-menu">
 
-   <!-- responsive hamburger button needs menu.js at end -->
-   <button class    = "nav-toggle"
-      aria-label    = "Toggle navigation menu"
-      aria-expanded = "false">
-         <span></span>  <span></span>  <span></span>
-   </button>
+<!-- responsive hamburger button, needs menu.js at end -->
+<button class    = "nav-toggle"
+   aria-label    = "Toggle navigation menu"
+   aria-expanded = "false">
+      <span></span>  <span></span>  <span></span>
+</button>
 
 <!------------------------------------------------------------------>
 <!-- TOP NAV BAR MENU -->
 
-      <ul>
+<ul>
 
-<!-- HOME -->
+   <!-- HOME -->
+   <li class = "dropdown-parent">
+      <a  href  = "personal.html"> Home </a>
 
-         <li class="dropdown-parent">
-        
-            <a href="personal.html">
-               Home</a>
+      <ul class="dropdown">
 
-            <ul class="dropdown">
-
-               <li> <a href="personal.html">
-                       <i> &hairsp; Vanity Fair </i> </a>
-               </li>
+         <li> <a href="personal.html">
+                 <i> &hairsp; Vanity Fair </i> </a> </li>
           
-               <li>
-                  <li class="dropdown-parent">             
-                     <a href="#">
-                        CV </a>
-                  <ul class="dropdown-submenu">
+         <li>
+            <li class="dropdown-parent">             
+               <a href="#"> CV </a>
+               
+            <ul class="dropdown-submenu">
                   
-                     <li class="dropdown-parent">
-                        <a href="delft.html">
-                           Delft</a>
-                        <ul class="dropdown-submenu">
-                           <li>
-                              <a href="delft.html"> 
-                              Polytechnic or university </a>
-                           </li>
+               <li class="dropdown-parent">
+               <a href="delft.html"> Delft</a>
+               <ul class="dropdown-submenu">
+                  <li>
+                     <a href="delft.html"> 
+                        Polytechnic or university </a>
+                  </li>
+                  
+                  
                            <li>
                               <a href="design_exercise.html"> 
                               Design exercise </a>
@@ -81,32 +78,25 @@
                      <li class="dropdown-parent">
                         <a href=#>Various</a>
                         <ul class="dropdown-submenu">
-                           <li>
-                              <a href="recumbent.html">
-                                 Recumbents </a>
-                           </li>
-                           <li>
-                              <a href="hydrofoil.html">
-                                 Hydrofoil </a>
-                           </li>
+                           <li> <a href="recumbent.html">
+                                 Recumbents </a>           </li>
+                           <li> <a href="hydrofoil.html">
+                                 Hydrofoil </a>            </li>
                         </ul>
                      </li> 
                      
                   </ul>
                </li>                   
 
-               <li class="dropdown-parent mobile-only">
                <li class="dropdown-parent">             
                   <a href="website.html">
                      Website </a>
                      
                   <ul class="dropdown-submenu">
                      <li> <a href="website.html">
-                        Purpose</a>                         </li>
-<!--                     
-                     <li> <a href="technical.html">
+                        Purpose</a>                         </li>                   
+                     <li> <a href="website_technical.html">
                         Technical</a>                       </li>
--->                     
                      <li> <a href="highlights.html">
                         Highlights</a>                      </li>
                   </ul>
@@ -119,22 +109,29 @@
  <!-- AIRCRAFT -->
  
          <li class="dropdown-parent">
-            <a href="aircraft.html">       <!-- AIRCRAFT HEADER   -->
+            <a href="aircraft.html">
                Aircraft </a>
 
-            <ul class="dropdown">          <!-- AIRCRAFT DROPDOWN -->
+            <ul class="dropdown">
 
                <li> <a href="aircraft.html">
                    <i> &thinsp; Love affair </i> </a>
                </li>
 
    <!-- AERODYNAMICS -->
-<!--   
+   
                <li class  = "dropdown-parent">             
                   <a href = "aerodynamics.html">
                      Aerodynamics</a>
+                     
                   <ul class = "dropdown-submenu">
                      <li class = "dropdown-parent">
+                     
+                     
+                        <li> <a href="aerodynamics.html">
+                           <i> &hairsp; On aerodynamics </i> </a>
+                        </li>
+<!--                     
                         <a href = "wind_tunnels.html">Wind tunnels</a>
                         <ul class = "dropdown-submenu">
                            <li>
@@ -150,17 +147,21 @@
                               <a href = "wake_rakes.html"> Wake rakes </a>
                            </li>
                         </ul>
+ -->
+ <!--
                      </li>
                   </ul>
+-->                  
                </li>
- -->
+
    <!-- COMMON FALLACIES -->
                      <li class = "dropdown-parent">
                         <a href = "fallacy.html"> 
                            Common fallacies</a>
+                           
                         <ul class = "dropdown-submenu">
                            <li> <a href = "fallacy.html">
-                              <i> About common fallacies </i> </a>   </li>
+                              <i> &hairsp; On common fallacies </i> </a>   </li>
                            <li> <a href = "newton_or_bernoulli.html">
                               Newton or Bernoulli </a>       </li>
                            <li> <a href = "equal_path.html">
@@ -185,14 +186,23 @@
                         </ul>
                      </li>
 
+                  </li>
+               </ul>
+
    <!-- STABILITY AND CONTROL -->
    
                <li class="dropdown-parent">             
-                  <a href="#">
+                  <a href="stability.html">
                      Stability and control</a>       <!-- STABILITY HEADER   -->
+
                   <ul class="dropdown-submenu">
                      <li class="dropdown-parent">
-                        <a href="etkin_editions.html">       
+                     
+                        <li> <a href="stability.html">
+                           <i> &hairsp; On flight dynamics </i> </a>
+                        </li>
+                     
+                        <a href="etkin_editions.html">
                            Etkin's book </a>
                         <ul class="dropdown-submenu">
                            <li>
@@ -677,7 +687,7 @@
             
          <li class="dropdown-parent">             
             <a href="design.html">
-               Method</a>
+               Methodology</a>
             <ul class="dropdown">
                <li> <a href="method.html">
                   <i> &hairsp; Though this be madness.. </i> </a>     </li>
@@ -686,7 +696,7 @@
                <li> <a href="inventors.html">
                   Against inventors </a>                   </li>
                <li> <a href="design.html">
-                  Methodology </a>                         </li>
+                  Design methodology </a>                         </li>
                
                <li class="dropdown-parent">             
                   <a href="paperwork.html">
