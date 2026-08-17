@@ -1,0 +1,90 @@
+<! --------------------------------------------------------------
+// file    : dutch_roll.html
+// purpose : Boeing B747 Dutch roll animation (Etkin 3d.ed.)
+// --------------------------------------------------------------
+//  2026-08-17 PL moved out dutch_roll.js
+//                ( still canvas, not SVG )
+//  2026-06-22 PL new stand alone test, cloned from dumbbell.js
+// ------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> B747 Dutch roll test </title>
+</head>
+
+<!-- onLoad() attaches the mouse and starts the simulation    -->
+<body onload = "onLoad()">
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "modes.html">
+         Modes </a>                                        </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Dutch roll </h2>
+
+<h4> the Dutch roll mode </h4>
+
+<p> TBW </p>
+
+
+<h4> animation </h4>
+
+<p> TBW </p>
+
+<div class = "center">
+   <canvas id    = "canvas";
+           width = "500" height="300";
+           style = "border           : 1px solid #000000;
+                    background-color : #FAFEFF;" >
+   </canvas>
+</div>
+
+<div class = "center">
+   <p> <b><i> Figure 1 :
+      &ensp; B747 in the Dutch roll mode </i></b> </p>
+</div>
+
+<p> TBW </p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+<!------------------------------------------------------------->
+<!-- all scripts go after the HTML canvas, for scope reasons -->
+
+<script src = "mouse.js">           </script>
+<script src = "b747_aft_view.js">   </script>
+<script src = "dutch_roll.js">      </script>
+
+<!-- needed for hamburger menu -->
+<script src = "menu.js">            </script>
+
+</body>
+</html>
+

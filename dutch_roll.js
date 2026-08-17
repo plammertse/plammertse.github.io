@@ -1,70 +1,21 @@
-<! --------------------------------------------------------------
-// file    : b747_dutch_roll_test.html
+/* -------------------------------------------------------------
+// file    : dutch_roll.js
 // purpose : Boeing B747 Dutch roll animation (Etkin 3d.ed.)
-// --------------------------------------------------------------
+// -------------------------------------------------------------
+//  2026-08-17 PL moved out of dutch_roll.html
 //  2026-06-22 PL new, cloned from dumbbell.js
-// ------------------------------------------------------------->
+// -----------------------------------------------------------*/
 
-<!DOCTYPE html>
-<html>
-
-<head>
-   <meta charset  = "UTF-8"
-         name     = "viewport" 
-         content  = "width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="text.css">
-  <link rel="stylesheet" href="menu.css">
-  <title>  Piet Lammertse on modes  </title>
-</head>
-
-   <title> B747 Dutch roll test </title>
-</head>
-
-<body onload = "onLoad()">
-
-<h2> Dutch roll </h2>
-
-<p> TBW </p>
-
-
-<h4> animation </h4>
-
-<p> TBW </p>
-
-<div class = "center">
-   <canvas id    = "canvas"
-           width="500" height="300"
-           style = "border           : 1px solid #000000;
-               background-color : #FAFEFF;" >
-   </canvas>
-</div>
-
-<div class = "center">
-   <p> <b><i> Figure 1 : &ensp; B747 in the Dutch roll mode </i></b> </p>
-</div>
-
-<p> TBW </p>
-
-<!-- all in-line and included scripts go after  -->
-<!--   the HTML canvas, for scope reasons :     -->
-
-<script>
-   let canvas = document.getElementById("canvas"); 
-   let ctx    = canvas.getContext("2d");
-</script>
-
-<script src="mouse.js"> </script>
-<script src="b747_aft_view.js"> </script>
-
-<script>
+let canvas = document.getElementById("canvas"); 
+let ctx    = canvas.getContext("2d");
 
 // -------------------------------------------------------------
 // For some reason, these lines cannot go into onLoad() :
 let b747 = new B747();     // airplane constructor
-let phi  = 0;
-let psi  = 0;
 
-// start simulation time
+// initialize simulation
+let phi   = 0;
+let psi   = 0;
 let tSim  = 0;
 let tNow  = performance.now();
 let tPrev = tNow;
@@ -119,7 +70,7 @@ function simulate() {
    let magPsi    = 0.31; 
    
    // choose nice roll angle amplitude
-   let phiMax = 0.5;
+   let phiMax = 0.25;    // 0.5
    
    // propagate phi and psi
    //  Temporary, fix later :
@@ -127,10 +78,3 @@ function simulate() {
    phi =  phiMax *          Math.sin( phasePhi );
    psi = -phiMax * magPsi * Math.sin( phasePsi );
 }
-
-</script>
-
-</body>
- 
-</html>
-

@@ -42,7 +42,7 @@ p {
 
 /* all hyperlinks darker blue (see also .crossref) */
 a {
-   color     : */  #000040;    /* #000080  */
+   color     : #000040;    /* #000080  */
 }
 
 /* line spacing + indent for header         */
@@ -82,7 +82,7 @@ a h4 {
 /* horizontal rulers are text width */
 hr {
   margin-left : 32px;
-  max-width   : 800px;" >
+  max-width   : 800px;
 }
 
 /* prevent sup and sub from increasing line height */

@@ -1,0 +1,80 @@
+<!--------------------------------------------------------------
+ file    : short_period.html
+ purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ ---------------------------------------------------------------
+  2026-08-17 PL moved out short_period.js
+  2026-07-26 PL converted to SVG rendering
+  2026-07-12 PL more or less finished (canvas version)
+  2026-06-22 PL new, cloned from dumbbell.js
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> B747 short period test (SVG) </title>
+</head>
+
+<!-- onLoad() from short_period.js attaches the mouse         -->
+<!--    and starts the simulation :                           -->
+
+<body onload = "onLoad()">
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "modes.html">
+         Modes </a>                                     </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Short period </h2>
+
+<h4> The short period mode </h4>
+
+<p> B747 short period test — SVG version. Click and hold to pause. </p>
+
+<p> TBW </p>
+
+<div class = "center";>
+                     <!-- style = "border:solid;"> -->
+   <svg id = "svg"
+     width = "80%";
+     style = "border           : 1px solid #000000;
+              background-color : #FAFEFF;">  </svg>
+</div>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- scripts must be at end of body, and certainly afer SVG -->
+<script src="mouse.js">              </script>
+<script src="b747_side_view_svg.js"> </script>
+<script src="short_period.js">       </script>
+
+<!-- needed for hamburger menu -->
+<script src="menu.js"></script>
+
+</body>
+</html>

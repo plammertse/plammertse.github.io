@@ -68,7 +68,7 @@ body {
     transition : opacity 0.3s, visibility 0.3s;
     z-index    : 1;
     list-style : none;    
-    box-shadow : 8px 8px 8px 0px rgba(0,0,0,0.2);
+    box-shadow : 8px 8px 8px 0 rgba(0,0,0,0.2);
 }
 
 .dropdown-menu > ul > li:hover > .dropdown {
@@ -112,7 +112,7 @@ body {
     z-index    : 2;
     list-style : none;
    /* added, PL :  */    
-    box-shadow : 8px 8px 8px 0px rgba(0,0,0,0.2);
+    box-shadow : 8px 8px 8px 0 rgba(0,0,0,0.2);
    /* delay closing by 400 milliseconds, for easier
       diagonal access to dropdown items            */
    transition-delay: 0.4s; 
@@ -130,7 +130,7 @@ body {
     display    : none;
     flex-direction   : column;
     justify-content  : center;
-    gap        : 5px;
+    gap        : 5px; /* CSSlint : unknown property */
     width      : 44px;
     height     : 44px;
     padding    :  8px;

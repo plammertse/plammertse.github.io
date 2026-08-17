@@ -10,18 +10,12 @@
 //  2026-07-11 PL new, cloned from b747_aft_view.js
 // --------------------------------------------------------------
 
-/* Place these lines in the calling routine, before this script:
-     let canvas = { width: 400, height: 400 };  // shim, see below
-     let svg    = document.getElementById("svg");
-   Then after construction:
-     b747.createSVG( svg );
-*/
-
 // -------------------------------------------------------------
 let B747 = function()  {                     // constructor
 
    // default location and scale in canvas window
-   this.setCenter( canvas.width/2, canvas.height/2);
+//   this.setCenter( canvas.width/2, canvas.height/2);
+   this.setCenter( 200, 200);
    this.fScale = 1;
 
    // B747-100, old type, for Etkin 3d.ed.
