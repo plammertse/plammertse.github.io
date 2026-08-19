@@ -57,18 +57,21 @@ a {
 h2 {     /* default font desktop/tablet 30/24 */
   margin     : 12px 0 0 16px;      /* top, right, bottom, left */
 /*  margin-top : 16px;   */
+  max-width : 800px;
 }
 
 h3 {     /* default font desktop/tablet 24/20 */
   font-size  : 20px;
   margin     : 4px 16px;
   margin-top : 16px;
+  max-width : 800px;
 }
 
 h4 {     /* default font desktop/tablet 20/18 */
   font-size  : 18px;
   margin     : 2px 32px;
   margin-top : 12px;
+  max-width : 800px;
 }
 
 h5, h6 {
@@ -77,6 +80,7 @@ h5, h6 {
   font-weight: normal;
   margin     : 2px 32px;
   margin-top : 8px;
+  max-width : 800px;
 }
 
 a h3 {

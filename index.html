@@ -334,8 +334,6 @@
       </li>   
       <!-- end Propellers -->
       
-      
-
       <!-- Stability and control -->
       <li class="dropdown-parent">             
          <a href="stability.html"> Stability and control</a>
@@ -347,19 +345,39 @@
          <li class="draft"> <a href="state_space.html"> State space </a> </li>
         
          <li> <a href="trim.html"> Trim &ensp;&hairsp; (&hairsp;static equilibrium&hairsp;)</a> </li>
-                        
+
+         <!-- Modes -->
          <li class="dropdown-parent">
             <a href="modes.html"> Modes (&hairsp;dynamic behaviour&hairsp;) </a>
          <ul class="dropdown-submenu">
 
             <li> <a href="modes.html"> <i> &thinsp; On modes </i> </a> </li>
             <li> <a href="short_period.html">       Short period  </a> </li>
+            <li> <a href="short_period.html">       Phugoid  </a> </li>
+            <li> <a href="short_period.html">       Energy mode  </a> </li>
             <li> <a href="dutch_roll.html">         Dutch roll    </a> </li>
+            <li class="draft"> <a href="spiral.html">  Spiral/climb/McCombs </a> </li>
 
          </ul>
          </li>
          <!-- end Modes -->
 
+         <!-- Simulators -->       
+         <li class="dropdown-parent draft">
+            <a href="modes.html"> Flight simulators </a>
+         <ul class="dropdown-submenu">
+
+            <li class="draft">
+               <a href="simulators.html"> <i> &thinsp; Usefulness </i> </a> </li>
+            <li class="draft">
+               <a href="manoeuvres.html"> Manoeuvres </a> </li>
+            <li class="draft">
+               <a href="workspace.html">  Workspace  </a> </li>
+
+         </ul>
+         </li>
+         <!-- end Simulators -->
+         
          <li class="dropdown-parent">
             <a href="etkin_editions.html"> Etkin </a>
          <ul class="dropdown-submenu">
@@ -454,10 +472,17 @@
       </ul>
       </li>
                
+      <li class="draft"> <a href="thermal.html">
+         Thermal control </a>                               </li>           
+   
       <li class="dropdown-parent draft">
          <a href="zero_G.html"> Zero G</a>          
       <ul class="dropdown-submenu">
 
+         <li class="draft"> <a href="rpm.html">
+            Random Positioning Machine </a>                 </li>
+         <li class="draft"> <a href="glove_box.html">
+            Glove box </a>                                  </li>
          <li class="draft"> <a href="ballistocraft.html">
             Ballistocraft (UAV)</a>                         </li>
       </ul>
@@ -546,7 +571,8 @@
          <a href="haptics_fcs.html"> Portfolio at FCS </a>             
       <ul class="dropdown-submenu">
       
-         <li> <a href="haptic_master.html"> Haptic Master </a> </li>                     
+         <li> <a href="haptic_master.html"> Haptic Master </a> </li>                   
+         <li> <a href="adl_gimbal.html">    ADL gimbal </a>    </li>                   
          <li> <a href="lopes.html">         Lopes </a>         </li>                     
          <li> <a href="armbot.html">        Armbot </a>        </li>                     
          <li> <a href="simodont.html">      Simodont </a>      </li>                     
@@ -595,22 +621,35 @@
          <i> &hairsp; Newton rules, OK </i> </a>               </li>           
 
 <div class="draft">
-      <li>  <a href="#">
-         Structures </a>
-      </li>
-      
-      <li class="dropdown-parent">
+
+      <li class="dropdown-parent draft">
          <a href="*.html">        Dynamics</a>             
       <ul class="dropdown-submenu">
+
+         <li class="draft"> <a href="*.html">  * </a>          </li> 
          
-         <li> <a href="*.html">  * </a>                        </li>                     
       </ul>
       </li>
-               
-      <li class="dropdown-parent">
-         <a href="kinematics.html"> Kinematics</a>             </li>                            
-</div>        
-      <li> <a href="linkages.html"> Hand linkages </a>         </li>
+         
+      <li class="draft">  <a href="structures.html">
+         Structures / wing excitation</a>                      </li>
+
+      <!--- Mechanisms -->
+      <li class="dropdown-parent draft">
+         <a href="mechanisms.html"> Mechanisms</a>  
+      <ul class="dropdown-submenu">
+      
+         <li> <a href="kinematics.html">
+            <i> &hairsp; Kinematics </i> </a>                   </li>
+            
+         <li> <a href="skewed_axes.html"> Skewed axes </a>      </li>
+         <li> <a href="galloway.html">    Galloway </a>         </li>
+         <li> <a href="linkages.html">    Hand linkages </a>    </li>
+         
+      </ul>
+      </li>
+
+</div>
       
    </ul>
    </li>
@@ -623,7 +662,7 @@
    <ul class="dropdown">
    
       <li> <a href="math.html">  <i> &hairsp; About math  </i> </a>    </li>                
-      <li class="draft"> <a href="linear_algebra.html"> Matrices  </a> </li>
+      <li class="draft"> <a href="linear_algebra.html"> Linear algebra  </a> </li>
       <li class="draft"> <a href="polynomial.html"> Polynomials   </a> </li>
          <!-- NACA sections, polynomial shapes from boundary conditions, cam curves. -->
       <li class="draft"> <a href="quaternion.html"> Quaternions  </a> </li>
@@ -639,6 +678,8 @@
       <li> <a href="control.html"> <i> &hairsp; Out of control </i> </a> </li>
       <li class="draft">
            <a href="tuning.html">  PID tuning </a>            </li> 
+      <li class="draft">
+           <a href="encoder.html"> Encoder differencing </a>  </li> 
       <li class="draft">
            <a href="kalman.html">  Kalman filters </a>         </li> 
      
@@ -660,8 +701,11 @@
       <ul class="dropdown-submenu">
                   
          <li> <a href="paperwork.html"> <i> &hairsp; On paperwork </i>  </a> </li>
-         <li> <a href="mind_maps.html">      Mind maps </a>        </li>
          <li> <a href="config_control.html"> Configuration control </a> </li>
+         <li> <a href="mind_maps.html">      Mind maps </a>        </li>
+         <li class="draft"> <a href="mind_maps.html">      TRIZ </a>        </li>
+         <li class="draft"> <a href="mind_maps.html">      Patterns </a>        </li>
+         <li class="draft"> <a href="zettelkasten.html">   Zettelkasten </a>     </li>
          <li> <a href="memo_system.html">    Memo system </a>      </li>
          <li style = "border-bottom:solid">
               <a href="website.html">        Website </a>          </li>
