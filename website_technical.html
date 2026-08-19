@@ -79,6 +79,42 @@ I there&shyfore decided to hack together
 
 <h4> animations </h4>
 
+<h4> showing draft text </h4>
+
+<p> 
+ This website will never be finished,
+ and I decided that an extended mode of the website itself
+ is as good a place as any to prototype planned new subjects and text, 
+ reminders to self, and any other comments and "todo" items.
+  I decided to add an option to toggle all of these notes to self
+ on and off in one go.
+ </p>
+ <p> &emsp;
+ Showing such draft text is a feature for my personal use.
+ It is not meant for your eyes.
+ But on the other hand, it&nbsp;is no big secret either,
+ so if you are curious what I had in mind in the long run,
+ then feel free to click the button "Show draft text" below.
+ All draft menu items and text will appear on a yellow background.
+ </p>
+ <p> &emsp; Your choice will be persistent over sessions
+ (&hairsp;technically, it is a CSS variable stored in your browser's 
+ "local&shyStorage"&hairsp;),
+  so if you want to go back to normal view,
+  click "Hide draft text" below, or delete your browsing history.
+  <br>
+</p>
+
+<div class="center">
+   <button id="showDraft";> Show draft text </button>
+   <span> &emsp; &emsp; &emsp; </span>
+   <button id="hideDraft";> Hide draft text </button>
+</div>
+
+<div class="center">
+<p class="draft"> 
+   <br> &emsp; If you see this text, draft mode is "on". &emsp; <br> &nbsp; </p>
+</div>
 
 <!-- FOOTER ------------------------------------------------------------>
 <br> <br>
@@ -86,6 +122,7 @@ I there&shyfore decided to hack together
 
 <!-- needed for hamburger menu, must be at end of body -->
 <script src="menu.js"></script>
+<script src="text.js"></script>
 
 </body>
 </html>

@@ -6,6 +6,7 @@
 -- note 2  : Multilevel menu's defined in menu.css and menu.js 
 ---------------------------------------------------------------
 -- history :
+--     2026-08-19 add draft text settable option
 --     2026-07-26 new print headers and footers fall over a
 --                text area cleared by a table header trick
 --     2026-07-16 renamed plammertse.css to text.css,
@@ -18,10 +19,17 @@
 --     2025-11-21 new
 --------------------------------------------------------------*/
 
-/* Sans serif everywhere.                        */
-/*   Default font size seems to be 16px          */
-/* Don't do body margin, it shifts the navbar :  */
-/*   margin-left : 32px;                         */
+/* Sans serif everywhere.                          */
+/* Default font size seems to be 16px              */
+/* Don't do body margin, it shifts the navbar :    */
+/* margin-left : 32px;                             */
+
+
+/* Hide draft text and menu items.                 */
+/* If desired, change to "block" by text.js        */
+:root {
+   --show-draft : none;
+}
 
 body {
   margin      : 0;
@@ -189,6 +197,34 @@ td {
    width  		    : min( 90%, 800px);
 /*   border 		 : solid; */   /* temporary box size debug tool */
 }
+
+/* Use <div class="draft"> .. </div> around unfinished items   */
+.draft {
+   background : #FFF000;      /* light orange */
+   /* comment this out to display all draft text and menus :    */   
+   display         : var(--show-draft);
+}
+
+
+button {
+  background-color : blue;       /* #04AA6D;  */
+  border           : none;
+  color            : white;
+  padding          : 8px 16px;  /* vertical, horizontal 15 32 */
+  text-align       : center;
+  text-decoration  : none;
+  display          : inline-block;
+  font-size        : 16px;
+  margin           : 4px 2px;
+  cursor           : pointer;
+}
+button:hover {
+   background       : #E90000;      /* darkish red */
+}   
+button:active {
+   color            : black;  
+}   
+
 
 /* Increase the math font size to look like 16px text.
    The extra math margin (vertical + horizontal)
