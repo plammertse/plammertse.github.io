@@ -1,0 +1,245 @@
+<!--------------------------------------------------------------
+ file    : darts.html
+ purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ ---------------------------------------------------------------
+  2026-08-20 PL new
+  --------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> B747 short period test (SVG) </title>
+</head>
+
+<!-- onLoad() from short_period.js attaches the mouse         -->
+<!--    and starts the simulation :                           -->
+
+<body onload = "onLoad()">
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Weathercock stability </h2>
+
+<h4> an aircraft is two weathervanes </h4>
+
+<p> An aircraft is, among other things, a weathervane in two axes :
+ one in the "short period" mode (&hairsp;symmetric oscil&shylation&hairsp;)
+ and one in the "Dutch roll" mode (asymmetric oscillation).
+ </p>
+ <p> &emsp; This section will first discuss the weathervane,
+  and then its close relative, the arrow or dart.
+   This will lay the groundwork for the discussion
+   of the "real" airplane modes.
+
+<h4> weathervanes </h4>
+
+<p> We will start with the simple weathervane, or weathercock,
+ as found on church steeples.
+ Modern versions as in weather stations and on sailing yachts
+ often take the shape of a simple fin on a pivoting rod, see figure 1.
+ </p>
+  
+ <div class = "center">
+<img src = "images/weathervane.jpg";
+   width = "40%";
+   alt   = "Weathervane">
+</div>
+
+<div class = "caption";
+     style = "margin-top:8px">
+   <p> <i> Figure 1 : &ensp; Weathervane </i> </p>
+</div>
+
+<p>
+ Let us call the the distance between the fin and the pivot axis
+ <i>l</i>&hairsp;<sub>f</sub>, the fin area <i>S</i>&hairsp;<sub>f</sub>,
+ and the wind velocity <i>V</i>;
+ and also, the angle between the fin and the un&shydisturbed wind <i>&theta;</i>
+ <nobr> (&hairsp;Greek </nobr> letter theta&hairsp;).
+ </p>
+ <p> &emsp;
+ If <i>&theta;</i> is fixed, then the local so-called 
+ "angle of attack" AOA or  <i>&alpha;</i>
+ (&hairsp; Greek letter alpha&hairsp;)
+ between the fin and the local undisturbed airstream and <i>&theta;</i> are the same.
+  With the usual definitions for the lift coefficient of a wing,
+ the rod will turn into wind under a torque <i>M</i> :
+ </p>
+  
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mi>M</mi>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <msub> <mi>C</mi> <mi>L</mi> </msub>
+  <mo>.</mo>
+  <mi>&alpha;</mi>
+  <mo>.</mo>
+  <mn>&frac12;</mn> <mn>&hairsp;</mn>
+  <mi>&rho;</mi>    <mn>&hairsp;</mn>
+  <msup> <mi>V</mi> <mn>2</mn> </msup>
+  <mo>.</mo>
+  <msub> <mi>S</mi> <mn>f</mn> </msub>
+  <mo>.</mo>
+  <msub> <mi>l</mi> <mn>f</mn> </msub>
+  
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Suppose the moment of inertia of the rod-plus-vane
+about the axis of rotation is <i>I</i><sub>xx</i>.
+ </p>
+<p> By Newton's law and with <i>&alpha;</i> = <i>&theta;</i>, 
+ the angular acceleration about the pivot axis will be :
+ </p>
+ 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mrow> <msup> <mn>d</mn> <mn>2</mn> </msup> <mi>&theta;</mi> </mrow>
+      <mrow> <mn>d</mn> <msup> <mi>t</mi> <mn>2</mn> </msup> </mrow>
+   </mfrac>
+
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>M</mi>
+      <msub> <mi>I</mi> <mn>xx</mn> </msub>
+   </mfrac>
+  
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+   <mrow>
+      <msub> <mi>C</mi> <mi>L</mi> </msub>
+      <mo>.</mo>
+      <mn>&frac12;</mn> <mn>&hairsp;</mn>
+      <mi>&rho;</mi>    <mn>&hairsp;</mn>
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+      <mn>.</mn> <mn>&ensp;</mn>
+      <msub> <mi>S</mi> <mn>f</mn> </msub>
+      <mo>.</mo>
+      <msub> <mi>l</mi> <mn>f</mn> </msub>
+  </mrow>
+      <msub> <mi>I</mi> <mn>xx</mn> </msub>
+   </mfrac>      
+   <mo> . </mo>
+   <mi>&theta;</mi>
+  
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+ 
+<p> In words, the second derivative for the angle <i>&theta;</i>
+ with respect to time is directly proportional to the angle itself.
+  This&nbsp;is the equation of a pendulum, or a linear oscillator,
+  with frequency of oscillation (&hairsp;squared, and in rad/s&hairsp;) :
+</p> 
+
+ 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msup> <mi>&omega;</mi> <mn>2</mn> </msup>
+   
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+   <mrow>
+      <msub> <mi>C</mi> <mi>L</mi> </msub>
+      <mo>.</mo>
+      <mn>&frac12;</mn> <mn>&hairsp;</mn>
+      <mi>&rho;</mi>    <mn>&hairsp;</mn>
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+      <mn>.</mn> <mn>&ensp;</mn>
+      <msub> <mi>S</mi> <mn>f</mn> </msub>
+      <mo>.</mo>
+      <msub> <mi>l</mi> <mn>f</mn> </msub>
+  </mrow>
+      <msub> <mi>I</mi> <mn>xx</mn> </msub>
+   </mfrac>      
+  
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (3)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Note that this particular <i>&omega;</i> is <i>not</i>
+ the angular rate of rotation of the vane. 
+We will call that angular rate <i>q</i> later.
+</p>
+<p> &emsp;
+ The oscillation frequency will go up with the wind speed, 
+ and with the square root of the fin area <i>S</i>&hairsp;<sub>f</sub>.
+ The jury is out on the arm length <i>l</i>&hairsp;<sub>f</sub>,
+ because the moment of inertia <i>I</i><sub>xx</sub>
+ will often increase with the square of that length. 
+</p>
+
+<h4> darts </h4>
+
+<p> Now suppose that we leave out the fixed pivot.
+</p>
+
+<p> TBW </p>
+
+<h4> damping </h4>
+
+<p> TBW </p>
+
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- scripts must be at end of body, and certainly afer SVG -->
+<script src="mouse.js">              </script>
+<script src="b747_side_view_svg.js"> </script>
+<script src="short_period.js">       </script>
+
+<!-- needed for hamburger menu -->
+<script src="menu.js"></script>
+
+</body>
+</html>
