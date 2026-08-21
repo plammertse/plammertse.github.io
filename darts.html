@@ -1,6 +1,6 @@
-<!--------------------------------------------------------------
+1)<!--------------------------------------------------------------
  file    : darts.html
- purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ purpose : Weathervane stability
  ---------------------------------------------------------------
   2026-08-20 PL new
   --------------------------------------------------------------->
@@ -14,13 +14,8 @@
          content = "width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="text.css">
    <link rel="stylesheet" href="menu.css">
-   <title> B747 short period test (SVG) </title>
+   <title> Weathervane </title>
 </head>
-
-<!-- onLoad() from short_period.js attaches the mouse         -->
-<!--    and starts the simulation :                           -->
-
-<body onload = "onLoad()">
 
 <!-- HAMBURGER MENU -------------------------------------------->
 
@@ -36,8 +31,8 @@
 <!-- TOP BAR MENU --------------------------------------------->
 
    <ul>
-      <li> <a href = "index.html">
-         Home </a>                                         </li>
+      <li> <a href = "index.html"> Home </a>               </li>
+      <li> <a href = "stability.html"> Stability and control </a> </li>
    </ul>
 </nav>
 
@@ -47,21 +42,23 @@
 
 <h4> an aircraft is two weathervanes </h4>
 
-<p> An aircraft is, among other things, a weathervane in two axes :
- one in the "short period" mode (&hairsp;symmetric oscil&shylation&hairsp;)
- and one in the "Dutch roll" mode (asymmetric oscillation).
+<p> An aircraft is, among other things, two weathervanes :
+ one acting in the symmetrical up-down direction
+ (&hairsp;leading to the "short period" mode&hairsp;),
+ and one acting in the left-right direction,
+ leading to the "Dutch roll" mode.
  </p>
  <p> &emsp; This section will first discuss the weathervane,
-  and then its close relative, the arrow or dart.
+  and then its close relative the arrow, or dart.
    This will lay the groundwork for the discussion
-   of the "real" airplane modes.
+   of these airplane modes.
 
 <h4> weathervanes </h4>
 
-<p> We will start with the simple weathervane, or weathercock,
+<p> We will start with the simple weathervane or weathercock,
  as found on church steeples.
- Modern versions as in weather stations and on sailing yachts
- often take the shape of a simple fin on a pivoting rod, see figure 1.
+ Modern versions in weather stations and on sailing yachts
+ often take the shape of a simple straight fin on a pivoting rod, see figure 1.
  </p>
   
  <div class = "center">
@@ -75,18 +72,73 @@
    <p> <i> Figure 1 : &ensp; Weathervane </i> </p>
 </div>
 
-<p>
- Let us call the the distance between the fin and the pivot axis
+<h4> the weathervane oscillation frequency </h4>
+
+<p>  Let us call the the distance between the fin and the pivot axis
  <i>l</i>&hairsp;<sub>f</sub>, the fin area <i>S</i>&hairsp;<sub>f</sub>,
- and the wind velocity <i>V</i>;
- and also, the angle between the fin and the un&shydisturbed wind <i>&theta;</i>
- <nobr> (&hairsp;Greek </nobr> letter theta&hairsp;).
+ and the wind velocity <i>V</i>.
  </p>
+ 
  <p> &emsp;
- If <i>&theta;</i> is fixed, then the local so-called 
- "angle of attack" AOA or  <i>&alpha;</i>
- (&hairsp; Greek letter alpha&hairsp;)
- between the fin and the local undisturbed airstream and <i>&theta;</i> are the same.
+  The lift (&hairsp;side&hairsp;) force on the fin  
+  follows the normal equation for the lift on a wing :
+ </p>
+ 
+ <!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>L</mi>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <msub> <mi>C</mi> <mi>L</mi> </msub>
+   <mo>.</mo>
+   <mn>&frac12;</mn> <mn>&hairsp;</mn>
+   <mi>&rho;</mi>    <mn>&hairsp;</mn>
+   <msup> <mi>V</mi> <mn>2</mn> </msup>
+   <mo>. </mo>
+   <msub> <mi>S</mi> <mn>f</mn> </msub> 
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> But what is <i>C</i><sub>L</sub> ?
+That depends on the so-called "angle of attack"
+ <i>&alpha;</i> of the wing.
+This is the angle between the wing chord and the 
+local "undisturbed" flow, i.e. the local flow direction 
+before the wing was present.
+</p>
+<p> &emsp;
+ Potential theory tells us that the lift coefficient 
+ is proportional to the wing angle of attack as follows :
+ </p>
+
+ <!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub> <mi>C</mi> <mn>L</mn> </msub>
+   <mspace/> <mo>&cong;</mo> <mspace/>
+   <mn> 2 &pi; </mn> 
+   <mo> . </mo> <mi>&alpha;</mi> 
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (2)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The factor of 2&pi; is for a 2D wing section,
+ but for a finite wing it is close enough.
+ </p>
+<p> &emsp;
+Now let us call the angle between the fin and the un&shydisturbed wind <i>&theta;</i>
+ <nobr> (&hairsp;Greek </nobr> letter theta&hairsp;).
+ If <i>&theta;</i> is fixed, then the angle of attack between the 
+ the fin and the air equals <i>&theta;</i>.
   With the usual definitions for the lift coefficient of a wing,
  the rod will turn into wind under a torque <i>M</i> :
  </p>
@@ -94,26 +146,16 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>M</mi>
-
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <msub> <mi>C</mi> <mi>L</mi> </msub>
-  <mo>.</mo>
-  <mi>&alpha;</mi>
-  <mo>.</mo>
-  <mn>&frac12;</mn> <mn>&hairsp;</mn>
-  <mi>&rho;</mi>    <mn>&hairsp;</mn>
-  <msup> <mi>V</mi> <mn>2</mn> </msup>
-  <mo>.</mo>
-  <msub> <mi>S</mi> <mn>f</mn> </msub>
-  <mo>.</mo>
-  <msub> <mi>l</mi> <mn>f</mn> </msub>
+   <mi>M</mi>
+   <mspace/> <mo>=</mo> <mspace/>
+   <mi>L</mi>
+   <mo>. </mo>
+   <msub> <mi>l</mi> <mn>f</mn> </msub>
   
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (1)
+<td style="width:50px; text-align:right">                (3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -143,12 +185,13 @@ about the axis of rotation is <i>I</i><sub>xx</i>.
   
    <mspace/> <mo> = </mo> <mspace/> 
 
+   <mn>&minus; &thinsp;</mn>
+
    <mstyle displaystyle="true">
    <mfrac>
    <mrow>
-      <msub> <mi>C</mi> <mi>L</mi> </msub>
-      <mo>.</mo>
-      <mn>&frac12;</mn> <mn>&hairsp;</mn>
+      <mn>&pi;</mn>
+      <mo> . </mo>
       <mi>&rho;</mi>    <mn>&hairsp;</mn>
       <msup> <mi>V</mi> <mn>2</mn> </msup>
       <mn>.</mn> <mn>&ensp;</mn>
@@ -158,23 +201,25 @@ about the axis of rotation is <i>I</i><sub>xx</i>.
   </mrow>
       <msub> <mi>I</mi> <mn>xx</mn> </msub>
    </mfrac>      
-   <mo> . </mo>
+   <mo> &hairsp;.&hairsp; </mo>
    <mi>&theta;</mi>
   
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (2)
+<td style="width:50px; text-align:right">                (4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
  
 <p> In words, the second derivative for the angle <i>&theta;</i>
  with respect to time is directly proportional to the angle itself.
+ The&nbsp;minus sign represents the fact that the torque tends
+ to reduce <i>&theta;</i>.
+ 
   This&nbsp;is the equation of a pendulum, or a linear oscillator,
   with frequency of oscillation (&hairsp;squared, and in rad/s&hairsp;) :
 </p> 
 
- 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
@@ -185,9 +230,8 @@ about the axis of rotation is <i>I</i><sub>xx</i>.
    <mstyle displaystyle="true">
    <mfrac>
    <mrow>
-      <msub> <mi>C</mi> <mi>L</mi> </msub>
-      <mo>.</mo>
-      <mn>&frac12;</mn> <mn>&hairsp;</mn>
+      <mn>&pi;</mn> 
+      <mo> . </mo>
       <mi>&rho;</mi>    <mn>&hairsp;</mn>
       <msup> <mi>V</mi> <mn>2</mn> </msup>
       <mn>.</mn> <mn>&ensp;</mn>
@@ -201,7 +245,7 @@ about the axis of rotation is <i>I</i><sub>xx</i>.
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (3)
+<td style="width:50px; text-align:right">                (5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -210,20 +254,252 @@ about the axis of rotation is <i>I</i><sub>xx</i>.
 We will call that angular rate <i>q</i> later.
 </p>
 <p> &emsp;
- The oscillation frequency will go up with the wind speed, 
+ The oscillation frequency <i>&omega;</i> will go up with the wind speed, 
  and with the square root of the fin area <i>S</i>&hairsp;<sub>f</sub>.
- The jury is out on the arm length <i>l</i>&hairsp;<sub>f</sub>,
+ </p>
+ <p>
+ The effect of arm length is a bit less clear cut,
  because the moment of inertia <i>I</i><sub>xx</sub>
- will often increase with the square of that length. 
+ will often increase with the&nbsp;square of <i>l</i>&hairsp;<sub>f</sub>. 
+</p>
+
+<h4> CG and bearing force </h4>
+
+<p> The wind vane is often mass balanced to have the center of gravity
+(&hairsp;CG&hairsp;)
+on the pivot axis. This gives less bending moment in the bearing
+and more importantly (&hairsp;especially on the tip of the mast
+of a sailing yacht&hairsp;), shaking the vane bearing will not
+influence the vane angle.
+</p>
+<p> &emsp; We notice in passing that if the CG is on the pivot axis,
+ then for the CG to stay in place laterally on a fixed pivot,
+ the bearing force will have to be the exact opposite
+ of the side lift on the fin at all times.
 </p>
 
 <h4> darts </h4>
 
 <p> Now suppose that we leave out the fixed pivot.
+ How does this change the dynamics of the weathervane&hairsp;?
+ In&nbsp;effect, this changes the weathervane into a free flying arrow,
+ or dart. Figure 2 shows such a dart. 
+The definitions are the same as for the weathervane,
+but the pivot axis is replaced by the center of gravity,
+these days often called center of mass (&hairsp;COM&hairsp;)
+ of the dart.
 </p>
 
-<p> TBW </p>
 
+<div class = "center">
+<img src = "images/dart_schematic.gif";
+   width = "20%";
+   alt   = "Dart schematic">
+</div>
+
+<div class = "caption";
+     style = "margin-top:8px">
+   <p> <i> Figure 2 : &ensp; Dart schematic </i> </p>
+</div>
+
+<p> With the pivot point no longer fixed, we have two new degrees of freedom
+ (&hairsp;DOF's&hairsp;). 
+ The COM can now move freely both in the direction of flight,
+ and at right angles to it.
+ We will only look at the direction at right angles to the wind.
+ In the picture this is the up&thinsp;<i>/</i>&thinsp;down direction .
+ </p>
+
+<p> &emsp;
+ Until we consider damping, the moment equation (3)
+ is not affected by leaving the COM free to move laterally.
+ There is, however an added sideways motion of the COM,
+ because the pivot no longer compensates
+ for the lift force on the fin.
+ If <i>y</i> is the sideways direction,
+ then the equation of motion for the COM becomes :
+ </p>
+   
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mrow> <msup> <mn>d</mn> <mn>2</mn> </msup> <mi>y</mi> </mrow>
+      <mrow> <mn>d</mn> <msup> <mi>t</mi> <mn>2</mn> </msup> </mrow>
+   </mfrac>
+
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>L</mi> <mi>m</mi>
+   </mfrac>
+  
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mn>&minus; &thinsp;</mn>
+
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mrow>
+         <mn>&pi;</mn>
+         <mo> . </mo>
+         <mi>&rho;</mi>    <mn>&hairsp;</mn>
+         <msup> <mi>V</mi> <mn>2</mn> </msup>
+         <mn>.</mn> <mn>&ensp;</mn>
+         <msub> <mi>S</mi> <mn>f</mn> </msub>
+      </mrow>
+      <mi>m</mi>
+   </mfrac>      
+   <mo> &hairsp;.&hairsp; </mo>
+   <mi>&theta;</mi>
+  
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+ 
+ <p> Since (&hairsp;before damping&hairsp;) the sideways motion
+ of the COM does not affect the moment equation (5),
+ the sideways motion <i>y</i> is "along for the ride".
+ It is exactly in phase with the angular oscillation.
+ The amplitudes of the accel&shyerations, and therefore also
+ of the <i>y</i> position and the <i>&theta;</i> angle,
+ are related by :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub> <mi>x</mi> <mn>P</mn> </msub>
+   
+   <mspace/> <mo> &equiv; </mo> <mspace/> 
+
+      <mstyle displaystyle="true">
+   <mfrac>
+      <mi>y</mi> <mi>&theta;</mi>
+   </mfrac>
+
+   <mspace/> <mo> = </mo> <mspace/> 
+   <mo>(</mo>
+      <mstyle displaystyle="true">
+      <mfrac>
+         <mi>L</mi>
+         <mi>m</mi>
+      </mfrac>
+   <mo>)</mo>
+
+   <mo> &#x2044; </mo>    <!-- solidus / -->
+   
+   <mo>(</mo>
+      <mstyle displaystyle="true">
+      <mfrac>
+         <mi>M</mi> 
+         <msub> <mi>I</mi> <mn>xx</mn> </msub>
+      </mfrac>
+   <mo>)</mo>
+
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+      <msub> <mi>I</mi> <mn>xx</mn> </msub>
+      <mrow> <mi>m</mi> <mo>.</mo>
+         <msub><mi>l</mi> <mn>f</mn> </msub> </mrow>
+   </mfrac>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+ 
+<p> Figure 3 shows the interpretation.
+For an angle of <i>&theta;</i>, the COM moves sideways by <i>y</i>.
+For small angles, the two are related by a fixed arm length
+<i>x</i><sub>P</sub> given by (7).
+The motion is as if the COM rotates about a fixed pivot point <i>P</i>
+ahead of the COM.
+The momentary pivot point, or "pole" of the motion
+for a momentary force (&hairsp;an "impulse"&hairsp;)
+at some other place on an object is called the "center of percussion
+of that force about the COM.
+</p>
+
+<div class = "center">
+<img src = "images/dart_percussion.gif";
+   width = "40%";
+   alt   = "Dart percussion">
+</div>
+
+<div class = "caption";
+     style = "margin-top:8px">
+   <p> <i> Figure 3 : &ensp; Dart center of percussion </i> </p>
+</div>
+
+<p> Let us check a few special cases which seem simple at first,
+but which turn out to be rather subtle.
+</p>
+<p> &emsp;
+First, suppose the dart has only a point mass at the COM,
+and a zero weight stem and fin.
+In this case the moment of inertia <i>I</i><sub>xx</sub>
+of the dart about its COM is zero.
+This makes the <i>x</i><sub>P</sub> of (7) equal to zero.
+That makes intuitive sense : by inspection,
+ the dart will oscillate about its COM.
+</p>
+<p> &emsp; The reason why is not trivial however. 
+ From the free body diagram, any force on the fin
+ will cause the COM to move sideways too.
+ But even the tiniest of forces at the fin will cause an infinite 
+ angular acceleration, so the fin will eliminate
+ any lift force by "evading" it. We might say that the fin
+ presents an effective mass of zero to the lift force.
+ The tail feathers will simply turn out of the wind instantly.
+</p>
+<p> &emsp; 
+ Another "idealized" case is that the dart has a weight distribution
+ with two point masses of &frac12;&hairsp;<i>m</i> each, one aft at the fin
+ and one an equal distance +<i>l</i><sub>f</sub> ahead of the COM.
+ This gives <i>I</i><sub>xx</sub> =
+   2&hairsp;.&hairsp;(&hairsp;&frac12;&hairsp;<i>m</i> 
+      <i>l</i><sub>f</sub>&hairsp;<sup>2</sup>&hairsp;), or      
+  <i>I</i><sub>xx</sub> =
+   <i>m</i>&hairsp;.&hairsp;<i>l</i>&hairsp;<sub>f</sub><sup>2</sup>&hairsp;.
+  Substituting this into (7) gives
+  <i>x</i><sub>P</sub> = <i>l</i>&hairsp;<sub>f</sub>
+ </p>
+ <p> &emsp;
+  This makes sense too : the front mass is the center of percussion
+  for a force at the rear mass, a.k.a. the fin.
+  With no real mass in between (&hairsp;the COM is just a mathematical point,
+  but has no mass of its own&hairsp;), the lift on the fin affects
+  only the rear mass, and leaves the front mass in place.
+  Effectively, the dart will rotate around the front mass,
+  so this is the center of percussion for the fin lift.
+</p>
+<p class="draft"> Now do the interesting case of a cruise missile-like dart.
+ </p>
+ 
+ <h4> dart flight </h4>
+ 
+ <p> An interesting side note is that by (5), the oscillation
+ frequency is proportional to the flight speed.
+ This means that the wave length of the oscillation
+ along the flight path is independent of the flying speed.
+  It is known that darts are tuned to make one full wave
+  from launch to board, so the oscillation is at zero 
+  when the dart hits the board.
+  <nobr> (&hairsp;James et al., </nobr> 2018,
+  "Experimental validation of dynamic stability analysis applied to
+  <nobr> dart flight"&hairsp;). </nobr>
+ 
+ 
 <h4> damping </h4>
 
 <p> TBW </p>
@@ -231,7 +507,7 @@ We will call that angular rate <i>q</i> later.
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<div class="footer"> P. Lammertse, 2026 </div>
 
 <!-- scripts must be at end of body, and certainly afer SVG -->
 <script src="mouse.js">              </script>
@@ -239,6 +515,7 @@ We will call that angular rate <i>q</i> later.
 <script src="short_period.js">       </script>
 
 <!-- needed for hamburger menu -->
+<script src="text.js"></script>
 <script src="menu.js"></script>
 
 </body>
