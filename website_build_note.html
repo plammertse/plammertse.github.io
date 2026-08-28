@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : website_build_note.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2026-08-24 moved out of website_technical.html
+---------------------------------------------------------------> 
+
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title>  Piet Lammertse on this website  </title>
+</head>
+
+<body>
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
+      <li> <a href = "website.html">
+         Website </a>                                      </li>  
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Build note </h2>
+
+
+<!-- STATUS --------------------------------------------------->
+<h4> status </h4>
+
+
+
+<p> This site is my first attempt at a personal website.
+It is definitely a work in progress.
+</p>
+<p> 
+ Content will follow Real Soon Now... (&thinsp;as Byte magazine
+ used to call such promises :-)&thinsp;).
+ </p>
+ <p> &emsp;
+ A few items (&hairsp;half&hairsp;) finished so far :
+</p>
+<p>
+ - &nbsp; <a href="prop_intro.html"> "propeller book"</a>
+ </p>
+ <p> &emsp; &emsp; <i> 
+   This is 90% finished.
+ Viscous optimization&hairsp;! Comments are invited.
+</i> </p> 
+
+<p> 
+ - &nbsp; 
+<a href="linkages.html"> hand linkages</a>
+</p>
+<p> <i> &emsp; &emsp;
+   With an application in <a href="MRI.html"> MRI</a>.
+</i> </p>
+
+<p>
+ - &nbsp; 
+<a href="fallacy.html"> common fallacies</a>
+</p>
+<p> <i> &emsp; &emsp;
+like
+<a href="downwind_turn.html"> the downwind turn</a>,
+<a style="color: grey";
+   href="T_tail.html"> T-tails</a>,
+<a style="color: grey";
+   href="canards.html"> canards</a>,
+and
+<a  href="trim.html"> trim drag </a>.
+</i> </p>
+
+<p>
+ - &nbsp; 
+<a href="sailing.html"> sails</a>.
+</p>
+
+<p> 
+ - <a href="method.html"> methodology</a>,
+</p>
+<p> &emsp; &emsp; <i> With items like :
+<a href="design.html"> design</a>,
+<a href="money.html"> money</a>,
+<a href="inventors.html"> inventors</a>,
+and
+<a href="delft.html"> Delft</a>.
+</i> </p>
+
+<h4> showing draft text </h4>
+
+<p> 
+ This website will never be finished.
+ <p.>
+ <p> &emsp; I decided that an extended mode of the website itself
+ is as good a place as any to prototype planned new subjects and text, 
+ reminders to self, and any other comments and "todo" items.
+  I decided to add an option to toggle all of these notes to self
+ on and off in one go.
+ </p>
+ <p> &emsp;
+ Showing such draft text is a feature for my personal use.
+ It is not meant for your eyes.
+ But on the other hand, it&nbsp;is no big secret either,
+ so if you are curious what I had in mind in the long run,
+ then feel free to click the button "Show draft text" below.
+ All draft menu items and text will appear on a yellow background.
+ </p>
+ <p> &emsp; Your choice will be persistent over sessions
+ (&hairsp;technically, it is a CSS variable stored in your browser's 
+ "local&shyStorage"&hairsp;),
+  so if you want to go back to normal view,
+  click "Hide draft text" below, or delete your browsing history.
+  <br>
+</p>
+
+<div class="center">
+   <button id="showDraft";> Show draft text </button>
+   <span> &emsp; &emsp; &emsp; </span>
+   <button id="hideDraft";> Hide draft text </button>
+</div>
+
+<div class="center">
+<p class="draft"> 
+   <br> &emsp; If you see this text, draft mode is "on". &emsp; <br> &nbsp; </p>
+</div>
+
+<!-- FOOTER ------------------------------------------------------------>
+<br> <br>
+<div class="footer">  P. Lammertse,  2025 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src="menu.js"></script>
+<script src="draft.js"></script>
+<script src="draft_button.js"></script>
+
+</body>
+</html>

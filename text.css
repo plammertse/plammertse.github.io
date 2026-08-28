@@ -209,7 +209,6 @@ td {
    display         : var(--show-draft);
 }
 
-
 button {
   background-color : blue;       /* #04AA6D;  */
   border           : none;
@@ -229,7 +228,6 @@ button:active {
    color            : black;  
 }   
 
-
 /* Increase the math font size to look like 16px text.
    The extra math margin (vertical + horizontal)
    acts *inside* <p> ( and inside <td>, TBC ).                              
@@ -240,7 +238,7 @@ math {
   margin    : 0px 32px;
 }
 
-/* AI advice for too deep fractions below sqrt doesn't seem to work.
+/* AI advice for too-deep fractions below sqrt doesn't seem to work.
 math, mrow {
     font-family: "Latin Modern Math", STIXGeneral,
                   DejaVu Math TeX Gyre, sans-serif;
@@ -252,22 +250,10 @@ mspace {
    min-width : 0.5em;
 }
 
-/* img settings no longer needed in a centered <div> : */
-/* img {
-   display       : inline-block;
-   margin-top    : 16px;
-   margin-bottom : 16px;
+/* this *overrides* SVG settings in code */
+svg path {
+   vector-effect: non-scaling-stroke;
 }
-*/
-
-/* video settings no longer needed in a centered <div> : */
-/* video {
-   display       : inline-block;
-   width         : 80%;
-   margin-top    : 16px;
-   margin-bottom : 16px;
-}
-*/
 
 .footer {
    position   : fixed;

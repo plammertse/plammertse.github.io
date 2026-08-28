@@ -2,7 +2,7 @@
  file    : short_period.html
  purpose : Boeing B747 short period animation (Etkin 3d.ed.)
  ---------------------------------------------------------------
-  2026-08-17 PL moved out short_period.js
+  2026-08-17 PL moved out the script short_period.js
   2026-07-26 PL converted to SVG rendering
   2026-07-12 PL more or less finished (canvas version)
   2026-06-22 PL new, cloned from dumbbell.js
@@ -39,10 +39,9 @@
 <!-- TOP BAR MENU --------------------------------------------->
 
    <ul>
-      <li> <a href = "index.html">
-         Home </a>                                         </li>
-      <li> <a href = "modes.html">
-         Modes </a>                                     </li>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "modes.html">  Modes </a>             </li>
+      <li> <a href = "darts.html">  Wind vanes </a>        </li>
    </ul>
 </nav>
 
@@ -50,14 +49,42 @@
 
 <h2> Short period </h2>
 
-<h4> The short period mode </h4>
+<h4> the short period mode </h4>
 
-<p> B747 short period test — SVG version. Click and hold to pause. </p>
+<p> The short period mode is one of the two symmetric
+ (&hairsp;up&hairsp;/&hairsp;down&hairsp;) 
+ <a href="modes.html"> modes</a> of an aircraft.
+  It is the stable
+  <a href = "darts.html"> wind vane</a> mode
+   controlled by the elevator.
+</p>
+<p> &emsp; 
+ It is one of the two (&hairsp;complex&hairsp;) eigenvalues of
+ the full, 4th order system matrix.
+ The full equations can be simpli&shyfied
+in two ways: one way which brings out the key elements
+of the <href="phugoid.html"> phugoid mode,
+ and one which brings out those of the short period mode.
+ </p>
+ 
+<h4 class="draft"> the short period approximation </h4>
 
-<p> TBW </p>
+<p class="draft"> TBW </p>
 
+<h4> animation </h4>
+
+<p> Click and hold to pause. </p>
+
+<p class="draft"> 
+ TODO  -  Vary the lift vector's length, 
+          bob the airplane up and down. 
+</p>
+
+
+<!-- Create the SVG container for the B747 animation.        -->
+<!-- The animation is inserted by the scripts at the end.    -->
 <div class = "center";>
-                     <!-- style = "border:solid;"> -->
+      <!--    style = "border:solid;">                       -->
    <svg id = "svg"
      width = "80%";
      style = "border           : 1px solid #000000;
@@ -66,15 +93,22 @@
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<div class="footer"> P. Lammertse, 2026 </div>
 
-<!-- scripts must be at end of body, and certainly afer SVG -->
-<script src="mouse.js">              </script>
-<script src="b747_side_view_svg.js"> </script>
-<script src="short_period.js">       </script>
+<!--- SCRIPTS ------------------------------------------------->
 
-<!-- needed for hamburger menu -->
-<script src="menu.js"></script>
+<!-- scripts must be at end of body, and certainly after SVG -->
+<script src="mouse.js">               </script>
+
+<script src="svg_tools.js">            </script>
+<script src="b747_side_view.js">       </script>
+<script src="CG_marker.js">            </script>
+<script src="arrow.js">                </script>
+<script src="short_period.js">         </script>
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
 
 </body>
 </html>

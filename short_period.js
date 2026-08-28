@@ -10,22 +10,29 @@
   2026-06-22 PL new, cloned from dumbbell.js
 --------------------------------------------------------------*/
 
-
-// initialize SVG viewbox
+// TODO      MAKE THESE VARIABLES LOCAL TO THE OBJECT
+// get SVG as opened in HTML
 let svg  = document.getElementById("svg");
-svg.setAttribute( "viewBox", "0 50 400 300");
-                              /* (top left) x  y width height */
 
 // initialize SVG model of B747
-let b747 = new B747();     // airplane constructor, defaults
-b747.setScale( 1.8 );
-/*
-b747.setCenter( 200, 200 ); // svg viewBox is 400x400, so center at 200,200  ??????????
-*/
-b747.createSVG( svg );      // build the <path> elements once
+let b747 = new B747();
+svg.setAttribute( "viewBox", b747.viewBox );
+
+// initialize CG markers and arrows
+const rCG = 1.7;                  // nice size in[m]
+    // COM needs a different name than CG_marker ??
+let CG  = new CG_marker( '', 0, rCG );
+
+const xMAC = 8.324/4;                  // 25 % of Etkin p.65 MAC
+// let light_orange = '#F0F000';
+// let MAC  = new CG_marker( xMAC, 0, rCG, light_orange );  // light orange
+// cyan, lightcyan, turquoise
+let MAC  = new CG_marker( xMAC, 0, rCG, 'cyan' );     // "air" color
+let lift = new Arrow( );
+lift.setColors( 'blue');
 
 // initialize simulation parameters
-let theta  = 0;
+let theta = 0;
 let tSim  = 0;
 let tNow  = performance.now();
 let tPrev = tNow;
@@ -34,7 +41,7 @@ let isRunning = true;
 // -------------------------------------------------------------
 function onLoad() {
    attachMouse( svg );    // from mouse.js
-   run();
+   run();                 // start loop, see below
 }
 
 // -------------------------------------------------------------
@@ -47,7 +54,27 @@ function run() {
    mouseDownHandle();
 
    simulate();
-   b747.draw( 0, 0, theta);       // from b747_side_view_svg.js
+   
+   b747.update( 0, 0, theta);
+   svg.innerHTML = b747.svgString;        // re-start the string
+   
+   CG.update( 0, 0, theta);
+   svg.innerHTML += CG.svgString;
+
+   MAC.update( 0, 0, theta);
+   svg.innerHTML += MAC.svgString;
+   
+   // TODO  Tilt the lift only by gamma = theta-alpha, not by theta.
+   //       Show the air direction gamma ( by parallel flowing lines ? ),
+   //       and the airplane drifting down through these lines,
+   //       with w=alpha*V so you *do* see the airplane bobbing
+   //       up and down.
+   // if ( lift > 0 ) lift arrow is up, and above the airplane
+   lift.update( xMAC, 8);      // up, above MAC
+   svg.innerHTML += lift.svgString;
+
+   // TODO  Later show the damping force at the correct moment arm.
+   // TODO  Later show the I_xx balls, maybe in grey/white.
 
    requestAnimationFrame( run);
 }

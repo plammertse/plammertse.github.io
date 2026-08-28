@@ -1,4 +1,4 @@
-1)<!--------------------------------------------------------------
+<!--------------------------------------------------------------
  file    : darts.html
  purpose : Weathervane stability
  ---------------------------------------------------------------
@@ -32,7 +32,7 @@
 
    <ul>
       <li> <a href = "index.html"> Home </a>               </li>
-      <li> <a href = "stability.html"> Stability and control </a> </li>
+      <li> <a href = "short_period.html"> Short period </a> </li>
    </ul>
 </nav>
 
@@ -45,13 +45,13 @@
 <p> An aircraft is, among other things, two weathervanes :
  one acting in the symmetrical up-down direction
  (&hairsp;leading to the "short period" mode&hairsp;),
- and one acting in the left-right direction,
- leading to the "Dutch roll" mode.
+ and one acting in the left-right direction
+ (&hairsp;leading to the "Dutch roll" mode&hairsp;).
  </p>
  <p> &emsp; This section will first discuss the weathervane,
   and then its close relative the arrow, or dart.
    This will lay the groundwork for the discussion
-   of these airplane modes.
+   of these oscillating airplane modes.
 
 <h4> weathervanes </h4>
 
@@ -160,7 +160,7 @@ Now let us call the angle between the fin and the un&shydisturbed wind <i>&theta
 <!-- END EQUATION --------------------------------------------->
 
 <p> Suppose the moment of inertia of the rod-plus-vane
-about the axis of rotation is <i>I</i><sub>xx</i>.
+ about the axis of rotation is <i>I</i><sub>xx</i>.
  </p>
 <p> By Newton's law and with <i>&alpha;</i> = <i>&theta;</i>, 
  the angular acceleration about the pivot axis will be :
@@ -286,7 +286,7 @@ influence the vane angle.
  or dart. Figure 2 shows such a dart. 
 The definitions are the same as for the weathervane,
 but the pivot axis is replaced by the center of gravity,
-these days often called center of mass (&hairsp;COM&hairsp;)
+these days often called the center of mass (&hairsp;COM&hairsp;)
  of the dart.
 </p>
 
@@ -313,7 +313,7 @@ these days often called center of mass (&hairsp;COM&hairsp;)
 <p> &emsp;
  Until we consider damping, the moment equation (3)
  is not affected by leaving the COM free to move laterally.
- There is, however an added sideways motion of the COM,
+ There is, however an added sideways acceleration of the COM,
  because the pivot no longer compensates
  for the lift force on the fin.
  If <i>y</i> is the sideways direction,
@@ -363,7 +363,7 @@ these days often called center of mass (&hairsp;COM&hairsp;)
 <!-- END EQUATION --------------------------------------------->
  
  <p> Since (&hairsp;before damping&hairsp;) the sideways motion
- of the COM does not affect the moment equation (5),
+ of the COM does not affect the moment equation (3),
  the sideways motion <i>y</i> is "along for the ride".
  It is exactly in phase with the angular oscillation.
  The amplitudes of the accel&shyerations, and therefore also
@@ -426,7 +426,7 @@ The motion is as if the COM rotates about a fixed pivot point <i>P</i>
 ahead of the COM.
 The momentary pivot point, or "pole" of the motion
 for a momentary force (&hairsp;an "impulse"&hairsp;)
-at some other place on an object is called the "center of percussion
+at&nbsp;some other place on an object is called the center of percussion
 of that force about the COM.
 </p>
 
@@ -441,6 +441,8 @@ of that force about the COM.
    <p> <i> Figure 3 : &ensp; Dart center of percussion </i> </p>
 </div>
 
+<h4> a few special cases </h4>
+
 <p> Let us check a few special cases which seem simple at first,
 but which turn out to be rather subtle.
 </p>
@@ -452,8 +454,10 @@ of the dart about its COM is zero.
 This makes the <i>x</i><sub>P</sub> of (7) equal to zero.
 That makes intuitive sense : by inspection,
  the dart will oscillate about its COM.
+ But the frequency of oscillation is a bit troubling :
+ according to (5) it is infinitely high.
 </p>
-<p> &emsp; The reason why is not trivial however. 
+<p> &emsp; The reason why is not trivial. 
  From the free body diagram, any force on the fin
  will cause the COM to move sideways too.
  But even the tiniest of forces at the fin will cause an infinite 
@@ -483,10 +487,104 @@ That makes intuitive sense : by inspection,
   Effectively, the dart will rotate around the front mass,
   so this is the center of percussion for the fin lift.
 </p>
-<p class="draft"> Now do the interesting case of a cruise missile-like dart.
+<h4> the general case </h4>
+
+<p> Now look at the general case.
+ It is always possible to write <i>I</i><sub>xx</sub> as :
  </p>
+  
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub> <mi>I</mi> <mn>xx</mn> </msub>
+   <mspace/> <mo> &equiv; </mo> <mspace/>
+   <mi>m</mi>
+   < <mo> . </mo>
+   <msup> <mi>r</mi> <mn>2</mn> </msup>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
  
- <h4> dart flight </h4>
+ <p> Figure 4 gives the schematic image.
+ The mass <i>m</i> of the dart is modelled as two equal masses,
+ each of &frac12&hairsp;<i>m</i>, situated to both sides of the COM.
+ In other words, all mass on average is at a distance <i>r</i>
+ from the COM. The mass could also have beeen divided over 
+ a ring of radius <i>r</i> around the COM. 
+ According to (7), we have :
+</p> 
+ 
+ <!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub> <mi>x</mi> <mn>P</mn> </msub>
+   
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mrow> <mi>m</mi> <mo>.</mo> 
+         <msup> <mi>r</mi> <mn>2</mn> </msup> </mrow>
+      <mrow> <mi>m</mi> <mo>.</mo>
+         <msub> <mi>l</mi> <mn>f</mn> </msub> </mrow> 
+   </mfrac>
+
+   <mspace/> <mspace/> <mspace/> <mspace/>
+   <mo>&rArr;</mo>
+   <mspace/> <mspace/> <mspace/> <mspace/> 
+
+   <msub> <mi>x</mi> <mn>P</mn> </msub>
+   <mo> . </mo> 
+   <msub> <mi>l</mi> <mn>f</mn> </msub>
+   <mspace/> <mo> = </mo> <mspace/> 
+   <msup> <mi>r</mi> <mn>2</mn> </msup>
+
+</math>
+</td>
+
+<td style="width:50px; text-align:right">                (9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This says that <i>r</i> is the geometrical mean between
+ <i>x</i><sub>P</sub> and <i>l</i>&hairsp;<sub>f</sub>.
+ </p>
+ <p> &emsp;
+ If <i>l</i>&hairsp;<sub>f</sub> is larger than <i>r</i>,
+ then <i>x</i><sub>P</sub> is smaller than <i>r</i>,
+ and vice versa. For a dart, this generally means that
+ the center of percussion <i>P</i> is only slightly ahead
+ of the COM.
+ </p>
+   
+<div class = "center">
+<img src = "images/dart_moment_of_inertia.gif";
+   width = "40%";
+   alt   = "Dart Ixx">
+</div>
+
+<div class = "caption";
+     style = "margin-top:8px">
+   <p> <i> Figure 4 : &ensp; Dart moment of inertia </i> </p>
+</div>
+ 
+ <h4> an aircraft in pitch instead of a dart </h4>
+ 
+ <p class="draft">  Things are very different
+ for an airplane in pitch. There the AC or neutral point is 
+ much closer than <i>r</i> to the COM, which means
+ that the percussion point is very far forward,
+ often ahead of the physical nose of the aircraft.
+ </p>
+ <p> &emsp;
+  This further discussed in the section on the 
+  <a href = "short_period.html"> short period </a> mode.
+ 
+<h4> dart flight </h4>
  
  <p> An interesting side note is that by (5), the oscillation
  frequency is proportional to the flight speed.
@@ -513,9 +611,9 @@ That makes intuitive sense : by inspection,
 <script src="mouse.js">              </script>
 <script src="b747_side_view_svg.js"> </script>
 <script src="short_period.js">       </script>
-
+<!-- needed for draft text     -->
+<script src="draft.js"></script>
 <!-- needed for hamburger menu -->
-<script src="text.js"></script>
 <script src="menu.js"></script>
 
 </body>
