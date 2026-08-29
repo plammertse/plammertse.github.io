@@ -10,9 +10,7 @@
    let ctx    = canvas.getContext("2d");
 */
 
-let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW )  {
-
-   // Sets head length and head width, shaft width
+let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
 
    // For narrow measurement lines, use the defaults :
    //    head width  = 0.5 * head length,
@@ -21,34 +19,25 @@ let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW )  {
    //    head width  = 0.65 * head length,
    //    shaft width = 0.4  * head width
 
+   // Head length and head width,
+   //  shaft width and line width.
+
    this.hL = hL;
    this.hW = hW;
    this.sW = sW;
+   this.eW = eW;        // useful if edge is white
    
-   // set default colors
+   // Default colors
    this.fill   = 'black';
    this.stroke = 'none';
    
-   // set a few defaults for the end points
-   this.xB = 0;
-   this.yB = 0;
-   this.xP = 0;
-   this.yP = 4*hL;
-
-   // temp
-      // base is "zero", drawking order :
-   //      base, shaft, point, and back.
-   let sL = 10;
-   let tL = sL+hL;
-   this.Y = [  0,   sL,   sL,  tL,   sL,    sL,    0   ];
-   this.X = [ sW/2, sW/2, hW/2, 0, -hW/2, -sW/2, -sW/2 ];
-
+   this.tL = 4*hL;       // total length default
 }; // end Arrow constructor
 
-Arrow.prototype.setColors = function( fill='yellow',
-                                      stroke='none') {
+Arrow.prototype.setColors = function( fill  = 'yellow',
+                                      stroke= 'none') {
    this.fill   = fill;
-   this.stroke = stroke;
+   this.stroke = stroke;   // white can be useful too
 }
 /*
 // -------------------------------------------------------------
@@ -90,20 +79,38 @@ Arrow.prototype.setEnds = function( xB, yB, xP, yP )  {
 */
 
 Arrow.prototype.update = function( xBase=0, yBase=0,
-                                   theta=0, L=this.L )  {
+                                   theta=0, tL=this.tL )  {
    
-   cosTheta = Math.cos( theta);
-   sinTheta = Math.sin( theta);
+   let cosTheta = Math.cos( theta);
+   let sinTheta = Math.sin( theta);
    
    // Re-calculate arrow points for length L :
    // TODO
+   // shaft length = total length - arrowhead length
+   let sL = Math.max( 0, tL-this.hL);
+   
+   // Cut the head short from the rear if tL < hL,
+   // like when the arrow emerges from a wall.
+   // This narrows the base of the arrowhead.
+   let hW = this.hW;
+   if ( tL < this.hL )  {     // total shorter than head
+      hW = tL/this.hL *this.hW;
+   }
+   
+   this.X = [ this.sW/2, this.sW/2, hW/2, 0, -hW/2, -this.sW/2, -this.sW/2 ];
+   this.Y = [  0,   sL,   sL,  tL,   sL,    sL,    0   ];
+   
 
       // it's a single outline
    [ x, y ] = move_xy( this.X, this.Y,
                     xBase, yBase, cosTheta, sinTheta);
    let svgString  = '<path d = "' + svg_d( x, y );  // keep this one local
+   if ( this.eW !== undefined ) {
+      svgString += '    stroke-width='   + (this.eW).toFixed(3);
+   }
    svgString += '    fill="'   + this.fill + '"' + 
                  ' stroke="'   + this.stroke + '" />\n';
 
    this.svgString = svgString;
+   // console.log( svgString);
 }
