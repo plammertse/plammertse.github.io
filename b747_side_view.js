@@ -126,19 +126,22 @@ let B747 = function()  {                     // constructor
       let yTop = a0*Math.sqrt( x ) + a1*x  + a2*x**2 + a3*x**3;
       this.yB.push( -yTop );
    }
-   [ this.xB, this.yB] = scale( this.xB, this.yB);  
+   [ this.xB, this.yB] = this.scale( this.xB, this.yB);  
    
    // THIS FINISHES xB, yB.
 
    // cockpit windows start at X1
    this.xC = [ 11, 12.5,  17,  17,  13, 11 ];
    this.yC = [  7,  8.5,  8.5, 6.5,  7,  7 ];
-   [ this.xC, this.yC] = scale( this.xC, this.yC);  
+   [ this.xC, this.yC] = this.scale( this.xC, this.yC);  
 
    // cabin window strip
    this.xQ = [ 9, 9, 136, 136 ];
    this.yQ = [ 0, 2,  2,   0  ];
-   [ this.xQ, this.yQ] = scale( this.xQ, this.yQ);  
+   [ this.xQ, this.yQ] = this.scale( this.xQ, this.yQ);  
+   this.xQQ = [ 9, 136 ];
+   this.yQQ = [ 1,  1  ];
+   [ this.xQQ, this.yQQ] = this.scale( this.xQQ, this.yQQ);  
 
    // flying surfaces
    //   generic NACA 0012 section
@@ -160,12 +163,12 @@ let B747 = function()  {                     // constructor
    }
    this.xF.push( 172.5 );
    this.yF.push(   R   );
-   [ this.xF, this.yF] = scale( this.xF, this.yF);  
+   [ this.xF, this.yF] = this.scale( this.xF, this.yF);  
 
    // rudder outline
    this.xR = [ 162.5, 179, 182, 172.5 ];
    this.yR = [  R,  R+25, R+25,   R ];
-   [ this.xR, this.yR] = scale( this.xR, this.yR);  
+   [ this.xR, this.yR] = this.scale( this.xR, this.yR);  
 
    // stabilizer
    let yH0 = 6;
@@ -188,7 +191,9 @@ let B747 = function()  {                     // constructor
       this.xH.push( 172 + 8*xNaca[k] );
       this.yH.push( yH1 + 8*yNaca[k] );
    }
-   [ this.xH, this.yH] = scale( this.xH, this.yH);  
+   this.xH.push( this.xH[0] );
+   this.yH.push( this.yH[0] );
+   [ this.xH, this.yH] = this.scale( this.xH, this.yH);  
 
    // wing
    let fB = 15/12;   // thicker wing root, 15%
@@ -209,7 +214,13 @@ let B747 = function()  {                     // constructor
       this.xW.push( 114 + 10*xNaca[k] );
       this.yW.push(  3  + 10*yNaca[k] );
    }
-   [ this.xW, this.yW] = scale( this.xW, this.yW);  
+      
+      // close contour
+   this.xW.push( this.xW[0]);
+   this.yW.push( this.yW[0]);
+
+      // scale to metres
+   [ this.xW, this.yW] = this.scale( this.xW, this.yW);  
 
    // pylons
    //   generic shape
@@ -226,8 +237,8 @@ let B747 = function()  {                     // constructor
       this.xP2.push(  60  + xP[k] );
       this.yP2.push( -7.5 + yP[k] );
    }
-   [ this.xP1, this.yP1] = scale( this.xP1, this.yP1);  
-   [ this.xP2, this.yP2] = scale( this.xP2, this.yP2);  
+   [ this.xP1, this.yP1] = this.scale( this.xP1, this.yP1);  
+   [ this.xP2, this.yP2] = this.scale( this.xP2, this.yP2);  
 
    // engines
       // generic shape (note vertical lines at x = 6 and 13.5 )
@@ -257,8 +268,8 @@ let B747 = function()  {                     // constructor
       this.xE2.push(  60  + xE[k] + alpha*yE[k] );
       this.yE2.push( -7.5 + yE[k] - alpha*yE[k] );
    }
-   [ this.xE1, this.yE1] = scale( this.xE1, this.yE1);
-   [ this.xE2, this.yE2] = scale( this.xE2, this.yE2);  
+   [ this.xE1, this.yE1] = this.scale( this.xE1, this.yE1);
+   [ this.xE2, this.yE2] = this.scale( this.xE2, this.yE2);  
 
    let xBcn =  30;
    let yBcn =  R+1.2;
@@ -267,7 +278,7 @@ let B747 = function()  {                     // constructor
 //   this.xBeacon = [ xBcn-r, xBcn-0.7*r, xBcn,   xBcn+0.7*r, xBcn+r ];
    this.xBeacon = [ xBcn-2*r, xBcn-1.4*r, xBcn,   xBcn+1.4*r, xBcn+2*r ];
    this.yBeacon = [ yBcn,   yBcn+0.7*r, yBcn+r, yBcn+0.7*r, yBcn   ];
-   [ this.xBeacon, this.yBeacon] = scale( this.xBeacon, this.yBeacon);
+   [ this.xBeacon, this.yBeacon] = this.scale( this.xBeacon, this.yBeacon);
    
    this.xCGmarker = [ -1, +1, +1, -1, -1 ];    // CG square in m, not mm
    this.yCGmarker = [ -1, -1, +1, +1, +1 ];    // no need to scale this
@@ -294,7 +305,7 @@ B747.prototype.setViewBox = function()  {
 
 // -------------------------------------------------------------
 // Scale b747 graph paper [mm] coordinates to meters
-function scale( X, Y )  {
+B747.prototype.scale = function( X, Y )  {
    let N = X.length;
    if ( Y.length !== N ) {
       console.log( 'array size error in b747...scale()' );
@@ -328,7 +339,7 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    
    // FUSELAGE
       // fuselage body
-   [ x, y ] = move_xy( this.xB, this.yB,
+   let [ x, y ] = move_xy( this.xB, this.yB,
                     xPos, yPos, cosTheta, sinTheta);
    svgString += '<path d = "' + svg_d( x, y );
    svgString += '    fill='   + this.fB + 
@@ -341,12 +352,20 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    svgString += '    fill='   + this.fB + 
                  ' stroke='   + this.sB + ' />\n';
                  
-      // *cabin* window strip   
+      // *cabin* window strip
+/*
    [ x, y ] = move_xy( this.xQ, this.yQ,
                     xPos, yPos, cosTheta, sinTheta);
    svgString += '<path d = "' + svg_d( x, y );
    svgString += '    fill='   + '"#B0B0FF"' + 
                  ' stroke='   + '"#B0B0FF"' + ' />\n';
+*/
+      // actual cabin windows ( dotted line )
+   [ x, y ] = move_xy( this.xQQ, this.yQQ,
+                    xPos, yPos, cosTheta, sinTheta);
+   svgString += '<path d = "' + svg_d( x, y );
+   svgString += ' stroke="darkgray" stroke-width="3" ' +
+                ' stroke-dasharray="2.3,2.3" />\n';
                  
       // flashing beacon light
       // ( real beacon flashes 40 to 100 times/sec )
@@ -379,7 +398,7 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
       // rudder               
    [ x, y ] = move_xy( this.xR, this.yR,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';   // TODO  thinner linewidth on rudder outline
 
       // horizontal stabilizer               
    [ x, y ] = move_xy( this.xH, this.yH,
@@ -413,12 +432,6 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
 
    // close the <g> coloring the flying surfaces
    svgString += '</g>\n';
- 
-   // TEST TEXT
-   // Note the strings themselves cannot contain a line break !
-   let pos = ' x="0" y="10" '
-   svgString += ' <text' + pos + 'font-size="3"' +
-                  'text-anchor="middle"> B747-100 </text> \n'
  
    this.svgString = svgString;
 }

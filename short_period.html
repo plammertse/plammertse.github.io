@@ -42,6 +42,8 @@
       <li> <a href = "index.html">  Home </a>              </li>
       <li> <a href = "modes.html">  Modes </a>             </li>
       <li> <a href = "darts.html">  Wind vanes </a>        </li>
+      <li> <a href= "center_of_percussion.html">
+                                  Center of percussion</a> </li>      
    </ul>
 </nav>
 
@@ -53,32 +55,41 @@
 
 <p> The short period mode is one of the two symmetric
  (&hairsp;up&hairsp;/&hairsp;down&hairsp;) 
- <a href="modes.html"> modes</a> of an aircraft.
-  It is the stable
-  <a href = "darts.html"> wind vane</a> mode
-   controlled by the elevator.
+ eigen&hairsp;-&hairsp;<a href="modes.html"><i>modes</i></a> of an aircraft.
+  This mode is con&shytrol&shyled by the elevator.
 </p>
 <p> &emsp; 
- It is one of the two (&hairsp;complex&hairsp;) eigenvalues of
- the full, 4th order system matrix.
- The full equations can be simpli&shyfied
-in two ways: one way which brings out the key elements
+ The eigen&hairsp;-&hairsp;<i>frequency</i> of the mode 
+ is one of the two (&hairsp;complex&hairsp;) 
+ eigen&hairsp;-&hairsp;<i>values</i> of the full,
+ 4th order system matrix for the symmetrical motions.
+ The "shape" of the mode (&hairsp;the motion pattern&hairsp;) is given
+ by the accompanying eigen&hairsp;-&hairsp;<i>vector</i>.
+ </p>
+ <p> &emsp;
+ The full symmetrical equations can be simplified
+in two ways&hairsp;: one which brings out the key elements
 of the <href="phugoid.html"> phugoid mode,
  and one which brings out those of the short period mode.
+ This section will, among other things, describe
+ the latter simplification.
  </p>
  
-<h4 class="draft"> the short period approximation </h4>
-
-<p class="draft"> TBW </p>
-
 <h4> animation </h4>
 
-<p> Click and hold to pause. </p>
-
-<p class="draft"> 
- TODO  -  Bob the airplane up and down. 
-</p>
-
+<p> The animation gives a first impression of the mode's
+ shape and of its frequency.
+  The mode is often described as a pitch angle oscillation,
+  but the actual motion is also, and in some ways primarily,
+  a vertical bobbing up and down around the flight path.
+ </p>
+ <p> &emsp;
+ The motion is strongly related to that of a weathervane,
+ or better, a <a href = "darts.html"> dart</a> arrow.
+ It is also closely related to the oscillation
+ of a dumbbell around its center of 
+ <a href="center_of_percussion.html"> percussion</a>.
+ </p>
 
 <!-- Create the SVG container for the B747 animation.        -->
 <!-- The animation is inserted by the scripts at the end.    -->
@@ -89,6 +100,44 @@ of the <href="phugoid.html"> phugoid mode,
      style = "border           : 1px solid #000000;
               background-color : #FAFEFF;">  </svg>
 </div>
+<div class = "caption"; 
+      style= "margin-top    : 12px;
+              margin-bottom : 0"  >
+<p><b><i>Figure 1 : &ensp; Short period oscillation
+    of a B747 at cruising altitude.
+    </i></b></p>  
+</div>
+<div class = "caption"; 
+      style= "margin-top : 0;
+              color : gray ">
+   <b><i> &lt; click figure and hold to pause &gt;
+    </i></b>  
+</div>
+
+
+<h4 class="draft"> the short period approximation </h4>
+
+<p class="draft"> TBW </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
@@ -103,6 +152,9 @@ of the <href="phugoid.html"> phugoid mode,
 <script src="b747_side_view.js">       </script>
 <script src="CG_marker.js">            </script>
 <script src="arrow.js">                </script>
+<script src="spring.js">               </script>
+<script src="floor.js">                </script>
+<script src="svg_text.js">             </script>
 <script src="short_period.js">         </script>
 
 <!-- draft text and hamburger menu -->

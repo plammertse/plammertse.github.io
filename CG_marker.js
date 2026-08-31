@@ -48,7 +48,6 @@ let CG_marker = function( xCG=10, yCG=0, R=1, fill="white", stroke="black" )  {
 }; // end CG_marker constructor
 
 // -------------------------------------------------------------
-// draw() uses external drawShape() from shape.js
 CG_marker.prototype.update = function( xPos, yPos, theta )  {
    
    cosTheta = Math.cos( theta);
@@ -58,7 +57,7 @@ CG_marker.prototype.update = function( xPos, yPos, theta )  {
    //    translated and rotated as appropriate.
 
       // outer circle, solid fill
-   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
+let   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
                     xPos, yPos, cosTheta, sinTheta);
    let svgString  = '<path d = "' + svg_d( x, y );  // keep this one local
    svgString += '    fill="'   + this.fill + '"' + 

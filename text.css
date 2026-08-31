@@ -255,6 +255,16 @@ svg path {
    vector-effect: non-scaling-stroke;
 }
 
+/* try to avoid text pixel jitter (no luck) */
+/*
+svg text {
+  // A rotation small enough to be completely invisible to the human eye
+  transform: rotate(0.01deg); 
+  transform-origin: center;
+  text-rendering : geometricPrecision;
+}
+*/
+
 .footer {
    position   : fixed;
    left       : 32px;

@@ -20,8 +20,12 @@ function svg_d( x, y )  {
       data += 'L ' +
          x[k].toFixed(3) + ',' + -y[k].toFixed(3) + ' ';
    }
-   data += 'Z"';
 //   data += 'Z" \n';
+   // better close your own lines ?
+   // without Z the fill still acts as if closed,
+   //  only the stroke does not
+   // with Z, all stroke lines get closed
+   data += '" \n';
    
    return data;
 }
@@ -31,7 +35,7 @@ function svg_d( x, y )  {
 function move_xy( x, y, dx, dy, cosTheta=1, sinTheta=0 )  {
    let N = x.length;
    if ( y.length !== N ) {
-      console.log( 'array size error in b747...move()' );
+      console.log( 'array size error in move_xy()' );
       return;
    }
 
@@ -40,6 +44,25 @@ function move_xy( x, y, dx, dy, cosTheta=1, sinTheta=0 )  {
    for ( let k=0; k<N; k++ )  {
       xx[k] =  dx + x[k]*cosTheta + y[k]*sinTheta;
       yy[k] =  dy - x[k]*sinTheta + y[k]*cosTheta;
+   }
+
+   return[ xx, yy ];
+}
+
+// -------------------------------------------------------------
+// Scale xy data
+function scale_xy( x, y, sx=1, sy=1 )  {
+   let N = x.length;
+   if ( y.length !== N ) {
+      console.log( 'array size error in scale_xy()' );
+      return;
+   }
+
+   let xx = [];   // or use *.map()
+   let yy = [];
+   for ( let k=0; k<N; k++ )  {
+      xx[k] =  sx * x[k];
+      yy[k] =  sy * y[k];
    }
 
    return[ xx, yy ];

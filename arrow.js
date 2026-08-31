@@ -5,11 +5,6 @@
 //  2026-06-22 PL new, cloned from lever.js and arrow.m.
 // --------------------------------------------------------------
 
-/* Place this in calling HTML, just after creating canvas :
-   let canvas = document.getElementById("canvas");
-   let ctx    = canvas.getContext("2d");
-*/
-
 let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
 
    // For narrow measurement lines, use the defaults :
@@ -39,15 +34,7 @@ Arrow.prototype.setColors = function( fill  = 'yellow',
    this.fill   = fill;
    this.stroke = stroke;   // white can be useful too
 }
-/*
-// -------------------------------------------------------------
-Arrow.prototype.setBase = function( xB, yB )  {
-   this.makeSvg();
-}
-
-// -------------------------------------------------------------
-Arrow.prototype.setPoint = function( xP, yP )  {
-}
+/*   // TODO
 
 // -------------------------------------------------------------
 Arrow.prototype.setEnds = function( xB, yB, xP, yP )  {
@@ -102,7 +89,7 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
    
 
       // it's a single outline
-   [ x, y ] = move_xy( this.X, this.Y,
+   let [ x, y ] = move_xy( this.X, this.Y,
                     xBase, yBase, cosTheta, sinTheta);
    let svgString  = '<path d = "' + svg_d( x, y );  // keep this one local
    if ( this.eW !== undefined ) {
