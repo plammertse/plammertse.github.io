@@ -77,12 +77,10 @@ Spring.prototype.update = function( x1=0, y1=0, x2=x1+50, y2=y1 ) {
    let [ x, y ] = move_xy( X, Y, x1, y1, Math.cos(phi), Math.sin(phi) );
    
    // svg_d flips +y up
-   let svgString  = '<path d = "' + svg_d( x, y );
+   let svgString  = '<path d = ' + svg_d( x, y );
    svgString += ' stroke-width="' + this.SW.toFixed(3) + 
-               '" stroke="'       + this.stroke + 
+               '" stroke="'       + this.stroke        + 
                '" fill="none" />\n';
                 
-   // TODO  Try rounded ends (corners) to line ?
-
    this.svgString = svgString;
 }

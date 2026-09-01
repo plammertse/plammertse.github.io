@@ -152,13 +152,13 @@ td {
 .tdcenter {
    border     : 1px solid black;
    text-align : center;
-   padding    : 3px 0px 3px 0px;
+   padding    : 3px 0px 3px 0px;    /* top right bot left TBC */
 }   
 
 .tdleft {
    border     : 1px solid black;
    text-align : left;
-   padding    : 3px 0px 3px 16px;
+   padding    : 3px 0px 3px 16px;   /* top right bot left TBC */
 }   
 
 /* Two equal columns that float next to each other,
@@ -191,7 +191,7 @@ td {
    width  		    : min( 90%, 800px);
 /*   border 		 : solid;  */  /* temporary box size debug tool */
 }
-/* Caption same as center / figure, only this time margin below */
+/* Caption same as center for figure, only this time margin below */
 .caption {
    display         : flex;
    justify-content : center;
@@ -238,21 +238,35 @@ math {
   margin    : 0px 32px;
 }
 
+/* Use this in a <div> around the mtable */
+/* Places matrix onthe roght. Use .caption instead ? */
+.math-container {
+  display         : flex;
+  align-items     : left;
+  justify-content : center; /* Safely centers the table without breaking rows */
+}
+
 /* AI advice for too-deep fractions below sqrt doesn't seem to work.
 math, mrow {
     font-family: "Latin Modern Math", STIXGeneral,
                   DejaVu Math TeX Gyre, sans-serif;
+}
 */
 
+/* nice for numerical matrices */
+mtd {
+  padding    : 5px 16px;           /* top, right, bot, left */
+}
+ 
 /* Always use <mspace/> with the slash, else it won't work  */
-/* <mspace> width itself does not seem to allow an override */
+/* <mspace> width itself does not seem to be set here       */
 mspace {
    min-width : 0.5em;
 }
 
 /* this *overrides* SVG settings in code */
 svg path {
-   vector-effect: non-scaling-stroke;
+   vector-effect: non-scaling-stroke;  /* TODO check if this is useful */
 }
 
 /* try to avoid text pixel jitter (no luck) */

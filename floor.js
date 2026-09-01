@@ -41,7 +41,7 @@ Floor.prototype.update = function( xPos=0, yPos=0, theta=0 ) {
       // baseline
    let [ x, y ] = move_xy( this.xF, this.yF, xPos, yPos,
                            Math.cos(theta), Math.sin(theta) ); 
-   let svgString  = '<path d = "' + svg_d( x, y );
+   let svgString  = '<path d = ' + svg_d( x, y );
    svgString += ' stroke-width="' + this.tF.toFixed(3) + 
                '" stroke="'       + this.stroke + 
                '" fill="none" />\n';
@@ -49,7 +49,7 @@ Floor.prototype.update = function( xPos=0, yPos=0, theta=0 ) {
       // hatch
    [ x, y ] = move_xy( this.xH, this.yH, xPos, yPos,
                        Math.cos(theta), Math.sin(theta) );   
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += ' stroke-width="' + this.tH.toFixed(3) + 
                '" stroke="'       + this.stroke + 
                '" fill="none" />\n';

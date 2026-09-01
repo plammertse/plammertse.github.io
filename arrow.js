@@ -91,11 +91,11 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
       // it's a single outline
    let [ x, y ] = move_xy( this.X, this.Y,
                     xBase, yBase, cosTheta, sinTheta);
-   let svgString  = '<path d = "' + svg_d( x, y );  // keep this one local
+   let svgString  = '<path d = ' + svg_d( x, y );  // keep this one local
    if ( this.eW !== undefined ) {
       svgString += '    stroke-width='   + (this.eW).toFixed(3);
    }
-   svgString += '    fill="'   + this.fill + '"' + 
+   svgString += '    fill="'   + this.fill   + '"' + 
                  ' stroke="'   + this.stroke + '" />\n';
 
    this.svgString = svgString;

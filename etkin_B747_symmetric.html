@@ -1,0 +1,169 @@
+<!--------------------------------------------------------------
+ file    : short_period.html
+ purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ ---------------------------------------------------------------
+  2026-08-17 PL moved out the script short_period.js
+  2026-07-26 PL converted to SVG rendering
+  2026-07-12 PL more or less finished (canvas version)
+  2026-06-22 PL new, cloned from dumbbell.js
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> B747 short period test (SVG) </title>
+</head>
+
+<!-- onLoad() from short_period.js attaches the mouse         -->
+<!--    and starts the simulation :                           -->
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "short_period.html"> Short period </a></li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Symmetrical state space </h2>
+
+<h4> model linearization </h4>
+
+<h4> state variables </h4>
+
+<p> TBW.
+</p>
+ 
+<h4 class="draft"> flight conditions </h4>
+
+<h4 class="draft"> equations </h4>
+
+<p> TBW.
+<p class="draft"> TBW. State. Dimensional. Etkin. </p>
+<p class="draft"> TBW. Tell about the state first. </p>
+<p class="draft"> WTF is gamma = theta - alpha, ceteris paribus. </p>
+
+<h4 class="draft"> Etkin data </h4>
+
+
+<p style="margin-left:75px">
+   <math>
+      <mn><b>A</b></mn> <mo> &nbsp; = &nbsp; </mo>
+      <mo>[</mo> <mn>&thinsp;</mn>
+      <mtable>
+         <mtr>
+            <mtd><mn>-0.006868</mn></mtd>
+            <mtd><mn>0.01395</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>-&hairsp;&#x1D420;&ensp;</mn></mtd>
+            <!-- g descender increases row height, fix later -->
+         <!-- <mtd><mn>-32.2</mn></mtd>  -->
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+         </mtr>
+         
+         <mtr>
+            <mtd><mn>-0.09055</mn></mtd>
+            <mtd><mn>-0.3151</mn></mtd>
+            <mtd><mn>773.98</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+         </mtr>
+         
+         <mtr>
+            <mtd><mn>0.0001187</mn></mtd>
+            <mtd><mn>-0.001026</mn></mtd>
+            <mtd><mn>-0.4285</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+         </mtr>
+         <mtr>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+<!--            <mtd><mn>1</mn></mtd>   -->
+            <mtd><mn>&#120783;</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+            <mtd style="background : #F0F0F0";><mn>0</mn></mtd>
+         </mtr>
+         <mtr style="background : #F0F0F0";>  <!-- lighter gray -->
+            <mtd><mn>1</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>&ensp;0&ensp;</mn></mtd>
+            <mtd><mn>&ensp;0&ensp;</mn></mtd>
+         </mtr>
+         <mtr style="background : #F0F0F0";>  <!-- lighter gray -->
+            <mtd><mn>0</mn></mtd>
+<!--            <mtd><mn>-1</mn></mtd>   -->
+            <mtd><mn>-&hairsp;&#120783;&ensp;</mn></mtd>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>&#x1D415;</mn></mtd>
+            <mtd><mn>&ensp;0&ensp;</mn></mtd>
+            <mtd><mn>&ensp;0&ensp;</mn></mtd>
+         </mtr>
+      </mtable> <mn>&thinsp;</mn>
+      <mo>]</mo>
+   </math>
+</p>
+
+<p class="caption"; style="margin-top:12px">
+      <b> Table 1 : &ensp; Etkin symmetrical data B747-100 in cruise. </b> </p>
+
+
+<!-- Matlab : etkin_symmetric_B747.m
+% sym A from p.166, (6.2,1)   note : lbs, ft
+A = [ -0.006868    0.01395       0   -32.2   0  0	
+      -0.09055    -0.3151     773.98   0     0  0
+       0.0001187  -0.001026  -0.4285   0     0  0
+           0           0         1     0     0  0
+           1           0         0     0     0  0
+           0          -1         0     V     0  0  ];
+
+% sym B from   p.229, (7.6,5)
+% for asym see p.244, (7.9,4)
+B = [  -0.000187    9.66
+        -17.85        0
+        -1.158        0
+           0          0
+           0          0 
+           0          0   ];     
+           
+-->
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>

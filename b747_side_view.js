@@ -18,11 +18,9 @@
 let B747 = function()  {                     // constructor
    this.setViewBox();
 
+   this.title = 'B747';
+   
    // define the colors
-   let bodyFill   = ' fill   = "white" '
-   let bodyStroke = ' stroke = "black" ';
-   let wingFill   = ' fill   = "#F0F0F0"';  // silver is too dark
-   let wingStroke = ' stroke = "black"';
    this.fB = '"white"';     // note quote in quote
    this.sB = '"black"';
    this.fW = '"#F0F0F0"';  // silver is too dark
@@ -32,19 +30,12 @@ let B747 = function()  {                     // constructor
    //   millimeters measured in 1:380 print of 3-view
    //     x = positive aft from nose
    //     z = vertical (up, becomes down in pixels)     INVERT LATER
-   // Uses a scale of print millimeters to px for now.
+   // Uses a scale of print millimeters to viewBox units == [m].
    // Scaled 182 mm equals 70.66 m full size (231'10"),
    // so L(m) = 0.388 * L(mm)
    // See memo PL-26-072
-
-   // The this.* construct does not work here ???
-// TODO : TRY AGAIN NOW THAT CONSTRUCTOR DOES NOT KNOW ABOUT svg ANYMORE   
-   // Put these constants in scale() function to avoid global constants.
-   //   this.Xcg   = 80;      // in scanned mm units
-   //   this.Scale = 0.388;   // scale from scanned mm to full size m
-   // Put these constants in scale() function to avoid global constants :
-   //   Xcg   = 80;      // in scanned mm units
-   //   Scale = 0.388;   // scale from scanned mm to full size m
+   this.Xcg   = 80;      // in scanned mm units
+   this.Scale = 0.388;   // scale from scanned mm to full size m
 
    // fuselage stations - from nose
    let X0 =  0;      // nose point
@@ -163,6 +154,9 @@ let B747 = function()  {                     // constructor
    }
    this.xF.push( 172.5 );
    this.yF.push(   R   );
+      // close fin base
+   this.xF.push( 141 );
+   this.yF.push(  R   );
    [ this.xF, this.yF] = this.scale( this.xF, this.yF);  
 
    // rudder outline
@@ -311,14 +305,11 @@ B747.prototype.scale = function( X, Y )  {
       console.log( 'array size error in b747...scale()' );
       return;
    }
-   const Xcg   =  80;     // in graph paper mm units
-   const Scale = 0.388;   // scale from scanned mm to full size m
-   
    let x = [];
    let y = [];
    for ( let k=0; k<N; k++ )  {
-      x[k] =  Scale * ( X[k] - Xcg );
-      y[k] =  Scale *   Y[k];
+      x[k] =  this.Scale * ( X[k] - this.Xcg );
+      y[k] =  this.Scale *   Y[k];
    }
    return [ x, y ];
 }
@@ -327,8 +318,10 @@ B747.prototype.scale = function( X, Y )  {
 B747.prototype.update = function( xPos, yPos, theta=0 )  {
 
    // This function sets an SVG string in the HTML :
-   let svgString  = ' ';             // keep this one local
-   // It uses svg_d() from svg_d(ata_string.js
+   // It uses several routines from svg_tools.js
+   
+   // start local string, the append
+   svgString = svg_title( this.title );
    
    // Calculate cos and sin outside move for efficiency
    cosTheta = Math.cos( theta);
@@ -339,16 +332,17 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    
    // FUSELAGE
       // fuselage body
+   svgString += '   <!-- white fuselage --> \n';
    let [ x, y ] = move_xy( this.xB, this.yB,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += '    fill='   + this.fB + 
                  ' stroke='   + this.sB + ' />\n';
                  
       // *cockpit* windows               
    [ x, y ] = move_xy( this.xC, this.yC,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += '    fill='   + this.fB + 
                  ' stroke='   + this.sB + ' />\n';
                  
@@ -356,14 +350,14 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
 /*
    [ x, y ] = move_xy( this.xQ, this.yQ,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += '    fill='   + '"#B0B0FF"' + 
                  ' stroke='   + '"#B0B0FF"' + ' />\n';
 */
       // actual cabin windows ( dotted line )
    [ x, y ] = move_xy( this.xQQ, this.yQQ,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += ' stroke="darkgray" stroke-width="3" ' +
                 ' stroke-dasharray="2.3,2.3" />\n';
                  
@@ -371,18 +365,20 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
       // ( real beacon flashes 40 to 100 times/sec )
    [ x, y ] = move_xy( this.xBeacon, this.yBeacon,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    
    let fBeacon = '"white"';   //  light off
    let sBeacon = '"white"';   //  light off
    const PERIOD = 1000;       // flash beacon every 1000 ms
    const ON     =  500;       // dury cycle "on" time
    if( ( performance.now() % PERIOD ) < ON ) {
-      fBeacon = '"red"';      //  light on
-      sBeacon = '"red"'; }    //  light on
+      fBeacon = '"red';      //  light on
+      sBeacon = '"red'; }    //  light on
    svgString += '    fill='   + fBeacon + 
                  ' stroke='   + sBeacon + ' />\n';
-                 
+
+   svgString += '   <!-- silver flying surfaces --> \n';
+
    // FLYING SURFACES, ENGINES
       // centralize the aluminium color
       //  for shorter code and string.
@@ -393,47 +389,50 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
       // fin               
    [ x, y ] = move_xy( this.xF, this.yF,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
 
       // rudder               
    [ x, y ] = move_xy( this.xR, this.yR,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';   // TODO  thinner linewidth on rudder outline
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';   // TODO  thinner linewidth on rudder outline
 
       // horizontal stabilizer               
    [ x, y ] = move_xy( this.xH, this.yH,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
 
       // wing
    [ x, y ] = move_xy( this.xW, this.yW,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
  
       // pylon 1
    [ x, y ] = move_xy( this.xP1, this.yP1,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
  
       // pylon 2
    [ x, y ] = move_xy( this.xP2, this.yP2,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
  
       // engine 2 (drawn first)
    [ x, y ] = move_xy( this.xE2, this.yE2,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
  
       // engine 1 (on top)
    [ x, y ] = move_xy( this.xE1, this.yE1,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
 
    // close the <g> coloring the flying surfaces
    svgString += '</g>\n';
+
+   svgString += '   <!-- end B747 --> \n';
  
    this.svgString = svgString;
+//   console.log( this.svgString);
 }
 
 // -------------------------------------------------------------

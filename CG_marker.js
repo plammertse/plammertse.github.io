@@ -59,19 +59,19 @@ CG_marker.prototype.update = function( xPos, yPos, theta )  {
       // outer circle, solid fill
 let   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
                     xPos, yPos, cosTheta, sinTheta);
-   let svgString  = '<path d = "' + svg_d( x, y );  // keep this one local
+   let svgString  = '<path d = ' + svg_d( x, y );  // keep this one local
    svgString += '    fill="'   + this.fill + '"' + 
                  ' stroke="'   + this.stroke + '" />\n';
       // quadrant 1
    [ x, y ] = move_xy( this.X1, this.Y1,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += '    fill="'   + this.stroke + '"' + 
                  ' stroke="none" />\n';
       // quadrant 2
    [ x, y ] = move_xy( this.X2, this.Y2,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = "' + svg_d( x, y );
+   svgString += '<path d = ' + svg_d( x, y );
    svgString += '    fill="'   + this.stroke + '"' +
                  ' stroke="none" />\n';
 

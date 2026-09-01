@@ -12,20 +12,30 @@
 // It will now show positive up (from y=0) in the viewBox.
 // --------------------------------------------------------------
 
+function svg_title( title ) {
+   
+   let svgString = ' ';
+   if ( title !== undefined )  {
+      svgString = '<!---- ' + title + ' ----> \n';
+   }
+   return svgString;
+}
+
 function svg_d( x, y )  {
    
-   let data = 'M ' +
+   let data = '"M ' +
          x[0].toFixed(3) + ',' + -y[0].toFixed(3) + ' ';
    for ( let k=1; k<x.length; k++ )  {
       data += 'L ' +
          x[k].toFixed(3) + ',' + -y[k].toFixed(3) + ' ';
    }
 //   data += 'Z" \n';
+   data += '"';
    // better close your own lines ?
    // without Z the fill still acts as if closed,
    //  only the stroke does not
-   // with Z, all stroke lines get closed
-   data += '" \n';
+   // with Z, all stroke lines get closed,
+   // whether you like it or not.
    
    return data;
 }
