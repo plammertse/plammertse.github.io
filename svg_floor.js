@@ -1,5 +1,5 @@
 // --------------------------------------------------------------
-// file    : floor.js
+// file    : svg_floor.js
 // purpose : Graphical floor base (hatched)
 // --------------------------------------------------------------
 //  2026-08-31 PL cloned from spring

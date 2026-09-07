@@ -1,0 +1,374 @@
+<!--------------------------------------------------------------
+ file    : state_space_symmetrical.html
+ purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ ---------------------------------------------------------------
+  2026-09_02 PL new
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> State space symmetrical </title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "state_space.html">  State space </a> </li>
+      <li> <a href = "etkin_b747_symmetrical.html">  Etkin B747 </a> </li>      
+      <li> <a href = "short_period.html"> Short period </a></li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Symmetrical state space equations </h2>
+
+<h4> state space </h4>
+
+<p> Aircraft stabilty and control analysis extensively uses
+ so-called <a href="state_space.html"> 
+   <i>linear state space models</i></a>.
+  The basic equation in&nbsp;this type of model is  :
+ </p>
+ 
+ <table class="equation" style="margin-top:3px"> <tr> <td>
+   &emsp; &emsp; <b><i>x</i></b><sup>&thinsp;&bull;</sup>
+      &thinsp; = &thinsp; <b>A . <i>x</i> </b> +
+                          <b>B . <i>u</i> </b> 
+</td> <td style="width:50px; text-align:right">            (1)
+</td> </tr> </table>
+
+<p>   We will assume your familiarity with the concept.
+  If not, please follow the link above.
+ </p>
+
+ 
+<h4> the symmetrical state </h4>
+
+<p> The motions of an airplane can be divided into
+   <i>symmetrical</i> (&hairsp;up/down&hairsp;)
+   and <i>asymmetrical</i> (&hairsp;left/right&hairsp;).
+This section discusses the symmetrical part.
+</p>
+<p> &emsp;
+ We will not derive the physical model of a generic aircraft here.
+ It is a long story, and it is best studied from a thorough
+ textbook like <a href="etkin_editions.html"><i> Etkin</i></a>'s.
+One outcome is that the small motions of the aircraft
+  around straight and level flight can be cleanly separated
+ into the "symmetrical" and the "asymmetrical" motions.
+ </p>
+ <p> &emsp;
+ The symmetrical motions (&hairsp;fore-aft, up-down,
+ and rotation in pitch&hairsp;) can be completely described 
+ by a linear state space model with these four state elements :
+ </p>
+ <table class="equation"><tr><td>
+
+ <p> <i>u</i>        &emsp; forward velocity
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &hairsp;
+   <i> // &thinsp; short for &Delta;<i>u</i>,
+      &hairsp;an extra on the airspeed <i>V</i>.
+ </p>
+ <p> <i>v</i>        &emsp; vertical (&hairsp;down&hairsp;) velocity.
+ &emsp; &emsp; &emsp; &nbsp;
+     <i> // &thinsp; in body fixed frame, see below</i>.
+ </p>
+ <p> <i>q</i>        &emsp; pitch rate.
+ &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+   <i> // &thinsp; nose up.</i>
+ </p>
+ <p> <i>&theta;</i>  &emsp; pitch attitude.
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &thinsp;
+   <i> // &thinsp; nose up. </i>
+ </p> 
+ 
+ </td> <td style="width:50px; text-align:right">            (2)   
+</td></tr></table>
+
+<p> &emsp; 
+ It is certainly not immediately obvious that 
+ these four variables are necessary and sufficient 
+ to describe the motion, but they are.
+  However, the state elements themselves are not as obvious
+ as they seem.
+</p>
+ <p> &emsp;
+ The problem lies in the fact that the 
+ equations of motion are formulated in a <i>body fixed reference frame</i>.
+ In&nbsp;particular, the airplane velocity is defined relative to the
+ <i>X</i> body axis (&hairsp;forward in the airplane&hairsp;)
+ and the <i>Z</i> body axis
+ (&hairsp;down in the airplane&hairsp;).
+ </p>
+ <p> &emsp;
+ The great theoretical advantage is that in the body frame of reference,
+ the inertial properties do not change. 
+ Having to take care of the change in inertial properties 
+ would complicate the equations of motion no end.
+ </p>
+ <p class="draft"> <i> &emsp; This is the conventional point of view.
+  For a critique, see **** </i>
+ </p>
+ <p> &emsp;
+ The downside is that the body is not an inertial reference frame,
+ because the airplane itself shifts and rotates. 
+ And&nbsp;Newton's equations of motion only hold in an inertial frame.
+ After some subtle math, it turns out that in hori&shyzontal flight,
+ Newton's law for the vertical direction <i>in body axes</i> becomes :
+  </p>
+  
+ <table class="equation"><tr><td>
+ <math>
+   <msup> <mi>w</mi> <mn>&bull;</mn> </msup>
+   <mo> &thinsp; = &thinsp; </mo>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>Z</mi>
+      <mi>m</mi>
+   </mfrac>
+   <mo> &thinsp; + &thinsp; </mo> 
+   <mi>V</mi>
+   <mo>.</mo> 
+   <mi>q</mi>
+</math>
+
+ </td> <td style="width:50px; text-align:right">            (3)   
+</td></tr></table>
+
+ <p> Here, <i>Z</i> is the sum of all aerodynamic forces
+ in the  vertical direction (&hairsp;body fixed, positive down&hairsp;)
+ after subtracting the steady state
+ lift needed to keep the aircraft flying on a horizontal flight path.
+ We could strictly call this force &Delta;<i>Z</i>
+ instead of <i>Z</i>, but we won't.
+ </p>
+ <p> &emsp;
+  What this says is that the change in vertical (down)
+  <i>body-fixed</i> velocity comes  first of all from the sum
+  of the aerodynamic vertical forces as expected,
+  but it also comes from a purely geometrical term.
+  When the airplane rotates backward in straight and level flight,
+  the airspeed <i>V</i> remains horizontal in the inertial world,
+  but it points more downward relative to the airplane.
+  In body axes, the velocity <i>V</i> gets a "vertical" down component.
+  </p>
+<!--
+ <p> &emsp;
+ Viewed the other way, the air comes in more from below,
+ and the airplane and its wing wil have a more positive
+ "angle of attack" 
+  &alpha; &hairsp;&equiv;&hairsp; <i>w&hairsp;/&hairsp;V</i>.
+ </p>
+ -->
+ <p> &emsp;
+ By the same subtle derivation as for (3), the moment equation 
+ around the pitch axis is unchanged relative to the inertial case :
+ </p>
+   
+ <table class="equation"><tr><td>
+ <math>
+   <msup> <mi>q</mi> <mn>&bull;</mn> </msup>
+   <mo> &thinsp; = &thinsp; </mo>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>M</mi>
+      <msub> <mi>I</mi> <mn>yy</mn> </msub>
+   </mfrac>
+</math>
+
+ </td> <td style="width:50px; text-align:right">            (4)   
+</td></tr></table>
+
+<h4> angle of attack </h4>
+
+<p> A vertical down velocity
+ (&hairsp;in the airplane's own body axes&hairsp;)
+ is the equivalent of an angle of attack.
+ The air comes in from below because the aircraft
+ is moving down by a velocity <i>w</i>,
+ and forward by (&hairsp;nearly&hairsp;)
+ its flying velocity <i>V</i>.
+ The equation is :
+  </p>
+
+<table class="equation"><tr><td>
+ <math>
+   <mi>&alpha;</mi>
+   <mo> &thinsp; = &thinsp; </mo>
+   <mstyle displaystyle="true">
+   <mfrac>
+      <mi>w</mi>
+      <mi>V</mi>
+   </mfrac>
+</math>
+
+ </td> <td style="width:50px; text-align:right">            (4)   
+</td></tr></table>
+
+<p> Note  again that these velocities are defined as vertical and forward 
+ <i>as measured in the airplane's body axes</i>. 
+ This&nbsp;can happen in either of two ways, or by a combination of both :
+</p>
+<p>- &emsp; the airplane attitude is horizontal,
+    (&hairsp;<i>&theta;</i> = 0&hairsp;),
+    but in this flat attitude it sinks with a non-zero vertical speed.</p>
+<p> &emsp; &emsp; &ensp;<i>We will shortly see that this gives
+      a descending flight.</i>
+</p>    
+<p>- &emsp; the airplane has a non-zero pitch attitude <i>&theta;</i>,
+ but it follows a horizontal flight path.
+</p>
+<p> &emsp; &emsp; &ensp;<i> The air will come in
+    from below at the angle &theta;, which means that &alpha; = &theta;</i>.
+</p>    
+ 
+<h4> the flight path angle </h4>
+
+<p> The somewhat unexpected result is that the climb angle,
+ more properly called the flight path angle <i>&gamma;</i>, is :
+</p>
+
+ <table class="equation"><tr><td>
+ <math>
+   <mi>&gamma;</mi>>
+   <mo> &thinsp; = &thinsp; </mo>
+   <mi>&theta;</mi>
+   <mo> &minus; </mo>
+   <mi>&alpha;</mi>
+</math>
+
+ </td> <td style="width:50px; text-align:right">            (4)   
+</td></tr></table>
+
+<p> The flight path angle at zero angle of attack
+    (&hairsp;zero vertical velocity <i>v</i> in the body axes&hairsp;)
+    is equal to the pitch attitude <i>&theta;</i>.
+    At first this does not feel right, because a sudden change
+    in pitch angle would not cause a sudden change in flight path angle.
+    But this is made up for by the kinematics of the motion, 
+    which comes from the same subtle derivations as before.
+    In fact, we already met the kinematic rate of change
+    of <i>w</i> with <i>q</i> in equation (3).
+    The rate of change of <i>&theta;</i> with <i>q</i> 
+    is purely kinematic :
+</p>
+
+ <table class="equation"><tr><td>
+ <math>
+   <msup> <mi>&theta;</mi> <mn>&bull;</mn> </msup>
+   <mo> &thinsp; = &thinsp; </mo>
+   <mi>q</mi>
+</math>
+
+ </td> <td style="width:50px; text-align:right">            (5)   
+</td></tr></table>
+
+<p> A pitch rate <i>q</i> has two simultaneous effects :
+ it increases <i>&theta;</i>, and it increases <i>&alpha;</i>
+ by the same amount.
+ </p>
+ <p> By (4), a pitch rate <i>by itself</i> does
+  <i>not</i> change the flight path angle.
+</p>
+<p class="draft">
+- make more formal that &alpha; = w/V,
+and mention that alpha has an aerodynamic effect(and theta does not).
+Briefly touch on gravity
+</p>
+<p class="draft">
+- mention here, or refer to, the Ax and Az output specific forces.
+</p>
+<p class="draft">
+- mention that q *does* have an effect on the aerodynamic force.
+</p>
+<p class="draft">
+- find a derivation for F = m . ( v_dot + omega x v ) in rigid body dynamics.
+</p>
+
+<h4> the expanded state </h4>
+
+ <p> In the matrix formulation of the section on 
+<a href="state_space.html"> state space</a>,
+the state vector and input vectors are :
+</p>
+ 
+ <table class="equation"><tr><td>
+
+   <math>
+      <mi><b>x</b></mi>
+      <mo> &thinsp; = &thinsp; </mo>
+      <mo>[</mo>
+      <mtable>
+         <mtr> <mtd style="padding:5px 3px"> <mn>u</mn>       </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px"> <mn>v</mn>       </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px"> <mn>q</mn>       </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px"> <mn>&theta;</mn> </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px; background:silver"> 
+                                             <mn>x</mn>        </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px; background:silver"> 
+                                             <mn>h</mn>        </mtd> </mtr>
+      </mtable>
+      <mo>]</mo>
+   </math>
+      
+   &emsp; &emsp; &emsp; &emsp;
+   
+   <math>   
+      <mi><b>u</b></mi>
+      <mo> &thinsp; = &thinsp; </mo>
+      <mo>[</mo>
+      <mtable>
+         <mtr> <mtd style="padding:5px 3px"> 
+            <msub><mi>&delta;</mi><mn>e</mn></msub>
+         </mtd> </mtr>
+         <mtr> <mtd style="padding:5px 3px"> 
+            <msub><mi>&delta;</mi><mn>t</mn></msub>
+         </mtd> </mtr>
+      </mtable>
+      <mo>]</mo>   
+   </math>
+</td> <td style="width:50px; text-align:right">            (6)   
+</td></tr></table>
+
+
+<p> TODO   &emsp; Explain <i>x</i> and <i>h</i>.
+ </p>
+
+<p> TBW.
+</p>
+ 
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>

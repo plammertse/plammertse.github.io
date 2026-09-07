@@ -1,5 +1,5 @@
 // --------------------------------------------------------------
-// file    : arrow.js
+// file    : svg_arrow.js
 // purpose : Graphical arrow
 // --------------------------------------------------------------
 //  2026-06-22 PL new, cloned from lever.js and arrow.m.

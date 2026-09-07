@@ -20,9 +20,10 @@
    <title> B747 short period test (SVG) </title>
 </head>
 
-<!-- onLoad() from short_period.js attaches the mouse         -->
-<!--    and starts the simulation :                           -->
-
+<!-- onLoad() from short_period.js
+  - attaches the mouse.
+  - starts the simulation.
+ -->
 <body onload = "onLoad()">
 
 <!-- HAMBURGER MENU -------------------------------------------->
@@ -40,11 +41,10 @@
 
    <ul>
       <li> <a href = "index.html">  Home </a>              </li>
-      <li> <a href = "modes.html">  Modes </a>             </li>
       <li> <a href = "darts.html">  Wind vanes </a>        </li>
       <li> <a href= "center_of_percussion.html">
                                   Center of percussion</a> </li>
-      <li> <a href = "etkin_B747_symmetric.html">  
+      <li> <a href = "etkin_B747_symmetrical.html">  
                                     Full order </a>        </li>
                                   
    </ul>
@@ -81,18 +81,15 @@ of the <href="phugoid.html"> phugoid mode,
 <h4> animation </h4>
 
 <p> The animation gives a first impression of the mode's
- shape and of its frequency.
+ shape, and of its real time frequency.
   The mode is often described as a pitch angle oscillation,
   but the actual motion is also, and in some ways primarily,
-  a vertical bobbing up and down around the flight path.
+  a vertical bobbing up and down relative to the nominal,
+ horizontal flight path.
  </p>
- <p> &emsp;
- The motion is strongly related to that of a weathervane,
- or better, a <a href = "darts.html"> dart</a> arrow.
- It is also closely related to the oscillation
- of a dumbbell around its center of 
- <a href="center_of_percussion.html"> percussion</a>.
- </p>
+<p class="draft"> 
+ Consult Claude about attaching the mouse
+ to an id=. . set by an svg.innerHTML. </p>
 
 <!-- Create the SVG container for the B747 animation.        -->
 <!-- The animation is inserted by the scripts at the end.    -->
@@ -103,19 +100,123 @@ of the <href="phugoid.html"> phugoid mode,
      style = "border           : 1px solid #000000;
               background-color : #FAFEFF;">  </svg>
 </div>
+
 <div class = "caption"; 
       style= "margin-top    : 12px;
               margin-bottom : 0"  >
-<p><b><i>Figure 1 : &ensp; Short period oscillation
-    of a B747 at cruising altitude.
+   <p><b><i>Figure 1 : &ensp; Short period oscillation
+                              of a B747 at cruising altitude.
     </i></b></p>  
 </div>
+
 <div class = "caption"; 
       style= "margin-top : 0;
               color : gray ">
-   <b><i> &lt; click figure and hold to pause &gt;
+   <b><i> &lt; click figure and hold to pause &gt;  <!-- no <p> ? -->
     </i></b>  
 </div>
+
+<p class="draft" id="Jawel"> jawel </p>
+
+<div class="draft">
+<h4> physics of the mode </h4>
+
+<p> The mode is surprisingsly closely related to the motion 
+ of a weathercock, or more precisely that of a
+ <a href="darts.html"> dart</a> arrow.
+ </p>
+ <p> &emsp;
+  The main difference is that the airplane has much
+  more up-and-down (&hairsp;in the arrow, sideways&hairsp;)
+  motion, because the restoring aerodynamic force 
+  applies closer to the center of mass, giving larger
+  sideways excursions.
+</p>
+<p> &emsp; TODO &emsp; Discuss the aerodynamic force due to &alpha;
+</p>
+<p>-  &emsp; as a result of &theta;
+</p>
+<p>-  &emsp; as a result of w'
+&emsp; &emsp; where w' is the true, inertial vertical velocity.
+</p>
+<p> In terms of the conventional variables &gamma; ,
+&theta; and &alpha;
+(note that &gamma; is positive up, while w and w' are down),
+we have for the descent velocity w' :
+</p>
+<p> &emsp; w<sup>'</sup> = &minus; V . &gamma;
+     =  &minus; V . ( &theta; - &alpha; )
+     =  + V . ( &alpha; - &theta; ) 
+</p>
+<p> &emsp; &alpha;  =  &theta; + w' / V
+</p>
+<p> We note that &theta; by itself does not generate any
+ aerodynamic forces or moments.
+ These will only come from &alpha;,
+ and to a smaller degree from <i>q</i>.
+ <p> In the pitch angle oscillation shown in the animation,
+ the aerodynamic force and moment has an &alpha; component
+ proportional to &theta;, and a component due to w'.
+ </p>
+ <p> &emsp;
+ For the component due to &theta;, the moment and the force
+ are in phase with each other and with &theta;.
+ They act like a spring force trying to center &theta;. 
+ This is a perfeclty undamped weathervane which oscillates 
+ around a center of percussion some way ahead of the airplane.
+ Th distance is given by ******.
+ </p>
+ <p>
+ However, the force and moment contribution due to
+ the vertical, parallel heave velocity are 90&degree;
+ out of phase with the pitch angle oscillation.
+ This force is proportional and opposite 
+ to the actual vertical velocity due to the derivative of &theta;,
+ and therefore it represents a damping.
+ </p>
+ <p>
+  Maybe I need to move the spring attachment point
+  in the animation up and down for this.
+</p>
+<p><b>
+  TODO &emsp; 
+  - &emsp; transform <i>A</i> numerically and symbolically to the state <i>w'</i>.
+  </p>
+  <p>
+  &emsp; &emsp; &emsp; &nbsp; - &emsp; look up Gerlach's (38b)
+  for the state in <i>&gamma;</i>,
+  which equals <i>w'/V</i>.
+ </b></p>
+ <p>
+ If w' = 0 then &theta; = &alpha; and there is no
+   <i>C</i><sub>Z&alpha;</sub> damping.
+</p>   
+ <p>
+ Since <i>C</i><sub>Z&alpha;</sub> is negative
+  the force from the truly vertical w' is
+  opposed to w', so it is a damping.
+</p>
+<p> <i>C</i><sub>Z&alpha;</sub> is on the system diagonal (&hairsp;trace&hairsp;),
+ just like <i>C</i><sub>mq</sub> 
+</p>
+<p>
+ The <i>I</i><sub>yy</sub> does not change with <i>&theta;</i>,
+ so there is no real reason to use body-fixed velocities.
+</p>   
+<p> &emsp;
+<i> Maybe put this idea on a separate page. </i>
+</p>   
+
+ 
+ </div>
+ 
+ 
+<div class="draft">
+
+<h4> reduced order models </h4>
+
+<p> TBW. </p>
+
 
 <h4> full order solution </h4>
 
@@ -126,12 +227,7 @@ of the <href="phugoid.html"> phugoid mode,
  and eigenvectors for that flight condition.
  The resulting values for the short period mode are :
 </p>
-<p class="draft"> &emsp; TBW, or put in another page. </p>
-
-
-<h4 class="draft"> the short period approximation </h4>
-
-<p class="draft"> &emsp; TBW, discuss this here </p>
+</div>
 
 
 <!-- FOOTER --------------------------------------------------->
@@ -145,10 +241,10 @@ of the <href="phugoid.html"> phugoid mode,
 
 <script src="svg_tools.js">            </script>
 <script src="b747_side_view.js">       </script>
-<script src="CG_marker.js">            </script>
-<script src="arrow.js">                </script>
-<script src="spring.js">               </script>
-<script src="floor.js">                </script>
+<script src="svg_CG_marker.js">        </script>
+<script src="svg_arrow.js">            </script>
+<script src="svg_spring.js">           </script>
+<script src="svg_floor.js">            </script>
 <script src="svg_text.js">             </script>
 <script src="short_period.js">         </script>
 

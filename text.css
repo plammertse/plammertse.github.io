@@ -205,8 +205,9 @@ td {
 /* Use <div class="draft"> .. </div> around unfinished items   */
 .draft {
    background : #FFF000;      /* light orange */
-   /* comment this out to display all draft text and menus :    */   
-   display         : var(--show-draft);
+   /* manipulate the variable to display all draft text and menus :  */   
+   display    : var(--show-draft);
+   max-width  : 832px;
 }
 
 button {
@@ -239,12 +240,14 @@ math {
 }
 
 /* Use this in a <div> around the mtable */
-/* Places matrix onthe roght. Use .caption instead ? */
+/* Places matrix on the right. Use .caption instead ? */
+/*
 .math-container {
   display         : flex;
   align-items     : left;
-  justify-content : center; /* Safely centers the table without breaking rows */
+  justify-content : center; / * Safely centers the table without breaking rows * /
 }
+*/
 
 /* AI advice for too-deep fractions below sqrt doesn't seem to work.
 math, mrow {
@@ -333,6 +336,18 @@ section {
 .print-only {
    display : none;
 }
+
+/* this fix successfully prevents premature mouse up events */
+svg * {
+  pointer-events: none; /* Prevents internal SVG paths from stealing pointer focus */
+}
+/*
+svg {
+  pointer-events: auto; / * Keeps pointer events active only on the main wrapper * /
+  user-select: none;
+  -webkit-user-select: none;
+}
+*/
 
 @media ( max-width : 768px )  {
    .center {

@@ -18,7 +18,12 @@
    <title>  Piet Lammertse on spring-mass systems  </title>
 </head>
 
-<body>
+<!-- --> <body>
+<!-- onLoad() from pendulum.js
+  - attaches the mouse.
+  - starts the simulation.
+ -->
+<body onload = "onLoad()">
 
 <!-- HAMBURGER MENU ------------------------------------------->
 
@@ -150,12 +155,44 @@ The velocity <i>v</i> is the time derivative
 TBW.
 </p>
 
+<!-- Create the SVG container for the animation.        -->
+<!-- The animation is inserted by the scripts at the end.    -->
+<div class = "center";>
+      <!--    style = "border:solid;">                       -->
+   <svg id = "svg"
+     width = "50%";
+     style = "border           : 1px solid #000000;
+              background-color : #FAFEFF;">  </svg>
+</div>
+<div class = "caption"; 
+      style= "margin-top    : 12px;
+              margin-bottom : 0"  >
+   <p><b><i>
+      Figure 1 : &ensp; Pendulum eigenvector.
+   </i></b></p>  
+</div>
+
+<div class = "caption"; 
+      style= "margin-top : 0;
+              color : gray ">
+   <b><i> &lt; click figure and hold to pause &gt;
+    </i></b>  
+</div>
+
+<!-- <p> After plot </p> -->
+
 <!-- FOOTER ---------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2026 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
-<script src = "menu.js"></script>
+<script src = "text.js">               </script>
+<script src = "draft.js">              </script>
+<script src = "menu.js">               </script>
+<script src = "mouse.js">              </script>
+<script src = "svg_arrow.js">          </script>
+<script src = "svg_eigenvector.js">    </script>
+<script src = "pendulum.js">           </script>
 
 </body>
 </html>

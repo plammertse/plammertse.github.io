@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <!--------------------------------------------------------------
--- file    : stability.html
+-- file    : rigid_body.html
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
--- history :
---   2025-12-02 PL new
+--   history :
+--     2025-11-24 new
 ---------------------------------------------------------------> 
 
+<!-- FORMATTING- ---------------------------------------------->
 <head>
    <meta charset  = "UTF-8"
          name     = "viewport" 
          content  = "width=device-width, initial-scale=1.0">
    <link rel = "stylesheet" href = "text.css">
    <link rel = "stylesheet" href = "menu.css">
-   <title>  Piet Lammertse on stability and control  </title>
+   <title>  Piet Lammertse on rigis body dynamics </title>
 </head>
 
 <body>
@@ -34,27 +34,51 @@
 <!-- TOP BAR MENU --------------------------------------------->
 
    <ul>
-      <li> <a href = "index.html"> Home </a>               </li>
+      <li> <a href = "index.html">
+         Home </a>                                         </li>
    </ul>
 </nav>
 
 <!-- PAGE TEXT ------------------------------------------------>
 
-<h2> Flight dynamics </h2>
+<!-------------------------------------------------------------->
+<h2> Rigid body dynamics </h2>
 
-<h4> stability and control </h4>
+<div class="draft">
 
-<p> TBW.
+<h4> satellites, airplanes, spinning tops </h4>
+
+<p> body fixed axes and equations </p>
+
+<p> Start with tranlsations and kinematic coupling terms
+(a.k.a. fictitious forces, pseudo forces).
 </p>
+<p>
+Derive and name :
+</p>
+<p> &emsp; &emsp;
+  <i><b>F</b></i> &thinsp; = &thinsp;
+  <i>m</i> .
+ ( <i><b>x</i></b><sup>&bull;</sup> + 
+   <i><b>&omega;</b></i> <b>&Cross;</b> <b><i>v</i></b> )
+</p>
+
+<p> Then go to Euler equations (with and without principal axes). </p>
+
+<p> Then add motion inside the rotating frame : Coriolis terms. </p>
+
+<p> Precession, nutation. </p>
+
+</div>
+
 
 <!-- FOOTER --------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
-<script src="text.js"></script>
-<script src="draft.js"></script>
-<script src="menu.js"></script>
+<script src = "draft.js"></script>
+<script src = "menu.js"></script>
 
 </body>
 </html>

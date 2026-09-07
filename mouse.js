@@ -96,10 +96,11 @@ function onTouchEnd(e) {
 }
 
 function attachMouse(target) {
-   mouseTarget = target || canvas;   // falls back to global "canvas" if present
+   mouseTarget = target;
    console.log( 'attached mouse to', mouseTarget );
    mouseTarget.addEventListener( "mousemove",  onMouseMove  );
    mouseTarget.addEventListener( "mousedown",  onMouseDown  );
+   mouseTarget.addEventListener( "mouseup",    onMouseUp    );
    mouseTarget.addEventListener( "mouseup",    onMouseUp    );
    mouseTarget.addEventListener( "mouseout",   onMouseUp    );
    mouseTarget.addEventListener( "touchmove",  onTouchMove  );

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------
-// file    : CG_marker.js
+// file    : svg_dCG_marker.js
 // purpose : Graphical CG_marker, useful for animation
 // usage   : uses shape.js, and variables canvas+ctx
 // --------------------------------------------------------------

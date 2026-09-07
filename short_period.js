@@ -23,7 +23,6 @@ svg.setAttribute( "viewBox", b747.viewBox );
 
 // initialize CG and Iyy markers
 const rCG = 1.7;                  // nice size in[m]
-    // COM needs a different name than CG_marker ??
 let CG  = new CG_marker( 0, 0, rCG );
 
 let rYY = 12.47;                    // Ixx in Etkin, see memo PL 25-057
@@ -52,9 +51,10 @@ let liftText   = new Text( tempString, 4, 'darkblue' );
 let theta = 0;
 let yCG   = 0;
 let tSim  = 0;
-//let tNow  = performance.now();
 let tPrev = performance.now();
 let isRunning = true;
+
+let Jawel  = document.getElementById("Jawel");
 
 // -------------------------------------------------------------
 function onLoad() {
@@ -64,7 +64,21 @@ function onLoad() {
 
 // -------------------------------------------------------------
 function mouseDownHandle() {
+   if ( isRunning && mouseIsDown ) {
+      console.log( 'Stop!');
+   }
+   if ( !isRunning && !mouseIsDown ) {
+      console.log( 'Start!');
+   }
    isRunning = !mouseIsDown;
+   // console.log( pXMouse);
+
+   if ( isRunning) { }
+   else {
+      tSim = 10*pXMouse;
+   }
+   
+   Jawel.innerHTML = mouseIsDown + ' ' + pXMouse.toFixed(3);
 }
 
 // -------------------------------------------------------------
@@ -74,11 +88,11 @@ function run() {
    simulate();
    
       // draw Y-axis
-   svg.innerHTML = X_axis + Y_axis; 
+   svg.innerHTML = X_axis + Y_axis;       // re-start the string
 
       // move B747 airplane
    b747.update( 0, yCG, theta);
-   svg.innerHTML += b747.svgString;        // re-start the string
+   svg.innerHTML += b747.svgString;
 
       // hide spring under MAC marker
    let lift      = 150*theta;
@@ -116,37 +130,43 @@ function run() {
    liftText.update( xMAC+6, liftSpring.S0-4-0.1*lift ); // minus for +Y
    svg.innerHTML += liftText.svgString;
 
+/* THIS DOESN'T WORK YET, ALTHOUGH IT DOES GET THE RIGHT <g . . .>
+let b747_svg  = document.getElementById("b747");
+console.log( b747_svg);
+attachMouse( b747_svg);
+*/
+
    requestAnimationFrame( run);
 }
 
 // -------------------------------------------------------------
 function simulate() {
 
-   // find past dT
-   let tNow   = performance.now();
-   let dT = tNow - tPrev;
-   tPrev  = tNow;
+      // find dT over past time step
+   let tNow = performance.now();
+   let dT   = tNow - tPrev;
+   tPrev    = tNow;
 
-   // propagate simulation time, unless paused by mouse down
+      // propagate simulation time, unless paused by mouse down
    if ( isRunning )  {
       tSim = tSim + dT;
    }
 
-   // Short period time [ms], Etkin 3d.ed., Table 6.3.
+      // short period time [ms], Etkin 3d.ed., Table 6.3.
    let T = 7080;
 
-   // phase of phi (start diving)
+      // phase of phi (start diving)
    let phaseTheta  = tSim/T * 2 * Math.PI - Math.PI/2;
 
-   // choose nice pitch angle amplitude
+      // choose nice pitch angle amplitude
    let thetaMax = 0.075;
 
-   // propagate theta
+      // propagate theta
    theta =  thetaMax * Math.sin( phaseTheta );
 
-   // do a very coarse estimate of the CG motion,
-   // for a center of percusson of -80 m in phase,
-   // which it is *not* ( see PL-26-100 ).
+      // do a very coarse estimate of the CG motion,
+      // for a center of percusson of -80 m in phase,
+      // which it is *not* ( see PL-26-100 ).
    yCG = -80.0*theta;
 
 }

@@ -18,7 +18,8 @@
 let B747 = function()  {                     // constructor
    this.setViewBox();
 
-   this.title = 'B747';
+   this.title = 'B747';  // default title
+   this.id    = 'b747';  // default id
    
    // define the colors
    this.fB = '"white"';     // note quote in quote
@@ -297,6 +298,16 @@ B747.prototype.setViewBox = function()  {
    //       /* (top left) x  y width height */
 }
 
+// Set a non-default title
+B747.prototype.setTitle = function( title )  {
+   this.title = title;
+}
+
+// Set an optional id
+B747.prototype.setTitle = function( id )  {
+   this.id = id;
+}
+
 // -------------------------------------------------------------
 // Scale b747 graph paper [mm] coordinates to meters
 B747.prototype.scale = function( X, Y )  {
@@ -322,6 +333,9 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    
    // start local string, the append
    svgString = svg_title( this.title );
+   if ( this.id !== undefined ) {
+      svgString += '<g id="' + this.id + '" >\n';
+   }
    
    // Calculate cos and sin outside move for efficiency
    cosTheta = Math.cos( theta);
@@ -427,8 +441,12 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
 
    // close the <g> coloring the flying surfaces
-   svgString += '</g>\n';
+   svgString += '</g>   <!-- end silver flying surfaces --> \n';
 
+   if ( this.id !== undefined ) {
+      svgString += '</g>   <!-- end id = "' +
+      this.id + '" --> \n';
+   }
    svgString += '   <!-- end B747 --> \n';
  
    this.svgString = svgString;
