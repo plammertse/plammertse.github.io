@@ -1,5 +1,5 @@
 // --------------------------------------------------------------
-// file    : b747_side_view.js
+// file    : svg_b747_side.js
 // purpose : Graphical B747, side view for short period animation
 //           SVG version — same geometry as the canvas original,
 //           rendered as <path> elements with a single group
