@@ -14,13 +14,17 @@ let svg  = document.getElementById("svg");
 // initialize SVG plot of rotating eigenvectors
 //   ( it will contain a number of Arrow objects )
 
-// give the eigenvectors here or later.
 let vecPlot = new Eigenvector();
 svg.setAttribute( "viewBox", vecPlot.viewBox );
-console.log( vecPlot.viewBox);
+// svg.setAttribute( "background-color", "red"); STYLE, THIS WON'T WORK
+// console.log( vecPlot.viewBox);
+//svg.style.background-color = "red"; YES, BUT NUMBERED PROPERTIES ??
+
+vecPlot.addVector( 1.0, 0 );          // mag, phase, color, name
+vecPlot.addVector( 0.8, 1.7, "red" );
 
 // initialize simulation parameters
-let amp   = 0;          ////////   GLOBAL FOR NOW   ////////
+let amp   = 1;          ////////   GLOBAL FOR NOW   ////////
 let phase = 0;
 let tSim  = 0;
 let tPrev = performance.now();
@@ -28,25 +32,9 @@ let isRunning = true;
 
 // -------------------------------------------------------------
 function onLoad() {
+svg.setAttribute( "background-color", "red");
    attachMouse( svg );    // from mouse.js
    run();                 // start loop, see below
-}
-
-// -------------------------------------------------------------
-function mouseDownHandle() {
-   if ( isRunning && mouseIsDown ) {
-      console.log( 'Stop!');
-   }
-   if ( !isRunning && !mouseIsDown ) {
-      console.log( 'Start!');
-   }
-   isRunning = !mouseIsDown;
-   // console.log( pXMouse);
-
-   if ( isRunning) { }
-   else {
-      tSim = 10*pXMouse;
-   }
 }
 
 // -------------------------------------------------------------
@@ -55,8 +43,8 @@ function run() {
 
    simulate();
    
-   vecPlot.update( amp, phase );
-   svg.innerHTML = vecPlot.svgString;     // re-start the string
+   vecPlot.update( amp, phase);
+   svg.innerHTML = vecPlot.svgString;
 
    requestAnimationFrame( run);
 }
@@ -77,12 +65,24 @@ function simulate() {
       // Short period time [ms], Etkin 3d.ed., Table 6.3.
    let T = 7080;
 
-      // phase of phi (start diving)
-   let phaseTheta  = tSim/T * 2 * Math.PI - Math.PI/2;
+      // rotate the whole bunch of vectors to this angle
+   phase = tSim/T * 2 * Math.PI;
+}
 
-      // choose nice pitch angle amplitude
-   let thetaMax = 0.075;
-
-      // propagate theta
-   theta =  thetaMax * Math.sin( phaseTheta );
+// -------------------------------------------------------------
+function mouseDownHandle() {
+   if ( isRunning && mouseIsDown ) {
+      console.log( 'Stop!');
+   }
+   if ( !isRunning && !mouseIsDown ) {
+      console.log( 'Start!');
+   }
+   isRunning = !mouseIsDown;
+   // console.log( pXMouse);
+/*
+   if ( isRunning) { }
+   else {
+      tSim = 10*pXMouse;
+   }
+*/   
 }

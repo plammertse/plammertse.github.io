@@ -2,7 +2,7 @@
 <html>
 
 <!--------------------------------------------------------------
--- file    : spring_mass.html
+-- file    : pendulum.html
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
    history :
@@ -15,7 +15,7 @@
          content  = "width=device-width, initial-scale=1.0">
    <link rel = "stylesheet" href = "text.css">
    <link rel = "stylesheet" href = "menu.css">
-   <title>  Piet Lammertse on spring-mass systems  </title>
+   <title>  Piet Lammertse on pendulums  </title>
 </head>
 
 <!-- --> <body>
@@ -23,7 +23,7 @@
   - attaches the mouse.
   - starts the simulation.
  -->
-<body onload = "onLoad()">
+<body onload = "onLoad()">             <!-- from pendulum.js -->
 
 <!-- HAMBURGER MENU ------------------------------------------->
 
@@ -39,8 +39,7 @@
 <!-- TOP BAR MENU --------------------------------------------->
 
    <ul>
-      <li> <a href = "index.html">
-         Home </a>                                         </li>
+      <li> <a href = "index.html"> Home </a>               </li>
    </ul>
 </nav>
 
@@ -161,8 +160,10 @@ TBW.
       <!--    style = "border:solid;">                       -->
    <svg id = "svg"
      width = "50%";
-     style = "border           : 1px solid #000000;
-              background-color : #FAFEFF;">  </svg>
+     style = "border           : 2px solid #A0A0A0;
+              background-color : #FFFFEC;">   <!-- ivory FFFFF0 -->
+                            <!-- 1px -solid #000000 -->
+   </svg>
 </div>
 <div class = "caption"; 
       style= "margin-top    : 12px;
@@ -179,17 +180,16 @@ TBW.
     </i></b>  
 </div>
 
-<!-- <p> After plot </p> -->
-
 <!-- FOOTER ---------------------------------------------------->
-<br> <br>
+<br><br><br>
 <div class="footer"> P. Lammertse, 2026 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
-<script src = "text.js">               </script>
-<script src = "draft.js">              </script>
 <script src = "menu.js">               </script>
+<script src = "draft.js">              </script>
+
 <script src = "mouse.js">              </script>
+<script src = "svg_tools.js">          </script>
 <script src = "svg_arrow.js">          </script>
 <script src = "svg_eigenvector.js">    </script>
 <script src = "pendulum.js">           </script>

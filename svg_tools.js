@@ -3,6 +3,7 @@
 // purpose : Auxiliary functions to build SVG data paths.
 //           Include in the HTML file before the *.js that uses it.
 // --------------------------------------------------------------
+//  2026-09-08 PL changed theta to anti-clockwise
 //  2026-08-26 PL isolated from b747_side_view.js
 // --------------------------------------------------------------
 
@@ -21,7 +22,7 @@ function svg_title( title ) {
    return svgString;
 }
 
-function svg_d( x, y )  {
+function svg_data_xy( x, y )  {
    
    let data = '"M ' +
          x[0].toFixed(3) + ',' + -y[0].toFixed(3) + ' ';
@@ -42,6 +43,10 @@ function svg_d( x, y )  {
 
 // -------------------------------------------------------------
 // Translate and rotate xy data
+// note : theta is anti-clockwise
+//          (Z-axis pointing out of paper)
+//        Y is inverted to show positive up on screen
+//          (svg screen Y points down).
 function move_xy( x, y, dx, dy, cosTheta=1, sinTheta=0 )  {
    let N = x.length;
    if ( y.length !== N ) {
@@ -52,8 +57,10 @@ function move_xy( x, y, dx, dy, cosTheta=1, sinTheta=0 )  {
    let xx = [];
    let yy = [];
    for ( let k=0; k<N; k++ )  {
-      xx[k] =  dx + x[k]*cosTheta + y[k]*sinTheta;
-      yy[k] =  dy - x[k]*sinTheta + y[k]*cosTheta;
+//      xx[k] =  dx + x[k]*cosTheta + y[k]*sinTheta;
+//      yy[k] =  dy - x[k]*sinTheta + y[k]*cosTheta;
+      xx[k] =  dx + x[k]*cosTheta - y[k]*sinTheta;
+      yy[k] =  dy + x[k]*sinTheta + y[k]*cosTheta;
    }
 
    return[ xx, yy ];

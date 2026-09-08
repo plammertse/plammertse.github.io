@@ -5,6 +5,7 @@
 //           rendered as <path> elements with a single group
 //           transform instead of per-point trig every frame.
 // --------------------------------------------------------------
+//  2026-09-08 PL changed plot theta to anti-clockwise
 //  2026-08-27 PL more development around viewBox etc.
 //  2026-08-22 PL simplified the SVG string building,
 //                dropped _SVG from filename
@@ -16,7 +17,7 @@
 
 // -------------------------------------------------------------
 let B747 = function()  {                     // constructor
-   this.setViewBox();
+   this.niceViewBox();
 
    this.title = 'B747';  // default title
    this.id    = 'b747';  // default id
@@ -281,9 +282,10 @@ let B747 = function()  {                     // constructor
 }; // end B747 constructor
 
 // -------------------------------------------------------------
-// Set a decent xvg viewBox (maybe shift and zoom later)
-B747.prototype.setViewBox = function()  {
+// Set a decent svg viewBox (maybe shift and zoom later)
+B747.prototype.niceViewBox = function()  {
    // Size and scale the viewBox.
+   // Use this in a calling *.js with access to svg, if desired.   
    // Place the zero at center for now.
    // Unfortunately Y is positive down in SVG. 
    // This will be handled here in code, not via SVG transforms.
@@ -294,7 +296,7 @@ B747.prototype.setViewBox = function()  {
    this.viewBox =  x0.toFixed(3) + ' ' + y0.toFixed(3) + ' ' +
                     w.toFixed(3) + ' ' +  h.toFixed(3);
    // Use this viewBox outside, in a calling *.js, via :
-   //   svgRoot.setAttribute( "viewBox", vB);
+   //   (svg).set Attribute( "viewBox", vB);
    //       /* (top left) x  y width height */
 }
 
@@ -326,7 +328,7 @@ B747.prototype.scale = function( X, Y )  {
 }
 
 // -------------------------------------------------------------
-B747.prototype.update = function( xPos, yPos, theta=0 )  {
+B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
 
    // This function sets an SVG string in the HTML :
    // It uses several routines from svg_tools.js
@@ -338,8 +340,10 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    }
    
    // Calculate cos and sin outside move for efficiency
-   cosTheta = Math.cos( theta);
-   sinTheta = Math.sin( theta);
+   // Note this is anti-clockwise svg plot theta
+   // opposite to aircraft nose-up theta.
+   cosTheta = Math.cos( thetaPlot);
+   sinTheta = Math.sin( thetaPlot);
    
    // Fill the svg string with path data,
    //    translated and rotated as appropriate.
@@ -349,14 +353,14 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
    svgString += '   <!-- white fuselage --> \n';
    let [ x, y ] = move_xy( this.xB, this.yB,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
    svgString += '    fill='   + this.fB + 
                  ' stroke='   + this.sB + ' />\n';
                  
       // *cockpit* windows               
    [ x, y ] = move_xy( this.xC, this.yC,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
    svgString += '    fill='   + this.fB + 
                  ' stroke='   + this.sB + ' />\n';
                  
@@ -364,14 +368,14 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
 /*
    [ x, y ] = move_xy( this.xQ, this.yQ,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
    svgString += '    fill='   + '"#B0B0FF"' + 
                  ' stroke='   + '"#B0B0FF"' + ' />\n';
 */
       // actual cabin windows ( dotted line )
    [ x, y ] = move_xy( this.xQQ, this.yQQ,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
    svgString += ' stroke="darkgray" stroke-width="3" ' +
                 ' stroke-dasharray="2.3,2.3" />\n';
                  
@@ -379,7 +383,7 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
       // ( real beacon flashes 40 to 100 times/sec )
    [ x, y ] = move_xy( this.xBeacon, this.yBeacon,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
    
    let fBeacon = '"white"';   //  light off
    let sBeacon = '"white"';   //  light off
@@ -403,42 +407,42 @@ B747.prototype.update = function( xPos, yPos, theta=0 )  {
       // fin               
    [ x, y ] = move_xy( this.xF, this.yF,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
 
       // rudder               
    [ x, y ] = move_xy( this.xR, this.yR,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';   // TODO  thinner linewidth on rudder outline
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';   // TODO  thinner linewidth on rudder outline
 
       // horizontal stabilizer               
    [ x, y ] = move_xy( this.xH, this.yH,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
 
       // wing
    [ x, y ] = move_xy( this.xW, this.yW,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
  
       // pylon 1
    [ x, y ] = move_xy( this.xP1, this.yP1,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y );
+   svgString += '<path d = ' + svg_data_xy( x, y );
  
       // pylon 2
    [ x, y ] = move_xy( this.xP2, this.yP2,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
  
       // engine 2 (drawn first)
    [ x, y ] = move_xy( this.xE2, this.yE2,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
  
       // engine 1 (on top)
    [ x, y ] = move_xy( this.xE1, this.yE1,
                     xPos, yPos, cosTheta, sinTheta);
-   svgString += '<path d = ' + svg_d( x, y ) + ' />\n';
+   svgString += '<path d = ' + svg_data_xy( x, y ) + ' />\n';
 
    // close the <g> coloring the flying surfaces
    svgString += '</g>   <!-- end silver flying surfaces --> \n';

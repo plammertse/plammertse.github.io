@@ -44,21 +44,21 @@ Spring.prototype.setColor = function( stroke ) {
    this.stroke = stroke;
 }
 // -------------------------------------------------------------
-// If the end points are not absolute but have to move ( like
-// with some other object ), then use
-//   move_xy( [ x1 x2 }, [ y1 y2 ]) 
-// on them first, *before* calling this update() function.
+// If the end points are not absolute but have to move 
+//  ( like move along with some other object ),
+//  then use move_xy( [ x1 x2 }, [ y1 y2 ]) on them first,
+//  *before* calling this update() function.
 Spring.prototype.update = function( x1=0, y1=0, x2=x1+50, y2=y1 ) {
                                      
-   // calculate total overall length s, "stretching" S0
+      // calculate total overall length s, "stretching" S0
    let s = Math.sqrt( (x2-x1)*(x2-x1)
                     + (y2-y1)*(y2-y1) );
                      
-   // zig-zag length = total length - straight ends
+      // zig-zag length = total length - straight ends
    let L = Math.max( 0, s - this.Sa - this.Sb);
    
    // local XY, spring stretched but still horizontal
-   //    straight begin
+      // straight begin
    let X = [ 0, Math.min( s, this.Sa) ];
    let Y = [ 0, 0  ];
    // zig-zag section sized to fit total length  // TODO What Sa to use if L == 0
@@ -67,17 +67,18 @@ Spring.prototype.update = function( x1=0, y1=0, x2=x1+50, y2=y1 ) {
       X.push( this.Sa + L*this.X[k] );
       Y.push(             this.Y[k] );   // scaled to width w
    }
-   // add straight end
+      // add straight end
    X.push( s );
    Y.push( 0 );
 
-   // important : keep this phi local
-   //    The minus sign is because move_xy already flips Y
-   let phi = -Math.atan2( y2-y1, x2-x1 );
+      // important : keep this phi local
+      // changed sign to anti-clockwise rotation, 2026-09-08
+   let phi = Math.atan2( y2-y1, x2-x1 );
+   
    let [ x, y ] = move_xy( X, Y, x1, y1, Math.cos(phi), Math.sin(phi) );
    
-   // svg_d flips +y up
-   let svgString  = '<path d = ' + svg_d( x, y );
+   // svg_data_xy flips +y up
+   let svgString  = '<path d = ' + svg_data_xy( x, y );
    svgString += ' stroke-width="' + this.SW.toFixed(3) + 
                '" stroke="'       + this.stroke        + 
                '" fill="none" />\n';

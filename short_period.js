@@ -38,17 +38,17 @@ let MAC  = new CG_marker( xMAC, 0, rCG, 'cyan' );  // "air" color
 let liftArrow = new Arrow( 5, 3, 1.2, 2);  // head L, W, stem, edge (centered)
 liftArrow.setColors( 'blue', 'white');   // white outline if base close to MAC
 
-let liftSpring = new Spring( 20, 8, 4 );
+let liftSpring = new Spring( 20, 8, 4 );   // zero length, N coils, line width
 liftSpring.setColor( 'mediumblue');
 
-let  springAnchor = new Floor( 5, 3, 2, 4 );  // width, N, H, tL
+let  springAnchor = new Floor( 5, 3, 2, 4 );  // length, height, N, thickness
 springAnchor.setColor( 'blue');   // lightblue is also nice
 
 let tempString = '&Delta;L<tspan baseline-shift="sub">&alpha;</tspan>';
 let liftText   = new Text( tempString, 4, 'darkblue' );
 
 // initialize simulation parameters
-let theta = 0;
+let theta = 0;          // global nose up, opposite to svg plot theta 
 let yCG   = 0;
 let tSim  = 0;
 let tPrev = performance.now();
@@ -90,27 +90,29 @@ function run() {
       // draw Y-axis
    svg.innerHTML = X_axis + Y_axis;       // re-start the string
 
+   let plotTheta = -theta;
+   
       // move B747 airplane
-   b747.update( 0, yCG, theta);
+   b747.update( 0, yCG, plotTheta);
    svg.innerHTML += b747.svgString;
 
       // hide spring under MAC marker
-   let lift      = 150*theta;
+   let lift      = 150*plotTheta;
    liftSpring.update( xMAC, yCG, xMAC, liftSpring.S0 );
    svg.innerHTML += liftSpring.svgString;
    springAnchor.update( xMAC, liftSpring.S0);
    svg.innerHTML += springAnchor.svgString;
    
    // move CG and Iyy markers
-   CG.update( 0, yCG, theta);
+   CG.update( 0, yCG, plotTheta);
    svg.innerHTML += CG.svgString;
-   YY1.update( 0, yCG, theta);
+   YY1.update( 0, yCG, plotTheta);
    svg.innerHTML += YY1.svgString;
-   YY2.update( 0, yCG, theta);
+   YY2.update( 0, yCG, plotTheta);
    svg.innerHTML += YY2.svgString;
 
    // move MAC marker
-   MAC.update( 0, yCG, theta);
+   MAC.update( 0, yCG, plotTheta);
    svg.innerHTML += MAC.svgString;
    
    // move lift arrow
@@ -119,9 +121,9 @@ function run() {
    //       and the airplane drifting down through these lines,
    //       with w=alpha*V so you *do* see the airplane bobbing
    //       up and down.
-   let tLift     = 0.5*Math.PI*( 1-Math.sign(lift) );  // up or down
+   let dirLift     = 0.5*Math.PI*( 1-Math.sign(lift) );  // up or down ( swapped ? )
    liftArrow.update( xMAC+10,  yCG + liftSpring.S0 + 0.2*lift,  // x, y,
-                     tLift, Math.abs( lift));       // direction, length
+                     Math.abs( lift), dirLift);    // length, direction
 /*                     
    svg.innerHTML += liftArrow.svgString;
 */
@@ -161,7 +163,8 @@ function simulate() {
       // choose nice pitch angle amplitude
    let thetaMax = 0.075;
 
-      // propagate theta
+      // propagate airplane theta
+      // (nose up, clockwise in plot)
    theta =  thetaMax * Math.sin( phaseTheta );
 
       // do a very coarse estimate of the CG motion,

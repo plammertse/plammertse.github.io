@@ -1,10 +1,12 @@
 // --------------------------------------------------------------
 // file    : svg_arrow.js
 // purpose : Graphical arrow
+// note    : Needs HTML to inlude svg_tools.js (for move_xy)
 // --------------------------------------------------------------
 //  2026-06-22 PL new, cloned from lever.js and arrow.m.
 // --------------------------------------------------------------
 
+// --------------------------------------------------------------
 let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
 
    // For narrow measurement lines, use the defaults :
@@ -29,6 +31,7 @@ let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
    this.tL = 4*hL;       // total length default
 }; // end Arrow constructor
 
+// --------------------------------------------------------------
 Arrow.prototype.setColors = function( fill  = 'yellow',
                                       stroke= 'none') {
    this.fill   = fill;
@@ -65,11 +68,13 @@ Arrow.prototype.setEnds = function( xB, yB, xP, yP )  {
 };
 */
 
+// --------------------------------------------------------------
 Arrow.prototype.update = function( xBase=0, yBase=0,
-                                   theta=0, tL=this.tL )  {
+                                   arrow_length=this.tL, theta_CCW=0 )  {
    
-   let cosTheta = Math.cos( theta);
-   let sinTheta = Math.sin( theta);
+   let cosTheta = Math.cos( theta_CCW);
+   let sinTheta = Math.sin( theta_CCW);
+   let tL       = arrow_length;
    
    // Re-calculate arrow points for length L :
    // TODO
@@ -80,18 +85,17 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
    // like when the arrow emerges from a wall.
    // This narrows the base of the arrowhead.
    let hW = this.hW;
-   if ( tL < this.hL )  {     // total shorter than head
+   if ( tL < this.hL )  {     // if total shorter than head
       hW = tL/this.hL *this.hW;
    }
    
    this.X = [ this.sW/2, this.sW/2, hW/2, 0, -hW/2, -this.sW/2, -this.sW/2 ];
    this.Y = [  0,   sL,   sL,  tL,   sL,    sL,    0   ];
    
-
       // it's a single outline
    let [ x, y ] = move_xy( this.X, this.Y,
                     xBase, yBase, cosTheta, sinTheta);
-   let svgString  = '<path d = ' + svg_d( x, y );  // keep this one local
+   let svgString  = '<path d = ' + svg_data_xy( x, y );  // keep this one local
    if ( this.eW !== undefined ) {
       svgString += '    stroke-width='   + (this.eW).toFixed(3);
    }

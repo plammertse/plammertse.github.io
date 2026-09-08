@@ -26,7 +26,8 @@
 
 
 /* Hide draft text and menu items.                 */
-/* If desired, change to "block" by text.js        */
+/* Use persistence in draft.js to set to "block"   */
+/* Use button and draft_button.js to toggle.       */
 :root {
    --show-draft : none;
 }

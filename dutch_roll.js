@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------
 // file    : dutch_roll.js
 // purpose : Boeing B747 Dutch roll animation (Etkin 3d.ed.)
+//              TODO - PORT FROM CANVAS TO SVG
 // -------------------------------------------------------------
 //  2026-08-17 PL moved out of dutch_roll.html
 //  2026-06-22 PL new, cloned from dumbbell.js
@@ -23,7 +24,7 @@ let isRunning = true;
 
 // -------------------------------------------------------------
 function onLoad() {
-   attachMouse();    // from mouse.js
+   attachMouse(canvas);    // from mouse.js
    run();
 }
 
