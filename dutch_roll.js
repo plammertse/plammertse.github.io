@@ -7,12 +7,14 @@
 //  2026-06-22 PL new, cloned from dumbbell.js
 // -----------------------------------------------------------*/
 
-let canvas = document.getElementById("canvas"); 
-let ctx    = canvas.getContext("2d");
+let svg  = document.getElementById("svg");
+//let canvas = document.getElementById("canvas"); 
+//let ctx    = canvas.getContext("2d");
 
 // -------------------------------------------------------------
 // For some reason, these lines cannot go into onLoad() :
 let b747 = new B747();     // airplane constructor
+svg.setAttribute( "viewBox", b747.viewBox );
 
 // initialize simulation
 let phi   = 0;
@@ -24,7 +26,7 @@ let isRunning = true;
 
 // -------------------------------------------------------------
 function onLoad() {
-   attachMouse(canvas);    // from mouse.js
+   attachMouse(svg);    // from mouse.js
    run();
 }
 
@@ -38,8 +40,8 @@ function run() {
    mouseDownHandle();
 
    simulate();
-   // use zoom scale == 1.5 for now
-   b747.draw( canvas.width/2, canvas.height/2, phi, psi, 1.5 );       // from b747.js
+   b747.update( 0, 0, phi, psi );       // from svg_b747_aft.js
+   svg.innerHTML = b747.svgString;   
  
    requestAnimationFrame( run);
 }

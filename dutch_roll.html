@@ -36,10 +36,8 @@
 <!-- TOP BAR MENU --------------------------------------------->
 
    <ul>
-      <li> <a href = "index.html">
-         Home </a>                                         </li>
-      <li> <a href = "modes.html">
-         Modes </a>                                        </li>
+      <li> <a href = "index.html"> Home </a>               </li>
+      <li> <a href = "modes.html"> Modes </a>              </li>
    </ul>
 </nav>
 
@@ -51,7 +49,7 @@
 
 <p> Dutch roll is one of the three asymmetric "eigenmotions"
 of an airplane.
- The others are roll damping, and the spiral dive.
+ The other two are roll damping, and the spiral dive.
 <span class="draft">
    For an introduction to these modes, see TBW. </span>
 </p>
@@ -65,13 +63,11 @@ of an airplane.
  in cruising flight at high altitude.
  </p>
  
- <!-- TODO - Replace this canvas version by an SVG version -->
-<div class = "center">
-   <canvas id    = "canvas";
-           width = "500" height="300";
-           style = "border           : 1px solid #000000;
-                    background-color : #FAFEFF;" >
-   </canvas>
+<div class = "center";>
+   <svg id = "svg"
+     width = "70%";
+     style = "border           : 1px solid #000000;
+              background-color : #FBFBFF;">  </svg>
 </div>
 
 <div class = "center">
@@ -85,7 +81,7 @@ of an airplane.
  it can become problematic. Such airplanes routinely need artificial
  yaw damping to regain pleasant flying characteristics.
  </p>
-
+<p class="draft"> Point forward to influence of dihedral on damping </p>
 <!--
 <h4> neutral point and weathercock </h4>
 
@@ -119,12 +115,16 @@ of an airplane.
 <!------------------------------------------------------------->
 <!-- all scripts go after the HTML canvas, for scope reasons -->
 
-<script src = "mouse.js">           </script>
-<script src = "b747_aft_view.js">   </script>
-<script src = "dutch_roll.js">      </script>
+<script src = "mouse.js">              </script>
+<!-- <script src = "b747_aft_view.js">   </script>  -->
+<script src = "svg_tools.js">          </script>
+<script src = "svg_arrow.js">          </script>
+<script src = "svg_b747_aft.js">       </script>
+<script src = "dutch_roll.js">         </script>
 
 <!-- needed for hamburger menu -->
-<script src = "menu.js">            </script>
+<script src = "menu.js">               </script>
+<script src = "draft.js">              </script>
 
 </body>
 </html>

@@ -300,11 +300,13 @@ B747.prototype.niceViewBox = function()  {
    //       /* (top left) x  y width height */
 }
 
+// -------------------------------------------------------------
 // Set a non-default title
 B747.prototype.setTitle = function( title )  {
    this.title = title;
 }
 
+// -------------------------------------------------------------
 // Set an optional id
 B747.prototype.setTitle = function( id )  {
    this.id = id;
@@ -333,7 +335,7 @@ B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
    // This function sets an SVG string in the HTML :
    // It uses several routines from svg_tools.js
    
-   // start local string, the append
+   // start local string, then append the rest below
    svgString = svg_title( this.title );
    if ( this.id !== undefined ) {
       svgString += '<g id="' + this.id + '" >\n';
