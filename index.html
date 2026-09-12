@@ -63,7 +63,6 @@
  
       <!-- CV -->
       <li class="dropdown-parent">             
-<!--         <a href="#"> CV </a>                  -->
 <!--  simply not giving an <href> avoids the clikability altogether -->     
          <a> CV </a>            
       <ul class="dropdown-submenu">
@@ -109,7 +108,7 @@
       
    </ul>          
    </li>
-   <! end HOME -->         
+   <!-- end HOME -->         
 
 <!------------------------------------------------------------------>
 
@@ -159,7 +158,7 @@
          <!-- end Common fallacies -->
          
          <!-- Wind tunnels -->           
-<div class="draft">         
+         <div class="draft">         
          <li class = "dropdown-parent">
             <a> Wind tunnels </a>               
          <ul class = "dropdown-submenu">
@@ -181,11 +180,12 @@
                
             </ul>
             </li>
-               
-               
+            <!-- end Sensors -->
+              
          </ul>
          </li>
- </div> <!-- end draft -->
+         <!-- end Wind tunnels -->
+         </div> <!-- end draft -->
 
          <li> <a href="trim.html"> Trim</a> </li>
          
@@ -199,28 +199,34 @@
       <ul class="dropdown-submenu">
             
          <li> <a href="propellers.html">
-            <i> &thinsp; About propellers </i> </a> </li>
+            <i> &thinsp; About propellers </i> </a>            </li>
       
          <!-- Propeller textbook -->
                   
          <li> <a href="prop_book_about.html">
               <i> &thinsp; &ensp; About the book </i> </a>    </li>
             
-         <!-- the style below gives a double separation line  --
-           --  between the about's and the book pages         -->
+         <!-- the styles below give singe c.q. double
+           -- separation lines between some menu items -->
             
-         <li style = "border-top   : double;
-                      border-width : 4px;
+         <li style = "border-top   : solid;
+                      border-width : 2px;
                       border-color : darkgray">
                <a href="prop_book_frontispiece.html">
                   Frontispiece photo </a>                      </li>
          <li>  <a href="prop_book_preface.html">
-                  Preface </a>                           </li>
-         <li>  <a href="prop_book_00_TOC.html"> <b> <i> &hairsp;
-                  Table of Contents </b> </i> </a>        </li>
+                  Preface </a>                                 </li>
+
+         <li style = "border-top   : double;
+                      border-width : 4px;
+                      border-color : darkgray">
+               <a href="prop_book_00_TOC.html"> <b> <i> &hairsp;
+                  Table of Contents </b> </i> </a>          </li>
                     
          <!-- Prop book 1..3 -->
-         <li class="dropdown-parent">
+         <li class="dropdown-parent"style = "border-top   : double;
+                      border-width : 4px;
+                      border-color : darkgray">
             <a href="prop_book_01_TOC.html">
                &thinsp;1&ensp;-&thinsp;&nbsp;3 &emsp; Introduction </a>
          <ul class="dropdown-submenu">
@@ -349,7 +355,7 @@
             <i> &hairsp; 
                About stability and control </i> </a> </li>
         
-         <!-- State space -->
+         <!-- State space models -->
          <li class="dropdown-parent">
             <a> State space models</a>
          <ul class="dropdown-submenu">
@@ -357,51 +363,67 @@
             <li class="dropdown-parent">
                <a href="state_space.html"> &ensp;<i>
                      State space</i> </a>
-
-            <li class="dropdown-parent">
-               <a> Full order </a>                  
-            <ul class="dropdown-submenu">
+            
                <li> <a href="state_space_symmetrical.html">
                   Symmetrical </a> </li>
-               <li> <a href="etkin_b747_symmetrical.html">  &emsp; <i>
-                     Etkin B747</i> </a> </li>
                <li> <a href="state_space_asymmetrical.html.html"> 
                   Asymmetrical  </a> </li>
-               <li>     <a href="etkin_b747_asymmetrical.html">  &emsp; <i>
-                     Etkin B747 </i> </a> </li>
+
+            <!-- Etkin -->
+            <li class="dropdown-parent">
+               <a> Etkin </a>
+            <ul class="dropdown-submenu">
+               <li> <a href="etkin.html"> <i> &hairsp; About Etkin</i> </a> </li> 
+               <li> <a href="etkin_editions.html"> Book editions </a>   </li> 
+               <li> <a href="etkin_typos.html">    Typos 3d ed.</a>     </li>
             </ul>
-            </li> 
+            </li>
+            <!-- end Etkin -->            
+            
+            <!-- B747 model -->
+            <li class="dropdown-parent">
+               <a> B747 </a>
+            <ul class="dropdown-submenu">
+               <li> <a href="etkin_b747_symmetrical.html">
+                     Etkin symmetrical </a> </li>
+               <li>     <a href="etkin_b747_asymmetrical.html"> 
+                     Etkin asymmetrical </a> </li>
+            </ul>
+            </li>
+            <!-- end B747 model -->
+            
+         </ul>
+         </li>
+         <!-- end State space -->
                
+         <!-- Modes -->
+         <li class="dropdown-parent">
+            <a> Modes</a>
+         <ul class="dropdown-submenu">
             <li> <a href="modes.html"> <i> &ensp; Modes </i> </a> </li>
 
-            <li class="dropdown-parent">
-               <a> Reduced order </a>
-            <ul class="dropdown-submenu">
-            
-               <li class="draft"> <a href="*.html"> &emsp; <i> 
-                     Symmetrical </i> </a> </li>
-               <li> <a href="short_period.html">
+            <li style = "border-top   : double;
+                         border-width : 4px;">
+               <a href="darts.html"> Weathervanes </a> </li>
+            <li style = "border-top   : double;
+                         border-width : 4px;
+                         border-color : darkgray">
+               <a href="short_period.html">
                   Short period  </a> </li>
-               <li class="draft"> <a href="phugoid.html">
+            <li class="draft"> <a href="phugoid.html">
                   Phugoid  </a> </li>
-               <li class="draft"> <a href="energy_mode.html">
+            <li class="draft"> <a href="energy_mode.html">
                   Energy mode  </a> </li>
-               <li class="draft" 
-                  style = "border-top   : double;
-                           border-width : 4px;
-                           border-color : darkgray">
-                     <a href="*.html"> &emsp; <i>
-                     Asymmetrical </i> </a> </li>
-               <li> <a href="dutch_roll.html">
+            <li style = "border-top   : double;
+                         border-width : 4px;
+                         border-color : darkgray">
+               <a href="dutch_roll.html">
                   Dutch roll    </a> </li>
-               <li class="draft"> <a href="spiral.html">
-                     Spiral&thinsp;/&thinsp;climb&thinsp;/&thinsp;McCombs </a> </li>
-
-            </ul>
-            </li> 
+            <li class="draft"> <a href="spiral.html">
+                  Spiral&thinsp;/&thinsp;climb&thinsp;/&thinsp;McCombs </a> </li>
          </ul>
          </li> 
-         <!-- end State space models -->
+         <!-- end Modes -->
       
          <!-- Simulators -->       
          <li class="dropdown-parent draft">
@@ -418,32 +440,19 @@
          </ul>
          </li>
          <!-- end Simulators -->
-         
-         <li class="dropdown-parent">
-            <a> Etkin </a>
-         <ul class="dropdown-submenu">
-
-            <li> <a href="etkin.html"> <i> &hairsp; About Etkin</i> </a> </li> 
-            <li> <a href="etkin_editions.html"> Book editions </a>   </li> 
-            <li> <a href="etkin_typos.html">    Typos 3d ed.</a>     </li>
-         </ul>
-         </li>
-         <!-- end Etkin -->            
-                  
-         <li> <a href="darts.html"> Weathervanes </a> </li>
-         
+                           
       </ul>
       </li>
       <!-- end Stability and control -->
       <!-- Birds and seeds -->
-      <li class="dropdown-parent draft">             
-         <a href="nature.html"> Birds and seeds </a>
+      <li class="dropdown-parent">             
+         <a> <i> &ensp;Nature </i></a>
       <ul class="dropdown-submenu">
 
-         <li class="draft"> <a href="nature.html">
-            &ensp; <i> Nature&thinsp;?</i> </a>                            </li>
+         <li> <a href="nature.html">
+            &ensp; <i> Birds and seeds </i> </a>         </li>
          <li class="draft"> <a href="zanonia.html">
-            Zanonia </a>                            </li>
+            Zanonia </a>                                 </li>
          <li class="draft"> <a href="samara.html">
             Samara seeds </a>                            </li>
          <li class="draft"> <a href="mc_cutchen.html">
@@ -514,9 +523,11 @@
          Thermal control </a>                               </li>           
    
       <li class="dropdown-parent draft">
-         <a> Zero G </a>          
+         <a> Zero-G </a>          
       <ul class="dropdown-submenu">
 
+         <li class="draft"> <a href="zero_g.html">
+            <i> &ensp; Zero-G </i> </a>                 </li>
          <li class="draft"> <a href="rpm.html">
             Random Positioning Machine </a>                 </li>
          <li class="draft"> <a href="glove_box.html">
