@@ -5,6 +5,7 @@
 // file    : index.html
 // purpose : Landing page for personal website Piet Lammertse
 // --------------------------------------------------------------
+//  2026-09-12 PL more development, many "draft" items
 //  2026-08-17 PL ongoing development of multilevel menus
 //  2025-12-** PL created
 // ------------------------------------------------------------->
@@ -135,24 +136,30 @@
                
             <li> <a href = "fallacy.html">
                <i> &hairsp; On common fallacies </i> </a>   </li>
-            <li> <a href = "newton_or_bernoulli.html">
-               Newton or Bernoulli </a>                     </li>
+            <!-------------------------->
+            <li style = "border-top : double;
+                      border-width  : 4px;
+                      border-color  : darkgray">
+               <a href = "newton_or_bernoulli.html">
+                  Newton or Bernoulli </a>                     </li>
             <li> <a href = "equal_path.html">
-               Equal paths </a>                             </li>
-            <li style = "border-bottom:solid;
-                         border-color : darkgray">
-               <a href = "downwind_turn.html"> The downwind turn </a> </li>
-            <!-- note separating line -->                  
-            <li> <a href = "canard.html">        
-               Canards </a>                                 </li>
+                  Equal paths </a>                             </li>
+            <li> <a href = "downwind_turn.html">
+                  The downwind turn </a> </li>
+            <!-------------------------->
+            <li style = "border-top   : double;
+                      border-width : 4px;
+                      border-color : darkgray">
+               <a href = "canard.html">        
+                  Canards </a>                                 </li>
             <li> <a href = "trim.html">          
-               Trim drag </a>                               </li>
+                  Trim drag </a>                               </li>
             <li> <a href = "T_tails.html">
-               T-tails </a>                                 </li>                      
+                  T-tails </a>                                 </li>                      
+            <li class="draft"> <a href = "aspect_ratio.html">       
+                  Wing aspect ratio </a>                       </li>
             <li class="draft"> <a href = "airship.html">       
-                              Wing aspect ratio </a>                 </li>
-                           <li class="draft"> <a href = "airship.html">       
-                              Airships </a>                          </li>           
+                  Airships </a>                                </li>           
          </ul>
          </li>   
          <!-- end Common fallacies -->
@@ -366,32 +373,25 @@
             
                <li> <a href="state_space_symmetrical.html">
                   Symmetrical </a> </li>
-               <li> <a href="state_space_asymmetrical.html.html"> 
+               <li> <a href="state_space_asymmetrical.html"> 
                   Asymmetrical  </a> </li>
 
             <!-- Etkin -->
             <li class="dropdown-parent">
-               <a> Etkin </a>
+               <a> Etkin data </a>
             <ul class="dropdown-submenu">
                <li> <a href="etkin.html"> <i> &hairsp; About Etkin</i> </a> </li> 
                <li> <a href="etkin_editions.html"> Book editions </a>   </li> 
-               <li> <a href="etkin_typos.html">    Typos 3d ed.</a>     </li>
+               <li> <a href="etkin_typos.html"> &ensp; <i>
+                     Typos 3d ed. </i></a>     </li>
+               <li> <a href="etkin_b747_symmetrical.html">
+                     B747 - <i>symmetrical</i> </a> </li>
+               <li>     <a href="etkin_b747_asymmetrical.html"> 
+                     B747 - <i>asymmetrical</i> </a> </li>
             </ul>
             </li>
             <!-- end Etkin -->            
-            
-            <!-- B747 model -->
-            <li class="dropdown-parent">
-               <a> B747 </a>
-            <ul class="dropdown-submenu">
-               <li> <a href="etkin_b747_symmetrical.html">
-                     Etkin symmetrical </a> </li>
-               <li>     <a href="etkin_b747_asymmetrical.html"> 
-                     Etkin asymmetrical </a> </li>
-            </ul>
-            </li>
-            <!-- end B747 model -->
-            
+                       
          </ul>
          </li>
          <!-- end State space -->
@@ -401,10 +401,12 @@
             <a> Modes</a>
          <ul class="dropdown-submenu">
             <li> <a href="modes.html"> <i> &ensp; Modes </i> </a> </li>
-
+               <!------------------>
             <li style = "border-top   : double;
-                         border-width : 4px;">
+                         border-width : 4px;
+                         border-color : darkgray">
                <a href="darts.html"> Weathervanes </a> </li>
+               <!------------------>
             <li style = "border-top   : double;
                          border-width : 4px;
                          border-color : darkgray">
@@ -414,6 +416,7 @@
                   Phugoid  </a> </li>
             <li class="draft"> <a href="energy_mode.html">
                   Energy mode  </a> </li>
+               <!------------------>                  
             <li style = "border-top   : double;
                          border-width : 4px;
                          border-color : darkgray">
@@ -527,13 +530,15 @@
       <ul class="dropdown-submenu">
 
          <li class="draft"> <a href="zero_g.html">
-            <i> &ensp; Zero-G </i> </a>                 </li>
+            <i> &ensp; Zero-G </i> </a>                     </li>
+         <li class="draft"> <a href="parabolic.html">
+            Parabolic flight </a>               </li>
+         <li class="draft"> <a href="ballistocraft.html">
+            Ballistocraft (UAV)</a>                         </li>
          <li class="draft"> <a href="rpm.html">
             Random Positioning Machine </a>                 </li>
          <li class="draft"> <a href="glove_box.html">
             Glove box </a>                                  </li>
-         <li class="draft"> <a href="ballistocraft.html">
-            Ballistocraft (UAV)</a>                         </li>
       </ul>
       </li>
                
@@ -753,7 +758,6 @@
            <a href="tuning.html">  PID tuning </a>            </li> 
       <li class="draft">
            <a href="encoder.html"> Encoder differencing </a>  </li> 
-      <li> <a href="state_space.html">       State space </a> </li>
       <li class="draft">
            <a href="kalman.html">  Kalman filters </a>        </li> 
       <li class="draft">
@@ -865,15 +869,14 @@ and there will be a similar text on haptics as well.
 
 
 <!-- FOOTER --------------------------------------------------->
-<br> <br> <!-- Prevent text covering by footer -->
+<br> <br> <!-- Prevent text being covered by footer          -->
 <div class="footer"> P. Lammertse, 2026 </div>
+
 
 <!-- Persistently show or hide draft text                    -->
 <script src="draft.js"></script>
-
 <!-- Responsive hamburger menu                               -->
 <script src="menu.js"></script>
-
 <!-- Free visits tracker dd. 2026-04-19 :                    -->
 <script async
    src="https://scripts.simpleanalyticscdn.com/latest.js">
