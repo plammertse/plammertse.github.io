@@ -1,8 +1,10 @@
 <!--------------------------------------------------------------
  file    : state_space.html
- purpose : Boeing B747 short period animation (Etkin 3d.ed.)
+ purpose : Generic stae space story
  ---------------------------------------------------------------
-  2026-08-17 PL moved out the script short_period.js
+  2026-09-14 PL isolated generic state space story,
+                 moved out state-transforms.html
+  2026-08-17 PL short_period.html
   2026-07-26 PL converted to SVG rendering
   2026-07-12 PL more or less finished (canvas version)
   2026-06-22 PL new, cloned from dumbbell.js
@@ -37,10 +39,12 @@
 
    <ul>
       <li> <a href = "index.html">  Home </a>              </li>
-<!--      
-      <li> <a href = "index.html">  Pendulums </a>              </li>
--->      
-      <li> <a href = "etkin_B747_symmetric.html"> Airplane modes </a></li>
+      <li> <a href = "state_transforms.html">
+            Transforms </a></li>
+      <li> <a href = "state_space_symmetrical.html">
+            Symmetrical </a></li>
+      <li> <a href = "state_space_symmetrical.html">
+            Asymmetrical </a></li>
    </ul>
 </nav>
 
@@ -71,12 +75,26 @@
 </td> <td style="width:50px; text-align:right">            (1)
 </td> </tr> </table>
 
-<p> This matrix equation gives the evolution over time,
- of a "state" <b><i>x</i></b> under the influence of itself,
- and of an "input" <b><i>u</i></b>.
- Both can have more than element, which is why 
+<p> The matrices <i><b>A</b></i> and <i><b>B</i></b>
+ are blocks of constants.
+ They represent the system, linearized around some basic state,
+ usually an equilibrium condition like a pendulum
+ hanging straight down or an airplane in steady flight.
+ </p>
+<p> &emsp; The variables in the so-called "state vector"
+ <i><b>x</b></i>, together describe the momentary motion
+ of the system.
+ The&nbsp;vector <i><b>u</b></i> lists the usually also
+  time-varying input variables to the system. 
+ 
+<p> &emsp; The matrix equation gives the evolution over time,
+ of the  <b><i>x</i></b> under the influence of 
+ <b><i>x</i></b> itself,
+ and of the inputs <b><i>u</i></b>.
+ Both <b><i>x</i></b> and <b><i>u</i></b>
+ can have more than element, which is why 
  they are called "vectors" in the linear algebra involved.
- These&nbsp;are not necessarily physical vectors in 3D space.
+ But they are not normally physical vectors in 3D space.
  They are vectors in an abstract sense only.
  </p>
  <p> &emsp;
@@ -106,7 +124,6 @@
  
  <div class="draft">
  
- <p> A and B are constant in time (&hairsp;around a given condition&hairsp;). </p>
  
  <h4> eigenvalues </h4>
  
@@ -145,213 +162,17 @@
  to describe the dynamics of the system.
  But they can be scaled to different units, 
  and even combined in different ways.
+ This&nbsp;very useful trick is discussed 
+ <a href="state_transforms.html"> here</a>. 
  </p>
- <p> &emsp;
-  Like in the case of the 
-  <a href="coupled_pendulums.html"> coupled pendulums</a>,
-  it can be helpful to make "linear combinations"
-  of the state elements 
-  <nobr>(&hairsp;add</nobr> and subtract <nobr>them&hairsp;)</nobr>, 
-  to make the internal structure of the problem easier to see.
-   Going from one set of basic elements to another like this
-   is called a "base transformation".
- </p>
-   
- <h4> a simple example </h4>
-
-<p> As a simple example, suppose we have a state vector 
-   <i><b>x</b></i> &equiv; ( <i>x, y, z</i> ) where the elements
-  are positions in feet. We&nbsp;wish to transform these positions 
-  to meters. To keep the two states apart, 
-  we will call the new state vector <nobr>
- <i><b>&chi;</b></i> &equiv; ( <i> &chi;, &eta;, &zeta; </i> ).
- </nobr>
- </p>
- <p> &emsp;
- For every element, we need the scaling from feet to meters :
-</p>
-
-<table class="equation"> <tr> <td>
-   &emsp; &emsp; <i>&chi;</i>
-      &thinsp; &equiv; &thinsp;
-      0.3048 . <i>x</i>
-</td> <td style="width:50px; text-align:right">            (2)
-</td> </tr> </table>
-
-<p> We can transform the whole state in one go,
- if we define a diagonal matrix <i><b>N</i></b> as follows :
-</p>
-
-<table class="equation"> <tr> <td>
-   <math>
-      <mi><b>N</b></mi> <mo> &nbsp; &equiv; &nbsp; </mo>
-      <mo>[</mo> <mn>&thinsp;</mn>
-      <mtable>
-         <mtr>
-            <mtd><mn>0.3048</mn></mtd>
-            <mtd><mn>0</mn></mtd>
-            <mtd><mn>0</mn></mtd>
-         </mtr>        
-         <mtr>
-            <mtd><mn>0</mn></mtd>
-            <mtd><mn>0.3048</mn></mtd>
-            <mtd><mn>0</mn></mtd>
-         </mtr>
-            <mtd><mn>0</mn></mtd>
-            <mtd><mn>0</mn></mtd>
-            <mtd><mn>0.3048</mn></mtd>
-      </mtable> <mn>&thinsp;</mn>
-      <mo>]</mo>
-   </math>
-</p>
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
  
-<p> The transformation from the old state vector to the new one becomes :
-</p>
-<p> 
-<table class="equation"> <tr> <td>
-   &emsp; &emsp; <b><i>&chi;</i></b><sup>&thinsp;&bull;</sup>
-      &thinsp; = &thinsp; <b><i>N . x</i></b> 
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> We use this to rewrite the original state space equation
-  to the new base. The first step is :
-</p>
-
-<p>
-<table class="equation"> <tr> <td>
-   &emsp; &emsp; <b><i>&chi;</i></b><sup>&thinsp;&bull;</sup>
-         &thinsp; = &thinsp; 
-   <b><i>N . x</i></b><sup>&thinsp;&bull;</sup>
-      &thinsp; = &thinsp;
-      <b><i>N . ( A . x</i> </b> +
-                          <b><i> B . u</i> </b> ) 
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> This still uses <b><i>x</i></b>,
- but we can transform that to <b><i>&chi;</i></b>
- by the trick of inserting a unit matrix
- made by pre-multiplying
- the&nbsp;matrix <b><i>N</b></i>
- by its inverse, i.e. by inserting
- &hairsp; <i><b>I</i></b> =
-   <b><i> N</i></b><sup><sup>&hairsp;-1</sup></sup>. 
- <b><i> N</i></b> :
- </p>
- <p>
- 
- <table class="equation"> <tr> <td>
-   &emsp; &emsp; <b><i>&chi;</i></b><sup>&thinsp;&bull;</sup>
-         &thinsp; = &thinsp; 
-      <b><i>N . A . N</i><sup><sup>&hairsp;-1</sup></sup>
-      . <i> N . x</i> </b> +
-                          <b><i> N . B . u</i> </b>
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> Using (****) to transform <b><i>x</b></i> 
- to <b><i>&chi;</b></i>, we have :
-<p>
-
- <table class="equation"> <tr> <td>
-   &emsp; &emsp; <b><i>&chi;</i></b><sup>&thinsp;&bull;</sup>
-         &thinsp; = &thinsp; 
-      ( <b><i>N . A . N</i><sup><sup>&hairsp;-1</sup></sup></b> )
-         . <b><i>&chi;</i></b> +
-                          <b><i> N . B . u</i> </b>
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> The state matrix for the base <b><i>&chi;</i></b> 
- has changed by a pre- and postmultiplication to become :
-</p> 
-
-<p>
- <table class="equation"> <tr> <td>
-   &emsp; &emsp; <b><i>A&prime;</b></i>
-         &thinsp; &equiv; &thinsp; 
-      <b><i>N . A . N</i><sup><sup>&hairsp;-1</sup></sup></b>
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> If <b><i>N</b></i> is a simple scaling, 
- then this derivation is considerable overkill.
- Suppose the matrix <b><i>A</b></i> was a diagonal matrix 
- with values of -<i>a</i> on the diagonal, and 0 everywhere else.
- This means that for every state element we have :
-</p>
-<p>
-
-<table class="equation"> <tr> <td>
-   &emsp; &emsp; <i>x</i><sup>&thinsp;&bull;</sup>
-         &thinsp; = &thinsp; 
-      &minus; <i>a . x </i>
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> This is the equation for a uniform damping field,
-with a decay time of 1<i>/&hairsp;a</i> on every axis.
- This matrix has three identical eigenvalues,
- each &minus;&hairsp;<i>a</i>.
-</p>
-<p> &emsp; In this case both <i><b>N</i></b> 
- and <i><b>A</i></b> are diagonal matrices,
- and their products are diagonals as well.
- The net result is that every diagonal
- element is pre-multiplied by 0.3048 and post-multiplied
- by 1&thinsp;<i>/</i>&thinsp;0.3048. This yields :
-</p>
-
-<table class="equation"> <tr> <td>
-   &emsp; &emsp; <i>&chi;</i><sup>&thinsp;&bull;</sup>
-         &thinsp; = &thinsp; 
-<!--      &minus; 0.3048  .  <i> a . &chi; / </i> 0.3048 </i>
-         &thinsp; = &thinsp; 
--->
-      &minus; <i> a . &chi;</i>         
-</td> <td style="width:50px; text-align:right">            (X)
-</td> </tr> </table>
-</p>
-
-<p> In other words, the matrix is unchanged.
- It still says that the <i>x</i>, <i>y</i> and <i>z</i>
- are reduced at a rate of -<i>a</i> per second, 
- whether they are measured in meters or in feet.
- The matrix still has the same three eigenvalues
- of &minus;<i>a</i>,
- and this will hold for any transformation
- <i><b>N</b></i>, regardless
- whether  <i><b>N</b></i> and  <i><b>N</b></i>
- are diagonal or not.
- But if  <i><b>N</b></i> is not diagonal,
- things do get more interesting.
- </p>
-
-<h4> swapping and re-combining state elements </h4>
-
-<p> The transformation matrix <b><i>N</b></i> can easily
- be adapted to not only scale the elements,
- but to swap them, or to add and subtract them.
- Any transformation is allowed, as long as it is linear.
- </p>
- <p> &emsp;
-  We will find that it is particularly useful to rewrite
-  the state in terms of its eigenvectors.
-   This is instructive, and&nbsp;it&nbsp;turns the system matrix
-   into a diagonal one.
-   </p>
-
 <div class="draft">  
-<p> Matlab conventions.
+
+<h4> eigenvectors </h4>
+ 
+ <p> Matlab conventions.
+ </p>
+ <p> &emsp;
 Eigenvalues ( VE, E ), VE( #element, #eigenvalue),
  check that VE( :, 3:6) are the column eigenvectors for 
  the eigenvalues 3:6.

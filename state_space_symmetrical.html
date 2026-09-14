@@ -69,7 +69,8 @@
 <p> The motions of an airplane can be divided into
    <i>symmetrical</i> (&hairsp;up/down&hairsp;)
    and <i>asymmetrical</i> (&hairsp;left/right&hairsp;).
-This section discusses the symmetrical part.
+</p>
+<p> This section discusses the symmetrical part.
 </p>
 <p> &emsp;
  We will not derive the physical model of a generic aircraft here.
@@ -107,18 +108,17 @@ One outcome is that the small motions of the aircraft
  </td> <td style="width:50px; text-align:right">            (2)   
 </td></tr></table>
 
-<p> &emsp; 
- It is certainly not immediately obvious that 
+<p> It is not immediately obvious that 
  these four variables are necessary and sufficient 
- to describe the motion, but they are.
+ to describe the motion, but&nbsp;they are.
   However, the state elements themselves are not as obvious
- as they seem.
+ as they may seem.
 </p>
  <p> &emsp;
  The problem lies in the fact that the 
  equations of motion are formulated in a <i>body fixed reference frame</i>.
  In&nbsp;particular, the airplane velocity is defined relative to the
- <i>X</i> body axis (&hairsp;forward in the airplane&hairsp;)
+ <i>X</i> body axis fixed in the airplane (&hairsp;pointing forward&hairsp;)
  and the <i>Z</i> body axis
  (&hairsp;down in the airplane&hairsp;).
  </p>
@@ -174,6 +174,18 @@ One outcome is that the small motions of the aircraft
   but it points more downward relative to the airplane.
   In body axes, the velocity <i>V</i> gets a "vertical" down component.
   </p>
+  <p class="draft"> &emsp;
+   The geometrical transformation from the inertial frame to the moving one
+   contains all the other cross terms between the horizongtal and vertical velocities
+   and the rate of rotation <i>q</i> as well,
+    but the products between the small perturbations
+   <i>u</i>, <i>w</i> and <i>q</i> are an order smaller 
+   than the perturbations themselves
+   and can be neglected when linearizing. 
+   The only product term that is not an order smaller 
+   is the (&hairsp;<i>V . w</i>&hairsp;) one,
+   because <i>V</i> is not zero in the steady state.
+   </p>
 <!--
  <p> &emsp;
  Viewed the other way, the air comes in more from below,
@@ -274,6 +286,10 @@ One outcome is that the small motions of the aircraft
     The rate of change of <i>&theta;</i> with <i>q</i> 
     is purely kinematic :
 </p>
+
+<p class="draft">
+ Non-dimensional parameters and scaling. 
+ </p>
 
  <table class="equation"><tr><td>
  <math>

@@ -1,0 +1,169 @@
+<!--------------------------------------------------------------
+ file    : etkin_b747.html
+ purpose : Boeing B747 data (Etkin 3d.ed.)
+ ---------------------------------------------------------------
+  2026-09-13 PL new
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Etkin B747 data </title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "etkin_B747_symmetrical.html">
+            Symmetrical </a> </li>
+      <li> <a href = "etkin_B747_asymmetrical.html">
+            Asymmetrical </a> </li>
+  </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Etkin's B747 </h2>
+
+<!-- SEE MY MEMO PL-25-087 -->
+
+<h4> the Boeing B747-100 </h4>
+
+<p> Etkin's book (&hairsp;3d.ed.&hairsp;) contains two linearized models
+of the B747-100, one for the 
+<a href=ëtkin_b747_symmetrical.html"> symmetrical</a> 
+and one for the
+<a href=ëtkin_b747_asymmetrical.html"> asymmetrical</a> motions.
+They both apply to cruising flight at ***** feet.
+</p>
+<p> &emsp;
+ This section lists some of the geometrical and weight-and-balance
+ data for these models.
+</p>
+<h4> source </h4>
+<p> Etkin get his data from : TBW.
+( see page **** ).
+</p>
+<h4> cruising flight </h4>
+
+<p> Etkin's model values are for cruising flight at altitude :
+</p>
+<p> TBW </p>
+<p> 
+Wikipedia B747-100, not in Etkin
+</p>
+<p>								lbs.ft								SI
+</p>
+<p>
+	L<sub>fuselage</sub>		=		231 ft 10 in						 70.7 m
+</p>   
+<p>
+<h4> Etkin 3d ed., p.165  ( see also p.371 ) </h4>
+<p>
+								lbs.ft								SI
+</p>
+<p>
+	V (TAS)		= 		774	[ ft/s ]						  235.9			[ m/s ]	      <br>
+	W				=	636,636	[lbs]						2.83176e6		   [ N ]				/ 9.81  <br>
+	m				=											288 760 		   [kg]        <br>
+	Iy				=											0.449 e8		[ kg.m2 ]			/ m,   √ <br>
+	Ry				=											  12.5			   [ m ]		TODO  CHECK 25057_PL.doc<br>
+	c (MAC)		=		27.31 [ ft ]							  8.324			   [ m ]
+   </p>
+<p>   
+<h4> Google answer </h4>
+</p>
+<p>
+For a standard Boeing 747 (most notably the widely used 747-400 variant),
+ the official engineering values used for weight, balance,
+ and flight computer calculations are:
+ </p>
+ <p>
+•	MAC Length (Chord Width): 327.8 inches (approx. 27.3 feet or 8.33 meters).
+</p>
+<p> This represents the geometric average distance from the wing's leading edge to its trailing edge.</p>
+<p>
+•	LEMAC (Leading Edge of MAC): 1,257.0 inches aft of the aircraft's front reference datum line. [1, 2, 3]
+</p>
+<p>
+<b> How It Is Used </b>
+</p>
+<p>
+The airplane's Center of Gravity (CG) is always measured as a percentage of this 327.8-inch chord (%MAC). For instance: [1, 2]
+•	0% MAC represents the physical location exactly 1,257.0 inches from the nose datum.
+•	100% MAC (TEMAC / Trailing Edge) represents a position 1,584.8 inches from the datum (1,257.0 + 327.8). [1]
+</p>
+<p> For safe flight operations, the flight control systems
+ require the 747's actual weight distribution
+ to rest within a safe operational envelope,
+ typically between 13% and 33% MAC. [1]
+ </p>
+ <p>
+ <h4> B747 tail volume ≅  1, from a forum </h4>
+ </p> 
+ <p>This sort of data is incorporated in the aeroplane pre-design textbooks. 
+The one I have is Synthesis of Subsonic Airplane Design by Torenbeek,
+ which unfortunately predates the B747-400.
+ But there is data available for the B747-100/200,
+ in sections 9.5 9 Preliminary Design of the Horizontal Tailplane
+ and 9.6 Design of the Vertical Tailplane.
+ </p>
+ <p>
+Table 9-2 lists a.o. the following parameters for the B747 100/200 horizontal tailplane:
+</p>
+<p>
+	Area fraction Sh/S = 0.267    <br>
+	Aspect ratio Ah = 3.60  <br>
+	Taper ratio λh = 0.264  <br>
+	Sweep angle Λh = 37°  <br>
+	Tail volume fraction Shlh/(Sc¯)  =  1.000
+</p>
+<p>
+And from table 9-3 the data for the vertical tailplane:
+</p>
+<p>
+	Area fraction Sv/S = 0.196 <br>
+	Aspect ratio Av = 1.38 <br>
+	Sweep angle Λv = 44° <br>
+	Tail volume fraction Svlv/(S⋅ b) = 0.0990
+</p>
+<p>
+Airfoil sections for other aeroplanes of the era are listed in the table,
+ also referenced in this answer, but not for the B747.
+ Profile type must have been a closely guarded secret at the time already.
+ </p>
+<h4> radius of inertia </h4>
+<p> TBW </p>
+
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>
