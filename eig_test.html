@@ -1,0 +1,181 @@
+<!-- --------------------------------------------------------------
+ file    : eig_test.html
+ --------------------------------------------------------------
+  2026-06-22 PL new, copied from their web example
+-------------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Math.js eigenvectors test </title>
+</head>
+
+<body>
+
+<p> Testing.. <br> </p>
+
+<!-- This must come before the <script> section using it : -->
+<script src="math.js"> </script>
+
+<script>
+/*
+   // Gemini-found math.js | eigs() example.
+   // Define a real symmetric matrix.
+   const H = [[5, 2.3], [2.3, 1]];
+   // Compute eigenvalues and eigenvectors
+   const ans = math.eigs(H);
+*/
+   // Test this on Etkin's B747.
+   // Isolate the phugoid (smallest lambda).
+   const A = [[  -0.006868,   0.01395,     0,     -32.2  ],
+              [  -0.09055,   -0.3151,    773.98,    0    ],
+              [   0.0001187, -0.001026, -0.4285,    0    ],
+              [   0,          0,           1,       0    ]];   
+   // console.log( A );
+
+
+// const math = require('mathjs');
+
+// GEMINI EXAMPLE ////////////////////////////////////////////////////////
+console.log( 'Gemini example');
+
+const AA = math.matrix([
+  [5, 2.3],
+  [3,  1]
+//  [2.3, 1]
+]);
+
+// 1. Compute the eigenvalues and eigenvectors
+const result = math.eigs(AA);
+
+console.log( '   -- first eigenvalue, one way, "direct"');
+console.log( result.values._data[0] );
+console.log( '   -- first eigenvalue, second way, via "eigenvectors"');
+console.log( result.eigenvectors[0].value );
+console.log( '   -- first eigenvector');
+console.log( result.eigenvectors[0].vector );
+console.log( '   -- second eigenvector');
+console.log( result.eigenvectors[1].vector );
+
+
+// 2. Access the array of eigenvectors (instead of .vectors)
+const eigenvectorsArray = result.eigenvectors; 
+// This returns: [{ value: E1, vector: [...] }, { value: E2, vector: [...] }]
+
+console.log( '   -- Build the matrix with the eigenvectors as columns');
+console.log( '   -- via map( input => input.vector )');
+console.log( '   -- ( called inside matrixFromColumns() )');
+
+// 3. Rebuild the single combined matrix using math.matrixFromColumns
+// Pass each vector from the array into the columns utility
+const eigenvectorMatrix = math.matrixFromColumns(
+  ...eigenvectorsArray.map( input => input.vector)
+);
+const eigenvectorsArray2 = eigenvectorsArray.map( input => input.vector)
+const eigenvectorMatrix2 = math.matrixFromColumns(
+                           ...eigenvectorsArray2);
+
+console.log(eigenvectorMatrix.toString());
+console.log(eigenvectorMatrix2.toString());
+
+// Output: [[-0.41462..., 0.91000...], [0.91000..., 0.41462...]]
+//////////////////////////////////////////////////////////////////////////
+
+console.log( '   -- via map( ({vector}) => vector ) with destructuring');
+
+const vectorsOnly = eigenvectorsArray.map(({ vector }) => vector);
+// This doesn't work, "dummy is not defined" :
+// const vectorsOnly = eigenvectorsArray.map(({ vector }) => dummy);
+
+const eigenvectorMatrix3 = math.matrixFromColumns(...vectorsOnly);
+console.log(eigenvectorMatrix3.toString());
+
+
+
+<!-- SO THIS SEEMS TO ME THE CLEANEST WAY -->
+
+console.log( '   -- copy array of vectors out of array of objects first');
+
+<!-- THIS DOESN'T WORK, IT'S UNDEFINED -->
+console.log( '   -- array of eigenvalues "direct" *via result.values._data*');
+//let EF = result.values;
+let EF = result.values._data;
+console.log( 'array EF = ', EF);
+console.log( 'array EF[1] = ', EF[1] );
+
+<!-- OR : -->
+console.log( '   -- array of eigenvalues "mapped" from result.eigenvectors.value');
+EF = math.map( result.eigenvectors, input => input.value);
+console.log( 'array EF = ', EF);
+console.log( 'array EF[1] = ', EF[1] );
+
+console.log( '   -- array of eigenvectors');
+let EV = math.map( result.eigenvectors, dummy => dummy.vector);
+console.log( 'array EV = ', EV);
+
+console.log( '   -- then assemble the columns into a matrix');
+
+const eigenvectorMatrix4 = math.matrixFromColumns( ...EV);
+console.log( eigenvectorMatrix4);
+console.log( 'matrix EV = ', eigenvectorMatrix4.toString() );
+
+
+
+
+
+
+console.log( '   -- back to B747 matrix A');
+
+   const ans = math.eigs(A);
+   const V   = ans.eigenvectors;
+   console.log('   -- eigenvectors:', ans.eigenvectors);
+//   const VE  = ans.vector; 
+//   console.log( VE );
+/*
+   const E   = ans.values;
+   console.log('Eigenvalues:',  ans.values);
+   console.log('Eigenvectors:', ans.eigenvectors);
+
+   console.log('First eigenvalue  :', E[0]);
+   console.log('First eigenvector object :', V[0]);
+   console.log('First eigenvalue :',  V[0].value);
+   console.log('First eigenvector :', V[0].vector);
+   
+   //console.log( 'JosdeJong : ', math.column( math.eigs(A).eigenvectors.vector, 0 ) ); 
+*/
+   // Eigenvectors is an array of objects with the properties : {value, vector}.
+   // Pick out the first of these objects, and from that its property "vector".
+   let V0 = V[0].vector;
+   // Normalize the first eigenvector to theta ( == real 1 ).
+   //    Note that the q element is almost exactly the eigenvalue,
+   //    I think because q is the derivative of theta,
+   //    like the amplitude of a rotation rate is the frequency
+   //    (eigenvalue) omega times the amplitude of the rotation angle,
+   //    in an underdamped pendulum. *With* damping it's not 90 degrees.
+   V0 = math.dotDivide( V0, V0[3]);
+   console.log('  -- first eigenvector :', V0);
+   
+   let TAS = 774;   // airspeed, the letter V is taken
+   let mac = 27.31;
+   let u_hat = math.divide(V0[0],TAS);
+   console.log('^u : ', u_hat);
+   let alpha = math.divide(V0[1],TAS);
+   console.log('alpha : ', alpha);
+   // PL-25-087 about Etkin : ^q == qc/2V
+//   let q_hat = math.divide(V0[2],2*S/mac);
+   let q_hat = math.multiply(V0[2], mac/2/TAS);
+   console.log('^q :', q_hat);
+   
+</script>
+
+<p> Look at console.log results with CTRL + SHIFT + J. </p>
+
+<!-- This is too late ! -->
+<!-- <script src="math.js"> </script> -->
+
+</body>
+
+</html>
+
+

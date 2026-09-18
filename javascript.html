@@ -1,0 +1,117 @@
+<!--------------------------------------------------------------
+ file    : javascript_math.html
+ purpose : Discuss JS as an alternative toM atlab
+ ---------------------------------------------------------------
+  2026-09-15 PL new
+  2026-07-26 PL converted to SVG rendering
+  2026-07-12 PL more or less finished (canvas version)
+  2026-06-22 PL new, cloned from dumbbell.js
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> On Javascript</title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "javascript_math.html">
+            Javascript math </a></li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Javascript </h2>
+
+<h4> Javascript </h4>
+
+<p> This website uses moderate doses of Javascript
+ to give it some interactive behaviour.
+Javascript is routinely used in animations that can be stopped
+ and started by the mouse.
+ </p>
+ <p> &emsp;
+ Javascript code can be put inside HTML files
+ in &lt&hairsp;<i>script</i>&hairsp;&gt; sections,
+ but I prefer to put most of it in separate files
+ for better separation of layout and functionality.
+ </p>
+ <p> &emsp;
+ These separate script files have an extension of <i>*.js</i>.
+ I often give them the same <i>name</i> as the HTML file that 
+ they are associated with, so <i>foo.js</i> is associated with <i>foo.html</i>.
+  There are also some auxiliary, second level script files with generic names,
+ like <i>menu.js</i> or <i>svg_tools.js</i>.
+</p>
+ <p> &emsp; 
+  Since <i>*.js</i> files cannot be nested, I use the most simplistic
+  of scoping rules : all the <i>*.js</i> files used by an HTML file
+ are listed at the end of its &lt;&hairsp;<i>body</i>&hairsp;&gt;,
+ in the order in which the scripts in the <i>*.js</i> files use each other.
+ </p>
+  <p> &emsp;
+ Please feel free to look inside these script files
+ in your browser.
+ Just type the name of any script file in the address bar 
+ and you can read that file.
+ </p>
+ 
+<h4> communication between Javascript and HTML </h4>
+
+ <p> Javascript and HTML talk to each other in 
+ very awkward ways. HTML cannot call Javascript functions directly.
+ Instead, HTML marks some fields with <i>"id=.."</i>
+ string name tags, which are then looked up by name
+ in the Javascript running separately.
+ Javascript sets the <i>"innerHTML"</i> fields of those
+ HTML entities to display its output to the user. 
+ </p>
+ <p> &emsp;
+ To me this feels like handing over something by throwing
+ it on the floor, and having someone else pick it up.
+ There were probably good reasons why it grew to be this way,
+ but it does not look like something anyone would design in good conscience.
+</p> 
+
+ <h4> Javascript math </h4>
+ 
+ <p> Javascript can do some pretty complex math.
+ This is put to good use on this website, as discussed 
+ <a href="javascript_math.html"> <i>here</i></a>.
+ 
+ 
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>

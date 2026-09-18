@@ -1,0 +1,371 @@
+<!--------------------------------------------------------------
+ file    : javascript_math.html
+ purpose : Discuss JS as an alternative toM atlab
+ ---------------------------------------------------------------
+  2026-09-15 PL new
+  2026-07-26 PL converted to SVG rendering
+  2026-07-12 PL more or less finished (canvas version)
+  2026-06-22 PL new, cloned from dumbbell.js
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Javascript math</title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "javascript.html">
+            Javascript </a></li>
+      <li> <a href = "state_space.html">
+            State space </a></li>
+      <li> <a href = "state_space.html">
+            State transforms </a></li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> Javascript matrix math </h2>
+
+<h4> Javascript </h4>
+
+<p> This website uses small doses of Javascript,
+ like in user interaction with animations
+as discussed <a href="javascript.html"> <i>here</i></a>.
+</p>
+<p>  But it can also used to do some pretty complex math.
+</p>
+ 
+ <h4> solving matrix equations </h4>
+ 
+ <p> The sections on state space analysis
+ of airplane stability and control models routinely use matrix equations.
+  Solving these equations goes beyond the capa&shybili&shyties
+  of the typical pocket calculator.
+ <p> &emsp; Having done this work by hand in my younger years,
+  and  later in life by the likes of 
+  <code>Matlab<sup>&copy;</sup></code>
+  and its precursors and successors,
+  it is with considerable relief that I find that any
+  simple browser can do these calculations today.
+ </p>
+ <p> &emsp;
+ The language of choice is Javascript,
+ and the library of choice is 
+ <a href="https://mathjs.org"> <code>Math.js</code></a>.
+ However, as seems unavoidable in the computing world,
+ both  have a surprising history of quirks.
+ Some caveats and workarounds are given below.
+ </p>
+ 
+<h4> native Math in Javascript </h4>
+
+<p> Javascript has some native capabilities for everyday 
+ math and arithmetic,
+ but it soon runs out of steam when the numbers get complex,
+ and when the equations get organised in matrices.
+ Statements like
+  <code>a = </code> <code>Math.sqrt(2)</code>
+ are valid for integers 
+ and floating point numbers, but not for complex numbers or matrices.
+ These <code>Math</code> functions with a capital "<code>M</code>"
+ are part of the Javascript language definition, but still they must be preceded
+ by the <code>Math</code> prefix unless special tricks are used.
+ </p>
+
+<h4> math.js </h4>
+
+<p> There is a universally accepted library extending 
+Javascript to more complicated math. It is called <code>math.js</code>. 
+Interestingly, the functions from this library must be
+ preceded by the same word <code>math</code> ,
+ but with a lowercase "<code>m</code>".
+ <!--
+ As an example,
+  <nobr> <code>a = math.sqrt(4)</code></nobr> yields 2.
+  </p>
+  -->
+ <p> &emsp;
+ The standard Javascript <code>Math.sqrt()</code> will return
+ <code><i>NaN</i></code> when
+ the argument is negative, like for
+ <code>Math.sqrt(&minus;4)</code>.
+ By con&shytrast,  <code>math.sqrt(&minus;4)</code>
+ will dutifully return the complex root 2&hairsp;i.
+ The <code>math</code> library also supports matrix operations
+ and many other useful functions.
+ </p>
+<h4> using math.js locally or offline </h4>
+<p> There are several ways of "installing"
+ <code>math.js</code> on a computer so it can be used
+ by browsers and other pro&shygrams or from the command line.
+ But it can also be used as an external library,
+ by referencing the <code>math.js</code> website.
+ </p>
+ <p> &emsp;
+ Using <code>math.js</code> on a web page like this
+ has its dangers. If it relies on "installed" code,
+ then it may not run on someone else's computer,
+ or it may run an incompatible version.
+ If the external option is used, it may not run offline.
+ </p>
+ <p> &emsp;
+ My preferred solution is to keep a trusted copy of the
+ <code"math.js</code> Javascript code in the same directory
+ as the web pages using it, whether online or offline.
+ On this website, the <code>math.js</code> code is
+ located <a href="math.js"> here<a>.
+ </p>
+
+<h4> specific versions of math.js </h4>
+<p> The software world has a long and sad history of
+ (&hairsp;near&hairsp;) free software suddenly disappearing
+ behind paywalls by companies buying up or otherwise
+ killing the competition,
+ and of unsollicited changes in syntax breaking old code
+ when running a later version.
+ </p>
+ <p> &emsp;
+ For the moment it looks like Javascript and <code>math.js</code>
+ are safer than most, but precisely in the code used below
+ there was a change in the interface of the <code>math.eigs()</code>
+ function that broke existing code at the time.
+ </p>
+ <p> &emsp;
+ This website uses <code>math.js</code> version 15.2.0
+ in a local copy, in an attempt to keep its functionality
+ unaffected by the vagaries of the outside world. 
+
+<h4> eigenvalues and eigenvectors in Math.js </h4>
+
+<p> This website use matrix eigenvalues and eigenvectors
+ in state space analysis of aircraft.
+ It will be helpful to show the relevant
+ <code>Math.js</code> syntax, and some of its idiosyncrasies.
+ 
+</p>
+<p> &emsp; A matrix can be defined as a standard
+ two-dimensional Javascript array :
+ </p>
+ <p>
+ 
+<table> <tr><td>
+<pre>
+let A = [ [ 1 2 ]
+          [ 3 4 ] ];
+</pre>
+</td>
+<td style="width:80px; text-align:left;"> (1) </td>
+</tr> </table>
+
+ </p>
+ <p>
+ The eigenvalues and eigenvectors are obtained by
+ a single call to the relevant <code>Math.js</code> routine :
+ </p>
+ 
+<table> <tr><td>
+<pre>
+let E  = eigs( A);
+</pre>
+</td>
+<td style="width:80px; text-align:left;"> (2) </td>
+</tr> </table>
+
+<p> It would have been nice if the outputs had been
+an array of eigenvalues and a matrix of eigenvectors,
+but no such luck. Instead, the output is an array of objects,
+ one per eigenvalue.
+ These objects each have two properties,
+ called <b><i>value</i></b> and <b><i>eigenvector</i></b>.
+ It is best to ignore the first property,
+ because it is repeated in the  second.
+ The <b><i>eigenvectors</i></b> property itself has two properties of its own,
+ one of them again called <b><i>value</i></b>,
+ and the other one <b><i>vector</i></b>.
+ </p>
+ <p> &emsp;
+ We will show later how to convert these  software objects to the 
+ more conventional matrix-vector form.
+ If we just want to pick out one eigenvalue and its eigenvector,
+ then a simplistic way of doing it is this :
+ </p>
+ <p class="draft">
+&emsp; Note somewhere that math.js 1D vectors are neither
+row vectors nor column vectors. They are sort of neutral. 
+  <code>Math.js</code> chooses the most likely interpretation when they are
+passed to a function, unless the interpretation
+ is forced by the definition of the vector as a 2D matrix
+ with either row or column dimension.
+ </p>
+ 
+<table> <tr><td>
+<pre>
+let ED_0 = E[0].eigenvectors.value;
+let EV_0 = E[0].eigenvectors.vector;
+</pre>
+</td>
+<td style="width:80px; text-align:left;"> (3) </td>
+</tr> </table>
+
+<p> The index [&hairsp;0&hairsp;]
+ selects the first eigenvalue
+and its associated eigenvector.
+In keeping with the unfortunate
+ "C" language heritage,  
+the indices of an array of length <i>N</i>
+run from 0 to <i>N</i>&thinsp;&minus;&hairsp;1
+in Javascript.
+</p>
+<p> &emsp;
+There are as many eigenvalues and eigenvectors 
+as the size <i>N</i> of the system matrix,
+but the ones having an imaginary component
+come in complex pairs,
+  <i>a</i>&thinsp;&#177;&thinsp;i&hairsp;<i>b</i>.
+</p>
+
+<h4> the order of the eigenvalues </h4>
+
+<p> The <b><i>eigs(&thinsp;)</b></i> function
+ lists the eigenvalues sorted
+ from small to large by their absolute values.
+In complex pairs the one with the positive 
+imaginary part is listed first. 
+This is an arbitrary but reasonable choice.
+ It is up to the human user to physically
+ interpret each eigenvalue and its eigenvector,
+ and often the slowest phenomena
+ (&hairsp;lowest eigen&shyvalues&hairsp;) 
+ are a good place to start.
+ </p>
+
+<h4> the size and phase of the eigenvectors </h4>
+
+<p> Each eigenvector has its own distinctive "shape",
+ namely the ratio between its elements.
+ However, the overall size is arbitrary.
+ If [ 0, 1&hairsp;] is an eigenvector,
+ then so is [ 0, 2&hairsp;].
+ For instance, in a first order system
+ (&hairsp;like a damper&hairsp;), all elements of the eigenvector
+ will decay at the same rate with time, and in fact [ 0, 2&hairsp;]
+ will soon  decay to [ 0, 1&hairsp;] and further, without 
+ changing the shape.
+ </p>
+
+<h4> normalizing the eigenvector </h4>
+
+<p> Since the size of an eigenvector is arbitrary,
+we can scale it to any value for easier human interpretation.
+Some packages scale the eigenvector to have an overall
+"vector length" of 1.
+ This helps to give readable numerical values,
+ but apart from this this it is as arbitrary
+ as any other choice.
+ <code>Math.js</code> as far as I can see does not seem
+ to bother
+ giving the eigenvectors any specific scale.
+ </p>
+ <p> &emsp;
+ It is often the case that one of the elements
+ in the state has an easy physical interpretation,
+ like an externally visible position or angle.
+ In such cases, it is a good option to scale
+ the vector to give 1 in this element.
+</p>
+<p> &emsp;
+ Suppose we wish to scale the vector relative 
+ to its element number [&hairsp;4&hairsp;] 
+ (&hairsp;with unfortunately, array index
+ [&hairsp;3&hairsp;]&hairsp;).
+ Continuing the example given in (3), we only need to do this :
+ </p>
+
+<table> <tr><td>
+<!-- Note trick to allow line break inside <pre> -->
+<pre><span style="color:green"><!--
+--><i>// scale EV_0 to its 4th element ( index [3] )</i><!--
+--></span>
+EV_0 = math.divide( EV_0, EV_0[3] );
+</pre>
+</td>
+<td style="width:80px; text-align:left;"> (4) </td>
+</tr> </table>
+
+<p> We keep using the same variable name here because after all
+ it still is the same eigenvector, but a new name can be used too. 
+ The reason to use <b><i>math.divide&hairsp;(&thinsp;)</i></b>
+instead of the simple fractional slash is that 
+this allows the elements to be complex numbers.
+Unlike in Matlab<sup>&hairsp;&copy;</sup>, the simple slash
+does not divide complex numbers in standard Javascript.
+</p> 
+
+<h4> complex eigenvalues </h4>
+ <p> Eigenvalues can come in complex pairs,
+ and then they will typically have complex eigenvectors.
+ Complex eigenvalues describe oscillating systems.
+ The real part of the <i>eigenvalue</i> represents a decay
+ with time (&hairsp;if it is negative; otherwise 
+ it is a growth rate&hairsp;).
+ The imaginary part is the oscillation frequency of the motion,
+ expressed in radians per second.
+ </p>
+ <p> &emsp;
+The elements of the eigenvector do not necessarily oscillate in sync.
+They may be out of "phase" with each other.
+ </p>
+ <p class="draft"> &emsp;
+ Maybe refer to the pendulum here for the rotating eigenvector plot.
+ </p>
+
+<h4> the matrix of eigenvectors </h4>
+
+ 
+<h4> expressing the state as a combination of eigenvectors </h4>
+
+<p> modal coordinates ( <i>q</i> or <i>&alpha;</i> )</p>
+
+<div class-"draft">
+<h4> further reading </h4>
+
+<p> Dahleh </p>
+</div>
+
+ 
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>

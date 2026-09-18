@@ -109,13 +109,20 @@ sub {
   top : 0.2em;
 }
 
-/*<pre> increase fixed-spacing font size 
+
+/* <pre> : increase fixed-spacing font size 
         ( default is 12, main text is 16 )         */
 /* margin is absolute, not inside <p>              */
-/* never used so far                               */
+/* used for displaying code in equation tables     */
 pre {
-  font-size       : 15px;
+  font-size       : 16px;
   margin          : 4px 64px;
+}
+
+/* <code> stays inline. Preserve multiple spaces.  */
+code {
+  font-size       : 16px;
+  white-space     : pre;
 }
 
 /* input field label not too tight with input box  */
