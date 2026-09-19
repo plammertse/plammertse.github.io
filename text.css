@@ -147,7 +147,8 @@ table {
 /* fit equations and equation numbers in a table   */
 .equation {
    width         : min( 90%, 775px);
-   margin-left   : min(  4%,  24px);
+/*   margin-left   : min(  4%,  24px);  */
+   margin-left   : min(  6%,  56px);
    /* padding-right : 36px;                        */
    /* use margin-right in column with eq. numbers  */
 }
@@ -244,7 +245,7 @@ button:active {
    this needs <mstyle displaystyle="true" first every time.   */
 math {
   font-size : 18px;
-  margin    : 0px 32px;
+/*  margin    : 0px 32px; */
 }
 
 /* Use this in a <div> around the mtable */
