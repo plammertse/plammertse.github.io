@@ -75,7 +75,7 @@ as discussed <a href="javascript.html"> <i>here</i></a>.
  <p> &emsp;
  The language of choice is Javascript,
  and the library of choice is 
- <a href="https://mathjs.org"> <code>Math.js</code></a>.
+ <a href="https:mathjs.org"> <code>math.js</code></a>.
  However, as seems unavoidable in the computing world,
  both  have a surprising history of quirks.
  Some caveats and workarounds are given below.
@@ -92,7 +92,7 @@ as discussed <a href="javascript.html"> <i>here</i></a>.
  are valid for integers 
  and floating point numbers, but not for complex numbers or matrices.
  These <code>Math</code> functions with a capital "<code>M</code>"
- are part of the Javascript language definition, but still they must be preceded
+ are part of the Javascript language definition, but they must be preceded
  by the <code>Math</code> prefix unless special tricks are used.
  </p>
 
@@ -142,7 +142,7 @@ Interestingly, the&nbsp;functions from this library are
 
 <h4> specific versions of math.js </h4>
 <p> The software world has a long and sad history of
- (&hairsp;near&hairsp;) free software suddenly disappearing
+ (&hairsp;near&hairsp;) free software disappearing
  behind paywalls by companies buying up or otherwise
  killing the competition,
  and of unsollicited changes in syntax breaking old code
@@ -159,7 +159,7 @@ Interestingly, the&nbsp;functions from this library are
  in a local copy, in an attempt to keep its functionality
  unaffected by the vagaries of the outside world. 
 
-<h4> eigenvalues and eigenvectors in Math.js </h4>
+<h4> eigenvalues and eigenvectors in math.js </h4>
 
 <p> This website uses matrix eigenvalues and eigenvectors
  in state space analysis of aircraft.
@@ -195,10 +195,7 @@ let E  = eigs( A);
 <td style="width:80px; text-align:left;"> (2) </td>
 </tr> </table>
 
-<p> It would have been nice if the outputs had been
-an array of eigenvalues and a matrix of eigenvectors,
-but no such luck. Instead, the output is an array of objects,
- one per eigenvalue.
+<p> The output is an array of objects, one per eigenvalue.
  These objects each have two proper&shyties,
  called <b><i>value</i></b> and <b><i>eigenvector</i></b>.
  It is best to ignore the first property,
@@ -209,27 +206,26 @@ but no such luck. Instead, the output is an array of objects,
  and the other one <b><i>vector</i></b>.
  </p>
  <p> &emsp;
- There are generic ways of converting the <b><i>eigenvector</i></b>
- object to the conventional matrix-vector form, by first 
- "destructuring" it with the ({&hairsp;}) syntax
- and an "arrow function" to extract just an array of vectors,
- and then feeding this array to <code>math.matrixFromColumns()</code>
- using the spread operator "..." (&thinsp;three dots&thinsp;)
- to indicate "run over all the items of the array".
- </p>
- <p> &emsp;
- However, for our typically small matrices it is sufficient,
+ It would have been nice if the outputs had been
+an array of eigenvalues and a matrix of eigenvectors,
+but no such luck.
+We will show later how to bring the output into 
+this more conventional matrix-vector form.
+</p>
+<p> &emsp;
+ However, for our typically small matrices it is
+ often sufficient,
  and indeed much simpler to park each of the 
- eigenvectors into its own vector variable like this :
+ eigen&shyvectors into its own vector variable like this :
  </p>
  
 <table> <tr><td>
 <pre>
-let ED_0 = E[0].eigenvectors.value;
-let EV_0 = E[0].eigenvectors.vector;
+let eig_val_0 = E[0].eigenvectors.value;
+let eig_vec_0 = E[0].eigenvectors.vector;
 
-let ED_1 = E[1].eigenvectors.value;
-let EV_1 = E[1].eigenvectors.vector;   
+let eig_val_1 = E[1].eigenvectors.value;
+let eig_vec_1 = E[1].eigenvectors.vector;   
                 <i>( etc.)</i>
 </pre>
 </td>
@@ -253,28 +249,8 @@ come in complex pairs,
   <i>a</i>&thinsp;&#177;&thinsp;i&hairsp;<i>b</i>.
 </p>
 
-<h4> assembling the eigenvectors into a matrix of columns </h4>
 
-
-<p class="draft">
-&emsp; Note somewhere that math.js 1D vectors are neither
-row vectors nor column vectors. They are sort of neutral. 
-  <code>Math.js</code> chooses the most likely interpretation when they are
-passed to a function, unless the interpretation
- is forced by the definition of the vector as a 2D matrix
- with either row or column dimension.
- </p>
-
-<table> <tr><td>
-<pre>
-let EV = math.matrixFromColumns( EV_0, EV_1, <i>( etc. )</i> );
-</pre>
-</td>
-<td style="width:80px; text-align:left;"> (4) </td>
-</tr> </table>
- 
-
-<h4> the sorting order of the eigenvalues </h4>
+<h4> sorting order of the eigenvalues </h4>
 
 <p> The <b><i>eigs(&thinsp;)</b></i> function
  lists the eigenvalues sorted
@@ -289,7 +265,7 @@ This is an arbitrary but reasonable choice.
  are a good place to start.
  </p>
 
-<h4> the size and phase of the eigenvectors </h4>
+<h4> the scale of the eigenvectors </h4>
 
 <p> Each eigenvector has its own distinctive "shape",
  namely the ratio between its elements.
@@ -309,9 +285,8 @@ This is an arbitrary but reasonable choice.
 we can scale it to any value for easier human interpretation.
 Some packages scale the eigenvector to have an overall
 "vector length" of 1.
- This helps to give readable numerical values,
- but apart from this this it is as arbitrary
- as any other choice.
+ This helps to give readable numerical outputs,
+ but apart from this this it is as arbitrary a choice as any.
  <code>Math.js</code> as far as I can see does not seem
  to bother giving the eigenvectors any specific scale.
  </p>
@@ -342,8 +317,9 @@ EV_0 = math.divide( EV_0, EV_0[3] );
 <td style="width:80px; text-align:left;"> (4) </td>
 </tr> </table>
 
-<p> We keep using the same variable name here because after all
- it still is the same eigenvector, but a new name can be used too. 
+<p> In this example we keep using the same variable name
+ here because after all  it still is the same eigenvector,
+ but a new name can be used too. 
  The reason to use <b><i>math.divide&hairsp;(&thinsp;)</i></b>
 instead of the simple fractional slash is that 
 this allows the elements to be complex numbers.
@@ -367,13 +343,61 @@ The elements of the eigenvector do not necessarily oscillate in sync.
 They may be out of "phase" with each other.
  </p>
  <p class="draft"> &emsp;
- Maybe refer to the pendulum here for the rotating eigenvector plot.
+ Discuss (&hairsp;and plot&hairsp;) rotating eigenvectors on a separate page&hairsp;?
+ Becasue that is not math, it's physics.
+ Use the the damped pendulum to highlight the more than 90&deg; phase
+ between an element and its "derivative" (&hairsp;if the derivative
+ has its own decay&hairsp;).
  </p>
 
-<h4> the matrix of eigenvectors </h4>
+<h4> assembling the eigenvectors into a matrix of columns </h4>
 
+<p> It can be useful to organize the eigenvectors into a column matrix.
+</p>
+<p> &emsp;
+ There are generic ways of converting the <b><i>eigenvector</i></b>
+ object to this conventional form, by first 
+ "destructuring" it with the (&hairsp;{&thinsp;}&hairsp;) syntax
+ and an "arrow function" <code>arg=>arg.vector</code>
+ to extract an array of just the <b><i>vector</b></i>&hairsp;'s,
+ and then feeding this array to&nbsp;<code>math.matrixFromColumns()</code>
+ using the spread operator "..." (&thinsp;three dots&thinsp;)
+ to indicate "run&nbsp;over all the items of the array".
+  But for our typically small matrices,
+  it may  be more readable to just assemble the matrix
+  from the individual vector variables found earlier in (3) :
+</p>
+
+<table> <tr><td>
+<pre>
+let EV = math.matrixFromColumns( eig_vec_0, eig_vec_1, <i>( etc. )</i> );
+</pre>
+</td>
+<td style="width:80px; text-align:left;"> (4) </td>
+</tr> </table>
  
-<h4> expressing the state as a combination of eigenvectors </h4>
+<p> The procedure with the function call seems a bit contrived,
+ but it is needed because assembling a matrix from vectors
+ in the obvious way of pushing the arrays into a surrounding array
+ will put the vectors into the matrix's rows instead of in its columns.
+ </p>
+ <p> &emsp;
+ Unlike in <code>Matlab<sup>&copy;</sup></code>, Javascript
+ <code>math</code> vectors are neither row nor column vectors,
+ they just "are". The <code>math.js</code> library routines choose
+  the most likely interpretation
+  when they are passed a vector, unless the user forces
+  the interpretation by the definining the input vector
+  as a 2D matrix with either row or column dimension.
+ </p>
+ <p> &emsp;
+ This default behaviour is normally a good thing,
+ but in the case of assembling a matrix from columns
+ it&nbsp;requires this bit of extra care.
+ </p>
+
+
+<h4> assembling the state from eigenvectors </h4>
 
 <p> modal coordinates ( <i>q</i> or <i>&alpha;</i> )</p>
 
