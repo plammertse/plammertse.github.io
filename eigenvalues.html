@@ -1,0 +1,104 @@
+<!--------------------------------------------------------------
+ file    : eigenvalues.html
+ purpose : Part of state space story
+ ---------------------------------------------------------------
+  2026-09-22 PL new
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Eigenvalues </title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "state_space.html"> State space </a>  </li>
+      <li> <a href = "eigenvectors.html"> Eigenvectors </a>  </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> eigenvalues </h2>
+
+ <h4> the eigenvalue of a scalar system </h4>
+ 
+ <p> Let us start by simplifying the matrix equation 
+ <a href="state_space.html#(1)">(1)</a> on the 
+ state space page to its scalar version :
+ </p>
+ 
+ <table class="equation"> <tr> <td>
+   &emsp; &emsp; <i>x</i><sup>&thinsp;&bull;</sup>
+      &thinsp; = &thinsp; <i>a</i> <b>.</b> <i>x</i> +
+                          <i>b</i> <b>.</b> <i>u</i> 
+</td> <td style="width:50px; text-align:right">            (1)
+</td> </tr> </table>
+
+<p> If <i>a</i> has a negative value, then this equation says that
+<i>x</i> get smaller in time at a rate equivalent
+ to its own size. The slope of the graph of <i>x</i>
+ against time is proportional to its height.
+ This is the graph of an exponential decay.
+ </p>
+<p> Physically, <i>x</i> could be the velocity of a
+ mass in oil. This is the equation of a viscous damper.
+ </p>
+
+<h4> two real eigenvalues </h4>
+
+<p> TBW. </p>
+ 
+ <!--
+ <div class="draft">
+ 
+
+ <p> Higher orders, refer to airplane modes. And chains of springs.
+ </p>
+ <h4> the sum of the damping </h4>
+ 
+ <p> The system diagonal contains all the damping.
+ The rest is redistribution only.
+ </p>
+ <p> Modes. Refer to coupled pendulums.
+ </p>
+ 
+ <h4> eigenvectors </h4>
+ 
+ <p> TBW. </p>
+ -->
+  
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+
+</body>
+</html>

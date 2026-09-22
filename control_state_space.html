@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<!--------------------------------------------------------------
+-- file    : control_state_space.html
+-- purpose : Page for website Piet Lammertse
+----------------------------------------------------------------
+--   history :
+--     2025-11-24 new
+---------------------------------------------------------------> 
+
+<head>
+   <meta charset  = "UTF-8"
+         name     = "viewport" 
+         content  = "width=device-width, initial-scale=1.0">
+   <link rel = "stylesheet" href = "text.css">
+   <link rel = "stylesheet" href = "menu.css">
+   <title> Piet Lammertse on state space control </title>
+</head>
+
+<body>
+
+<!-- HAMBURGER MENU ------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html"> Home </a>               </li>
+      <li> <a href = "state_space.html"> State space </a> </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> state space control </h2>
+
+
+<h4> SISO systems </h4>
+
+ <p> The items under the <b><i>Control</b></i> top bar menu 
+ are primarily about single input,
+ single output (&hairsp;so-called SISO&hairsp;) systems,
+ typically the back-and-forth control around standstill
+ of a single electric (&hairsp;"servo"&hairsp;) motor.
+ </p>
+ <p>
+  This branch of control is often called "motion control".
+Among other things, it occurs in 
+<a href="haptics.html"> haptics</a>.  
+ </p>
+
+<h4> MIMO systems </h4>
+
+ <p> Another interesting class of problems is that
+ of multi-input, multi-output (&hairsp;MIMO&hairsp;)
+ control systems,
+ like the <a href="stability.html"> motions of an aircraft</a>.
+ These problems are discussed under the <b><i>Aircraft</b></i>
+ header of the top bar menu.
+ </p>
+ <p> In particular, they benefit from so-called
+ <a href="state_space.html"> "state space"</a>
+ analysis. This is discussed further in the 
+ <b><i>Aircraft</b></i> section.
+ </p>
+
+<!-- FOOTER --------------------------------------------------------->
+<br><br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
+
+</body>
+</html>

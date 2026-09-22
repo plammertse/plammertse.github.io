@@ -1,6 +1,6 @@
 <!--------------------------------------------------------------
  file    : state_space.html
- purpose : Generic stae space story
+ purpose : Generic state space story
  ---------------------------------------------------------------
   2026-09-14 PL isolated generic state space story,
                  moved out state-transforms.html
@@ -39,12 +39,13 @@
 
    <ul>
       <li> <a href = "index.html">  Home </a>              </li>
-      <li> <a href = "state_transforms.html">
-            Transforms </a></li>
-      <li> <a href = "state_space_symmetrical.html">
-            Symmetrical </a></li>
-      <li> <a href = "state_space_symmetrical.html">
-            Asymmetrical </a></li>
+      <li> <a href = "eigenvalues.html">
+            Eigenvalues </a></li>
+      <li> <a href = "eigenvalues.html">
+            Eigenvectors </a></li>
+<!--      <li> <a href = "*.html">
+            Base changes </a></li>
+ -->
    </ul>
 </nav>
 
@@ -54,42 +55,61 @@
 
 <h4> linear state space equations</h4>
 
-<p> "Modern" (&hairsp;since 1980..&hairsp;) control theory
+<p> "Modern" control theory
+ (&hairsp;well, modern in 1980..&hairsp;) 
  often uses so-called <i>linear state space models</i>.
  </p>
+ <a name="(1)">
  <p> &emsp;
- These models are especially useful in systems with more than one output,
- and sometimes also more than one input.
- These models can have many internal degrees of freedom,
- simple in themselves, but complicated in their interactions.
-  Aircraft stabilty and control analysis is a prime example.
+ These models are especially useful in mult-input, multi-output
+ systems.
+ They can have many internal degrees of freedom,
+ often simple in themselves, but complex in their interactions.
+  Aircraft stabilty and control analysis is a&nbsp;prime example.
  </p>
- <p> &emsp;
+<p> &emsp;
  The general formulation of such a model is :
  </p>
- 
-<table class="equation"> <tr> <td>
+ <table class="equation"> <tr> <td>
    &emsp; &emsp; <b><i>x</i></b><sup>&thinsp;&bull;</sup>
       &thinsp; = &thinsp; <b>A . <i>x</i> </b> +
                           <b>B . <i>u</i> </b> 
 </td> <td style="width:50px; text-align:right">            (1)
 </td> </tr> </table>
 
-<p> The matrices <i><b>A</b></i> and <i><b>B</i></b>
- are blocks of constants.
- They represent the system, linearized around some basic state,
- usually an equilibrium condition like a pendulum
- hanging straight down or an airplane in steady flight.
+<p> This is shorthand for <b><i>N</b></i> linear equations
+ in <b><i>N</b></i> scalar variables.
+<p> &emsp; The matrix <i><b>A</b></i> is a square,
+ <i>N x N</i> blocks of constants,
+ and <i><b>B</i></b> is a matrix <i>N</i> high
+and as wide as the number of inputs.
+If the number of inputs is 1, then <b><i>B</b></i> 
+ is a simple column vector.
  </p>
-<p> &emsp; The variables in the so-called "state vector"
- <i><b>x</b></i>, together describe the momentary motion
- of the system.
- The&nbsp;vector <i><b>u</b></i> lists the usually also
-  time-varying input variables to the system. 
+
+<h4> a dynamic system </h4>
+
+<p> Together the equations, and therefore the matrices (1),
+ represent a dynamic linear system. More often than not,
+ the linear system is actually a non-linear one, 
+linearized around some basic state. 
+ This basic state is typically an equilibrium condition
+ whose stability we wish to study or improve.
+ It may be a pendulum hanging straight down,
+ or an airplane in steady state flight.
+ </p>
+ <p> &emsp; 
+ The variables in the so-called "state vector"
+ <i><b>x</b></i>, together completely describe
+ the momentary "state" of the system, and therefore also
+ its future, apart from possible input signals.
+ The&nbsp;vector <i><b>u</b></i> lists the
+  input variables, like steering commands
+  or feedback signals. 
  
-<p> &emsp; The matrix equation gives the evolution over time,
- of the  <b><i>x</i></b> under the influence of 
- <b><i>x</i></b> itself,
+<p> &emsp; The matrix equation gives the evolution over time
+ of the state <b><i>x</i></b>, under the influence of 
+ <b><i>x</i></b> itself
  and of the inputs <b><i>u</i></b>.
  Both <b><i>x</i></b> and <b><i>u</i></b>
  can have more than element, which is why 
@@ -116,82 +136,21 @@
  </p>
  
  <h4> size of the matrices </h4>
- <p> We will find that <b>A</b> has to be a square matrix
- with sides the size of the state, and <b>B</b>
- has to be as wide as the size of the input vector
- <b><i>u</b></i>, and as high as the state vector.
+ 
+ <p> We will find that <b><i>A</b></i> has to be a square matrix
+ with sides the size of the state, and <b><i>B</i></b>
+ is as high as the state vector, and as wide as the number of inputs,
+ i.e. the size of the input vector <b><i>u</b></i>.
  </p>
  
- <div class="draft">
+ <h4> eigenvalues and eigenvectors</h4>
  
- 
- <h4> eigenvalues </h4>
- 
- <p> TBW. First order system, scalar.
- Second order, refer to pendulum. 
+ <p> The next pages will discuss the 
+ "<a href="eigenvalues.html">eigenvalues</a>"
+ and the
+ "<a href="eigenvectors.html">eigenvectors</a>"
+ of the system, and everything this leads to.
  </p>
- <p> Higher orders, refer to airplane modes. And chains of springs.
- </p>
- <h4> the sum of the damping </h4>
- 
- <p> The system diagonal contains all the damping.
- The rest is redistribution only.
- </p>
- <p> Modes. Refer to coupled pendulums.
- </p>
- 
- <h4> eigenvectors </h4>
- 
- <p> TBW. </p>
- 
- <h4> from initial state to participation vector </h4>
- 
- <p> TBW. </p>
- 
- <h4> TODO </h4>
- 
- <p> Refer to pendulum, x not orthogonal to v. </p>
- <p> Refer to coupled pendulums for modes. </p>
- 
- </div>   <!-- end draft -->
- 
- <h4> base transformations </h4>
- 
- <p> The choice of the state elements is unique in one way,
- because these are the elements needed
- to describe the dynamics of the system.
- But they can be scaled to different units, 
- and even combined in different ways.
- This&nbsp;very useful trick is discussed 
- <a href="state_transforms.html"> here</a>. 
- </p>
- 
-<div class="draft">  
-
-<h4> eigenvectors </h4>
- 
- <p> Matlab conventions.
- </p>
- <p> &emsp;
-Eigenvalues ( VE, E ), VE( #element, #eigenvalue),
- check that VE( :, 3:6) are the column eigenvectors for 
- the eigenvalues 3:6.
- Eigenvalues are ordered ****.
- Eingevectors are normalzized to ****.
- The *** element is aligned with the real axis,
- and the whole thing can be scaled and rotated
- (==scaled with a unit imaginary number) at will.
- </p>
-<p>
-In imaginary pairs, choose the eigenvalues with positive imaginary part.
-They rotate left (anti-clockwise) with time, because of i&omega;t. 
-</p>
-<p> The accompanying eigenvector can have elements with positive and negative
-imaginary parts. They don't have absolute phase anyway,
-only relative phase difference between the elements.
-</p>
-</p>
-</div>
  
 <!-- FOOTER --------------------------------------------------->
 <br> <br>

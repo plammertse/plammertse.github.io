@@ -145,10 +145,12 @@ table {
 }
 
 /* fit equations and equation numbers in a table   */
+/* adapted 2026-09 wehn math margin went to zero   */
 .equation {
-   width         : min( 90%, 775px);
+/*   width         : min( 90%, 775px);  */
 /*   margin-left   : min(  4%,  24px);  */
-   margin-left   : min(  6%,  56px);
+   width         : min( 85%, 775px);
+   margin-left   : min(  10%,  56px);
    /* padding-right : 36px;                        */
    /* use margin-right in column with eq. numbers  */
 }
@@ -322,6 +324,7 @@ svg text {
 /* TODO  This is a nice header for printing on every page   */
 /*       Trouble is, it covers the top of the normal text.  */
 /*       This necessitates the table trick                  */
+/* TODO 2026-09 : use center, test with top menu bar */
 .header {
    position    : fixed;                /* fixed will print on every page   */
    left        : 32px;

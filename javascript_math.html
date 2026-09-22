@@ -143,7 +143,7 @@ Interestingly, the&nbsp;functions from this library are
 <h4> specific versions of math.js </h4>
 <p> The software world has a long and sad history of
  (&hairsp;near&hairsp;) free software disappearing
- behind paywalls by companies buying up or otherwise
+ behind paywalls by com&shypanies buying up or otherwise
  killing the competition,
  and of unsollicited changes in syntax breaking old code
  when running a later version.
@@ -167,7 +167,7 @@ Interestingly, the&nbsp;functions from this library are
  <code>Math.js</code> syntax, and some of its idiosyncrasies.
  
 </p>
-<p> &emsp; A matrix can be defined as a standard
+<p> A matrix can be defined as a standard
  two-dimensional Javascript array :
  </p>
  <p>
@@ -383,17 +383,17 @@ let EV = math.matrixFromColumns( eig_vec_0, eig_vec_1, <i>( etc. )</i> );
  </p>
  <p> &emsp;
  Unlike in <code>Matlab<sup>&copy;</sup></code>, Javascript
- <code>math</code> vectors are neither row nor column vectors,
- they just "are". The <code>math.js</code> library routines choose
+ <code>math</code> vectors are neither row nor column vectors.
+ They just "are". The <code>math.js</code> library routines choose
   the most likely interpretation
   when they are passed a vector, unless the user forces
-  the interpretation by the definining the input vector
-  as a 2D matrix with either row or column dimension.
+  their hand by definining the input vector
+  as a 2D matrix with either specific row or column dimension.
  </p>
  <p> &emsp;
  This default behaviour is normally a good thing,
  but in the case of assembling a matrix from columns
- it&nbsp;requires this bit of extra care.
+ it requires the above bit of extra care.
  </p>
 
 
