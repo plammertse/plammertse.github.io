@@ -6,6 +6,7 @@
 -- note 2  : Multilevel menu's defined in menu.css and menu.js 
 ---------------------------------------------------------------
 -- history :
+--     2026-09-25 removed non-standard svg path setting
 --     2026-08-19 add draft text settable option
 --     2026-07-26 new print headers and footers fall over a
 --                text area cleared by a table header trick
@@ -56,8 +57,8 @@ a {
 
 /* line spacing + indent for header         */
 h2 {     /* default font desktop/tablet 30/24 */
-  margin     : 12px 0 0 16px;      /* top, right, bottom, left */
-/*  margin-top : 16px;   */
+/*  margin     : 16px 0 0 16px;   */   /* top, right, bottom, left */
+  margin     : 0 0 0 32px;      /* top, right, bottom, left */
   max-width : 800px;
 }
 
@@ -98,6 +99,10 @@ hr {
   max-width   : 800px;
 }
 
+nav {
+   margin-bottom : 10px;
+}
+   
 /* prevent sup and sub from increasing line height */
 sup, sub {
   vertical-align:  baseline;
@@ -250,23 +255,6 @@ math {
 /*  margin    : 0px 32px; */
 }
 
-/* Use this in a <div> around the mtable */
-/* Places matrix on the right. Use .caption instead ? */
-/*
-.math-container {
-  display         : flex;
-  align-items     : left;
-  justify-content : center; / * Safely centers the table without breaking rows * /
-}
-*/
-
-/* AI advice for too-deep fractions below sqrt doesn't seem to work.
-math, mrow {
-    font-family: "Latin Modern Math", STIXGeneral,
-                  DejaVu Math TeX Gyre, sans-serif;
-}
-*/
-
 /* nice for numerical matrices */
 mtd {
   padding    : 5px 16px;           /* top, right, bot, left */
@@ -278,26 +266,11 @@ mspace {
    min-width : 0.5em;
 }
 
-/* this *overrides* SVG settings in code */
-svg path {
-   vector-effect: non-scaling-stroke;  /* TODO check if this is useful */
-}
-
-/* try to avoid text pixel jitter (no luck) */
-/*
-svg text {
-  // A rotation small enough to be completely invisible to the human eye
-  transform: rotate(0.01deg); 
-  transform-origin: center;
-  text-rendering : geometricPrecision;
-}
-*/
-
 .footer {
    position   : fixed;
    left       : 32px;
    bottom     : 0;
-   width      : min( 88%, 800px);   /* PL */
+   width      : min( 88%, 800px);   /* PL, just covers text */
    background-color: white;
    color            : #000070;      /* dark blue
 /*   text-align : right;     */     /* hard to change in HTML ? */
@@ -332,7 +305,8 @@ svg text {
    /* display     : visible;  */              /* test */
 /*   left        : 32px;  */
    top         : 0;                    /* note @page margin below */
-   width       : min( 88%, 800px);
+/*   width       : min( 88%, 800px);   */
+   width       : min( 100%, 800px);   /* 2026-09-22 */
    background-color: white;
    color       : black;
    text-align  : center;
@@ -375,23 +349,23 @@ svg {
 
 /* nicer PDF's */
 @media print {
-
+   /* hide navigation, define class .no-print, */
+   /* hide footer a ( prev, next fields )      */
    nav, .footer a, .no-print {
       display : none !important; }
    .print-only {
       display : block !important; }
    .header {
-      display : block !important; }
+      display : block !important; }  /* show header only on print
 
-   /* hide navigation and footers, define class .no-print */
-   /* no need for the h2 margin at top of a printed page */
-   h2 {
-      margin-top : 0;            /* same space as text, for header table trick */
-/*      margin-top   : 8px; */ }  /* small space below header ruler */
+   .header { width : 768px; }    /* seems needed */
+   .footer { width : 768px; }    /* seems needed */
+        
+   h2 { margin-top   : 8px; }  /* bit more space below header ruler */
    h2, h3, h4, h5 {
       break-after  : avoid; }
    /* This breaks the table page header trick :
-   img,table {
+   img, table {
       break-inside : avoid; }
    */
    

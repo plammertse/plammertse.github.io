@@ -13,6 +13,27 @@
 // It will now show positive up (from y=0) in the viewBox.
 // --------------------------------------------------------------
 
+// -------------------------------------------------------------
+// Set a decent svg viewBox (maybe shift and zoom later)
+function svg_viewbox( x, y )  {
+   // Convert axis coordinates with Y positive up
+   // to SVG string with top left corner and width, height.
+   // Top left corner becomes y_screen = -y_my_coordinates.
+   // ParseFloat strips trailing zeros.
+   // Use this viewBox string outside, in a calling *.js, via :
+   //   (svg).set Attribute( "viewBox", vB);
+   if ( x.length == undefined )  {
+      return "";
+   }
+   let w  = x[1] - x[0];
+   let h  = y[1] - y[0];
+   return ( parseFloat(  x[0].toFixed(3)) + ' ' +
+            parseFloat( -y[1].toFixed(3)) + ' ' +
+            parseFloat(     w.toFixed(3)) + ' ' +
+            parseFloat(     h.toFixed(3)) );
+}
+
+// -------------------------------------------------------------
 function svg_title( title ) {
    
    let svgString = ' ';
@@ -22,7 +43,12 @@ function svg_title( title ) {
    return svgString;
 }
 
+// -------------------------------------------------------------
 function svg_data_xy( x, y )  {
+
+if ( x.length == undefined )  {
+   return "";
+}
    
    let data = '"M ' +
          x[0].toFixed(3) + ',' + -y[0].toFixed(3) + ' ';

@@ -5,6 +5,7 @@
 //           rendered as <path> elements with a single group
 //           transform instead of per-point trig every frame.
 // --------------------------------------------------------------
+//  2026-09-24 PL stroke-width in viewport coordinates
 //  2026-09-08 PL changed plot theta to anti-clockwise
 //  2026-08-27 PL more development around viewBox etc.
 //  2026-08-22 PL simplified the SVG string building,
@@ -17,7 +18,8 @@
 
 // -------------------------------------------------------------
 let B747 = function()  {                     // constructor
-   this.niceViewBox();
+   // suggest a nice viewbox (string) for outside use
+   this.viewBox = svg_viewbox( [ -50, 50 ], [ -25, 25 ]); 
 
    this.title = 'B747';  // default title
    this.id    = 'b747';  // default id
@@ -282,25 +284,6 @@ let B747 = function()  {                     // constructor
 }; // end B747 constructor
 
 // -------------------------------------------------------------
-// Set a decent svg viewBox (maybe shift and zoom later)
-B747.prototype.niceViewBox = function()  {
-   // Size and scale the viewBox.
-   // Use this in a calling *.js with access to svg, if desired.   
-   // Place the zero at center for now.
-   // Unfortunately Y is positive down in SVG. 
-   // This will be handled here in code, not via SVG transforms.
-   let h  =  50;
-   let y0 = -h/2;
-   let w  = 100;
-   let x0 = -w/2;
-   this.viewBox =  x0.toFixed(3) + ' ' + y0.toFixed(3) + ' ' +
-                    w.toFixed(3) + ' ' +  h.toFixed(3);
-   // Use this viewBox outside, in a calling *.js, via :
-   //   (svg).set Attribute( "viewBox", vB);
-   //       /* (top left) x  y width height */
-}
-
-// -------------------------------------------------------------
 // Set a non-default title
 B747.prototype.setTitle = function( title )  {
    this.title = title;
@@ -337,9 +320,13 @@ B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
    
    // start local string, then append the rest below
    svgString = svg_title( this.title );
+   
    if ( this.id !== undefined ) {
       svgString += '<g id="' + this.id + '" >\n';
    }
+
+   // Set the line width in viewport cordinates
+   svgString += '<g stroke-width="0.15"> \n';
    
    // Calculate cos and sin outside move for efficiency
    // Note this is anti-clockwise svg plot theta
@@ -378,8 +365,10 @@ B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
    [ x, y ] = move_xy( this.xQQ, this.yQQ,
                     xPos, yPos, cosTheta, sinTheta);
    svgString += '<path d = ' + svg_data_xy( x, y );
-   svgString += ' stroke="darkgray" stroke-width="3" ' +
-                ' stroke-dasharray="2.3,2.3" />\n';
+//   svgString += ' stroke="darkgray" stroke-width="0.2" ' +
+//                ' stroke-dasharray="2.3,2.3" />\n';
+   svgString += ' stroke="darkgray" stroke-width="0.5" ' +
+                ' stroke-dasharray="0.4 0.4" />\n';
                  
       // flashing beacon light
       // ( real beacon flashes 40 to 100 times/sec )
@@ -449,10 +438,14 @@ B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
    // close the <g> coloring the flying surfaces
    svgString += '</g>   <!-- end silver flying surfaces --> \n';
 
+   // close the <g> setting the id
    if ( this.id !== undefined ) {
       svgString += '</g>   <!-- end id = "' +
       this.id + '" --> \n';
    }
+   // close the <g> setting the line width
+   svgString += '</g> \n';
+
    svgString += '   <!-- end B747 --> \n';
  
    this.svgString = svgString;

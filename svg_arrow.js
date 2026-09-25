@@ -3,6 +3,7 @@
 // purpose : Graphical arrow
 // note    : Needs HTML to inlude svg_tools.js (for move_xy)
 // --------------------------------------------------------------
+//  2026-09-24 PL handle negative arrow length gracefully
 //  2026-06-22 PL new, cloned from lever.js and arrow.m.
 // --------------------------------------------------------------
 
@@ -25,17 +26,20 @@ let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
    this.eW = eW;        // useful if edge is white
    
    // Default colors
+   // If you ever use stroke, then take great care of line width
    this.fill   = 'black';
    this.stroke = 'none';
    
    this.tL = 4*hL;       // total length default
-}; // end Arrow constructor
+}; // end constructor
 
 // --------------------------------------------------------------
 Arrow.prototype.setColors = function( fill  = 'yellow',
                                       stroke= 'none') {
    this.fill   = fill;
    this.stroke = stroke;   // white can be useful too
+   console.log( fill);
+   console.log( stroke);
 }
 /*   // TODO
 
@@ -71,10 +75,16 @@ Arrow.prototype.setEnds = function( xB, yB, xP, yP )  {
 // --------------------------------------------------------------
 Arrow.prototype.update = function( xBase=0, yBase=0,
                                    arrow_length=this.tL, theta_CCW=0 )  {
-   
+
    let cosTheta = Math.cos( theta_CCW);
    let sinTheta = Math.sin( theta_CCW);
-   let tL       = arrow_length;
+   let tL       =  arrow_length;
+   // trick for negative arrow length
+   if ( arrow_length < 0 )  {
+      cosTheta = Math.cos( theta_CCW + Math.PI);
+      sinTheta = Math.sin( theta_CCW + Math.PI);
+      tL       = Math.abs( arrow_length);
+   }
    
    // Re-calculate arrow points for length L :
    // TODO
@@ -99,8 +109,10 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
    if ( this.eW !== undefined ) {
       svgString += '    stroke-width='   + (this.eW).toFixed(3);
    }
+   
    svgString += '    fill="'   + this.fill   + '"' + 
-                 ' stroke="'   + this.stroke + '" />\n';
+                 ' stroke="'   + this.stroke + 
+                 '" />\n';                                 // end <path .. />
 
    this.svgString = svgString;
    // console.log( svgString);

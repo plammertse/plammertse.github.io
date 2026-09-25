@@ -26,8 +26,8 @@ const rCG = 1.7;                  // nice size in[m]
 let CG  = new CG_marker( 0, 0, rCG );
 
 let rYY = 12.47;                    // Ixx in Etkin, see memo PL 25-057
-let YY1 = new CG_marker( -rYY, 0, 0.7*rCG, 'white', 'grey' );
-let YY2 = new CG_marker(  rYY, 0, 0.7*rCG, 'white', 'grey' );
+let YY1 = new CG_marker( -rYY, 0, 0.7*rCG, 'white', 'dimgrey' );
+let YY2 = new CG_marker(  rYY, 0, 0.7*rCG, 'white', 'dimgrey' );
 
 // initialize MAC marker
 const xMAC = 8.324/4;               // 25 % of Etkin p.65 MAC
@@ -38,10 +38,12 @@ let MAC  = new CG_marker( xMAC, 0, rCG, 'cyan' );  // "air" color
 let liftArrow = new Arrow( 5, 3, 1.2, 2);  // head L, W, stem, edge (centered)
 liftArrow.setColors( 'blue', 'white');   // white outline if base close to MAC
 
-let liftSpring = new Spring( 20, 8, 4 );   // zero length, N coils, line width
+//let liftSpring = new Spring( 20, 8, 4 );   // zero length, N coils, line width
+let liftSpring = new Spring( 20, 8, 0.5 );   // zero length, N coils, line width
 liftSpring.setColor( 'mediumblue');
 
-let  springAnchor = new Floor( 5, 3, 2, 4 );  // length, height, N, thickness
+//let  springAnchor = new Floor( 5, 3, 2, 4 );  // length, height, N, thickness
+let  springAnchor = new Floor( 5, 3, 2, 0.5 );  // length, height, N, thickness
 springAnchor.setColor( 'blue');   // lightblue is also nice
 
 let tempString = '&Delta;L<tspan baseline-shift="sub">&alpha;</tspan>';
@@ -129,7 +131,8 @@ function run() {
 */
       
       // lift text
-   liftText.update( xMAC+6, liftSpring.S0-4-0.1*lift ); // minus for +Y
+//   liftText.update( xMAC+6, liftSpring.S0-4-0.1*lift ); // minus for +Y
+   liftText.update( xMAC+6, liftSpring.S0-4.5+0.2*lift ); // minus for +Y
    svg.innerHTML += liftText.svgString;
 
 /* THIS DOESN'T WORK YET, ALTHOUGH IT DOES GET THE RIGHT <g . . .>

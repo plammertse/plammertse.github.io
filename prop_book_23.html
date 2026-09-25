@@ -34,20 +34,27 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_22.html">
+               &#x25C4;	 Previous</a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_24.html">
+               Next &#x25BA; </a>                          </li>
    </ul>
 </nav>
 
+<!-- START TABLE TRICK ---------------------------------------->
+<!-- Trick to make space for the true header and footer     -->
+<!-- The trick table body surrounds the whole page text.    -->
+<!-- True header and footer are at end of page.             -->
 
+<!-- table trick for every-page print headers and footers   -->
+<table>
+<!-- table header makes empty space for the "real" header   -->
+<thead> <tr> <td>  <br class="print-only">  </td> </tr> </thead>
 
-
-<!-- PAGE HEADER ---------------------------------------------->
-
-<p class="center" style="margin-top:6px;">
-               <i> VORTEX THEORY </i>     </p>
-<!-- <hr style="margin : 0 0; margin-left:32px;"> -->
-<hr style="width:832px;">
+<!-- encapsulate page text in the body of the trick table   -->
+<tbody> <tr> <td>
 
 <!-- CHAPTER -------------------------------------------------->
 
@@ -739,11 +746,26 @@ turns" per length&hairsp;).
  inside the tube and zero induction outside it.
 </p>
 
-<!-- FOOTER ------------------------------------------------------->
-<br> <br> <br>
+<!-- end table trick body  -->
+</td> </td>   </tbody>
+
+<!-- table trick footer (clears empty space for the "real" one) -->
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+
+<!-- end table trick overall -->
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VORTEX THEORY </i>
+</div>
+
+<!-- TRUE FOOTER -------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ------------------------------------------------------>
 <!-- needed for hamburger menu, must be at end of body -->
+<script src = "draft.js"></script>
 <script src = "menu.js"></script>
 
 </body>

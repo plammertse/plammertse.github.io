@@ -34,16 +34,25 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_21.html">
+               &#x25C4;	 Previous</a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_23.html">
+               Next &#x25BA; </a>                          </li>
    </ul>
 </nav>
 
+<!-- START TABLE TRICK --------------------------------------->
+<!-- Trick to clear space for the true header and footer    -->
+<!-- True header and footer are at end of page.             -->
+<!-- The trick table body surrounds the whole page text.    -->
+<table>
+<!-- table trick header clears space for the "real" header  -->
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
 
-<!-- PAGE HEADER ---------------------------------------------->
-
-<p style="margin-left : 320px">  <i> VORTEX THEORY </i>     </p>
-<hr style="margin : 0 0;">
+<!-- table trick for body   -->
+<tbody> <tr> <td>
 
 <!-- CHAPTER -------------------------------------------------->
 
@@ -325,7 +334,8 @@ from the wing section properties will not match
 <div style = "break-before:page"> </div>
 
 <p>  The resulting bound vortex  is a staircase function.
- From figure 21.4XXXXXXXXXXXXXXXX we see that in the ellipse
+ From figure 21.4 <span class="draft">XXXXXXXXXXXXXXXX</span>
+ we see that in the ellipse
  the bound vortex changes rapidly towards the tips.
  The trailing vorticity will go up sharply there,
  and in fact the density at the very tips
@@ -465,7 +475,7 @@ from the wing section properties will not match
  The points halfway between the trailing vortices
  in the angular coordinate turn out to be the perfect locations,
  although this seems like a minor miracle if we consider
- the infinite up-and-down spikes of (21.1XXXXXXXXXX)
+ the infinite up-and-down spikes of (21.1<span class="draft">XXXXXXXXXXXXXXXX</span>)
  around the trailing vortex locations. 
 </p>
 
@@ -1010,24 +1020,28 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
  of our discretized solution.
 </p>
 
-<span style="color:darkgrey">
-
-<br>
+<div class="draft">
 <p> <i> TODO &emsp; Show the downwash resulting
  from the discretized circulation.
 <br> &emsp; &emsp; &emsp; &ensp;
  Shiver at the lines in-between the control points.
 </p>
 <p> <i> TODO &emsp; Fix restart of equation numbers.
+</div>
 
-</span>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+   <i> VORTEX THEORY </i>
+</div>
 
-<!-- FOOTER --------------------------------------------------->
+<!-- TRUE FOOTER ------------------------------------------------->
 <br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

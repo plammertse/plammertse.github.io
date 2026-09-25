@@ -6,10 +6,7 @@
 //  2026-06-22 PL new, cloned from dumbbell.js
 // --------------------------------------------------------------
 
-// TODO : SET COLORS HERE
-
 let CG_marker = function( xCG=10, yCG=0, R=1, fill="white", stroke="black" )  {
-//let CG_marker = function()  {
 
    this.fill   = fill;
    this.stroke = stroke;   
@@ -19,6 +16,7 @@ let CG_marker = function( xCG=10, yCG=0, R=1, fill="white", stroke="black" )  {
    this.Y1 = [ 0 ];
    this.X2 = [ 0 ];
    this.Y2 = [ 0 ];
+   this.R  = R;
    let N = 36;
    
    // outer circle and 'empty' background
@@ -57,11 +55,13 @@ CG_marker.prototype.update = function( xPos, yPos, theta )  {
    //    translated and rotated as appropriate.
 
       // outer circle, solid fill
-let   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
+   let   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
                     xPos, yPos, cosTheta, sinTheta);
    let svgString  = '<path d = ' + svg_data_xy( x, y );  // keep this one local
-   svgString += '    fill="'   + this.fill + '"' + 
-                 ' stroke="'   + this.stroke + '" />\n';
+   svgString += '    fill="'   + this.fill      + '"' + 
+                 ' stroke="'   + this.stroke    + '"' +
+                 ' stroke-width="' + 0.1*this.R + '"' +
+                 '" />\n';                    // end of path
       // quadrant 1
    [ x, y ] = move_xy( this.X1, this.Y1,
                     xPos, yPos, cosTheta, sinTheta);
@@ -78,5 +78,3 @@ let   [ x, y ] = move_xy( this.X, this.Y,     // from svg_tools.js
    this.svgString = svgString;
 //   console.log( svgString);
 }
-
-
