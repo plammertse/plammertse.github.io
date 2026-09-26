@@ -3,12 +3,13 @@
 // purpose : Graphical arrow
 // note    : Needs HTML to inlude svg_tools.js (for move_xy)
 // --------------------------------------------------------------
+//  2026-09-26 PL add default line width for blunter point
 //  2026-09-24 PL handle negative arrow length gracefully
 //  2026-06-22 PL new, cloned from lever.js and arrow.m.
 // --------------------------------------------------------------
 
 // --------------------------------------------------------------
-let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
+let Arrow = function( hL = 5, hW = hL/2, sW = 0.25*hW, eW )  {
 
    // For narrow measurement lines, use the defaults :
    //    head width  = 0.5 * head length,
@@ -16,30 +17,39 @@ let Arrow = function( hL = 5, hW = hL/2, sW = 0.3*hW, eW )  {
    // For forces etc., use :
    //    head width  = 0.65 * head length,
    //    shaft width = 0.4  * head width
+   // REVISION : FOR BLUNTER NOSE USE STROKE = FILL,
+   //   AND sW = 0.2*hW 
+   //       eW = 0.4*sW
+   //   SO  sW + eW = 1.4*0.2*hW = 0.28*hW 
 
-   // Head length and head width,
-   //  shaft width and line width.
+   // Head length, head width, shaft width
+   // and edge (line) width.
+   // Default edge with color gives a slighly blunt point,
+   // whcih is needed visually to "reach" the end piont.
+   // Take a smaller width if edge is white.
+   // Consider subtracting edge width from the other sizes,
+   // to always give the same total outline. 
 
    this.hL = hL;
    this.hW = hW;
    this.sW = sW;
-   this.eW = eW;        // useful if edge is white
-   
+   if ( eW === undefined )  {
+      eW = 0.4*sW;
+   }
+   this.eW = eW;        
+      
    // Default colors
-   // If you ever use stroke, then take great care of line width
    this.fill   = 'black';
-   this.stroke = 'none';
+   this.stroke = 'black';
    
    this.tL = 4*hL;       // total length default
 }; // end constructor
 
 // --------------------------------------------------------------
-Arrow.prototype.setColors = function( fill  = 'yellow',
-                                      stroke= 'none') {
+Arrow.prototype.setColors = function( fill   = 'yellow',
+                                      stroke = fill ) {
    this.fill   = fill;
-   this.stroke = stroke;   // white can be useful too
-   console.log( fill);
-   console.log( stroke);
+   this.stroke = stroke;   // none or white can be useful too
 }
 /*   // TODO
 
@@ -102,7 +112,7 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
    this.X = [ this.sW/2, this.sW/2, hW/2, 0, -hW/2, -this.sW/2, -this.sW/2 ];
    this.Y = [  0,   sL,   sL,  tL,   sL,    sL,    0   ];
    
-      // it's a single outline
+      // the arrow has a single outline
    let [ x, y ] = move_xy( this.X, this.Y,
                     xBase, yBase, cosTheta, sinTheta);
    let svgString  = '<path d = ' + svg_data_xy( x, y );  // keep this one local
@@ -116,4 +126,8 @@ Arrow.prototype.update = function( xBase=0, yBase=0,
 
    this.svgString = svgString;
    // console.log( svgString);
+   
+   // make the arrow tip location available to others
+   this.xTip = x[3];
+   this.yTip = y[3];
 }

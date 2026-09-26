@@ -3,14 +3,17 @@
 // purpose : Auxiliary functions to build SVG data paths.
 //           Include in the HTML file before the *.js that uses it.
 // --------------------------------------------------------------
+//  2026-09-24 PL added svg_viewbox
 //  2026-09-08 PL changed theta to anti-clockwise
 //  2026-08-26 PL isolated from b747_side_view.js
 // --------------------------------------------------------------
 
 // --------------------------------------------------------------
-// Build a "M x,y L x,y L x,y ... [Z]" string from x, y arrays
-// Take the opportunity to invert y.
+// svg_data() builds a "M x,y L x,y L x,y ... [Z]" string
+// from x, y arrays. It takes the opportunity to invert y,
+//    so y_SVG = - y.
 // It will now show positive up (from y=0) in the viewBox.
+// Added other tools kin the same vein later.
 // --------------------------------------------------------------
 
 // -------------------------------------------------------------

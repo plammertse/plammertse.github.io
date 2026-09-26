@@ -17,7 +17,7 @@
    <title> Eigenvalues </title>
 </head>
 
-<body>
+<body onload="onLoad()">
 
 <!-- HAMBURGER MENU -------------------------------------------->
 
@@ -57,24 +57,130 @@
 </td> <td style="width:50px; text-align:right">            (1)
 </td> </tr> </table>
 
-<p> If <i>a</i> has a negative value, then this equation says that
-<i>x</i> get smaller in time at a rate equivalent
- to its own size. The slope of the graph of <i>x</i>
- against time is proportional to its height.
+<p> If the constant "gain" <i>a</i> has a negative value,
+ then this equation says that
+is <i>x</i> get smaller in time at a rate equi&shyvalent
+ to its own size, scaled by the factor <i>a</i>.
+ The slope of the graph of <i>x</i> against time
+ proportional to its height, with a factor.
  This is the graph of an exponential decay.
  </p>
-<p> Physically, <i>x</i> could be the velocity of a
+<p> Physically <i>x</i> could be the velocity of a
  mass in oil. This is the equation of a viscous damper.
  </p>
 
+   <div class="draft">
+   <h4> two real eigenvalues </h4>
+   <p> TBW. </p>
+   </div>
+
+
+<h4> imaginary eigenvalues - the pendulum </h4>
+
 <div class="draft">
-<h4> two real eigenvalues </h4>
 
-<p> TBW. </p>
+<p> TBW. Rotating, from "kite mechanism" to single rotating arrow ?
+</p>
+<p> show double derivative gives a minus cosine
+</p>
+<p> but in two single derivative steps ot gives two imaginary roots
+</p>
+<p> show how this is the same thing, by Euler's equation
+</p>
+<p> cos(x) = ( exp(ix) + exp(-ix) ) / 2
+</p>
+</div>
 
-<h4> imaginary eigenvalues </h4>
+<table class="equation"><tr><td>
+   <math>
+      <msup> <mrow>
+            <!-- <mo maxsize="36px">[</mo>  -->
+      <mo>[</mo>
+      <mtable>
+         <mtr>
+         <!-- overrule CSS setting for <mtd>   -->
+         <!-- top, right, bottom, left         -->
+            <mtd style="padding : 4px 4px 6px 4px">
+               <mi>x</mi>  </mtd>
+         </mtr>
+         <mtr>
+            <mtd style="padding : 8px 4px 4px 4px">
+               <mi>v</mi>  </mtd>
+         </mtr>
+      </mtable>
+      <mo>]</mo>
+               <!-- <mo maxsize="36px">]</mo> -->
+      </mrow><mn>&bull;</mn></msup>
+      
+      <mo> = &nbsp; </mo>
+       
+      <mo>[</mo> <mn>&thinsp;</mn>
+      <mtable>
+         <mtr>
+            <mtd><mn>0</mn></mtd>
+            <mtd><mn>1</mn></mtd>
+         </mtr>         
+         <mtr>
+            <mtd><mn>&minus;</mn><mi>K</mi><mn>/</mn><mi>m</mi></mtd>
+            <mtd><mn>0</mn></mtd>
+         </mtr>
+      </mtable> <mn>&thinsp;</mn>
+      <mo>]</mo>
+      
+      <mo> <b>&period;</b> </mo>
 
-<p> TBW. Rotating, from "kite mechanism" to single rotating arrow ?</p>
+      <mo>[</mo>
+      <mtable>
+         <mtr>
+         <!-- overrule CSS setting for <mtd>   -->
+         <!-- top, right, bottom, left         -->
+            <mtd style="padding : 4px 4px 6px 4px">
+               <mi>x</mi>  </mtd>
+         </mtr>
+         <mtr>
+            <mtd style="padding : 8px 4px 4px 4px">
+               <mi>v</mi>  </mtd>
+         </mtr>
+      </mtable>
+      <mo>]</mo>
+      
+   </math>
+ </td> <td style="width:50px; text-align:right">            (2)   
+</td></tr></table>
+
+<div class="draft">
+<p> &emsp;
+It's still a single "mode".
+</p>
+</div>
+
+<!-- Create the SVG container for the eigenvector animation. -->
+<!-- The animation is inserted by the scripts at the end.    -->
+<div class = "center";>
+      <!--    style = "border:solid;">                       -->
+   <svg id = "svg"
+     width = "50%";
+     style = "border           : 1px solid #000000;
+              background-color : #FAFEFF;">  </svg>
+</div>
+
+<div class = "caption"; 
+      style= "margin-top    : 12px;
+              margin-bottom : 0"  >
+   <p><b><i>Figure 1 :
+      &ensp; The cosine as the sum of two "imaginary" numbers.
+    </i></b></p>  
+</div>
+
+<div class = "caption"; 
+      style= "margin-top : 0;
+              color : gray ">
+   <b><i> &lt; click figure and hold to pause &gt;  <!-- no <p> ? -->
+    </i></b>  
+</div>
+
+
+<div class="draft">
 
 <h4> complex eigenvalues </h4>
 
@@ -129,6 +235,12 @@
 <!-- draft text and hamburger menu -->
 <script src="draft.js">                </script>
 <script src="menu.js">                 </script>
+<script src="svg_tools.js">            </script>
+<script src="svg_arrow.js">            </script>
+<script src="svg_line.js">             </script>
+<script src="svg_complex_eigenvector.js">  </script>
+<script src="mouse.js">                    </script>
+<script src="svg_complex_eigenvector_test.js">  </script>
 
 </body>
 </html>
