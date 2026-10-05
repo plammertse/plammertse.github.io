@@ -34,18 +34,21 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_08.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_10.html">
+               Next &#x25BA;</a>                      </li>              
+
    </ul>
 </nav>
 
-
-
-
-<!-- TEXT BLOCK HEADER ---------------------------------------->
-
-<p style="margin-left : 320px">  <i> ROTATION </i> </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 9 ------------------------------------------------>
 
@@ -61,8 +64,7 @@
  to the axial inducton <i>v</i>.
  This leaves extra kinetic energy in the wake which shows up
  as an extra momen&shytum loss.
-</p>
-<p>&emsp; Using the far wake values <i>w</i>
+ Using the far wake values <i>w</i>
  and <i>w</i>&thinsp;&prime;
  in figure 7.2, we have :
 </p>
@@ -74,7 +76,6 @@
 
   <mo> = </mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mi>w</mi>
     <mrow> <mn>cos</mn> <mi>&phi;</mi>
@@ -83,12 +84,12 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.1)
+<td class="eqn">                 (9.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> With the definition <i>w</i> &equiv;
- <i>b&hairsp;.&hairsp;V</i> from (4.1),
+ <i>b&hairsp;.&hairsp;V</i>&nbsp; from (4.1),
  the kinetic energy d<i>P</i><sub>m</sub> left behind
  in the far wake of a ring becomes  :
 </p>
@@ -118,7 +119,6 @@
 
   <mo>.</mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <msup> <mi>b</mi> <mn>2</mn> </msup>
     <mrow>
@@ -129,13 +129,15 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.2)
+<td class="eqn">                 (9.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <a name="(9.2)"></a>
 
-<p> Dividing by the local thrust (7.5) gives us
+<p> Dividing by the local thrust
+(<a  class="crossref";
+     href="prop_book_07.html#(7.5)">7.5</a>) gives us
  the local momentum loss ratio :
 <!-- for any induction ratio
  <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) for any value
@@ -146,141 +148,145 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-   </mrow>
-    <mrow> <mn>d</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+      </mrow>
+      <mrow> <mn>d</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo> = </mo> <mspace/> </mo>
+   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>&frac12;&thinsp;</mn>
+   <mfrac>
+      <mrow>
+         <mn>&frac12;&thinsp;</mn>
+         <mo>.</mo>
+         <mfrac displaystyle="true">
+            <msup> <mi>b</mi> <mn>2</mn> </msup>
+            <mrow>
+               <msup> <mn>cos</mn> <mn>2</mn> </msup>
+               <mi>&phi;</mi>
+            </mrow>
+         </mfrac>
+      </mrow>
 
-      <mn>d</mn> 
-      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo>
-      <msup> <mi>V</mi> <mn>2</mn> </msup>
-      <mo>.</mo> 
-      <mstyle displaystyle="true">
-      <mfrac>
-        <msup> <mi>b</mi> <mn>2</mn> </msup>
-        <mrow>
-          <msup> <mn>cos</mn> <mn>2</mn> </msup>
-            <mi>&phi;</mi>
-       </mrow>
-      </mfrac>
-   </mrow>
+      <mrow> 
+         <mi>b</mi>
+      </mrow>
+   </mfrac>
 
-    <mrow> <mn>d</mn> 
-      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo>
-      <mi>V</mi>
-      <mo>.</mo> <mi>b</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-  </mfrac>
+   <mspace/> <mo>.</mo> <mspace/>
+   <mfrac>
+      <mrow>
+         <mn>d</mn> 
+         <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+         <mo>.</mo>
+         <msup> <mi>V</mi> <mn>2</mn> </msup>
+      </mrow>
 
-  <mspace/> <mo> = </mo> <mspace/>
+      <mrow> 
+         <mn>d</mn>
+         <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+         <mo>.</mo>
+         <msup> <mi>V</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
 
-  <mn>&frac12;</mn>
-  <mo>&thinsp;.&thinsp;</mo> 
+   <mspace/> <mo> = </mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
-   </mrow>
-    <mrow>
-      <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-   </mrow>
- </mfrac>
+   <mn>&frac12;</mn>
+   <mo>&thinsp;.&thinsp;</mo> 
+
+   <mfrac>
+      <mrow> <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+      </mrow>
+      <mrow>
+         <msup> <mn>cos</mn> <mn>2</mn> </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.3)
+<td class="eqn">                                           (9.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>&emsp;
- This local loss depends on the local induction ratio,
- but not on the mass flow through the ring,
- since d<i>m</i><sup>&#9679;</sup> drops out of (9.3). 
- Compared to the axial loss ratio <i>b</i> of (4.16),
+<p> This local efficiency depends <i>only</i> on
+ the local induction ratio.
+ It does <i>not</i> depend on the local mass flow&hairsp;!
+ </p>
+ <p> &emsp;
+ Compared to the axial loss ratio of (4.16),
  the rotation increases the momentum loss
  by&nbsp;a&nbsp;factor of
- 1&nbsp;&#x2044;&thinsp;cos<sup>2</sup>&hairsp;<i>&phi;</i>.
-</p>
-
-<p>&emsp; We can reach the same result by the non-dimensional route.
- Applying the steps from (7.15) tot (7.17) to the ring
+ 1&nbsp;&frasl;&thinsp;cos<sup>2</sup>&hairsp;<i>&phi;</i>.
+ </p>
+ <p> &emsp;
+ We can reach the same result by the non-dimensional route.
+ Applying the steps from (7.15) tot (7.17) to&nbsp;the&nbsp;ring
  momentum loss (7.2) gives :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> 
-  <msub> <mi>P</mi> <mn>m</mn> </msub>
-  <mn>&hairsp;&prime;</mn>
+   <mn>d</mn> 
+   <msub> <mi>P</mi> <mn>m</mn> </msub>
+   <mn>&hairsp;&prime;</mn>
     
-  <mo> = </mo>
+   <mspace/> <mo> = </mo> <mspace/> 
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-    <mo>.</mo>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>&frac12;&thinsp;</mn>
+         <msup> <mi>b</mi> <mn>2</mn> </msup>
+      </mrow>
+      <mrow>
+         <msup> <mn>cos</mn> <mn>2</mn> </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 
-  <mo>&thinsp;.&thinsp;</mo>
+   <mspace/> <mo> . </mo> <mspace/>
 
-  <mn>(</mn>
-   <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
-  <mn>)</mn>
+   <mfrac>
+      <mrow>
+         <mn>2&hairsp;</mn> <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn> <mi>x</mi>
+      </mrow>
+      <mrow>
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
 
-  <mo>&thinsp;.&thinsp;</mo>
+   <mo>&thinsp;.&thinsp;</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>&frac12;&thinsp;</mn>
-      <msup> <mi>b</mi> <mn>2</mn> </msup>
-   </mrow>
-    <mrow>
-      <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-   </mrow>
- </mfrac>
+   <mn>(</mn>
+      <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+   <mn>)</mn>
 </math>
 
-<td style="width:50px; text-align:right">                (9.4)
+<td class="eqn">                (9.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>
- Dividing by
- (&hairsp;<a href="prop_book_07.html#(7.13)">7.14</a>&hairsp;)
-   for the ring thrust, first off the 
-   2<i>x</i>&hairsp;.&hairsp;d<i>x</i>  <i>/</i>
+<p> Dividing by the ring thrust
+ (<a class="crossref";
+     href="prop_book_07.html#(7.14)">7.14</a>),
+     the 
+   2<i>x</i>&hairsp;.&hairsp;d<i>x</i> &frasl;
    <i>X</i><sup>&thinsp;2</sup>
- terms cancel, leaving :
+ terms cancel, leaving only a
+ 1&nbsp;&frasl;&nbsp;cos<sup>2</sup><i>&hairsp;&phi;</i> term
+ and the terms in <i>b</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
+   <mfrac>
     <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
       <mn>&thinsp;&prime;</mn>
    </mrow>
@@ -290,31 +296,6 @@
 
   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mi>b</mi>
- </mfrac>
-
-  <mo> . </mo>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>(</mn>
-       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
-      <mn>)</mn>
-   </mrow>
-    <mrow>
-      <mn>(</mn>
-       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
-      <mn>)</mn>
-   </mrow>
- </mfrac>
-
-  <mspace/> <mo>.</mo> <mspace/>
-
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mn>&frac12;&thinsp;</mn>
@@ -325,10 +306,32 @@
         <mi>&phi;</mi>
    </mrow>
  </mfrac>
+ 
+   <mspace/> <mo>.</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <mi>b</mi>
+   </mfrac>
+
+  <mo> . </mo>
+
+  <mfrac>
+    <mrow>
+      <mn>(</mn>
+       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+      <mn>)</mn>
+   </mrow>
+    <mrow>
+      <mn>(</mn>
+       <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
+      <mn>)</mn>
+   </mrow>
+ </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.5)
+<td class="eqn">                 (9.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -340,7 +343,6 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
       <mn>&thinsp;&prime;</mn>
@@ -351,7 +353,6 @@
 
   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mn>&frac12;&thinsp;</mn>
@@ -365,7 +366,7 @@
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.6)
+<td class="eqn">                 (9.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -376,53 +377,53 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn>
-  <msub> <mi>&eta;</mi> <mn>m</mn> </msub>
+   <mn>d</mn>
+   <msub> <mi>&eta;</mi> <mn>m</mn> </msub>
 
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/> <mo> = </mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow> <mn>1</mn> <mo>+</mo> 
-      <mstyle displaystyle="true">
-      <mfrac>
-        <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-          <mn>&thinsp;&prime;</mn>
-       </mrow>
-        <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-       </mrow>
-     </mfrac>
-   </mrow>
- </mfrac>
-
-  <mspace/> <mo> = </mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-
-    <mrow> 
-        <mrow> <mn>1 + &frac12&nbsp;</mn> <mo>.</mo>
-          
-          <mstyle displaystyle="true">
-          <mfrac>
-            <mrow> <mi>b</mi>
-              <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mfrac>
+      <mn>1</mn>
+      
+      <mrow> <mn>1</mn> <mo>+</mo> 
+<!--         <mfrac>   -->  <!-- fix needed, why ? > PL -->
+         <mfrac displaystyle="true">
+            <mrow>
+               <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+               <mn>&thinsp;</mn> <mn>&prime;</mn>
             </mrow>
-           <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
-              <mi>&phi;</mi>
-          </mrow>
-        </mfrac>
+            <mrow>
+               <mn>d</mn> <mi>T</mi> <mn>&thinsp;</mn> <mn>&prime;</mn>
+            </mrow>
+         </mfrac>
+      </mrow>
+   </mfrac>
 
-     </mrow>
-   </mrow>
- </mfrac>
+   <mspace/> <mo> = </mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+
+      <mrow> 
+         <mrow> <mn>1 + &frac12;&nbsp;</mn> <mo>.</mo>
+          
+<!--     <mfrac>   -->  <!-- fix needed, why ? > PL -->
+         <mfrac displaystyle="true">
+            <mrow> <mi>b</mi>
+               <mn>(</mn> <mi>x</mi> <mn>)</mn>
+            </mrow>
+            <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+               <mi>&phi;</mi>
+            </mrow>
+         </mfrac>
+         </mrow>
+      </mrow>
+   </mfrac>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (9.7)
+<td class="eqn">                 (9.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -436,9 +437,7 @@
 
 <!-- SECTION 9.2 ---------------------------------------------->
 
-<!--
-
-
+<div style = "break-before:page"> </div>
 
 <h4> 9.2 &emsp; Integrating the rotational loss </h4>
 <p> For the overall efficiency, we cannot integrate
@@ -454,60 +453,264 @@
  We do the integration in non-dimensional form.
 </p>
 <p>&emsp;
- We can make (9.3) a non-dimensional power by the definition
- of (3.3) :
+ We can make (9.3) a non-dimensional momentum power loss
+ by the definition of (3.3) :
 </p>
-<p>&emsp;
-	〖〖dP〗_m〗^'  =  ½ .  (dm●   .V^2)/(ρ V^3.πR^2 ).  b^2/cos^2⁡ϕ 	(9.6)
-</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mn>d</mn><mi>P</mi> <mi>&hairsp;&prime;</mi>
+   <mspace/> <mo> = </mo> <mspace/>
+   <mn>&frac12;</mn>
+   <mo>.</mo>
+   <mfrac>
+      <mrow> <mn>d</mn>
+         <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+         <mo>.</mo>
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+      </mrow>
+      <mrow>
+         <mi>ρ</mi>
+         <msup> <mi>V</mi> <mn>3</mn> </msup>
+         <mo>. </mo>
+         <mi>&pi; </mi>
+         <msup> <mi>R</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <msup> <mi>b</mi><mn>2</mn> </msup>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+</math>
+</td>
+
+<td class="eqn">                                               (9.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
 <p> Following the steps from (7.9) to (7.11),
  for lightly loaded propellers we have :
 </p>
-<p>&emsp;
-	〖dA〗^'   =     (dm●.V^2)/(ρ V^3.π R^2 )    ≅   (2 x .dx)/X^2 	(9.7)
-</p>
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mn>d</mn><mi>m</mi> <mi>&hairsp;&prime;</mi>
+   <mspace/> <mo> = </mo> <mspace/>
+ 
+   <mfrac>
+         <mrow> <mn>d</mn>
+            <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+         <mo>.</mo>
+      <msup> <mi>V</mi> <mn>2</mn> </msup>
+      </mrow>
+      <mrow>
+         <mi>ρ</mi>
+         <msup> <mi>V</mi> <mn>3</mn> </msup>
+         <mo> . </mo>
+         <mi>&pi; </mi>
+         <msup> <mi>R</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
+
+   <mspace/> <mo> &cong; </mo> <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mn>2</mn> <mi>x</mi> <mo>.</mo> <mn>d</mn> <mi>x</i>
+      </mrow>
+      <msup> <mi>X</mi> <mn>2</mn> </msup> 
+   </mfrac>
+</math>
+</td>
+
+<td class="eqn">                                               (9.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
 <p> This turns (9.6) into :
 </p>
-<p>&emsp;
-    〖〖dP〗_m〗^'    =   ½ .( b(x)2 )/cos^2⁡ϕ   .   (2 x .dx)/X^2 	(9.8)
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mn>d</mn> 
+  <msub> <mi>P</mi> <mn>m</mn> </msub>
+  <mn>&hairsp;&prime;</mn>
+    
+  <mspace/> <mo> = </mo> <mspace/> 
+
+   <mn>&frac12;&thinsp;</mn>
+   <mo>.</mo>
+   <mfrac>
+    <mrow>
+      <msup> <mi>b</mi> <mn>2</mn> </msup>
+      <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   </mrow>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup>
+        <mi>&phi;</mi>
+   </mrow>
+   </mfrac>
+
+   <mo> . </mo> 
+
+   <mfrac>
+      <mrow>
+      <mn>2&hairsp;</mn> <mi>x</mi>
+      <mo>.</mo>
+      <mn>d</mn> <mi>x</mi>
+   </mrow>
+      <mrow>
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
+</math>
+
+<td class="eqn">                                         (9.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The integral is :
 </p>
-<p>
-The integral is :
-</p>
-<p>&emsp;
-    〖P_m〗^'   =   ∫▒〖〖dP〗_m〗^'   =   1 /X^2   ∫_0^(X )▒〖½ .( b(x)2 )/cos^2⁡ϕ   .2 x .dx〗
-(9.9)
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   <mo>.</mo>
+      <!-- integral -->
+      <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mn>&frac12;</mn>
+   <mo>.</mo>
+
+   <mfrac>
+      <msup>
+         <mi>b</mi><mn>2</mn> 
+      </msup>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+      </row>   
+   </mfrac>
+
+   <mo>.</mo>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (9.11)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
 </p>
 <p> This is the generic, non-dimensional, overall momentum loss
  for a lightly loaded propeller including rotation,
- at an arbitrary induction ratio distribution b(x).
-</p>
-<p>&emsp; 
+ at an arbitrary induction ratio distribution <i>b</i>&hairsp;(x</i>).
  The matching thrust integral was given by  (7.17).
- The ratio of the two integrals yields the overall loss ratio,
- which is
-   <i>P</i><sub>m</sub>&prime;&nbsp;&#x2044;&thinsp;<i>T</i>&prime; by (3.9) :
+ The ratio of the two integrals yields the overall loss ratio (3.9) :
 </p>
-<p?&emsp;
-     〖P_m〗^'/T^'    =    (∫▒〖〖dP〗_m〗^'   )/(∫▒〖dT〗^' )   =   ( ∫_0^(X )▒〖½ .( b(x)2 )/cos^2⁡ϕ   .2 x .dx〗)/(∫_0^X▒〖b(x)   .2  x .dx〗)
-(9.10)
-</p>
-<p>&emsp;
-This equation looks a bit daunting at first,
+
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+   <mfrac>
+      <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+      <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </msup>
+   </mfrac>      
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mrow> <mo>&int;</mo> <mn>d</mn>
+         <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+      </mrow>
+      <mrow> <mo>&int;</mo> <mn>d</mn>
+         <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </msup>
+      </mrow>
+   </mfrac>      
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mrow>
+         <!-- integral -->
+         <msubsup> <mo displaystyle="true">&int;</mo> 
+            <mn>0</mn> <mi>X</mi>
+         </msubsup>
+
+         <mn>&frac12;</mn>
+         <mo>.</mo>
+
+         <mfrac displaystyle="true">
+            <msup>
+               <mi>b</mi><mn>2</mn> 
+            </msup>
+            <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+            </row>   
+         </mfrac>
+
+         <mo>.</mo>
+         <mn>2</mn> <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn><mi>x</mi>
+      </mrow>
+      
+      
+      <mrow>
+         <!-- integral -->
+         <msubsup> <mo displaystyle="true">&int;</mo> 
+            <mn>0</mn> <mi>X</mi>
+         </msubsup>
+
+         <mi>b</mi>
+
+         <mo>.</mo>
+         <mn>2</mn> <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn><mi>x</mi>
+      </mrow>
+      
+   </mfrac>   
+</math> </td>
+
+<td class="eqn">                                         (9.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This equation may look a bit daunting at first,
  but we will derive an optimum distribution <i>b</i>(<i>x</i>)
- which not only minimizes the rotational loss,
- but also yields a very simple solution for (9.10).
+ which not only mini&shymizes the rotational loss,
+ but also gives a simple outcome for this overall loss ratio.
 </p>
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
--->
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> ROTATION </i>
+</div>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
-
-<!-- needed for hamburger menu, must be at end of body -->
-<script src = "menu.js"></script>
 
 </body>
 </html>

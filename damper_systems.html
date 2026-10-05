@@ -1,0 +1,227 @@
+<!--------------------------------------------------------------
+ file    : damper_systems.html
+ purpose : Part of state space story
+ ---------------------------------------------------------------
+  2026-09-22 PL new
+--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset = "UTF-8"
+         name    = "viewport" 
+         content = "width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="text.css">
+   <link rel="stylesheet" href="menu.css">
+   <title> Eigenvalues </title>
+</head>
+
+<body onload="onLoad()">
+
+<!-- HAMBURGER MENU -------------------------------------------->
+
+<nav class="dropdown-menu">
+
+   <!-- responsive hamburger button needs menu.js at end -->
+   <button class    = "nav-toggle"
+      aria-label    = "Toggle navigation menu"
+      aria-expanded = "false">
+         <span></span>  <span></span>  <span></span>
+   </button>
+
+<!-- TOP BAR MENU --------------------------------------------->
+
+   <ul>
+      <li> <a href = "index.html">  Home </a>              </li>
+      <li> <a href = "state_space.html"> State space </a>  </li>
+      <li> <a href = "eigenvectors.html"> Eigenvectors </a>  </li>
+   </ul>
+</nav>
+
+<!-- PAGE TEXT ------------------------------------------------>
+
+<h2> damper systems </h2>
+
+ <h4> a single damper </h4>
+ 
+ <p> We will start our exploration of state space analysis 
+ with a single mechanical damper. In a viscous damper,
+ the&nbsp;damping force is proportional to the velocity :
+ 
+ <table class="equation"><tr><td>
+ <math>
+   <mi>F</mi>      
+   <mo> &nbsp; = &nbsp; </mo>
+       
+   <mo>&minus;</mo> <mi>c</mi>
+   <mo>&hairsp;&period;&hairsp;</mo>
+   <mi>v</mi>
+   
+   </math>
+ </td> <td style="width:50px; text-align:right">            (1)   
+</td></tr>
+</table>
+
+<p> We apply this to Newton's law for a floating mass :
+ </p>
+ 
+ <table class="equation"><tr><td>
+ <math>
+   <mi>F</mi>      
+   <mo> &nbsp; = &nbsp; </mo>
+       
+   <mi>m</mi> <mo>&hairsp;&period;&hairsp;</mo> <mi>a</mi>
+   
+   </math>
+ </td> <td style="width:50px; text-align:right">            (2)   
+</td></tr>
+</table>
+
+</p>
+<p> Here <i>a</i> is the acceleration, the change of the velocity with time.
+ With Newton's dot notation for change with time, 
+ the equation of motion for a damped mass is :
+ </p>
+ 
+ <table class="equation">
+ <tr><td>
+ <math>
+   <msup> <mi>v</mi> <mn>&bull;</mn> </msup>     
+   <mo> &nbsp; = &nbsp; </mo>
+       
+   <mo>&minus;</mo> 
+
+<!--   <mstyle displaystyle="true"> -->
+   <mfrac displaystyle="true">
+      <mi>c</mi> <mi>m</mi>
+   </mfrac>  
+   <mo>&hairsp;&period;&hairsp;</mo>
+   <mi>v</mi>
+   
+</math>
+</td>
+<td style="width:50px; text-align:right">            (3)   
+</td>
+</tr>
+</table>
+ 
+<p> This is, of course simply a scalar equation.
+ But in the state space framework of 
+ <a href="state_space.html#(1)">(1)</a>,
+ we can also write it as a single degree of freedom matrix equation 
+ (&hairsp;leaving off the inputs for the moment&hairsp;)&nbsp;:
+ </p>
+
+
+<table class="equation"><tr><td>
+   <math>
+      <msup> <mrow>
+            <!-- <mo maxsize="36px">[</mo>  -->
+      <mo>[</mo>
+      <mtable>
+         <mtr>
+         <!-- overrule CSS setting for <mtd>   -->
+         <!-- top, right, bottom, left         -->
+            <mtd style="padding : 2px 4px 1px 4px">
+               <mi>v</mi>
+            </mtd>
+         </mtr>
+      </mtable>
+      <mo>]</mo>
+      
+               <!-- <mo maxsize="36px">]</mo> -->
+      </mrow><mn>&bull;</mn></msup>
+      
+      <mo> = &nbsp; </mo>
+       
+      <mo maxsize="20px">[</mo> <mn>&thinsp;</mn>
+      <mtable>
+         <mtr>
+            <mtd style="padding : 0">
+<!--            <mtd style="padding : 0 4px 0 4px"> -->
+            <mn>-c/m</mn>
+            </mtd>
+         </mtr>         
+      </mtable> <mn>&thinsp;</mn>
+      <mo maxsize="20px">]</mo>
+      
+      <mo> <b>&period;</b> </mo>
+
+      <mo maxsize="20px">[</mo>
+      <mtable>
+         <mtr>
+         <mtr>
+            <mtd style="padding : 0">
+<!--            <mtd style="padding : 0 4px 0 4px"> -->
+               <mi>v</mi>  </mtd>
+         </mtr>
+      </mtable>
+      <mo maxsize="20px">]</mo>
+      
+   </math>
+ </td> <td style="width:50px; text-align:right">            (4)   
+</td></tr></table>
+
+
+<p> This equation says that <i>v</i> get smaller with
+ time, at a rate equi&shyvalent
+ to its own size scaled by the factor
+ <nobr>&minus;<i>c&hairsp;/&hairsp;m</i>.</nobr>
+ </p>
+ <p> &emsp;
+ The&nbsp;slope of the graph of <i>v</i> against time is
+ proportional to its own height, scaled by a constant factor.
+ This is the graph of an exponential decay.
+ Starting from an initial velocity <i>v</i><sub>o</sub>,
+ the solution is :
+ </p>
+  
+ <table class="equation"><tr><td>
+ <math>
+   <mi>v</mi>
+   
+   <mo> &nbsp; = &nbsp; </mo>
+       
+   <msup> <mn>e</mn> 
+      <mrow>
+         <mn>&thinsp;</mn><mn>(</mn>
+            <mn>&minus;</mn><mi>c</mi><mn>/</mn><mi>m</mi>
+         <mn>)</mn>
+         <mo>&period;</mo> <mi>t</mi>
+   </mrow>
+   </msup>
+   <mo>&hairsp;&period;&hairsp;</mo>
+   <msub> <mi>v</mi><mn>o</mn></msub>
+   
+   </math>
+ </td> <td style="width:50px; text-align:right">            (5)   
+</td></tr>
+</table>
+
+<p> As a check, the derivative of an exponential
+ is the exponential itself multiplied by the
+ factor on the variable.
+ In&nbsp;this case the variable is <i>t</i> and the factor
+ is (&hairsp;&minus;<i>c&hairsp;/&hairsp;m</i>&hairsp;),
+ and this confirms that (5) implements condition (3). 
+  </p>
+
+  
+<!-- FOOTER --------------------------------------------------->
+<br> <br>
+<div class="footer"> P. Lammertse, 2026 </div>
+
+<!--- SCRIPTS ------------------------------------------------->
+
+<!-- draft text and hamburger menu -->
+<script src="draft.js">                </script>
+<script src="menu.js">                 </script>
+<script src="svg_tools.js">            </script>
+<script src="svg_arrow.js">            </script>
+<script src="svg_spring.js">           </script>
+<script src="svg_line.js">             </script>
+<script src="mouse.js">                </script>
+
+</body>
+</html>

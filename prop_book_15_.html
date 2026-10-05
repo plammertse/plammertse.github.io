@@ -103,11 +103,12 @@
 </ul>
 
 
-<!-- TEXT PAGE ------------------------------------------------------->
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
-<!--- PAGE HEADER ---------------------------------------------------->
-<p style="margin-left : 320px">  <i> VISCOUS LOSS </i> </p>
-<hr style="margin : 0 0;">
 
 <!-- CHAPTER 15 ----------------------------------------------------->
 
@@ -806,7 +807,6 @@ The optimum  X depends only on the value of T'/ϵ.
  This will shift the optimum  X to higher values.
 </p>
 
-
 <!-- OPTIMAL TIP SPEED RATIO DIAGRAM --------------------------->
 <img  width="600";
      style="margin-left:120px";
@@ -819,10 +819,24 @@ for rotationally optimal thrust.
  </i> 
 <!------------------------------------------------------------------->
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<!-- FOOTER ------------------------------------------------------------>
-<br> <br>
-<div class="footer">  P. Lammertse,  2025  </div>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VISCOUS LOSS </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
+
+<!-- SCRIPTS ----------------------------------------------------->
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

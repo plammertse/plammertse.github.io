@@ -22,7 +22,6 @@
 <body>
 
 <!-- TOP NAV BAR  --------------------------------------------->
-
 <nav class="dropdown-menu">
 
    <!-- Responsive hamburger button, see menu.js -->
@@ -43,17 +42,10 @@
    </ul>
 </nav>
 
-<!-- START TABLE TRICK ---------------------------------------->
-<!-- Trick to make space for the true header and footer     -->
-<!-- The trick table body surrounds the whole page text.    -->
-<!-- True header and footer are at end of page.             -->
-
-<!-- table trick for every-page print headers and footers   -->
+<!-- TABLE TRICK START --------------------------------------->
+<!-- table, print header, and body start (see text.css)     -->
 <table>
-<!-- table header makes empty space for the "real" header   -->
-<thead> <tr> <td>  <br class="print-only">  </td> </tr> </thead>
-
-<!-- encapsulate page text in the body of the trick table   -->
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
 <tbody> <tr> <td>
 
 <!-- CHAPTER -------------------------------------------------->
@@ -746,13 +738,10 @@ turns" per length&hairsp;).
  inside the tube and zero induction outside it.
 </p>
 
-<!-- end table trick body  -->
-</td> </td>   </tbody>
-
-<!-- table trick footer (clears empty space for the "real" one) -->
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
 <tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
-
-<!-- end table trick overall -->
 </table>
 
 <!-- TRUE (PRINT) HEADER ----------------------------------------->

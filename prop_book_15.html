@@ -35,18 +35,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_14.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_16.html">
+               Next &#x25BA;</a>                      </li>              
    </ul>
 </nav>
 
-
-
-
-<!-- PAGE HEADER ---------------------------------------------->
-
-<p style="margin-left : 320px">  <i> VISCOUS LOSS </i>      </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 15 ----------------------------------------------->
 
@@ -64,12 +66,12 @@
 </p>
 <p>&emsp;
  The viscous loss however varies along the blade.
- Unlike the momentum loss, the local loss ratio (15.21) 
+ Unlike the momentum loss, the local loss ratio (14.21) 
  is&nbsp;independent of the load,
- but instead it varies with the radius.
+but it does vary strongly with the radius.
 </p>
 <p>&emsp;
- The combined local loss ratio (10.8) plus (15.21)
+ The combined local loss ratio (10.8) plus (14.21)
  for the rotationally optimal propeller is :
 </p>
 
@@ -174,14 +176,16 @@
 </p>
 <p>&emsp;
  Loss ratios and efficiencies cannot be integrated
- over the propeller disk. 
+ over the propeller disk. They will have to be weighted
+ by the local thrust.
+ We will have to integrate the local losses themselves,
+ not the local loss ratios.
  As a counter-example, it will not help if half the disk area
  has a perfect zero percent loss ratio, if all the thrust
- is on the non-perfect half.
-</p>
-<p>&emsp;
- We will have to integrate the local loss itself, not the ratio.
- From (15.21) we have :
+ is on the non-perfect half. 
+ </p>
+ <p> &emsp;
+ From (14.21) we have :
 
 <!-- EQUATION ------------------------------------------------------>
 <table class = "equation"> <tr> <td>
@@ -223,9 +227,8 @@
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+   <mfrac displaystyle="true">
+   <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
         <mi>&phi;</mi>
     </mrow>
@@ -235,15 +238,14 @@
 
   <mi>T</mi> <mn>&hairsp;&prime;&hairsp;</mn>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+   <mfrac displaystyle="true">
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
         <mi>&phi;</mi>
-    </mrow>
-    <msub> <mi>&kappa;</mi> <mn>&phi;</mn>
-  </mfrac>
+      </mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn>
+   </mfrac>
 
   <mo>.</mo>
 
@@ -268,7 +270,7 @@
 
 <div style = "break-before:page"> </div>
 
-<p> The viscous loss  (15.21) contains a term of
+<p> The viscous loss  (14.21) contains a term of
  1&hairsp;/&hairsp;cos<sup>2</sup>&hairsp;<i>&phi;</i> 
  which increases the loss of the linear term 
  <i>&epsilon;&hairsp;.&hairsp;x</i>.
@@ -362,8 +364,7 @@
 
 <p> The primitive of 2&thinsp;x<sup>2</sup> is
  &frac23;&thinsp;x<sup>3</sup>.
-</p>
-<p> Dividing by <i>T</i>&thinsp;&prime;,
+ Dividing by <i>T</i>&thinsp;&prime;,
  the overall viscous loss ratio
  for the rotationally optimal propeller is :
 
@@ -535,7 +536,7 @@
  tip speed ratio <i>X</i>.
 </p>
 <p>&emsp; The factor
-  1&nbsp;&#x2044;&nbsp;<i>&kappa;</i><sub>&phi;</sub>(<i>X</i>)
+  1&nbsp;&frasl;&nbsp;<i>&kappa;</i><sub>&phi;</sub>(<i>X</i>)
   which restores the design thrust
  after the rotational optimization,
  adds a sharply curved sweep-up for the lower <i>X</i> values
@@ -590,15 +591,29 @@
 </p>
 <p>&emsp; These are optimum tip speed ratios before tip loss,
  and so they apply only in a duct.
- Equation (27.5) will later add the tip loss.
+ Equation <span class="draft">(27.5) </span> will later add the tip loss.
  This will shift the optimum for the tip speed ratio
  <i>X</i> to higher values.
 </p>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VISCOUS LOSS </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
+<script src = "draft.js"></script>
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
 

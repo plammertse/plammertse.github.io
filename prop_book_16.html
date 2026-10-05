@@ -34,16 +34,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_15.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_17.html">
+               Next &#x25BA;</a>                      </li>              
    </ul>
 </nav>
 
-
-<!-- PAGE HEADER ---------------------------------------------->
-
-<p style="margin-left : 320px">  <i> VISCOUS LOSS </i>      </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 16 ----------------------------------------------->
 
@@ -53,29 +57,25 @@
 
 <h4> 16.1 &emsp; Relevance                                 </h4>
 
-<p> 
-The classical way to handle viscous loss is the one shown
+<p> The classical way to handle viscous loss is the one shown
  in the previous chapter. The propeller is designed for
  optimal rotational loss
- (and later, for tip loss).
+ (&hairsp; we will add tip loss later&hairsp;).
  The viscous loss is then calculated almost as an afterthought,
  and the outcome is accepted as a fact of life.
-</p>
-<p>&emsp;
  But this runs against the spirit of propeller optimization,
  which is to minimize the overall loss
- by scheduling the induction
- (&hairsp;for constant marginal loss&hairsp;).
+ by scheduling the induction for constant marginal loss.
 </p>
 <p>&emsp; 
  Viscous optimization has been a wrinkle in the classical theory
- of propellers for a long time. Historically,
+ of propellers for the longest time. His&shytoric&shyally,
  <span style="font-variant: small-caps;"> Glauert</span>
- already gave the proper solution,
- but his treatment is not complete,
+ already gave the proper solution.
+ But his treatment is not complete,
  perhaps due to his untimely death in a freak accident.
  This incompleteness may be the reason
- why later texts fail to include it.
+ why later texts consistently fail to include it.
 </p>
 <p>&emsp;
  This chapter picks up
@@ -85,32 +85,33 @@ The classical way to handle viscous loss is the one shown
 </p>
 <p>&emsp;
 The literature is partly right :
- for normal propellers, not much efficiency is gained
+ for normal propellers, not that much efficiency is gained
  by doing a proper viscous optimization.
- But it is the proper thing to do,
- and it is not difficult after all.
+ But it is the right thing to do, and it is not difficult.
  Perhaps more importantly,
- there is an unexpected side benefit in the shape of the blade.
+ there is an un&shyexpected, and very noticeable
+ side benefit in the shape of the blade.
 </p>
 <p>&emsp;
  Readers who use this text as their first introduction
  to propeller theory may wish to skip this chapter.
  Those looking for new material,
  or those who like to tie up loose ends,
- are encouraged to read it for their own personal enjoyment.
+ are encouraged to read it anyway.
 </p>
 
 <!-- SECTION 16.2 --------------------------------------------->
 
 <h4> 16.2 &emsp; A basic trade-off </h4>
 
-<p> Figure <a href="prop_book_15.html#F15.4">15.4</a>
+<p> Figure <a class="crossref";
+             href="prop_book_15.html#F15.4">15.4</a>
  showed that for minimal viscous loss,
  all thrust should be concentrated on a paddle close
- to the hub at <i>x</i>&nbsp;=&nbsp;1,
+ to the hub at the non-dimensional radius <i>x</i>&nbsp;=&nbsp;1,
  for a 45&deg; pitch angle.
  By contrast, figure 10.1 showed that the optimal
- momentum efficiency moves the thrust outboard
+ momen&shytum efficiency moves the thrust outboard
  towards the flattest pitch angles.
 </p>
 <p>&emsp; This difference creates a basic trade-off
@@ -122,16 +123,21 @@ The literature is partly right :
 
 <!-- SECTION 16.3 --------------------------------------------->
 
-<h4> 16.3 &emsp; The viscous marginal loss </h4>
+<h4> 16.3 &emsp; The viscous loss is independent of the induction </h4>
 
-<p> We are hoping to optimize the viscous marginal loss.
- But somewhat surprisingly, this is not how it works. 
+<p> We are hoping to optimize the local viscous 
+  (&hairsp;marginal&hairsp;) loss by shifting thrust around,
+  like we did for the mo&shymen&shytum loss.
+ But 
+ <!-- somewhat surprisingly, -->
+ this is not quite how it works. 
+ The <i>local</i> viscous loss cannot optimized in this way.
 </p>
 <p>&emsp;
  By (15.21), the viscous loss is directly proportional to the thrust.
  An increase of thrust will give an increase of loss,
  in the same proportion.
- This linear relationship makes  the marginal loss ratio
+ This linear relationship makes the marginal loss ratio
  equal to the actual loss ratio, independent of the local induction.
  We will not be able to change the local viscous loss ratio
  by any optimization to the induction.
@@ -146,7 +152,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -159,7 +164,7 @@ Formally, we can write (15.21) as :
   <mn>d&hairsp;</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.1)
+<td class="eqn">                                          (16.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -171,7 +176,6 @@ Formally, we can write (15.21) as :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -187,7 +191,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -197,18 +200,27 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.2)
+<td class="eqn">                                                (16.2)
 </td> </tr> </table>
 <!-- END EQUATION -------------------------------------------------->
 
-<p> This marginal loss is exactly the same as the
- actual local loss ratio (15.21). This is, of course,
- in the nature of any linear relationship.
-</p>
-<p>&emsp; <span style="font-variant: small-caps;"> Glauert</span>
+<p> <span style="font-variant: small-caps;"> Glauert</span>
  used the simplified viscous drag ratio (15.16) here,
  but the (&hairsp;almost&hairsp;) exact equation (15.21) will
  give us simpler and more accurate results.
+ </p>
+ <p> &emsp; This marginal loss is exactly the same as the
+ actual local loss ratio (15.21). This is, of course,
+ in the nature of any linear relationship.
+</p>
+<p> &emsp;
+We will be able to reduce the viscous loss by moving thrust
+to regions of lower (&hairsp;marginal&hairsp;) viscous loss,
+but these must then be regions of higher pitch angle.
+The shift in induction by itself will not affect
+the local viscous loss. 
+However, it will shift some thrust away from the momentum optimum.
+The momentum loss will suffer, and there will be a trade-off.
 </p>
 
 <div style = "break-before:page"> </div>
@@ -225,7 +237,6 @@ Formally, we can write (15.21) as :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -240,7 +251,6 @@ Formally, we can write (15.21) as :
   </mfrac>
 
   <mspace/> <mo>+</mo> <mspace/>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -256,7 +266,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mi>b</mi> <mn>(</mn> <mi>x</mi>  <mn>)</mn> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -266,7 +275,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>+</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -276,7 +284,7 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.3)
+<td class="eqn">                                           (16.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -300,7 +308,6 @@ Formally, we can write (15.21) as :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -315,7 +322,6 @@ Formally, we can write (15.21) as :
   </mfrac>
 
   <mspace/> <mo>+</mo> <mspace/>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -331,7 +337,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
     <mrow> <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub> 
@@ -340,7 +345,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>+</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -350,7 +354,7 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.4)
+<td class="eqn">                                          (16.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -399,7 +403,6 @@ Formally, we can write (15.21) as :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -414,7 +417,6 @@ Formally, we can write (15.21) as :
   </mfrac>
 
   <mspace/> <mo>+</mo> <mspace/>
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mn>d&hairsp;</mn>
       <mn>(</mn>
@@ -434,7 +436,7 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.5)
+<td class="eqn">                                          (16.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -445,7 +447,6 @@ Formally, we can write (15.21) as :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math> 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <mi>b</mi> <mn>(</mn> <mi>x</mi>  <mn>)</mn> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -455,7 +456,6 @@ Formally, we can write (15.21) as :
 
   <mspace/> <mo>+</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
@@ -468,8 +468,8 @@ Formally, we can write (15.21) as :
   <mi>A</mi>
 
 </math> </td>
-
-<td style="width:50px; text-align:right">  (16.6)
+                                    
+<td class="eqn">                                         (16.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -494,7 +494,7 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.7)
+<td class="eqn">                                         (16.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -529,7 +529,7 @@ Formally, we can write (15.21) as :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.8)
+<td class="eqn">                                         (16.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -539,7 +539,7 @@ Formally, we can write (15.21) as :
  so we will be using (16.7) from here on.
 </p>
 
-<p>&emsp;&emsp; <i>
+<p class="draft"> &emsp;&emsp; <i>
  TODO Discuss <b>Glauert</b>'s figure based on <i>A</i>.
  </i>
 </p>
@@ -564,7 +564,9 @@ for the same thrust, <i>A</i>
 <p> We express <i>A</i> in terms of <i>T</i>&thinsp;&prime;,
  <i>&epsilon;</i> and <i>X</i>.
  Using the induction <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
- of (16.7) in the light loading integral (XXXXXXXXXX),
+ of (16.7) in the light loading thrust integral
+(<a class="crossref";
+    href="prop_book_07.html#(7.16)">7.16</a>),
  the overall thrust is : 
 </p>
 
@@ -576,7 +578,6 @@ for the same thrust, <i>A</i>
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mn>1</mn>
     <msup> <mi>X</mi> <mn>2</mn> </msup>
@@ -604,7 +605,7 @@ for the same thrust, <i>A</i>
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.9)
+<td class="eqn">                                          (16.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -630,11 +631,11 @@ for the same thrust, <i>A</i>
 
   <mo>&minus;</mo> 
 
-  <mn>&frac23;&thinsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
+  <mn>&frac23;&thinsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.10)
+<td class="eqn">                                         (16.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -649,12 +650,11 @@ for the same thrust, <i>A</i>
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
     <mi>T</mi> <mn>&thinsp;&prime;</mn>
     <mo>+</mo>
-    <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
+    <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
    </mrow>
     <mrow>
       <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
@@ -662,13 +662,13 @@ for the same thrust, <i>A</i>
  </mfrac>
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.11)
+<td class="eqn">                                         (16.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>
 Substituting  this into (16.7) gives the optimal
- <i>b</i>&thinsp;(&hairsp;<i>x</i>&hairsp;) in design parameters :
+ <i>b</i>(&hairsp;<i>x</i>&hairsp;) in design parameters :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -678,31 +678,27 @@ Substituting  this into (16.7) gives the optimal
   <mi>b</mi> <mn>&thinsp;(</mn> <mi>x</mi> <mn>)</mn>
 
   <mspace/> <mo>=</mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-    <mi>T</mi> <mn>&thinsp;&prime;</mn>
-    <mo>+</mo>
-    <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
-   </mrow>
-    <mrow>
+   <mfrac>
+      <mrow>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo>+</mo>
+         <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+      </mrow>
       <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
-   </mrow>
- </mfrac>
+   </mfrac>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-  <mi>&phi;</mi>
+   <msup> <mn>cos</mn> <mn>2</mn> </msup>
+   <mi>&phi;</mi>
 
-  <mspace/> <mo>&minus;</mo> <mspace/>
+   <mspace/> <mo>&minus;</mo> <mspace/>
 
-  <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
+   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
+</math>
+</td>
 
-</math> </td>
-
-<td style="width:50px; text-align:right">  (16.12)
+<td class="eqn">                                          (16.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -710,9 +706,9 @@ Substituting  this into (16.7) gives the optimal
  for optimal rotational loss,
   only this time including the viscous opt&shyimization.
  The original "amplitude"
-    <i>T</i>&thinsp;&prime;&nbsp;&#x2044;&thinsp;<i>&kappa;</i><sub>&phi;</sub>
+    <i>T</i>&thinsp;&prime;&nbsp;&frasl;&thinsp;<i>&kappa;</i><sub>&phi;</sub>
   is increased by an additional
-   &frac23;&thinsp;&epsilon;&thinsp;<i>X</i>&nbsp;&#x2044;&thinsp;<i>&kappa;</i><sub>&phi;</sub>.
+   &frac23;&thinsp;&epsilon;&thinsp;<i>X</i>&nbsp;&frasl;&thinsp;<i>&kappa;</i><sub>&phi;</sub>.
 <p>&emsp; This new fixed term makes up for the loss of thrust from the radius-dependent
     term <i>&epsilon;</i>&thinsp;.&thinsp;<i>x</i>.
  We will take a closer look at the shape of (16.12) in figure 16.4,
@@ -737,8 +733,6 @@ Substituting  this into (16.7) gives the optimal
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math> 
-
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mn>d</mn>
@@ -756,7 +750,6 @@ Substituting  this into (16.7) gives the optimal
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
     <mi>T</mi> <mn>&thinsp;&prime;</mn>
@@ -770,7 +763,6 @@ Substituting  this into (16.7) gives the optimal
 
   <mspace/> <mo>&minus;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
@@ -782,7 +774,7 @@ Substituting  this into (16.7) gives the optimal
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.13)
+<td class="eqn">                                         (16.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -827,8 +819,6 @@ Substituting  this into (16.7) gives the optimal
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math> 
-
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
         <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
@@ -845,13 +835,12 @@ Substituting  this into (16.7) gives the optimal
 
   <mn>&frac12;</mn> <mo>.</mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       </mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
    </mrow>
     <mrow>
-      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
    </mrow>
  </mfrac>
 
@@ -859,13 +848,12 @@ Substituting  this into (16.7) gives the optimal
 
   <mn>&frac12;</mn> <mo>.</mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
    </mrow>
     <mrow>
-      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
    </mrow>
  </mfrac>
 
@@ -877,7 +865,6 @@ Substituting  this into (16.7) gives the optimal
 
   <mn>&frac12;</mn> <mo>.</mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
@@ -889,38 +876,36 @@ Substituting  this into (16.7) gives the optimal
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.14)
+<td class="eqn">                                         (16.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>  The whole bracketed term together is a constant.
  It equals &frac12;&thinsp;<i>A</i>.
-</p>
-<p>  The first term within  the brackets is the rotationally optimal
+ The first term within  the brackets is the rotat&shyion&shyally optimal
  momentum loss ratio (10.10).
-</p>
-<p> The second term within the brackets is exactly half
+ The second term within the brackets is exactly half
  the average rotationally optimal viscous loss ratio of (16.6).
- These two terms are both constants along the span of the blade.
+ These two terms are both constant along the span of the blade.
 </p>
-<p>&emsp; The third term, the only one outside the brackets,
+<p> &emsp; The third term, the one outside the brackets,
  is <i>not</i> constant along the span.
- It varies with <i>x</i> both directly
- and via 1&nbsp;&#x2044;&thinsp;cos<sup>2</sup>&thinsp;<i>&phi;</i>.
-</p>
-<p>&emsp;
+ It varies with <i>x</i>, both directly
+ and via 1&nbsp;&frasl;&thinsp;cos<sup>2</sup>&thinsp;<i>&phi;</i>.
  This local term is exactly half the viscous loss ratio of (15.21).
+ </p>
+ <p> &emsp;
  With (16.14), the viscous loss has been split into two halves :
- a constant term depending only on <i>X</i>,
-  and a varying term depending only on <i>x</i>.
+ a constant term, depending only on <i>X</i>,
+  and a varying term, depending only on <i>x</i>.
 </p>
 
-<p>&emsp;
+<p> &emsp;
  Figure 16.3 shows the result for our standard lightplane example.
  Unlike the marginal loss, the actual loss
  is not constant along the blade.
  But compared to figure 16.1, the difference with
- a constant local loss ratio has approximately been halved.
+ a constant local loss ratio has app&shyrox&shyimately been halved.
 </p>
 
 
@@ -938,7 +923,7 @@ Substituting  this into (16.7) gives the optimal
 
 <!-- SECTION 16.9 --------------------------------------------->
 
-<h4> 16.9 &emsp; The blade shape with the drag ratio </h4>
+<h4> 16.9 &emsp; The blade shape varies with the drag ratio </h4>
 
 <p> Figure 16.4 gives the shape of the optimal induction distribution
  according to (16.12),
@@ -947,7 +932,7 @@ Substituting  this into (16.7) gives the optimal
  for viscous friction values of <i>&epsilon;</i>&nbsp;=&nbsp;0
  and <i>&epsilon;</i>&nbsp;=&nbsp;0.02.
  The zero-friction case of figure 11.1 is shown in red.
- There is a cross-over at 0.7*thinsp;<i>R</i>,
+ There is a cross-over at 0.7 &thinsp;<i>R</i>,
  and this is easier understood by collecting terms
  in <i>T</i>&thinsp;&prime; and in <i>&epsilon;</i>  (16.12)  :
 </p>
@@ -960,15 +945,12 @@ Substituting  this into (16.7) gives the optimal
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
-    <mrow>
-    <mi>T</mi> <mn>&thinsp;&prime;</mn>
-   </mrow>
-    <mrow>
-      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
-   </mrow>
- </mfrac>
+      <mrow>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+      </mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
 
   <mo>.</mo>
   <msup> <mn>cos</mn> <mn>2</mn> </msup>
@@ -986,13 +968,12 @@ Substituting  this into (16.7) gives the optimal
 
     <mo>.</mo>
   
-    <mstyle displaystyle="true">
     <mfrac>
       <mrow>
         <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
      </mrow>
       <mrow>
-        <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+        <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
      </mrow>
    </mfrac>
     <mn>&thinsp;</mn> <mo>&minus;</mo> <mn>&thinsp;</mn> 
@@ -1004,20 +985,21 @@ Substituting  this into (16.7) gives the optimal
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.15)
+<td class="eqn">                                         (16.15)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> The left hand term provides all the thrust.
  It is identical to the purely rotational distribution (10.8).
- Its contribution is directly proportional to <i>T</i>&thinsp;&prime;.
+ This part of the induction is directly proportional
+ to <i>T</i>&thinsp;&prime;.
 </p>
 <p>&emsp;
  The bracketed term on the right hand side is the viscous correction.
  It does not affect the thrust at all.
- It is proportional to <i>&epsilon;</i>,
+ It is pro&shyportional to <i>&epsilon;</i>,
  and it vanishes for <i>&epsilon;</i>&nbsp;=&nbsp;0.
- This term will always become zero at
+ This term will always pass through zero at
  approximately the following radius :
 </p>
 
@@ -1033,17 +1015,16 @@ Substituting  this into (16.7) gives the optimal
 
   <mo>.</mo> 
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup>
       <mi>&phi;</mi>
    </mrow>
     <mrow>
-      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
    </mrow>
  </mfrac>
 
-  <mo>.</mo>
+  <mo>. </mo>
 
   <mi>X</mi>
 
@@ -1053,19 +1034,18 @@ Substituting  this into (16.7) gives the optimal
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.16)
+<td class="eqn">                                         (16.16)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>
 This is just over two thirds of the prop radius,
  say at 0.7&thinsp;<i>R</i>.
-  The location makes sense.
- The net thrust of the correction term is zero,
- and since <nobr>
- (&hairsp;0.7&hairsp;)<sup>2</sup>&nbsp;=&nbsp;0.49,</nobr>
- the cross-over location is almost exactly halfway
- the total disk area.
+ This makes sense, since the net thrust of the correction term
+ is zero,
+ and this cross-over location is almost exactly halfway
+ the total disk area, since <nobr>
+ (&hairsp;0.7&hairsp;)<sup>2</sup>&nbsp;=&nbsp;0.49.</nobr>
 </p>
 <p>&emsp;
  The tip value of the distribution is :
@@ -1079,7 +1059,6 @@ This is just over two thirds of the prop radius,
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
     <mi>T</mi> <mn>&thinsp;&prime;</mn>
@@ -1105,7 +1084,6 @@ This is just over two thirds of the prop radius,
 
     <mo>.</mo>
   
-    <mstyle displaystyle="true">
     <mfrac>
       <mrow>
         <msup> <mn>cos</mn> <mn>2</mn> </msup>
@@ -1125,7 +1103,7 @@ This is just over two thirds of the prop radius,
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.17)
+<td class="eqn">                                         (16.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1150,7 +1128,7 @@ This is just over two thirds of the prop radius,
 
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.18)
+<td class="eqn">                                         (16.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1162,7 +1140,7 @@ This is just over two thirds of the prop radius,
 </p>
 <p>&emsp;
  In general,
- <i>&epsilon;</i>&thinsp;.&thinsp;<i>X</i>&nbsp;&#x2044;&nbsp;<i>T</i>&thinsp;&prime;
+ <i>&epsilon;</i>&thinsp;.&thinsp;<i>X</i>&nbsp;&frasl;&nbsp;<i>T</i>&thinsp;&prime;
  is the shape factor for the viscous correction.
  The correction is most pronounced for lightly loaded propellers
  of high tip speed ratio, and for high values of <i>&epsilon;</i>.
@@ -1176,7 +1154,7 @@ This is just over two thirds of the prop radius,
      alt = "Viscous loss diagram"; >
 </div>
 
-<div class = "caption">
+<div class = "caption"  style="margin-bottom:3px">
 <p> <i> Figure 16.4 : &ensp; Thrust distribution
          after viscous optimization (16.12). </i> </p>
 </div>
@@ -1205,86 +1183,239 @@ This is just over two thirds of the prop radius,
 
 <h4>- &ensp; the viscous loss integral </h4>
 
-<p> Equation (15.21  XXXXXX TBC  ) gave
- the viscous loss on a ring, for an arbitrary
- (&hairsp;light loading&hairsp;) induction
+<p> Equation (14.XX), repeated here,
+gave  the viscous loss integral for an arbitrary
+ (&hairsp;light loading&hairsp;) induction distribution
  <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;).
-</p>
-<p>&emsp;
- Substituting the optimal
-   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) of (16.12),
- some of the cos<sup>2</sup><i>&phi;</i> terms will cancel : 
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
-<math> 
+   <math>
 
   <msub> <mi>P</mi> <mn>v</mn>  </msub> <mn>&thinsp;&prime; </mn>
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mn>1</mn>
     <msup> <mi>X</mi> <mn>2</mn> </msup>
   </mfrac>
 
   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
-  
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mi>T</mi> <mn>&thinsp;&prime;</mn> <mo>.</mo>
-      <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>     
-   </mrow>
-    <mrow>
-      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
-   </mrow>
- </mfrac>
+ 
+   <mi>b</mi><mn>(</mn><mi>x</mi><mn>)</mn>
+   <mo> . </mo> 
+   <mfrac>
+      <mrow>
+         <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>     
+      </mrow>
+      <mrow> <msup> <mn>cos</mn><mn>2</mn></msup> <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 
- <mspace/> <mo>+</mo> <mspace/>
+   <mo> . </mo>
 
- <mspace/> <mo>&minus;</mo> <mspace/>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math>
+</td>
 
-  <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
-  <mo>.</mo>
-
-  <mn>(</mn>
-    <mn>1</mn> <mo>+</mo>  <mn>&frac12;&thinsp;</mn>
-    <msup> <mi>X</mi> <mn>2</mn> </msup>
-  <mn>)</mn>
-  
-</math> </td>
-
-<td style="width:50px; text-align:right">  (16.19)
+<td class="eqn">                                         (16.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>&emsp;
-	〖P_v〗^'  =   1 /X^2   ∫_0^(X )▒〖( (T ^'.ϵ.x)/κ_ϕ   + (⅔ .ϵ^2.X. x)/κϕ  - (ϵ^2.x^2)/(cos^2 ϕ)  )  .2 x .dx〗
-(16.19)
+<p> Substituting the optimal
+   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) of (16.12),
+ the first cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i> term
+ in the numerator will cancel, but the
+   1&thinsp;&frasl;&thinsp;cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
+ term will remain in the second term  : 
 </p>
-<p> The first term, together with the 2&thinsp;<i>x</i>
- outside the brackets, yields  an integral of 2&thinsp;<i>x</i><sup>2</sup>
-  with primitive &frac23;2&thinsp;<i>x</i><sup>3</sup>.
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+   <msub> <mi>P</mi> <mn>v</mn>  </msub> <mn>&thinsp;&prime; </mn>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   <mspace/>
+
+   <!-- integral -->
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   
+   <mn>2</mn> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo>
+   <mfrac>
+      <mrow>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo>+</mo>
+         <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+      </mrow>
+      <mrow>
+         <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+      </mrow>
+   </mfrac>
+   
+   <mo>.</mo>
+   
+   <msup> <mi>x</mi> <mn>2</mn> </msup>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+
+   <mspace/>
+   <mo> &minus;</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   <mspace/>
+
+  <!-- integral -->
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+   <mn>2</mn>
+   <mo>.</mo>
+   <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+   <mo>. &hairsp;</mo>
+   
+   <mfrac>
+      <mrow> <mn> &nbsp; </mn> 
+          <msup> <mi>x</mi> <mn>3</mn> </msup>
+      </mrow>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup>
+             <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+   <mo> &hairsp; .</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (16.20)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!--
+<p> The first term, together with the 2&thinsp;.&thinsp;<i>x</i>
+ outside the brackets, yields  an integral of
+  2&thinsp;.&hairsp;<i>x</i><sup>2</sup>,
+  which yields &frac23;&thinsp;<i>X</i><sup>&hairsp;3</sup>.
  The result equals the non-optimized loss
  for a rotationally optimal propeller, (****).
 </p>
 <p> The second term has the same order of <i>x</i>,
- but with a different constant.
+ but with a constant including one more order of 
+ <i>&epsilon;</i> and <i>X</i>. 
+ This yields a term containing <i>&epsilon;</i><sup>2</sup> .
+ <i>X</i><sup>2</sup>.
 </p>
-<p>  In the third term, (2.8) changes the
- <i>x</i><sup>2</sup> / cos<sup>2</sup> <i>&phi;</i> term 
- to 1 + <i>x</i>&hairsp;<sup>2</sup>.
- Together with the 2&thinsp;<i>x</i> outside the brackets,
- the primitive of this term is
-  <i>x</i>&hairsp;<sup>2</sup> + &frac14; <i>x</i>&hairsp;<sup>4</sup>.
-</p>
-<p>&emsp;
- The overall integral becomes :
+-->
+<p>  In the second term, we can use (2.8), repeated here :
 </p>
 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+
+<math>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+      <mi>&phi;</mi>
+    </mrow>
+  </mfrac>
+
+  <mspace/> <mo> = </mo> <mspace/>
+
+  <mfrac>
+    <mrow>
+      <mn>1</mn> <mo>+</mo> 
+      <msup> <mi>x</mi> <mn>2</mn> </msup>
+    </mrow>
+    <mrow> 
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+    </mrow>
+  </mfrac>
+  </math>
+</td>
+</table>
+
+<p>
+ This changes the integral into :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+   <msub> <mi>P</mi> <mn>v</mn>  </msub> <mn>&thinsp;&prime; </mn>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+
+   <!-- integral -->
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+   <mn>2</mn> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo>
+   <mfrac>
+      <mrow>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo>+</mo>
+         <mn>&frac23;&nbsp;</mn> <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+      </mrow>
+      <mrow>
+         <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+      </mrow>
+   </mfrac>
+
+   <mo>.</mo>
+   <msup> <mi>x</mi> <mn>2</mn> </msup>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+
+   <mo> &minus; </mo>
+
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+   <mn>2</mn>
+   <mo>.</mo>
+   <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+   <mo>.</mo>
+
+   <mn>(&nbsp;</mn>
+      <mi>x</mi> <mo>+</mo> 
+      <msup> <mi>x</mi><mn>3</mn></msup>
+   <mn>)</mn>
+
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (16.21)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<p> All the integrals are now simple powers of <i>x</i>,
+ which evaluate to simple powers of <i>X</i>.
+ Dividing by the 1&thinsp;&frasl;&thinsp;<i>X</i>&hairsp;<sup>2</sup>
+ term outside the integral yields :
+</p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
@@ -1294,7 +1425,6 @@ This is just over two thirds of the prop radius,
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
       <mn>&frac23;&thinsp;</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
@@ -1307,10 +1437,11 @@ This is just over two thirds of the prop radius,
 
    <mspace/> <mo>+</mo> <mspace/>
   
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow>
-      <mn>4&frasl;9</mn> <mo>.</mo>
+      <mn>4&frasl;9</mn>         <!-- make this nicer later -->
+
+      <mo>.</mo>
       <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
       <mo>.</mo>
       <msup> <mi>X</mi> <mn>2</mn> </msup>
@@ -1332,39 +1463,854 @@ This is just over two thirds of the prop radius,
   
 </math> </td>
 
-<td style="width:50px; text-align:right">  (16.20)
+<td class="eqn">                                         (16.22)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Collecting terms, the non-dimensional loss ratio
- as in (3.9) is :
+<p> Dividing by the thrust <i>T</i>&thinsp;&prime; 
+ and collecting terms, the non-dimensional loss ratio is :
 </p>
-<p>&emsp;
-	〖P_v〗^'/T^'     =  ⅔  (ϵ .X)/κ_ϕ   -   ϵ^2/(T ^' )  .(1+X^2.(½ -(4/9)/(〖 κ〗_ ϕ  )))
-(16.21)
-</p>
-<p> The left hand term is the viscous loss ratio of
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+   <mfrac>
+      <msubsup> <mi>P</mi> <mn>v</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+      <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn> </mrow>
+   </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mn>&frac23;&thinsp;</mn> 
+   <mo>.</mo> 
+   <mfrac>
+      <mrow>
+         <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+      </mrow>
+   <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+   </mfrac>
+
+   <mspace/> <mo>&minus;</mo> <mspace/>
+   
+   <mfrac>
+      <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+      <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn> </mrow>
+   </mfrac>
+
+   <mo> . </mo>
+   
+   <mo maxsize="24px">(</mo>
+   
+   <mn>1</mn> 
+   <mo>+</mo>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   <mo>.</mo>
+   <mo maxsize="24px">(</mo>
+   <mn>&frac12; </mn>
+   
+   <mo>&hairsp; &minus; &hairsp;</mo>
+      
+   <mfrac>
+      <mn>4&frasl;9</mn>
+      <msub> <mi>&kappa;</mi> <mi>&phi;</mi> </msub>
+   </mfrac>
+
+  <mo maxsize="24px">)</mo>
+  <mo maxsize="24px">)</mo>
+  
+</math> </td>
+
+<td class="eqn">                                         (16.23)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>   The left hand term is the overall viscous loss ratio of
  the rotationally optimal propeller of (16.6).
- The right hand term in is the decrease of the viscous loss
+ The right hand term is the decrease of the viscous loss
  ratio due to the viscous optimization.
+ <p class="draft">
+ TODO      Curb the brackets above.
+ </p>
+<p class="draft">
+ TODO      Offer some insights.
+ </p>
+ <p>
  We will see below that exactly half of this gain is lost
  to an increase of the momentum loss ratio. 
 </p>
 
-
 <!-- SECTION 16.8 --------------------------------------------->
 
-<h4> 16.8 &ensp; Numerical example </h4>
+<h4> 16.8 &ensp; The momentum loss integral </h4>
 
-<p> TBW.
+<p> Equation (9.11) gave the ring momentum loss
+ (&hairsp;including rotation&hairsp;) 
+ for an arbitrary <i>b</i>&hairsp;(<i>x</i>), for light loading :
 </p>
 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   <mo>.</mo>
+      <!-- integral -->
+      <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mn>&frac12;</mn>
+   <mo>.</mo>
+
+   <mfrac>
+      <msup>
+         <mi>b</mi><mn>2</mn> 
+      </msup>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+      </row>   
+   </mfrac>
+
+   <mo>.</mo>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (16.24)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> 
+ Substituting the newly optimized <i>b</i>(<i>x</i>)
+ from (16.12) yields :
+ </p>
+ 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   
+   <mo>.</mo>
+   
+   <!-- integral -->
+   
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   
+   <mn>&frac12;</mn>
+
+   <mo>.</mo>
+
+   <mfrac>
+      <msup>
+         <mrow>
+            <mo>(</mo>
+            <!-- displaystyle fix needed, unclear why, PL-->
+            <!-- <mfrac> -->
+            <mfrac displaystyle="true">
+               <mrow>
+                  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+                  <mo> + </mo>
+
+                  <mn> &frac23; </mn>  
+                  <mo>.</mo>
+                  <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+                  <mo>.</mo>
+               </mrow>
+               <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+            </mfrac>
+      
+            <mo>.</mo>
+      
+            <msup> <mn>cos</mn> <mn>2</mn> </msup>
+            <mi>&phi;</mi>
+      
+            <mspace/> <mo>&minus;</mo> <mspace/>
+            <mi>&epsilon;</mi> <mo> . </mo> <mi>x</mi>
+
+            <mo>)</mo>  
+         </mrow>
+         <mn style="font-size:17px">2</mn>
+      </msup>   
+
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup>
+         <mi>&phi;</mi> 
+      </mrow>
+   </mfrac>
+
+   <mo>.</mo>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (16.25)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Squaring the bracketed term gives three terms,
+ as in (<i>a</i> - <i>b</i>)&hairsp;<sup>2</sup> =
+ <i>a</i>&hairsp;<sup>&hairsp;2</sup>
+   &minus; 2 <i>a&hairsp;b</i> 
+   + <i>b</i>&hairsp;<sup>2</sup>. 
+ Dividing each term by cos<sup>2</sup>&hairsp;<i>&phi;</i>
+ and writing the three integrals separately yields :
+ </p
+ 
+ <!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   <mo>.</mo>
+   <mstyle>
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   
+   <mn>&frac12;</mn>
+
+   <mo>.</mo>
+
+   <msup>
+      <mrow>
+      
+      <mo>(</mo>
+      <mfrac>
+         <mrow>
+            <mi>T</mi> <mn>&thinsp;&prime;</mn>
+            <mo> + </mo>
+
+            <mn> &frac23; </mn>  
+            <mo>.</mo>
+            <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+         </mrow>
+         <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+      </mfrac>
+      
+      <mo>)</mo>
+      
+      </mrow>
+      <mn style="font-size:17px">2</mn>
+   </msup>   
+
+   <mo>.</mo>
+   
+   <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi>
+
+   <mo>.</mo>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+ </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <mspace style="width:30px;"/>
+
+  <mo> + </mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mstyle>
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   
+   <mspace/><mspace/> <mn>&minus;</mn> <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo> + </mo>
+
+         <mn> &frac23; </mn>  
+         <mo>.</mo>
+         <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+         </mrow>
+
+         <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+
+   <mo> . </mo>
+      
+   <mn> 2 &hairsp;</mn>  <mi>&epsilon;</mi>
+   <mo> . </mo>
+   <msup> <mi>x</mi> <mn>2</mn> </msup>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math>
+ </td>
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <mspace style="width:30px;"/>
+
+  <mo> + </mo> <mspace/>
+
+   <mfrac>
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   
+   <mo>.</mo>
+   
+   <!-- integral -->
+   <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   
+   <mspace/><mspace/><mspace/> <mspace/> <mn>&frac12;</mn>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <mrow> <mn>&nbsp;</mn>
+            <msup><mi>&epsilon;</mi><mn>2</mn> </msup> 
+             <mn>.&nbsp;</mn>      
+             <msup><mi>x</mi><mn>2</mn> </msup>   
+      </mrow>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> <mi>&phi;</mi> 
+      </mrow>
+   </mfrac>
+
+   <mo>.</mo>
+   <mn>2</mn> <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn><mi>x</mi>
+</math> </td>
+
+<td class="eqn">                                         (16.26)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The first line contains the integral 
+of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
+ By the definition of (11.3), that integral is
+ <i>&kappa;</i>&hairsp;<sub>&phi;</sub> in the numerator.
+ This cancels one of the two 
+  <i>&kappa;</i>&hairsp;<sub>&phi;</sub> terms in the denominator.
+ The&nbsp;second line contains the integral of 
+   <i>x</i>&hairsp;<sup>2</sup>. That integral is
+  &frac13;&thinsp;<i>X</i>&hairsp;<sup>3</sup>. 
+ The third line contains the same integral
+ of 1&thinsp;&frasl;&hairsp;cos&thinsp;<sup>2</sup>&hairsp;<i>&phi;</i>
+ which was solved before in (16.XX).
+ All in all this yields :
+ </p>
+ <!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+ 
+   <mfrac>
+      <mrow>
+         <mn>&frac12;</mn>
+         <mo>.</mo>
+         <msup>
+            <mrow>
+               <mo>(</mo> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+               <mo>)</mo>
+            </mrow>
+            <mn>2</mn>
+         </msup>
+   
+         <mo> + </mo>
+
+         <mn> &frac23; </mn>  
+         <mo>.</mo>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo>.</mo>
+         <mi>&epsilon;</mi> <mo>.</mo> <mi>X</mi>
+   
+         <mo>+</mo>
+   
+         <mn>2&frasl;9</mn>  
+         <mo>.</mo>
+         <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+         <mo>.</mo>   
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+   
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+</math>
+</td>
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <mspace style="width:30px;"/>
+
+  <mo> &minus; </mo> <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mn> &frac23; </mn>
+         <mo>.</mo>
+         <mi>T</mi> <mn>&thinsp;&prime;</mn>
+         <mo>.</mo>
+         <mi>&epsilon;</mi>
+         <mo>.</mo>
+         <mi>X</mi>
+         <mo> + </mo>
+         <mn>4&frasl;9</mn>  
+         <mo>.</mo>
+         <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+         <mo>.</mo>   
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+</math>
+</td>
+</tr>
+</table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+
+  <mspace style="width:30px;"/>
+
+   <mo> + </mo> <mspace/>
+
+   <mn>&frac12;</mn>
+   <mn>&nbsp;</mn>
+   <msup><mi>&epsilon;</mi><mn>2</mn> </msup> 
+   <mo>(</mo>
+      <mn> 1</mn> <mo> + </mo>      
+      <mn>&frac12;</mn> <mn>&nbsp;</mn>
+      <msup><mi>X</mi><mn>2</mn> </msup>   
+   <mo>)</mo>
+</math> </td>
+
+<td class="eqn">                                         (16.27)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The first two lines both contain a term equal to
+ the non-optimized viscous loss, but with opposite signs.
+ These two terms cancel each other out.
+ Another pair of terms cancels half, leaving us with : 
+ </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+  <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+
+  <mspace/> <mo>=</mo> <mspace/>
+ 
+   <mfrac>
+      <mrow>
+         <mn>&frac12;</mn>
+         <mo>.</mo>
+         <msup>
+            <mrow>
+               <mn>(</mn>
+                  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+               <mn>)</mn>
+            </mrow>
+            <mn>2</mn>
+         </msup>
+   
+         <mo> &minus; </mo>
+   
+         <mn>2&frasl;9</mn>  
+         <mo>.</mo>
+         <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+         <mo>.</mo>   
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+   
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+
+  <mspace/> <mo> + </mo> <mspace/>
+
+   <mn>&frac12;</mn>
+   <mn>&nbsp;</mn>
+   <msup><mi>&epsilon;</mi><mn>2</mn> </msup> 
+   <mo>.</mo>
+   <mn>(</mn>
+      <mn>&thinsp;1</mn> <mo> + </mo>      
+      <mn>&frac12;</mn> <mn>&nbsp;</mn>
+      <msup><mi>X</mi><mn>2</mn> </msup>   
+   <mn>)</mn>
+</math>
+</td>
+
+<td class="eqn">                                         (16.28)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The non-dimensional ratio for the overall momentum loss becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mfrac>
+      <msubsup> <mi>P</mi> <mn>m</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+      <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </sup>
+   </mfrac>
+   
+   <mspace/> <mo>=</mo> <mspace/>
+ 
+   <mn>&frac12;</mn>
+   <mo>.</mo>
+   <mfrac>
+      <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+   
+   <mspace/> <mo> + </mo> <mspace/>
+   
+   <mfrac>
+      <msup> <mi>&epsilon;</mi> <mn>2</mn> </msup>
+      <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
+   </mfrac>
+
+   <mo> .</mo>
+
+   <mo maxsize="24px">(</mo>
+      <mn> &frac12</mn>
+      <mo> +</mo>      
+      <msup><mi>X</mi><mn>2</mn> </msup>   
+      
+      <mo>.</mo>
+
+      <mo maxsize="24px">(</mo>
+         <mn>&frac14;</mn> <mo> &minus; </mo>
+         <mfrac>
+            <mn> 2&frasl;9 </mn>
+            <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>            
+         </mfrac>
+      <mo maxsize="24px">)</mo>
+      
+   <mo maxsize="24px">)</mo>
+</math> </td>
+
+<td class="eqn">                                         (16.29)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The first term equals the rotationally optimal
+ momentum loss ratio
+ <span class="draft">(Error! Reference source not found.)</span>
+ </p>
+ <p> &emsp;
+ The bracketed term is always positive.
+ It increases the momentum loss.
+ This term is <i>exactly</i> half the term which <i>decreases</i>
+ the viscous loss.
+ This seems too nice to be a coincidence,
+ and in fact the same thing happens when
+<span style="font-variant: small-caps;"> Glauert</span>'s approximation is used.
+It would be nice to find a physical justification for this happy coincidence,
+ but for now it is left as an exercise to the reader.
+</p>
+<p> &emsp; The bracketed term depends (&hairsp;only&hairsp;) on <i>X</i>,
+both directly, and indirectly via
+ <i>&kappa;</i><sub>&thinsp;&phi;&hairsp;</sub>(<i>X</i>).
+If we call this term <i>h&hairsp;</i>(<i>X</i>), then the viscous
+optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
+ in the overal loss ratio of :
+ </p>
+ 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mn>&Delta;&thinsp;</mn>
+<mo>(</mo>   
+   <mfrac>
+      <msubsup> <mi>P</mi> <mn>m+v</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+      <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </msup>
+   </mfrac>
+<mo>)</mo>
+   
+   <mspace/> <mo>=</mo> <mspace/>
+ 
+   <mo>&minus; </mo>
+   
+   <mfrac>
+      <msup> <mi>&epsilon;</mi><mn>2</mn> </msup>
+      <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </msup>
+   </mfrac>
+   
+   <mo>&hairsp;. </mo>
+   
+   <mi>h</mi> <mn>&hairsp;(</mn> <mi>X</mi> <mn>)</mn>
+   
+</math>
+</td>
+
+<td class="eqn">                                        (16.30)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The exact term <i>h&hairsp;</i>(<i>X</i>) is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mi>h</mi> <mn>(</mn> <mi>X</mi> <mn>)</mn>
+   
+   <mspace/> <mo> &equiv; </mo> <mspace/>
+ 
+   <mn> &frac12</mn>
+   <mo> +</mo>      
+   <msup><mi>X</mi><mn>2</mn> </msup>   
+      
+   <mo>.</mo>
+
+   <mo maxsize="24px">(</mo>
+      <mn>&frac14;</mn> <mo> &minus; </mo>
+      <mfrac>
+         <mn> 2&frasl;9 </mn>
+         <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>            
+      </mfrac>
+   <mo maxsize="24px">)</mo>
+</math>
+</td>
+
+<td class="eqn">                                         (16.31)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+ <p> For very large <i>X</i> where 
+ <i>&kappa;</i><sub>&hairsp;&phi;</sub> &cong; 1,
+  the whole term equals
+  ( &frac12; +
+    <sup style="font-size:10px;">
+      1&thinsp;</sup>&frasl;<sub style="font-size:10px;">36</sub>
+   . <i>X</i><sup>&thinsp;2</sup> ).
+   For lower values of <i>X</i>, the negative term becomes stronger,
+   and for <i>X</i>&hairsp;'&hairsp;s near 1 the net term nearly vanishes, although
+   it always remains positive.
+   This is not surprising. At <i>x</i>&nbsp;=&nbsp; the blade pitch angle
+   is 45&degree;,and the propeller is already viscously optimal.
+</p>
+<p> &emsp; 
+ The exact term is easy enough to evaluate, but for an even quicker assessment
+ it can be approximated by the following heuristic fit :
+ </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mi>h</mi> <mn>&hairsp;(</mn> <mi>X</mi> <mn>)</mn>
+   
+   <mspace/> <mo> &cong; </mo> <mspace/>
+ 
+   <mfrac>
+      <msup>
+         <mrow> <mn>( &hairsp;</mn> 
+                  <mi>X</mi> <mo>&minus;</mo> <mn>1.6 &hairsp;</mn>
+                <mn>)</mn>
+         </mrow>
+         <mn>2</mn>
+      </msup>
+      <mn>32</mn>
+   </mfrac>
+</td>
+
+<td class="eqn">                                         (16.32)
+</td> 
+</table>
+
+<div class="draft">
+<p>	 
+
+<p> Figure 16.5 shows the graph of <i>h&hairsp;</i>(<i>X</i>) against <i>X</i>. 
+   The term is always positive.
+   The dashed line shows that it can be approximated by a heuristic fit :
+</p>
+
+<div class = "center">
+<img src = "prop_viscous_optimization_factor_hX.png";
+   width = "70%";
+     alt = "Viscous optimization factor"; >
+</div>
+<div class = "caption">
+<p> <i> Figure 16.5 : &ensp; The viscous optimizatin factor h&hairsp;(X). </i> </p>
+</div>
+
+<p>
+Figure 16.5 :&ensp; The term <i>h</i>(<i>X</i>) in the viscous optimization.
+</p>
+</div>
+
+<h4> 16.5 &emsp; Numerical example</h4>
+
+<p> Our standard numerical example has a  tip speed ratio
+ of <i>X</i>&nbsp;=&nbsp;5, a thrust coefficient
+ <i>T</i>&thinsp;&prime; of 0.1 and
+ a section drag coefficient of <i>&epsilon;</i>&nbsp;=&nbsp;0.1. 
+  With (16.29) and (XXXX), we find :
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mi>h</mi> <mn>(</mn> <mi>X</mi> <mn>)</mn>
+   
+   <mspace/> <mo> &cong; </mo> <mspace/>
+ 
+   <mfrac>
+      <msup>
+         <mrow> <mn>(</mn> <mn>&nbsp; 5 </mn> <mn> &minus; </mn> <mn> 1.6 &nbsp;</mn>
+                <mn>)</mn>
+         </mrow>
+         <mn>2</mn>
+      </msup>
+      <mn>32</mn>
+   </mfrac>
+   
+   <mspace/> <mo> = </mo> <mspace/>
+ 
+   <mn>0.36</mn>
+</td>
+
+<td class="eqn">                                         (16.33)
+</td> 
+</table>
+
+<p> and </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mn>&Delta;&thinsp;</mn>
+   <mo  maxsize="36px">(</mo>   
+      <mfrac>
+         <msubsup> <mi>P</mi> <mn>m+v</mn> <mn>&thinsp;&prime; </mn> </msubsup>
+         <msup> <mi>T</mi> <mn>&thinsp;&prime; </mn> </msup>
+      </mfrac>
+   <mo  maxsize="36px">)</mo>
+   
+   <mspace/> <mo> =</mo> <mspace/>
+ 
+   <mo>&minus; </mo>
+   
+   <mn> 0.36 </mn>
+   
+   <mo> <b>.</b> </mo>
+   
+   <mfrac>
+      <msup> <mrow> <mn>(</mn> <mn>0.02</mn> <mn>)</mn>
+            </mrow>
+            <mn>2</mn> </msup>
+      <mn>0.1</mn>
+   </mfrac>
+   
+   <mspace/> <mo> &cong; </mo> <mspace/>
+   
+   <mn> &minus; 0.0015 </mn>
+   
+</math>
+</td>
+
+<td class="eqn">                                        (16.34)
+</td> 
+
+</tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The gain in efficiency is 0.15&thinsp;% percentage point.
+ This is small relative to the overall efficiency of 89&hairsp;%,
+ though not completely negligible.
+For rotors of high tip speed ratio however,
+ the viscous optimization is definitely worth&shywhile.
+ At a tip speed ratio of <i>X</i>&nbsp;=&nbsp;10,
+ for the same  <i>&epsilon;</i>&nbsp;=&nbsp;0.02
+ and <i>T</i>&thinsp;&prime;&nbsp;=&nbsp;0.1,
+ the overall loss ratio is reduced by
+ <nobr>0.9&hairsp;%</nobr> percentage point,
+ almost a whole percent.
+ Such gains are not easily achieved in other ways,
+ and certainly not by a simple change in blade shape like this.
+</p>
+<p> &emsp;
+   Still, for "normal" values of <i>X</i> around 5,
+ the main benefit of the viscous optimization
+ is not so much a small gain in efficiency,
+ but rather the side effect on the blade shape,
+ which visibly changes towards narrower and hence thinner tips.
+ These will give both mechanical and acoustical advantages
+</p>
+
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VISCOUS LOSS </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
+<script src = "menu.js"></script>
+<script src = "draft.js"></script>
+
+<!-- needed for hamburger menu, must be at end of body -->
+<script src = "draft.js"></script>
 <script src = "menu.js"></script>
 
 </body>

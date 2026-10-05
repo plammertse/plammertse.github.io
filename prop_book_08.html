@@ -35,17 +35,21 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_07.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_09.html">
+               Next &#x25BA;</a>                      </li>              
+
    </ul>
 </nav>
 
-
-
-<!-- TEXT BLOCK HEADER ---------------------------------------->
-
-<p style="margin-left : 320px">  <i> ROTATION </i> </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 8 ------------------------------------------------>
 
@@ -142,6 +146,8 @@
 </p>
 
 <!-- SECTION 8.3 ---------------------------------------------->
+
+<div style = "break-before:page"> </div>
 
 <a name="8.3"></a>
 
@@ -374,6 +380,8 @@
 
 <!-- SECTION 8.6 ---------------------------------------------->
 
+<div style = "break-before:page"> </div>
+
 <h4> 8.6 &emsp; The swirl angle </h4>
 
 <p> The sideways induced velocity <i>u</i> will change the direction
@@ -470,12 +478,22 @@
  and this rotation is lost to the atmosphere.
 </p>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
-<div class="footer"> P. Lammertse, 2025 </div>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> ROTATION </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
 <!-- script must be at end of body -->
-<script src="menu.js"></script>
+<script src="menu.js">     </script>
+<script src="draft.js">    </script>
 
 </body>
 </html>

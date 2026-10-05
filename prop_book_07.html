@@ -35,16 +35,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_06.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_08.html">
+               Next &#x25BA;</a>                      </li>              
    </ul>
 </nav>
 
-
-
-<!--- TEXT PAGE HEADER ---------------------------------------->
-<p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <h2> 7 &emsp; Concentric tubes </h4>
 
@@ -67,10 +71,8 @@
  But such independence is by no means obvious.
  The justification can be found in vortex theory,
  which we will discuss much later.
-</p>
-<p>&emsp;
  In practice, the in&shydepen&shydence of the thin-walled tubes
- holds up much better than might reasonably be expected.
+ holds up much better than might reasonably be ex&shypected.
 </p>
 <p>&emsp;
  If the rings and tubes of a propeller do not interact,
@@ -135,7 +137,7 @@
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.1)
+<td class="eqn">                 (7.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -143,7 +145,8 @@
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation"> <tr>
+ <td>
 <math>
   <mi>G</mi>
   <mspace/> <mo>=</mo> <mspace/>
@@ -163,14 +166,14 @@
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.2)
+<td class="eqn">                                           (7.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> By (2.12), we can replace <i>r&nbsp;&#x2044;&nbsp;R</i>
- by <i>x</i>&nbsp;&#x2044;&thinsp;<i>X</i>,
- and d<i>r</i>&nbsp;&#x2044;&nbsp;<i>R</i>
- by d<i>x</i>&nbsp;&#x2044;&thinsp;<i>X</i>,
+<p> By (2.12), we can replace <i>r&nbsp;&frasl;&nbsp;R</i>
+ by <i>x</i>&nbsp;&frasl;&thinsp;<i>X</i>,
+ and d<i>r</i>&nbsp;&frasl;&nbsp;<i>R</i>
+ by d<i>x</i>&nbsp;&frasl;&thinsp;<i>X</i>,
  yielding :
 </p>
 
@@ -195,7 +198,7 @@
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.3)
+<td class="eqn">                 (7.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -248,7 +251,7 @@ end with a more or less elliptical tip.
 </p>
 <p>&emsp;
  Replacing d<i>x</i> in (7.3) by  
-  &Delta;&hairsp;<i>x</i> = <i>X&nbsp;&#x2044;&thinsp;N</i> 
+  &Delta;&hairsp;<i>x</i> = <i>X&nbsp;&frasl;&thinsp;N</i> 
 and bringing it outside the summation yields :
 </p>
 
@@ -281,7 +284,7 @@ and bringing it outside the summation yields :
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.4)
+<td class="eqn">                 (7.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -311,6 +314,9 @@ and bringing it outside the summation yields :
 <p> The thrust of a uniform actuator disk follows from (5.1).
  We define the equivalent for a ring :
 </p>
+
+<a name="(7.5)">
+ 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
@@ -324,15 +330,15 @@ and bringing it outside the summation yields :
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-  <mo>.</mo>
   <mi>b</mi>
   <mo>.</mo>
+  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+  <mn>. &hairsp; </mn>
   <mi>V</mi>
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.5)
+<td class="eqn">                 (7.5)
 </td> </tr> </table>
 
 <!-- END EQUATION --------------------------------------------->
@@ -348,8 +354,10 @@ and bringing it outside the summation yields :
  
   <mo>=</mo> 
 
-  <mstyle displaystyle="true">
-  <mfrac>
+   <mi>b</mi> 
+   <mo>.</mo> 
+
+  <mfrac displaystyle="true">
     <mrow>
       <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup> 
    </mrow>
@@ -361,11 +369,11 @@ and bringing it outside the summation yields :
     </mrow>
  </mfrac>
 
- <mo>.</mo> <mi>b</mi> <mo>.</mo> <mi>V</mi>
+ <mo>.</mo> <mi>V</mi>
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.6)
+<td class="eqn">                 (7.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -402,7 +410,7 @@ and bringing it outside the summation yields :
      <mn>1&thinsp;+&thinsp;&frac12;&thinsp;</mn> <mi>b</mi>
   <mo>)</mo>
 </math>
-<td style="width:50px; text-align:right">                 (7.7)
+<td class="eqn">                 (7.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -418,7 +426,7 @@ and bringing it outside the summation yields :
   <mn>d</mn> <mi>r</mi>
 </math>
 
-<td style="width:50px; text-align:right">
+<td class="eqn">
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -449,7 +457,7 @@ and bringing it outside the summation yields :
  </mrow>
 </math>
 
-<td style="width:50px; text-align:right">                 (7.8)
+<td class="eqn">                 (7.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -484,14 +492,14 @@ and bringing it outside the summation yields :
   <mn>)</mn>
 </math>
 
-<td style="width:50px; text-align:right">                 (7.9)
+<td class="eqn">                 (7.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Replacing <i>r&nbsp;&#x2044;&nbsp;R</i>
- by <i>x&nbsp;&#x2044;&nbsp;X</i>
- and d<i>r&nbsp;&#x2044;&nbsp;R</i>
- by d<i>x&nbsp;&#x2044;&nbsp;X</i>
+<p> Replacing <i>r&nbsp;&frasl;&nbsp;R</i>
+ by <i>x&nbsp;&frasl;&nbsp;X</i>
+ and d<i>r&nbsp;&frasl;&nbsp;R</i>
+ by d<i>x&nbsp;&frasl;&nbsp;X</i>
  like we did in (7.3) yields :
 </p>  
 
@@ -522,7 +530,7 @@ and bringing it outside the summation yields :
   <mn>)</mn>
 </math>
 
-<td style="width:50px; text-align:right">                (7.10)
+<td class="eqn">                (7.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -550,7 +558,7 @@ and bringing it outside the summation yields :
 
 </math>
 
-<td style="width:50px; text-align:right">                (7.11)
+<td class="eqn">                (7.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -571,14 +579,15 @@ and bringing it outside the summation yields :
 
   <mo>=</mo>
 
-    <mn>d</mn> 
-      <mi>m</mi> <mn>&hairsp;&prime;</mn>
-  <mo>.</mo>
   <mi>b</mi>
+  <mo>.</mo>
+  <mn>d</mn> 
+      <mi>m</mi> <mn>&hairsp;&prime;</mn>
+
 
 </math>
 
-<td style="width:50px; text-align:right">                 (7.12)
+<td class="eqn">                 (7.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -594,6 +603,9 @@ and bringing it outside the summation yields :
     
   <mo> = </mo>
 
+  <mi>b</mi>
+
+  <mo>.</mo>
   <mstyle displaystyle="true">
   <mfrac> 
    <mrow>
@@ -606,18 +618,15 @@ and bringing it outside the summation yields :
      <msup> <mi>X</mi> <mn>2</mn> </msup>
   </mrow>
  </mfrac>
-
   <mo>.</mo>
 
   <mn>(</mn>
    <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
   <mn>)</mn>
 
-  <mo>.</mo>
-  <mi>b</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (7.13)
+<td class="eqn">                (7.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -631,6 +640,10 @@ and bringing it outside the summation yields :
     
   <mo> = </mo>
 
+  <mi>b</mi>
+
+  <mo>.</mo>
+
   <mstyle displaystyle="true">
   <mfrac> 
    <mrow>
@@ -643,19 +656,77 @@ and bringing it outside the summation yields :
   </mrow>
  </mfrac>
 
-  <mo>.</mo>
-
-  <mi>b</mi>
-
 </math>
 
-<td style="width:50px; text-align:right">                (7.14)
+<td class="eqn">                (7.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <!-- SECTION 7.5 ---------------------------------------------->
 
-<h4> 7.5 &emsp; The momentum loss per ring                 </h4>
+<h4> 7.5 &emsp; The light loading thrust integral          </h4>
+
+<p> The overall thrust is the integral over the prop disk 
+ of the thrust from all the rings  :
+<p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&prime;</mn>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mo>&int;</mo>
+  <mn>d</mn> <mi>T</mi> <mn>&prime;</mn>
+  
+</math>
+
+<td class="eqn">                 (7.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<a name="(7.16)"></a>
+
+<p> With the light loading d<i>T</i>&hairsp;&prime; of (7.14)
+ this means that the overall thrust is simply
+ the integral, alias the area-weighted average,
+ of the axial induction <i>b</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+  <mspace/> <mo>=</mo> <mspace/>
+  <mstyle displaystyle="true">
+  <mfrac>
+    <mn>1</mn>
+    <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mfrac>
+  <mn>&thinsp;.</mn>
+  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+
+  <mi>b</mi> <mn>(</mn><mi>x</mi><mn>)</mn>
+  <mo>.</mo>
+  <mn>2&hairsp;</mn> <mi>x</mi>
+  <mo>.</mo>
+  <mn>d</mn><mi>x</mi>
+
+</math>
+</td>
+<td class="eqn">                 (7.16)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Comparing this to the generic integral (7.3)
+ confirms that the non-dimensional thrust 
+ <i>T</i>&hairsp;&prime;
+ is equal to the average non-dimensional
+ induction <i>b</i> over the prop disk. 
+</p>
+
+<!-- SECTION 7.6 ---------------------------------------------->
+
+<h4> 7.6 &emsp; The axial momentum loss per ring                 </h4>
 
 <p> The momentum loss for a uniform actuator disk
  follows from (4.15).
@@ -685,13 +756,13 @@ and bringing it outside the summation yields :
   <msup> <mi>V</mi> <mn>2</n> </msup>
 
 </math>
-
-<td style="width:50px; text-align:right">                 (7.15)
+</td>
+<td class="eqn">                                        (7.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> We can make this non-dimensional in the same way
-as we did for the thrust. The result is :
+ as we did for the thrust. The result is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -703,12 +774,13 @@ as we did for the thrust. The result is :
   <mspace/> <mo>=</mo> <mspace/>
 
   <mn>&frac12;&thinsp;</mn>
-  <mn>d</mn> <mi>m</mi> <mn>&thinsp;&prime;</mn>
-  <mo>.</mo>
   <msup> <mi>b</mi> <mn>2</mn> </msup>
+  <mo>.</mo>
+  
+  <mn>d</mn> <mi>m</mi> <mn>&thinsp;&prime;</mn>
 </math>
-
-<td style="width:50px; text-align:right">                (7.16)
+</td>
+<td class="eqn">                                         (7.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -723,6 +795,11 @@ as we did for the thrust. The result is :
   <mn>&hairsp;&prime;</mn>
     
   <mo> = </mo>
+
+  <mn>&frac12;&thinsp;</mn>
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+
+  <mo>.</mo>
 
   <mstyle displaystyle="true">
   <mfrac> 
@@ -743,12 +820,9 @@ as we did for the thrust. The result is :
    <mn>1 + &frac12;&hairsp;</mn> <mi>b</mi>
   <mn>)</mn>
 
-  <mo>.</mo>
-  <mn>&frac12;&thinsp;</mn>
-  <msup> <mi>b</mi> <mn>2</mn> </msup>
 </math>
 
-<td style="width:50px; text-align:right">                (7.17)
+<td class="eqn">                (7.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -765,44 +839,85 @@ as we did for the thrust. The result is :
     
   <mo> = </mo>
 
+  <mn>&frac12;&thinsp;</mn>
+  <msup> <mi>b</mi> <mn>2</mn> </msup>
+
+  <mo>&hairsp;.&hairsp;</mo>
+
   <mstyle displaystyle="true">
   <mfrac> 
    <mrow>
     <mn>2&hairsp;</mn> <mi>x</mi>
     <mo>.</mo>
     <mn>d</mn> <mi>x</mi>
-    <mo>.</mo>
   </mrow>
    <mrow>
      <msup> <mi>X</mi> <mn>2</mn> </msup>
   </mrow>
  </mfrac>
 
-  <mo>&hairsp;.&hairsp;</mo>
-
-  <mn>&frac12;&thinsp;</mn>
-
-  <msup> <mi>b</mi> <mn>2</mn> </msup>
 </math>
 
-<td style="width:50px; text-align:right">                (7.18)
+<td class="eqn">                (7.20)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-
-<!-- FOOTER ----------------------------------------------->
-<br> <br>
-<div class = "footer">
-   <span style="float:left">
-      <a href="prop_book_06.html"> previous </a>
-   </span>
-      P. Lammertse, 2026
-   <span style="float:right">
-      <a href="prop_book_08_TOC.html"> next </a>
-   </span>
+<div class="draft">
+<p> TBW </p>
 </div>
 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub> <mrow> <mi>P</mi> <mn>&hairsp;&prime;</mn> </mrow> <mn>m</mn> </msub>
+  
+   <mspace/> <mo>=</mo> <mspace/>
+  
+   <mfrac displaystyle="true">
+      <mn>1</mn>
+      <msup> <mi>X</mi> <mn>2</mn> </msup>
+   </mfrac>
+   
+   <mfrac displaystyle="true">
+      <mn>&thinsp;.</mn>
+      <msubsup> <mo displaystyle="true">&int;</mo> <mn>0</mn> <mi>X</mi>
+      </msubsup>
+
+      <mn>&frac12;</mn>
+      <mo>.</mo>
+      <msup> <mrow> <mi>b</mi>  </mrow>
+         <mn>2</mn> 
+      </msup>
+      <mn>(</mn><mi>x</mi><mn>)</mn>
+   </mfrac>
+  
+  <mo>.</mo>
+  <mn>2&hairsp;</mn> <mi>x</mi>
+  <mo>.</mo>
+  <mn>d</mn><mi>x</mi>
+
+</math>
+</td>
+<td class="eqn">                                      (7.21)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> AXIAL MOMENTUM </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
+
 <!-- script must be at end of body -->
+<script src="draft.js"></script>
 <script src="menu.js"></script>
 
 </body>

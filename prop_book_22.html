@@ -43,15 +43,10 @@
    </ul>
 </nav>
 
-<!-- START TABLE TRICK --------------------------------------->
-<!-- Trick to clear space for the true header and footer    -->
-<!-- True header and footer are at end of page.             -->
-<!-- The trick table body surrounds the whole page text.    -->
+<!-- TABLE TRICK START --------------------------------------->
+<!-- table, print header, and body start (see text.css)     -->
 <table>
-<!-- table trick header clears space for the "real" header  -->
 <thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
-
-<!-- table trick for body   -->
 <tbody> <tr> <td>
 
 <!-- CHAPTER -------------------------------------------------->
@@ -1029,13 +1024,18 @@ So far we worked with the trailing vortices d<i>&Gamma;</i>
 <p> <i> TODO &emsp; Fix restart of equation numbers.
 </div>
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
 <!-- TRUE (PRINT) HEADER ----------------------------------------->
 <div class="header">
-   <i> VORTEX THEORY </i>
+<i> VORTEX THEORY </i>
 </div>
 
 <!-- TRUE FOOTER ------------------------------------------------->
-<br> <br>
 <div class="footer"> P. Lammertse, 2025 </div>
 
 <!-- SCRIPTS ----------------------------------------------------->

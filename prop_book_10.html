@@ -33,17 +33,21 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_09.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_11.html">
+               Next &#x25BA;</a>                           </li>              
+
    </ul>
 </nav>
 
-
-
-<!-- TEXT BLOCK HEADER ---------------------------------------->
-
-<p style="margin-left : 320px">  <i> ROTATION </i>          </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 10 ----------------------------------------------->
 
@@ -125,7 +129,7 @@
   <mi>C</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (10.1)
+<td class="eqn">                (10.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -165,7 +169,7 @@
   <mi>C</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (10.2)
+<td class="eqn">                (10.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -175,49 +179,52 @@
  as a function of d<i>T</i>&thinsp;&prime;,
  and take the derivative of d<i>P</i><sub>m</sub>&thinsp;&prime;
  with respect to
-  d<i>T</i>&thinsp;&prime; directly.
-</p>
-<p>&emsp;
+  d<i>T</i>&thinsp;&prime;.
  But it is easier to use the local value
  of the induction ratio <i>b&hairsp;</i>(<i>x</i>)
  as the variable driving both d<i>T</i>&thinsp;&prime;
  and d<i>P</i><sub>m</sub>&prime;.
-</p>
-<p>
- The marginal loss then becomes :
+ </p>
+<p>&emsp;
+ When we apply a small increment d<i>b</i> to <i>b</i>,
+  the ratio between the resulting increments 
+  in d<i>T</i>&thinsp;&prime;
+ and d<i>P</i><sub>m</sub>&prime; will be the 
+ same as the ratio between their derivatives with <i>b</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn>
-      <mo>(</mo>
-         <mn>d</mn> 
-     <msub> <mi>P</mi> <mn>m</mn> </msub> <mn>&prime;</mn>
-      <mo>)</mo>
+   
+   <mfrac displaystyle="true">
+      <mrow>      
+         <mn>d&frasl;d</mn> <mi>b</mi>
+      
+         <mrow>
+            <mo>(</mo>
+               <mn>d</mn> 
+               <msub> <mi>P</mi> <mn>m</mn> </msub> <mn>&prime;</mn>
+            <mo>)</mo>
+         </mrow>
+      </mrow>
 
-      <mo>/</mo> <mn>d</mn> <mi>b</mi>
-   </mrow>
-    <mrow>
-      <mn>&hairsp;</mn>
-      <mn>d</mn>
-      <mo>(</mo>
-       <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-      <mo>)</mo>
-
-      <mn>&thinsp;</mn>
-      <mo>/</mo> <mn>d</mn> <mi>b</mi>
-   </mrow>
-  </mfrac>
+      <mrow>
+         <mn>d&frasl;d</mn> <mi>b</mi>
+         <mrow>
+            <mo>(</mo>
+               <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+            <mo>)</mo>
+         </mrow>
+      </mrow>
+   </mfrac>
 
   <mspace/> <mo>=</mo> <mspace/>
 
   <mi>C</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (10.3)
+<td class="eqn">                (10.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -226,71 +233,71 @@
    (&hairsp;1&hairsp;+&hairsp;&frac12;&hairsp;<i>b</i>&hairsp;) 
  out of the d&hairsp;<i>P</i><sub>m</sub>&prime;  of (9.4).
 </p>
+<p> Taking the derivative of the remaining
+ &frac12&hairsp;<i>b</i><sup>&hairsp;2</sup>
+ in (X.XX) yields <i>b</i> :
+</p>
+<!--
 <p> Taking the derivative with respect to <i>b</i> yields :
+-->
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mn>d</mn> 
-    <mrow> <mn>d&hairsp;</mn> <mi>b</mi> </mrow>
-  </mfrac>
-
-  <mn>(</mn>
-    <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-      <mn>&hairsp;&prime;&hairsp;</mn>
-  <mn>)</mn>
+   <mn>d&frasl;d</mn> <mi>b</mi>
+   <mn> &nbsp; </mn>
+   <mn>(</mn>
+      <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
+         <mn>&hairsp;&prime;&hairsp;</mn>
+   <mn>)</mn>
     
    <mspace/> <mo> = </mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac displaystyle="true">
+      <mi>b</mi>
+      <mrow>
+         <msup> <mn>cos</mn> <mn>2</mn> </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+   
+   <mo>&thinsp;.&thinsp;</mo>
 
-  <mo>&thinsp;.&thinsp;</mo>
+   <mfrac displaystyle="true"> 
+      <mrow>
+         <mn>2&hairsp;</mn> <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn> <mi>x</mi>
+      </mrow>
+      <mrow>
+         <msup> <mi>X</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>b</mi>
-    <mrow>
-      <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-   </mrow>
- </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                (10.4)
+<td class="eqn">                                         (10.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Taking the derivative of the 
- d<i>T</i>&thinsp;&prime; of (7.14) yields :
+<p> Taking the derivative of the remaining <i>b</i>
+ in (X.XX) yields 1 :
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mn>d</mn> 
-    <mrow> <mn>d&hairsp;</mn> <mi>b</mi> </mrow>
-  </mfrac>
-
-  <mn>(</mn>
-    <mn>d</mn> <msub> <mi>T</mi> <mn>m</mn> </msub>
+   <mn>d&frasl;d</mn> <mi>b</mi>
+   <mn> &nbsp; </mn>
+   
+   <mn>(</mn>
+      <mn>d</mn> <msub> <mi>T</mi> <mn>m</mn> </msub>
       <mn>&hairsp;&prime;&hairsp;</mn>
-  <mn>)</mn>
+   <mn>)</mn>
     
   <mspace/> <mo> = </mo> <mspace/>
 
+   <mn>(&hairsp;1&hairsp;)</mn>
+   <mo> . </mo>
   <mstyle displaystyle="true">
   <mfrac> 
    <mrow>
@@ -304,24 +311,17 @@
  </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                (10.5)
+<td class="eqn">                                         (10.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>
- The results are so simple because the derivative of
- &frac12;&thinsp;<i>b</i><sup>&hairsp;2</sup> is <i>b</i>,
- and the derivative of <i>b</i> is 1.
-</p>
-
-<p> Subsitituting (10.4) and (10.5) into (10.3) yields :
+<p>  Dividing the two like in (10.3) yields :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
+  <mfrac  displaystyle="true">
     <mi>b</mi>
     <mrow>
       <msup> <mn>cos</mn> <mn>2</mn> </msup>
@@ -335,7 +335,7 @@
 
 </math>
 
-<td style="width:50px; text-align:right">                (10.6)
+<td class="eqn">                                          (10.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -344,9 +344,10 @@
 
 <a name="(10.7)"></a>
 
-<p> For optimality, the marginal loss <i>C</i> must be a constant.
- As a result the axial induction ratio <i>b</i>
- will have to vary along the blade :
+<p> For optimality, the marginal loss <i>C</i> must be a constant
+over the whole propeller blade.
+ For this to happen, the&nbsp;axial induction ratio <i>b</i>
+ will have to vary along the length of the blade :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -362,9 +363,10 @@
         <mi>&phi;</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (10.7)
+<td class="eqn">                                          (10.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
+
 
 
 <!-- SECTION 10.2 --------------------------------------------->
@@ -393,7 +395,7 @@
         <mi>&phi;</mi>
 s</math>
 
-<td style="width:50px; text-align:right">                (10.8)
+<td class="eqn">                (10.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -452,7 +454,7 @@ s</math>
 
 </math></td>
 
-<td style="width:50px; text-align:right">                (10.9)
+<td class="eqn">                (10.9)
 </td>
 </tr> </table>
 <!-- END EQUATION --------------------------------------------->
@@ -524,7 +526,7 @@ Having found the marginal loss <i>C</i>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (10.10)
+<td class="eqn">               (10.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -571,7 +573,7 @@ Having found the marginal loss <i>C</i>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (10.11)
+<td class="eqn">               (10.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -595,7 +597,7 @@ Having found the marginal loss <i>C</i>
 
 </math> </td>
 
-<td style="width:50px; text-align:right">                 (10.12)
+<td class="eqn">                 (10.12)
 </td> </tr> </table>
 <!------------------------------------------------------------->
 
@@ -621,62 +623,71 @@ Having found the marginal loss <i>C</i>
 
 <h4> 10.4 &emsp; Heavy loading </h4>
 
-<p> We will briefly look at the case of heavy loading.
+<p> We look briefly at the case of heavy loading.
 Picking up the derivatives (10.4) and (10.5), using
 (7.13) and (7.17) for "heavy" loading, and omitting
 the terms of 2<i>x</i>.d<i>x / X</i><sup>&thinsp;2</sup>
- which wil drop out later anyway, we note :
+ which wil drop out of the division anyway, we note :
  </p>
 
+<p class="draft">
+Do this in one division right away.
+</p>
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation"> <tr>
+<td style="width:100px;"> <mn><i>power</i></mn> </td>
+<td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>d</mn>
-    <row> <mn>d</mn> <mi>b</mi>
-   </mrow>
- </mfrac>
-<!--  <mn>&nbsp;(</mn>   -->
+   <mfrac displaystyle="true">
+      <mn>d</mn>
+      <row> <mn>d</mn> <mi>b</mi>
+      </mrow>
+   </mfrac>
+ 
+   <mspace/>
+   
+   <mn>&frac12;&thinsp;</mn> 
+   <msup> <mi>b</mi> <mn>2</mn> </msup>
+
+   <mo>.</mo>
+
+
     <mn>&nbsp;(</mn>
       <mn> 1 + &frac12;&hairsp;</mn> <mi>b</mi>
     <mn>)</mn>
-  <mo>.</mo> <mn>&frac12;&thinsp;</mn> 
-  <msup> <mi>b</mi> <mn>2</mn> </msup>
-<!--  <mn>&thinsp;)</mn>  -->
 
   <mspace/> <mo> = </mo> <mspace/> </mo>
 
   <mi>b</mi> <mo>+</mo>
   <mn>&frac34;&thinsp;</mn> 
   <msup> <mi>b</mi> <mn>2</mn> </msup>
-
-
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (10.13)
+<td class="eqn">                                          (10.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
-<math>
-  <mstyle displaystyle="true">
-  <mfrac>
+<table class = "equation"> <tr>
+<td style="width:100px;"> <mn><i>thrust</i></mn> </td>
+<td>
+ <math>
+   <mfrac displaystyle="true">
     <mn>d</mn>
     <row> <mn>d</mn> <mi>b</mi>
    </mrow>
- </mfrac>
+   </mfrac>
 
-<!--  <mn>&nbsp;(</mn>  -->
-    <mn>&nbsp;(</mn>
+   <mspace/>
+   <mi>b</mi>
+
+   <mo>.</mo> 
+
+   <mn>&nbsp;(</mn>
       <mn> 1 + &frac12;&hairsp;</mn> <mi>b</mi>
     <mn>)</mn>
-  <mo>.</mo> 
-  <mi>b</mi>
-<!--  <mn>&thinsp;)</mn>  -->
 
   <mspace/><mspace/><mspace/><mspace/>
 
@@ -687,7 +698,7 @@ the terms of 2<i>x</i>.d<i>x / X</i><sup>&thinsp;2</sup>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (10.14)
+<td class="eqn">                                         (10.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -717,11 +728,24 @@ of 1<i>/&thinsp;</i>cos<sup>2&hairsp;</sup><i>&phi;</i>
  assumption in all optimization problems, and so will we.
 </p>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> ROTATION </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
+
 <div class="footer"> P. Lammertse, 2025 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
+<script src = "draft.js"></script>
 <script src = "menu.js"></script>
 
 </body>

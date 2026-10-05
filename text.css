@@ -124,7 +124,8 @@ pre {
   margin          : 4px 64px;
 }
 
-/* <code> stays inline. Preserve multiple spaces.  */
+/* <code> is fixed space font by nature, like pre. */
+/* It stays inline. Preserve multiple spaces here. */
 code {
   font-size       : 16px;
   white-space     : pre;
@@ -136,17 +137,45 @@ label {
    padding-right  :  6px;
 }
 
-/* numerical input fields                          */
-/* Fix for HTML bug : size not settable for number fields */
+/* numerical input fields, fix for HTML bug :      */
+/*  size not settable for number fields.           */
 input[type=number] {
    width          : 60px;
 } 
 
-/* whole page wrapped in this table for header trick */
-/* The 864px equals 800px plus two 32px margins     */
+/*
+-- Note on table trick for print header and footer --
+-- Fake table headers and footers clear space      --
+-- for the true header and footer.                 --
+-- The true header and footer are defined          --
+-- in the HTML page to fall over this blank area.  --
+-- The trick table starts in the HTML with         --
+--    <table>                                      --
+--    <thead> <tr> <td>                             --
+--      <br class="print-only"> </td> </tr>        --
+--   </thead>                                      --
+--   <tbody> <tr> <td>                             --
+-- The trick table *body* then surrounds           --
+-- the whole page text.                            --
+--         PAGE TEXT                               --
+-- The trick table end is the *body* end           --
+-- the whole *footer*,and the *table* end :        --   
+--   </td> </td> </tbody>                          --
+--   <tfoot> <tr> <td>                             --
+--     <br> <br>   </td>                           --
+--   </tr> </tfoot>                                --
+-- </table>                                        --
+-- The true .header and .footer are somewhere else --
+-- in the HTML page, e.g. at the end.              --
+-- For keeping text together, use                  --
+--    <div style="page-break-inside:avoid">        --
+*/
+
+/* whole page wrapped in table for header trick    */
+/* The 864px equals 800px plus two 32px margins    */
 table {
    width       : min( 100%, 864px);
-   /* background-color : silver;  */  /* temporary test */
+   /* background-color : silver; */        /* test */
 }
 
 /* fit equations and equation numbers in a table   */
@@ -155,9 +184,14 @@ table {
 /*   width         : min( 90%, 775px);  */
 /*   margin-left   : min(  4%,  24px);  */
    width         : min( 85%, 775px);
-   margin-left   : min(  10%,  56px);
-   /* padding-right : 36px;                        */
-   /* use margin-right in column with eq. numbers  */
+   margin-left   : min( 10%,  56px);
+}
+
+/* format last column <td> for equation number     */
+/* keep a little distance to the right margin      */
+.eqn {
+   text-align   : right;
+   padding-right : 16px;
 }
 
 /* table content (rows) spaced a little more       */
@@ -175,39 +209,41 @@ td {
 .tdleft {
    border     : 1px solid black;
    text-align : left;
-   padding    : 3px 0px 3px 16px;   /* top right bot left TBC */
+   padding    : 3px 0px 3px 16px;   /* top right bottom left */
 }   
 
-/* Two equal columns that float next to each other,
-   for propeller TOC */
+/* Two equal columns that float next to each other on laptops,
+   and under each other on cellphones, for propeller TOC */
 .column {
   float        : left;
-  /* surprisingly, this stacks responsive :        */
-  width        : 400px;            /* half of 800  */
-/* this does not stack : */  
+  /* surprisingly, this stacks responsive :         */
+  width        : 400px;            /* half of 800   */
+/* this way the columns do not stack : */  
 /*  width      : min( 50%, 400px); */
   padding-left : 16px;
 }
 
-/* Use in <a> referring to sections and equations  */
+/* Use in <a> referring to sections and equations   */
 .crossref {
-   color            : #145680;      /* #000080     */
-   text-decoration  : none;
-   background-color : #F3F4F9;      /* light gray  */
+   color            : #145680;      /* #000080      */
+   text-decoration  : none;         /* no underline */
+   font-style       : italic;
+   /* with padding, don't add spaces between the brackets */
    padding-left     : 3px;
    padding-right    : 3px;
 }
 
-/* Use in a <div> around figures, has margin above */
+/* Use in a <div> around figures. It has margin above */
 .center {
    display         : flex;
    justify-content : center;
    align-items	    : center;
    margin-left     : min(  5%, 32px);
-   margin-top      : 10px;   /* this falls outside the box border */
+   margin-top      : 10px;   /* margin falls outside the box border */
    width  		    : min( 90%, 800px);
 /*   border 		 : solid;  */  /* temporary box size debug tool */
 }
+
 /* Caption same as center for figure, only this time margin below */
 .caption {
    display         : flex;
@@ -250,10 +286,16 @@ button:active {
    The extra math margin (vertical + horizontal)
    acts *inside* <p> ( and inside <td>, TBC ).                              
    <mfrac> from inline to display style cannot be fixed here,
-   this needs <mstyle displaystyle="true" first every time.   */
-math {
-  font-size : 18px;
-/*  margin    : 0px 32px; */
+   this needs :
+      <math displaystyle="true"> in HTML every time   */
+math, .math-display {
+  math-style   : normal; /* equivalent to displaystyle="true" */
+  font-size    : 18px;
+}
+
+.math-compact {
+  math-style   : compact; /* equivalent to displaystyle="false" */
+  font-size    : 18px;
 }
 
 /* nice for numerical matrices */
@@ -281,7 +323,7 @@ mspace {
    border-top : 1px solid black;
 }
 
-/* added footer a "buttons", PL : */
+/* added footer <a> "buttons", PL : */
 .footer a  {
    background-color : #E9F0F0;         /* light blueish gray   */
    color            : #0000A0;         /* darkest blue         */

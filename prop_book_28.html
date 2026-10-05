@@ -34,19 +34,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_27.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_29.html">
+               Next &#x25BA;</a>                           </li>              
    </ul>
 </nav>
 
-<!-- PAGE HEADER ---------------------------------------------->
-
-<p style="margin-left : 320px">  <i> CHORDS </i>           </p>
-<hr style="margin : 0 0;">
-
-<!-- CHAPTER -------------------------------------------------->
-
-<!-- <span style="color:darkgrey">   -->
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <h2> 28 &emsp; Blade chords with tip loss </h2>
 
@@ -55,39 +56,43 @@
 <h4> 28.1 &emsp; The tip effect on the blade chord </h4>
 
 <p> Equation 
-<a class = "crossref";
-   href  = "prop_book_27.html#27.7";> (27.19)</a>
+(<a class = "crossref";
+   href  = "prop_book_27.html#27.7";>27.19</a>)
 <!--  
 <span style="background-color:#F3F4F9;">
   <a href="prop_book_27.html#27.7"";>
   (&hairsp;27.19&hairsp;)</a></span>
   -->
  gave the blade chord for the
- rotationally optimized <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ rotationally optimized <i>b</i>&hairsp;(<i>x</i>)
  in
-<a class = "crossref";
-   href="prop_book_11.html#(11.10)"> (11.10)</a>,
+(<a class = "crossref";
+   href="prop_book_11.html#(11.10)">11.10</a>),
 combined with the uniform mass flow
-<a class = "crossref";
-   href="prop_book_07.html#(7.7)"> (7.7)</a>,
- giving the local thrust d<i>T</i> of (27.1).
+(<a class = "crossref";
+   href="prop_book_07.html#(7.7)">7.7</a>),
+ giving the local thrust d<i>T</i> of ( 27.1 ).
 </p>
 <p>&emsp;
  With tip loss, the mass flow is no longer uniform. 
  Towards the tip it is reduced by a local factor of
- <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>),
+ <i>K</i>&thinsp;(<i>x</i>),
 de&shyfined by
-(&hairsp;<a href="prop_book_17.html#17.3">17.3</a>&hairsp;).
+(<a  class="crossref";
+     href="prop_book_17.html#17.3">17.3</a>).
 For a given overall thrust, the total <i>mass</i> reduction
  is compensated for by a uniform <i>induction</i>
  increase <nobr>
-(&hairsp;<a href="prop_book_17.html#17.5">17.10</a>&hairsp;).</nobr>
+(<a class="crossref"; 
+    href="prop_book_17.html#17.5">17.10</a>).</nobr>
  The resulting thrust distribution is
-(&hairsp;<a href="prop_book_17.html#17.6">17.14</a>&hairsp;).
+(<a class="crossref";
+    href="prop_book_17.html#17.6">17.14</a>).
 </p><p>&emsp;
  This changes the rotationally optimal chord distribution
  for a given overall thrust from 
-(&hairsp;<a href="prop_book_27.html#27.7">27.19</a>&hairsp;)
+(<a  class="crossref";
+     href="prop_book_27.html#27.7">27.19</a>)
  into :
 </p>
 
@@ -142,9 +147,10 @@ For a given overall thrust, the total <i>mass</i> reduction
 
 <p> Figure 28.1 shows the result.
  It is the direct counterpart of figure
- <a href="prop_book_27.html#27.8">27.3</a>
+ <a  class="crossref";
+     href="prop_book_27.html#27.8">27.3</a>
  in terms of thrust and parameter variation,
- only this time including the tip loss.
+ only this time it includes the tip loss.
  The exact solution is drawn in solid lines,
  and <span style="font-variant: small-caps;"> Prandtl</span>'s
 approximation in thin lines.
@@ -403,12 +409,24 @@ Until now, we applied this difference symmetrically
 
 -->
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VORTEX THEORY </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

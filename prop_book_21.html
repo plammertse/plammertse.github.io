@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <!--------------------------------------------------------------
 -- file    : prop_book_21.html
 -- purpose : Page for website Piet Lammertse
@@ -34,18 +33,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_20.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_22.html">
+               Next &#x25BA;</a>                           </li>              
    </ul>
 </nav>
 
-
-
-<!--- PAGE HEADER --------------------------------------------->
-<p style="margin-left : 320px">  <i> VORTEX THEORY </i> </p>
-<hr style="margin : 0 0;">
-
-<!-- CHAPTER -------------------------------------------------->
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <h2> 21 &emsp; Vortex theory                                </h2>
 
@@ -560,7 +561,7 @@
  over the span (&hairsp;note the overbar symbol
  to indicate an average&hairsp;).
  It equals the area of a half circle, which is
- &pi;&nbsp;&#x2044;&nbsp;4 times that
+ &pi;&nbsp;&frasl;&nbsp;4 times that
  of the surrounding rectangle :
 </p>
 
@@ -812,13 +813,24 @@ for a given span.
  It has no direct influence on the induced drag.
 </p>
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VORTEX THEORY </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

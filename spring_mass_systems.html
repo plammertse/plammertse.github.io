@@ -14,7 +14,7 @@
          content = "width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="text.css">
    <link rel="stylesheet" href="menu.css">
-   <title> Eigenvalues </title>
+   <title> Spring-mass systems </title>
 </head>
 
 <body onload="onLoad()">
@@ -41,29 +41,65 @@
 
 <!-- PAGE TEXT ------------------------------------------------>
 
-<h2> mass-spring-damper systems </h2>
+<h2> spring-mass systems </h2>
 
- <h4> a single damper </h4>
- 
- <p> We will start our exploration of state space analysis 
- with a single mechanical damper. In a viscous damper,
- the&nbsp;damping force is proportional to the velocity :
- 
- <table class="equation"><tr><td>
+<h4> spring-mass systems </h4>
+
+<p> Every state space model is, in the end,
+ built up from only two types of subsystems.
+  The overall system can always be rewritten
+  as a sum of these subsystems.
+  Each subsystem
+ is completely independent of the others&nbsp;:
+they don't "see" each other, though 
+ this is not always directly apparent from
+ a first look at the full model.
+ </p>
+ <p> &emsp;
+ In mechanical terms, each of these subsystems is either
+ a first order "damper-mass" system,
+ or a second order "spring-mass" system.
+ <!--
+ <p> &emsp;
+ Each of these subsystems can be "excited"
+ seprately, and will then move independently
+ of the rest.
+ </p>
+ -->
+ The first order "dampers"were discussed 
+ <a href="damper_systems.html"> here</a>.
+ This section will discuss the "spring-mass"
+ sub&shysystems, which may also have  
+ their own damping.
+ </p>
+  
+<h4> an undamped spring </h4>
+
+<p> We will begin with an <i>undamped</i> spring-mass system
+(&hairsp;or a pendulum&hairsp;).
+The mechanical spring wants to return the mass to a reference position.
+For a zero reference, the spring force is :
+</p>
+
+<table class="equation"><tr><td>
  <math>
    <mi>F</mi>      
    <mo> &nbsp; = &nbsp; </mo>
        
-   <mo>&minus;</mo> <mi>c</mi>
+   <mo>&minus;</mo> <mi>k</mi>
    <mo>&hairsp;&period;&hairsp;</mo>
-   <mi>v</mi>
+   <mi>x</mi>
    
    </math>
  </td> <td style="width:50px; text-align:right">            (1)   
 </td></tr>
 </table>
 
-<p> We apply this to Newton's law for a floating mass :
+<p> Here <i>x</i> is the mass position's deviation from the reference.
+ It is also the elongation of the spring. 
+ The pro&shyport&shyion&shyality constant <i>k</i> 
+ is called the <i>stiffness</i> of the spring.
+ We apply this force to Newton's law for a floating mass :
  </p>
  
  <table class="equation"><tr><td>
@@ -80,157 +116,13 @@
 
 </p>
 <p> Here <i>a</i> is the acceleration, the change of the velocity with time.
- With Newton's dot notation for change with time, 
- the equation of motion for a damped mass is :
- </p>
- 
- <table class="equation">
- <tr><td>
- <math>
-   <msup> <mi>v</mi> <mn>&bull;</mn> </msup>     
-   <mo> &nbsp; = &nbsp; </mo>
-       
-   <mo>&minus;</mo> 
-
-<!--   <mstyle displaystyle="true"> -->
-   <mfrac displaystyle="true">
-      <mi>c</mi> <mi>m</mi>
-   </mfrac>  
-   <mo>&hairsp;&period;&hairsp;</mo>
-   <mi>v</mi>
-   
-</math>
-</td>
-<td style="width:50px; text-align:right">            (3)   
-</td>
-</tr>
-</table>
- 
-<p> This is, of course simply a scalar equation.
- But in the state space framework of 
- <a href="state_space.html#(1)">(1)</a>,
- we can also write it as a single degree of freedom matrix equation 
- (&hairsp;leaving off the inputs for the moment&hairsp;)&nbsp;:
- </p>
-
-
-<table class="equation"><tr><td>
-   <math>
-      <msup> <mrow>
-            <!-- <mo maxsize="36px">[</mo>  -->
-      <mo>[</mo>
-      <mtable>
-         <mtr>
-         <!-- overrule CSS setting for <mtd>   -->
-         <!-- top, right, bottom, left         -->
-            <mtd style="padding : 2px 4px 1px 4px">
-               <mi>v</mi>
-            </mtd>
-         </mtr>
-      </mtable>
-      <mo>]</mo>
-      
-               <!-- <mo maxsize="36px">]</mo> -->
-      </mrow><mn>&bull;</mn></msup>
-      
-      <mo> = &nbsp; </mo>
-       
-      <mo maxsize="20px">[</mo> <mn>&thinsp;</mn>
-      <mtable>
-         <mtr>
-            <mtd style="padding : 0">
-<!--            <mtd style="padding : 0 4px 0 4px"> -->
-            <mn>-c/m</mn>
-            </mtd>
-         </mtr>         
-      </mtable> <mn>&thinsp;</mn>
-      <mo maxsize="20px">]</mo>
-      
-      <mo> <b>&period;</b> </mo>
-
-      <mo maxsize="20px">[</mo>
-      <mtable>
-         <mtr>
-         <mtr>
-            <mtd style="padding : 0">
-<!--            <mtd style="padding : 0 4px 0 4px"> -->
-               <mi>v</mi>  </mtd>
-         </mtr>
-      </mtable>
-      <mo maxsize="20px">]</mo>
-      
-   </math>
- </td> <td style="width:50px; text-align:right">            (4)   
-</td></tr></table>
-
-
-<p> This equation says that <i>v</i> get smaller with
- time, at a rate equi&shyvalent
- to its own size scaled by the factor
- <nobr>&minus;<i>c&hairsp;/&hairsp;m</i>.</nobr>
- </p>
- <p> &emsp;
- The&nbsp;slope of the graph of <i>v</i> against time is
- proportional to its own height, scaled by a constant factor.
- This is the graph of an exponential decay.
- Starting from an initial velocity <i>v</i><sub>o</sub>,
- the solution is :
- </p>
-  
- <table class="equation"><tr><td>
- <math>
-   <mi>v</mi>
-   
-   <mo> &nbsp; = &nbsp; </mo>
-       
-   <msup> <mn>e</mn> 
-      <mrow>
-         <mn>&thinsp;</mn><mn>(</mn>
-            <mn>&minus;</mn><mi>c</mi><mn>/</mn><mi>m</mi>
-         <mn>)</mn>
-         <mo>&period;</mo> <mi>t</mi>
-   </mrow>
-   </msup>
-   <mo>&hairsp;&period;&hairsp;</mo>
-   <msub> <mi>v</mi><mn>o</mn></msub>
-   
-   </math>
- </td> <td style="width:50px; text-align:right">            (5)   
-</td></tr>
-</table>
-
-<p> As a check, the derivative of an exponential
- is the exponential itself multiplied by the
- factor on the variable.
- In&nbsp;this case the variable is <i>t</i> and the factor
- is (&hairsp;&minus;<i>c&hairsp;/&hairsp;m</i>&hairsp;),
- and this confirms that (5) implements the condition (3). 
-  </p>
-
-<h4> an undamped spring </h4>
-
-<p> We now turn to the undamped mass-spring (&hairsp;or a pendulum&hairsp;).
-The spring wants to return the mass to a reference position.
-For a zero reference, the spring force is :
-</p>
-
-<table class="equation"><tr><td>
- <math>
-   <mi>F</mi>      
-   <mo> &nbsp; = &nbsp; </mo>
-       
-   <mo>&minus;</mo> <mi>k</mi>
-   <mo>&hairsp;&period;&hairsp;</mo>
-   <mi>x</mi>
-   
-   </math>
- </td> <td style="width:50px; text-align:right">            (6)   
-</td></tr>
-</table>
-
-<p> Here <i>x</i> is the mass position's deviation from the reference.
- It is also the elongation of the spring. 
- With Newton's law of motion (2), we have :
+ The acceleration is the derivative with time of the velocity,
+ and the velocity is the derivative with time of the position.
+ This makes the acceleration equal to the <i>second</i>
+ derivative of the position.
+  In Newton's dot notation for change with time, the  
+ second derivative becomes a&nbsp;double dot.
+  Subsituting (1) into (2) we have :
  </p>
 
 <table class="equation">
@@ -249,25 +141,24 @@ For a zero reference, the spring force is :
    
 </math>
 </td>
-<td style="width:50px; text-align:right">            (7)   
+<td style="width:50px; text-align:right">            (3)   
 </td>
 </tr>
 </table>
  
-<p> Here <i>x</i><sup>&bull;&bull;</sup> is 
- the <i>second</i> derivative with respect to time,
- of the position.
- </p><p>&emsp;
- In the damper we needed a function which was its own derivative,
- give or take a constant factor.
- <pThis time we are looking for a function which is 
+<p> In the mass-&hairsp;<a href="damper_systems.html"><i>damper</i></a>
+ we needed a function which was its own derivative
+ (&hairsp;give or take a constant factor&hairsp;).
+ This&nbsp;time we are looking for a function which is 
  its own <i>second</i> derivative,
- give or take a scaling
+ give or take a factor
  (&hairsp;or a minus sign&hairsp;).
+ </p>
+ <p> &emsp;
  Such a function is the cosine, or alternatively the sine.
-  From trigonometry, we know that d/d<i>t</i> ( cos<i>t</i> ) =
+  From trigonometry, we know that d/d<i>t</i> (&hairsp;cos&thinsp;<i>t</i>&hairsp;) =
   &minus;&hairsp;sin <i>t</i>,
- and d/d<i>t</i> ( sin<i>t</i> = cos <i>t</i>.
+ and d/d<i>t</i> (&hairsp;sin&thinsp;<i>t</i>&hairsp;) = cos&thinsp;<i>t</i>.
  Together this makes :
  </p>
 
@@ -281,22 +172,20 @@ For a zero reference, the spring force is :
    
    <mo> &nbsp; = &nbsp; </mo>
        
-   <mn>&minus;</mn> 
+   <mn>&minus;&thinsp;</mn> 
 
    <mn>cos&nbsp;</mn> <mi>t</mi>
    
 </math>
 </td>
-<td style="width:50px; text-align:right">            (8)   
+<td style="width:50px; text-align:right">            (4)   
 </td>
 </tr>
 </table>
  
 <p> Like in the case of the first order exponential,
-    a factor on the argument <i>t</i> will appear in
+    any constant factor on the argument <i>t</i> will appear in
    the derivative, but this time it will appear twice.
-   </p>
-<p> &emsp; 
  It is customary to apply the following definition :
  
 </p> 
@@ -312,16 +201,44 @@ For a zero reference, the spring force is :
    </mfrac>
 </math>
 </td>
-<td style="width:50px; text-align:right">            (9)   
+<td style="width:50px; text-align:right">            (5)   
+</td>
+</tr>
+</table>
+
+<p> We can then make (4) fit (3) by replacing
+ the argument  <t> by <i>&omega;&thinsp;t</i> :
+</p>
+
+<table class="equation">
+ <tr><td>
+ <math>
+   <msup> <mn>d</mn><mn>2</mn></msup>
+   <mn>(</mn> <mn>cos&nbsp;</mn> 
+      <mi>&omega;</mi> <mn>&hairsp;</mn> <mi>t</mi> <mn>)</mn>
+   <mn> &hairsp;/&hairsp;  </mn>
+   <mn>d</mn> <msup> <mi>t</mi> <mn>2</mn> </msup>
+   
+   <mo> &nbsp; = &nbsp; </mo>
+       
+   <mn>&minus;&thinsp;</mn> 
+
+   <msup> <mi>&omega;</mi> <mn>2</mn> </msup> <mn> &nbsp; </mn>
+      <mn>cos&nbsp;</mn>  <mi>&omega;</mi> <mn>&hairsp;</mn> <mi>t</mi>
+   
+</math>
+</td>
+<td style="width:50px; text-align:right">            (6)   
 </td>
 </tr>
 </table>
  
-<p> The constant &omega; is the frequency of 
+
+
+<p> The constant <i>&omega;</i> is the frequency of 
 oscillation, measured in radians per second.
-Note that it is the <i>square root</i> of 
-the stiffness over the mass, &omega; = 
-<math><msqrt><mi>k&hairsp;</mi><mn>/</mn><mi>m</mi></sqrt></math>.
+Note that <i>&omega;</i>it is the <i>square root</i> of 
+the stiffness over the mass.
 Starting from an initial position <i>x</i><sub>o</sub>,
 the solution becomes :
 </p>
@@ -341,19 +258,20 @@ the solution becomes :
    
  </math>
  </td>
- <td style="width:50px; text-align:right">      (10)   
+ <td style="width:50px; text-align:right">      (7)   
 </td>
 </tr>
 </table>
 
-<p> The minus sign in (6) has been absorbed in (8).
+<p> The minus sign in (3) has been absorbed in (4).
 </p>
 <p> &emsp;
- The solution with the cosine feels a bit heuristic.
- If we approach the problem in the spirit 
+ The solution with the cosine is very direct,
+ but it feels a bit heuristic.
+ If&nbsp;we approach the problem in the spirit 
  of state space analysis, then we should replace
  the derivative by the so-called Laplace operator <i><b>s</b></i>.
- Equation (7) then becomes :
+ Equation (3) then becomes :
 </p>
 
 <table class="equation">
@@ -374,7 +292,7 @@ the solution becomes :
    
 </math>
 </td>
-<td style="width:50px; text-align:right">            (11)   
+<td style="width:50px; text-align:right">            (8)   
 </td>
 </tr>
 </table>
@@ -393,20 +311,20 @@ the solution becomes :
    </mfrac>  
 </math>
 </td>
-<td style="width:50px; text-align:right">            (12)   
+<td style="width:50px; text-align:right">            (9)   
 </td>
 </tr>
 </table>
 
-<p> This is almost identical to (9),
+<p> This is almost identical to (5),
  and therefore <i><b>s</b></i> is also called the
  "complex frequency". 
 The fact that it is complex, or in this case
 even completely imaginary, follows from the fact
 that it is the square root of a <i>negative</i> number.
-If we borrow the notation <i>&omega;</i> 
-for the square root of <i>k&hairsp;/&hairsp;m</i> from (9)
-then the roots of equation (9) are :
+If&nbsp;we borrow the notation <i>&omega;</i> 
+for the square root of <i>k&hairsp;/&hairsp;m</i> from (5)
+then the roots of this equation are :
 </p>
 <table class="equation">
 <tr>
@@ -419,7 +337,7 @@ then the roots of equation (9) are :
    <mn>&plusmn;</mn> <mn>&hairsp;i&thinsp;</mn> <mi>&omega;</mi>
 </math>
 </td>
-<td style="width:50px; text-align:right">            (13)   
+<td style="width:50px; text-align:right">            (10)   
 </td>
 </tr>
 </table>
@@ -429,9 +347,9 @@ then the roots of equation (9) are :
  and how it would relate to the cosine solution.
  This goes back to a set of famous formulas
  about complex numbers by Euler,
- relating complex exponentials to trigo&shynometry.
+ which relate complex exponentials to trigo&shynometry.
  The basic equation, written here directly with the argument
-<i>&omega;&hairsp;t</i>i is :
+<i>&omega;&thinsp;t</i> is :
  </p>
  
  <table class="equation">
@@ -440,12 +358,12 @@ then the roots of equation (9) are :
 <math>
    <msup> <mn>e</mn>
       <mrow> <mn>&hairsp;i&hairsp;</mn>
-         <mi>&omega;</mi> <mi>t</mi>
+         <mi>&omega;</mi> <mn>&hairsp;</mn> <mi>t</mi>
      </mrow>
    </msup>
    <mo> = </mo>
        
-   <mo>cos</mo> <mi>&omega;</mi> <mi>t</mi>
+   <mo>cos</mo> <mi>&omega;</mi> <mn>&hairsp;</mn> <mi>t</mi>
    <mo> + </mo>
    <mn>i . </mn>
    <mo>sin</mo> <mi>&omega;</mi> <mi>t</mi>
@@ -453,39 +371,41 @@ then the roots of equation (9) are :
 </math>
 </td>
 
-<td style="width:50px; text-align:right">            (14)   
+<td style="width:50px; text-align:right">            (11)   
 </td>
 </tr>
 </table>
 
 <p> Writing the same formula with 
- &minus; <i>&omega; t</i> as the argument
- and adding the two, we have :
+ (&hairsp;&minus; <i>&omega;&hairsp;t</i>&hairsp;) as the argument
+ and adding the two equations, we have :
  </p>
  
 <table class="equation">
 <tr>
 <td>
 <math>
-   <mn>2</mn> <mo>cos</mo> <mi>&omega;</mi>
+   <mn>2</mn> <mo>cos</mo> <mi>&omega;</mi> <mi>t</mi>
    
    <mo> &nbsp; = &nbsp; </mo>
        
    <msup> <mn>e</mn>
       <mrow> <mn>&thinsp;i&thinsp;</mn>
-         <mi>&omega;</mi>
+         <mi>&omega;</mi>  <mi>t</mi>
      </mrow>
    </msup>
    <mo> + </mo>
-   <msup> <mn>e</mn> 
-      <mrow><mn>&thinsp;&minus;&hairsp;i&thinsp;</mn>
-         <mi>&omega;</i>
+   <msup> 
+      <mn>e</mn> 
+      <mrow> 
+         <mn>&thinsp;&minus;&hairsp;i&thinsp;</mn>
+         <mi>&omega;</mi> <mi>t</mi>
      </mrow>
    </msup>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">            (15)   
+<td style="width:50px; text-align:right">            (12)   
 </td>
 </tr>
 </table>
@@ -496,37 +416,33 @@ then the roots of equation (9) are :
 <tr>
 <td>
 <math>
-   <mo>cos</mo> <mi>&omega;</mi>
+   <mo>cos</mo> <mi>&omega;</mi>  <mi>t</mi>
    
    <mo> &nbsp; = &nbsp; </mo>
        
    <mn>&frac12;&thinsp;</mn> 
    <msup> <mn>e</mn>
       <mrow> <mn>&thinsp;i&thinsp;</mn>
-         <mi>&omega;</mi>
+         <mi>&omega;</mi>  <mi>t</mi>
      </mrow>
    </msup>
    <mo> + </mo>
    <mn>&frac12;&thinsp;</mn> 
    <msup> <mn>e</mn> 
       <mrow><mn>&thinsp;&minus;&hairsp;i&thinsp;</mn>
-         <mi>&omega;</i>
+         <mi>&omega;</i>  <mi>t</mi>
      </mrow>
    </msup>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">            (16)   
+<td style="width:50px; text-align:right">            (13)   
 </td>
 </tr>
 </table>
 
-<p> XXXXXXXXXXXXX
-</p>
-
-
-<p>
-o understand this, we need to know a few things 
+<p class="draft">
+To understand this, we need to know a few things 
  about complex numbers. A complex number like 
  <i><b>i</b></i> can be drawn in the so-called 
  "complex plane" as a 2D point. the real part 
@@ -576,7 +492,7 @@ equations in two state variables :
 
 </td>
 
-<td style="width:50px; text-align:right">            (15)   
+<td style="width:50px; text-align:right">            (14)   
 </td>
 </tr>
 </table>
@@ -654,7 +570,7 @@ we  have :
       <mo>]</mo>
       
    </math>
- </td> <td style="width:50px; text-align:right">            (16)   
+ </td> <td style="width:50px; text-align:right">            (15)   
 </td></tr></table>
 
 <p> Now, the generic solution of the matrix equation

@@ -33,15 +33,22 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_26.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_28.html">
+               Next &#x25BA;</a>                           </li>              
    </ul>
 </nav>
 
 <!-- PAGE HEADER ---------------------------------------------->
 
-<p style="margin-left : 320px">  <i> CHORDS </i>           </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER -------------------------------------------------->
 
@@ -1359,12 +1366,24 @@ Propellers of high <i>X</i> are thin and clearly tapered,
 like a sword or dagger.
 </p>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> VORTEX THEORY </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

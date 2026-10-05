@@ -34,16 +34,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_11.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_13.html">
+               Next &#x25BA;</a>                      </li>              
    </ul>
 </nav>
 
-
-
-<!--- PAGE HEADER --------------------------------------------->
-<p style="margin-left : 320px">  <i> ROTATION </i> </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 12 ----------------------------------------------->
 
@@ -288,6 +292,8 @@ A large part of propeller theory, including the tip loss,
 
 <!-- SECTION 12.5 ----------------------------------------------------->
 
+<div style = "break-before:page"> </div>
+
 <h4> 12.5 &emsp; The viscous wake sheet </h4>
 
 <p> First we look at the viscous wake.
@@ -411,7 +417,6 @@ A large part of propeller theory, including the tip loss,
  relative to the direction of flight.
 </p>
 
-
 <div class = "center">
 <img src = "images/prop_spiral_momentum_wake.gif";
    width = "640";
@@ -423,9 +428,7 @@ A large part of propeller theory, including the tip loss,
      delivering thrust ( X = 5 ). </i> </p>
  </div>
 
-
-<p>&emsp;
-The same wake looks very different when viewed from the airplane,
+<p> The same wake looks very different when viewed from the airplane,
  taking the plane of the propeller disk
  as a “static” reference.
  We might call this the “wind tunnel view”.
@@ -446,12 +449,23 @@ The same wake looks very different when viewed from the airplane,
  in figure 12.4 is the essential one.
 </p>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
+
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> ROTATION </i>
+</div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> P. Lammertse, 2025 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
-<script src = "menu.js"></script>
+<script src = "menu.js">   </script>
+<script src = "draft.js">  </script>
 
 </body>
 </html>

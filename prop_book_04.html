@@ -33,16 +33,21 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_03.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_05.html">
+               Next &#x25BA;</a>                           </li>              
    </ul>
+
 </nav>
 
-
-<!--- TEXT BLOCK HEADER --------------------------------------->
-
-<p style="margin-left : 320px">  <i> AXIAL MOMENTUM </i>    </p>
-<hr style="margin : 0 0;">
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 4 ------------------------------------------------>
 
@@ -81,7 +86,7 @@
 </div>
 
 <div class = "caption">
-   <p> <i> Figure 2.1 : &ensp; Actuator disk and flow tube. </i> </p>
+   <p> <i> Figure 4.1 : &ensp; Actuator disk and flow tube. </i> </p>
 </div>
 <!------------------------------------------------------------->
 
@@ -149,16 +154,27 @@
   The tube walls are curved in an S-curve
  over this relatively short distance.
 </p>
-<p>&emsp;
- We will call the axial velocity increase reached
- at the disk <i>v</i>, 
+
+
+<p> We will call the axial velocity increase 
+ at the propeller disk <i>v</i>, 
  and the final velocity increase
- far behind the propeller <i>w</i>. 
+ far behind it <i>w</i>. 
+ </p>
+
+<!-- This breaks the table trick : -->
+<!-- <div style = "break-before:page"> </div> -->
+<!-- and this *really* breaks it (header no longer blanked) -->
+<!-- </tr><tr> -->
+<!-- This seems to work OK : -->
+<div style="page-break-inside:avoid";>
+
+ <p> &emsp;
  We will use the letters <i>a</i> and <i>b</i> 
 for the non-dimensional versions
- of these so-called "induction ratios" :
- the first one locally at the disk,
- and the other one in the "far wake" :
+ of these so-called "induction ratios"&nbsp;:
+ the one at the prop disk <i>a</i>,
+ and the one in the "far wake"&nbsp;<i>b</i>&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -166,31 +182,31 @@ for the non-dimensional versions
  <td>
 <math>
   <mi>a</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
-  <mstyle displaystyle="true">
   <mfrac>   <mi>v</mi>  <mi>V</mi>
  </mfrac>
 </math>
 </td>
-<td style="text-align:right">                 (4.1)
+<td class="eqn">                                            (4.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
-
 
 <!-- EQUATION ------------------------------------------------->
 <table class ="equation"; style="margin-top:8px;"> <tr> <td>
 <math>
   <mi>b</mi>  <mspace/> <mo> ≡ </mo> <mspace/>
- <mstyle displaystyle="true">
  <mfrac>   <mi>w</mi>  <mi>V</mi>
  </mfrac>
 </math>
 
-<td style="text-align:right">                 (4.2)
+<td class="eqn">                                           (4.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+</div>  <!-- end page break avoid -->
+
+
 <!-- SECTION 4.2 ---------------------------------------------->
-<h4> 4.2 &emsp; Newton's second law of notion </h4>
+<h4> 4.2 &emsp; Newton's second law of motion </h4>
 
 <p> One of <span style="font-variant: small-caps;"> Newton</span>'s
  laws asserts that action equals reaction.
@@ -220,13 +236,11 @@ The mechanism applies equally to air.
   <mi>m</mi>  <mo>.</mo>  <mi>a</mi>
 </math>
 
-<td style="text-align:right">                 (4.3)
+<td class="eqn">                                           (4.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-</p>
-
-<p> This is not the a of (4.1), but the momentary acceleration.
+<p> This is not the factor <i>a</i> of (4.1), but the momentary acceleration.
  Acceleration is  the change of velocity per second.
  We&nbsp;can also write (4.3) as :
 </p>
@@ -239,7 +253,7 @@ The mechanism applies equally to air.
     <msup> <mi>v</mi> <mn>&bull;</mn>
 </math>
 
-<td style="text-align:right">                 (4.4)
+<td class="eqn">                                           (4.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -261,7 +275,7 @@ The mechanism applies equally to air.
     <mn>&bull;</mn>
 </math>
 
-<td style="text-align:right">                 (4.5)
+<td class="eqn">                                           (4.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -275,18 +289,13 @@ The mechanism applies equally to air.
  Instead of accelerating the same mass to an ever higher velocity,
  we can take a new mass <i>m</i><sup>&#9679;</sup> every second,
  and give it the same velocity increase <i>v</i> every time.
-</p>
-<p>&emsp;
   For example, we can exert a forward force on ourselves
  by throwing a snowball of mass <i>m</i> to the rear every second,
  or by squirting a continuous mass flow of water
  <i>m</i><sup>&#9679;</sup>
  out of a fire hose at a constant velocity <i>v</i>.
-</p>
-<p>&emsp;
  We can write (4.5) as :
 </p>
-
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
@@ -297,7 +306,7 @@ The mechanism applies equally to air.
     <mi>v</mi>
 </math>
 
-<td style="text-align:right">                 (4.6)
+<td class="eqn">                                            (4.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -309,7 +318,7 @@ The mechanism applies equally to air.
 <p> We use version (4.6) of <span style="font-variant: small-caps;">
  Newton</span>'s law for the propeller.
 </p>
-<p>&emsp;
+<p> &emsp;
  Let us say that each second an air mass <i>m</i><sup>&#9679;</sup>
  flows through the prop disk.
  From figure 4.1, this mass gets
@@ -333,7 +342,7 @@ The mechanism applies equally to air.
     <mi>w</mi>
 </math>
 
-<td style="text-align:right">                 (4.7)
+<td class="eqn">                                           (4.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -353,7 +362,7 @@ The mechanism applies equally to air.
     <mi>V</mi>
 </math>
 
-<td style="text-align:right">                 (4.8)
+<td class="eqn">                                           (4.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -394,7 +403,7 @@ The mechanism applies equally to air.
 
 </math>
 
-<td style="text-align:right">                 (4.9)
+<td class="eqn">                                           (4.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -428,14 +437,15 @@ The mechanism applies equally to air.
 
 </math>
 
-<td style="text-align:right">                (4.10)
+<td class="eqn">                                          (4.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
+
+<div style="page-break-inside:avoid">
 
 <p> The local momentum loss (&hairsp;actually,
  the gross power increase&hairsp;) is :
 </p>
-
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
@@ -458,9 +468,11 @@ The mechanism applies equally to air.
     <mo>.</mo> <mi>a</mi>
 </math>
 
-<td style="text-align:right">                (4.11)
+<td class="eqn">                                          (4.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
+
+</div>   <!-- end avoid page break -->
 
 <p> Note that <i>P</i><sub>m</sub> 
 is not the total momentum power, 
@@ -475,11 +487,9 @@ is not the total momentum power,
  between (4.11) and (4.9)  :
 </p>
 
-
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <msub> <mi>P</mi> <mn>m</mn> </msub>
     <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
@@ -488,7 +498,6 @@ is not the total momentum power,
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
       <mo>.</mo> 
@@ -511,7 +520,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="text-align:right">                (4.12)
+<td class="eqn">                                         (4.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -521,7 +530,6 @@ is not the total momentum power,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
    <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
                     </mi>  <mi>v </mi>
@@ -536,7 +544,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="text-align:right">                (4.13)
+<td class="eqn">                                         (4.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -556,10 +564,8 @@ is not the total momentum power,
 <math>
   <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
 
-
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
    <mn>1</mn>
    <mrow> <mn>1</mn> <mo>+</mo> <mi>a</mi>
@@ -567,7 +573,7 @@ is not the total momentum power,
 
 </math>
 
-<td style="text-align:right">                (4.14)
+<td class="eqn">                                           (4.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -619,7 +625,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="text-align:right">                (4.15)
+<td class="eqn">                                         (4.15)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -627,11 +633,9 @@ The propeller leaves behind a velocity <i>w</i>,
  for the loss ratio  :
 </p>
 
-
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
     <msub> <mi>P</mi> <mn>m</mn> </msub>
     <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
@@ -640,7 +644,6 @@ The propeller leaves behind a velocity <i>w</i>,
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mrow> 
       <mn>&frac12&nbsp;</mn> 
@@ -674,7 +677,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="text-align:right">                (4.16)
+<td class="eqn">                                          (4.16)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -688,7 +691,6 @@ The propeller leaves behind a velocity <i>w</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
   <mfrac>
    <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
                     </mi>  <mi>m </mi>
@@ -703,7 +705,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="text-align:right">                (4.17)
+<td class="eqn">                                          (4.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -715,10 +717,8 @@ The propeller leaves behind a velocity <i>w</i>,
 <math>
   <msub> <mi>&eta;</mi>  <mn>m</mn> </msub>
 
-
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
   <mfrac>
    <mn>1</mn>
    <mrow> <mn>1</mn> <mo>+</mo> 
@@ -727,7 +727,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="text-align:right">                (4.18)
+<td class="eqn">                                         (4.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -756,7 +756,7 @@ The propeller leaves behind a velocity <i>w</i>,
 
 </math>
 
-<td style="text-align:right">                (4.19)
+<td class="eqn">                                         (4.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -801,21 +801,24 @@ in the thrust loading,
 </p>
 /////////////////////////////////////////////////////////////-->
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<!-- FOOTER --------------------------------------------------->
-<br> <br>
-<div class = "footer">
-   <span style="float:left">
-      <a href="prop_book_03_TOC.html"> previous </a>
-   </span>
-      P. Lammertse, 2026
-   <span style="float:right">
-      <a href="prop_book_05.html"> next </a>
-   </span>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> AXIAL MOMENTUM </i>
 </div>
+
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
+
 
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

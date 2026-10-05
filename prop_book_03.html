@@ -34,12 +34,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_02.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_04.html">
+               Next &#x25BA;</a>                           </li>              
    </ul>
 </nav>
 
-<!-- TEXT PAGE ------------------------------------------------>
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 3 ------------------------------------------------>
 <h2> 3 &emsp; Thrust, power and efficiency                 </h2>
@@ -76,7 +84,7 @@
   </mrow>
 </mfrac> </math>
 
-<td style="width:50px; text-align:right">                 (3.1)
+<td class="eqn">                                               (3.1)
 </td> </tr> </table>
 
 
@@ -121,7 +129,7 @@ This definition is based on <i>V</i> instead of on
   </mrow>
 </mfrac> </math>
 
-<td style="width:50px; text-align:right">                 (3.2)
+<td class="eqn">                                               (3.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -137,7 +145,7 @@ It follows that :
   <mn>&frac12;&thinsp;</mn> <msub> <mi>C</mi> <mi>T </mi> </msub>
 </math>
 
-<td style="width:50px; text-align:right">                 (3.3)
+<td class="eqn">                                               (3.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -146,6 +154,7 @@ It follows that :
  <i>V</i>&hairsp;<sup>3</sup> instead of by
  <i>V</i>&hairsp;<sup>2</sup> :
 </p>
+
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
@@ -163,7 +172,7 @@ It follows that :
   </mrow>
 </mfrac> </math>
 
-<td style="width:50px; text-align:right">                 (3.4)
+<td class="eqn">                                               (3.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -191,7 +200,7 @@ It follows that :
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                  (3.5)
+<td class="eqn">                                                (3.5)
 </td> </tr> </table>
 <!-- END EQUATION ---------------------------------------------->
 
@@ -221,7 +230,7 @@ It follows that :
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                 (3.6)
+<td class="eqn">                                               (3.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -297,7 +306,7 @@ The propeller's efficiency then becomes :
 
 </math> </td>
 
-<td style="width:50px; text-align:right">                   (3.7)
+<td class="eqn">                                                 (3.7)
 </td> </tr> </table>
 <!-- end equation table ----------------------------------------->
 
@@ -328,7 +337,7 @@ The propeller's efficiency then becomes :
    </mfrac>
 </mrow> </mfrac> </math> </td>
 
-<td style="width:50px; text-align:right">  (3.8)
+<td class="eqn">                                (3.8)
 </td> </tr> </table>
 <!-- end equation table --------------------------------------->
 
@@ -360,7 +369,7 @@ The propeller's efficiency then becomes :
   </mfrac></math>
 </td>
 
-<td style="width:50px; text-align:right">                 (3.9)
+<td class="eqn">                                               (3.9)
 </td> </tr> </table>
 <!-- end table equation --------------------------------------->
 
@@ -397,7 +406,7 @@ The propeller's efficiency then becomes :
    </mfrac>
 </mrow> </mfrac> </math> </td>
 
-<td style="width:50px; text-align:right">                (3.10)
+<td class="eqn">                                              (3.10)
 </td> </tr> </table>
 <!-- end equation table --------------------------------------->
 
@@ -429,23 +438,23 @@ for a given thrust.
 
 /////////////////////////////////////////////////////////////-->
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<!-- FOOTER --------------------------------------------------->
-<br><br>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> AXIAL MOMENTUM </i>
+</div>
 
-<div class = "footer">
-   <span style="float:left">
-      <a href="prop_book_02.html"> previous </a>
-   </span>
-      <i> P. Lammertse, 2026 </i>
-   <span style="float:right">
-      <a href="prop_book_04_TOC.html"> next </a>
-   </span>
- </div>
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
 
 <!-- needed for hamburger menu, must be at end of body -->
+<script src = "draft.js"></script>
 <script src = "menu.js"></script>
-
 
 </body>
 </html>

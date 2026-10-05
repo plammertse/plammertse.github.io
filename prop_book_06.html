@@ -34,18 +34,20 @@
    <ul>
       <li> <a href="index.html">
                Home </a>                                   </li>
+      <li> <a href="prop_book_05.html">
+               &#x25C4; Previous </a>                      </li>
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
+      <li> <a href="prop_book_07.html">
+               Next &#x25BA;</a>                      </li>              
    </ul>
 </nav>
 
-<!-- TEXT PAGE ------------------------------------------------>
-
-<!--- PAGE HEADER --------------------------------------------->
-
-<p style  = "margin-left : 320px">  <i> AXIAL MOMENTUM </i> </p>
-<hr style = "margin : 0 0;">
-
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
+<table>
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- CHAPTER 6 ------------------------------------------------>
 
@@ -74,7 +76,6 @@
 </math>
 </td>
 <td style="text-align:right;">                 (6.1)
-<!-- <td style="width:50px; text-align:right;">                 (6.1) -->
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -150,20 +151,19 @@
  mainly because it keeps the central arguments easier to follow.
 </p>
 
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<p> <!-- FOOTER ----------------------------------------------->
-<br> <br>
-<div class = "footer">
-   <span style="float:left">
-      <a href="prop_book_05.html"> previous </a>
-   </span>
-      P. Lammertse, 2026
-   <span style="float:right">
-      <a href="prop_book_07.html"> next </a>
-   </span>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> AXIAL MOMENTUM </i>
 </div>
 
-<div style = "break-before:page"> </div>
+<!-- TRUE FOOTER ------------------------------------------------->
+<div class="footer"> P. Lammertse, 2025 </div>
          
 </body>
 </html>
