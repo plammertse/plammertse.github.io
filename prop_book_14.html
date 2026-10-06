@@ -59,7 +59,7 @@
 <h4> 14.1 &emsp; Introduction                              </h4>
 
 <p> Viscous loss is the "leadscrew" part of the power loss.
- The leadscrew acts in a flow accelerated by the propeller's
+ The leadscrew acts in a flow accelerated by the pro&shypeller's
  own thrust, but the screw itself does not know it.
  It just threads itself forward relative to
  the surrounding air,
@@ -69,25 +69,27 @@
  At the design stage, the sliding friction force
  is proportional to the blade lift force.
  The ratio is called the friction coefficient.
- It is usually indicated by <i>&mu;</i> 
+ In a leadscrew, it is usually indicated by <i>&mu;</i> 
  (&hairsp;the Greek letter <i>mu</i>&hairsp;).
- The ratio is the tangent of the angle
+ This ratio is also the tangent of the angle
  at which a friction block
  would begin to slide down a slope.
 </p>
 <p>&emsp; The aerodynamic equivalent is the inverse
  of the glide ratio
- <i>C</i><sub>l</sub> / <i>C</i><sub>d</sub>
+ <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
  of the blade sections.
  At the design stage, we will use the prop blades
  at their best
- <i>C</i><sub>l</sub> / <i>C</i><sub>d</sub>,
+ <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>,
  so we can consider
  the "friction angle" of the blade sections as a constant.
  In off-design calculations this will no longer hold.
- In that case the behavior is closer to a constant
+ In that case the section drag is closer to a constant
  <i>C</i><sub>d</sub>
- at varying <i>C</i><sub>l</sub>.
+ at varying <i>C</i><sub>l</sub>, so 
+ <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
+ would vary from the optimum.
  There are also secondary effects of the
 <span style="font-variant: small-caps;">Reynolds</span>
  and
@@ -111,17 +113,19 @@
  On a slope of 1:10, the horizontal force <i>F</i>  travels
  ten times the distance of the vertical
  (&hairsp;weight&hairsp;) force <i>W</i>.
-  From&nbsp;the power balance (&hairsp;with power equals 
+  From&nbsp;the power balance (&hairsp;where power equals 
  force times displacement&hairsp;),
- the force <i>F</i> will be
- ten times lower than the force <i>W</i>,
+ the force <i>F</i> which keeps the block from sliding
+ needs to be only one tenth of the force <i>W</i>,
  in the ideal case with no friction. 
 </p>
+<!--
 <p>&emsp; For small angles, the force normal to the surface
  approximately equals the block weight <i>W</i>,
  and the friction force almost directly opposes
  the horizontal driving force <i>F</i>.
 </p>
+-->
 <p>&emsp; Force <i>F</i> will have to move the friction force
  over 10 times the distance of the vertical displacement.
  This costs 10 times more friction power than if <i>F</i>
@@ -133,7 +137,7 @@
 </p>
 <p> &emsp; Most mechanical leadscrews
  more or less have a single slope angle,
- for a single outside (&hairsp;almost outside&hairsp;) diameter.
+ for a single diameter almost at the outer radius.
  Their thread does not cut very deep.
  In propellers, the "thread" goes right to the core.
  This causes considerable pitch angle variation with radius.
@@ -181,52 +185,58 @@
 <p> The forward velocity of the airplane is <i>V</i>,
  and the propeller rate of rotation is <i>&Omega;</i> 
  (&hairsp;in rad/s&hairsp;).
- The local lift <i>L</i> is ortho&shygon&shyal
+ The local lift force <i>L</i>&nbsp;is&nbsp;ortho&shygon&shyal
  to the local velocity <i>W</i>.
  The&nbsp;drag <i>D</i> is that part of the aerodynamic force
- which is orthogonal to <i>L</i>. The result&shyant of <i>L</i> 
+ which is orthogonal to <i>L</i>, so it is parallel again to the local
+ velocity <i>W</i>.
+ The tilted result&shyant of <i>L</i> 
  and <i>D</i> is called <i>R</i>.
- The drag  <i>D</i> is an order of magnitude smaller than <i>L</i>.
- We can interpret <i>R</i> as a slightly rotated version of <i>L</i>.
-</p>
-<p>&emsp;
-The viscous backward angle of tilt <i>&epsilon;</i> follows
+ <p class="draft"> consider <b><i>F</i></b> or
+  <b><i>L</i>&thinsp;&prime;</b></i> to avoid
+ confusion with the prop radius </p>
+ </p>
+ <p> &emsp;
+ The drag  <i>D</i> is an order of magnitude smaller than <i>L</i>,
+ and therefore we can interpret <i>R</i> as
+ a slightly rotated version of <i>L</i>.
+ The backward angle of tilt <i>&epsilon;</i> follows
  from the ratio between <i>D</i> and <i>L</i>.
- In wing sections this is called the "glide angle", which is
-the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
+ In wing sections this is called the "glide angle".
+It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mo>tan</mo> <mi>&epsilon;</mi>
+   <mo>tan</mo> <mi>&epsilon;</mi>
 
-  <mspace/><mo>&equiv;</mo> <mspace/>
+   <mspace/><mo>&equiv;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>    <mi>D</mi>   <mi>L</mi>
- </mfrac>
+   <mfrac>
+      <mi>D</mi>   <mi>L</mi>
+   </mfrac>
 
-  <mspace/><mo>=</mo> <mspace/>
+   <mspace/><mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>  
-    <msub> <mi>C</mi> <mn>d</mn> </msub>
-    <msub> <mi>C</mi> <mn>l</mn> </msub>
- </mfrac>
+   <mfrac>  
+      <msub> <mi>C</mi> <mn>d</mn> </msub>
+      <msub> <mi>C</mi> <mn>l</mn> </msub>
+   </mfrac>
 </math>
+</td>
 
-<td style="width:50px; text-align:right">                (14.1)
+<td class="eqn">                                          (14.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> We can separate R into an alternative pair
- of orthogonal components : the thrust force d<i>T</i>
+<p> We can also project <i>R</i>
+ along alternative orthogonal axes,
+ into the thrust force d<i>T</i>
  and the tangential force d<i>S</i>,
- the "d" prefix meaning "for a ring" as in (6.1).
- From figure 14.2 we have :
+ the&nbsp;"d" prefix meaning "for a ring" as in (7.2).
  </p>
-
+ 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
@@ -244,7 +254,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
   <mn>)</mn>
 </math>
 
-<td style="width:50px; text-align:right">                (14.2)
+<td class="eqn">                                         (14.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -267,14 +277,13 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
   <mn>)</mn>
 </math>
 
-<td style="width:50px; text-align:right">                (14.3)
+<td class="eqn">                                          (14.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> With (14.2), the net power exerted
  by the ring on the airplane is :
 </p>
-
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
@@ -294,14 +303,16 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
   <mo>&thinsp;.&thinsp;</mo> <mi>V</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (14.4)
+<td class="eqn">                                         (14.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> From figure 14.2, for a blade element d<i>r</i> 
- at radius <i>r</i>&thinsp; the torque <i>Q</i> is :
+<p> &emsp;
+ Acting at a rdius of <r>r</i>, the tangential force d<i>S</i>
+ exerts a torque around the propeller shaft of d<i>S</i> . <i>r</i>  :
+ </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
   <mn>d</mn> <mi>Q</mi>
@@ -311,98 +322,90 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
   <mn>d</mn> <mi>S</mi>
   <mo>.</mo> 
   <mi>r</mi>
-  <mo>.</mo>
-  <mn>d</mn> <mi>r</mi>
 </math>
 
-<td style="width:50px; text-align:right">                     (14.5)
+<td class="eqn">                                         (14.5)
 </td> </tr> </table>
-<!-- END EQUATION -------------------------------------------------->
+<!-- END EQUATION --------------------------------------------->
 
 </p>
 <p> The power needed to turn the propeller is 
  the shaft torque <i>Q</i> multiplied by the rotation rate
- <i>&Omega;</i> in rad/s. <br>
- With (14.3) for S, the shaft power is :
+ <i>&Omega;</i> (&hairsp;in rad/s&hairsp;). <br>
+ With (14.3) for d<i>S</i>, the shaft power is :
 </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>Q</mi> <mo>.</mo> <mi>&Omega;</mi>
+   <mn>d</mn> <mi>Q</mi> <mo>.</mo> <mi>&Omega;</mi>
 
-  <mspace/><mo>=</mo> <mspace/>
+   <mspace/><mo>=</mo> <mspace/>
 
-  <mi>R</mi> 
-  <mn>&thinsp;.</mn> 
-  <mo>sin</mo>
-  <mn>(</mn>
-    <mi>&phi;</mi>
-    <mo>+</mo>
-    <mi>&epsilon;</mi>
-  <mn>)</mn>
-  <mo>.&thinsp;</mo> 
-  <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
-  <mo>.</mo>
-  <mn>d</mn> <mi>r</mi>
+   <mi>R</mi> 
+   <mn>&thinsp;.</mn> 
+   <mo>sin</mo>
+   <mn>(</mn>
+      <mi>&phi;</mi>
+      <mo>+</mo>
+      <mi>&epsilon;</mi>
+   <mn>)</mn>
+   <mo>.&thinsp;</mo> 
+   <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
 </math>
 
-<td style="width:50px; text-align:right">                     (14.6)
+<td class="eqn">                                          (14.6)
 </td> </tr> </table>
-<!-- END EQUATION -------------------------------------------------->
+<!-- END EQUATION --------------------------------------------->
 
 <p> The viscous efficiency of the blade element is net output power
  over shaft input power : 
 </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
+   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
 
-  <mspace/><mo>=</mo> <mspace/>
+   <mspace/><mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-    <mrow> <mn>d&hairsp;</mn> <mi>Q</mi> <mo>.</mo> <mi>&Omega;</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn> <mi>Q</mi> <mo>.</mo> <mi>&Omega;</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/><mo>=</mo> <mspace/>
+   <mspace/><mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mo>cos</mo> 
-    <mn>(</mn>
-      <mi>&phi;</mi>
-      <mo>+</mo>
-      <mi>&epsilon;</mi>
-    <mn>)</mn>
-   </mrow>
+   <mfrac>
+      <mrow> <mo>cos</mo> 
+         <mn>(</mn>
+            <mi>&phi;</mi>
+            <mo>+</mo>
+            <mi>&epsilon;</mi>
+         <mn>)</mn>
+      </mrow>
     <mrow> <mo>sin</mo>
-    <mn>(</mn>
-      <mi>&phi;</mi>
-      <mo>+</mo>
-      <mi>&epsilon;</mi>
-    <mn>)</mn>
-   </mrow>
- </mfrac>
+      <mn>(</mn>
+         <mi>&phi;</mi>
+         <mo>+</mo>
+         <mi>&epsilon;</mi>
+      <mn>)</mn>
+      </mrow>
+   </mfrac>
 
-  <mspace/><mo>.</mo> <mspace/>
+   <mspace/><mo>.</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>V</mi>
-    <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
-   </mrow>
-
- </mfrac>
+   <mfrac>
+      <mi>V</mi>
+      <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
+      </mrow>
+   </mfrac>
 
 </math>
 
-<td style="width:50px; text-align:right">                (14.7)
+<td class="eqn">                                          (14.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -412,32 +415,31 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
  <i>V&thinsp;/&thinsp;Ω&hairsp;r</i>, we have :
 </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
+   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
 
-  <mspace/><mo>=</mo> <mspace/>
+   <mspace/><mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
-    <mrow> <mo>tan</mo>
-    <mn>(</mn>
-      <mi>&phi;</mi>
-      <mo>+</mo>
-      <mi>&epsilon;</mi>
-    <mn>)</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
+      <mrow> <mo>tan</mo>
+      <mn>(</mn>
+         <mi>&phi;</mi>
+         <mo>+</mo>
+         <mi>&epsilon;</mi>
+      <mn>)</mn>
+      </mrow>
+   </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                     (14.8)
+<td class="eqn">                                          (14.8)
 </td> </tr> </table>
-<!-- END EQUATION -------------------------------------------------->
+<!-- END EQUATION --------------------------------------------->
 
 <p>&emsp; This formula goes back to 
-<span style="font-variant: small-caps;"> Froude </span>.
+<span style="font-variant: small-caps;">Froude</span>.
  It is the standard efficiency equation for mechanical leadscrews
  with friction angle <i>&epsilon;</i>. For zero friction,
  i.e. for <i>&epsilon;</i> = 0,
@@ -448,8 +450,8 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
  the efficiency becomes zero.
  The leadscrew seizes, or "locks up".
 </p>
-
-<p>&emsp;  In propellers, this condition occurs close to the hub.
+<p>&emsp;
+  In propellers, this condition occurs close to the hub.
  We will ignore it, and analyze the efficiency only for moderate
  angles of <i>&phi;</i> and small angles of <i>&epsilon;</i>.
 </p>
@@ -465,37 +467,32 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
+   <mfrac>
+      <mn>1</mn>
+      <mrow> <mn>1</mn> <mo>+</mo>
+         <mfrac displaystyle="true">
+            <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
+            <mrow> <mn>d</mn> <mi>T</mi> <mn>.</mn> <mi>V</mi> </mrow>
+         </mfrac>
+      </mrow>
+   </mfrac>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow> <mn>1</mn> <mo>+</mo>
-      <mstyle displaystyle="true">
-      <mfrac>
-        <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-        <mrow> <mn>d</mn> <mi>T</mi> <mn>.</mn> <mi>V</mi> </mrow>
-     </mfrac>
+   <mspace/> <mo>=</mo> <mspace/>
 
-   </mrow>
- </mfrac>
-
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
-    <mrow> <mo>tan</mo>
-    <mn>(</mn>
-      <mi>&phi;</mi>
-      <mo>+</mo>
-      <mi>&epsilon;</mi>
-    <mn>)</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
+      <mrow> <mo>tan</mo>
+      <mn>(</mn>
+         <mi>&phi;</mi>
+         <mo>+</mo>
+         <mi>&epsilon;</mi>
+      <mn>)</mn>
+      </mrow>
+   </mfrac>
 
 </math>
 
-<td style="width:50px; text-align:right">                (14.9)
+<td class="eqn">                                          (14.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -505,57 +502,52 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
+      <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
+         <mn>&hairsp;.&hairsp;</mn> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-    <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
-      <mn>&hairsp;.&hairsp;</mn> <mi>V</mi> </mrow>
-  </mfrac>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> 
-      <mo>tan</mo>
-      <mn>(</mn>
-        <mi>&phi;</mi>
-        <mo>+</mo>
-        <mi>&epsilon;</mi>
-      <mn>)</mn>
-   </mrow>
-    <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
-
- </mfrac>
+   <mfrac>
+      <mrow> 
+         <mo>tan</mo>
+         <mn>(</mn>
+            <mi>&phi;</mi>
+            <mo>+</mo>
+            <mi>&epsilon;</mi>
+         <mn>)</mn>
+      </mrow>
+      <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
+   </mfrac>
  
- <mo>&minus;</mo> <mn>1</mn>
+   <mo>&minus;</mo> <mn>1</mn>
 
- <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> 
-      <mo>tan</mo>
-      <mn>(</mn>
-        <mi>&phi;</mi>
-        <mo>+</mo>
-        <mi>&epsilon;</mi>
-      <mn>)</mn>
+   <mfrac>
+      <mrow> 
+         <mo>tan</mo>
+         <mn>(</mn>
+            <mi>&phi;</mi>
+            <mo>+</mo>
+            <mi>&epsilon;</mi>
+         <mn>)</mn>
 
-      <mo>&minus;</mo>
+         <mo>&minus;</mo>
 
-      <mo>tan</mo> <mi>&phi;</mi> 
-   </mrow>
+         <mo>tan</mo> <mi>&phi;</mi> 
+      </mrow>
 
-    <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
+      <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
    </mfrac>
  </math>
 
-<td style="width:50px; text-align:right">               (14.10)
+<td class="eqn">                                         (14.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
-
 
 <p> We will call the viscous power ratio <i>&mu;</i>
  (&hairsp;Greek letter <i>mu</i>&hairsp;),
@@ -568,19 +560,18 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&mu;</mi>  <mn>(</mn> <mi>&phi;</mi>  <mn>)</mn> 
+   <mi>&mu;</mi>  <mn>(</mn> <mi>&phi;</mi>  <mn>)</mn> 
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-    <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
-      <mn>&hairsp;.&hairsp;</mn> <mi>V</mi> </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
+      <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
+         <mn>&hairsp;.&hairsp;</mn> <mi>V</mi> </mrow>
+   </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">               (14.11)
+<td class="eqn">                                         (14.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -649,12 +640,12 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
- <mo>tan</mo>
+   <mo>tan</mo>
    <mn>(</mn>
-    <mi>&phi;</mi>
-    <mo>+</mo>
-    <mi>&epsilon;</mi>
-    <mn>)</mn>
+      <mi>&phi;</mi>
+      <mo>+</mo>
+      <mi>&epsilon;</mi>
+   <mn>)</mn>
 
    <mo>&minus;</mo>
 
@@ -664,17 +655,17 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 
    <mi>&epsilon;</mi>
    <mo>.</mo>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mrow> <msup> <mo>cos</mo> <mn>2</mn> </msup> 
-        <mi>&phi;</mi>
-    </mrow>
-  </mfrac>
+   
+   <mfrac>
+      <mi>1</mi>
+      <mrow> <msup> <mo>cos</mo> <mn>2</mn> </msup> 
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 
- </math>
+</math>
 
-<td style="width:50px; text-align:right">               (14.12)
+<td class="eqn">                                         (14.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -684,33 +675,32 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>&epsilon;</mi>
-  <mo>.</mo>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+   <mi>&epsilon;</mi>
+   <mo>.</mo>
+ 
+   <mfrac>
+      <mi>1</mi>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
         <mi>&phi;</mi>
-    </mrow>
-  </mfrac>
+      </mrow>
+   </mfrac>
 
-  <mo>.</mo> 
+   <mo>.</mo> 
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mrow> <mo>tan</mo> 
-        <mi>&phi;</mi>
-    </mrow>
-  </mfrac>
- </math>
+   <mfrac>
+      <mi>1</mi>
+      <mrow> <mo>tan</mo> 
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+</math>
 </td>
 
-<td style="width:50px; text-align:right">               (14.13)
+<td class="eqn">                                         (14.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -724,21 +714,20 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
-    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
-        <mi>&phi;</mi>
-    </mrow>
-  </mfrac>
- </math>
+   <mfrac>
+      <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+</math>
 </td>
 
-<td style="width:50px; text-align:right">               (14.14)
+<td class="eqn">                                         (14.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -749,26 +738,25 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>&epsilon;</mi>
-  <mo>&hairsp;.</mo>
-  <mn>(&thinsp;</mn>
+   <mi>&epsilon;</mi>
+   <mo>&hairsp;.</mo>
+   <mn>(&thinsp;</mn>
 
-  <mi>x</mi> <mo>+</mo>
+   <mi>x</mi> <mo>+</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mi>x</mi>
-  </mfrac>
-  <mn>&thinsp;)</mn>
- </math>
+   <mfrac>
+      <mi>1</mi>
+      <mi>x</mi>
+   </mfrac>
+   <mn>&thinsp;)</mn>
+   </math>
 </td>
 
-<td style="width:50px; text-align:right">               (14.15)
+<td class="eqn">                                         (14.15)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -815,7 +803,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 
 </math> </td>
 
-<td style="width:50px; text-align:right">               (14.16)
+<td class="eqn">                                         (14.16)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -850,65 +838,64 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
+   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/> <mo>&cong;</mo> <mspace/>
 
-  <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
-  <mo>.</mo> <mi>&epsilon;</mi>
-  <mo>.</mo> 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mo>sin</mo> <mi>&phi;</mi> </mrow>
-    <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
- </mfrac>
+   <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
+   <mo>.</mo> <mi>&epsilon;</mi>
+   <mo>.</mo> 
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mfrac>
+      <mrow> <mo>sin</mo> <mi>&phi;</mi> </mrow>
+      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+   </mfrac>
 
-  <mn>d&hairsp;</mn> <mi>T</mi>
-  <mo>.</mo> <mi>&epsilon;</mi>
-  <mn>&thinsp;.</mn>
-  <mo>tan</mo> <mi>&phi;</mi>
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mn>d&hairsp;</mn> <mi>T</mi>
+   <mo>.</mo> <mi>&epsilon;</mi>
+   <mn>&thinsp;.</mn>
+   mo>tan</mo> <mi>&phi;</mi>
 </math> </td>
 
-<td style="width:50px; text-align:right">               (14.17)
+<td class="eqn">                                         (14.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 </p>
-<p> Similarly, via Δd<i>S</i> ≅
+<p> Similarly, via Δd<i>S</i> &cong;
   <i>D</i> . cos <i>&phi;</i>, we have :
-</i>
+</p>
 
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
+   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/> <mo>&cong;</mo> <mspace/>
 
-  <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
-  <mo>.</mo> <mi>&epsilon;</mi>
-  <mo>.</mo> 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
-    <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
- </mfrac>
+   <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
+   <mo>.</mo> <mi>&epsilon;</mi>
+   <mo>.</mo> 
+ 
+   <mfrac>
+      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mn>d&hairsp;</mn> <mi>T</mi>
-  <mo>.</mo> <mi>&epsilon;</mi>
-</math> </td>
+   <mn>d&hairsp;</mn> <mi>T</mi>
+   <mo>.</mo> <mi>&epsilon;</mi>
+</math> 
+</td>
 
-<td style="width:50px; text-align:right">               (14.18)
+<td class="eqn">                                         (14.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-
-</p>
 <p> With some hand waving, we can say that if we multiply
  these two orthogonal drag forces each by the local velocity
  in their own direction,
@@ -939,7 +926,7 @@ the inverse of the "glide ratio" <i>L&thinsp;/&thinsp;D</i>:
   <mo>.&thinsp;</mo>  <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
 </math> </td>
 
-<td style="width:50px; text-align:right">               (14.19)
+<td class="eqn">                                         (14.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -951,51 +938,48 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> 
-      <msub>  <mi>P</mi> <mn>v</mn> </msub>
-   </mrow>
-    <mrow> <mn>d&hairsp;</mn>
-      <mi>T</mi> <mn>.</mn> <mi>V</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> 
+         <msub>  <mi>P</mi> <mn>v</mn> </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/> <mo>&cong;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> 
-      <mi>T</mi> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo> 
-      <mo>(</mo>
-        <mo>tan</mo> <mi>&phi;</mi> <mo>.</mo> <mi>V</mi>
-        <mo>+</mo>
-        <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
-      <mo>)</mo>
-   </mrow>
-    <mrow> <mn>d&hairsp;</mn>
-      <mi>T</mi> <mn>.</mn> <mi>V</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> 
+         <mi>T</mi> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo> 
+         <mo>(</mo>
+            <mo>tan</mo> <mi>&phi;</mi> <mo>.</mo> <mi>V</mi>
+            <mo>+</mo>
+            <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
+         <mo>)</mo>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mi>&epsilon;</mi> <mo>.</mo> 
+   <mo>(</mo>
+      <mo>tan</mo> <mi>&phi;</mi>
+      <mo>+</mo>
+      <mfrac displaystyle="true">
+         <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
+         </mrow>
+         <mi>V</mi>
+      </mfrac>
+   <mo>)</mo>
 
-  <mi>&epsilon;</mi> <mo>.</mo> 
-  <mo>(</mo>
-    <mo>tan</mo> <mi>&phi;</mi>
-    <mo>+</mo>
-    <mstyle displaystyle="true">
-    <mfrac>
-      <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
-     </mrow>
-     <mi>V</mi>
-    </mfrac>
-  <mo>)</mo>
+</math>
+</td>
 
-</math> </td>
-
-<td style="width:50px; text-align:right">               (14.20)
+<td class="eqn">                                         (14.20)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1007,54 +991,51 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> 
-      <msub>  <mi>P</mi> <mn>v</mn> </msub>
-      <mn>&hairsp;&prime;</mn>
-   </mrow>
-    <mrow> <mn>d&hairsp;</mn>
-      <mi>T</mi> <mn>&hairsp;&prime;</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> 
+         <msub>  <mi>P</mi> <mn>v</mn> </msub>
+         <mn>&hairsp;&prime;</mn>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+         <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d&hairsp;</mn> 
-      <msub>  <mi>P</mi> <mn>v</mn> </msub>
-   </mrow>
-    <mrow> <mn>d&hairsp;</mn>
-      <mi>T</mi> <mn>.</mn> <mi>V</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow> <mn>d&hairsp;</mn> 
+         <msub>  <mi>P</mi> <mn>v</mn> </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>&epsilon;</mi> <mo>.</mo> 
-  <mo>(</mo>
-    <mstyle displaystyle="true">
-    <mfrac>
-      <mn>1</mn> <mi>x</mi>
-    </mfrac>
-    <mo>+</mo>
-    <mi>x</mi>
-  <mo>)</mo>
+   <mi>&epsilon;</mi> <mo>.</mo> 
+   <mo>(</mo>
+      <mfrac>
+         <mn>1</mn> <mi>x</mi>
+      </mfrac>
+      <mo>+</mo>
+      <mi>x</mi>
+   <mo>)</mo>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <<mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
-    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
-        <mi>&phi;</mi>
-    </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
+      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 
-</math> </td>
+</math>
+</td>
 
-<td style="width:50px; text-align:right">               (14.21)
+<td class="eqn">                                         (14.21)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 

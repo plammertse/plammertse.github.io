@@ -173,6 +173,7 @@ input[type=number] {
 
 /* whole page wrapped in table for header trick    */
 /* The 864px equals 800px plus two 32px margins    */
+/* inherited from <body>                           */
 table {
    width       : min( 100%, 864px);
    /* background-color : silver; */        /* test */
@@ -183,8 +184,10 @@ table {
 .equation {
 /*   width         : min( 90%, 775px);  */
 /*   margin-left   : min(  4%,  24px);  */
-   width         : min( 85%, 775px);
+/*   width         : min( 85%, 775px);  */
+   width         : min( 90%, 864px);
    margin-left   : min( 10%,  56px);
+   /* background-color : silver; */ /* test */
 }
 
 /* format last column <td> for equation number     */
@@ -217,10 +220,12 @@ td {
 .column {
   float        : left;
   /* surprisingly, this stacks responsive :         */
-  width        : 400px;            /* half of 800   */
+/*  width        : 400px;          /* half of 800   */
+  width        : 416px;            /* half of 832   */
 /* this way the columns do not stack : */  
 /*  width      : min( 50%, 400px); */
   padding-left : 16px;
+/*  background-color:silver;  */      /* debug only */
 }
 
 /* Use in <a> referring to sections and equations   */
@@ -407,7 +412,7 @@ svg {
    h2 { margin-top   : 8px; }  /* bit more space below header ruler */
    h2, h3, h4, h5 {
       break-after  : avoid; }
-   /* This breaks the table page header trick :
+   /* This breaks the table page header trick, use in HTML in a <div> :
    img, table {
       break-inside : avoid; }
    */

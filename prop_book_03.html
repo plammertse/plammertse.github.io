@@ -57,12 +57,12 @@
 <h4> 3.1 &emsp; The thrust coefficient                     </h4>
 
 <p> This text will use the thrust from the propeller
- (&hairsp;not yhe torque&hairsp;)
+ (&hairsp;not the torque&hairsp;)
  as the starting point of the design.
 </p>
 <p>&emsp;
  We will use two definitions of&nbsp;the&nbsp;non-dimensional thrust
- coefficient out of the many used in the literature.
+ coefficient, out of the many used in the literature.
  In&nbsp;analogy with the lift coefficient <i>C</i><sub>L</sub> of a wing,
  we define the non-dimensional thrust coefficient <i>C</i><sub>T</sub>.
  This is especially useful when applying the propeller in an aircraft :
@@ -97,17 +97,18 @@ This definition is based on <i>V</i> instead of on
 </p>
 <p>&emsp; The thrust coefficient <i>C</i><sub>T</sub>
  of an aircraft propeller in cruise
- is typically in the same ballpark as the lift coefficient
+ is typically on the same order as the lift coefficient
  <i>C</i><sub>L</sub> of the wing.
  Not by coincidence probably, the frontal area of a propeller
- is typically smaller than the wing area by roughly the same
- ratio as the aircraft's lift-to-drag ratio. 
+ is typically smaller than the wing area by&nbsp;roughly the same
+ ratio as the aircraft's ratio of lift to drag 
+ (&hairsp;hence, of lift to thrust&hairsp;). 
 </p>
 <p>&emsp;
- Inside classical propeller theory, it will be more convenient
+ Inside classical propeller theory it will be more convenient
  to divide by <i>ρV&hairsp;</i><sup>2</sup> instead of
  by ½&hairsp;<i>ρV&hairsp;</i><sup>2</sup>.  
- We denote this by a prime.
+ We denote this version by a prime.
  This "other" non-dimensional thrust coefficient
  is called <i>T</i>&thinsp;' :
 </p>
@@ -342,7 +343,7 @@ The propeller's efficiency then becomes :
 <!-- end equation table --------------------------------------->
 
 
-<p> We will call the two fractions in the denominator,
+<p> We will call the two fractions in the denominator :
  the momentum loss ratio and the viscous loss ratio.
 </p>
 <p>&emsp;
@@ -355,24 +356,28 @@ The propeller's efficiency then becomes :
 </p>
 
 <!-- equation table ------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation">
+ <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>P</mi> </mrow>
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi> </mrow>
-  </mfrac>
-  <mspace/> <mo>=</mo> <mspace/>
-  <mfrac>
-    <mrow> <msup> <mi>P</mi> <mn>&prime;</mn> </msup> </mrow>
-    <mrow> <msup> <mi>T</mi> <mi>&prime;</mi> </msup> </mrow>
-  </mfrac></math>
+
+   <mfrac>
+      <mrow> <msup> <mi>P</mi> <mn>&prime;</mn> </msup> </mrow>
+      <mrow> <msup> <mi>T</mi> <mi>&prime;</mi> </msup> </mrow>
+   </mfrac>
+   <mspace/> <mo>=</mo> <mspace/>
+   <mfrac>
+      <mrow> <mi>P</mi> </mrow>
+      <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi> </mrow>
+   </mfrac>
+</math>
 </td>
 
-<td class="eqn">                                               (3.9)
+<td class="eqn">                                           (3.9)
 </td> </tr> </table>
 <!-- end table equation --------------------------------------->
 
+<p> This turns (3.8) into :
+</p>
 
 <!-- equation table ------------------------------------------->
 <table class = "equation"> <tr> <td> <math>
