@@ -40,9 +40,11 @@ body {
     position   : relative;
 }
 
+/* top bar fields */
 .dropdown-menu > ul > li > a {   /* a inside li inside ... */
     display    : block;
-    padding    : 10px 15px;          /* from 15px vert, 20px hor */
+/*    padding    : 10px 15px; */     /* top, left, right, bottom */   /* from 15px vert, 20px hor */
+    padding    : 10px 13px;       /* top, left, right, bottom */   /* from 15px vert, 20px hor */
     color      : white;
     font-size  : 17px;            /* added, PL */
     text-decoration: none;

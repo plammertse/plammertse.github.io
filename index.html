@@ -5,6 +5,7 @@
 // file    : index.html
 // purpose : Landing page for personal website Piet Lammertse
 // --------------------------------------------------------------
+//  2026-10-06 PL moved propellers to top nav bar
 //  2026-09-12 PL more development, many "draft" items
 //  2026-08-17 PL ongoing development of multilevel menus
 //  2025-12-** PL created
@@ -114,7 +115,6 @@
    <!-- end HOME -->         
 
 <!------------------------------------------------------------------>
-
    <!-- AIRCRAFT -->
    <li class="dropdown-parent">
       <a> Aircraft </a>
@@ -203,6 +203,7 @@
       <!-- end Aerodynamics -->
       
       <!-- Propellers -->
+<!--      
       <li class="dropdown-parent">             
          <a> Propellers </a>
       <ul class="dropdown-submenu">
@@ -210,13 +211,13 @@
          <li> <a href="propellers.html">
             <i> &thinsp; About propellers </i> </a>            </li>
       
-         <!-- Propeller textbook -->
+         <! -- Propeller textbook -- >
                   
          <li> <a href="prop_book_about.html">
-              <i> &thinsp; &ensp; About the book </i> </a>    </li>
+              <i> &thinsp; A new textbook </i> </a>    </li>
             
-         <!-- the styles below give singe c.q. double
-           -- separation lines between some menu items -->
+         <! -- the styles below give singe c.q. double
+           -- separation lines between some menu items -- >
             
          <li style = "border-top   : solid;
                       border-width : 2px;
@@ -232,7 +233,6 @@
                <a href="prop_book_00_TOC.html"> <b> <i> &hairsp;
                   Table of Contents </b> </i> </a>          </li>
                     
-         <!-- Prop book 1..3 -->
          <li class="dropdown-parent"style = "border-top   : double;
                       border-width : 4px;
                       border-color : darkgray">
@@ -349,10 +349,11 @@
                      
          </ul>
          </li>
-         <!-- end Propeller textbook -->
+         <! -- end Propeller textbook -- >
       
       </ul>
-      </li>   
+      </li>
+      -->
       <!-- end Propellers -->
       
       <!-- Stability and control -->
@@ -490,6 +491,159 @@
    </li>
    <!-- end AIRCRAFT -->
 
+   <!-- PROPELLERS -->
+   <li class="dropdown-parent">
+      <a> Propellers </a>
+   <ul class="dropdown">
+      <li> <a href="propellers.html">
+         <i> &ensp; About propellers </i> </a>            </li> 
+         
+      <!-- Propeller textbook -->
+                  
+      <li> <a href="prop_book_about.html">
+           <i> &ensp; A new textbook </i> </a>            </li>
+            
+      <li style = "border-top   : double;
+                   border-width : 4px;
+                   border-color : darkgray">
+            <a href="prop_book_frontispiece.html">
+               Frontispiece photo </a>                    </li>
+      <li style = "border-top   : double;
+                   border-width : 4px;
+                   border-color : darkgray">
+            <a href="prop_book_preface.html">
+               Preface </a>                               </li>
+<!--               
+      <li>  <a href="prop_book_preface.html">
+               Preface </a>                               </li>
+-->
+      <li style = "border-top   : double;
+                   border-width : 4px;
+                   border-color : darkgray">
+            <a href="prop_book_00_TOC.html"> <b> <i> &hairsp;
+               Table of Contents </b> </i> </a>          </li>
+                    
+      <li class="dropdown-parent"style = "border-top   : double;
+                  border-width : 4px;
+                  border-color : darkgray">
+         <a href="prop_book_01_TOC.html">
+            &thinsp;1&ensp;-&thinsp;&nbsp;3 &emsp; Introduction </a>
+      <ul class="dropdown-submenu">
+                     
+         <li> <a href="prop_book_01.html">
+            1 &ensp; Introduction </a>                       </li>
+         <li> <a href="prop_book_02.html">
+            2 &ensp; Propeller geometry </a>                 </li>
+         <li> <a href="prop_book_03.html">
+            3 &ensp; Thrust, power and efficiency </a>       </li>
+      </ul>
+      </li>
+                     
+      <li class="dropdown-parent">
+         <a href="prop_book_04_TOC.html">
+         &thinsp;4&ensp;-&thinsp;&nbsp;7 &emsp; Axial momentum </a>
+      <ul class="dropdown-submenu">
+         
+         <li> <a href="prop_book_04.html">
+            4&ensp; Axial momentum loss </a>                  </li>
+         <li> <a href="prop_book_05.html">
+            5 &ensp; Thrust and the mass flow </a>            </li>
+         <li> <a href="prop_book_06.html">
+            6  &ensp; Heavy loading </a>                      </li>
+         <li> <a href="prop_book_07.html">
+            7  &ensp; Concentric tubes </a>                   </li>
+      </ul>
+      </li>
+                  
+      <li class="dropdown-parent">
+         <a href="prop_book_08_TOC.html">
+            &thinsp;8&ensp;-&thinsp;13 &ensp; Rotational loss </a>
+      <ul class="dropdown-submenu">
+         
+         <li> <a href="prop_book_08.html">
+              &thinsp; 8 &hairsp; &thinsp; Rotation </a>    </li>
+         <li> <a href="prop_book_09.html">
+               &thinsp; 9 &hairsp; &thinsp; Rotational efficiency </a> </li>
+         <li> <a href="prop_book_10.html">
+            10  &ensp; Minimizing the rotational loss </a>     </li>
+         <li> <a href="prop_book_11.html">
+            11  &ensp; The thrust at optimal efficiency </a>   </li>
+         <li> <a href="prop_book_12.html">
+            12  &ensp; The spiral wake </a>                    </li>
+         <li> <a href="prop_book_12.html">
+            13  &ensp; Counterrotation </a>                    </li>
+      </ul>
+      </li>
+                  
+      <li class="dropdown-parent">
+         <a href="prop_book_14_TOC.html">
+            14&thinsp;-&thinsp;16  &ensp; Viscous loss </a>
+      <ul class="dropdown-submenu">
+          
+         <li> <a href="prop_book_14.html">
+            14 &ensp; Viscous loss </a>                      </li>
+         <li> <a href="prop_book_15.html">
+            15 &ensp; Non-optimized viscous loss </a>        </li>
+         <li> <a href="prop_book_16.html">       
+            16 &ensp; Optimizing the viscous loss </a>            </li>
+      </ul>
+      </li>
+                  
+      <li class="dropdown-parent">
+         <a href="prop_book_17_TOC.html">
+            17&thinsp;-&thinsp;20  &ensp; Tip loss - classical </a>
+      <ul class="dropdown-submenu">
+            
+         <li> <a href="prop_book_17.html">
+            17 &ensp; The nature of the tip loss </a>          </li>
+         <li> <a href="prop_book_18.html">
+            18 &ensp; Two solutions </a>                       </li>
+         <li> <a href="prop_book_19.html">       
+            19 &ensp; Prandtl's tip model </a>                 </li>
+         <li> <a href="prop_book_20.html">       
+            20 &ensp; Prandtl's tip with rotation </a>         </li>
+      </ul>
+      </li>
+
+      <li class="dropdown-parent">
+         <a href="prop_book_21_TOC.html">
+            21&thinsp;-&thinsp;26 &ensp; Tip loss - exact vortex</i> </a>
+      <ul class="dropdown-submenu">
+          
+         <li> <a href="prop_book_21.html">
+            21 &ensp; The vortex solution </a>                 </li>
+         <li> <a href="prop_book_22.html">
+            22 &ensp; The wing lifting line </a>               </li>
+         <li> <a href="prop_book_23.html">       
+            23 &ensp; The propeller lifting line </a>          </li>
+         <li> <a href="prop_book_24.html">       
+            24 &ensp; Finite blade spacing </a>                </li>
+         <li> <a href="prop_book_25.html">       
+            25 &ensp; Applying Lerbs's solution </a>           </li>
+         <li> <a href="prop_book_26.html">       
+            26 &ensp; Comparing Prandtl to Lerbs </a>          </li>
+      </ul>
+      </li>
+
+      <li class="dropdown-parent">
+         <a href="prop_book_27_TOC.html">
+            27&thinsp;-&thinsp;29 &ensp; Optimal blade shape </i> </a>
+      <ul class="dropdown-submenu">
+           
+         <li> <a href="prop_book_27.html">
+            27 &ensp; Blade chords before tip loss </a>         </li>
+         <li> <a href="prop_book_28.html">
+            28 &ensp; Blade chords with tip loss </a>           </li>
+         <li> <a href="prop_book_29.html">
+            29 &ensp; Tip sweepback </a>                        </li>
+                    
+      </ul>
+      </li>
+      <! -- end Propeller textbook -- >
+   </ul>
+   </li>
+   <! -- end PROPELLERS -- >
+
    <!-- SHIPS -->      
             
    <li class="dropdown-parent">             
@@ -578,7 +732,7 @@
       <ul class="dropdown-submenu">
                   
          <li> <a href="haptics_about.html">
-            <i> &hairsp; About the book </i> </a>            </li>              
+            <i> A new textbook </i> </a>            </li>              
          <li> <a href="haptics_frontispiece.html">
             Frontispiece </a>                                </li>
          <li> <a href="haptics_preface.html">
@@ -799,7 +953,7 @@
 
    <!-- METHODOLOGY -->            
    <li class="dropdown-parent">             
-      <a> Methodology </a>
+      <a> Method </a>
    <ul class="dropdown">
    
       <li> <a href="method.html"> <i> &hairsp;
