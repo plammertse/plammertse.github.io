@@ -3,6 +3,7 @@
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
 --   history :
+--     2026-07-27 figures in <center> div's
 --     2026-07-27 new print headers with table trick
 --     2026-07-20 new style responsive menu
 --     2026-06-21 added PDF formatting, like page breaks
@@ -42,15 +43,11 @@
    </ul>
 </nav>
 
+<!-- TABLE TRICK START ---------------------------------------->
+<!-- table, print header, and body start (see text.css)      -->
 <table>
-	<!-- table header trick makes space for the true header   -->
-	<thead> <tr class="print-only"; style="margin-top:2px;">
-           <td> &nbsp; </td> </tr>
-   </thead>
-	<!-- see rest of trick for footer at end of body text     -->
-
-<tbody><tr><td>
-
+<thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
+<tbody> <tr> <td>
 
 <!-- MAIN TEXT ------------------------------------------------>
 
@@ -83,7 +80,7 @@ in some detail below.
 <div class = "center";
      style = "margin-top : 10px" >
    <video controls muted autoplay loop
-          width = "65%" >
+   width = 85%;
       <source type = "video/mp4";
               src  = "video/linkages_nuclear_lab_goertz.mp4" >
             Your browser does not support the video tag.
@@ -92,6 +89,7 @@ in some detail below.
 
 <!-- video-still, needed for PDF printing -->
 <img class = "center print-only"; 
+      width="70%";
      style = "display : none";
      src   = "images/linkages_goertz_video_still.gif"
      alt   = "Goertz video still" >
@@ -191,7 +189,7 @@ or it may be physical, as in so-called "master-slave" systems.
      width = "25%"
      alt   = "Single mass">
 </div>
-<div class = "center">
+<div class = "caption">
     <p> <i> Figure 2.1 : &ensp; Mass flexibly connected to a reference position.</i> 
    </p>
 </div>
@@ -326,6 +324,7 @@ The final mass is that of a physical "feeler",
      width = "80%"
      alt   = "Lumped masses">
 </div>
+
 <div class = "center">
     <p> <i> Figure 3.1 : &ensp; A serial mechanism. </i> 
    </p>
@@ -482,14 +481,16 @@ of the linkage mass.</p>
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
+<div class = "center">
 <img src = "images/linkage_with_end_masses.gif";
-     width = "300" alt="Single mass";
-     style = "margin-left   : 250px;
-              margin-top    :   8px">
-<p style  = "margin-left    : 200px;
-             margin-bottom  :  8px;">
-    <i> Figure 3.2 : &ensp; Two-sided approximate model.</i> 
-</p>
+     width = "50%" alt="Single mass";
+     alt = "end-masses";>
+</div>
+
+<div class = "caption">
+<p> <i> Figure 3.2 : &ensp; Two-sided approximate model.
+</i></p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 <p> If one of the ends is blocked or very heavy, this simplified model 
@@ -589,13 +590,14 @@ between an "input"  displacement <i>A</i> and an
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
+<div class = "center";
 <img src = "images/linkage_lever_ratio.gif"
-   width = "270" alt="Lever ratio";
-   style = "margin-left   : 220px;">
-<p style="margin-left     : 240px;
-          margin-bottom   :  8px;">
+   width = "50%" alt="Lever ratio">
+</div>
+<div class="caption">          
     <i> Figure 4.1 : &ensp; Lever ratio from A to B.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 <h4> 4.3 &emsp; Reflected forces </h4>
@@ -768,16 +770,18 @@ is the force per displacement there :
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
+<div class="center">
 <img src = "images/linkage_haptic_joystick.gif";
-   width = "320" alt="Haptic joystick";
-   style = "margin-left   : 250px;
-            margin-top    :   0px">
+   width = "50%" alt="Haptic joystick";>
+</div>
+            
+<div class="caption">
 <p style = "margin-left   : 250px;
             margin-bottom :  8px;">
     <i> Figure 4.2 : &ensp; Reflected stiffness and mass.</i> 
 </p>
+</div>
 <!-- //////////////////////////////////////////////////////// -->
-
 
 <!------------------------------------------------------------->
 
@@ -1318,15 +1322,16 @@ tendency of curling.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<img width="150" alt="Carl Stahl";
-     style="margin-left   : 325px;
-            margin-top    :   8px"
+<div class="center">
+<img width="25%" alt="Carl Stahl";
       src="images/linkages_carl_stahl.gif">
-<p style="margin-left     : 200px;
-          margin-bottom   :  8px;">
-    <i> Figure 5.1 : &ensp; Cable cross-section
+</div>
+
+<div class="caption">      
+<p><i> Figure 5.1 : &ensp; Cable cross-section
              18&hairsp;x&hairsp;9 + 7&hairsp;x&hairsp;7.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 
@@ -1826,15 +1831,16 @@ relative to that of the typical pushrod
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
+<div class="center">
 <img src = "images/linkages_butterfly_bellcrank.gif";
-   width = "300"; alt="Cable quadrant";
-   style = "margin-left   : 260px;
-            margin-top    :   8px">
-<p style="margin-left     : 150px;
-          margin-bottom   :  8px;">
-    <i> Figure 7.1 : &ensp; 
+   width = "50%"; alt="Cable quadrant";>
+</div>
+
+<div class="caption">
+<p> <i> Figure 7.1 : &ensp; 
     Butterfly bellcrank (&hairsp;cable end quadrant&hairsp;) and pulley.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
  
 
@@ -2164,14 +2170,16 @@ as the mass of the pushrods themselves.
 </p>
 
 <!-- //////////////////////////////////////////////////////// -->
+<div class="center">
 <img src   = "images/linkages_lever_stiffness.gif"
      alt   = "Lever stiffness";
-     width = "150" 
-     style = "margin-left  : 300px;" >
-<p   style = "margin-left  : 200px;
-             margin-bottom :  8px;"> <i> 
-   Figure 7.2 : &ensp; Bending of a blocked lever. 
+     width = "25%">
+</div>
+     
+<div class="caption">
+<p> <i>  Figure 7.2 : &ensp; Bending of a blocked lever. 
 </i> </p>
+</div>
 <!-- //////////////////////////////////////////////////////// -->
 
 <p> If the lever is a prismatic beam of length AB,
@@ -2258,14 +2266,15 @@ it is usually sufficient to use the bending moment of inertia
  </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<img width="425" alt="Support points example";
-     style="margin-left   : 150px;
-            margin-top    :   8px"
+<div class="center">
+<img width="50%" alt="Support points example";
       src="images/linkages_support_points_example.gif">
-<p style="margin-left     : 150px;
-          margin-bottom   :  8px;">
-    <i> Figure 7.3 : &ensp; Support compliance.</i> 
+</div>
+
+<div class="caption">
+<p> <i> Figure 7.3 : &ensp; Support compliance.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 <p> Now suppose that the frame between the "frame" fulcrums <i>B</i> and <i>E</i>
@@ -2313,14 +2322,14 @@ of the supporting structure, preferaby placing pulleys
  inertia, although it does show up as structural weight.
 </p>
 <!-- /////////////////////////////////////////////////////// -->
-<img width="600" alt="Support points free body";
-     style="margin-left   : 150px;
-            margin-top    :   8px"
+<div class="center">
+<img width="70%" alt="Support points free body";
       src="images/linkages_support_points_free_body.gif">
-<p style="margin-left     : 200px;
-          margin-bottom   :  8px;">
-    <i> Figure 7.4 : &ensp; Free body diagram.</i> 
+</div>
+<div class="caption">      
+<p> <i> Figure 7.4 : &ensp; Free body diagram.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 <div style="break-inside: avoid"> 
@@ -2341,13 +2350,13 @@ of the supporting structure, preferaby placing pulleys
  </p>
  
  <!-- /////////////////////////////////////////////////////// -->
-<img width="320" alt="Design mistake";
-     style="margin-left   : 300px;
-            margin-top    :   8px"
+<div class="center"> 
+<img width="50%" alt="Design mistake";
       src="images/linkages_design_mistake.gif">
-<p style="margin-left     : 320px;
-          margin-bottom   :  8px;">
-    <i> Figure 7.5 : &ensp; Classical design mistake.</i> 
+</div>
+
+<div class="caption">      
+<p> <i> Figure 7.5 : &ensp; Classical design mistake.</i> 
 </p>
 <!-- /////////////////////////////////////////////////////// -->
 </div>
@@ -2383,14 +2392,15 @@ but opposite forces.
 </p>
 
 <!-- /////////////////////////////////////////////////////// -->
-<img width="300" alt="Double pushrod";
-     style="margin-left   : 250px;
-            margin-top    :   8px"
+<div class="center">
+<img width="50%" alt="Double pushrod";
       src="images/linkages_double_pushrod.gif">
-<p style="margin-left     : 200px;
-          margin-bottom   :  8px;">
-    <i> Figure 7.2 : &ensp; Double pushrods.</i> 
+</div>
+
+<div class="caption">      
+<p> <i> Figure 7.2 : &ensp; Double pushrods.</i> 
 </p>
+</div>
 <!-- /////////////////////////////////////////////////////// -->
 
 <p> We will first load the pushrods with the same force that they 
@@ -3619,15 +3629,16 @@ but it is now also taken to include tactile feedback.
 </p>
 </span>          <!-- end of grey -->
 
-	<!-- Second part of trick to clear space for the real footer -->
-	</tbody>
-	<tfoot> <tr><td> <br><br> </td></tr> </tfoot>
-	</table>
-   
-<br> <br>
+<!-- TABLE TRICK END --------------------------------------------->
+<!-- body end, footer, and table end, see text.css              -->
+</td> </td> </tbody>
+<tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
+</table>
 
-<!-- HEADER --------------------------------------------------->
-<div class="header">  LINKAGES </div>
+<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<div class="header">
+<i> HAND LINKAGES </i>
+</div>
 
 <!-- FOOTER --------------------------------------------------->
 <div class="footer">  P. Lammertse, 2026 </div>
@@ -3801,8 +3812,7 @@ but hard tools and objects.
 </span>
 -->
 
-
-
 <!-- Hamburger menu script                                   -->
-<script src="menu.js"></script>  
+<script src="menu.js">  </script>
+<script src="draft.js"> </script>
 
