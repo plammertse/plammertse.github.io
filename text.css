@@ -194,8 +194,28 @@ table {
 /* format last column <td> for equation number     */
 /* keep a little distance to the right margin      */
 .eqn {
-   text-align   : right;
+   /* max-width  : 50px;  */ /* that doesn't work */
+   /* Maybe use a trick inside the <td> : a <div>
+   -- with these properties :
+   -- max-width: 300px; // Desired max width
+   -- width: max-content; 
+   -- For now, use fixed width.
+   */
+   width : 80px;                 /* test */
+/*   text-align   : right;
    padding-right : 16px;
+   text-align   : right;
+*/
+   text-align   : center;
+   /* border      : 1px solid black; */   /* test */
+}
+
+.unit {
+   /* second column in equations, unita [ m ] etc.,
+   -- to the left of the .eqn number         */
+   text-align   : right;
+   padding-right : 32px;
+   /* border      : 1px solid black;*/   /* test */
 }
 
 /* table content (rows) spaced a little more       */
@@ -378,6 +398,11 @@ svg {
 @media ( max-width : 768px )  {
    .center {
       margin-left : 32px;
+   }
+   .equation {
+   width         : min( 85%, 864px);
+   margin-left   : min( 10%,  56px);
+   /* background-color : silver; */ /* test */
    }
 /* temporary test code  */
 /*
