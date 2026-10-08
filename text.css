@@ -51,9 +51,9 @@ p {
 /* font-size : 16px;  already the default, I think */
 }
 
-/* all hyperlinks darker blue (see also .crossref) */
 a {
-   color     : #000040;    /* #000080  */
+   color     : mediumblue;
+   text-underline-offset : 0.2em;
 }
 
 /* line spacing + indent for header         */
@@ -231,9 +231,6 @@ td {
 
 /* Use in <a> referring to sections and equations   */
 .crossref {
-   color            : #145680;      /* #000080      */
-   text-decoration  : none;         /* no underline */
-   font-style       : italic;
    /* with padding, don't add spaces between the brackets */
    padding-left     : 3px;
    padding-right    : 3px;
@@ -319,7 +316,8 @@ mspace {
    position   : fixed;
    left       : 32px;
    bottom     : 0;
-   width      : min( 88%, 800px);   /* PL, just covers text */
+/*   width      : min( 88%, 800px); */  /* PL, just covers text */
+   width      : min( 92%, 800px);   /* PL, just covers text */
    background-color: white;
    color            : #000070;      /* dark blue
 /*   text-align : right;     */     /* hard to change in HTML ? */
@@ -331,11 +329,12 @@ mspace {
 
 /* added footer <a> "buttons", PL : */
 .footer a  {
-   background-color : #E9F0F0;         /* light blueish gray   */
+/*   background-color : #E9F0F0; */        /* light blueish gray   */
    color            : #0000A0;         /* darkest blue         */
    text-decoration  : none;            /* lose the underline   */
-   padding          : 2px 8px 2px 8px; /* top, right, bottom, left */
-   font-style       : italic;          /* !!!!! */
+/*   padding          : 2px 8px 2px 8px; */  /* top, right, bottom, left */
+   padding          : 2px 6px 2px 6px; /* top, right, bottom, left */
+/*   font-style       : italic;   */       /* !!!!! */
 }
 
 .footer a:hover {
@@ -345,22 +344,14 @@ mspace {
 
 /* TODO  This is a nice header for printing on every page   */
 /*       Trouble is, it covers the top of the normal text.  */
-/*       This necessitates the table trick                  */
-/* TODO 2026-09 : use center, test with top menu bar */
+/*       This necessitates the table trick.                 */
 .header {
-   position    : fixed;                /* fixed will print on every page   */
-   left        : 32px;
-   display     : none;                 /* only for printing, not on screen */
-   /* display     : visible;  */              /* test */
-/*   left        : 32px;  */
+   position    : fixed;                /* "fixed" will print on every page */
+   left        : 32px;                 /* width is set in media print */
+   display     : none;                 /* header is only for printing */
    top         : 0;                    /* note @page margin below */
-/*   width       : min( 88%, 800px);   */
-   width       : min( 100%, 800px);   /* 2026-09-22 */
-   background-color: white;
-   color       : black;
    text-align  : center;
-   padding     : 0 16px;               /* from default 32px ? */
-   box-sizing  : border-box;
+   padding     : 0 64px 0 0;           /* shift center right a little */
    border-bottom : 1px solid black;
 }
 
@@ -405,10 +396,11 @@ svg {
    .print-only {
       display : block !important; }
    .header {
-      display : block !important; }  /* show header only on print
+      display : block !important;/* show header only on print */
+      width   : 768px;           /* seems needed */ }  
 
-   .header { width : 768px; }    /* seems needed */
-   .footer { width : 768px; }    /* seems needed */
+   .header { width : 768px; }
+   .footer { width : 768px; }    /* seems needed */    
         
    h2 { margin-top   : 8px; }  /* bit more space below header ruler */
    h2, h3, h4, h5 {

@@ -133,7 +133,7 @@
  The frictional loss relative to weight is 
  (&hairsp;approximately&hairsp;)
  inversely proportional to the slope.
- A more precise analysis in the next section will confirm this.
+ The analysis in the next section will confirm this.
 </p>
 <p> &emsp; Most mechanical leadscrews
  more or less have a single slope angle,
@@ -231,10 +231,12 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <!-- END EQUATION --------------------------------------------->
 
 <p> We can also project <i>R</i>
- along alternative orthogonal axes,
- into the thrust force d<i>T</i>
- and the tangential force d<i>S</i>,
- the&nbsp;"d" prefix meaning "for a ring" as in (7.2).
+ along alternative axes,
+ decomposing it into the thrust force d<i>T</i>
+ and the tangential force d<i>S</i>&nbsp;at right angles to it.
+ The&nbsp;"d" prefix signifies "for a ring", as in
+(<a class="crossref";
+    href="prop_book_07.html#(7.2)">7.2</a>).
  </p>
  
 <!-- EQUATION ------------------------------------------------->
@@ -412,7 +414,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <div style = "break-before:page"> </div>
 
 <p> With  tan <i>&phi;</i> = 
- <i>V&thinsp;/&thinsp;Ω&hairsp;r</i>, we have :
+ <i>V&thinsp;&frasl;&thinsp;&Omega;&hairsp;r</i>, we have :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -460,19 +462,23 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <h4> 14.3 &emsp; The viscous loss ratio </h4>
 
-<p> We can find the local power loss ratio from the viscous efficiency.
- Equating (14.8) to the efficiency definition of (3.8) we have :
+<p> Equating (14.8) to the efficiency definition
+(<a class="crossref";
+    href="prop_book_03.html#(3.10)">3.10</a>), we have :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
+   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
+
+   <mspace/><mo>=</mo> <mspace/>
    <mfrac>
       <mn>1</mn>
       <mrow> <mn>1</mn> <mo>+</mo>
          <mfrac displaystyle="true">
-            <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-            <mrow> <mn>d</mn> <mi>T</mi> <mn>.</mn> <mi>V</mi> </mrow>
+            <mrow> <mn>d</mn> <mi>P</mi> <msub> <mn>&hairsp;&prime;</mn> <mn>v</mn> </mrow>
+            <mrow> <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn> </mrow>
          </mfrac>
       </mrow>
    </mfrac>
@@ -496,16 +502,26 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Some reworking gives :
+<p> Inverting this gives :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
+   <mn>1</mn>
+   
+   <mo> + </mo>
+   
    <mfrac>
-      <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-      <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
-         <mn>&hairsp;.&hairsp;</mn> <mi>V</mi>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
       </mrow>
    </mfrac>
 
@@ -523,7 +539,30 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
       <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
    </mfrac>
  
-   <mo>&minus;</mo> <mn>1</mn>
+ </math>
+
+<td class="eqn">                                         (14.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> which can be rewritten as : </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mspace/> <mspace/> <mspace/> 
+   <mfrac>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
@@ -545,46 +584,23 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    </mfrac>
  </math>
 
-<td class="eqn">                                         (14.10)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> We will call the viscous power ratio <i>&mu;</i>
- (&hairsp;Greek letter <i>mu</i>&hairsp;),
- deliberately giving it the feel of a friction coefficient.
- The analogy is not complete,
- but we will see later that <i>&mu;</i> is close to a projected version
- of the surface friction coefficient <i>&epsilon;</i> :
-</p>
-
-<!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
-<math>
-   <mi>&mu;</mi>  <mn>(</mn> <mi>&phi;</mi>  <mn>)</mn> 
-
-   <mspace/> <mo>=</mo> <mspace/>
-
-   <mfrac>
-      <mrow> <mn>d&hairsp;</mn> <msub> <mi>P</mi> <mn>v</mn> </mrow>
-      <mrow> <mn>d&hairsp;</mn> <mi>T</mi>
-         <mn>&hairsp;.&hairsp;</mn> <mi>V</mi> </mrow>
-   </mfrac>
-</math>
-
 <td class="eqn">                                         (14.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Figure 14.3 shows <i>&mu;</i> as a function of <i>&phi;</i>.
- Textbooks on mechanical drive components
+
+<p> Figure 14.3 shows this loss ratio
+  as a function of the local pitch angle <i>&phi;</i>.
+ </p>
+ <p> &emsp;Textbooks on mechanical drive components
  give a full analysis of (14.8)
  which we will not repeat here.
- In the region beyond <i>&phi;</i>  =  90° - <i>&epsilon;</i>
+ </p>
+ <p> In the region beyond <i>&phi;</i>  =  90° - <i>&epsilon;</i>
  the leadscrew is "self locking".
  The figure shows this region as a shaded vertical bar,
  scaled here for <i>&epsilon;</i> = 0.02.
  </p>
-
 
 <div class = "center">
 <img src ="images/prop_viscous_mu_phi.gif";
@@ -594,7 +610,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <div class = "center">
 <p> <i> Figure 14.3 : &ensp; 
-         The local leadscrew loss ratio &mu;(&phi;). </i> </p> 
+         The local leadscrew loss ratio as a function of the local pitch angle &phi;. </i> </p> 
 </div>
 
 <p>&emsp; The viscous efficiency is optimal for a pitch angle of
@@ -607,9 +623,9 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
  Most of the thrust in a propeller is delivered
  on the outboard part
  of the blade, at relatively flat pitch angles.
- Low pitch angles are favorable with respect to
+ Such low pitch angles are favorable with respect to
  rotational momentum loss,
- but they are the least favorable con&shydition
+ but they are the least favorable 
  with respect to profile drag.
  From a viscous point of view, all thrust should be concentrated
  in a short paddle near the radius where
@@ -624,7 +640,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <!-- SECTION 14.4 --------------------------------------------->
 
-<h4> 14.4 &emsp; A near-perfect approximation </h4>
+<h4> 14.4 &emsp; A near-&hairsp;perfect approximation </h4>
 
 <p>  Expression (14.10) for the frictional loss ratio
  can be greatly
@@ -634,7 +650,8 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
  Since the friction angle <i>&epsilon;</i> is usually small,
  we can approximate this difference by <i>&epsilon;</i> times
  the derivative of the tangent.
- That derivative is 1/cos<sup>2</sup> <i>&phi;</i> :
+ That derivative is
+ 1&thinsp;&frasl;&thinsp;cos<sup>2</sup> <i>&phi;</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -669,13 +686,24 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> This changes (14.10) into :
+<p> This changes (14.11) into :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mfrac>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
@@ -704,17 +732,30 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Using tan <i>&phi;</i> = 1/<i>x</i> from (2.4),
+<p> Using tan&hairsp;<i>&phi;</i> = 1&thinsp;&frasl;&thinsp;<i>x</i> from
+(<a class="crossref"
+    href="prop_book_02.html#(2.2)">2.4</a>),
  we have a simple
- yet almost exact expression for <i>&mu;</i>,
- which is easiest remembered in mixed coordinates
+ yet almost exact expression which is easiest remembered
+ in mixed coordinates
  <i>&phi;</i> and <i>x</i> : 
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mfrac>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
@@ -731,14 +772,27 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Eliminating <i>&phi;</i> completely by (2.8),
+<p> Eliminating <i>&phi;</i> completely by
+(<a class="crossref"
+    href="prop_book_02.html#(2.8)">2.8</a>),
  this is the same as :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>&mu;</mi> <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mfrac>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
@@ -761,8 +815,9 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <!-- END EQUATION --------------------------------------------->
 
 <a name="F14.4"> </a>
+
 <p> Figure 14.4 shows the exact value (14.10)
- of <i>&mu;</i>&hairsp;(<i>x</i>) as a solid dark blue line.
+ of <i>XXXXXXXX(<i>x</i>) as a solid dark blue line.
  It is the same as figure 14.3, only skewed to the left
  because it is against <i>x</i> instead of against <i>&phi;</i>.
  The figure also shows approximation (14.14)
@@ -777,13 +832,13 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <div class = "caption">
 <p> <i> Figure 14.4 : &ensp; 
-        The local leadscrew loss ratio &mu;(x). </i> </p>
+        The local leadscrew loss ratio XXXXXXXXXXXXXX(x). </i> </p>
 </div>
 
 <p> For all but the smallest values of <i>x</i>,
  i.e. for all pitch angles except  <i>&phi;</i> ≅ 90&deg;,
  the approximation is nearly perfect.
- The factor <i>&mu;</i> reaches a minimum of
+ The factor <i>XXXXXXXXXXXXXXX</i> reaches a minimum of
   2&hairsp;<i>&epsilon;</i>  near <i>x</i> = 1,
   the point where <i>&phi;</i> equals 45&deg;.
 </p>
@@ -795,7 +850,18 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&mu;</mi>  <mn>&hairsp;(</mn> <mi>x</mi>  <mn>)</mn> 
+   <mfrac>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>P</mi> 
+         <msub> <mn>&hairsp;&prime;</mn>
+               <mn>v</mn>
+         </msub>
+      </mrow>
+      <mrow> <mn>d&hairsp;</mn>
+             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      </mrow>
+   </mfrac>
 
   <mspace/> <mo>&cong;</mo> <mspace/>
 
@@ -809,7 +875,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 </p>
 <p> Figure 14.4 shows this further simplification as a straight line.
- It comes closest to an interpretation of <i>&mu;</i> as
+ It comes closest to an interpretation of <i>XXXXXXXXXXXXXXXXXX</i> as
  the "geared" friction coefficient <i>&epsilon;</i>.
 </p>
 <p> &emsp; In the vector diagram of figure 14.2,
@@ -822,9 +888,54 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <div style = "break-before:page"> </div>
 
 <!-- SECTION 14.5 --------------------------------------------->
+<h4> 14.4&frac12; &emsp; The viscous loss integral </h4>
+
+<p> We can integrate the viscous loss over the whole prop disk.
+ For lightly loaded propellers without tip loss, the local thrust
+ d<i>T</i>&thinsp;&prime; follows from
+ (<a class="crossref"
+    href="prop_book_07.html#7.14">7.14</a>, repeated here :
+</p> 
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+  <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+    
+  <mo> = </mo>
+
+  <mi>b</mi>
+
+  <mo>.</mo>
+
+  <mstyle displaystyle="true">
+  <mfrac> 
+   <mrow>
+    <mn>2&hairsp;</mn> <mi>x</mi>
+    <mo>.</mo>
+    <mn>d</mn> <mi>x</mi>
+  </mrow>
+   <mrow>
+     <msup> <mi>X</mi> <mn>2</mn> </msup>
+  </mrow>
+ </mfrac>
+
+</math>
+
+<td class="eqn">                (14.17&frac12;)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With **** , this yields :</p>
+
+<p> The integral over the whole prop disk is
+ (&hairsp;before tip loss&hairsp;) :
+</p>
+
+<!-- SECTION 14.5 --------------------------------------------->
 <h4> 14.5 &emsp; Vector derivation of the same approximation </h4>
 
-<p>  The nearly exact <i>&mu;</i>&thinsp;&hairsp;(<i>x</i>&hairsp;)
+<p>  The nearly exact <i>XXXXXXXXXXXXXXX</i>&thinsp;&hairsp;(<i>x</i>&hairsp;)
  of (14.14) can also be loosely derived
  directly from the force diagram.
  We split the viscous drag vector <i>D</i> into two orthogonal
@@ -1050,8 +1161,7 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 <!-- SECTION 14.6 --------------------------------------------->
 <h4> 14.6 &emsp; Neglecting a small momentum term </h4>
 
-<p> 
- The power calculation of (14.19) misses a subtle point.
+<p> The power calculation of (14.19) misses a subtle point.
  The viscous drag component &Delta;d<i>T</i>
  of (14.17) detracts from 
  the propeller's thrust, and to maintain the original thrust
