@@ -115,7 +115,6 @@ sub {
   top : 0.2em;
 }
 
-
 /* <pre> : increase fixed-spacing font size 
         ( default is 12, main text is 16 )         */
 /* margin is absolute, not inside <p>              */

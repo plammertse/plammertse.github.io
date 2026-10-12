@@ -66,30 +66,36 @@
  even if that air is slipping backward.
 </p>
 <p>&emsp;
- At the design stage, the sliding friction force
- is proportional to the blade lift force.
- The ratio is called the friction coefficient.
- In a leadscrew, it is usually indicated by <i>&mu;</i> 
+ In a physical leadscrew, the friction force  
+ is proportional to the normal force on the contact surface.
+ The ratio is called the friction coefficient,
+ usually indicated by <i>&mu;</i> 
  (&hairsp;the Greek letter <i>mu</i>&hairsp;).
  This ratio is also the tangent of the angle
  at which a friction block
  would begin to slide down a slope.
 </p>
-<p>&emsp; The aerodynamic equivalent is the inverse
- of the glide ratio
+<p>&emsp; 
+ In a propeller, the friction coefficient or angle
+ is usually called <i>&epsilon;</i>.
+ It is the inverse of the so-called glide ratio
  <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
- of the blade sections.
+ of the blade sections, the slope along which a glider
+ would descend in free flight.
+ </p> <p> &emsp;
  At the design stage, we will use the prop blades
  at their best
  <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>,
  so we can consider
- the "friction angle" of the blade sections as a constant.
+ the "friction angle" of the blade sections as an optimal constant.
  In off-design calculations this will no longer hold.
- In that case the section drag is closer to a constant
+ At off-design lift values the section drag is closer to a constant
  <i>C</i><sub>d</sub>
- at varying <i>C</i><sub>l</sub>, so 
+ at varying <i>C</i><sub>l</sub>.
+ <!--, so 
  <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
  would vary from the optimum.
+ -->
  There are also secondary effects of the
 <span style="font-variant: small-caps;">Reynolds</span>
  and
@@ -172,7 +178,7 @@
 </p>
 
 <div class = "center">
-<img src = "images/prop_viscous_force_diagram.gif";
+<img src = "images/prop_velocity_lift_diagram_leadscrew.gif";
    width = "50%";
    alt   = "Viscous force diagram"; >
 </div>
@@ -191,17 +197,15 @@
  which is orthogonal to <i>L</i>, so it is parallel again to the local
  velocity <i>W</i>.
  The tilted result&shyant of <i>L</i> 
- and <i>D</i> is called <i>R</i>.
- <p class="draft"> consider <b><i>F</i></b> or
-  <b><i>L</i>&thinsp;&prime;</b></i> to avoid
- confusion with the prop radius </p>
+ and <i>D</i> is often called <i>R</i>, but to avoid confusion
+ with the prop radius we will call it <i>L</i>&prime; here.
  </p>
  <p> &emsp;
  The drag  <i>D</i> is an order of magnitude smaller than <i>L</i>,
- and therefore we can interpret <i>R</i> as
+ and therefore we can interpret <i>L</i>&prime; as
  a slightly rotated version of <i>L</i>.
- The backward angle of tilt <i>&epsilon;</i> follows
- from the ratio between <i>D</i> and <i>L</i>.
+ The backward angle of tilt <i>&epsilon;</i> (&hairsp;in radians&hairsp;)
+ follows from the ratio between <i>D</i> and <i>L</i>.
  In wing sections this is called the "glide angle".
 It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </p>
@@ -230,13 +234,11 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> We can also project <i>R</i>
+<p> We can also project the resultant <i>L</i>&prime;
  along alternative axes,
- decomposing it into the thrust force d<i>T</i>
- and the tangential force d<i>S</i>&nbsp;at right angles to it.
- The&nbsp;"d" prefix signifies "for a ring", as in
-(<a class="crossref";
-    href="prop_book_07.html#(7.2)">7.2</a>).
+ decomposing it into a thrust force d<i>T</i>,
+ and a tan&shygent&shyial force d<i>S</i>&nbsp;at right angles to it.
+ The&nbsp;"d" prefix signifies "contribution of a single ring"&nbsp;:
  </p>
  
 <!-- EQUATION ------------------------------------------------->
@@ -246,7 +248,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
   <mspace/><mo>=</mo> <mspace/>
 
-  <mi>R</mi> 
+  <mi>L</mi> <mn>&hairsp;&prime;</mn>
   <mn>&thinsp;.</mn> 
   <mo>cos</mo>
   <mn>(</mn>
@@ -269,7 +271,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
   <mspace/><mo>=</mo> <mspace/>
 
-  <mi>R</mi> 
+  <mi>L</mi> <mn>&hairsp;&prime;</mn> 
   <mn>&thinsp;.</mn> 
   <mo>sin</mo>
   <mn>(</mn>
@@ -283,8 +285,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> With (14.2), the net power exerted
- by the ring on the airplane is :
+<p> The net power exerted by the ring on the airplane is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -294,9 +295,9 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
   <mspace/><mo>=</mo> <mspace/>
 
-  <mi>R</mi> 
+  <mi>L</mi> <mn>&hairsp;&prime;</mn>
   <mn>&thinsp;.</mn> 
-  <mo>sin</mo>
+  <mo>cos</mo>
   <mn>(</mn>
     <mi>&phi;</mi>
     <mo>+</mo>
@@ -309,9 +310,9 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> &emsp;
- Acting at a rdius of <r>r</i>, the tangential force d<i>S</i>
- exerts a torque around the propeller shaft of d<i>S</i> . <i>r</i>  :
+<p> Acting at a radius of <i>r</i>, the tangential force d<i>S</i>
+ exerts a torque around the propeller shaft of
+ d<i>S</i><b>&thinsp;.&thinsp;</b><i>r</i>  :
  </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -332,7 +333,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 </p>
 <p> The power needed to turn the propeller is 
- the shaft torque <i>Q</i> multiplied by the rotation rate
+ the shaft torque <i>Q</i>, multiplied by the rotation rate
  <i>&Omega;</i> (&hairsp;in rad/s&hairsp;). <br>
  With (14.3) for d<i>S</i>, the shaft power is :
 </p>
@@ -344,7 +345,7 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
    <mspace/><mo>=</mo> <mspace/>
 
-   <mi>R</mi> 
+   <mi>L</mi> <mn>&prime;</mn>
    <mn>&thinsp;.</mn> 
    <mo>sin</mo>
    <mn>(</mn>
@@ -447,12 +448,12 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
  i.e. for <i>&epsilon;</i> = 0,
  the propeller is like an ideal leadscrew.
  It will convert shaft torque into forward thrust with perfect efficiency.
+ </p>
+ <p> &emsp;
  For pitch angles <i>&phi;</i> of 
  (&hairsp;90°- <i>&epsilon;</i>&hairsp;) and higher,
  the efficiency becomes zero.
  The leadscrew seizes, or "locks up".
-</p>
-<p>&emsp;
   In propellers, this condition occurs close to the hub.
  We will ignore it, and analyze the efficiency only for moderate
  angles of <i>&phi;</i> and small angles of <i>&epsilon;</i>.
@@ -603,14 +604,15 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
  </p>
 
 <div class = "center">
-<img src ="images/prop_viscous_mu_phi.gif";
-   width = "60%";
-   alt   = "Viscous mu(phi)"; >
+<img src ="images/prop_viscous_leadscrew_loss_phi.gif";
+   width = "70%";
+   alt   = "Leadscrew(phi)"; >
 </div>
 
-<div class = "center">
+<div class = "caption">
 <p> <i> Figure 14.3 : &ensp; 
-         The local leadscrew loss ratio as a function of the local pitch angle &phi;. </i> </p> 
+         The local leadscrew loss ratio
+         as a function of the local pitch angle &phi;. </i> </p> 
 </div>
 
 <p>&emsp; The viscous efficiency is optimal for a pitch angle of
@@ -626,14 +628,15 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
  Such low pitch angles are favorable with respect to
  rotational momentum loss,
  but they are the least favorable 
- with respect to profile drag.
- From a viscous point of view, all thrust should be concentrated
- in a short paddle near the radius where
+ with respect to blade section profile drag.
+ From a viscous point of view, all thrust would have to be
+ concentrated in a short paddle near the radius where
  the pitch angle is 45&deg;.
  Simple wind turbines with sheet metal blades of poor
  lift&#8209;to&#8209;drag ratio <i>&epsilon;</i> =
- <i>C</i><sub>d</sub>&thinsp;/&thinsp;<i>C</i><sub>l</sub>
- in fact use exactly this arrangement.
+ <i>C</i><sub>d</sub>&thinsp;&frasl;&thinsp;<i>C</i><sub>l</sub>
+ in fact use exactly this arrangement, 
+ in a ring of many square blades.
 
 
 <div style = "break-before:page"> </div>
@@ -688,6 +691,8 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <p> This changes (14.11) into :
 </p>
+
+<a name="(14.14)"> </a>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
@@ -816,35 +821,34 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 <a name="F14.4"> </a>
 
-<p> Figure 14.4 shows the exact value (14.10)
- of <i>XXXXXXXX(<i>x</i>) as a solid dark blue line.
- It is the same as figure 14.3, only skewed to the left
- because it is against <i>x</i> instead of against <i>&phi;</i>.
- The figure also shows approximation (14.14)
- as&nbsp;a&nbsp;dashed line.
-</p>
-
-<div class = "center">
-<img src = "images/prop_viscous_mu_x.gif";
-   width = "60%";
-   alt   = "Viscous mu(x)"; >
-</div>
-
-<div class = "caption">
-<p> <i> Figure 14.4 : &ensp; 
-        The local leadscrew loss ratio XXXXXXXXXXXXXX(x). </i> </p>
-</div>
-
-<p> For all but the smallest values of <i>x</i>,
- i.e. for all pitch angles except  <i>&phi;</i> ≅ 90&deg;,
- the approximation is nearly perfect.
- The factor <i>XXXXXXXXXXXXXXX</i> reaches a minimum of
-  2&hairsp;<i>&epsilon;</i>  near <i>x</i> = 1,
+<p> Figure 14.4 shows the exact loss ratio (14.10)
+ as a solid dark blue line, and the near perfect approximation
+ (14.11) as a dashed line.
+ This is the same figure as figure 14.3,
+ only this time with 
+ <i>x</i>&nbsp;=&nbsp;1&nbsp;&frasl;&nbsp;tan&thinsp;<i>&phi;</i>
+ on the horizontal axis instead of <i>&phi;</i>.
+ This swaps left and right in the picture. The highest pitch angles
+ are now near the left vertical axis, and the smallest pitch angles
+ are far to the right. 
+ The "middle of the range" where <i>&phi;</i>&nbsp;=&nbsp;45&deg
+ is at <i>x</i>&nbsp;=&nbsp;1.
+ This skews the whole bath&shytub figure of 14.3 to the left.
+ </p>
+ <p> &emsp;
+  The viscous loss factor reaches a minimum of
+  2&hairsp;.&hairsp;<i>&epsilon;</i>&hairsp;  near <i>x</i>&nbsp;=&nbsp;1,
   the point where <i>&phi;</i> equals 45&deg;.
+</p>
+<p> &emsp;
+For all but the smallest values of <i>x</i>,
+ i.e. for all pitch angles except  <i>&phi;</i> ≅ 90&deg;,
+ the approximation (14.14) is very nearly perfect.
 </p>
 <p> Some of the literature, like
 <span style="font-variant: small-caps;">Glauert</span>,
- will set cos<sup>2</sup> <i>&phi;</i> ≈ 1 :
+ will set cos<sup>2</sup> <i>&phi;</i>&nbsp;&cong;&nbsp;1.
+ This turns (14.14) into&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -875,152 +879,227 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 
 </p>
 <p> Figure 14.4 shows this further simplification as a straight line.
- It comes closest to an interpretation of <i>XXXXXXXXXXXXXXXXXX</i> as
- the "geared" friction coefficient <i>&epsilon;</i>.
 </p>
-<p> &emsp; In the vector diagram of figure 14.2,
- for small angles <i>&phi;</i> a small driving force <i>S</i>
- is equivalent to a large thrust force <i>T</i> by a factor of
-  <i>x</i> = 1 / tan<i>&phi;</i>.
- In the same way, a small friction force becomes a large drag force.
+
+<div class = "center">
+<img src = "images/prop_viscous_loss_x.gif";
+   width = "65%";
+   alt   = "Viscous leadscrew loss (x)"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 14.4 : &ensp; 
+        The local viscous loss ratio as a function of x. </i> </p>
+</div>
+
+<p> This last equation comes closest to an interpretation of the viscous loss
+ as the "projected", or "geared" friction coefficient <i>&epsilon;</i>.
+ In the vector diagram of figure 14.2,
+ for small angles <i>&phi;</i> a relatively small force d<i>S</i>
+ can drive a larger thrust force d<i>T</i>, by a "gearing" factor of
+  <i>x</i>&nbsp;=&nbsp;1&nbsp;&frasl;&nbsp;tan&thinsp;<i>&phi;</i>.
+ In a similar way, a small friction force along the surface
+ can become a larger "drag" force in the thrust direction.
 </p>
 
 <div style = "break-before:page"> </div>
 
 <!-- SECTION 14.5 --------------------------------------------->
-<h4> 14.4&frac12; &emsp; The viscous loss integral </h4>
-
-<p> We can integrate the viscous loss over the whole prop disk.
- For lightly loaded propellers without tip loss, the local thrust
- d<i>T</i>&thinsp;&prime; follows from
- (<a class="crossref"
-    href="prop_book_07.html#7.14">7.14</a>, repeated here :
-</p> 
-
-<!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
-<math>
-  <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn>
-    
-  <mo> = </mo>
-
-  <mi>b</mi>
-
-  <mo>.</mo>
-
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
-
-</math>
-
-<td class="eqn">                (14.17&frac12;)
-</td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
-
-<p> With **** , this yields :</p>
-
-<p> The integral over the whole prop disk is
- (&hairsp;before tip loss&hairsp;) :
-</p>
-
-<!-- SECTION 14.5 --------------------------------------------->
 <h4> 14.5 &emsp; Vector derivation of the same approximation </h4>
 
-<p>  The nearly exact <i>XXXXXXXXXXXXXXX</i>&thinsp;&hairsp;(<i>x</i>&hairsp;)
- of (14.14) can also be loosely derived
+<p>  The nearly exact loss ratio of (14.14) and (14.15)
+ can also be loosely derived
  directly from the force diagram.
- We split the viscous drag vector <i>D</i> into two orthogonal
+ We&nbsp;split the viscous drag vector <i>D</i> into two orthogonal
  components, which we shall call Δd<i>T</i>  and Δd<i>S</i>. 
 </p>
-<p> Via the steps of Δd<i>T</i>   ≅ <i>D</i> . sin <i>&phi;</i>,
-   <i>D</i>  ≅  <i>&epsilon;</i> . <i>L</i>,
- and <i>L</i>  ≅   d<i>T</i>/cos <i>&phi;</i>, we have :
-</p>
+<p> &emsp; In the force diagram in figure 4.2 we can see
+ with some effort that :
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation"> 
+
+<tr> <td>
 <math>
-   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
+   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
 
    <mspace/> <mo>&cong;</mo> <mspace/>
 
-   <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
-   <mo>.</mo> <mi>&epsilon;</mi>
-   <mo>.</mo> 
+   <mspace/> <mspace/>
+   <mi>D</mi>
+      <mo>.</mo> <mn>cos</mn> <mn>&hairsp;</mn> <mi>&phi;</mi>
+</math>
+</td><tr>
+ 
+ <tr> <td>
+<math>
+   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
 
-   <mfrac>
-      <mrow> <mo>sin</mo> <mi>&phi;</mi> </mrow>
-      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
-   </mfrac>
+   <mspace/> <mo>&cong;</mo> <mspace/>
 
-   <mspace/> <mo>=</mo> <mspace/>
-
-   <mn>d&hairsp;</mn> <mi>T</mi>
-   <mo>.</mo> <mi>&epsilon;</mi>
-   <mn>&thinsp;.</mn>
-   mo>tan</mo> <mi>&phi;</mi>
-</math> </td>
+   <mn> &minus; &hairsp;</mn> <mi>D</mi> <mo>.</mo>
+      <mn>sin</mn> <mn>&hairsp;</mn> <mi>&phi;</mi>
+</math>
 
 <td class="eqn">                                         (14.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-</p>
-<p> Similarly, via Δd<i>S</i> &cong;
-  <i>D</i> . cos <i>&phi;</i>, we have :
-</p>
-
+<p> We also have</p>
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation"> 
+
+<tr> <td>
 <math>
-   <mi>&Delta;&thinsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
+   <mi>D</mi>
 
    <mspace/> <mo>&cong;</mo> <mspace/>
 
-   <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi>
-   <mo>.</mo> <mi>&epsilon;</mi>
-   <mo>.</mo> 
- 
-   <mfrac>
-      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
-      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
-   </mfrac>
-
-   <mspace/> <mo>=</mo> <mspace/>
-
-   <mn>d&hairsp;</mn> <mi>T</mi>
-   <mo>.</mo> <mi>&epsilon;</mi>
-</math> 
+   <mi>&epsilon;</mi>
+      <mo>.</mo> <mi>L</mi>
+</math>
 </td>
 
 <td class="eqn">                                         (14.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> With some hand waving, we can say that if we multiply
- these two orthogonal drag forces each by the local velocity
- in their own direction,
- we will obtain the two terms contributing to the
- local power loss due to drag.
-</p>
-<p>&emsp; The drag component Δd<i>T</i> directly opposes 
- the flying velocity <i>V</i>,
- and the drag component Δd<i>S</i>  directly opposes
- the circumferential blade element velocity
- <i>&Omega;&thinsp;r</i>.
-  The total local drag power loss is :
+<p> and </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> 
+
+<tr> <td>
+<math>
+   <mn>d</mn><mi>T</mi>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mi>L</mi> <mo> . </mo>
+      <mn>cos &hairsp;</mn> <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                         (14.19)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> which yields :
 </p>
 
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> 
+
+<tr> <td>
+<math>
+   <mi>D</mi>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mi>&epsilon;</mi>
+   <mo> . </mo>
+   <mfrac>
+      <mrow> <mn>d</mn> <mi>T</mi> </mrow>
+      <mrow> <mn>cos &hairsp;</mn> <mi>&phi;</mi> </mrow>
+</math>
+</td>
+
+<td class="eqn">                                         (14.20)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Using this in (14.17) and (14.18) we have : </p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mo>&minus;</mo> 
+   <mi>&epsilon;</mi>
+   
+   <mo>.</mo> 
+
+   <mfrac>
+      <mrow> <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi> </mrow>
+      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+   </mfrac>
+
+   <mo>.</mo> 
+
+   <mo>sin</mo> <mi>&phi;</mi> </mrow>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mi>&epsilon;</mi>
+   <mo>.</mo>
+   <mn>d&hairsp;</mn> <mi>T</mi>
+   <mn>&thinsp;.</mn>
+   <mo>tan</mo> <mi>&phi;</mi>
+</math> </td>
+
+<td class="eqn">                                         (14.21)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> and :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mspace/> <mspace/>
+   <mi>&epsilon;</mi>
+   <mo>.</mo> 
+
+   <mfrac>
+      <mrow>    <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi> </mrow>
+      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+   </mfrac>
+
+   <mo>.</mo> 
+ 
+   <mo>cos</mo> <mi>&phi;</mi>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mi>&epsilon;</mi>
+   <mo>.</mo> 
+   <mn>d&hairsp;</mn> <mi>T</mi>
+
+</math> 
+</td>
+
+<td class="eqn">                                         (14.22)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With some hand waving, we can say that if we multiply
+ these two drag forces each by their local 
+ parallel veloci&shyties into powers,
+ we will obtain two terms independently contributing to the
+ local power loss due to profile drag.
+</p>
+<p>&emsp; The axial drag component &Delta;&hairsp;d<i>T</i> 
+ directly opposes the flying velocity <i>V</i>. 
+ It causes a <i>reduction</i> of the net output power
+ <i>T&thinsp;.&thinsp;V</i>.
+ The tangential drag component &Delta;&hairsp;d<i>S</i>
+ directly opposes the circumferential blade element velocity
+ <i>&Omega;&thinsp;r</i>. It causes an <i>increase</i> in 
+ the shaft power needed to turn the propeller.
+ Both detract from the thrust&thinsp;&frasl;&thinsp;power ratio,
+ and we will call both a power loss. 
+  The total local viscous power loss is :
+</p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
@@ -1037,12 +1116,15 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
   <mo>.&thinsp;</mo>  <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
 </math> </td>
 
-<td class="eqn">                                         (14.19)
+<td class="eqn">                                         (14.23)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>
-Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
+<a name="(14.24)"> </a>
+
+<p style="margin-top:9px;margin-bottom:9px;">
+ Substituting (14.17) and (14.18) and dividing by
+ d<i>T&hairsp;.&hairsp;V</i>,
  the local loss ratio is :
 </p>
 
@@ -1054,7 +1136,7 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
          <msub>  <mi>P</mi> <mn>v</mn> </msub>
       </mrow>
       <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+         <mi>T</mi> <mo>.</mo> <mi>V</mi>
       </mrow>
    </mfrac>
 
@@ -1064,39 +1146,43 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
       <mrow> <mn>d&hairsp;</mn> 
          <mi>T</mi> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo> 
          <mo>(</mo>
-            <mo>tan</mo> <mi>&phi;</mi> <mo>.</mo> <mi>V</mi>
-            <mo>+</mo>
+            <mn>tan &hairsp;</mn> <mi>&phi;</mi> <mo>.</mo> <mi>V</mi>
+            <mo> + </mo>
             <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
          <mo>)</mo>
       </mrow>
       <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+         <mi>T</mi> <mo>.</mo> <mi>V</mi>
       </mrow>
    </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
    <mi>&epsilon;</mi> <mo>.</mo> 
-   <mo>(</mo>
-      <mo>tan</mo> <mi>&phi;</mi>
-      <mo>+</mo>
-      <mfrac displaystyle="true">
+   <mo maxsize="2em">(</mo>
+      <mn>tan &hairsp;</mn> <mi>&phi;</mi>
+      <mo> + </mo>
+      <mfrac>
          <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
          </mrow>
          <mi>V</mi>
       </mfrac>
-   <mo>)</mo>
+   <mo maxsize="2em">)</mo>
 
 </math>
 </td>
 
-<td class="eqn">                                         (14.20)
+<td class="eqn">                                         (14.24)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> With (2.2) we have tan <i>&phi;</i> = 1<i>&thinsp;/&thinsp;x</i> 
- and <i>&Omega;&thinsp;r&hairsp;.&hairsp;V</i> = <i>x</i>,
- and so (with (3.9) ) :
+<p style="margin-top:9px; margin-bottom:9px">
+ With (<a href="prop_book_02.html#(2.2)">2.2</a>) and
+ (<a href="prop_book_02.html#(2.2)">2.4</a>) we have 
+ tan <i>&phi;</i> = 1<i>&nbsp;&frasl;&nbsp;x</i> 
+ and <i>&Omega;&thinsp;r&nbsp;&frasl;&nbsp;V</i> = <i>x</i>.
+ Making the ratio non-dimensional with 
+ (<a href="prop_book_03.html#(3.10)">3.9</a>) gives&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -1119,20 +1205,21 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
          <msub>  <mi>P</mi> <mn>v</mn> </msub>
       </mrow>
       <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mn>.</mn> <mi>V</mi>
+         <mi>T</mi> <mo>.</mo> <mi>V</mi>
       </mrow>
    </mfrac>
 
    <mspace/> <mo>=</mo> <mspace/>
 
    <mi>&epsilon;</mi> <mo>.</mo> 
-   <mo>(</mo>
+   <mo maxsize="2em">(</mo>
+      <mn> &hairsp; </mn>
       <mfrac>
          <mn>1</mn> <mi>x</mi>
       </mfrac>
       <mo>+</mo>
       <mi>x</mi>
-   <mo>)</mo>
+   <mo maxsize="2em">)</mo>
 
    <mspace/> <mo>=</mo> <mspace/>
 
@@ -1146,27 +1233,28 @@ Substituting (14.17) and (14.18) and dividing by d<i>T.V</i>,
 </math>
 </td>
 
-<td class="eqn">                                         (14.21)
+<td class="eqn">                                         (14.25)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>
- This recovers (14.14).
- The derivation shows that the linearization (14.16) amounts
- to looking only at the effect
- of the viscous drag on the torque,
+ This recovers (14.15), and therefore (14.14).
+ This derivation shows that the linearization
+(<a href="#F14.4">14.16</a>) amounts
+ to looking only at the viscous drag effect on the torque,
  and neglecting its effect on the thrust.
 </p>
 
 <!-- SECTION 14.6 --------------------------------------------->
 <h4> 14.6 &emsp; Neglecting a small momentum term </h4>
 
-<p> The power calculation of (14.19) misses a subtle point.
+<p> The power calculation of (14.23) misses a subtle point.
  The viscous drag component &Delta;d<i>T</i>
  of (14.17) detracts from 
- the propeller's thrust, and to maintain the original thrust
- we need to increase the momentum thrust by that small amount.
- This will cause a small additional momentum loss.
+ the propeller's thrust, and to regain the original thrust
+ we need to increase the non-viscous thrust by that small amount.
+ This will cause a small additional momentum loss
+ for the same net thrust.
  Following the rest of the literature,
  we will neglect this extra loss.
 </p>

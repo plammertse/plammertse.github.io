@@ -59,12 +59,15 @@
 
 <p> The classical way to handle viscous loss is the one shown
  in the previous chapter. The propeller is designed for
- optimal rotational loss
- (&hairsp; we will add tip loss later&hairsp;).
- The viscous loss is then calculated almost as an afterthought,
+ optimal rotational loss, or more accurately : minimal
+ rotational power overhead
+ (&hairsp;we will add tip loss later&hairsp;).
+ The&nbsp;viscous loss is then calculated almost as an afterthought,
  and the outcome is accepted as a fact of life.
- But this runs against the spirit of propeller optimization,
- which is to minimize the overall loss
+ </p>
+ <p> &emsp;
+ But&nbsp;this runs against the spirit of propeller optimization,
+ which is to minimize the <i>overall</i> loss
  by scheduling the induction for constant marginal loss.
 </p>
 <p>&emsp; 
@@ -99,6 +102,205 @@ The literature is partly right :
  or those who like to tie up loose ends,
  are encouraged to read it anyway.
 </p>
+
+<h4>  16.2 &emsp; The combined momentum and viscous loss </h4>
+
+<p> For the rotationally optimal propeller,
+ the momentum loss ratio
+ (<a href="prop_book_11.html#11.2">11.8</a>)
+ is constant along the blade, but it is pro&shyport&shyional to the 
+ load&nbsp;: both to the local load and to the overall load.
+ </p>
+ <p> &emsp;
+  By contrast, the viscous loss ratio
+ (<a href="prop_book_15.html">15.2</a>)
+ does vary with the radius.
+ But unlike the momentum loss,
+ it is in&shyde&shypen&shydent of the load.
+ It is always the same regardless of the load distribution,
+ whether rotationally optimal or not.
+ </p>
+<p>&emsp;
+ The combined local loss ratio for the rotationally optimal propeller is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+    <mrow> <mn>d&hairsp;</mn> 
+      <msub>  <mi>P</mi> <mn>m</mn> </msub>
+      <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d&hairsp;</mn>
+      <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mo>&hairsp; + &hairsp;</mo>
+
+  <mfrac>
+    <mrow> <mn>d&hairsp;</mn> 
+      <msub>  <mi>P</mi> <mn>v</mn> </msub>
+      <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mn>d&hairsp;</mn>
+      <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mn>&frac12</mn> <mo>.</mo>
+
+   <mfrac>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow> 
+    <mrow>
+      <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mrow>
+ </mfrac>
+
+  <mo>&hairsp; + &hairsp;</mo>
+
+   <mfrac>
+    <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
+   </mrow>
+    <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+        <mi>&phi;</mi>
+    </mrow>
+  </mfrac>
+</math> </td>
+
+<td class="eqn">               (16.1)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Figure 16.1 shows the graph.
+ It is the same as figure
+ <a href="prop_book_14.html#F14.4">14.4</a>,
+ but shifted up
+ by the constant momentum loss.
+</p>
+<p>&emsp; Clearly, the combined local loss ratio is not constant
+ along the blade.
+ Neither is the marginal loss, as we shall see in a moment.
+ The rotationally optimized propeller is <i>not</i>
+ globally optimal in the presence of viscous loss.
+ </p>
+
+<div class = "center">
+<img src = "images/prop_viscous_combined_local_non_optimized.gif";
+   width = "75%";
+     alt = "Combined loss diagram"; >
+</div>
+
+<div class = "caption">
+   <p> <i> Figure 16.1 : &ensp; Local combined loss ratio  (16.1),
+         rotationally optimal thrust.
+   </i> </p>
+</div>   
+
+
+<!--
+<h4> 16.2 &emsp;
+  Combining the local momentum and viscous loss
+       (&thinsp;rotationally optimal distribution&thinsp;) </h4>
+
+<div class="draft">
+<p> We can sum the local values of the rotationally optimal
+ momentum loss (10.10) and the viscous loss for the same case (15.6).
+ Note that these are values for the rotationally optimal propeller,
+ for light loading, before tip loss,
+ and before viscous optimization :
+</p>
+
+<table class = "equation"> <tr> <td>
+<math>
+  <mfrac>
+    <mrow> 
+      <msub> 
+        <mrow> <mi>P</mi> <mn>&hairsp;&prime;</mn> </mrow>
+        <mn>m+v</mn> </msub>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mspace/> <mo>&equiv;</mo> <mspace/>
+
+  <mfrac>
+    <mrow> 
+      <msub> <mi>P</mi> <mn>m</mn> </msub>
+        <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mfrac>
+    <mrow> 
+      <msub> <mi>P</mi> <mn>v</mn> </msub>
+        <mn>&hairsp;&prime;</mn>
+   </mrow>
+    <mrow> <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   </mrow>
+ </mfrac>
+
+
+  <mspace/> <mo>=</mo> <mspace/>
+
+  <mfrac>
+    <mrow> <mn>&frac12;</mn> <mo>.</mo>
+      <mi>T</mi> <mn>&thinsp;&prime;</mn> 
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+ </mfrac>
+
+  <mo>+</mo>
+
+  <mfrac>
+    <mrow> <mn>&frac23;&thinsp;</mn>
+   <mi>&epsilon;</mi> <mn>&thinsp;.&thinsp;</mn> <mi>X</mi> 
+   </mrow>
+    <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+ </mfrac>
+</math> </td>
+
+<td class="eqn">               (16.1)
+</td> </tr> </table>
+
+<p>&emsp; Figure 16.1 shows the result.
+ The basis is a constant loss
+ due to the optimized momentum loss,
+ and a straight slope due to the non-optimized viscous loss.
+ The viscous loss term gives a steady rise of
+ the combined loss ratio with increasing 
+ tip speed ratio <i>X</i>.
+</p>
+<p>&emsp; The factor
+  1&nbsp;&frasl;&nbsp;<i>&kappa;</i><sub>&phi;</sub>(<i>X</i>)
+  which restores the design thrust
+ after the rotational optimization,
+ adds a sharply curved sweep-up for the lower <i>X</i> values
+ to the straight slope. 
+</p>
+
+<div class = "center">
+<img src = "images/prop_viscous_combined_overall_non_optimized.gif";
+   width = "80%";
+     alt = "Viscous loss diagram"; >
+</div>
+
+<div class = "caption">
+<p> <i> Figure 15.3 : &ensp; Overall  combined loss ratio (15.7),
+         for rotationally optimal thrust.</i> </p>
+ </div>
+
+<div>
+-->
 
 <!-- SECTION 16.2 --------------------------------------------->
 
@@ -365,7 +567,7 @@ The momentum loss will suffer, and there will be a trade-off.
  while the marginal viscous loss remains the same.
 </p>
 <p>&emsp;
- Figure 16.1 shows the result, with numerical values taken
+ Figure 16.2 shows the result, with numerical values taken
  from our standard lightplane example.
  The graph is almost identical to figure 16.1,
  again with only the difference in the doubling of the momentum loss.
@@ -378,12 +580,12 @@ The momentum loss will suffer, and there will be a trade-off.
 </p>
 
 <div class = "center">
-<img src = "images/prop_viscous_combined_marginal_loss_non_optimized.gif";
-   width = "70%";
-     alt = "Viscous loss diagram"; >
+<img src = "images/prop_viscous_combined_marginal_non_optimized.gif";
+   width = "75%";
+     alt = "Viscous marginal loss diagram"; >
 </div>
 <div class = "caption">
-<p> <i> Figure 16.1 : &ensp; The combined marginal loss (16.4) in the
+<p> <i> Figure 16.2 : &ensp; The combined marginal loss (16.4) in the
          rotationally optimal propeller. </i> </p>
 </div>
 
@@ -787,7 +989,7 @@ Substituting  this into (16.7) gives the optimal
  by modifying the momentum term, not the viscous term.
 </p>
 <p>&emsp;
- Figure 16.2 shows the result.
+ Figure 16.3 shows the result.
  The optimization moves thrust towards the region of lower
  viscous loss near <i>x</i>&nbsp;=&nbsp;1, as shown in figure 15.4.
  Increasing the thrust there means that we have to accept
@@ -795,12 +997,12 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <div class = "center">
-<img src = "images/prop_viscous_combined_marginal_loss_optimized.gif";
-   width = "70%";
-     alt = "Viscous loss diagram"; >
+<img src = "images/prop_viscous_combined_marginal_optimized.gif";
+   width = "85%";
+     alt = "Viscous optimal marginal loss diagram"; >
 </div>
 <div class = "caption">
-<p> <i> Figure 16.2 : &ensp;
+<p> <i> Figure 16.3 : &ensp;
         Constant combined marginal loss, optimized by (16.3). </i> </p>
  </div>
 <!------------------------------------------------------------->
@@ -901,7 +1103,7 @@ Substituting  this into (16.7) gives the optimal
 </p>
 
 <p> &emsp;
- Figure 16.3 shows the result for our standard lightplane example.
+ Figure 16.5 shows the result for our standard lightplane example.
  Unlike the marginal loss, the actual loss
  is not constant along the blade.
  But compared to figure 16.1, the difference with
@@ -910,14 +1112,14 @@ Substituting  this into (16.7) gives the optimal
 
 
 <div class = "center">
-<img src = "images/prop_viscous_combined_local_loss_optimized.gif";
-   width = "70%";
-     alt = "Viscous loss diagram"; >
+<img src = "images/prop_viscous_combined_local_optimized.gif";
+   width = "85%";
+     alt = "Viscous actual loss diagram, optimized"; >
 </div>
 
 <div class = "caption">
-<p> <i> Figure 16.3 : &ensp;
- Combined local loss, optimized by (16.3). </i> </p>
+<p> <i> Figure 16.4 : &ensp;
+ Combined actual (&hairsp;not marginal&hairsp;) local loss, optimized by (16.3). </i> </p>
  </div>
 
 
@@ -1150,12 +1352,12 @@ This is just over two thirds of the prop radius,
 
 <div class = "center">
 <img src = "images/prop_viscous_combined_varying_epsilon.gif";
-   width = "60%";
-     alt = "Viscous loss diagram"; >
+   width = "70%";
+     alt = "Viscous loss optimezed thrust diagram"; >
 </div>
 
 <div class = "caption"  style="margin-bottom:3px">
-<p> <i> Figure 16.4 : &ensp; Thrust distribution
+<p> <i> Figure 16.5 : &ensp; Thrust distribution
          after viscous optimization (16.12). </i> </p>
 </div>
 
@@ -1530,9 +1732,6 @@ gave  the viscous loss integral for an arbitrary
  The right hand term is the decrease of the viscous loss
  ratio due to the viscous optimization.
  <p class="draft">
- TODO      Curb the brackets above.
- </p>
-<p class="draft">
  TODO      Offer some insights.
  </p>
  <p>
@@ -2043,7 +2242,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 
 <p> The first term equals the rotationally optimal
  momentum loss ratio
- <span class="draft">(Error! Reference source not found.)</span>
+  (<a href="prop_book_11.html#11.2">11.8</a>).
  </p>
  <p> &emsp;
  The bracketed term is always positive.
@@ -2139,8 +2338,8 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    For lower values of <i>X</i>, the negative term becomes stronger,
    and for <i>X</i>&hairsp;'&hairsp;s near 1 the net term nearly vanishes, although
    it always remains positive.
-   This is not surprising. At <i>x</i>&nbsp;=&nbsp; the blade pitch angle
-   is 45&degree;,and the propeller is already viscously optimal.
+   This is not surprising. At <i>&hairsp;x</i>&nbsp;=&nbsp;1 the blade pitch angle
+   is 45&deg, and the propeller is already viscously optimal there.
 </p>
 <p> &emsp; 
  The exact term is easy enough to evaluate, but for an even quicker assessment
@@ -2170,26 +2369,18 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </td> 
 </table>
 
-<div class="draft">
-<p>	 
-
 <p> Figure 16.5 shows the graph of <i>h&hairsp;</i>(<i>X</i>) against <i>X</i>. 
    The term is always positive.
    The dashed line shows that it can be approximated by a heuristic fit :
 </p>
 
 <div class = "center">
-<img src = "prop_viscous_optimization_factor_hX.png";
+<img src = "images/prop_viscous_optimization_factor_hX.png";
    width = "70%";
      alt = "Viscous optimization factor"; >
 </div>
 <div class = "caption">
-<p> <i> Figure 16.5 : &ensp; The viscous optimizatin factor h&hairsp;(X). </i> </p>
-</div>
-
-<p>
-Figure 16.5 :&ensp; The term <i>h</i>(<i>X</i>) in the viscous optimization.
-</p>
+<p> <i> Figure 16.5 : &ensp; The viscous optimization factor h&hairsp;(X). </i> </p>
 </div>
 
 <h4> 16.5 &emsp; Numerical example</h4>
@@ -2198,7 +2389,7 @@ Figure 16.5 :&ensp; The term <i>h</i>(<i>X</i>) in the viscous optimization.
  of <i>X</i>&nbsp;=&nbsp;5, a thrust coefficient
  <i>T</i>&thinsp;&prime; of 0.1 and
  a section drag coefficient of <i>&epsilon;</i>&nbsp;=&nbsp;0.1. 
-  With (16.29) and (XXXX), we find :
+  With (16.32) and (16.30), we find :
 </p>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
@@ -2270,13 +2461,15 @@ Figure 16.5 :&ensp; The term <i>h</i>(<i>X</i>) in the viscous optimization.
 <p> The gain in efficiency is 0.15&thinsp;% percentage point.
  This is small relative to the overall efficiency of 89&hairsp;%,
  though not completely negligible.
+ </p>
+ <p> &emsp;
 For rotors of high tip speed ratio however,
  the viscous optimization is definitely worth&shywhile.
  At a tip speed ratio of <i>X</i>&nbsp;=&nbsp;10,
  for the same  <i>&epsilon;</i>&nbsp;=&nbsp;0.02
- and <i>T</i>&thinsp;&prime;&nbsp;=&nbsp;0.1,
+ and <i>T</i>&thinsp;&prime;&nbsp;=&nbsp;0.1
  the overall loss ratio is reduced by
- <nobr>0.9&hairsp;%</nobr> percentage point,
+ <nobr>0.9&hairsp;%</nobr> (&hairsp;percentage point&hairsp;),
  almost a whole percent.
  Such gains are not easily achieved in other ways,
  and certainly not by a simple change in blade shape like this.
@@ -2284,10 +2477,10 @@ For rotors of high tip speed ratio however,
 <p> &emsp;
    Still, for "normal" values of <i>X</i> around 5,
  the main benefit of the viscous optimization
- is not so much a small gain in efficiency,
- but rather the side effect on the blade shape,
- which visibly changes towards narrower and hence thinner tips.
- These will give both mechanical and acoustical advantages
+ is not so much the small gain in efficiency,
+ but rather the side effect on the blade shape.
+ The shape visibly changes towards narrower and hence thinner tips.
+ This new shape will give both mechanical and acoustical advantages.
 </p>
 
 <!-- TABLE TRICK END --------------------------------------------->
