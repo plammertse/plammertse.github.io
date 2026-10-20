@@ -55,33 +55,50 @@
 
 <h4> 28.1 &emsp; The tip effect on the blade chord </h4>
 
-<p> Equation 
+<p> An earlier chapter gave the blade chords before tip loss.
+ <!--
+ In particular, 
 (<a class = "crossref";
-   href  = "prop_book_27.html#27.7";>27.19</a>)
-<!--  
-<span style="background-color:#F3F4F9;">
-  <a href="prop_book_27.html#27.7"";>
-  (&hairsp;27.19&hairsp;)</a></span>
-  -->
+   href  = "prop_book_12.html#12.7";>12.19</a>)
  gave the blade chord for the
  rotationally optimized <i>b</i>&hairsp;(<i>x</i>)
  in
 (<a class = "crossref";
-   href="prop_book_11.html#(11.10)">11.10</a>),
+   href="prop_book_11.html#(11.10)">11.11</a>),
 combined with the uniform mass flow
 (<a class = "crossref";
    href="prop_book_07.html#(7.7)">7.7</a>),
- giving the local thrust d<i>T</i> of ( 27.1 ).
+ giving the local thrust d<i>T</i> of ( 12.1 ).
+</p>
+ -->
+ In particular, 
+(<a class = "crossref";
+   href  = "prop_book_12.html#12.7";>12.19</a>)
+ gave the blade chord for the
+ rotationally optimized induction on a uniform mass flow.
+ The mass flow is always uniform in a propeller of light loading,
+ provided there is no tip loss.
+ Strictly speaking, this is only true for the case 
+ of a ducted propeller or "fan".
+</p>
+<p> &emsp;
+  Figure 
+  <a class = "crossref";
+   href  = "prop_book_12.html#12.7";>12.3</a>
+  showed that the blades will get square tips.
+  In principle, the blades extend to infinity,
+  but physic&shyal&shyly they are cut off at the tunnel wall.
 </p>
 <p>&emsp;
- With tip loss, the mass flow is no longer uniform. 
- Towards the tip it is reduced by a local factor of
+ With tip loss, the ring mass flow accelerated by the propeller
+ is no longer uniform. 
+ Towards the tip it is re&shyduced by a local factor of
  <i>K</i>&thinsp;(<i>x</i>),
 de&shyfined by
 (<a  class="crossref";
      href="prop_book_17.html#17.3">17.3</a>).
-For a given overall thrust, the total <i>mass</i> reduction
- is compensated for by a uniform <i>induction</i>
+For a given overall thrust, the <i>total mass</i> reduction
+ is com&shypen&shysated for by a <i>uniform induction</i>
  increase <nobr>
 (<a class="crossref"; 
     href="prop_book_17.html#17.5">17.10</a>).</nobr>
@@ -92,7 +109,7 @@ For a given overall thrust, the total <i>mass</i> reduction
  This changes the rotationally optimal chord distribution
  for a given overall thrust from 
 (<a  class="crossref";
-     href="prop_book_27.html#27.7">27.19</a>)
+     href="prop_book_12.html#12.7">12.19</a>)
  into :
 </p>
 
@@ -108,7 +125,6 @@ For a given overall thrust, the total <i>mass</i> reduction
 
   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle = "true">
   <mfrac>
    <mn>4&pi;</mn>
    <msub><mi>C</mi><mn>L</mn></msub>
@@ -120,7 +136,6 @@ For a given overall thrust, the total <i>mass</i> reduction
 
   <mo> . </mo>
 
-  <mstyle displaystyle = "true">
   <mfrac>
     <mrow> <mi>T</mi><mn>&prime;</mn> </mrow>   
     <msub><mi>&kappa;</mi> <mn>G</mn> </msub>
@@ -128,7 +143,6 @@ For a given overall thrust, the total <i>mass</i> reduction
 
   <mo>.</mo>
 
-  <mstyle displaystyle="true">
   <mfrac>
     <mn>1</mn>>
     <mi>X</mi>
@@ -142,13 +156,13 @@ For a given overall thrust, the total <i>mass</i> reduction
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (28.1)
+<td class="eqn">                                         (28.1)
 </td> </tr> </table>
 
 <p> Figure 28.1 shows the result.
  It is the direct counterpart of figure
  <a  class="crossref";
-     href="prop_book_27.html#27.8">27.3</a>
+     href="prop_book_12.html#12.8">12.3</a>
  in terms of thrust and parameter variation,
  only this time it includes the tip loss.
  The exact solution is drawn in solid lines,
@@ -156,6 +170,9 @@ For a given overall thrust, the total <i>mass</i> reduction
 approximation in thin lines.
  The differences are limited to the hub region.
 </p>
+<div class="draft">
+<p> TODO &emsp; Reverse the order like in figure 12.3. </p>
+</div>
 
 <div class = "center">
 <img src = "images/prop_chords_with_tips_separate.gif";
@@ -173,10 +190,10 @@ approximation in thin lines.
 
 <h4> 28.2 &emsp; Blade shape variation with X and B </h4>
 
-<p> Chapter 27 explored the basic parameters 
+<p> Chapter 12 explored the basic parameters 
 influencing the blade chord.
  It gave a simple approximation
- for the blade chord at 0.7 R in (27.24).
+ for the blade chord at 0.7 R in (12.24).
  This approximation still holds if we replace
  <i>&kappa;</i><sub>&phi;</sub> by 
 <i>&kappa;</i><sub>G</sub>,
@@ -295,7 +312,7 @@ with angle of attack acts at the quarter chord point.
  one-sided from the trailing edge,
  instead of symmetrically around the centerline.
  This keeps the trailing edge as it was
- before the tip reduction, like in figure 27.3.
+ before the tip reduction, like in figure 12.3.
 </p>
 <p>&emsp;
  The exact solution does not give
@@ -343,7 +360,7 @@ Leaving out F '(x) gives :
   <mn>sin&thinsp;</mn> <mi>&phi;</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (28.2)
+<td class="eqn">                                             (28.2)
 </td> </tr> </table>
 
 </td> </tr> </table>
@@ -351,7 +368,7 @@ Leaving out F '(x) gives :
 
 <p> This is a larger outline than (28.1), 
  with a larger thrust, and with a straight cropped tip
- as in figure 27.3.
+ as in figure 12.3.
  Before sweepback, it will envelop the shape (28.2)
  as reduced by <i>K</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
  c.q. <i>F</i>&thinsp;&prime;&thinsp;(&thinsp;<i>x</i>&thinsp;).
@@ -417,7 +434,7 @@ Until now, we applied this difference symmetrically
 
 <!-- TRUE (PRINT) HEADER ----------------------------------------->
 <div class="header">
-<i> VORTEX THEORY </i>
+<i> TIP LOSS </i>
 </div>
 
 <!-- TRUE FOOTER ------------------------------------------------->

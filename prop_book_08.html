@@ -264,59 +264,69 @@
   <i>v</i>&thinsp;&prime;&hairsp;/&hairsp;cos <i>&phi;</i>
  to meet the extension of <i>W</i>&thinsp;&prime;.
  This gives the following tangent of
- <i>&phi;</i>&thinsp;&prime; :
+ <i>&phi;</i>&thinsp;&prime;&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
-  <mo> = </mo>
+   <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
+   <mo> = </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>V</mi> <mo>+</mo> 
-      <mi>v</mi> <mi>&thinsp;&prime;</mi>
-      <mn>&frasl;</mn> <mn>cos</mn> <mi>&phi;</mi>
-   </mrow>
-    <mrow> <mi>&Omega;</mi> <mn>&hairsp;</mn> <mi>r</mi>
-   </mrow>
-  </mfrac>
-
-  <mspace/> <mo> = </mo> <mspace/> 
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>V</mi>
-    <mrow> <mi>&Omega;</mi> <mn>&hairsp;</mn> <mi>r</mi>
-   </mrow>
-  </mfrac>
-
-  <mo> . </mo>
-
-  <mrow>
-  <mo>(</mo>
-
-  <mn>1</mn> <mo>+</mo>
-  <mstyle displaystyle="true">
-
-  <mfrac>
-    <mrow> <mi>v</mi> <mo>/</mo> <mi>V</mi> 
-   </mrow>
-
-   <mrow>
-     <mrow>
-       <mrow>
-        <msup> <mrow> <mi>cos</mi> </mrow>
-               <mrow>  <mn>2</mn>  </mrow>
-       </msup>
-       </mrow>
-     <mrow> <mi>&phi;</mi> </mrow>
-    </mrow>
-   </mrow>
+   <mfrac>
+      <mrow>
+         <mi>V</mi>
+         <mo>+</mo> 
+         <mi>v</mi>
+         <mi>&thinsp;&prime;</mi>
+         <mn>&frasl;</mn>
+         <mn>cos</mn>
+         <mi>&phi;</mi>
+      </mrow>
+      <mrow>
+         <mi>&Omega;</mi>
+         <mn>&hairsp;</mn>
+         <mi>r</mi>
+      </mrow>
    </mfrac>
-  <mo>)</mo>
-  </mrow>
+
+   <mspace/> <mo> = </mo> <mspace/> 
+
+   <mfrac>
+      <mi>V</mi>
+      <mrow>
+         <mi>&Omega;</mi>
+         <mn>&hairsp;</mn>
+         <mi>r</mi>
+      </mrow>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mo>(</mo>
+   
+      <mn>1</mn>
+
+      <mo>+</mo>
+
+      <mfrac>
+         <mrow>
+            <mi>v</mi>
+            <mo>/</mo>
+            <mi>V</mi> 
+         </mrow>
+
+         <mrow>
+            <msup>
+               <mi>cos</mi>
+               <mn>2</mn>
+            </msup>
+            <mi>&phi;</mi>
+         </mrow>
+      </mfrac>
+      
+   <mo>)</mo>
+   
 </math>
 
 
@@ -333,37 +343,36 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mo>tan</mo> <mi>&phi;</mi> <mn>&thinsp;&prime;</mn>
+   <mo>tan</mo>
+   <mi>&phi;</mi>
+   <mn>&thinsp;&prime;</mn>
 
-  <mo> = </mo>
+   <mo> = </mo>
 
-  <mo>tan</mo> <mi>&phi;</mi>
+   <mo>tan</mo> <mi>&phi;</mi>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mrow>
-  <mo>(</mo>
+   <mo>(</mo>
+      <mn>1</mn>
+      <mo>+</mo>
 
-  <mn>1</mn> <mo>+</mo>
+      <mfrac>
+         <mrow>
+            <mn>&frac12&hairsp;</mn>
+            <mi>b</mi> 
+         </mrow>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>&frac12&hairsp;</mn> <mi>b</mi> 
-   </mrow>
-
-   <mrow>
-     <mrow>
-       <mrow>
-        <msup> <mrow> <mi>cos</mi> </mrow>
-               <mrow>  <mn>2</mn>  </mrow>
-       </msup>
-       </mrow>
-     <mrow> <mi>&phi;</mi> </mrow>
-    </mrow>
-   </mrow>
-   </mfrac>
+         <mrow>
+            <msup>
+               <mi>cos</mi>
+               <mn>2</mn>
+            </msup>
+            <mi>&phi;</mi>
+         </mrow>
+      </mfrac>
    <mo>)</mo>
-  </mrow>
+   
 </math>
 </td>
 
@@ -470,12 +479,91 @@
 </p>
 <p>&emsp;
  We will briefly discuss the options of counterrotation
- and swirl recovery in chapter 15,
+ and swirl recovery below,
  but without such special measures
  the propeller leaves behind
  the  rotation of figure 8.2,
  and this rotation is lost to the atmosphere.
 </p>
+
+<h4> 8.7 &emsp; Counterrotation                        </h4>
+
+<p> Counterrotating props (&hairsp;also called dual rotation
+ propellers&hairsp;) can be used to avoid the
+ net tangential velocity term of (8.4) and the energy
+ it leaves behind in the propeller's wake,
+ although due to tip effects
+ the cancellation will never be perfect.
+</p>
+<p>&emsp;
+ Counterrotating propellers were used on late WWII fighters.
+ They were probably introduced more
+ to eliminate the swerve on take-off and climb
+ due the massive yaw torque from the swirl on the fin,
+ than for reasons of effic&shyien&shycy.
+ If a tail sits in the wake of a propeller, it is often offset
+ by a few degrees to avoid yawing the airplane
+ when thrust is applied. From (8.8) the offset needed
+ depends on the thrust,
+ so this can never be more than an average setting.
+ Counterrotation has also been used in high
+ <span style="font-variant: small-caps;"> Mach</span>,
+ high pitch propellers and “unducted” fans.
+</p>
+<p>&emsp;
+ Besides being mechanically very complex,
+ counterrotating propellers are incredibly noisy.
+ A slapping noise is heard each time an aft blade passes
+ through the wake of a front blade,
+ and a quick succession of these slaps creates a very loud
+ siren-like, highly unpleasant tonal noise.
+ The same distinctive tonal noise occurs
+ when pusher propellers cut through the trailing edge wake
+ of a wing, or through an engine exhaust flow.
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 8.8 &emsp; Swirl recovery </h4>
+
+<p> A mechanically simpler solution than counterrotation is to
+ recover the swirl (8.4) by stator vanes behind the propeller.
+</p>
+<p>&emsp;
+ The vanes will act like sails, generating thrust as they bend
+ the sideways componenet of the induction velocity to the rear.
+ Due to the small angle of the swirl,
+ a symmetrical vane can usually point straight into
+ the direction of flight without risk of stalling the vane
+leading edge.
+</p>
+<p>&emsp; 
+The vanes will only be useful if their section glide ratio
+ is better than the swirl angle,
+ which makes them a diffi&shycult proposition.
+ Their use is mainly limited to pre-existing fixtures,
+ like fairings on struts holding a propeller hub inside a duct,
+ or a ship’s rudder which is “already there”
+ in the wake of the propeller.
+</p>
+<p>&emsp; Pre-swirl vanes <i>ahead</i> of the propeller
+ are not self correcting like aft swirl vanes.
+ Their alignment can only be set for an average thrust condition.
+ In all other conditions they will do more harm than good. 
+</p>
+<p>&emsp;
+ On wing mounted propellers some swirl is recovered
+ by the wing itself.
+ Since alignment of aft vanes is not critical,
+ there is no need to
+ curve the shape of a rounded
+ wing leading edge into the swirl.
+ Optimal efficiency is typically achieved
+ when the propeller is mounted ahead of the wing
+ on the same level,
+ despite some small in&shycrease in wing viscous drag.
+</p>
+
 
 <!-- TABLE TRICK END --------------------------------------------->
 <!-- body end, footer, and table end, see text.css              -->

@@ -110,26 +110,34 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn>
-      <mo>(</mo>
-         <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub> 
-      <mo>)</mo>
-   </mrow>
-    <mrow> <mn>d</mn>
-      <mo>(</mo>
-       <mn>d</mn> <mi>T</mi> <mn>&hairsp;.&hairsp;</mn> <mi>V</mi>
-      <mo>)</mo>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <mo>(</mo>
+            <mn>d</mn>
+            <msub>
+               <mi>P</mi>
+               <mn>m</mn>
+            </msub> 
+         <mo>)</mo>
+      </mrow>
+      <mrow>
+         <mn>d</mn>
+         <mo>(</mo>
+            <mn>d</mn>
+            <mi>T</mi>
+            <mn>&hairsp;.&hairsp;</mn>
+            <mi>V</mi>
+         <mo>)</mo>
+      </mrow>
+   </mfrac>
 
   <mspace/> <mo>=</mo> <mspace/>
 
   <mi>C</mi>
 </math>
 
-<td class="eqn">                (10.1)
+<td class="eqn">                                         (10.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -149,72 +157,111 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn>
-      <mo>(</mo>
-         <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub> 
-         <mn>&prime;</mn>
-      <mo>)</mo>
-   </mrow>
-    <mrow> <mn>d</mn>
-      <mo>(</mo>
-       <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-      <mo>)</mo>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <mo maxsize="1.2em">(</mo>
+            <mn>d</mn>
+            <msub>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>
+               <mn>m</mn>
+            </msub> 
+         <mo maxsize="1.2em">)</mo>
+      </mrow>
+      
+      <mrow>
+         <mn>d</mn>
+         <mo maxsize="1.2em">(</mo>
+            <mn>d</mn>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>               
+         <mo maxsize="1.2em">)</mo>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>C</mi>
+   <mi>C</mi>
 </math>
 
-<td class="eqn">                (10.2)
+<td class="eqn">                                         (10.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The ring thrust d<i>T</i>&thinsp;&prime;
+<p> The ring thrust
+   d<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
  is the variable driving the change.
- We could express d<i>P</i><sub>m</sub>&prime;
- as a function of d<i>T</i>&thinsp;&prime;,
- and take the derivative of d<i>P</i><sub>m</sub>&thinsp;&prime;
+ We could express
+   d<span class="hat-anchor"> <i>P</i> 
+	<span class="hat">&Hat;</span> </span><sub>m</sub>
+ as a function of
+   d<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>,
+ and take the derivative of 
+  d<span class="hat-anchor"> <i>P</i> 
+	<span class="hat">&Hat;</span> </span><sub>m</sub>
  with respect to
-  d<i>T</i>&thinsp;&prime;.
+     d<span class="hat-anchor"> <i>T</i> 
+      <span class="hat">&Hat;</span> </span>.
  But it is easier to use the local value
  of the induction ratio <i>b&hairsp;</i>(<i>x</i>)
- as the variable driving both d<i>T</i>&thinsp;&prime;
- and d<i>P</i><sub>m</sub>&prime;.
+ as the variable driving both
+  d<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
+ and
+   d<span class="hat-anchor"> <i>P</i> 
+	<span class="hat">&Hat;</span> </span><sub>m</sub>.
  </p>
 <p>&emsp;
  When we apply a small increment d<i>b</i> to <i>b</i>,
-  the ratio between the resulting increments 
-  in d<i>T</i>&thinsp;&prime;
- and d<i>P</i><sub>m</sub>&prime; will be the 
- same as the ratio between their derivatives with <i>b</i> :
+  the ratio between the resulting increments in
+  d<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
+ and
+    d<span class="hat-anchor"> <i>P</i> 
+	<span class="hat">&Hat;</span> </span><sub>m</sub>.
+ will be the same as the ratio between their derivatives with <i>b</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   
-   <mfrac displaystyle="true">
-      <mrow>      
-         <mn>d&frasl;d</mn> <mi>b</mi>
+   <mfrac>
+      <mrow>    
+         <mn>d&frasl;d</mn>
+         <mi>b</mi>
       
          <mrow>
-            <mo>(</mo>
+            <mo maxsize="1.2em">(</mo>
                <mn>d</mn> 
-               <msub> <mi>P</mi> <mn>m</mn> </msub> <mn>&prime;</mn>
-            <mo>)</mo>
+               <msub>
+                  <mover>
+                     <mi>P</mi>
+                     <mo mathsize="100%">&Hat;</mo>
+                  </mover>
+                  <mn>m</mn>
+               </msub>
+            <mo maxsize="1.2em">)</mo>
          </mrow>
       </mrow>
 
       <mrow>
-         <mn>d&frasl;d</mn> <mi>b</mi>
+         <mn>d&frasl;d</mn>
+         <mi>b</mi>
          <mrow>
-            <mo>(</mo>
-               <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-            <mo>)</mo>
+            <mo maxsize="1.2em">(</mo>
+               <mn>d</mn>
+               <mover>
+                  <mi>T</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                  
+            <mo maxsize="1.2em">)</mo>
          </mrow>
       </mrow>
    </mfrac>
@@ -224,18 +271,21 @@
   <mi>C</mi>
 </math>
 
-<td class="eqn">                (10.3)
+<td class="eqn">                                         (10.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> We will look at the light loading case first.
   This will take the factor of
    (&hairsp;1&hairsp;+&hairsp;&frac12;&hairsp;<i>b</i>&hairsp;) 
- out of the d&hairsp;<i>P</i><sub>m</sub>&prime;  of (9.4).
+ out of the
+  d<span class="hat-anchor"> <i>P</i> 
+	<span class="hat">&Hat;</span> </span><sub>m</sub>
+  of (9.4).
 </p>
 <p> Taking the derivative of the remaining
  &frac12&hairsp;<i>b</i><sup>&hairsp;2</sup>
- in (X.XX) yields <i>b</i> :
+ in ( <span style="color:red">X.XX </span> ) yields <i>b</i> :
 </p>
 <!--
 <p> Taking the derivative with respect to <i>b</i> yields :
@@ -244,34 +294,51 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mn>d&frasl;d</mn> <mi>b</mi>
+   <mn>d&frasl;d</mn>
+   <mi>b</mi>
+
    <mn> &nbsp; </mn>
+
    <mn>(</mn>
-      <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-         <mn>&hairsp;&prime;&hairsp;</mn>
+      <mn>d</mn>
+      <msub>
+         <mover>
+            <mi>P</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+         <mn>m</mn>
+      </msub>
    <mn>)</mn>
     
    <mspace/> <mo> = </mo> <mspace/>
 
-   <mfrac displaystyle="true">
+   <mfrac>
       <mi>b</mi>
       <mrow>
-         <msup> <mn>cos</mn> <mn>2</mn> </msup>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
          <mi>&phi;</mi>
       </mrow>
    </mfrac>
    
    <mo>&thinsp;.&thinsp;</mo>
 
-   <mfrac displaystyle="true"> 
+   <mfrac> 
       <mrow>
-         <mn>2&hairsp;</mn> <mi>x</mi>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
          <mo>.</mo>
-         <mn>d</mn> <mi>x</mi>
+         <mn>d</mn>
+         <mi>x</mi>
       </mrow>
-      <mrow>
-         <msup> <mi>X</mi> <mn>2</mn> </msup>
-      </mrow>
+
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+
    </mfrac>
 
 </math>
@@ -281,33 +348,39 @@
 <!-- END EQUATION --------------------------------------------->
 
 <p> Taking the derivative of the remaining <i>b</i>
- in (X.XX) yields 1 :
+ in ( <span style="color:red">X.XX </span> ) yields 1 :
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mn>d&frasl;d</mn> <mi>b</mi>
+   <mn>d&frasl;d</mn>
+   <mi>b</mi>
    <mn> &nbsp; </mn>
    
    <mn>(</mn>
-      <mn>d</mn> <msub> <mi>T</mi> <mn>m</mn> </msub>
-      <mn>&hairsp;&prime;&hairsp;</mn>
+      <mn>d</mn>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
    <mn>)</mn>
     
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/> <mo> = </mo> <mspace/>
 
    <mn>(&hairsp;1&hairsp;)</mn>
    <mo> . </mo>
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
+  
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+
      <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
+
  </mfrac>
 </math>
 
@@ -321,17 +394,20 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mfrac  displaystyle="true">
-    <mi>b</mi>
-    <mrow>
-      <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mi>b</mi>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/> 
+   <mspace/> <mo>=</mo> <mspace/> 
 
-  <mi>C</mi>
+   <mi>C</mi>
 
 </math>
 
@@ -353,21 +429,27 @@ over the whole propeller blade.
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>b</mi> 
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/> 
+   <mspace/> <mo>=</mo> <mspace/> 
 
-  <mi>C</mi> 
-  <mo>&thinsp;.&thinsp;</mo>
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
+   <mi>C</mi> 
+   
+   <mo>&thinsp;.&thinsp;</mo>
+   
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
 </math>
 
 <td class="eqn">                                          (10.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
-
-
 
 <!-- SECTION 10.2 --------------------------------------------->
 
@@ -387,13 +469,19 @@ over the whole propeller blade.
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>g</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo>&equiv;</mo> <mspace/> 
+   <mspace/> <mo>&equiv;</mo> <mspace/> 
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-s</math>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
+</math>
 
 <td class="eqn">                (10.8)
 </td> </tr> </table>
@@ -404,52 +492,68 @@ s</math>
  is a reduction factor
  on the local induction,
  relative to an ideal  actuator disk 
- of uniform induction <i>C</i>.
+ of uniform induction.
  The factor is always smaller than 1,
  since the cosine is always smaller than 1.
 </p>
 <p>&emsp;
  With (2.7) we can also express 
- cos<sup>&hairsp;2</sup><i>&phi;</i> directly in <i>x</i> :
+ cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i> directly in <i>x</i> :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 
 <math>
-  <mi>g</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>g</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/> <mo> = </mo> <mspace/>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup> 
-    <mi>&phi;</mi>
-  <mspace/> <mo> = </mo> <mspace/>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup> 
+   <mi>&phi;</mi>
+  
+   <mspace/> <mo> = </mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> 
-        <msup>
-          <mi>x</mi>
-          <mn>2</mn>
-        </msup>
-    </mrow>
-    <mrow>
-      <mn>1</mn> <mo>+</mo> 
-      <msup> <mi>x</mi> <mn>2</mn> </msup>
-    </mrow>
+   <mfrac>
+
+      <msup>
+         <mi>x</mi>
+         <mn>2</mn>
+      </msup>
+
+
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo> 
+         <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
   </mfrac>
 
   <mspace/> <mo> = </mo> <mspace/>
 
   <mn> 1 </mn>
+
   <mo> &minus; </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow> <mn>1</mn> <mo>+</mo> 
-      <msup> <mi>x</mi>  <mn>2</mn> </msup>
-   </mrow>
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo> 
+         <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
   </mfrac>
 
 </math></td>
@@ -466,7 +570,7 @@ s</math>
 This fits with the cos<sup>&hairsp;2</sup><i>&phi;</i> formulation,
  since the local pitch angle at <i>x</i>&nbsp;=&nbsp;1 is
  <i>&phi;</i>&nbsp;=&nbsp;45&deg;,
- and cos&thinsp;(45&deg;)&nbsp;=&nbsp;1/&radic;2.
+ and cos&thinsp;(45&deg;)&nbsp;=&nbsp;&radic;&hairsp;&frac12.
  For large <i>x</i>,  the fraction goes to 1 
  by a difference of 1<i>&thinsp;/&thinsp;x&hairsp;</i><sup>2</sup>.
 </p>
@@ -495,10 +599,13 @@ Figure 10.1 shows the shape of
 
 <!-- SECTION 10.3 --------------------------------------------->
 
-<h4> 10.3 &emsp; The optimal overall efficiency </h4>
+<a name="(10.10)"></a>
+
+<h4> 10.3 &emsp; The optimal overall efficiency
+is half the marginal efficiency </h4>
 
 <p>
-Having found the marginal loss <i>C</i> 
+ Having found the marginal loss <i>C</i> 
  for the lightly loaded propeller,
  we are also interested in the <i>actual</i> overall loss ratio.
  Substituting the rotationally optimal distribution of (10.7) 
@@ -510,18 +617,30 @@ Having found the marginal loss <i>C</i>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-      <mn>&thinsp;&prime;</mn>
-   </mrow>
-    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <msub>
+            <mover>
+               <mi>P</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>m</mn>
+         </msub>
+      </mrow>
+      <mrow>
+         <mn>d</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
    </mrow>
  </mfrac>
 
   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mn>&frac12;&thinsp;</mn> <mi>C</mi>
+  <mn>&frac12;&thinsp;</mn>
+  <mi>C</mi>
 
 </math>
 </td>
@@ -546,34 +665,54 @@ Having found the marginal loss <i>C</i>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <msub> <mi>P</mi> <mn>m</mn> </msub>
-      <mn>&thinsp;&prime;</mn>
-   </mrow>
-    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <msub>
+            <mover>
+               <mi>P</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>m</mn>
+         </msub>
+      </mrow>
+      
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
+   </mfrac>
 
-  <mspace/> <mo> = </mo> <mspace/> </mo>
+   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-      <mn>&thinsp;&prime;</mn>
-   </mrow>
-    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <msub>
+            <mover>
+               <mi>P</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>m</mn>
+         </msub>
+      </mrow>
+      <mrow>
+         <mn>d</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo> = </mo> <mspace/> </mo>
+   <mspace/> <mo> = </mo> <mspace/> </mo>
 
-  <mn>&frac12;&thinsp;</mn> <mi>C</mi>
+   <mn>&frac12;&thinsp;</mn>
+   <mi>C</mi>
 
 </math>
 </td>
 
-<td class="eqn">               (10.11)
+<td class="eqn">                                         (10.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -583,21 +722,27 @@ Having found the marginal loss <i>C</i>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>η</mi> <mn>m</mn> </msub>
+   <msub>
+      <mi>&eta;</mi>
+      <mn>m</mn>
+   </msub>
 
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/> <mo>&equiv;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow>
-      <mn>1</mn> <mo>+</mo> <mn>&frac12;&thinsp;</mn> <mi>C</mi>
-   </mrow>
-  </mfrac> 
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo>
+         <mn>&frac12;&thinsp;</mn>
+         <mi>C</mi>
+      </mrow>
+   </mfrac> 
 
-</math> </td>
+</math>
+</td>
 
-<td class="eqn">                 (10.12)
+<td class="eqn">                                         (10.12)
 </td> </tr> </table>
 <!------------------------------------------------------------->
 
@@ -610,7 +755,7 @@ Having found the marginal loss <i>C</i>
 </p>
 <p>&emsp;
  It would look for a moment as if the rotation did not 
- harm the efficiency of the propeler at all.
+ harm the efficiency of the propeller at all.
  But that is a bit misleading.
  For by  (10.5), for the same efficiency
  (&hairsp;i.e. for the same overall loss ratio
@@ -642,7 +787,7 @@ Do this in one division right away.
 -->
 <td>
 <math>
-   <mfrac displaystyle="true">
+   <mfrac>
       <mn>d</mn>
       <row> <mn>d</mn> <mi>b</mi>
       </mrow>
@@ -680,10 +825,12 @@ Do this in one division right away.
 -->
 <td>
  <math>
-   <mfrac displaystyle="true">
-    <mn>d</mn>
-    <row> <mn>d</mn> <mi>b</mi>
-   </mrow>
+   <mfrac>
+      <mn>d</mn>
+      <row>
+         <mn>d</mn>
+         <mi>b</mi>
+      </mrow>
    </mfrac>
 
    <mspace/>
@@ -699,7 +846,8 @@ Do this in one division right away.
 
   <mo> = </mo> <mspace/> </mo>
 
-  <mn>1</mn> <mo>+</mo>
+  <mn>1</mn>
+  <mo>+</mo>
   <mi>b</mi>
 </math>
 </td>

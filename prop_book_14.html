@@ -59,7 +59,9 @@
 <h4> 14.1 &emsp; Introduction                              </h4>
 
 <p> Viscous loss is the "leadscrew" part of the power loss.
- The leadscrew acts in a flow accelerated by the pro&shypeller's
+</p>
+<p> &emsp;
+ This "leadscrew" acts in a flow accelerated by the pro&shypeller's
  own thrust, but the screw itself does not know it.
  It just threads itself forward relative to
  the surrounding air,
@@ -82,20 +84,17 @@
  <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
  of the blade sections, the slope along which a glider
  would descend in free flight.
- </p> <p> &emsp;
- At the design stage, we will use the prop blades
- at their best
+ At the design stage, it&nbsp;makes sense to dimension the prop blades
+ to work at their best
  <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>,
- so we can consider
+ so at that point we can consider
  the "friction angle" of the blade sections as an optimal constant.
- In off-design calculations this will no longer hold.
- At off-design lift values the section drag is closer to a constant
+ </p>
+ <p> &emsp;
+ In off-design conditions this will no longer be true.
+ At off-design lift values, the section drag is closer to a con&shystant
  <i>C</i><sub>d</sub>
  at varying <i>C</i><sub>l</sub>.
- <!--, so 
- <i>C</i><sub>l</sub>&ensp;&frasl;&thinsp;<i>C</i><sub>d</sub>
- would vary from the optimum.
- -->
  There are also secondary effects of the
 <span style="font-variant: small-caps;">Reynolds</span>
  and
@@ -471,33 +470,64 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mn>d&hairsp;</mn> <msub> <mi>&eta;</mi> <mn>v</mn> </msub>
+   <mn>d&hairsp;</mn>
+   <msub>
+      <mi>&eta;</mi>
+      <mn>v</mn>
+   </msub>
 
-   <mspace/><mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+   
    <mfrac>
       <mn>1</mn>
-      <mrow> <mn>1</mn> <mo>+</mo>
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo>
          <mfrac displaystyle="true">
-            <mrow> <mn>d</mn> <mi>P</mi> <msub> <mn>&hairsp;&prime;</mn> <mn>v</mn> </mrow>
-            <mrow> <mn>d</mn> <mi>T</mi> <mn>&hairsp;&prime;</mn> </mrow>
+            <mrow>
+               <mn>d</mn>
+               <msub>
+                  <mover>
+                     <mi>P</mi>
+                     <mo mathsize="100%">&Hat;</mo>
+                  </mover>
+                  <mn>v</mn>
+               </msub>
+            </mrow>
+            <mrow>
+               <mn>d</mn>
+               <mover>
+                  <mi>T</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>
+            </mrow>
          </mfrac>
       </mrow>
    </mfrac>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mfrac>
-      <mrow> <mo>tan</mo> <mi>&phi;</mi> </mrow>
-      <mrow> <mo>tan</mo>
-      <mn>(</mn>
+      <mrow>
+         <mo>tan</mo>
          <mi>&phi;</mi>
-         <mo>+</mo>
-         <mi>&epsilon;</mi>
-      <mn>)</mn>
+      </mrow>
+      <mrow>
+         <mo>tan</mo>
+         <mn>(</mn>
+            <mi>&phi;</mi>
+            <mo>+</mo>
+            <mi>&epsilon;</mi>
+         <mn>)</mn>
       </mrow>
    </mfrac>
 
 </math>
+</td>
 
 <td class="eqn">                                          (14.9)
 </td> </tr> </table>
@@ -516,13 +546,19 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
       </mrow>
    </mfrac>
 
@@ -555,13 +591,20 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>            
       </mrow>
    </mfrac>
 
@@ -700,13 +743,20 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>               
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
       </mrow>
    </mfrac>
 
@@ -752,13 +802,20 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
       </mrow>
    </mfrac>
 
@@ -789,30 +846,40 @@ It is the inverse of the section "glide ratio" <i>L&ensp;&frasl;&thinsp;D</i> :
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>               
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
       </mrow>
    </mfrac>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mi>&epsilon;</mi>
    <mo>&hairsp;.</mo>
+   
    <mn>(&thinsp;</mn>
-
-   <mi>x</mi> <mo>+</mo>
-
-   <mfrac>
-      <mi>1</mi>
       <mi>x</mi>
-   </mfrac>
+      <mo>+</mo>
+
+      <mfrac>
+         <mi>1</mi>
+         <mi>x</mi>
+      </mfrac>
    <mn>&thinsp;)</mn>
-   </math>
+</math>
 </td>
 
 <td class="eqn">                                         (14.15)
@@ -857,21 +924,32 @@ For all but the smallest values of <i>x</i>,
    <mfrac>
       <mrow>
          <mn>d&hairsp;</mn>
-         <mi>P</mi> 
-         <msub> <mn>&hairsp;&prime;</mn>
-               <mn>v</mn>
+         <msub>
+            <mover>
+               <mi>P</mi> 
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>               
+            <mn>v</mn>
          </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-             <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
       </mrow>
    </mfrac>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
-   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi>
-
-</math> </td>
+   <mi>&epsilon;</mi>
+   <mo>.</mo>
+   <mi>x</mi>
+</math>
+ </td>
 
 <td class="eqn">                                         (14.16)
 </td> </tr> </table>
@@ -1015,32 +1093,50 @@ For all but the smallest values of <i>x</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>T</mi>
+   <mn>&Delta;&hairsp;d</mn>
+   <mn>&hairsp;</mn>
+   <mi>T</mi>
 
-   <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
    <mo>&minus;</mo> 
+
    <mi>&epsilon;</mi>
    
    <mo>.</mo> 
 
    <mfrac>
-      <mrow> <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi> </mrow>
-      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+      <mrow>
+         <mn>d</mn>
+         <mn>&hairsp;</mn>
+         <mi>T</mi>
+      </mrow>
+      <mrow>
+         <mo>cos</mo>
+         <mi>&phi;</mi>
+      </mrow>
    </mfrac>
 
    <mo>.</mo> 
 
-   <mo>sin</mo> <mi>&phi;</mi> </mrow>
+   <mo>sin</mo>
+   <mi>&phi;</mi>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mi>&epsilon;</mi>
    <mo>.</mo>
-   <mn>d&hairsp;</mn> <mi>T</mi>
+   <mn>d&hairsp;</mn>
+   <mi>T</mi>
    <mn>&thinsp;.</mn>
-   <mo>tan</mo> <mi>&phi;</mi>
-</math> </td>
+   <mo>tan</mo>
+   <mi>&phi;</mi>
+</math>
+ </td>
 
 <td class="eqn">                                         (14.21)
 </td> </tr> </table>
@@ -1052,29 +1148,43 @@ For all but the smallest values of <i>x</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>&Delta;&hairsp;d</mi> <mn>&hairsp;</mn> <mi>S</mi>
+   <mn>&Delta;&hairsp;d</mn>
+   <mn>&hairsp;</mn> <mi>S</mi>
 
-   <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
    <mspace/> <mspace/>
    <mi>&epsilon;</mi>
+
    <mo>.</mo> 
 
    <mfrac>
-      <mrow>    <mn>d</mn> <mn>&hairsp;</mn> <mi>T</mi> </mrow>
-      <mrow> <mo>cos</mo> <mi>&phi;</mi> </mrow>
+      <mrow>
+         <mn>d</mn>
+         <mn>&hairsp;</mn>
+         <mi>T</mi>
+      </mrow>
+      <mrow>
+         <mo>cos</mo>
+         <mi>&phi;</mi>
+      </mrow>
    </mfrac>
 
    <mo>.</mo> 
  
-   <mo>cos</mo> <mi>&phi;</mi>
+   <mo>cos</mo>
+   <mi>&phi;</mi>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mi>&epsilon;</mi>
    <mo>.</mo> 
-   <mn>d&hairsp;</mn> <mi>T</mi>
-
+   <mn>d&hairsp;</mn>
+   <mi>T</mi>
 </math> 
 </td>
 
@@ -1104,17 +1214,32 @@ For all but the smallest values of <i>x</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d&hairsp;</mn>
-  <msub> <mi>P</mi> <mn>v</mn> </msub>
+   <mn>d&hairsp;</mn>
+   <msub>
+      <mi>P</mi>
+      <mn>v</mn>
+   </msub>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
-  <mn>&Delta;&hairsp;d&hairsp;</mn> <mi>T</mi>
-  <mo>.</mo>  <mi>V</mi>
-  <mspace/> <mo>+</mo>  <mspace/>
-  <mn>&Delta;&hairsp;d&hairsp;</mn> <mi>S</mi>
-  <mo>.&thinsp;</mo>  <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
-</math> </td>
+   <mn>&Delta;&hairsp;d&hairsp;</mn>
+   <mi>T</mi>
+   <mo>.</mo>
+   <mi>V</mi>
+   
+   <mspace/>
+   <mo>+</mo>
+   <mspace/>
+   <mn>&Delta;&hairsp;d&hairsp;</mn>
+   <mi>S</mi>
+   <mo>.&thinsp;</mo>
+   <mi>&Omega;</mi>
+   <mn>&thinsp;</mn>
+   <mi>r</mi>
+</math>
+</td>
 
 <td class="eqn">                                         (14.23)
 </td> </tr> </table>
@@ -1132,38 +1257,66 @@ For all but the smallest values of <i>x</i>,
 <table class = "equation"> <tr> <td>
 <math>
    <mfrac>
-      <mrow> <mn>d&hairsp;</mn> 
-         <msub>  <mi>P</mi> <mn>v</mn> </msub>
+      <mrow>
+         <mn>d&hairsp;</mn> 
+         <msub>
+            <mi>P</mi>
+            <mn>v</mn>
+         </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
       </mrow>
    </mfrac>
 
-   <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
    <mfrac>
-      <mrow> <mn>d&hairsp;</mn> 
-         <mi>T</mi> <mo>.</mo> <mi>&epsilon;</mi> <mo>.</mo> 
+      <mrow>
+         <mn>d&hairsp;</mn> 
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>&epsilon;</mi>
+         <mo>.</mo> 
          <mo>(</mo>
-            <mn>tan &hairsp;</mn> <mi>&phi;</mi> <mo>.</mo> <mi>V</mi>
+            <mn>tan &hairsp;</mn>
+            <mi>&phi;</mi>
+            <mo>.</mo>
+            <mi>V</mi>
             <mo> + </mo>
-            <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
+            <mi>&Omega;</mi>
+            <mn>&thinsp;</mn>
+            <mi>r</mi>
          <mo>)</mo>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
       </mrow>
    </mfrac>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-   <mi>&epsilon;</mi> <mo>.</mo> 
+   <mi>&epsilon;</mi>
+   <mo>.</mo> 
    <mo maxsize="2em">(</mo>
-      <mn>tan &hairsp;</mn> <mi>&phi;</mi>
+      <mn>tan &hairsp;</mn>
+      <mi>&phi;</mi>
       <mo> + </mo>
       <mfrac>
-         <mrow> <mi>&Omega;</mi> <mn>&thinsp;</mn> <mi>r</mi>
+         <mrow>
+            <mi>&Omega;</mi>
+            <mn>&thinsp;</mn>
+            <mi>r</mi>
          </mrow>
          <mi>V</mi>
       </mfrac>
@@ -1189,20 +1342,34 @@ For all but the smallest values of <i>x</i>,
 <table class = "equation"> <tr> <td>
 <math>
    <mfrac>
-      <mrow> <mn>d&hairsp;</mn> 
-         <msub>  <mi>P</mi> <mn>v</mn> </msub>
-         <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn> 
+         <msub>
+            <mover>
+               <mi>P</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+            <mn>v</mn>
+         </msub>
       </mrow>
-      <mrow> <mn>d&hairsp;</mn>
-         <mi>T</mi> <mn>&hairsp;&prime;</mn>
+      <mrow>
+         <mn>d&hairsp;</mn>
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
       </mrow>
    </mfrac>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mfrac>
-      <mrow> <mn>d&hairsp;</mn> 
-         <msub>  <mi>P</mi> <mn>v</mn> </msub>
+      <mrow>
+         <mn>d&hairsp;</mn> 
+         <msub>
+            <mi>P</mi> <mn>v</mn> </msub>
       </mrow>
       <mrow> <mn>d&hairsp;</mn>
          <mi>T</mi> <mo>.</mo> <mi>V</mi>
@@ -1211,25 +1378,36 @@ For all but the smallest values of <i>x</i>,
 
    <mspace/> <mo>=</mo> <mspace/>
 
-   <mi>&epsilon;</mi> <mo>.</mo> 
+   <mi>&epsilon;</mi>
+   <mo>.</mo> 
    <mo maxsize="2em">(</mo>
       <mn> &hairsp; </mn>
       <mfrac>
-         <mn>1</mn> <mi>x</mi>
+         <mn>1</mn>
+         <mi>x</mi>
       </mfrac>
       <mo>+</mo>
       <mi>x</mi>
    <mo maxsize="2em">)</mo>
 
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
    <mfrac>
-      <mrow>   <mi>&epsilon;</mi> <mo>.</mo> <mi>x</mi> </mrow>
-      <mrow> <msup> <mn>cos</mn> <mn>2</mn> </msup> 
+      <mrow>
+         <mi>&epsilon;</mi>
+         <mo>.</mo>
+         <mi>x</mi>
+      </mrow>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn> 
+         </msup> 
          <mi>&phi;</mi>
       </mrow>
    </mfrac>
-
 </math>
 </td>
 
@@ -1255,9 +1433,36 @@ For all but the smallest values of <i>x</i>,
  we need to increase the non-viscous thrust by that small amount.
  This will cause a small additional momentum loss
  for the same net thrust.
+  However, since this is a second order effect in the thrust,
+  we can neglect this term for propellers of light loading.
+ <!--
  Following the rest of the literature,
- we will neglect this extra loss.
+ -->
+ </p>
+ <div class="draft">
+ <p> &emsp;
+ We can get a quick estimate of this term as follows.
+  The extra momentum drag follows from
+ the extra ring thrust needed
+ <i>&epsilon;</i>&nbsp;&frasl;&nbsp;<i>x</i>
+ . <span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span></span> 
+ in (14.21), multiplied by the marginal loss 
+   <span class="hat-anchor"> <i>T</i>    
+	<span class="hat">&Hat;</span></span>&nbsp;&frasl;&nbsp;<i>&kappa;</i><sub>&phi;</sub>
+ of (11.8) for the whole propeller
+ (<i>how do we  reconcile the ring to the propeller ?</i>).
+ </p>
+ <p> The extra momentum term is in 
+ (<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>)<sup>2</sup>,
+ so it is a second order effect in 
+   <span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>. 
+ Since it is a second order effect, we can neglect this term
+ for propellers of light loading. 
 </p>
+</div>
 
 <!-- TABLE TRICK END --------------------------------------------->
 <!-- body end, footer, and table end, see text.css              -->

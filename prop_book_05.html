@@ -62,28 +62,34 @@
 </p>
 <p>&emsp;
  By  <span style="font-variant: small-caps;">Newton</span>’s
- law (4.7) however, repeated here as (5.1),
- the thrust <i>does</i> depend on the mass flow :
+ law (4.7) however, repeated here,
+ the <i>thrust</i> does depend on the mass flow :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>T</mi>
+   <mi>T</mi>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-  <mo>.</mo>
-  <mi>w</mi>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   <mo>.</mo>
+   <mi>w</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-  <mo>.</mo>
-  <mi>b</mi>
-  <mo>.</mo>
-  <mi>V</mi>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   <mo>.</mo>
+   <mi>b</mi>
+   <mo>.</mo>
+   <mi>V</mi>
 
 </math>
 </td>
@@ -91,38 +97,37 @@
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>&emsp;
- By this indirect route, the mass flow will affect
+<p>
+ And by this indirect route, the mass flow will affect
  the efficiency for a given thrust after all.
- If the mass flow <i>m</i><sup>&#9679;</sup>
+ If the mass flow
+ <!--
+	<span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+ -->
  is&nbsp;for some reason reduced
- (&hairsp;and we will find later that this is the case
- in the tip loss&hairsp;),
- then to maintain a given thrust <i>T</i>,
- the induction <i>w</i> will have to be increased.
+ (&hairsp;and we will find later that this is the
+ mechanism behind tip loss&hairsp;),
+ then to maintain a given thrust,
+ the induction will have to be increased.
  By (4.18), this increase in <i>w</i> will cause
  a loss of effic&shyiency.
-</p>
-<p>&emsp;
- We will loosely come to call this loss of efficiency
+ We&nbsp;will loosely come to call this loss of efficiency
  "the tip loss", but it is really a loss of <i>thrust</i>,
- for a given efficiency.
+ at a given efficiency.
 </p>
 <p>&emsp;
-<!--
- Consider the mass flow (&hairsp;before tip loss&hairsp;),
- through the ideal actuator disk of uniform induction.
--->
  In the ideal actuator disk of figure 4.1,
  the volume of air passing through the prop disk
-<nobr>(&hairsp;per second&hairsp;)</nobr> equals
- the&nbsp;disk frontal area 
-  &pi;&hairsp;<i>R</i><sup>&hairsp;2</sup>
- times the velocity <nobr>(&hairsp;
-   <i>V</i>&hairsp;+&hairsp;<i>v</i>&hairsp;). </nobr>
- The mass flow <i>m</i><sup>&#9679;</sup> 
- equals this volume flow, multiplied 
- by&nbsp;the density <i>&rho;</i> <nobr>
+ per second equals the disk frontal area 
+  &pi;&hairsp;<i>R</i><sup>&hairsp;2</sup>,
+ times the velocity 
+   <nobr>(&hairsp;<i>V</i>&hairsp;+&hairsp;<i>v</i>&hairsp;). </nobr>
+ The mass flow
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+ equals this volume flow multiplied 
+ by&nbsp;the dens&shyity <i>&rho;</i> <nobr>
  (&hairsp;in kg/m<sup>3</sup>&hairsp;&hairsp;)&thinsp;</nobr>
  of&nbsp;the&nbsp;passing air. With (4.1) and  (4.19) we have :
 </p>
@@ -130,52 +135,79 @@
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
  
   <mspace/> <mo>=</mo> <mspace/>
 
   <mn>&emsp;</mn>
 
-  <mi>&rho;</mi> <mn>&thinsp;.&thinsp;&pi;&thinsp;</mn> 
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
-  <mn>.&thinsp;</mn>
-  <mn>(&hairsp;</mn>
-    <mi>V</mi> <mo>+</mo> <mi>v</mi>
+   <mi>&rho;</mi>
+   <mn>&thinsp;.&thinsp;&pi;&thinsp;</mn> 
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
+   <mn>.&thinsp;</mn>
+   <mn>(&hairsp;</mn>
+      <mi>V</mi>
+      <mo>+</mo>
+      <mi>v</mi>
   <mn>&hairsp;)</mn>
 
-  <!-- new line, any padding (not margin) must be in <td> -->
-  </math> </td> </tr>
-  <tr>
-  <td style="padding-top    : 3px;
-             padding-bottom : 2px;">
-  <math>
+   <!-- new line, any padding (not margin) must be in <td> -->
+   </math> </td> </tr>
+   <tr>
+   <td style="padding-top    : 3px;
+              padding-bottom : 2px;">
 
-  <mspace width="1.7em"" />
-  <mo>=</mo> <mspace/>
+   <math>
 
-  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>
-  <mn>.&thinsp;&pi;&thinsp;</mn> 
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
-  <mn>.&thinsp;</mn>
-  <mn>(&hairsp;</mn>  <mn>1</mn> <mo>+</mo> <mi>a</mi>
+   <mspace width="1.7em"" />
+   <mo>=</mo> <mspace/>
+
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>V</mi>
+   <mn>.&thinsp;&pi;&thinsp;</mn> 
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
+   <mn>.&thinsp;</mn>
+   <mn>(&hairsp;</mn>
+      <mn>1</mn>
+      <mo>+</mo>
+      <mi>a</mi>
    <mn>&hairsp;)</mn>
 
-  <!-- new line -->
-  </math> </td> </tr> <tr>
-  <td style="padding-top    : 3px;
-             padding-bottom : 2px;">
-  <math>
+   <!-- new line -->
+   </math> </td> </tr> <tr>
+   <td style="padding-top    : 3px;
+              padding-bottom : 2px;">
 
-  <mspace width="1.7em"" />
-  <mo>=</mo> <mspace/>
+   <math>
 
-  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>
-  <mn>.&thinsp;&pi;&thinsp;</mn> 
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
-  <mn>.&thinsp;</mn>
-  <mn>(&hairsp;</mn> 
-    <mn>1</mn> <mo>+</mo> <mn>&frac12;&thinsp;</mn> <mi>b</mi>
-  <mn>&hairsp;)</mn>
+   <mspace width="1.7em"" />
+   <mo>=</mo> <mspace/>
+
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>V</mi>
+   <mn>.&thinsp;&pi;&thinsp;</mn> 
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
+   <mn>.&thinsp;</mn>
+   <mn>(&hairsp;</mn> 
+      <mn>1</mn>
+      <mo>+</mo>
+      <mn>&frac12;&thinsp;</mn>
+      <mi>b</mi>
+   <mn>&hairsp;)</mn>
 
 </math>
 </td>
@@ -185,20 +217,21 @@
 
 <p> This mass flow is slightly higher than
  the free mass flow without induction.
- By (5.1), this will give slightly more thrust.
+ By (5.1) an increased mass flow will give more thrust.
  </p>
- <p> Since this is a secondary effect
- and it complicates many of the later derivations, 
+ <p> &emsp;
+ Since this is a secondary effect,
+ and it complicates some of the derivations, 
  we will often use the so-called "light loading"
  approximation.
- This assumes that
- <i>v</i> &Lt; <i>V</i>, or&nbsp;in&nbsp;other words :
+ This assumes that the induction
+ <i>v</i> is an oderof magnitude smaller than the
+ flying velocity <i>V</i>, or in other words :
  <nobr>(&hairsp;<i>V</i>+&hairsp;<i>v</i>&hairsp;)
     &cong; <i>V</i>.
  </nobr>
  </p>
- <p>
- The light loading assumption simplifies
+ <p> The light loading assumption simplifies
  the mass flow  for the lightly loaded ideal
  actuator disk from (5.2), to :
 </p>
@@ -206,13 +239,21 @@
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>
-  <mn>.&thinsp;&pi;&thinsp;</mn> 
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>V</mi>
+   <mn>.&thinsp;&pi;&thinsp;</mn> 
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
 </math>
 </td>
 <td class="eqn">                 (5.3)
@@ -221,8 +262,9 @@
 
 
 <!-- SECTION 5.2 ---------------------------------------------->
-<h4> 5.2 &emsp;
-   The non-dimensional mass flow  <i>m</i>&hairsp;'</h4>
+<h4> 5.2 &emsp; The non-dimensional mass flow
+	<span class="hat-anchor"> <i>m</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span> </h4>
 
 <p> We define the non-dimensional mass flow.
  We will find later that the tip loss acts
@@ -235,19 +277,29 @@
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>m</mi> <mn>&thinsp;&prime;</mn>
+   <mover >
+      <mi>m</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
  
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/> <mo>&equiv;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mrow>
-      <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>
-      <mn>.&thinsp;&pi;&thinsp;</mn> 
-      <msup> <mi>R</mi> <mn>2</mn> </msup>
-   </mrow
- </mfrac>
+   <mfrac>
+      <mover>
+         <mi>m</mi>
+         <mn>&bull;</mn>
+      </mover>
+      <mrow>
+         <mi>&rho;</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+         <mn>.&thinsp;&pi;&thinsp;</mn> 
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow
+   </mfrac>
 </math>
 
 <td class="eqn">                 (5.4)
@@ -267,15 +319,21 @@
 </p>
 -->
 
-<p> The non-dimensional version of the mass flow (5.2) is :
+<p> The non-dimensional version of the mass flow in (5.2) is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>m</mi> <mn>&hairsp;&prime;</mn>
-  <mo>=</mo> 
-  <mn>1</mn> <mo>+</mo> <mn>&frac12;&thinsp;</mn> <mi>b</mi>
+   <mover>
+      <mi>m</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>      
+   <mo>=</mo> 
+   <mn>1</mn>
+   <mo>+</mo>
+   <mn>&frac12;&thinsp;</mn>
+   <mi>b</mi>
 </math>
 
 <td class="eqn">                 (5.5)
@@ -283,15 +341,19 @@
 <!-- END EQUATION --------------------------------------------->
 
 <p>
-With the light loading assumption of (5.3) this simplifies to :
+ With the light loading assumption of this simplifies to
+ the non-dimensional version of (5.3) :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>m</mi> <mn>&hairsp;&prime;</mn>
-  <mo>=</mo> 
-  <mn>1</mn>
+   <mover>
+      <mi>m</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>      
+   <mo>=</mo> 
+   <mn>1</mn>
 </math>
 
 <td class="eqn">                 (5.6)
@@ -301,8 +363,10 @@ With the light loading assumption of (5.3) this simplifies to :
 <p> The fact that a physical propeller comes close to 
  implementing the ideal of accelerating just the air inside the flow tube 
 <nobr>(&hairsp;like in </nobr> <nobr> figure 4.1&hairsp;), </nobr>
- which naturally leads to <i>m</i>&thinsp;&prime;
-&nbsp;&cong;&nbsp;1, is by non means obvious.
+ which naturally leads to
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&Hat;</span> </span> &cong;&nbsp;1,
+   is by non means obvious.
  We will find a justification in the vortex view later.
  For the pur&shyposes of this chapter and the next ones,
  we will just accept it as a given.
@@ -312,7 +376,7 @@ With the light loading assumption of (5.3) this simplifies to :
 
 <div style = "break-before:page"> </div>
          
-<h4> 5.3 &emsp; Effective disk area </h4>
+<h4> 5.3 &emsp; The effective disk area </h4>
 
 <p> The more heavily loaded propeller of (5.2)
  handles slightly more mass than the lightly loaded one
@@ -333,15 +397,21 @@ With the light loading assumption of (5.3) this simplifies to :
  by a factor of (&hairsp;1+&frac12&thinsp;<i>b</i>&hairsp;).
 </p>
 <p>&emsp;
- We can therefore also interpret <i>m</i>&hairsp;&prime;
+ We can therefore also interpret
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span> 
  as an effective (&hairsp;non-dimensional&hairsp;)
- disk area, slightly larger than one.
+ disk area, slightly larger than one
+ in the case of heavy loading.
  We&nbsp;will see later that the tip loss acts to reduce 
- this slightly again, often to a value just below 1.
+ this slightly again, often to a value just below &hairsp;1.
  </p>
 
 <!-- SECTION 5.4 ---------------------------------------------->
-<h4> 5.4 &emsp; The non-dimensional thrust  <i>T</i>&nbsp;'</h4>
+<h4> 5.4 &emsp; The non-dimensional thrust
+	<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
+</h4>
 
  <p> We make the thrust (5.1) non-dimensional by applying (3.2) :
 </p>
@@ -350,22 +420,38 @@ With the light loading assumption of (5.3) this simplifies to :
 <table class="equation"> <tr> <td>
 <math>
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+     <mi>T</mi> 
+     <mo mathsize="100%">&Hat;</mo>
+   </mover>
  
-  <mo>=</mo> 
+   <mo>=</mo> 
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup> 
-    <mrow>
-      <mi>&rho;</mi> <mn>&hairsp;</mn> 
-       <msup> <mi>V</mi> <mn>2</mn> </msup>
-      <mn>.&thinsp;&pi;&thinsp;</mn> 
-      <msup> <mi>R</mi> <mn>2</mn> </msup>
-    </mrow>
- </mfrac>
+   <mfrac>
+      <mover>
+         <mi>m</mi>
+         <mn>&bull;</mn>
+      </mover> 
+      <mrow>
+         <mi>&rho;</mi>
+         <mn>&hairsp;</mn> 
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+         <mn>.&thinsp;&pi;&thinsp;</mn> 
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac>
 
- <mo>.</mo> <mi>b</mi> <mo>.</mo> <mi>V</mi>
+   <mo>.</mo> 
+ 
+   <mi>b</mi>
+   <mo>.</mo>
+   <mi>V</mi>
 
 </math>
 
@@ -379,14 +465,19 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi> 
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
  
-  <mo>=</mo> 
+   <mo>=</mo> 
 
-  <mi>m</mi> <mn>&hairsp;&prime;</mn>
-    <mn>.&thinsp;</mn>
-  <mi>b</mi>
+   <mover> 
+      <mi>m</mi> 
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>      
+   <mo> . </mo>
+   <mi>b</mi>
 </math>
 
 <td class="eqn">                 (5.8)
@@ -402,14 +493,21 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi> 
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
  
-  <mo>=</mo> 
+   <mo>=</mo> 
 
-  <mi>b</mi> <mo>.</mo>
-  <mo>(</mo> 
-   <mn>1</mn> <mo>+</mo> <mn>&frac12;&hairsp;</mn> <mi>b</mi>
-  <mo>)</mo>
+   <mi>b</mi>
+   <mo>.</mo>
+   <mo>(</mo> 
+      <mn>1</mn>
+      <mo>+</mo>
+      <mn>&frac12;&hairsp;</mn>
+      <mi>b</mi>
+   <mo>)</mo>
 </math>
 
 <td class="eqn">                 (5.9)
@@ -417,18 +515,21 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- END EQUATION --------------------------------------------->
 
 <p> For light loading we can use the
- <i>m</i>&hairsp;&prime;&nbsp;=&nbsp;1 of (5.6),
+ <i>m</i><sup>&Hat;</sup>&nbsp;=&nbsp;1 of (5.6),
  which yields :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>      
  
-  <mo>=</mo> 
+   <mo>=</mo> 
 
-  <mi>b</mi>
+   <mi>b</mi>
 </math>
 
 <td class="eqn">                (5.10)
@@ -438,31 +539,40 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- SECTION 5.5 ---------------------------------------------->
 <h4> 5.5 &emsp; 
     The ideal, light loading efficiency
-      expressed in <i>T</i>&nbsp;' </h4>
+      expressed in
+	<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
+</h4>
 
 <p>  Equation (4.18) gave us the efficiency of an ideal,
  lightly loaded actuator disk in terms of the far wake
  axial induction <i>b</i>.
- With the light loading <i>T</i>&thinsp;&prime; of (5.11) 
+ With the light loading <i>T</i><sup>&Hat;</sup> of (5.11) 
  we can change this into a relation with the thrust coefficient :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>&eta;</mi> <mi>m </mi> </msub>
+   <msub>
+      <mi>&eta;</mi>
+      <mi>m </mi>
+   </msub>
  
-  <mo> = </mo>
+   <mo> = </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mrow>
-      <mn>1</mn> <mo>+</mo>
-        <mn>&frac12;&thinsp;</mn> 
-        <mi>T</mi> <mn>&hairsp;&prime;</mn>
-    </mrow>
- </mfrac> 
+   <mfrac>
+      <mi>1</mi>
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo>
+         <mn>&frac12;&thinsp;</mn> 
+         <mover>
+            <mi>T</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>            
+      </mrow>
+   </mfrac> 
 
 </td>
 </math>
@@ -471,7 +581,7 @@ With the light loading assumption of (5.3) this simplifies to :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> or ith the aircraft version of the thrust coefficient :
+<p> or in the European aircraft version of the thrust coefficient :
 </p>
 
 
@@ -479,19 +589,25 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>&eta;</mi> <mi>m </mi> </msub>
+   <msub>
+      <mi>&eta;</mi>
+      <mi>m </mi>
+   </msub>
  
-  <mo> = </mo>
+   <mo> = </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>1</mi>
-    <mrow>
-      <mn>1</mn> <mo>+</mo>
-        <mn>&frac14;&thinsp;</mn> 
-        <msub> <mi>C</mi> <mi>T </mi> </msub>
-    </mrow>
- </mfrac> 
+   <mfrac>
+      <mi>1</mi>
+      <mrow>
+         <mn>1</mn>
+         <mo>+</mo>
+         <mn>&frac14;&thinsp;</mn> 
+         <msub>
+            <mi>C</mi>
+            <mi>T </mi>
+         </msub>
+      </mrow>
+   </mfrac> 
 </td>
 </math>
 
@@ -506,22 +622,35 @@ With the light loading assumption of (5.3) this simplifies to :
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <msub> <mi>P</mi> <mi>m </mi> </msub>
-       <mn>&hairsp;&prime;</mn>
-    </mrow>
-    <mrow> <mi>T</mi><mn>&hairsp;&prime;</mn>  </mrow>
-  </mfrac>
-  <mo> = </mo>
+   <mfrac>
+      <msub>
+         <mover>
+            <mi>P</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+         <mi>m</mi>
+      </msub>
+      <mpver>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
+   </mfrac>
+   
+   <mo> = </mo>
 
-  <mn>&frac12;&thinsp;</mn> 
-        <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mn>&frac12;&thinsp;</mn> 
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
 
-  <mo> = </mo>
+   <mo> = </mo>
 
-  <mn>&frac14;&thinsp;</mn> 
-        <msub> <mi>C</mi> <mi>T </mi> </msub>
+   <mn>&frac14;&thinsp;</mn> 
+   <msub>
+      <mi>C</mi>
+      <mi>T </mi>
+   </msub>
 
 </math>
 

@@ -38,7 +38,7 @@
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
       <li> <a href="prop_book_21.html">
-               Next &#x25BA;</a>                      </li>              
+               Next &#x25BA;</a>                           </li>              
 
    </ul>
 </nav>
@@ -58,50 +58,65 @@
 <h4> 20.1 &emsp; 
    Prandtl's tip plotted against
      the non-dimensional radius <i>x</i>                   </h4>
-
+     
 <p> So far we looked at
  <span style="font-variant: small-caps;">Prandtl</span>'s
  approximation of the isolated mass flow factor
  <i>K</i>&hairsp;(<i>x</i>),
  as defined in (17.2). 
-</p>
-<p>&emsp;
  We will now look at the combined thrust reduction factor
  <i>G&hairsp;</i>(<i>x</i>).
-
-With
+ </p>
+ <p> &emsp;
+ With
  <span style="font-variant: small-caps;">Prandtl</span>'s
-  approximation <i>F</i>&hairsp;&prime;&hairsp;(<i>x</i>)
- for <i>K&hairsp;</i>(<i>x</i>) <nobr>
-(&hairsp;slightly </nobr>
- adapted here, as indicated
- by the <nobr> prime&hairsp;), </nobr>
+  approximation
+   <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
+ for <i>K&hairsp;</i>(<i>x</i>)
+(&hairsp;slightly adapted here, as indicated
+ by the tilde&hairsp;),
  we define the obvious approximation to the
  <i>G</i>&hairsp;(<i>x</i>) of 
- (&hairsp;<a href="prop_book_17.html#17.4">17.6</a>&hairsp;) :
+ (&hairsp;<a href="prop_book_17.html#17.4">17.6</a>&hairsp;)&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td style="padding-top : 4px;">
+<table class = "equation">
+<tr> <td>
 <math>
-  <mi>G</mi> <mn>&thinsp;&prime;</mn>
-  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+<!--  <mi>G</mi> <mn>&thinsp;&prime;</mn>   -->
+   <mover>
+      <mi>G</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+   <mn>&hairsp;(</mn>
+   <mi>x</mi>
+   <mn>)</mn> 
 
-  <mo>&thinsp; = &thinsp;</mo>
+   <mo>&thinsp; = &thinsp;</mo>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-  <mi>&phi;</mi>
+   <msup> <mn>cos</mn> <mn>2</mn> </msup>
+   <mi>&phi;</mi>
 
-  <mo> . </mo>
+   <mo> . </mo>
+  
+<!--
   <mi>F</mi>
-
   <mn>&thinsp;&prime;</mn>
-  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+-->
+   <mover>
+      <mi>F</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>      
+  
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 </math>
+</td>
 
-<td style="padding-top : 4px;
-           width       : 50px;
-           text-align  : right">                         (20.1)
+<td class="eqn">                                         (20.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -110,19 +125,22 @@ With
 </p>
 <p>&emsp;
  Figure 20.1 shows
- <i>F</i>&hairsp;&prime;&hairsp;(<i>x</i>)
+ <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
  at a horizontal scale different from
  either figure 19.6 or figure 19.7.
- Those figures were at the scale of 
- <i>B&hairsp;.&hairsp;X</i>,
+  Those figures were at the scale of <i>B&hairsp;.&hairsp;X</i>,
  which is natural to
  <span style="font-variant: small-caps;">Prandtl</span>'s
  tip function,
  and at the scale of <i>r&thinsp;/&hairsp;R</i>
  which is natural for different propellers
  of the same diameter.
+ </p>
+ <p> &emsp;
  The new figure shows
- <i>F</i>&hairsp;&prime;&hairsp;(<i>x</i>)
+ <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
  on the  <i>x</i> scale, which is the natural scale
  for cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i>.
  Drawn on this scale, 
@@ -175,7 +193,8 @@ With
  at a given radius together.
 
  The shape at the tip is mostly determined by the
- <i>F</i>&hairsp;&prime;&hairsp;(<i>x</i>) term,
+ <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde">&tilde;</span></span>(<i>x</i>) term,
  not so much by cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i>,
  since that factor approaches 1 for&nbsp;large
  values of <i>x</i>. 
@@ -183,7 +202,8 @@ With
  is mostly determined by the
  cos<sup>&hairsp;2</sup><i>&phi;</i> term,
  since the value of
- <i>F</i>&hairsp;&prime;&hairsp;(<i>x</i>) is nearly 1
+<span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>) is nearly 1
  near the root.
 </p>
 <p>&emsp;
@@ -220,7 +240,7 @@ With
  
 <!-- SECTION -------------------------------------------------->
 
-<a name="20.3"</a>
+<a name="20.3"></a>
 
 <h4> 20.3 &emsp; The overall reduction </h4>
 
@@ -228,51 +248,93 @@ With
  <i>&kappa;</i><sub>G</sub>, by analogy with the
  <i>&kappa;</i><sub>&phi;</sub> of (11.3).
 </p>
-<p>&emsp;
+<p>
  We can now calculate a 
   <span style="font-variant: small-caps;">Prandtl</span>-approximate
  version of 
-<i>&kappa;</i><sub>G</sub>, which we shall call 
-<i>&kappa;</i><sub>G&prime;</sub> :
+<nobr>
+ <math>
+   <msub>
+      <mi>&kappa;</mi>
+         <mi>G</mi>
+   </msub>
+ </math>
+</nobr>,
+which we shall call 
+<nobr>
+ <math>
+   <msub>
+      <mi>&kappa;</mi>
+      <mover>
+         <mi>G</mi>
+         <mn>&tilde;</mn>
+      </mover>
+   </msub>
+ </math>
+</nobr>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>&kappa;</mi>
-    <mn>G&hairsp;&prime;</mn> </msub>
-  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+   <msub>
+      <mi>&kappa;</mi>
+      <mover>
+         <mn>G</mn> 
+         <mn mathsize="170%">&tilde;</mn>
+      </mover>
+   </msub>
+   <mn>(</mn>
+      <mi>X</mi>
+   <mn>)</mn>
     
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mn>1</mn>
-    <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mfrac>
+   <mfrac> 
+      <mn>1</mn>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn> </msup>
+   </mfrac>
 
-  <mn>&thinsp;.</mn>
+   <mn>&thinsp;.</mn>
 
-  <mstyle displaystyle="true">
-  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mstyle displaystyle="true">
+   <msubsup>
+      <mo>&int;</mo> 
+      <mn>0</mn> 
+      <mi>X</mi> 
+   </msubsup>
 
-  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
-  <mi>&phi;</mi>
+   <msup>
+      <mn>cos</mn>
+      <mn>2&hairsp;</mn>
+   </msup>
+   <mi>&phi;</mi>
 
-  <mo> . </mo>
-  <mi>F</mi>
+   <mo> . </mo>
+   <mover>
+      <mi>F</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+   
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 
-  <mn>&thinsp;&prime;</mn>
-  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+   <mo>&hairsp;.</mo>
 
-  <mo>&hairsp;.</mo>
-
-  <mn>2&hairsp;</mn> <mi>x</mi>
-  <mo>.</mo>
-  <mn>d</mn> <mi>x</mi>
+   <mn>2&hairsp;</mn>
+   <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>x</mi>
 </math>
+</td>
 
-<td style="width:50px; text-align:right">                (20.2)
+<td class="eqn">                                          (20.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -288,46 +350,71 @@ With
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>&kappa;</mi>
-    <mn>G&hairsp;&prime;</mn> </msub>
+   <msub>
+      <mi>&kappa;</mi>
+      <mover>
+         <mn>G</mn> 
+         <mn mathsize="150%">&tilde;</mn>
+      </mover>
+   </msub>
   <mn>(</mn> <mi>X</mi> <mn>)</mn>
     
   <mspace/> <mo>&equiv;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mn>1</mn>
-    <mrow> <mi>X</mi> <mo>.</mo> <mi>N</mi> </mrow>
-  </mfrac>
+   <mfrac> 
+      <mn>1</mn>
+      <mrow>
+         <mi>X</mi>
+         <mo>.</mo>
+         <mi>N</mi>
+      </mrow>
+   </mfrac>
 
-  <mn>&ensp;.</mn>
+   <mn>&ensp;.</mn>
 
-  <mstyle displaystyle="true">
-  <msubsup> <mo>&sum;</mo>
-<!--    <mn>0</mn>   -->
-   <mrow> <mi>0</mi> <mn>&hairsp;.&thinsp;&Delta;</mn>
-     <mi>x</mi> </mrow>
-   <mrow> <mn>N</mn> <mn>&hairsp;.&thinsp;&Delta;</mn>
-     <mi>x</mi> </mrow>
-  </msubsup>
+   <mstyle displaystyle="true">
+   <msubsup>
+      <mo>&sum;</mo>
+      <mn> &nbsp; 0</mn>
+<!--      
+      <mrow>
+         <mn>&nbsp; 0</mn>
+         <mn>&hairsp;.&thinsp;&Delta;</mn>
+         <mi>x</mi>
+      </mrow>
+-->      
+      <mrow>
+         <mn>&nbsp;N</mn>
+         <mn>&hairsp;.&thinsp;&Delta;</mn>
+         <mi>x</mi>
+      </mrow>
+   </msubsup>
 
-  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
-  <mi>&phi;</mi>
+   <msup>
+      <mn>cos</mn>
+      <mn>2&hairsp;</mn>
+   </msup>
+   <mi>&phi;</mi>
 
-  <mo>&hairsp;.</mo>
+   <mo>&hairsp;.</mo>
 
-  <mi>F</mi>
+   <mover>
+      <mi>F</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+      
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 
-  <mn>&thinsp;&prime;</mn>
-  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+   <mo>&hairsp;.</mo>
 
-  <mo>&hairsp;.</mo>
-
-  <mn>2&hairsp;</mn> <mi>x</mi>
+   <mn>2&hairsp;</mn>
+   <mi>x</mi>
 
 </math>
 
-<td style="width:50px; text-align:right">                (20.3)
+<td class="eqn">                                         (20.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -342,46 +429,66 @@ With
  cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
 distribution to unit thrust by inflating it 
 by the inverse of the overall thrust loss factor
-<i>&kappa;</i><sub>&phi;</sub> :
+<i>&kappa;</i><sub>&phi;</sub>.
  We can do the same for the 
- <i>G</i>&hairsp;&prime;&hairsp;(<i>x</i>)
+    <span class="hat-anchor-capital"> <i>G</i>    
+	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
  distribution (20.1). This yields :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-  <mi>G</mi> <mn>&thinsp;&prime;</mn>
-    </mrow>
-     <mrow>
-       <msub> <mi>&kappa;</mi>
-       <mn>G&hairsp;&prime;</mn> </msub>
-    </mrow>
-  </mfrac> 
+   <mfrac>
+      <mrow>
+         <mover>
+            <mi>G</mi>
+            <mn mathsize="130%">&tilde;</mn>
+         </mover>
+      </mrow>
+      <mrow>
+         <msub>
+            <mi>&kappa;</mi>
+            <mover>
+               <mi>G</mi>
+               <mn mathsize="170%">&tilde;</mn>
+            </mover>
+         </msub>
+      </mrow>
+   </mfrac> 
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <msup> <mn>cos</mn> <mn>2</mn> </msup>
-      <mi>&phi;</mi>
-      <mo>&hairsp;.</mo>
-      <mi>F</mi>
-      <mn>&thinsp;&prime;</mn>
-      <mn>(</mn> <mi>x</mi> <mn>)</mn> 
-    </mrow>
-     <mrow>
-       <msub> <mi>&kappa;</mi>
-       <mn>G&hairsp;&prime;</mn> </msub>
-    </mrow>
-  </mfrac> 
-</math> </td>
+   <mfrac>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+         <mo>&hairsp;.</mo>
+         <mover>
+            <mi>F</mi>
+            <mn mathsize="170%">&tilde;</mn>
+         </mover>
+         <mn>(</mn>
+            <mi>x</mi>
+         <mn>)</mn> 
+      </mrow>
+      <msub>
+         <mi>&kappa;</mi>
+         <mover>
+            <mi>G</mi>
+            <mn mathsize="170%">&tilde;</mn>
+         </mover>         
+      </msub>
+   </mfrac> 
+</math>
+</td>
 
-<td style="width:50px; text-align:right">                (20.4)
+<td class="eqn">                (20.4)
 </td> </tr> </table>
 <!------------------------------------------------------------->
 
@@ -430,75 +537,100 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <<mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>T</mi>
+      <mn mathsize="100%">&Hat;</mn>
+   </mover>      
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mi>m</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>m</mi>
+      <mn mathszie="100%">&Hat;</mn>
+   </mover>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mn mathsize="100%">&Hat;</mn>
+   </mover>      
 
-  <mo>&thinsp;.&thinsp;</mo>
+   <mo>&thinsp;.&thinsp;</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-     <mrow>
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-  <mi>&phi;</mi>
-    </mrow>
-     <mrow>
-       <msub> <mi>&kappa;</mi> <mn>&phi;</mn> </msub>
-    </mrow>
-  </mfrac> 
+   <mfrac>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+      <mrow>
+         <msub>
+            <mi>&kappa;</mi>
+            <mn>&phi;</mn>
+         </msub>
+      </mrow>
+   </mfrac> 
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-     <mrow>
-       <mn>2</mn> <mi>x</mi> 
-       <mn>&thinsp;.&thinsp;</mn>
-       <mn>d</mn> <mi>x</mi>
-    </mrow>
-     <mrow>
-       <msup> <mi>X</mi> <mn>2</mn> </msup>
-    </mrow>
-  </mfrac> 
-</math> </td>
+   <mfrac>
+      <mrow>
+         <mn>2</mn>
+         <mi>x</mi> 
+         <mn>&thinsp;.&thinsp;</mn>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <mrow>
+         <msup>
+            <mi>X</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac> 
+</math>
+</td>
 
-<td style="width:50px; text-align:right">                (20.4)
+<td class="eqn">                                          (20.5)
 </td> </tr> </table>
 <!------------------------------------------------------------->
 
 </span>
 
-<!-- TABLE TRICK END --------------------------------------------->
-<!-- body end, footer, and table end, see text.css              -->
+<!-- TABLE TRICK END ------------------------------------------>
+<!-- body end, footer, and table end, see text.css           -->
 </td> </td> </tbody>
 <tfoot> <tr> <td>   <br> <br>   </td> </tr> </tfoot>
 </table>
 
-<!-- TRUE (PRINT) HEADER ----------------------------------------->
+<!-- TRUE (PRINT) HEADER -------------------------------------->
 <div class="header">
 <i> TIP LOSS </i>
 </div>
 
-<!-- TRUE FOOTER ------------------------------------------------->
+<!-- TRUE FOOTER ---------------------------------------------->
 <div class="footer"> 
    <span style="float:left"> <a href="prop_book_19.html">
-               &#x25C4;</a> </span>
+               &#x25C4;&#xFE0E;</a> </span>
 P. Lammertse, 2025
    <span style="float:right"> <a href="prop_book_21.html">
-               &#x25BA;</a> </span>              
+               &#x25BA;&#xFE0E;</a> </span>              
 </div>
 
-<!-- SCRIPTS ----------------------------------------------------->
+<!-- SCRIPTS -------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
 <script src = "menu.js"></script>
 <script src = "draft.js"></script>

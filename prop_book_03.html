@@ -68,6 +68,11 @@
  This is especially useful when applying the propeller in an aircraft :
 </p>
 
+<div class="draft">
+&emsp; TODO &emsp; 
+  Tell about the difference in C<sub>T</sub> 
+  between the US and the rest of the world.
+</div>
 
 <table class = "equation"> <tr> <td>
 <math>
@@ -108,27 +113,46 @@ This definition is based on <i>V</i> instead of on
  Inside classical propeller theory it will be more convenient
  to divide by <i>ρV&hairsp;</i><sup>2</sup> instead of
  by ½&hairsp;<i>ρV&hairsp;</i><sup>2</sup>.  
- We denote this version by a prime.
- This "other" non-dimensional thrust coefficient
- is called <i>T</i>&thinsp;' :
+ We denote this version by a circumflex "^".
+ This new non-dimensional thrust coefficient
+ is called
+   <math><mover><mi>T</mi><mn>&Hat;</mn></mover></math>&nbsp;:
+<!--
+  -- The above makes the line a bit higher.
+  -- But this bumps into the text line above :
+<span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>&nbsp;:
+ -->
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mi>&hairsp;&prime;</mi>
- <mspace/> <mo> ≡ </mo> <mspace/>
- <mstyle displaystyle="true">
- <mfrac>
-   <mrow> <mi>T</mi> </mrow>
-   <mrow>
-     <mi>ρ</mi>
-     <msup> <mi>V</mi> <mn>2</mn> </msup>
-     <mo>.</mo>
-     <mi>π </mi>
-     <msup> <mi>R</mi> <mn>2</mn> </msup>
-  </mrow>
-</mfrac> </math>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover> 
+ 
+   <mspace/> <mo> &equiv; </mo> <mspace/>
+
+   <mfrac>
+      <mi>T</mi>
+      <mrow>
+         <mi>&rho;</mi>
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+         <mo>.</mo>
+         <mn>&pi;</mn>
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac>
+</math>
+</td>
 
 <td class="eqn">                                               (3.2)
 </td> </tr> </table>
@@ -141,12 +165,18 @@ It follows that :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mi>&hairsp;&prime;</mi>
-  <mspace/> <mo> = </mo> <mspace/>
-  <mn>&frac12;&thinsp;</mn> <msub> <mi>C</mi> <mi>T </mi> </msub>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover> 
+
+   <mspace/> <mo> = </mo> <mspace/>
+
+   <mn>&frac12;&thinsp;</mn>
+   <msub> <mi>C</mi> <mi>T </mi> </msub>
 </math>
 
-<td class="eqn">                                               (3.3)
+<td class="eqn">                                           (3.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -159,21 +189,27 @@ It follows that :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>P</mi> <mi>&hairsp;&prime;</mi>
- <mspace/> <mo> ≡ </mo> <mspace/>
- <mstyle displaystyle="true">
- <mfrac>
-   <mrow> <mi>T</mi> </mrow>
-   <mrow>
-     <mi>ρ</mi>
-     <msup> <mi>V</mi> <mn>3</mn> </msup>
-     <mo>.</mo>
-     <mi>π </mi>
-     <msup> <mi>R</mi> <mn>2</mn> </msup>
-  </mrow>
-</mfrac> </math>
+   <mover>
+      <mi>P</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover> 
+ 
+   <mspace/> <mo> &equiv; </mo> <mspace/>
+ 
+   <mfrac>
+      <mi>T</mi>
+      <mrow>
+         <mi>&rho;</mi>
+         <msup> <mi>V</mi> <mn>3</mn> </msup>
+         <mo>.</mo>
+         <mi>&pi; </mi>
+         <msup> <mi>R</mi> <mn>2</mn> </msup>
+      </mrow>
+   </mfrac>
+</math>
+</td>
 
-<td class="eqn">                                               (3.4)
+<td class="eqn">                                           (3.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -205,29 +241,40 @@ It follows that :
 </td> </tr> </table>
 <!-- END EQUATION ---------------------------------------------->
 
-<p> We can write (3.2) as a mechanical power instead of a force :
+<p> We can write (3.2) as a mechanical power instead of as a force :
 </p>
 
 <!-- EQUATION -------------------------------------------------->
 <table class = "equation"> <tr> <td>
 
 <math>
-  <mi>T</mi> <mi>&hairsp;&prime;</mi>
-  <mo>=</mo>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi> </mrow>
-    <mrow> <mi>ρ</mi> <mn>&thinsp;</mn>
-      <msup> <mrow> <mi>V</mi> </mrow>
-             <mrow> <mn>2</mn> </mrow>
-     </msup>
-     <mo>.</mo>
-     <mi>π&hairsp;</mi>
-     <msup> <mrow> <mi>R</mi> </mrow>
-            <mrow> <mn>3</mn> </mrow>
-    </msup>
-    </mrow>
- </mfrac>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover> 
+   
+   <mo>=</mo>
+  
+   <mfrac>
+      <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      </mrow>
+      
+      <mrow>
+         <mi>&rho;</mi> <mn>&thinsp;</mn>
+         <msup>
+            <mi>V</mi>
+            <mn>3</mn>
+         </msup>
+     
+         <mo>.</mo>
+     
+         <mi>&pi;&hairsp;</mi>
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac>
 </math>
 </td>
 
@@ -235,9 +282,12 @@ It follows that :
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> We can therefore interpret <i>T&hairsp;&prime;</i>
+<p> We can therefore interpret 
+   <span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>
  not only as the non-dimensional thrust,
- but also as the non-dimensional net power <i>T.V</i>
+ but also as the non-dimensional net power 
+ <i>T&hairsp;.&hairsp;V</i>
  exerted by the propeller on the aircraft,
  by the definition of (3.4).
 </p>
@@ -267,7 +317,7 @@ It follows that :
 
 <div style = "break-before : page"> </div>
 <!-- SECTION 3.4 ---------------------------------------------->
-<h4> 3.4 &emsp; Loss ratios </h4>
+<h4> 3.4 &emsp; Loss ratios, or rather&thinsp;: power overhead ratios </h4>
 <p>
 The momentum loss and the viscous loss as we define them
 are actually
@@ -282,30 +332,41 @@ The propeller's efficiency then becomes :
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td> <math>
-  <mi>η</mi>
+   <mi>&eta;</mi>
 
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/> <mo>&equiv;</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <msub> <mi>P</mi> <mn>out</mn> </msub>
-    <msub> <mi>P</mi> <mn>in</mn> </msub>
-  </mfrac> 
+   <mfrac> 
+      <msub> <mi>P</mi> <mn>out</mn> </msub>
+      <msub> <mi>P</mi> <mn>in</mn> </msub>
+   </mfrac> 
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi> </mrow>
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
-      <mo> + </mo>
-      <msub> <mi>P</mi> <mi>m </mi> </msub>
-      <mo> + </mo>
-      <msub> <mi>P</mi> <mi>v </mi> </msub>
-    </mrow>
-  </mfrac> </mstyle>
-
-</math> </td>
+   <mfrac> 
+      <mrow>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+      </mrow>
+      <mrow>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+         <mo> + </mo>
+         <msub>
+            <mi>P</mi>
+            <mi>m </mi>
+         </msub>
+         <mo> + </mo>
+         <msub>
+            <mi>P</mi>
+            <mi>v </mi>
+         </msub>
+      </mrow>
+   </mfrac>
+</math>
+</td>
 
 <td class="eqn">                                                 (3.7)
 </td> </tr> </table>
@@ -317,26 +378,42 @@ The propeller's efficiency then becomes :
 
 <!-- equation table --------------------------------------------->
 <table class = "equation"> <tr> <td> <math>
-  <mi>η</mi> <mspace style="width:1ex"/>  <mo>=</mo> 
+   <mi>η</mi>
+   <mspace style="width:1ex"/>
+   <mo>=</mo> 
 
-  <mstyle displaystyle="true"> 
-  <mfrac>
-    <mrow> <mn>1</mn> </mrow>
-    <mrow> <mn>1</mn> <mo>+</mo>
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>1</mn>
+         
+         <mo> + </mo>
 
-    <mstyle displaystyle="true">
-    <mfrac>
-      <mrow> <msub> <mi>P</mi> <mi>m </mi> </msub> </mrow>
-      <mrow>   <mi>T</mi> <mo>.</mo> <mi>V</mi>    </mrow>
-    </mfrac>
+         <mfrac displaystyle="true">
+            <msub>
+               <mi style="margin-top:5px">P</mi>  <!-- overhead clearance -->
+               <mn>m </mn>
+            </msub>
+            <mrow>
+               <mi>T</mi> <mo>.</mo> <mi>V</mi>
+            </mrow>
+         </mfrac>
 
-    <mo>+</mo> 
+         <mo> + </mo> 
 
-    <mfrac>
-      <mrow> <msub> <mi>P</mi> <mi>v </mi> </msub> </mrow>
-      <mrow>   <mi>T</mi> <mo>.</mo> <mi>V</mi>    </mrow>
+         <mfrac displaystyle="true">
+            <msub>
+               <mi>P</mi>
+               <mn>v</mn>
+            </msub>
+            <mrow>
+               <mi>T</mi> <mo>.</mo> <mi>V</mi>
+            </mrow>
+         </mfrac>
+      </mrow>
    </mfrac>
-</mrow> </mfrac> </math> </td>
+</math>
+</td>
 
 <td class="eqn">                                (3.8)
 </td> </tr> </table>
@@ -344,31 +421,56 @@ The propeller's efficiency then becomes :
 
 <a name="(3.10)"></a>
 
-<p> We will call the two fractions in the denominator :
- the momentum loss ratio and the viscous loss ratio.
-</p>
-<p>&emsp;
- These power "losses" are really power increases
- on the net power.
+<p> We will call the two fractions in the denominator
+ the momentum <i>loss ratio</i> and the viscous <i>loss ratio</i>,
+ but note that they are really
+ <i>increase</i> ratios on the net power.
+ </p>
+ <p> &emsp;
  They are non-dimensional,
  and they can be expressed as ratios to the non-dimensional
- thrust and output power.
+ thrust and net output power.
  By (3.4) and (3.6) we have : 
 </p>
 
-<!-- equation table ------------------------------------------->
 <table class = "equation">
  <tr> <td>
 <math>
-
+<!--
+   <mfrac bevelled="true">
+--> 
+  
    <mfrac>
-      <mrow> <msup> <mi>P</mi> <mn>&prime;</mn> </msup> </mrow>
-      <mrow> <msup> <mi>T</mi> <mi>&prime;</mi> </msup> </mrow>
+      <mover>
+         <mi>P</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover> 
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover> 
    </mfrac>
-   <mspace/> <mo>=</mo> <mspace/>
+   
+ <!--  Attempt with fractional slash, not great either
+       <mover>
+         <mi>P</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover> 
+      
+      <mn>&#x27CB;&thinsp;</mn>
+      
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover> 
+-->      
+    
+   <mspace/> <mo> &equiv; </mo> <mspace/>
    <mfrac>
-      <mrow> <mi>P</mi> </mrow>
-      <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi> </mrow>
+      <mi>P</mi>
+      <mrow>
+         <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      </mrow>
    </mfrac>
 </math>
 </td>
@@ -381,38 +483,59 @@ The propeller's efficiency then becomes :
 </p>
 
 <!-- equation table ------------------------------------------->
-<table class = "equation"> <tr> <td> <math>
-  <mspace/> 
-  <mi>η</mi>
-  <mspace/>  <mspace/> <mo>=</mo> <mspace/> <mspace/> 
+<table class = "equation"> <tr> <td>
+<math>
+   <mspace/> 
+   <mi>&eta;</mi>
+   <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> 
 
-  <mstyle displaystyle="true"> 
-  <mfrac>
-    <mrow> <mn>1</mn> </mrow>
-    <mrow> <mn>1</mn> <mo>+</mo>
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>1</mn>
+         <mo> + </mo>
 
-    <mstyle displaystyle="true">
-    <mfrac>
-      <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
-                    </mi>  <mi>m </mi>
+         <mfrac displaystyle="true">
+            <msub>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>             
+               <mn>m</mn>
             </msub> 
-     </mrow>
-      <mrow> <mi>T</mi> <mi>&prime;</mi>  </mrow>
-   </mfrac>
+    
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover> 
+         </mfrac>
 
 
-    <mo>+</mo>
+         <mo> + </mo>
 
-    <mfrac>
-      <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
-                    </mi>  <mi>v </mi>
+         <mfrac displaystyle="true">
+            <msub>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                      
+               <mn>v</mn>
             </msub> 
-     </mrow>
-      <mrow> <mi>T</mi> <mi>&prime;</mi>  </mrow>
-   </mfrac>
-</mrow> </mfrac> </math> </td>
+    
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover> 
+         </mfrac>
+      </mfrac>
+   </mrow>
+ </mfrac>
+ </math>
+ </td>
 
-<td class="eqn">                                              (3.10)
+<td class="eqn">                                          (3.10)
 </td> </tr> </table>
 <!-- end equation table --------------------------------------->
 
@@ -444,6 +567,28 @@ for a given thrust.
 
 /////////////////////////////////////////////////////////////-->
 
+<div class="draft"">
+
+<h4> 3.5 &emsp; Other non-dimensional parameters </h4>
+
+<p> TBW </p>
+<p> Mention :
+</p>
+<p>   &emsp;   b &equiv; v^ &equiv; <i>&nbsp;v&frasl;&nbsp;V</i> </p>
+<p> &emsp; m^ &equiv; m/TBW</i></p>
+<p> x &equiv; r^ &equiv; &Omega r / V</p>
+<p> c^ &equiv; c . &Omega c / V</p>
+<p> Note : even time can be non-dimensional, <br>
+ by <i>t^</i> = 1<i>/&Omega;</i>. </p>
+<p> Typical speed is <i>V</i>, <br>
+typical length (distance) is <i>V&nbsp;&frasl;&nbsp;&Omega;</i>,
+<br> i.e. pitch (&hairsp;progress&hairsp;) per radian ?? </p>
+<p> There is no notation for <i>r&nbsp;&frasl;&nbsp;R</i>, right ? <br>
+ Not <i>x<i>, not <i>r<i>^ </p>.
+</div>
+
+
+
 <!-- TABLE TRICK END --------------------------------------------->
 <!-- body end, footer, and table end, see text.css              -->
 </td> </td> </tbody>
@@ -452,7 +597,7 @@ for a given thrust.
 
 <!-- TRUE (PRINT) HEADER ----------------------------------------->
 <div class="header">
-<i> AXIAL MOMENTUM </i>
+<i> INTRODUCTION </i>
 </div>
 
 <!-- TRUE FOOTER ------------------------------------------------->

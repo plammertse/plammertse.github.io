@@ -202,6 +202,12 @@ for the non-dimensional versions
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<div class="draft">
+   &emsp; TODO &emsp; Maybe mention that
+   <i>a</i>&nbsp; &equiv; &nbsp; 
+   <math><msup><mi>v</mi><mn>&Hat;</mn></msup></math>, etc.
+</div>
+
 </div>  <!-- end page break avoid -->
 
 
@@ -248,31 +254,43 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
-  <mi>m</mi>  <mo>.</mo> 
-    <msup> <mi>v</mi> <mn>&bull;</mn>
+   <mi>F</mi>
+   <mspace/> <mo> = </mo> <mspace/>
+   <mi>m</mi>
+   <mo>.</mo> 
+   <mover>
+      <mi>v</mi>
+      <mn>&bull;</mn>
+   </mover>      
 </math>
 
 <td class="eqn">                                           (4.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-
-
-<p> The raised dot <sup>&#9679;</sup> is
+<p> The raised dot <sup>&bull;</sup> is
  <span style="font-variant: small-caps;">
  Newton</span>'s symbol for "per second".
  A lesser known version of the same law is :
 </p>
 
-
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
-  <mn>(</mn> <mi>m</mi>  <mo>.</mo> 
-    <msup> <mrow> <mi>v</mi>  <mn>)</mn>  </mrow>
-    <mn>&bull;</mn>
+   <mi>F</mi>
+   
+   <mspace/> <mo> = </mo> <mspace/>
+   
+   <msup>
+      <mrow>
+         <mn>(</mn>
+            <mi>m</mi>
+            <mo>.</mo> 
+            <mi>v</mi>       
+         <mn>)</mn>
+      </mrow>
+      <mn>&bull;</mn>
+   </msup>
 </math>
 
 <td class="eqn">                                           (4.5)
@@ -287,12 +305,22 @@ The mechanism applies equally to air.
  The momentum can change by a change of mass per second,
  just as well as by a change of velocity per second.
  Instead of accelerating the same mass to an ever higher velocity,
- we can take a new mass <i>m</i><sup>&#9679;</sup> every second,
+ we can take a new mass
+	<span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+   <!-- 
+ <i>m</i><sup>&#9679;</sup>
+ -->
+ every second,
  and give it the same velocity increase <i>v</i> every time.
   For example, we can exert a forward force on ourselves
  by throwing a snowball of mass <i>m</i> to the rear every second,
  or by squirting a continuous mass flow of water
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+<!--
  <i>m</i><sup>&#9679;</sup>
+--> 
  out of a fire hose at a constant velocity <i>v</i>.
  We can write (4.5) as :
 </p>
@@ -300,10 +328,16 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>F</mi>  <mspace/> <mo> = </mo> <mspace/>
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mo>.</mo> 
-    <mi>v</mi>
+   <mi>F</mi>
+
+   <mspace/> <mo> = </mo> <mspace/>
+   
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   <mo>.</mo> 
+   <mi>v</mi>
 </math>
 
 <td class="eqn">                                            (4.6)
@@ -319,7 +353,7 @@ The mechanism applies equally to air.
  Newton</span>'s law for the propeller.
 </p>
 <p> &emsp;
- Let us say that each second an air mass <i>m</i><sup>&#9679;</sup>
+ Let us say that each second an air mass <i>m</i><sup>&bull;</sup>
  flows through the prop disk.
  From figure 4.1, this mass gets
  a velocity increase from <i>V</i> to <i>V</i>+<i>w</i>, 
@@ -336,11 +370,20 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mi>T</mi> 
+
+   <mspace/> <mo> = </mo> <mspace/>
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
     <mo>.</mo> 
+
     <mi>w</mi>
 </math>
+</td>
 
 <td class="eqn">                                           (4.7)
 </td> </tr> </table>
@@ -354,13 +397,21 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mi>T</mi>  <mspace/> <mo> = </mo> <mspace/>
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mo>.</mo> 
-    <mi>b</mi>
-    <mo>.</mo> 
-    <mi>V</mi>
+   <mi>T</mi>
+
+   <mspace/> <mo> = </mo> <mspace/>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
+   <mo>.</mo> 
+   
+   <mi>b</mi>
+   <mo>.</mo> 
+   <mi>V</mi>
 </math>
+</td>
 
 <td class="eqn">                                           (4.8)
 </td> </tr> </table>
@@ -379,27 +430,45 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>P</mi>  <mn>net</n> </msub>
-    <mspace/> <mo>=</mo> <mspace/>
-    <mi>T</mi>
-    <mo>.</mo> 
-    <mi>V</mi>
+   <msub>
+      <mi>P</mi>
+      <mn>net</mn>
+   </msub>
+   
+   <mspace/> <mo>=</mo> <mspace/>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mi>T</mi>
+   <mo>.</mo> 
+   <mi>V</mi>
 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mo>.</mo> 
-    <mi>w</mi>
-    <mo>.</mo> 
-    <mi>V</mi>
+   <mo>&nbsp;=&nbsp;</mo>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
+   <mo>.</mo> 
+   
+   <mi>w</mi>
+   <mo>.</mo> 
+   <mi>V</mi>
 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mo>.</mo> 
-    <mi>b</mi>
-    <mo>.</mo> 
-    <msup> <mi>V</mi> <mn>2</mn> </msup>
+   <mo>&nbsp;=&nbsp;</mo>
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+
+   <mo>.</mo> 
+
+   <mi>b</mi>
+   <mo>.</mo> 
+   <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
 
 </math>
 
@@ -418,22 +487,42 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>P</mi>  <mn>gross</n> </msub>
-    <mspace/> <mo>=</mo> <mspace/>
-    <mi>T</mi>
-    <mo>.</mo> 
-    <mn>(</mn> <mi>V</mi> <mo>+</mo> <mi>v</mi> <mn>)</mn>
+   <msub>
+      <mi>P</mi>
+      <mn>gross</mn>
+   </msub>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mspace/> <mo>=</mo> <mspace/>
 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-    <mo>.</mo> 
-    <mi>b</mi>
-    <mo>.</mo> 
-    <msup> <mi>V</mi> <mn>2</mn> </msup>
-    <mo>.</mo> 
-    <mn>(&hairsp;</mn> <mi>1</mi> <mo>+</mo> 
-       <mi>a</mi> <mn>&hairsp;)</mn>
+   <mi>T</mi>
+   <mo>.</mo>
+   
+   <mn>(</mn>
+      <mi>V</mi>
+      <mo>+</mo>
+      <mi>v</mi>
+   <mn>)</mn>
+
+   <mo>&nbsp;=&nbsp;</mo>
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+
+   <mo>.</mo> 
+   <mi>b</mi>
+   <mo>.</mo> 
+   <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
+   <mo>.</mo> 
+   <mn>(&hairsp;</mn>
+      <mi>1</mi>
+      <mo>+</mo> 
+      <mi>a</mi>
+   <mn>&hairsp;)</mn>
 
 </math>
 
@@ -450,22 +539,41 @@ The mechanism applies equally to air.
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>P</mi>  <mn>m</n> </msub>
+   <msub>
+      <mi>P</mi>
+      <mn>m</mn>
+   </msub>
 
-    <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-    <msub> <mi>P</mi>  <mn>gross</n> </msub>
-    <mo>-&hairsp;</mo>
-    <msub> <mi>P</mi>  <mn>net</n> </msub>
+   <msub>
+      <mi>P</mi>
+      <mn>gross</mn>
+   </msub>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mo>-&hairsp;</mo>
+   
+   <msub>
+      <mi>P</mi>
+      <mn>net</mn>
+   </msub>
 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mo>&nbsp;=&nbsp;</mo>
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
     <mo>.</mo> 
+
     <mi>b</mi>
     <mo>.</mo> 
-    <msup> <mi>V</mi> <mn>2</mn> </msup>
-    <mo>.</mo> <mi>a</mi>
+    <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
+   <mo>.</mo> <mi>a</mi>
 </math>
 
 <td class="eqn">                                          (4.11)
@@ -490,26 +598,47 @@ is not the total momentum power,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mfrac>
-    <msub> <mi>P</mi> <mn>m</mn> </msub>
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <msub>
+         <mi>P</mi>
+         <mn>m</mn>
+      </msub>
+      <mrow>
+         <mi>T</mi> <mo>.</mo> <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mfrac>
-    <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo> 
-      <mi>b</mi>
-      <mo>.</mo> 
-      <msup> <mi>V</mi> <mn>2</mn> </msup>
-    </mrow>
-      <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo> 
-      <mi>b</mi>
-      <mo>.</mo> 
-      <msup> <mi>V</mi> <mn>2</mn> </msup>
+   <mfrac>
+      <mrow>
+         <mover>
+            <mi>m</mi>
+            <mn>&bull;</mn>
+         </mover>
+
+         <mo>.</mo> 
+
+         <mi>b</mi>
+         <mo>.</mo> 
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+      
+      <mrow>
+         <mover>
+            <mi>m</mi>
+            <mn>&bull;</mn>
+         </mover>
+         <mo>.</mo> 
+         <mi>b</mi>
+         <mo>.</mo> 
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
    </mrow>
   </mfrac> 
   <mo>&nbsp;.</mo> <mi>a</mi>
@@ -530,17 +659,23 @@ is not the total momentum power,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mfrac>
-   <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
-                    </mi>  <mi>v </mi>
-          </msub> 
-  </mrow>
-   <mrow> <mi>T</mi> <mi>&prime;</mi>          </mrow>
-  </mfrac>
+   <mfrac>
+      <msub> 
+         <mover>
+            <mi>P</mi>
+            <mn>&Hat;</mn>
+         </mover>            
+         <mn>v</mn>
+      </msub> 
+      <mover>
+         <mi>T</mi>
+         <mn>&Hat;</mn>
+      </mover>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>a</mi>
+   <mi>a</mi>
 
 </math>
 
@@ -553,8 +688,6 @@ is not the total momentum power,
  and the gross input power. 
  It does not depend on the mass flow,
  only on the  induction ratio <i>a</i>.
-</p>
-<p>&emsp;
  From (3.10), the momentum efficiency at the prop disk is :
 </p>
 
@@ -591,9 +724,13 @@ The wake velocity
 The propeller leaves behind a velocity <i>w</i>, 
  and therefore also a kinetic energy,
  in the atmosphere. The equation for kinetic energy is 
- &frac12<i>m v</i><sup>2</sup> ,
+ &frac12<i>&thinsp;v</i><sup>2</sup> ,
  but in this case the velocity is <i>w</i>, and the mass is
- <i>m</i><sup>&#9679;</sup>  per second.
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+<!--
+ <i>m</i><sup>&#9679;</sup>
+ --> per second.
 </p>
 <p>&emsp;
   Energy per second is the definition of a power,
@@ -604,24 +741,51 @@ The propeller leaves behind a velocity <i>w</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <msub> <mi>P</mi>  <mn>m</n> </msub>
-    <mspace/> <mo>=</mo> <mspace/>
+   <msub>
+      <mi>P</mi>
+      <mn>m</n>
+   </msub>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mspace/> <mo>=</mo> <mspace/>
 
-    <mn>&frac12&nbsp;</mn> 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mo>&nbsp;=&nbsp;</mo>
+
+   <mn>&frac12&nbsp;</mn> 
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
     <mo>.</mo> 
-    <msup> <mi>w</mi> <mn>2</mn> </msup>
+    
+    <msup>
+      <mi>w</mi>
+      <mn>2</mn>
+   </msup>
 
-    <mo>&nbsp;=&nbsp;</mo>
+   <mo>&nbsp;=&nbsp;</mo>
 
-    <mn>&frac12&nbsp;</mn> 
-    <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mn>&frac12&nbsp;</mn> 
+
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   
     <mo>.</mo> 
-    <msup> <mi>b</mi> <mn>2</mn> </msup>
-    <mo>.</mo> 
-    <msup> <mi>V</mi> <mn>2</mn> </msup>
+    
+    <msup>
+      <mi>b</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mo>.</mo> 
+
+   <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
 
 </math>
 
@@ -636,44 +800,74 @@ The propeller leaves behind a velocity <i>w</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mfrac>
-    <msub> <mi>P</mi> <mn>m</mn> </msub>
-    <mrow> <mi>T</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <msub>
+         <mi>P</mi>
+         <mn>m</mn>
+      </msub>
+      <mrow>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mfrac>
-    <mrow> 
-      <mn>&frac12&nbsp;</mn> 
-      <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo> 
-      <msup> <mi>b</mi> <mn>2</mn> </msup>
-      <mo>.</mo> 
-      <msup> <mi>V</mi> <mn>2</mn> </msup>
-    </mrow>
-      <mrow> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-      <mo>.</mo> 
+   <mfrac>
+      <mrow> 
+         <mn>&frac12&nbsp;</mn> 
+         <mover>
+            <mi>m</mi>
+            <mn>&bull;</mn>
+         </mover>
+         
+         <mo>.</mo> 
+      
+         <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+         </msup>
+      
+         <mo>.</mo> 
+      
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+      
+      <mrow>
+         <mover>
+            <mi>m</mi>
+            <mn>&bull;</mn>
+         </mover>
+         <mo>.</mo> 
+         <mi>b</mi>
+         <mo>.</mo> 
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac> 
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mfrac>
+      <mrow> 
+         <mn>&frac12&nbsp;</mn> 
+         <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
       <mi>b</mi>
-      <mo>.</mo> 
-      <msup> <mi>V</mi> <mn>2</mn> </msup>
-   </mrow>
-  </mfrac> 
-
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <mfrac>
-    <mrow> 
-      <mn>&frac12&nbsp;</mn> 
-      <msup> <mi>b</mi> <mn>2</mn> </msup>
-   </mrow>
-      <mi>b</mi>
-  </mfrac>
+   </mfrac>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mi>b</mi>
+   <mi>b</mi>
 
 </math>
 
@@ -681,7 +875,12 @@ The propeller leaves behind a velocity <i>w</i>,
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The mass flow <i>m</i><sup>&#9679;</sup>
+<p> The mass flow
+   <span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>
+   <!--
+ <i>m</i><sup>&#9679;</sup>
+--> 
   drops out of this ratio like it did in (4.12).
  Once again, the efficiency does not depend on the mass flow. 
  This time it only depends on the far wake induction ratio <i>b</i>.
@@ -691,17 +890,25 @@ The propeller leaves behind a velocity <i>w</i>,
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"> <tr> <td>
 <math>
-  <mfrac>
-   <mrow> <msub> <mrow> <mi>P</mi> <mi>&prime; </mrow>
-                    </mi>  <mi>m </mi>
-          </msub> 
-  </mrow>
-   <mrow> <mi>T</mi> <mi>&prime;</mi>          </mrow>
-  </mfrac>
+   <mfrac>
+      <msub>
+         <mover>
+            <mi>P</mi>
+            <mn>&hat;</mn>
+         </mover>            
+         </mn>m</mn>
+      </msubsup> 
 
-  <mspace/> <mo>=</mo> <mspace/>
+      <mover>
+         <mi>T</mi>
+         <mn>&Hat;</mi>
+      </mover>
+   </mfrac>
 
-  <mn>&frac12&nbsp;</mn> <mi>b</mi>
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mn>&frac12&nbsp;</mn>
+   <mi>b</mi>
 
 </math>
 

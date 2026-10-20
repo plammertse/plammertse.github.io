@@ -53,7 +53,10 @@ p {
 
 a {
    color     : mediumblue;
+/* text-underline-offset : 0.15em;  */
    text-underline-offset : 0.2em;
+   font-size  : 15.8px;  
+/*   vertical-align : 0.02em;  */
 }
 
 /* line spacing + indent for header         */
@@ -173,9 +176,10 @@ input[type=number] {
 
 /* whole page wrapped in table for header trick    */
 /* The 864px equals 800px plus two 32px margins    */
-/* inherited from <body>                           */
+/* and justify *not* inherited from <body>  ???    */
 table {
-   width       : min( 100%, 864px);
+   width      : min( 100%, 864px);
+   text-align : justify;
    /* background-color : silver; */        /* test */
 }
 
@@ -253,6 +257,7 @@ td {
    /* with padding, don't add spaces between the brackets */
    padding-left     : 3px;
    padding-right    : 3px;
+   font-size        : 15.6px;  */     /* test, it does work */
 }
 
 /* Use in a <div> around figures. It has margin above */
@@ -283,6 +288,72 @@ td {
    /* manipulate the variable to display all draft text and menus :  */   
    display    : var(--show-draft);
    max-width  : 832px;
+}
+
+/* Use on letter to put diacritical over, like &bull; or &Hat; . */
+.hat-anchor {
+   position : relative;
+   display  : inline-block;
+}
+
+/* Variant for inline capitals like P^.                */
+/* Increases the top margin to prevent interference    */
+/*  between circumflex and line above.                 */
+/* Slightly drops the letter so the line spacing       */
+/*  does not grow too much                             */
+.hat-anchor-capital {
+   position   : relative;
+   display    : inline-block;
+   bottom     : -0.5px;
+   margin-top : 4px;
+}
+
+
+/* Use on diacritical like &Hat; */
+.hat {   
+  	position  : absolute;         /* relative to anchor letter         */
+   left      : 65%;              /* shift anchor position over letter */
+                                 /* to right of middle for italics    */
+   top       : -0.5em;           /* shift diacritical up              */
+	transform : translateX(-50%); /* shift diacritical middle left     */
+}
+
+/* Use this instead of .hat class for a bigger tilde */
+.tilde {   
+  	position  : absolute;         /* relative to anchor letter         */
+   left      : 65%;              /* shift anchor position over letter */
+                                 /* to right of middle for italics    */
+   top       : -0.33em;          /* shift diacritical up              */
+	transform : translateX(-50%); /* shift diacritical middle left     */
+   font-size : 22px;             /* make tilde bigger                 */
+}
+
+/* Use this instead of .hat class on &minus; for lower overbar ("mean")  */
+.bar {   
+  	position  : absolute;         /* relative to anchor letter         */
+   left      : 65%;              /* shift anchor position over letter */
+                                 /* to right of middle for italics    */
+   top       : -0.4em;           /* shift diacritical up              */
+	transform : translateX(-50%); /* shift diacritical middle left     */
+/*   font-size : 22px;  */       /* &minus; sign is big enough        */
+}
+
+/* Use this class in a span to make the hamburger sign equally spaced */
+.equiv {
+   font-family : 'Cambria Math', 'Segoe UI Symbol', sans-serif;
+/* looks like these are not needed with Cambria Math : */
+/*
+   text-rendering : geometricPrecision;
+   -webkit-font-smoothing : antialiased;
+*/   
+   /* anti-aliased smoothes out the subpixel calculation */
+}
+
+/* This does not work yet from CSS (for diacriticals) : */
+mover > mo {
+   font-size:"150%";
+   movablelimits : "false";
+   font-style:"normal";
 }
 
 button {

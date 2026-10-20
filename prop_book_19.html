@@ -75,20 +75,22 @@
    width = "50%";
      alt = "Tip sketch Prandtl"; >
 </div>
-<div class = "center">
+
+<div class = "caption" style="margin-top:12px"">
 <p> <i> Figure 18.1 : &ensp;
      Typical
    <span style="font-variant: small-caps;">Prandtl</span>
  mass flow reduction F(x). </i> </p>
 </div>
 
-<p>&emsp;
- Figure 12.4 showed
+<p>
+ Figure 
+ <a  href="prop_book_13.html#F13.4">12.4</a> showed
  <span style="font-variant: small-caps;">Betz</span>'s
  <span style="font-variant: small-caps;">Archimedes</span>
- screw wake from figure 12.2,
- slowly translating and rotating.
- The spiral sheets are in actual fact
+ screw wake slowly translating and rotating,
+ because the&nbsp;spiral sheets are like "scars"
+ left in the air,
  drifting backward with the induced flow.
  It was
  <span style="font-variant: small-caps;">Prandtl</span>'s
@@ -121,7 +123,8 @@
  in figure 12.3. 
 </p>
 <p>&emsp;
-The disks move to the rear with the induction velocity v',
+The disks move to the rear with the induction velocity 
+<i>v</i>&prime;,
   and they take the air with them,
  except around the edges.
  Some air is pushed to the side and circles back,
@@ -130,12 +133,12 @@ The disks move to the rear with the induction velocity v',
 </p>
 <p>&emsp;
  <span style="font-variant: small-caps;">Prandtl</span>
- further simplified this model by making it 2D.
+ further simplified this model by making it 2&hairsp;D.
  He made the edges into straight lines,
  like the straight fins of a heat sink.
  He then inverted cause and effect again,
  by considering the case where the fins are stationary,
- and the air flows by them at the velocity v'.
+ and the air flows by them at the velocity <i>v</i>&thinsp;&prime;.
  The relative motion is still the same,
  and the flow pattern does not change.
 </p>
@@ -152,34 +155,35 @@ From potential theory,
  when this system is
  instantaneously set in motion.
  A force impulse creating a step in the velocity
- is the equivalent of a force of some duration
+ is the equiv&shyalent of a force of some duration
  creating an acceleration for some time.
  In both cases, the ratio is a mass.
 </p>
 <p>&emsp; The outcome is an estimate
- for the “exact” mass coefficient K (x)
+ for the “exact” mass coefficient 
+ <i>K</i>&thinsp;(<i>x</i>)
  of (17.2),
  at least for the tip regions of this simple model.
 </p>
 
-<p><i> TODO LATER &emsp;&emsp;&emsp; 
+<div class="draft">
+<p> TODO LATER &emsp;&emsp;&emsp; 
  Make a better story on the potential theory,
  maybe from the current previous chapter,
  or an older/later version of the printed book.
-</i>
 </p>
 
-<p><i> TODO LATER &emsp;&emsp;&emsp; 
+<p> TODO LATER &emsp;&emsp;&emsp; 
 Emphasize once more the difference
  between induction and mass flow.
-And it's much better than a vortex model.
+And it's much better than a siongel tip vortex model.
  Betz's
  helical wake sheet is much more similar
  to the constant downflow wing model,
- than the isolated tip vo3tex is.
+ than the isolated tip vortex is.
  Refer to section **** on vortex methods.
-</i>
 </p>
+</div>
 
 <div class ="center">
 <img src = "images/prop_prandtl_disk_skewer.gif";
@@ -208,71 +212,66 @@ And it's much better than a vortex model.
 <p> <span style="font-variant: small-caps;">Prandtl</span>'s
  approximate solution for <i>K</i>&hairsp;(<i>x</i>)
  is traditionally denoted by
- <i>K</i>&hairsp;(<i>x</i>).
+ <i>F</i>&hairsp;(<i>x</i>).
 </p>
-<p> <i>
-The Notes section discusses the shape, and
+
+<div class="draft">
+<p>
+TODO &emsp; Discuss the shape, and
   <span style="font-variant: small-caps;">Prandtl</span>'s
  derivation of it in some more detail.
-</i>
 </p>
+</div>
+
 <p>&emsp;
- Figure 19.1 gives y as the distance from the tip,
- and s as the spacing between the tips.
- With this definition, PRANDTL's equation reads :
+ Figure 19.1 gives <i>y</i> as the distance from the tip,
+ and <i>s</i> as the spacing between the tips.
+ With this definition,
+<span style="font-variant: small-caps;">Prandtl</span>'s
+ equation reads&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>F</mi>
-  <mn>&hairsp;(</mn> <mi>y</mi> <mn>)</mn>
+   <mi>F</mi>
+   <mn>&thinsp;(</mn>
+      <mi>y</mi>
+   <mn>)</mn>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>2</mn>
-    <mn>&pi;</mn>
-  </mfrac>
- 
-  <mo> . </mo>
-
-  <mn>acos&thinsp;</mn>
-  <mn>(</mn>
-<!--
-    <msup> <mo>e</mo> 
-      <mrow>
-        <mo>&minus;</mo> <mn>&pi;</mn>
-        <mstyle displaystyle="true">
-        <mfrac>  
-           <mi>y</mi>
-           <mi>s</mi>
-       </mfrac>
-     </mrow>
-    </msup>
--->
-    <mn>&thinsp;exp</mn>
-    <mn>&thinsp;(&thinsp;</mn>
-      <mn>&minus;</mn>
+   <mfrac>
+      <mn>2</mn>
       <mn>&pi;</mn>
-      <mo>.</mo> 
-      <mstyle displaystyle="true">
-      <mfrac>  
-        <mi>y</mi>
-        <mi>s</mi>
-     </mfrac>
-    <mn> &thinsp; )</mn>
+   </mfrac>
+ 
+   <mo> . </mo>
 
-  <mn>&thinsp;)</mn>
+   <mo>acos</mo>
+   
+   <mo maxsize="32px">(</mo>
 
+      <msup> 
+         <mo>e</mo> 
+         <mrow  style="font-size:100%">
+            <mn>&minus; &hairsp;</mn>
+            <mn>&pi;</mn>
+            <mo> . </mo>
+            <mfrac displaystyle="true" >  
+               <mi>y</mi>
+               <mi>s</mi>
+            </mfrac>
+         </mrow>
+         </msup>
+   <mo maxsize="32px">)</mo>
 </math>
 
-<td style="width:50px; text-align:right">                 (19.1)
+<td class="eqn">                 (19.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> As expected, <i>F</i>&hairsp;(<i>y</i>)
+<p> As should have been expected, this <i>F</i>&hairsp;(<i>y</i>)
  is zero at the outer edges of the fins.
  All of the air bypasses the fins there.
  Evaluating the equation at <i>y</i>&nbsp;=&nbsp;0 
@@ -281,18 +280,19 @@ The Notes section discusses the shape, and
  so <i>F</i>&hairsp;(<i>y</i>)&nbsp;=&nbsp;0.
 </p>
 <p>&emsp;
- Deep inside the fins, <i>F</i>&hairsp;(<i>y</i> becomes 1
+ Deep inside the fins, <i>F</i>&hairsp;(<i>y</i>) becomes
+ exp&hairsp;(&minus;&infin;)&nbsp;&rarr;&nbsp;1
  for <i>y</i>&nbsp;&rarr;&nbsp;&infin;.
  All of the air is trapped there.
  The equation gives exp&hairsp;(&minus;&infin;)&nbsp;=&nbsp;0
  and acos&hairsp;(0)&nbsp;=&nbsp;&frac12;&pi;,
- so <i>F</i>&hairsp;(<i>y</i>&nbsp;=&nbsp;1.
+ so <i>F</i>&hairsp;(<i>y</i>)&nbsp;=&nbsp;1.
 </p>
 <p>&emsp;
  In between these extremes, 
  <span style="font-variant: small-caps;">Prandtl</span>'s
   tip shape is remarkably similar 
- to a quarter circle with radius  s.
+ to a quarter circle with radius <i>s</i>.
  Figure 19.2 compares the two shapes.
  The figure confirms the strong
  family likeness between the elliptical
@@ -350,48 +350,52 @@ The Notes section discusses the shape, and
    The non-dimensional spacing between the tip spirals. </i> </p>
  </div>
 
-
 <p> Figure 19.3 shows the "unrolled" outer surface
  of the original, smooth flow tube
  in non-dimensional units.
- All lengths are divided by the unit distance
- <i>U</i> of (2.9).
+ All&nbsp;lengths are divided by the unit distance
+ <i>V</i>&nbsp;&frasl;&nbsp;<i>&Omega;</i> of 
+ (<a href="prop_book_02.html#(2.9)">2.9</a>).
 </p>
-<i>
-<p> The radius of the propeller is <i>X</i>,
+<p> &emsp;
+ The non-dimensional radius of the propeller is <i>X</i>,
  and the circumference of the flow tube is
  2&hairsp;&pi;&hairsp;<i>X</i>.
- By figure 2.4,  this makes the non-dimensional tip pitch
+ By figure 2.4, this makes the non-dimensional tip pitch
  2&hairsp;&pi;.
  In a propeller with <i>B</i> blades,
  the tip spirals are spaced in the axial direction
- by the non-dimensional distance <i>s</i>&hairsp;&prime; :
+ by the non-dimensional distance
+   <span class="hat-anchor"> <i>s</i>    
+	<span class="tilde"
+   style="top:-0.12em; font-size:22px;">&tilde;</span> </span>&nbsp;:
 </p>
-</i>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>s</mi> <mn>&hairsp;&prime;</mn>
- 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mover>
+      <mi>s</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+   
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mn>2&hairsp;&pi;</mn>
+      <mi>B</mi>
+   </mfrac>
  </math>
  </td>
 
- <td style="width:50px; text-align:right">               (19.2)
+ <td class="eqn">               (19.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> From the figure,
  the orthogonal distance between the sheets
  is shorter than  the axial one by a factor of
- cos<i>&hairsp;&phi;</i><sub>tip</sub>.
+ cos<i>&hairsp;&phi;</i><sub>&thinsp;tip</sub>.
  With (2.5) for the cosine, we have :
 </p>
 
@@ -399,114 +403,214 @@ The Notes section discusses the shape, and
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>s</mi>
+   <mi>s</mi>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mn>2&hairsp;&pi;</mn>
+      <mi>B</mi>
+   </mfrac>
 
-  <mo>&hairsp;.&hairsp;</mo>
+   <mo>&hairsp;.&hairsp;</mo>
 
-  <mn>cos&thinsp;</mn>
-  <msub> <mi>&phi;</mi> <mn>tip</msub>
+   <mn>cos&thinsp;</mn>
+   <msub>
+      <mi>&phi;</mi>
+      <mn>tip</mn>
+   </msub>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mrow> <mn>2&hairsp;&pi;</mn> </mrow>
+      <mi>B</mi>
+   </mfrac>
 
-  <mo>&hairsp;.&hairsp;</mo>
+   <mo>&hairsp;.&hairsp;</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>X</mi>
-    <mrow> <msqrt> <mn>1 + </mn> 
-       <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mfrac>
+   <mfrac>
+      <mi>X</mi>
+      <msqrt>
+         <mn>1 + </mn> 
+         <msup>
+            <mi>X</mi>
+               <mn>2</mn>
+         </msup>
+      </msqrt>
+   </mfrac>
 
  </math>
  </td>
 
- <td style="width:50px; text-align:right">               (19.3)
+ <td class="eqn">               (19.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>&emsp;
+<p>
  <span style="font-variant: small-caps;">Prandtl</span>
  based his model on this orthogonal sheet spacing,
- but in fact his function fits
- the exact vortex solution better
- if we use the axial spacing s' instead.
-</p>
-<p>&emsp;
+  and we can see why in his model of parallel layers
+  this is "the right thing to do".
+  But the exact vortex solution in a later chapter will show
+  that in fact his function fits the actual flow better
+ if we use the axial spacing
+   <span class="hat-anchor"> <i>s</i>    
+	<span class="tilde"
+   style="top:-0.12em; font-size:22px;">&tilde;</span> </span>&nbsp;:
+   instead.
  As a side benefit, this simplifies the equations.
+ </p>
+ <p> &emsp;
  To distinguish between the two versions of <i>s</i>,
- we will use the notation <i>F</i>&hairsp;&prime;(<i>x</i>)
- (&hairsp;with a prime&hairsp;)
+ we will use the notation
+   <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde";
+   style="font-size:22px">&tilde;</span></span>&nbsp;(<i>x</i>)
+ (&hairsp;with a circumflex&hairsp;)
  for the version of <i>F</i> which uses
- the axial spacing of (19.2).
+ the axial spacing (19.2).
 </p>
 <p>&emsp;
  Note (&hairsp;<i>X &minus; x</i>&hairsp;)
  is the distance from the tip at <i>X</i>,
  measured on the scale of
-  <i>x</i>&nbsp;&equiv;&nbsp;<i>&Omega;&hairsp;r / V</i>.
+  <i>x</i>&nbsp;&equiv;&nbsp;<i>&Omega;&hairsp;r</i>&nbsp;&frasl;&nbsp;<i>V</i>.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr>
  <td style = "padding: 4px 0px;">
 <math>
-  <mi>F</mi> <mn>&hairsp;&prime;</mn>
-  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn>
+   <mover>
+      <mi>F</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>2</mn>
-    <mn>&pi;</mn>
-  </mfrac>
- 
-  <mo> . </mo>
-
-  <mn>acos&thinsp;</mn>
-  <mn>(</mn>
-    <mn>&thinsp;exp</mn>
-    <mn>&thinsp;(&thinsp;</mn>
-      <mn>&minus;</mn>
+   <mfrac>
+      <mn>2</mn>
       <mn>&pi;</mn>
-      <mo>.</mo> 
-      <mstyle displaystyle="true">
-      <mfrac>  
-        <mrow>
-           <mi>X</mi> <mn>&minus;</mn> <mi>x</mi>
-       </mrow>
-       <mrow>
-         <mi>s</mi> <mn>&hairsp;&prime;</mn>
-       </mrow>
-     </mfrac>
-    <mn> &thinsp; )</mn>
+   </mfrac>
+ 
+   <mo> . </mo>
 
-  <mn>&thinsp;)</mn>
+   <mn>acos&thinsp;</mn>
+   
+   <mo maxsize="32px">(</mo>
+
+   <msup> 
+      <mo>e</mo> 
+         <mrow  style="font-size:100%">
+            <mn>&minus; &hairsp;</mn>
+            <mn>&pi;</mn>
+            <mo> . </mo>
+            <mfrac displaystyle="true">  
+            <mrow>
+                     <mi>X</mi>
+                  <mn>&minus;</mn>
+                  <mi>x</mi>
+               </mrow>
+               <mover>
+                  <mi>s</mi>
+                  <mn mathsize="130%">&tilde;</mn>
+               </mover>
+            </mfrac>
+         </mrow>
+      </msup>
+   <mo maxsize="32px">)</mo>
+
+<!--   
+   <mn>(</mn>
+      <mn>&thinsp;exp</mn>
+      <mn>&thinsp;(&thinsp;</mn>
+         <mn>&minus;</mn>
+         <mn>&pi;</mn>
+         <mo>.</mo> 
+         <mstyle displaystyle="true">
+         <mfrac>  
+            <mrow>
+               <mi>X</mi>
+               <mn>&minus;</mn>
+               <mi>x</mi>
+            </mrow>
+            <mrow>
+               <mi>s</mi>
+               <mn>&hairsp;&prime;</mn>
+            </mrow>
+         </mfrac>
+      <mn> &thinsp; )</mn>
+
+   <mn>&thinsp;)</mn>
+-->
 
 </math>
 
-<td style="width:50px; text-align:right">                 (19.4)
+<td class="eqn">                 (19.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> TBW</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr>
+ <td style = "padding: 4px 0px;">
+<math>
+   <mover>
+      <mi>F</mi>
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
+ 
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>2</mn>
+      <mn>&pi;</mn>
+   </mfrac>
+ 
+   <mo> . </mo>
+
+   <mn>acos&thinsp;</mn>
+   
+   <mo maxsize="32px">(</mo>
+
+   <msup> 
+      <mo>e</mo> 
+      <mrow  style="font-size:100%">
+         <mn>&minus; &hairsp;</mn>
+         <mn>&frac12;&thinsp;</mn>
+         <mi>B</mi>
+         <mo>.</mo>
+         <mn>(</mn>  
+            <mi>X</mi>
+            <mn>&minus;</mn>
+            <mi>x</mi>
+         <mn>)</mn>
+      </msup>
+   <mo maxsize="32px">)</mo>
+
+</math>
+
+<td class="eqn">                                         (19.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> This, then is our simplified and improved version of
  <span style="font-variant: small-caps;">Prandtl</span>'s
- approximation for the mass flow factor
- <i>K</i>&hairsp;(<i>x</i>). 
+ classical tip factor <i>F</i>&hairsp;(<i>x</i>). 
 </p>
 
 <!-- SECTION 19.6 --------------------------------------------->
@@ -517,7 +621,9 @@ The Notes section discusses the shape, and
 
 <p>
 Figure 19.4  gave the factor 
-<i>F</i>&hairsp;&prime;(<i>x</i>)
+   <span class="hat-anchor-capital"> <i>F</i>    
+	<span class="tilde";
+         style="font-size : 22px;">&tilde;</span></span>&thinsp;(<i>x</i>)
  scaled to our standard example of <i>X</i>&thinsp;=&thinsp;5,
   for two blades.
 </p>
@@ -562,9 +668,10 @@ and <i>B</i>&thinsp;=&thinsp;2
 <h4> 19.4 &emsp; The equivalent cropped tip                </h4>
 
 <p> Using (19.2), we can redraw figure 19.2
- on the non-dimensional x scale.
+ on the non-dimensional <i>x</i> scale.
  The tip shape will now start at a distance of
- ( X - x ) = 2π/B from the tip.
+ (&nbsp;<i>X</i> - <i>x</i>&nbsp;) =
+ 2&hairsp;&pi;&nbsp;&frasl;&nbsp;<i>B</i> from the tip.
 </p>
 
 <div class = "center">
@@ -581,22 +688,30 @@ and <i>B</i>&thinsp;=&thinsp;2
 
 <p>&emsp;
  Figure 19.4 shows the result.
- The plot runs from ( X - x ) = 0 at the right
- to 10<i>&thinsp;/&thinsp;B</i> on the left.
+ The plot runs from
+ (&hairsp;<i>X</i>&thinsp;&minus;&thinsp;<i>x</i>&hairsp;)&nbsp;=&nbsp;0
+ at the right
+ to 10<i>&nbsp;&frasl;&nbsp;B</i> on the left.
 </p>
 <p> Taken from left to right, this equals
  from <i>x</i>&nbsp;=&nbsp;0 at the root
- to X&nbsp;=&nbsp;5 at the tip for pur running
+ to <i>X</i>&nbsp;=&nbsp;5 at the tip for our running
  example of a two bladed propeller with a tip
 speed ratio of 5.
 </p>
 <p>&emsp;
- This makes it a plot of  F' (x) for our standard
- running example of B = 2, X = 5.
+ This makes it a plot of 
+    <span class="hat-anchor"><i>F</i> 
+	<span class="tilde">&tilde;</span> </span>.
+ (<i>x</i>) for our standard
+ running example of <i>B</i>&nbsp;=&nbsp;2,
+ <i>X</i>&nbsp;=&nbsp;5.
  The tip shape starts from
- (&iarsp;<i>X</i>&minus;<i>x</i>&hairsp;)
- = 2&hairsp;&pi;&&nbsp;<i>/</i>&nbsp;2,
- i.e. from r/R = ( 1 - π ) / X,
+ (&hairsp;<i>X</i>&minus;<i>x</i>&hairsp;)
+ = 2&hairsp;&pi;&nbsp;<i>/</i>&nbsp;2,
+ i.e. from
+ <i>r</i>&nbsp;&frasl;&nbsp;<i>R</i>&nbsp;=
+ (&hairsp;1 - &pi; )&nbsp;&frasl;&nbsp;<i>X</i>,
  or in other words from 
  <i>r</i>&nbsp;&cong;&nbsp;0.4&hairsp;<i>R</i>.
  The "tip" therefore extends
@@ -610,103 +725,121 @@ speed ratio of 5.
  noted that the blade tip can be replaced
  by a blade of full width,
  clipped off straight at a reduced diameter.
- The figure shows the cropping length &Delta;<i>X</i> 
+ The figure shows the cropping length
+ &Delta;&hairsp;<span class="hat-anchor-capital"><i>X</i> 
+	<span class="tilde";
+         style="font-size:22px">&tilde;</span></span>, 
  which gives the same equivalent area loss as
   <span style="font-variant: small-caps;">Prandtl</span>'s
  tip shape.
- It is the following fraction of  (19.2)  : 
+ It is the following fraction of (19.2)  : 
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>&Delta;</mn> <mi>X</mi> 
+   <mn>&Delta;&hairsp;</mn>
+   <mover>
+      <mi>X</mi> 
+      <mn mathsize="130%">&tilde;</mn>
+   </mover>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>ln&thinsp;2</mn>
-    <mn>&pi;</mn>
-  </mfrac>
+   <mfrac>
+      <mn>ln&thinsp;2</mn>
+      <mn>&pi;</mn>
+   </mfrac>
 
-  <mo> . </mo>
-  <mi>s</mi>
+   <mo> . </mo>
+   <mi>s</mi>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
-  <mn>0.22&thinsp;</mn>
-  <mi>s</mi>
+   <mn>0.22&thinsp;</mn>
+   <mi>s</mi>
 
  </math>
  </td>
 
- <td style="width:50px; text-align:right">               (19.5)
+ <td class="eqn">                                        (19.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>&emsp;
-The function value of <i>F</i>(<i>x</i>)
- at the cropping radius is
+The function value of <i>F</i>&hairsp;(<i>x</i>)
+ at the cropping radius is &frac23;.
+ <!--
  <sup>2</sup><i>/</i><sub>3</sub>. 
+ -->
 </p>
 <p>&emsp;
  The ellipse approximation gives
  almost the same area reduction,
  since the  area loss of a quarter circle shape equals
- 1&nbsp;&minus;&nbsp;&frac14;&pi;&nbsp&cong;&nbsp;0.215,
+ 1&nbsp;&minus;&nbsp;&frac14;&pi;&nbsp;&cong;&nbsp;0.215,
  which is almost identical to 0.22.
 </p>
 <p>&emsp;
- With <i>s</i>&hairsp;&prime;&nbsp;&cong;
- &nbsp;2&hairsp;&pi;<i>&thinp;/&thinsp;B</i>,
+ With 
+ 
+ <i>s</i>&hairsp;&prime;
+ 
+ 
+ &nbsp;&cong;
+ &nbsp;2&hairsp;&pi;<i>&nbsp;&frasl;&nbsp;B</i>,
   the cropping distance on the <i>x</i> scale becomes :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>X</mi> 
+   <mi>X</mi> 
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>ln&thinsp;2</mn>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mn>ln&thinsp;2</mn>
+      <mi>B</mi>
+   </mfrac>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>2&hairsp;&pi;</mn>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mn>2&hairsp;&pi;</mn>
+      <mi>B</mi>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>2&thinsp;.&thinsp;ln&thinsp;2</mn>
-    <mn>&pi;</mn>
-  </mfrac>
+   <mfrac>
+      <mn>2&thinsp;.&thinsp;ln&thinsp;2</mn>
+      <mn>&pi;</mn>
+   </mfrac>
 
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1.4</mn>
-    <mi>B</mi>
-  </mfrac>
+   <mfrac>
+      <mn>1.4</mn>
+      <mi>B</mi>
+   </mfrac>
 
  </math>
  </td>
 
- <td style="width:50px; text-align:right">               (19.6)
+ <td class="eqn">                                        (19.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
-
 
 <p> The "effective" radius of the propeller will be :
 </p>
@@ -714,41 +847,50 @@ The function value of <i>F</i>(<i>x</i>)
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>X</mi> <mn>&hairsp;&prime;</mn> 
+   <mover>
+      <mi>X</mi>
+      <mn mathsize="130%">&tilde;</mn> 
+   </mover>
  
-  <mspace/> <mo>&cong;</mo> <mspace/>
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
 
-  <mi>X</mi>
+   <mi>X</mi>
  
-  <mo>&minus;</mo>
+   <mo> &minus; </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1.4</mn>
-    <mi>B</mi>
-  </mfrac>
-
-  <mspace/> <mo>&cong;</mo> <mspace/>
-
-  <mi>X</mi>
-
-  <mo> . </mo>
-
-  <mn>(&hairsp;</mn>
-    <mi>1</mi>
-    <mo>&minus;</mo>
-
-    <mstyle displaystyle="true">
-    <mfrac>
+   <mfrac>
       <mn>1.4</mn>
-      <mrow> <mi>B</mi> <mn>&hairsp;.&hairsp;</mn> <mi>X</mi>
-    </mfrac>
-  <mn>&thinsp;)</mn>
+      <mi>B</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
+
+   <mi>X</mi>
+
+   <mo> . </mo>
+
+   <mo maxsize="36px">(</mo>
+      <mi>1</mi>
+      <mo>&minus;</mo>
+
+      <mfrac>
+         <mn>&nbsp; 1.4 &nbsp;</mn>
+         <mrow>
+            <mi>B</mi>
+            <mn>&thinsp;.&thinsp;</mn>
+            <mi>X</mi>
+         </mrow>
+      </mfrac>
+   <mo  maxsize="36px">)</mo>
 
  </math>
  </td>
 
- <td style="width:50px; text-align:right">               (19.7)
+ <td class="eqn">                                         (19.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -778,34 +920,188 @@ The function value of <i>F</i>(<i>x</i>)
  <span style="font-variant: small-caps;">Prandtl</span>'s
     approximate mass reduction                             </h4>
 
-<span style="color:darkgrey">
 
 <p> With (19.7) for the radius,
  the effective disk area reduces to :
 </p>
-<p>&emsp;
-	 π 〖X^'  〗^2   = π X^2  .〖 ( 1-  2  ln 2  /(B.X)  )〗^2
-               = π X^2  .( 1-  4 ln 2 /(B.X)  +  (  (  2 ln 2  )/(B.X))^2  )	
-(19.8)
-</p>
-<p> If B .  X  ≫ 1,
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mn>&pi;</mn>
+   <mo>.</mo>
+   <msup>
+      <mrow>
+         <mn>(</mn>
+         <mover>
+            <mi>X</mi>
+            <mn mathsize="130%">&tilde;</mn>
+         </mover>
+         <mn>)</mn>
+      </mrow>
+      <mn>2</mn>
+   </msup> 
+
+   <mo>&hairsp; = &hairsp;</mo>
+   
+   <mn>&pi;</mn>
+   <mo>.</mo>
+   <msup>
+      <mi>X</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mo> . </mo>   
+
+   <msup>
+      <mrow>
+         <mo>(</mo>
+            <mn>1</mn>
+            <mo> &minus; </mo>
+            <mstyle displaystyle="true">
+            <mfrac>
+               <mn> 2 ln 2 </mn>
+               <mrow>
+                  <mi>B</mi>
+                  <mo>.</mo>
+                  <mi>X</mi>
+               </mrow>
+            </mfrac>
+         <mo>)</mo>
+      </mrow>
+      <mn>2</mn>
+   </msup>
+</math>
+</td>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mspace width="60px"/>
+   
+   <mo>&hairsp; = &hairsp;</mo>
+   
+   <mn>&pi;</mn>
+   <mo>.</mo>
+   <msup>
+      <mi>X</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mo> . </mo>   
+
+<!--    <mstyle displaystyle="true"> -->
+   <msup>
+      <mstyle displaystyle="true">     <!-- needed -->
+      <mo maxsize="40px">(</mo>
+         <mn>1</mn>
+         
+         <mo>&hairsp; &minus; &hairsp;</mo>
+         
+         <mstyle displaystyle="true">
+         <mfrac>
+            <mn>4 ln 2</mn>
+            <mrow>
+               <mi>B</mi>
+               <mo>.</mo>
+               <mi>X</mi>
+            </mrow>
+         </mfrac>
+            
+         <mo>&hairsp; + &hairsp;</mo>        
+         <msup>
+            <mrow>
+               <mo>(</mo>
+                  <mstyle displaystyle="true">
+                  <mfrac>
+                     <mn> 2 ln 2 </mn>
+                     <mrow>
+                        <mi>B</mi>
+                        <mo>.</mo>
+                        <mi>X</mi>
+                     </mrow>
+                  </mfrac>
+               <mo>)</mo>
+            </mrow>
+            <mn>2</mn>
+         </msup>
+         <mn> &nbsp; </mn>
+      <mo maxsize="40px">)</mo>
+   </msup>
+ </math>
+ </td>
+
+<td class="eqn">                                        (19.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> If <i>B&hairsp;.&hairsp;X</i>&nbsp;&Gt;&nbsp;1,
  the quadratic term is small.
  <span style="font-variant: small-caps;">Prandtl</span>
  therefore dropped it,
  keeping only the linear term.
  We will call his approximation of the overall
- tip mass reduction factor κF' :
-</p>
-<p>&emsp;
-	 κ_ F '    ≅  1 -   2.77/(B .X)	(19.9)
-</p>
-<p> This κF' estimates the integral
- of the local mass factor K (x) defined in (17.2).
-  It is not  the same as the integral κ G in (17.9),
- because that contains the cos2ϕ term as well.
-</p>
+ tip mass reduction factor
+ <math>
+   <msub>
+      <mi>&kappa;</mi>
+      <mover>
+         <mi>F</mi>
+         <mn mathsize="170%">&tilde;</mn>
+      </mover>         
+   </msub>
+ </math>
+&nbsp;:
 
-</span>
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub>
+      <mi>&kappa;</mi>
+      <mover>
+         <mi>F</mi>
+         <mn mathsize="170%">&tilde;</mn>
+      </mover>         
+   </msub>
+   
+   <mo>&hairsp; = &hairsp;</mo>
+   
+   <mn>1</mn>
+         
+   <mo>&hairsp; &minus; &hairsp;</mo>
+         
+   <mfrac>
+      <mn>&nbsp; 2.77&nbsp;</mn>
+      <mrow>
+            <mi>B</mi>
+            <mo>.</mo>
+            <mi>X</mi>
+         </mrow>
+      </mfrac>
+ </math>
+ </td>
+
+<td class="eqn">                                        (19.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This factor estimates the integral
+ of the local mass factor 
+ <i>K</i>&hairsp;(<i>x</i>) defined in (17.2).
+  It is not  the same as the integral as the 
+ <nobr>
+ <math>
+   <msub>
+      <mi>&kappa;</mi>
+         <mi>G</mi>
+   </msub>
+ </math> of (17.9),</nobr>
+ because that contains the
+ cos&thinsp;<sup>2</sup>&hairsp;<i>&phi;</i> term as well.
+</p>
 
 <!-- TABLE TRICK END --------------------------------------------->
 <!-- body end, footer, and table end, see text.css              -->
@@ -815,16 +1111,16 @@ The function value of <i>F</i>(<i>x</i>)
 
 <!-- TRUE (PRINT) HEADER ----------------------------------------->
 <div class="header">
-<i> VORTEX THEORY </i>
+<i> TIP LOSS </i>
 </div>
 
 <!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> 
    <span style="float:left"> <a href="prop_book_18.html">
-               &#x25C4;</a> </span>
+               &#x25C4;&#xFE0E;</a> </span>
 P. Lammertse, 2025
    <span style="float:right"> <a href="prop_book_20.html">
-               &#x25BA;</a> </span>              
+               &#x25BA;&#xFE0E;</a> </span>              
 </div>
 
 <!-- SCRIPTS ----------------------------------------------------->

@@ -449,7 +449,7 @@ B747.prototype.update = function( xPos, yPos, thetaPlot=0 )  {
    svgString += '   <!-- end B747 --> \n';
  
    this.svgString = svgString;
-//   console.log( this.svgString);
+   console.log( this.svgString);
 }
 
 // -------------------------------------------------------------

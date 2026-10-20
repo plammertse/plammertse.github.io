@@ -5,9 +5,9 @@
 -- purpose : Page for website Piet Lammertse
 ----------------------------------------------------------------
 --   history :
---     2026-01-12  14 to 12, skipped inflating, moved chords
---     2026-01-01  new, swapped 14 and 15
----------------------------------------------------------------> 
+--     2026-10-13  renumbered a few times, briefly 27, now 12
+--     2026-01-01  new
+--------------------------------------------------------------->
 
 <!-- FORMATTING  ---------------------------------------------->
 <head>
@@ -16,7 +16,7 @@
          content  = "width=device-width, initial-scale=1.0">
    <link rel = "stylesheet" href = "text.css">
    <link rel = "stylesheet" href = "menu.css">
-   <title>  Piet Lammertse on propeller theory  </title>
+   <title> Piet Lammertse on propeller theory </title>
 </head>
 
 <body>
@@ -39,9 +39,11 @@
       <li> <a href="prop_book_00_TOC.html">
                Table of Contents</a>                       </li>
       <li> <a href="prop_book_13.html">
-               Next &#x25BA;</a>                      </li>              
+               Next &#x25BA;</a>                           </li>              
    </ul>
 </nav>
+
+<!-- PAGE HEADER ---------------------------------------------->
 
 <!-- TABLE TRICK START ---------------------------------------->
 <!-- table, print header, and body start (see text.css)      -->
@@ -49,404 +51,1636 @@
 <thead> <tr> <td> <br class="print-only"> </td> </tr> </thead>
 <tbody> <tr> <td>
 
-<!-- CHAPTER 12 ----------------------------------------------->
+<!-- CHAPTER -------------------------------------------------->
 
-<h2> 12 &emsp; The spiral wake </h2>
+<h2> 12 &emsp; Blade chords before tip loss</h2>
 
-<!-- SECTION 12.1 --------------------------------------------->
+<!-- SECTION -------------------------------------------------->
 
-<h4> 12.1 &emsp; Introduction </h4>
+<div class="draft">
+<h4> 12.1 &emsp; Introduction - blade chords in a tunnel</h4>
 
-<p>
-A large part of propeller theory, including the tip loss,
- is concerned with the conditions inside the wake.
- In a turn of good fortune,
- <span style="font-variant: small-caps;"> Betz</span>'s
- rotationally optimal induction distribution (10.7)
- simplifies the shape of the wake sheets to&nbsp;a regular
- <span style="font-variant: small-caps;"> Archimedes</span> screw.
- We will derive this fact below.
+<p> TODO &emsp; Mention that this chapter is without tip loss,
+ at least the plots at the end are.
+</p>
+<p> Rewrite this chapter away from b(x)
+ and towards dT^, so it will remain valid
+ when tip loss is introduced later.
+ </p>
+<p> Go to non-dimensional as soon as possible.
+ </p>
+</div>
+
+<h4> 12.1 &emsp; A first dimensional analysis </h4>
+
+<p> This chapter will derive the blade chords
+needed for a given thrust (&hairsp;or induction&hairsp;).
 </p>
 <p>&emsp;
- We will see later that the regularity of the screw shape
- is not distorted by the tip loss, since the tip loss 
- does not affect the local induction -
- it only affects the mass flow.
+A helpful dimensional idea can be obtained by looking
+at the case of small pitch angles.
+</p>
+<p>&emsp;
+A ring of the prop disk is "served" by the
+area of the blade elements in the ring.
+The thrust on these blade ele&shyments must provide
+the induction in the whole of the ring.
+From figure 
+<a href="prop_book_08.html#8.3">8.2</a>&hairsp;,
+ the circum&shyferential airspeed 
+of the blade at small pitch angles is
+   <i>W</i> &cong; <i>&Omega;.r</i>.
+The lift of the blade elements is proportional to
+ &frac12;&hairsp;<i>&rho;&hairsp;W</i><sup>&thinsp;2</sup>,
+and&nbsp;therefore the blade lift is proportional 
+to <i>r</i><sup>&hairsp;2</sup>.
+</p>
+<p>&emsp;
+The blade elements at that radius cover 
+a ring of area 2&pi;<i>r</i>.
+Comparing the two, the chord needed
+for a given induction will be proportional to 
+1<i>&hairsp;/&hairsp;r</i>.
+This is the basic shape of a propeller blade.
+ We will see below that it is modified by rotational
+optimization and tip loss, and of course by the larger
+pitch angles near the hub, but in principle,
+ the blade outline will have a hyperbolic taper.
+</p>
+<p>&emsp;
+A second result is that propellers 
+of higher pitch will have much wider blades.
+ The ratio is quadratic in <i>X</i>.
+This ratio follows from combining the definition of 
+<i>X</i> =
+ <i>&Omega;&hairsp;.&hairsp;r&thinsp;/&thinsp;V</i>
+ with the blade speed approximation 
+<i>W</i> &cong; <i>&Omega;&hairsp;.&hairsp;r</i>.
+Since the lift is proportional to 
+  <i>W</i><sup>&thinsp;2</sup>, it is also
+proportional to <i>&Omega;</i><sup>&hairsp;2</sup>,
+and so to <i>X</i><sup>&thinsp;2</sup>.
+The blade chords get quadratically wider 
+with decreasing <i>X</i>.
+Propellers of high pitch have extremely wide blades.
 </p>
 
-<!-- SECTION 12.2 --------------------------------------------->
+<!------- SECTION --------------------------------------------->
 
-<h4> 12.2 &emsp; The rotating, telescoping wake </h4>
-<p> The induction velocity vector <b><i>v</i></b>&hairsp;&prime;
- in figure 8.2 has an axial component <i>v</i>,
- and a circumferential
- (&hairsp;also called tan&shygential, or sideways&hairsp;)
- component <i>u</i>.
- The axial reduction equals
- cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i>.
- From standard trigonometry we have : 
+<h4> 12.2 &emsp; The blade chord for a given local induction </h4>
+
+<!--
+ Equation
+(&hairsp;<a href="prop_book_11.html#(11.10)">11.10</a>&hairsp;)
+ gives the optimum thrust distribution
+ including rotation.
+ We will derive the corresponding blade chord.
+ This chord does not yet include tip loss
+ and viscous optimization.
+ We will add those in later sections.
+-->
+
+<p> Equation 
+    (&hairsp;<a href="prop_book_07.html#7.4">7.5</a>&hairsp;)
+ gave us the thrust for a given induction and mass flow,
+and with the light loading mass flow of
+
+<!--
+<i>m</i>&hairsp;<sup>&#9679;</sup>
+-->
+<nobr>
+    (&hairsp;<a href="prop_book_07.html#(7.7)">7.7</a>&hairsp;),
+</nobr>
+ we obtain the following ring thrust :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>v</mi>
+   <mn>d</mn> <mi>T</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-  <mi>&phi;</mi>
+   <mn>d</mn>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
 
+   <mo>.</mo>
+   <mi>V</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mo>.</mo>
 
-  <mn>&frac12;</mn> <mo>+</mo> 
-  <mn>&frac12;&thinsp;</mn> <mn>cos&thinsp;</mn> <mn>2</mn>
-    <mi>&phi;</mi>
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
+
+   <mo>. </mo>
+
+   <mi>&rho;</mi>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mo>. </mo>
+
+   <mn>2&hairsp;&pi;&hairsp;</mn>
+   <mi>r</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>r</mi>
+
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (12.1)
+<td class="eqn">                                         (12.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> From the same figure, the tangential component <i>u</i>
- equals tan&hairsp;<i>&phi;</i> times the axial component <i>v</i> : 
+</p>
+<p> The aerodynamic lift on the blade elements inside the ring
+ must provide this thrust.
+ The lift coefficient <i>C</i><sub>L</sub> for a&nbsp;wing
+ of area <i>S</i> is defined by :
 </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>u</mi>
+   <mi>L</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/> <mo>=</mo> <mspace/>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-  <mi>&phi;</mi>
-  <mo>.</mo>
-  <mn>tan</mn> <mi>&phi;</mi>
+   <msub> <mi>C</mi> <mn>L</mn> </msub>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mo>. &frac12;</mo>
 
- <mn>sin</mn>  <mi>&phi;</mi>
-  <mo>.</mo>
-  <mn>cos</mn> <mi>&phi;</mi>
+   <mi>&rho;</mi>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>V</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mn>.&nbsp;</mn>
+   <mi>S</mi>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                     (12.2)
+<td class="eqn">                                          (12.2)
 </td> </tr> </table>
-<!-- END EQUATION -------------------------------------------------->
+<!-- END EQUATION --------------------------------------------->
 
-<p> Again from standard trigonometry we have :
+</p>
+<p> The blade area inside a ring is
+ <nobr>  d<i>S</i> = 
+  <i>B</i>&thinsp;.&thinsp;<i>c</i>&thinsp;.&thinsp;d<i>r</i>, </nobr>
+ coming from
+ <i>B</i> blade element strips of width d<i>r</i> and chord <i>c</i>.
+The&nbsp;chord is defined in the direction
+ of the local wind velocity <i>W</i>.
+</p>
+<p>&emsp;
+ The lift generated by the total blade element area
+ (&hairsp;all the chord strips&hairsp;) within the ring is :
 </p>
 
-<!-- EQUATION ------------------------------------------------------>
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mi>u</mi>
+   <mn>d</mn>
+   <mi>L</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mn>&frac12;&thinsp;</mn> <mn>sin&thinsp;</mn> <mn>2</mn> <mi>&phi;</mi>
+   <msub>
+      <mi>C</mi>
+      <mn>L</mn>
+   </msub>
+
+   <mo>.&frac12;</mo>
+
+   <mi>&rho;</mi>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>W</mi>
+      <mn>2</mn>
+   </msup>
+
+   <mn>.&thinsp;</mn>
+   <mi>B</mi>
+
+   <mn>.&thinsp;</mn>
+   <mi>c</mi>
+
+   <mn>.&thinsp;</mn>
+   <mn>d</mn>
+   <mi>r</mi>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">  (12.3)
+<td class="eqn">                                         (12.3)
 </td> </tr> </table>
-<!-- END EQUATION -------------------------------------------------->
+<!-- END EQUATION --------------------------------------------->
 
-<p> The axial and tangential components can thus
- both be expressed as functions of
- the "double pitch angle" 2&hairsp;<i>&phi;</i>.
- Figure 12.1 shows that by these two equations,
- the ends of the induced velocity vector
- <b><i>v</i></b>&hairsp;&prime;
- lie on a circle with radius &frac12&hairsp;<i>C</i>
- and “phase” 2&hairsp;<i>&phi;</i>.
+<p> From figure
+ <a href="prop_book_08.html#8.3">8.2</a>,
+ the local wind velocity
+ <i>W</i> equals <i>V / </i>sin&thinsp;<i>&phi;</i> :
 
-<!-- FIGURE --------------------------------------------------->
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mn>d</mn> <mi>L</mi>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <msub> <mi>C</mi> <mn>L</mn> </msub>
+
+   <mo>.</mo>
+   <mn>&frac12;&hairsp;</mn>
+   <mi>&rho;</mi> 
+   <mo>.</mo>
+
+   <mfrac>
+      <mrow>
+         <mn>&hairsp;</mn>
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+      <mrow>
+         <msup>
+            <mn>sin</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+
+  <mn>.&thinsp;</mn>
+  <mi>B</mi>
+
+  <mn>.&thinsp;</mn>
+  <mi>c</mi>
+
+  <mn>.&thinsp;</mn>
+  <mn>d</mn>
+  <mi>r</mi>
+</math>
+</td>
+
+<td class="eqn">                                         (12.4)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From the force diagram in figure
+ <a href="prop_book_08.html#8.3">8.1</a>,
+ the thrust component of d<i>L</i> is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mn>d</mn>
+   <mi>T</mi>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mn>d</mn>
+   <mi>L</mi>
+
+   <mo>.</mo>
+   <mn>cos</mn>
+   <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                         (12.5)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> We now have  (12.1) for the ring thrust needed
+ to generate the induction ratio <i>b</i>&hairsp;(<i>x</i>),
+ and (12.5) for the ring thrust available
+ from blade element lift to do this.
+ The two must be equal :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+
+   <mi>&rho;</mi>
+   <mn>&hairsp;</mn>
+
+   <mo>.</mo>
+
+   <mn>2&hairsp;&pi;</mn>
+   <mi>r</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>r</mi>
+
+   <mo>.</mo>
+   <mi>b</mi>
+
+   <msup> <mi>V</mi> <mn>2</mn> </msup>
+
+<!--  <mspace/> <mo>=</mo> <mspace/>  -->
+   <mo> = &nbsp;</mo>
+
+   <msub>
+      <mi>C</mi>
+      <mn>L</mn>
+   </msub>
+
+   <mo>.</mo>
+   <mn>&frac12;&hairsp;</mn>
+   <mi>&rho;</mi> 
+   <mo>.</mo>
+
+   <mfrac>
+      <mrow>
+         <mn>&hairsp;</mn>
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+      <mrow>
+         <msup>
+            <mn>sin</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+
+   <mn>.&nbsp;</mn>
+   <mi>B</mi>
+
+   <mn> .&thinsp;</mn>
+   <mi>c</mi>
+
+   <mn>.&thinsp;</mn>
+   <mn>d</mn>
+   <mi>r</mi>
+
+   <mo>.</mo>
+   <mn>cos</mn>
+   <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                          (12.6)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Dividing out the common factors
+  <i>&rho;&hairsp;V</i><sup>&hairsp;2</sup>
+ and d<i>r</i> we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo>
+         <mi>c</mi>
+      </mrow> 
+      <mrow>
+         <mn>2&pi;&hairsp;</mn>
+         <mi>r</mi>
+      </mrow>
+   </mfrac>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>2</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
+
+  <mo>.</mo>
+
+   <mfrac>
+      <mrow>
+         <msup>
+            <mn>sin&hairsp;</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+      <mrow>
+         <mn>cos&hairsp;</mn>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+</math>
+</td>
+
+<td class="eqn">                                          (12.7)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The left hand term represents the fraction of the ring
+ that is "covered by chord".
+ We will call it the <i>local solidity</i>, but we do note
+ that the term "solidity" goes under many 
+ different definitions in the literature.
+</p>
+
+<div style = "break-before:page"> </div>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 12.3 &emsp; The non-dimensional solidity              </h4>
+
+<p> We will first derive a non-dimensional chord
+on the same scale as the non-dimensional radius <i>x</i>.
+This will allow us to draw the blade in the proper proportions. 
+</p>
+<p>&emsp;
+With span and width scaled
+to the same non-dimen&shysional units, each blade will have a "span"
+ of <i>X</i>.
+Blades of larger <i>X</i> will have a larger span
+on the horizontal axis. The blades will vary in length,
+but hardly in width.
+</p>
+<p>&emsp;
+We will then rescale the blades to have equal radius.
+This will scale down the chords with <i>X</i>.
+These plots will give a different perspective
+on the variation of the chord with the
+nominal propeller pitch, or tip speed ratio.
+</p>
+
+<p>&emsp;
+ Equation (2.10) defined
+ <i>x</i> &nbsp;&equiv;&nbsp; 
+ 	<span class="hat-anchor"> <i>r</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span>
+   &nbsp;&equiv;&nbsp;
+   <i>&Omega;&hairsp;r&nbsp;&frasl;&nbsp;V</i>
+ as the non-dimensional version of the radius <i>r</i>.
+  We similarly define the non-dimensional chord
+	<span class="hat-anchor"> <i>c</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span>&nbsp;: 
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+
+   <mspace/> <mo>&equiv;</mo> <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mi>&Omega;</mi>
+         <mn>&thinsp;</mn>
+         <mi>c</mi> 
+      </mrow>
+      <mi>V</mi>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                         (12.8)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The ratio between <i>c</i> and <i>r</i> 
+stays the same in the non-dimensional form.
+ This will allow us to draw the blade planform (12.7)
+ of <i>c</i> versus <i>r</i>  in the same "true" proportions
+ on a scale of
+   <span class="hat-anchor"> <i>c</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span>
+   versus <i>x</i> :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mi>c</mi>
+      <mi>r</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
+
+   <mfrac>
+      <mover>
+         <mi>c</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
+      <mrow>
+         <mover>
+            <mi>r</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+      </mrow>
+   </mfrac>
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
+
+   <mfrac>
+      <mover>
+         <mi>c</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
+      <mrow>
+         <mi>x</mi>
+         <mn>&thinsp;</mn>
+      </mrow>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                         (12.9)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> From (12.7), the non-dimensional local solidity becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo> 
+         <mover>
+            <mi>c</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+      </mrow> 
+      <mrow>
+         <mn>2&pi;&hairsp;</mn>
+         <mi>x</mi>
+      </mrow>
+   </mfrac>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>2</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
+
+   <mo>.</mo>
+
+   <mfrac>
+      <mrow>
+         <msup>
+            <mn>sin&hairsp;</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+      <mrow>
+         <mn>cos&hairsp;</mn>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>
+</math>
+</td>
+
+<td class="eqn">                                         (12.10)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> With 
+  sin&hairsp;<i>&phi;&nbsp;/&nbsp;</i>cos&hairsp;<i>&phi;</i>
+   = 
+ tan&hairsp;<i>&phi;</i> = 1<i>&hairsp;/&hairsp;x</i>
+ from 
+ (&hairsp;<a href="prop_book_02.html#(2.2)">2.2</a>&hairsp;),
+ we can eliminate <i>x</i>.
+ Bringing the factor of 2&pi; to the right we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&hairsp;&pi;</mn>
+      <msub> <mi>C</mi> <mn>L</mn> </msub>
+   </mfrac>
+
+   <mo>. </mo>
+
+   <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+
+   <mo>.</mo>
+
+   <mn>sin&hairsp;</mn>
+   <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                         (12.11)
+</td>
+ </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 12.4 &emsp; The blade shape for uniform induction       </h4>
+
+<p> For uniform axial induction,
+ (&hairsp;<a href="prop_book_05.html#(5.10)">5.10</a>&hairsp;)
+ gives us the constant value of
+  <nobr> <i>b</i>&hairsp;(<i>x</i>)
+  =
+  <span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>. </nobr>
+ This turns (12.11) into :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+   
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&hairsp;&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo> 
+   </mover>
+
+   <mn>.&thinsp;</mn>
+
+   <mn>sin&hairsp;</mn>
+   <mi>&phi;</mi>
+</math>
+
+<td class="eqn">                                         (12.12)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The non-dimensional blade shape for uniform
+ axial induction
+(&hairsp;i.e. without rotational optimization&hairsp;)
+ is proportional to sin<i>&hairsp;&phi;</i>.
+ Figure 12.1 shows this factor against <i>x</i>,
+ as a red line.
+</p>
+
+<p>&emsp;
+ For larger values of <i>x</i>,
+we have small
+ local pitch angles <i>&phi;</i>,
+ where <i>&phi;</i> in<i>&thinsp;&phi;</i>
+ &cong; tan<i>&thinsp;&phi;</i>  &cong;
+ 1</i>&thinsp;/&thinsp;x</i>, and so :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mfrac>
+      <mn>4&hairsp;&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>. </mo>
+
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%">&Hat;</mo> 
+   </mover>
+
+   <mn>&thinsp;.&thinsp;</mn>
+
+   <mfrac>
+      <mn>1</mn>
+      <mi>x</mi>
+   </mfrac>
+</math>
+</td>
+
+<td>
+<math>  
+   <!--  <mspace width="120px"/> -->
+   <mi>x</mi>
+   <mn>&nbsp;&Gt;&nbsp;</mn>
+   <mi>1</mi>
+</td>  
+
+</math>
+
+<td class="eqn">                                         (12.13)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> The figure shows this as a grey line.
+</p>
+
 <div class = "center">
-<img  src = "images/prop_cos2_arc_C.gif";
-    width = "70%";
-    alt   = "Betz_arc"; >
+<img src = "images/prop_cos2_chord_x.gif";
+   width = "60%";
+     alt = "Cos2 chord"; >
 </div>
 
 <div class = "caption">
 <p> <i> Figure 12.1 : &ensp;
-   The optimal induction as a function of the local pitch angle. </i> </p>
+            Non-dimensional shape factors for uniform<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            and rotationally optimal distributions. </i> </p> 
 </div>
 
-
-<p>&emsp; Far from the hub, the local pitch angle <i>&phi;</i>
- is nearly zero.
- The induced velocity vector <b><i>v</i></b>&hairsp;&prime;
- points almost straight aft
- (&hairsp;down in the picture&hairsp;),
- and its length is nearly <i>C</i>.
-  Very close to the hub, <i>&phi;</i> &cong; 90&deg;.
- Here <b><i>v</i></b>&thinsp;&prime;
-  is nearly tangential,
-  and its length is almost zero.
- At the radius <i>x</i> = 1, the vector
- points 45&deg; down and has the length
-<nobr>
-    <math style="margin: 0 0""> 
-    <mn>&frac12</mn>
-     <msqrt> </mo><mn>2</mn> </msqrt>
-   </math>&thinsp;<i>C</i>.
-</nobr>
+<p> Near the hub, <i>&phi;</i>&nbsp;&cong;&nbsp;90&deg;
+ and therefore sin&thinsp;<i>&phi;</i>&nbsp;&cong;&nbsp;1.
+ The chord factor of (12.12) becomes 1 there.
+ Dividing this by the&nbsp;local 
+(&hairsp;non-dimensional&hairsp;) circumference
+<nobr> 2&hairsp;&pi;.<i>&hairsp;x</i> </nobr>
+ shows that the local solidity 
+ will go to infinity.
 </p>
 <p>&emsp;
- We can see from this picture that the flow tube
- must be filled with hollow, telescoping tubes of air,
- which both rotate and slide relative to each other.
- The inconvenient truth that these telescoping tubes must
- "rub" against each other is one reason
- why the independence of the rings is noot self evident,
- but rather a non-obvious assump&shytion
- in the theory of the optimal propeller.
+ The propeller blades become layered like a
+   Da Vinci helicopter, or a whipped cream swirl,
+ with the chords wrapping around the hub
+ infinitely many times
+ on an infinitely small radius. 
+ Such blade shapes have actually been attempted in the past,
+ but they are both impractical and unnecessary.
+
+ We will see that in the rotationally optimal load distribution,
+ the cos<sup>2</sup>&hairsp;<i>&phi;</i> term 
+comes to the rescue.
 </p>
 
-<div style = "break-before:page"> </div>
+<!-- SECTION -------------------------------------------------->
 
-<!-- SECTION 12.3 ----------------------------------------------------->
+<a name="12.5"></a>
 
-<h4> 12.3 &emsp; Betz's Archimedes screw </h4>
+<h4> 12.5 &emsp;
+                The shape for rotationally optimal induction </h4>
 
-<p> <span style="font-variant: small-caps;"> Betz</span>
- was the first to point out that his optimal velocity distribution
- results in a wake shaped like a regular rigid
- <span style="font-variant: small-caps;"> Archimedes</span> screw,
- which seems to drift straight to the rear without rotating.
+<p> Rotational optimization will scale the thrust by
+ cos<sup>2&thinsp;</sup><i>&phi;</i>.
+ With the light loading <i>b</i>&hairsp;(<i>x</i>) of 
+ (&hairsp;<a href="prop_book_11.html#(11.10)">11.10</a>&hairsp;),
+ the non-dimensional chord (12.11) becomes :  
 </p>
-<p>&emsp; 
- From the previous section we know that in reality,
- each ring has its own rearward velocity and its own
- rate of rotation.
-</p>
-<p>
- The apparent lack of rotation of the
- <span style="font-variant: small-caps;"> Archimedes</span> screw
- is due to an optical effect called the "barber pole illusion".
- Figure 12.2 shows the apparent rearward velocity
- <i>v</i>&thinsp;&prime;&hairsp;
- (&hairsp;with two primes&hairsp;).
- The sheet surface seems to move straight to the rear
- with the velocity <i>v</i>&thinsp;&prime;&hairsp;
- if we ignore the fact that it is actually
- moving in a spiral with velocity <i>v</i>&thinsp;,
- and not really just sliding backward,
- but rotating as well.
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>  
+   
+   <mo>.</mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+   
+   <mo>.</mo>
+   
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
+   <mo>.</mo>
+   <mn>sin&thinsp;</mn>
+   <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                   (12.14)
+</td> </tr> </table>
+
+<p> Figure 12.1 shows this factor as a solid blue line.
+It differs from (12.12)  by a factor of 
+cos<sup>&hairsp;2</sup><i>&hairsp;&phi;
+ &nbsp;&frasl;&nbsp;&kappa;</i><sub>&hairsp;&phi;</sub>.
 </p>
 <p>&emsp;
- Interestingly, the efficiency (9.5) of the
- rotationally optimal propeller matches the
- purely axial efficiency (4.18) of the actuator disk
- if we replace <i>v</i> by <i>v</i>&thinsp;&prime;&hairsp;
- (&hairsp;sometimes called &zeta; by the Greek letter
- <i>zeta</i>&hairsp;),
- or <i>b</i> by
-  <i>b&hairsp;/&hairsp;</i>cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i>.
- Some texts give <i>v</i>&thinsp;&prime;&hairsp;
- a central role in the theory, which perhaps it does not deserve.
-</p>
-<p>&emsp;
- The rigid
- <span style="font-variant: small-caps;"> Archimedes</span>
- wake shape however is instrumental in both
- <span style="font-variant: small-caps;"> Prandtl</span>’s
- approximate theory of the tip loss,
- and in the exact vortex solution of that loss,
- as we shall see in later chapters.
+ For small <i>x</i>, by 
+ (&hairsp;<a href="prop_book_02.html#(2.2)">2.5</a>&hairsp;)
+ and 
+(&hairsp;<a href="prop_book_02.html#(2.2)">2.7</a>&hairsp;)
+ the factor
+   cos<sup>2</sup><i>&hairsp;&phi;</i>&thinsp;.&thinsp;sin<i>&hairsp;&phi;</i>
+ becomes approximately
+ <i>x</i><sup>2</sup>.
+ For the local solidity we have to divide by 
+ 2&pi;<i>&hairsp;x</i>, so the solidity
+ goes to zero at the hub in linear proportion to <i>x</i>.
+ In practice, the chord will not vanish com&shypletely,
+ if only for mechanical reasons.
+ Unlike the uniformly loaded propeller, the local chord
+ and solidity do not go to infinity.
+ The rotationally optimal propeller has a viable blade shape,
+ right down to the the hub.
 </p>
 
+<p>&emsp;
+ The location of the widest chord is found by setting
+ the derivative of 
+   cos<sup>2</sup><i>&hairsp;&phi;</i>&thinsp;.&thinsp;sin<i>&hairsp;&phi;</i>
+ to zero.
+This yields : <br>
+cos<sup>3</sup><i>&hairsp;&phi;</i> &minus;
+2&thinsp;.&thinsp;cos&thinsp;&phi;&thinsp;.&thinsp;sin<sup>2</sup><i>&hairsp;&phi;</i>
+ = 0, hence 
+ tan<sup>2&thinsp;</sup><i>&phi;</i> = &frac12;,
+ hence <i>x</i>
+ = (&hairsp;1&thinsp;/&thinsp;tan&thinsp;<i>&phi;</i>&hairsp;) = &radic;2 :
+</p>
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msub>
+      <mi>x</mi>
+      <mn>wide</mn>
+   </msub>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mn> &radic;2 </mn>
+</math>
+</td>
+
+<td class="eqn">                                         (12.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> Plotting a little triangle with sides of 1, &radic;2
+ and &radic;3, the chord factor at this point is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
+   
+   <mo>.</mo>
+
+  <mn>sin&thinsp;</mn>
+  <mi>&phi;</mi>
+
+  <mspace/>
+  <mo>=</mo>
+  <mspace/>
+
+  <mn>&frac23;</mn>
+  <mo>.</mo>
+  <mn>&radic;&frac13;</mn>
+
+  <mspace/>
+  <mo>=</mo>
+  <mspace/>
+
+  <mn>0.385</mn>
+</math>
+</td>
+
+<td class="eqn">                                         (12.16)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p> This changes (12.14) to :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo> 
+   <msub>
+      <mover>
+         <mi>c</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>
+      <mn>wide</mn>
+   </msub>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mn>0.385</mn>
+
+   <mspace/>
+   <mn>.</mn>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+   
+   <mo>.</mo>
+  
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                         (12.17)
+</td> </tr> </table>
+
+<p> Figure 12.1 indicates this widest point by a circle marker.
+</p>
+
+<!------- SECTION --------------------------------------------->
+<h4> 12.6 &emsp; The effect of
+      1<i>&hairsp;/&hairsp;&kappa;</i><sub>&phi;</sub> </h4>
+
+<p> Figure
+ <a href="prop_book_11.html#11.2">11.2</a> showed that 
+ scaling the loading by 
+    1<i>&hairsp;/&hairsp;&kappa;</i><sub>&phi;</sub>
+ to maintain the same thrust regardless of 
+tip speed ratio <i>X</i>
+ inflates the loading for propellers
+ of lower tip speed ratio <i>X</i>, i.e. for propellers
+ of high pitch.
+Figure 12.2 below, compared to the blue line in Figure 12.1,
+shows exactly the same effect on the chords.
+</p>
+<p>&emsp;
+ Once again, it shows that all rotationally optimal
+ propellers are identical in shape.
+ They just differ in width, 
+ and blades of smaller <i>X</i> are "cut off" sooner.
+</p>
 
 <div class = "center">
-<img src = "images/prop_cos2_betz_sheet.gif";
-   width = "80%";
-     alt = "Betz_arc"; >
+<img src = "images/prop_chords_inflated.gif";
+   width = "60%";
+     alt = "Chords inflated"; >
 </div>
 
-<div class = "caption">
+<div class = "center">
 <p> <i> Figure 12.2 : &ensp;
-   The apparent axial sheet velocity of the spirals,
-   partly barber pole illusion. </i> </p>
+          Rotationally optimal chord for unit thrust. </i> </p>
 </div>
-
-<!-- SECTION 12.4 ----------------------------------------------------->
-
-<h4> 12.4 &emsp; The momentum wake and the viscous wake </h4>
-
-<p> Like a wing, a propeller leaves behind two distinct motions in the air :
-</p>
-<p>-&emsp; a large scale momentum wake, or propwash.
-</p>
-<p>-&emsp; a thin viscous wake sheet, sliding off the blade trailing edges.
-</p>
-<p> For the propeller as for the wing, the velocities in
- the momentum wake and those in the viscous wake
- are orthogonal in both senses of the word.
- They are a right angles to each other, and they do not interact.
-</p>
-
-<!-- SECTION 12.5 ----------------------------------------------------->
 
 <div style = "break-before:page"> </div>
 
-<h4> 12.5 &emsp; The viscous wake sheet </h4>
+<!------- SECTION --------------------------------------------->
+<h4> 12.7 &emsp; 
+     The large-<i>x</i> approximation with rotation </h4>
 
-<p> First we look at the viscous wake.
- Figure 12.3 shows the zero-thrust wake of a two-bladed propeller.
- Without blade lift or thrust, there will be no induced velocity.
- The propeller screws itself effortlessly out of the picture,
- each blade leaving behind a thin viscous wake sheet in the air.
+<p> The chord approximation (12.13) for large <i>x</i>
+can be kept unchanged for the rotationally optimal propeller,
+ or we can add the <i>&kappa;</i><sub>&phi;</sub>
+term if desired.  
+<p>&emsp;
+ For large <i>x</i>, cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
+ is nearly 1 as we saw in Figure
+<a href=prop_book_10.html#(10.1)>10.1</a>&hairsp;.
+ The <i>&kappa;</i><sub>&phi;</sub> term
+converges a bit more slowly, see figure
+<a href=prop_book_11.html#(11.1)>11.1</a>&hairsp;,
+so we can write :
+</p>
+ 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mi>B</mi>
+   <mo>.</mo>
+   <mover>
+      <mi>c</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>
+
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&hairsp;&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>. </mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+
+   <mn>&thinsp;.&thinsp;</mn>
+
+   <mfrac>
+      <mn>1</mn>
+      <mi>x</mi>
+   </mfrac>
+
+  <mspace width="120px"/>
+  <mi>x</mi>
+  <mn>&nbsp;&Gt;&nbsp;</mn>
+  <mi>1</mi>
+
+</math>
+
+<td class="eqn">                                         (12.18)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+
+<p>
+ Since <i>&kappa;</i><sub>&phi;</sub>
+ is close to 1 for large <i>X</i>,
+ the result is almost identical to (12.13),
+ and follows the same grey line there.
+</p>
+
+<!-- SECTION  ------------------------------------------------->
+
+<a name="12.7"></a>
+
+<h4> 12.7 &emsp; The dimensional chord                     </h4>
+
+<p> Figures 12.1 and 12.2 showed the non-dimensional chord
+   <span class="hat-anchor"> <i>c</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span>&
+ against <i>x</i>.
 </p>
 <p>&emsp;
- This viscous "scar" separates the air which passed under
- the blade section, from the air which passed over it.
- The friction between the passing air and the surface of the blade
- drags with it a thin boundary layer of air,
- which trails off the trailing edges of the blades
- like treacle from a spoon.
- This thin viscous sheet momentarily follows the blade,
- then dissipates to zero velocity relative to the surrounding air
- after a few chord lengths.
+ The non-dimensional  radius runs from 0 to <i>X</i>.
+ This makes it hard to compare the shapes
+ and the relative widths of various blades,
+ since the blade planforms extend
+ over different tip radius lengths <i>X</i>.
 </p>
 <p>&emsp;
- Figure 12.3 indicates the initial following velocity by
- a small arrow marked <i>W</i>.
- From the velocity diagram in figure 8.2 we know
- that for <i>X</i>&nbsp;&NestedGreaterGreater;&nbsp;1,
- the blade velocity <i>W</i> approximately equals <i>&Omega;&hairsp;r</i>.
+ We get a better impression of the shape variation
+ if we plot all blades to a standard radius from 0 to 1.
+ We&nbsp;achieve this by plotting 
+   <i>c&thinsp;/&thinsp;R</i> versus
+   <i>r&thinsp;/&thinsp;R</i>,
+ instead of 
+   <span class="hat-anchor"> <i>c</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span> </span>
+ against <i>x</i>.
+ Relative to figure 12.2, we need to reduce
+ both the horizontal and the vertical axis by
+  1<i>&thinsp;/&thinsp;X</i>.
+With (12.9) we have <i>c&thinsp;/&thinsp;R</i>
+ = 
+   <span class="hat-anchor"> <i>c</i> 
+	<span class="hat"; style="top:-0.35em;">&Hat;</span>
+   </span>&thinsp;&frasl;/&thinsp;X</i>. 
+ This changes (12.14) to :
 </p>
 
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo>
+         <mi>c</mi>
+      </mrow>
+      <mi>R</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo>
+         <mover>
+            <mi>c</mi>
+            <mo mathsize="100%">&Hat;</mo>
+         </mover>
+      </mrow>
+      <mi>X</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+   <mo>.</mo>
+
+   <mfrac>
+      <mn>1</mn>>
+      <mi>X</mi>
+   </mfrac>
+
+   <mo> . </mo>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
+   <mo> . </mo>
+   <mn>sin&thinsp;</mn>
+   <mi>&phi;</mi>
+</math>
+</td>
+
+<td class="eqn">                                      (12.19)
+</td> </tr> </table>
+
+<p> Figure 12.3 shows the result for two-bladed propellers
+ of various tip speed ratios <i>X</i>.
+ This figure is basically the same as figure 12.2,
+ but this time all blades are scaled to a single radius.
+ This new plot is dimensioned for our typical lightplane example
+ of
+   <span class="hat-anchor"> <i>T</i> 
+	<span class="hat">&Hat;</span> </span>&nbsp;=&nbsp;0.1 and
+ <i>C</i><sub>L</sub>&nbsp;=&nbsp;0.4.
+</p>
+
+<p>&emsp;
+Similar to (12.18), the large <i>x</i> approximation is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo>
+         <mi>c</mi>
+      </mrow>
+      <mi>R</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi><mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+   <mo>.</mo>
+
+   <mfrac>
+      <mn>1</mn>>
+      <mi>X</mi>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <mn>1</mn>>
+      <mi>x</mi>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                         (12.20)
+</td> </tr> </table>
+
+<!------- SECTION --------------------------------------------->
+
+<a name="12.8"></a>
+
+<h4> 12.8 &emsp; Dimensional chord example </h4>
+
+<p>Figure 12.3 shows how the chord equation (12.19)
+ works out for a few numerical examples.
+</p>
+<p>&emsp;
+ The middle blade is our standard
+example of two blades, <i>X</i>&nbsp;=&nbsp;5.
+A blade lift coefficient of 
+  <i>C</i><sub>L</sub>&nbsp;=&nbsp;0.4 is assumed.
+The other blades are the same, only for different 
+values of the tip speed ratio <i>X</i>.
+Clearly, this has a significant influence
+on the blade shape and on the chords.
+</p>
 
 <div class = "center">
-<img src = "images/prop_spiral_zero_thrust.gif";
-   width = "80%";
-   alt   = "viscous spiral"; >
+<img src = "images/prop_chord_cos2_X_separate.gif";
+   width = "60%";
+     alt = "Chords separate"; >
 </div>
-
+     
 <div class = "caption">
 <p> <i> Figure 12.3 : &ensp;
-   Purely viscous wake of a propeller at zero thrust.
-   Two blades,  X = 5 </i> </p>
-</div>   
-
-
-<p> The thickness of the viscous trailing sheet roughly equals
- the local viscous drag coefficient <i>C</i><sub>d</sub>
-  of the blade section times its local chord.
- In propellers, this viscous sheet thickness
- is on the order of a millimeter.
-</p>
-<p>&emsp;
- The viscous sheet has the shape of an
-<span style="font-variant: small-caps;"> Archimedes</span> screw,
- like a classical water pump.
- But instead of rotating in place, the screw is free
- to screw itself forward through the air
- like a corkscrew in cork.
- The sliding motion will generate viscous drag,
- and the  blade will drag a thin sheet of air with it.
- The air outside the sheets remains completely undisturbed.
- This means that at zero thrust,
- the concept of "tip loss" does not apply. 
-</p>
-
-<!-- SECTION 12.6 ----------------------------------------------------->
-
-<h4> 12.6 &emsp; The momentum wake </h4>
-
-<p> When the propeller starts delivering thrust,
- the air the propeller has passed through
- will start drifting slowly backward.
- The induction (both axial and rotational) starts ahead of the propeller.
- The induced velocity at the moment of passing
- is the local induction <i>v</i>&hairsp;&prime; from figure 8.2.
- The rearward drift will have doubled to <i>w</i>&hairsp;&prime;
- once the propeller has passed far away into the distance.
- Figure 12.4 shows this large-scale velocity field,
- which influences all of the air within the flow tube
- that the propeller has passed through.
-</p>
-<p>&emsp;
- The local induction <i>v</i>&hairsp;&prime;
- is normally a small fraction of the flying velocity <i>V</i>.
- Since <i>v</i>&hairsp;&prime; is tilted, as seen in figure  8.2,
- the air is not just floating backward, it is also quietly rotating.
-</p>
-<p>&emsp; 
- The lift-induced velocity at the blades is by definition
- at right angles to the local blade velocity,
- and therefore orthogonal to the spiral surfaces.
- From figure 12.2 we know that the wake sheets
- maintain the shape of a rigid
-  <span style="font-variant: small-caps;"> Archimedes</span> screw,
- even though the sheets are stretched and rotated a bit
- by the blade lift.
-</p>
-<p>&emsp;
- Contrary to popular belief, the air does not blow backward
- aft of the propeller with anything like the flying velocity <i>V</i>.
-</p>
-<p>&emsp;
- This quiet wake, drifting backward slowly, does not fit
- our usual intuitive image, where the propeller is stationary
- and the air is blowing backward fast.
- That image is based on an aircraft standing on the runway,
- or maybe from looking at a propeller in a wind tunnel.
- By contrast, in flight the propeller actually
- threads its way quietly like a corkscrew
- through an almost stationary atmosphere,
- adding very little induced velocity to the air.
-</p>
-<p>&emsp;
- Figure 12.4 shows the momentum wake as seen
- from a stationary reference on the ground.
- The propeller moves to the left at the flying velocity <i>V</i>.
- The small arrows represent the induced velocities <i>v</i>&hairsp;&prime;
- from figure 8.2.
- These little vectors are much smaller than <i>V</i>,
- and they do not point straight to the rear.
- More precisely, they are induced orthogonally
- to the blade velocity and path,
- and they spiral at the pitch angle <i>&phi;</i>&hairsp;&prime;
- (&hairsp;as shown in figure 8.2&hairsp;)
- relative to the direction of flight.
-</p>
-
-<div class = "center">
-<img src = "images/prop_spiral_momentum_wake.gif";
-   width = "640";
-   alt   = "viscous spiral"; >
+            Rotationally optimal chords for varying X. <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        Two blades, thrust T&thinsp;' = 0.1,
+        C<sub>L</sub> = 0.4. </i> </p> 
 </div>
-<div class = "caption">
-<p> <i> Figure 12.4 : &ensp;
-   Momentum wake of a two-bladed propeller
-     delivering thrust ( X = 5 ). </i> </p>
- </div>
 
-<p> The same wake looks very different when viewed from the airplane,
- taking the plane of the propeller disk
- as a “static” reference.
- We might call this the “wind tunnel view”.
- In the wind tunnel, we will see the propeller “standing still”
- and the air flowing by.
- The velocity  in the propeller plane is not <i>v</i>&hairsp;&prime;,
- but <i>V</i>&nbsp;+&nbsp;<i>v</i>&hairsp;&prime;.
- The swirl angle as viewed from the airplane,
- or in the wind tunnel, was found in (8.8).
- It gives a much less pronounced spiral
- than the blade pitch angle <i>&hairsp;</i>&hairsp;&prime;
- of figure  12.4 because the axial component
- is "stretched" by the flying velocity <i>V</i>.
+
+<h4> 12.9 &emsp; The widest chord </h4>
+
+<p> By (12.15) the widest chord is located at
+ <i>r&thinsp;/&thinsp;R</i>
+ = &radic;2<i>&thinsp;/&thinsp;X</i>,
+ and by (12.16) the maximum width is :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo> 
+         <msub>
+            <mi>c</mi>
+            <mn>max</mn>
+         </msub>
+      </mrow>
+      <mi>R</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo> = </mo> 
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+   <mo> . </mo>
+   <mfrac>
+      <mrow>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mrow>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+  
+   <mo> . </mo>
+
+   <mfrac>
+      <mn> 0.385 </mn>
+      <mi>X</mi>
+   </mfrac>
+</math>
+</td>
+
+<td class="eqn">                                         (12.21)
+</td> </tr> </table>
+
+<p> These points are marked by a circle marker.
+ Apart from the secondary effect of
+ 1</i>&thinsp;/&thinsp;&kappa;</i><sub>&phi;</sub> ,
+ all else being equal,
+ the width at the widest chord varies
+  with 1<i>&thinsp;/&thinsp;X</i>.
+</p>
+
+<!-- SECTION -------------------------------------------------->
+
+<h4> 12.9 &emsp; The chord at 0.7&thinsp;<i>R</i>          </h4>
+
+<p> At the tip, we have <i>x</i> = <i>X</i>.
+By (12.20) the tip chord will approximately be :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo> 
+         <msub>
+            <mi>c</mi>
+            <mn>tip</mn>
+         </msub>
+      </mrow>
+      <mi>R</mi>
+   </mfrac>
+
+   <mspace/>
+   <mo>&cong;</mo>
+   <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo mathsize="100%">&Hat;</mo>
+      </mover>   
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>&phi;</mn>
+      </msub>
+   </mfrac>
+
+   <mo> . </mo>
+
+   <mfrac>
+      <mn>1</mn>>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                      (12.22)
+</td> </tr> </table>
+
+<p> The tip chord is therefore roughly proportional to
+ 1<i>&thinsp;/&thinsp;X</i><sup>&thinsp;2</sup>.
+</p>
+<p>&emsp;
+ Because in practice the tip is rounded,
+ it is not always the most convenient place
+ to measure the chord.
+  The&nbsp;typical working radius for a propeller blade is
+ <nobr> <i>r</i>&nbsp;=&nbsp;0.7&hairsp;<i>R</i>, </nobr>
+ or <nobr> <i>x</i> = 0.7&hairsp;<i>X</i>. </nobr>
 </p>
 <p>&emsp; 
- In wake calculations, the wind tunnel viewpoint is not useful.
- The view relative to the stationary atmosphere
- in figure 12.4 is the essential one.
+ Again by (12.20), the chord at this radius
+ will approximately be :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math>
+   <mfrac>
+      <mrow>
+         <mi>B</mi>
+         <mo>.</mo> 
+         <msub>
+            <mi>c</mi>
+            <mn>0.7R</mn>
+         </msub>
+      </mrow>
+      <mi>R</mi>
+   </mfrac>
+
+   <mspace/> <mo>&cong;</mo> <mspace/>
+
+   <mfrac>
+      <mn>4&pi;</mn>
+      <msub>
+         <mi>C</mi>
+         <mn>L</mn>
+      </msub>
+   </mfrac>
+
+   <mo>.</mo>
+
+   <mfrac>
+      <mover>
+         <mi>T</mi><mo mathsize="100%">&Hat;</mo>
+      </mover>   
+    <msub><mi>&kappa;</mi> <mn>&phi;</mn> </msub>
+   </mfrac>
+   
+   <mo> . </mo>
+
+   <mfrac>
+      <mn>1</mn>>
+      <mrow>
+         <mn>0.7&thinsp;</mn>
+         <msup>
+            <mi>X</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac>
+
+</math>
+</td>
+
+<td class="eqn">                                            (12.23)
+</td> </tr> </table>
+
+<p> Like the tip chord, the chord at 0.7&thinsp;<i>R</i>
+ is roughly proportional to
+ 1<i>&thinsp;/&thinsp;X</i>&thinsp;<sup>2</sup>.
+ Higher pitch propellers therefore have much wider blades,
+ as was already obvious from figure 12.3.
+</p>
+<p>&emsp;
+ With some effort, we can see that the blades 
+have a taper of 1<i>&thinsp;/&thinsp;X</i>
+over the outer sections, away from the widest point.
+We can also see that the blades all have identical
+shape, only inflated in lenght and width with higher pitch,
+but that the blades of higher pitch are "cut off shorter".
+</p>
+<p>&emsp;
+ As a result, propellers of high pitch
+ (&hairsp;hence low <i>X</i>&hairsp;)
+ have wide paddle-like shapes,
+ with tips nearly as wide as the widest point
+ at <i>x</i>&nbsp;=&nbsp;&radic;2.
+Propellers of high <i>X</i> are thin and clearly tapered,
+like a sword or dagger.
 </p>
 
 <!-- TABLE TRICK END --------------------------------------------->
@@ -457,21 +1691,22 @@ A large part of propeller theory, including the tip loss,
 
 <!-- TRUE (PRINT) HEADER ----------------------------------------->
 <div class="header">
-<i> ROTATION </i>
+<i> VORTEX THEORY </i>
 </div>
 
 <!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> 
-   <span style="float:left"> <a href="prop_book_11.html">
+   <span style="float:left"> <a href="prop_book_26.html">
                &#x25C4;</a> </span>
 P. Lammertse, 2025
-   <span style="float:right"> <a href="prop_book_13.html">
+   <span style="float:right"> <a href="prop_book_28.html">
                &#x25BA;</a> </span>              
 </div>
 
+<!-- SCRIPTS ----------------------------------------------------->
 <!-- needed for hamburger menu, must be at end of body -->
-<script src = "menu.js">   </script>
-<script src = "draft.js">  </script>
+<script src = "menu.js"></script>
+<script src = "draft.js"></script>
 
 </body>
 </html>

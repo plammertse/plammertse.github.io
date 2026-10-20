@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <!--------------------------------------------------------------
 -- file    : prop_book_23.html
 -- purpose : Page for website Piet Lammertse
@@ -141,22 +140,27 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>T</mi>
+   <mn>d</mn>
+   <mi>T</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>&rho;</mi>
-  <mo>.</mo>
-  <mi>&Omega;</mi> <mi>r</mi> 
-  <mo>.</mo>
-  <mi>&Gamma;</mi>
-  <mo>.</mo>
-  <mn>d</mn> <mi>r;</mi>
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>&Omega;</mi>
+   <mi>r</mi> 
+   <mo>.</mo>
+   <mi>&Gamma;</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>r</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.1)
+<td class="eqn">                                          (23.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -178,36 +182,47 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi>
+   <mi>T</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>R</mi>
-  </msubsup>
+   <msubsup>
+      <mo>&int;</mo>
+      <mn>0</mn>
+      <mi>R</mi>
+   </msubsup>
 
-  <mi>&rho;</mi>
-  <mo>.</mo>
-  <mi>&Omega;</mi> <mi>r</mi> 
-  <mo>.</mo>
-  <mi>&Gamma;</mi>
-  <mo>.</mo>
-  <mn>d</mn> <mi>r</mi>
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>&Omega;</mi> <mi>r</mi> 
+   <mo>.</mo>
+   <mi>&Gamma;</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>r</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-
-  <mn>&frac12;&thinsp;</mn>
-  <mi>&rho;</mi>
-  <mo>.</mo>
-  <mi>&Omega;</mi> <mn>&hairsp;</mn>
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
-  <mo>.</mo>
-  <mi>&Gamma;</mi>
+   <mn>&frac12;&thinsp;</mn>
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>&Omega;</mi>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
+   <mo>.</mo>
+   <mi>&Gamma;</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.2)
+<td class="eqn">                                          (23.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -224,54 +239,70 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mn>&Hat;</mn>
+   </mover>
+   
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mfrac>
+      <mrow>
+         <mn>&frac12;&thinsp;</mn>
+         <mi>&rho;</mi>
+         <mo>.</mo>
+         <mi>&Omega;</mi> <mn>&hairsp;</mn>
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+         <mn>.&hairsp;</mn>
+         <mi>&Gamma;</mi>
+      </mrow>
+      <mrow>
+      <mi>&rho;</mi>
+      <mn>&hairsp;</mn>
+      <msup>
+         <mi>V</mi>
+         <mn>2</mn>
+      </msup>
+      <mn>.&hairsp;</mn>
+      <mn>&pi;</mn>
+      <msup>
+         <mi>R</mi>
+         <mn>2</mn>
+      </msup>
+      </mrow>
+   </mfrac>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-     <mn>&frac12;&thinsp;</mn>
-     <mi>&rho;</mi>
-     <mo>.</mo>
-     <mi>&Omega;</mi> <mn>&hairsp;</mn>
-     <msup> <mi>R</mi> <mn>2</mn> </msup>
-     <mn>.&hairsp;</mn>
-     <mi>&Gamma;</mi>
-   </mrow>
-   <mrow>
-     <mi>&rho;</mi>
-     <mn>&hairsp;</mn>
-     <msup> <mi>V</mi> <mn>2</mn> </msup>
-     <mn>.&hairsp;</mn>
-     <mn>&pi;</mn>
-     <msup> <mi>R</mi> <mn>2</mn> </msup>
-    </mrow>
-  </mfrac>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>2&pi;&hairsp;</mn>
+         <mi>V</mi>
+      </mrow>
+   </mfrac>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow> <mn>2&pi;&hairsp;</mn> <mi>V</mi> </mrow>
-  </mfrac>
+   <mo>&thinsp;.&thinsp;</mo>
+   <mfrac>
+      <mi>&Omega;</mi>
+      <mi>V</mi>
+   </mfrac>
 
-  <mo>&thinsp;.&thinsp;</mo>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>&Omega;</mi>
-    <mi>V</mi>
-  </mfrac>
+   <mo>&thinsp;.&thinsp;</mo>
 
-  <mo>&thinsp;.&thinsp;</mo>
-
-  <mi>&Gamma;</mi>
+   <mi>&Gamma;</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.3)
+<td class="eqn">                                          (23.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -282,44 +313,66 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mn>&Hat;</mn>
+   </mover>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>&Gamma;</mi> <mo>.</mo> <mi>X</mi> </mrow>
-    <mrow> <mn>2&pi;&hairsp;</mn> 
-           <mi>R</mi> <mo>.</mo><mi>V</mi> </mrow>
+   <mfrac>
+      <mrow>
+         <mi>&Gamma;</mi>
+         <mo>.</mo>
+         <mi>X</mi>
+      </mrow>
+      <mrow>
+         <mn>2&pi;&hairsp;</mn> 
+         <mi>R</mi>
+         <mo>.</mo>
+         <mi>V</mi> 
+      </mrow>
   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.4)
+<td class="eqn">                                          (23.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> In the propeller, we will define a non-dimensional
- vortex strength <i>Γ</i>&thinsp;&prime; :
+ vortex strength 
+   <span class="hat-anchor-capital"> <i>&Gamma;</i>    
+	<span class="hat">&Hat;</span></span>&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>&Gamma;</mi>
+      <mn mathsize"=110%">&Hat;</mn>
+   </mover>
 
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>&Gamma;</mi>
-    <mrow> <mn>2&pi;&hairsp;</mn> 
-           <mi>R</mi> <mo>.</mo><mi>V</mi> </mrow>
-  </mfrac>
+   <mfrac>
+      <mi>&Gamma;</mi>
+      <mrow>
+         <mn>2&pi;&hairsp;</mn> 
+         <mi>R</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+      </mrow>
+   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.5)
+<td class="eqn">                                          (23.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -328,17 +381,26 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&hairsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mn mathsize=110%">&Hat;</mn>
+   </mover>      
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
-  <mn>.&thinsp;</mn> <mi>X</mi>
+   <mover>
+      <mi>&Gamma;</mi>
+      <mn mathsize=110%">&Hat;</mn>
+   </mover> 
+   <mn>.&thinsp;</mn>
+   <mi>X</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.6)
+<td class="eqn">                                          (23.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -397,29 +459,41 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>&Gamma;</mi>
-  <mspace/> <mn>&emsp;&harr;&emsp;</mn> <mspace/>
-  <msub> <mi>&mu;</mi> <mn>o</mn> </msub>
-  <mo>.</mo>  <mi>I</mi>
+   <mi>&Gamma;</mi>
+   
+   <mspace/>
+   <mn>&emsp;&harr;&emsp;</mn>
+   <mspace/>
+
+   <msub>
+      <mi>&mu;</mi>
+      <mn>o</mn>
+  </msub>
+
+  <mo>.</mo>
+  <mi>I</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.7)
+<td class="eqn">                                          (23.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>v</mi>
-  <mspace/>  <mn>&emsp;&harr;&emsp;</mn>  <mspace/>
-  <mi>B</mi>
+   <mi>v</mi> 
+   <mspace/>
+   <mn>&emsp;&harr;&emsp;</mn>
+   <mspace/>
+
+   <mi>B</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.8)
+<td class="eqn">                                          (23.8)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -430,19 +504,20 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>w</mi>
+  <mi>w</mi>   
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>&Gamma;</mi>
-    <mi>s</mi>
- </mfrac>
+   <mfrac>
+      <mi>&Gamma;</mi>
+      <mi>s</mi>
+   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (23.9)
+<td class="eqn">                                          (23.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -466,19 +541,23 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>s</mi>
+   <mi>s</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>2&pi;&thinsp;</mn> <mi>R</mi> </mrow>
-    <mi>X</mi>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>2&pi;&thinsp;</mn>
+         <mi>R</mi>
+      </mrow>
+      <mi>X</mi>
+   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.10)
+<td class="eqn">                                         (23.10)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -489,24 +568,29 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>w</mi>
+   <mi>w</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>&Gamma;</mi>
-   </mrow>
-    <mrow> <mn>2&pi;&hairsp;</mn> <mi>R</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mi>&Gamma;</mi>
+      </mrow>
+      <mrow>
+         <mn>2&pi;&hairsp;</mn>
+         <mi>R</mi>
+      </mrow>
+   </mfrac>
 
- <mo>&thinsp;.&thinsp;</mo> <mi>X</mi>
+   <mo>&thinsp;.&thinsp;</mo>
+   <mi>X</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.11)
+<td class="eqn">                                         (23.11)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -518,34 +602,45 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>w</mi>
-    <mi>V</mi>
- </mfrac>
+   <mfrac>
+      <mi>w</mi>
+      <mi>V</mi>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>&Gamma;</mi>
-   </mrow>
-    <mrow> <mn>2&pi;&hairsp;</mn> <mi>R</mi>
-   <mo>.</mo> <mi>V</mi>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mi>&Gamma;</mi>
+      </mrow>
+      <mrow>
+         <mn>2&pi;&hairsp;</mn>
+         <mi>R</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+      </mrow>
+   </mfrac>
 
- <mo>&thinsp;.&thinsp;</mo> <mi>X</mi>
+   <mo>&thinsp;.&thinsp;</mo>
+   <mi>X</mi>
 
- <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
- <mi>&Gamma;</mi> <mn>&hairsp;&prime;</mn>
- <mn>.&thinsp;</mn> <mi>X</mi>
+   <mover>
+      <mi>&Gamma;</mi>
+      <mn mathsize="110%">&Hat;</mn>
+   </mover>
+   <mn>.&thinsp;</mn>
+   <mi>X</mi>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.12)
+<td class="eqn">                                         (23.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -554,27 +649,32 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>w</mi>
-    <mi>V</mi>
- </mfrac>
+   <mfrac>
+      <mi>w</mi>
+      <mi>V</mi>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mi>
+   <mover>
+      <mi>T</mi>
+      <mn mathsize="110%">&Hat;</mi>
+   </mover>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.13)
+<td class="eqn">                                         (23.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> With (4.2), this result is identical to (5.10)
  for the ideal actuator disk. Like in the elliptical wing
  with uniform down&shywash, the vortex picture gives
- a "physical" justification for the actuator tube flow with
- a uniform propwash inside the tube, and zero outside it.
+ a "physical" justification for the schematic uniform
+ actuator tube flow with a uniform propwash inside the tube,
+ and zero propwash outside it.
 </p>
 <p>&emsp;
  The factor X reflects the fact that the thrust on the bound vortex
@@ -598,7 +698,8 @@ turns" per length&hairsp;).
 </p>
 <p>&emsp;
  Similarly, we can see the
-    <i>&Gamma;</i>&thinsp;&prime;.&thinsp;<i>X</i>
+   <span class="hat-anchor-capital"> <i>&Gamma;</i>    
+	<span class="hat">&Hat;</span></span>.&thinsp;<i>X</i>
   in (23.12) as the "vortex density per length"
  on the surface of the flow tube.
  This vortex density determines the axial induction
@@ -638,90 +739,110 @@ turns" per length&hairsp;).
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
 
-  <mo>&thinsp;=&thinsp;</mo> <mspace/>
+   <mo>&thinsp;=&thinsp;</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>T</mi>
-    <mi>w</mi>
- </mfrac>
+   <mfrac>
+      <mi>T</mi>
+      <mi>w</mi>
+   </mfrac>
 
-  <mo>&thinsp;=&thinsp;</mo>
+   <mo>&thinsp;=&thinsp;</mo>
 
-  <mn>&frac12;&thinsp;</mn>
-  <mi>&rho;</mi>
-  <mo>.</mo>
-  <mi>&Omega;</mi> <mn>&hairsp;</mn>
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
-  <mo>.</mo>
-  <mi>&Gamma;</mi>
+   <mn>&frac12;&thinsp;</mn>
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>&Omega;</mi>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
+   <mo>.</mo>
+   <mi>&Gamma;</mi>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>2&pi;&thinsp;</mn> <mi>R</mi>
-   </mrow>
-    <mrow> <mi>&Gamma;</mi> <mo>.</mo><mi>X</mi>
-   </mrow>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>2&pi;&thinsp;</mn>
+         <mi>R</mi>
+      </mrow>
+      <mrow>
+         <mi>&Gamma;</mi>
+         <mo>.</mo>
+         <mi>X</mi>
+      </mrow>
+   </mfrac>
 
 </math>
 </td>
 </td> </tr> </table>
-
-
 <!-- END EQUATION --------------------------------------------->
 
 <!-- SECOND LINE OF EQUATION ---------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-   <mspace style="width:75px"/>
+      <mspace style="width:75px"/>
 
-  <mo>&thinsp;= &ensp; </mo>
+   <mo>&thinsp;= &ensp; </mo>
   
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mi>&rho;</mi> <mn>&thinsp;&pi;</mn>
-     <mo>.</mo>
-     <mi>&Omega;</mi> <mn>&hairsp;</mn>
-      <msup> <mi>R</mi> <mn>3</mn> </msup>
-   </mrow>
-    <mi>X</mi>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mi>&rho;</mi>
+         <mn>&thinsp;&pi;</mn>
+         <mo>.</mo>
+         <mi>&Omega;</mi>
+         <mn>&hairsp;</mn>
+         <msup>
+            <mi>R</mi>
+            <mn>3</mn>
+         </msup>
+      </mrow>
+      <mi>X</mi>
+   </mfrac>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.14)
+<td class="eqn">                                         (23.14)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> With <i>X</i> &equiv; 
-    <i>&Omega;&hairsp;R&thinsp;/&thinsp;V</i>
+<p> With <i>X</i> <span class="equiv">&equiv;</span> 
+    <i>&Omega;&hairsp;R&nbsp;&frasl;&nbsp;V</i>
  this simplifies to :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
 
-  <mo>&thinsp;=&thinsp;</mo> <mspace/>
+   <mo>&thinsp;=&thinsp;</mo>
+   <mspace/>
 
-  <mi>&rho;</mi>
-  <mn>&thinsp;</mn>
-  <mi>V</mi>
-  <mo>.</mo>
-  <mn>&pi;</mn> <mn>&hairsp;</mn>
-  <msup> <mi>R</mi> <mn>2</mn> </msup>
+   <mi>&rho;</mi>
+   <mn>&thinsp;</mn>
+   <mi>V</mi>
+   <mo>.</mo>
+   <mn>&pi;</mn>
+   <mn>&hairsp;</mn>
+   <msup>
+      <mi>R</mi>
+      <mn>2</mn>
+   </msup>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (23.15)
+<td class="eqn">                                         (23.15)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -752,10 +873,10 @@ turns" per length&hairsp;).
 <!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> 
    <span style="float:left"> <a href="prop_book_22.html">
-               &#x25C4;</a> </span>
+               &#x25C4;&#xFE0E;</a> </span>
 P. Lammertse, 2025
    <span style="float:right"> <a href="prop_book_24.html">
-               &#x25BA;</a> </span>              
+               &#x25BA;&#xFE0E;</a> </span>              
 </div>
 
 <!-- SCRIPTS ------------------------------------------------------>
