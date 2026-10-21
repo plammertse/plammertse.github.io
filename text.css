@@ -260,6 +260,15 @@ td {
    font-size        : 15.6px;  */     /* test, it does work */
 }
 
+/* Use for names like Newton, or Biot-Savart */
+/* Style guides say : don't do this in text  */
+.surname {
+/*
+   font-variant    : small-caps;
+   font-style      : italic;
+*/
+}
+
 /* Use in a <div> around figures. It has margin above */
 .center {
    display         : flex;
@@ -336,6 +345,15 @@ td {
    top       : -0.4em;           /* shift diacritical up              */
 	transform : translateX(-50%); /* shift diacritical middle left     */
 /*   font-size : 22px;  */       /* &minus; sign is big enough        */
+}
+
+.harpoon {   
+  	position  : absolute;         /* relative to anchor letter         */
+   left      : 65%;              /* shift anchor position over letter */
+                                 /* to right of middle for italics    */
+   top       : -0.7em;           /* shift diacritical up              */
+	transform : translateX(-50%); /* shift diacritical middle left     */
+   font-size : 20px;             /* bigger harpoon                    */
 }
 
 /* Use this class in a span to make the hamburger sign equally spaced */

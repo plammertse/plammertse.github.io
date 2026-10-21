@@ -71,10 +71,9 @@
  with a small but finite spacing between the wings.
  It is reminiscent of the early "Venetian blind" multiplanes
  of Horatio
- <span style="font-variant: small-caps;">Phillips</span>,
+ <span class="surname";>Phillips</span>,
  although he had to stop at 120 decks for practical reasons.
 </p>
-
 
 <div class = "center">
 <img src = "images/prop_multiplane_downwash.gif";
@@ -111,11 +110,11 @@
 </p>
 <p>&emsp;
  The shape is very similar to
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname";>Prandtl</span>'s
  tip function
  of figure 21.6. XXXXXXXXXXXXXXXXXXX
  This is not surprising, since
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname";>Prandtl</span>'s
  tip came from the flat plate model of figure 21.1,  XXXXXXXXXXXX
  which is similar to the left or right half
  of an infinite multiplane wing.
@@ -135,7 +134,7 @@
 </p>
 <p>&emsp;
  By 
-<span style="font-variant: small-caps;">Prandtl</span>'s
+<span class="surname";>Prandtl</span>'s
  approximation,
  we are used to the idea that with finite tip spacing
  there will be tip loss, and that the optimal tip shape
@@ -155,13 +154,13 @@
 </p>
 <p>&emsp;
  In the 1930's,
- <span style="font-variant: small-caps;">Goldstein</span>
+ <span class="surname";>Goldstein</span>
  and others published the equations,
  but before the age of digital computers these were
  too tedious for everyday use.
 </p>
 <p>&emsp;
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname";>Prandtl</span>'s
  tip approximation remained the option of choice
  in all design texts. 
 </p>
@@ -172,43 +171,41 @@
 
 <h4> 24.3 &emsp; Lerbs's solution                          </h4>
 
-<p>
- In the 1950's, the German ship propulsion engineer
- <span style="font-variant: small-caps;">Lerbs</span>
+<p> In the 1950's, the German ship propulsion 
+ engineer <span class="surname";>Lerbs</span>
  published a very good approximate solution of
-<span style="font-variant: small-caps;">Goldstein</span> 's
+<span class="surname";>Gold&shystein</span>'s
  equations.
 </p>
 <p>&emsp;
  These equations were still complex for hand calculations,
  but more amenable to computer use.
- <span style="font-variant: small-caps;">Wrench</span> 
+ <span class="surname";>Wrench</span> 
  made a slight improvement to the approximation
  and published a set of tables,
  more detailed but otherwise identical to
-<span style="font-variant: small-caps;">Goldstein</span>'s.
+<span class="surname";>Goldstein</span>'s.
  Still being tables, they did not replace the
- <span style="font-variant: small-caps;"> Prandtl</span> 
+ <span class="surname";> Prandtl</span> 
  tip function in preliminary design
  for quite some time.
 </p>
 <p>&emsp;
- However,
- <span style="font-variant: small-caps;">Lerbs</span>'s
+ However, <span class="surname";>Lerbs</span>'s
  and
- <span style="font-variant: small-caps;">Wrench</span>'s
+ <span class="surname";>Wrench</span>'s
  equations are simple for present day laptop computers.
  Elsewhere in this website you will find simple
- <span style="font-variant: small-caps;">Matlab</span> <sup>©</sup>
+ <span class="surname";>Matlab</span> <sup>©</sup>
  code which runs the whole calculation in a fraction of a second.
 </p>
 <p>&emsp;
  We do not give a justification of
- <span style="font-variant: small-caps;">Lerbs</span> 's
+ <span class="surname";>Lerbs</span> 's
  equation.
  The story leading up to it would require a separate volume,
  But we will give a feeling for its shape.
- <span style="font-variant: small-caps;">Lerbs</span> 's
+ <span class="surname";>Lerbs</span> 's
  equation is the direct equivalent of
  the wing tip vortex downwash (21..6),
  but this time for the tip spiral, starting with the axial
@@ -217,7 +214,7 @@
  of a propeller with <i>B</i> blades.
 </p>
 <p>&emsp; 
- <span style="font-variant: small-caps;">Lerbs</span> 
+ <span class="surname";>Lerbs</span> 
  gave the axial induction on the blade lifting line
  from <i>B</i> coaxial spiral vortices,
  where <i>B</i> is the number of blades as usual.
@@ -237,53 +234,74 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>v</mi>
-  <mn>&thinsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
-     <mi>B</mi>
-  <mn>)</mn>
+   <mn>d</mn>
+   <mi>v</mi>
+   <mn>&thinsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <mi>B</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>d</mn> <mi>&Gamma;</mi>
-      <mn>(</mn>
-       <msub> <mi>x</mi> <mn>t</mn> </msub>
-      <mn>)</mn>
-   </mrow>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <mi>&Gamma;</mi>
+         <mn>(</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>t</mn>
+            </msub>
+         <mn>)</mn>
+      </mrow>
    <mn>4&pi;</mn>
   </mfrac>
 
   <mo>.</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
+   <mfrac>
       <mi>&Omega;</mi>
       <mi>V</mi>
-  </mfrac>
+   </mfrac>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mi>Z</mi>
-  <mn>&hairsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub> <mn>&hairsp;,&thinsp;</mn>
-     <mi>B</mi>
-  <mn>)</mn>
+   <mi>Z</mi>
+   <mn>&hairsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <mi>B</mi>
+   <mn>)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.1)
+<td class="eqn">                                          (24.1)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 
 <p> In what follows, we will use the induction
- <i>w</i>in the far wake.
+ <i>w</i> in the far wake.
  From symmetry, this is exactly twice the value <i>v</i> 
  at the disk plane in the propeller plane. We multiply by 2.
 </p>
@@ -297,119 +315,160 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>d</mn> <mi>w</mi>
-      <mn>&thinsp;(</mn>
-         <msub> <mi>x</mi> <mn>t</mn> </msub>
-           <mn>&hairsp;,&thinsp;</mn>
-         <msub> <mi>x</mi> <mn>w</mn> </msub>
-           <mn>&hairsp;,&thinsp;</mn>
-         <mi>B</mi>
-      <mn>)</mn>
-    </mrow>
-    <mi>V</mi>
-  </mfrac>
-
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>d</mn> <mi>&Gamma;</mi>
-      <mn>(</mn>
-       <msub> <mi>x</mi> <mn>t</mn> </msub>
-      <mn>)</mn>
-   </mrow>
-    <mrow>
-      <mn>2&pi;</mn> <mi>R</mi> <mo>.</mo> <mi>V</mi>
-   </mrow>
-  </mfrac>
-
-  <mo>&thinsp;.</mo>
-
-  <mstyle displaystyle="true">
-  <mfrac>
-      <mrow> <mi>&Omega;</mi> <mi>R</mi> </mrow>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <mi>w</mi>
+         <mn>&thinsp;(</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>t</mn>
+            </msub>
+            <mn>&hairsp;,&thinsp;</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>w</mn>
+            </msub>
+            <mn>&hairsp;,&thinsp;</mn>
+            <mi>B</mi>
+         <mn>)</mn>
+      </mrow>
       <mi>V</mi>
-  </mfrac>
+   </mfrac>
 
-  <mo>.&thinsp;</mo>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>Z</mi>
-  <mn>&hairsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <mi>B</mi>
-  <mn>&hairsp;)</mn>
+   <mfrac>
+      <mrow>
+         <mn>d</mn> <mi>&Gamma;</mi>
+         <mn>(</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>t</mn>
+            </msub>
+         <mn>)</mn>
+      </mrow>
+      <mrow>
+         <mn>2&pi;</mn>
+         <mi>R</mi>
+         <mo>.</mo>
+         <mi>V</mi>
+      </mrow>
+   </mfrac>
+
+   <mo>&thinsp;.</mo>
+
+   <mfrac>
+      <mrow>
+         <mi>&Omega;</mi>
+         <mi>R</mi>
+      </mrow>
+      <mi>V</mi>
+   </mfrac>
+
+   <mo>.&thinsp;</mo>
+
+   <mi>Z</mi>
+   <mn>&hairsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <mi>B</mi>
+   <mn>&hairsp;)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.2)
+<td class="eqn">                                          (24.2)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> The radius coordinates <i>x</i><sub>w</sub> and
  <i>x</i><sub>t</sub> are already non-dimensional in
- <span style="font-variant: small-caps;">Lerbs</span>,
+ <span class="surname";>Lerbs</span>,
  by the same definition of
  <i>x</i> = <i>&Omega;&hairsp;r&thinsp;/&thinsp;V</i>
- taht we are using since (2.10).
+ that we are using since (2.10).
  This gives 
-  <span style="font-variant: small-caps;">Lerbs</span>'s
+  <span class="surname";>Lerbs</span>'s
  equation for <i>Z</i> the information it needs on the
  spiral angle <i>&phi;</i> of the trailing vortex
  at <i>x</i><sub>t</sub>.
- Applying the <i>&Gamma;</i>&thinsp;&prime;
+ Applying the
+   <span class="hat-anchor-capital"> <i>&Gamma;</i>    
+	<span class="hat">&Hat;</span></span>
  definition of (23.5) makes
- <span style="font-variant: small-caps;">Lerbs</span>'s
+ <span class="surname";>Lerbs</span>'s
  equation fully non-dimensional :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow>
-      <mn>d</mn> <mi>w</mi>
-      <mn>&thinsp;(</mn>
-         <msub> <mi>x</mi> <mn>t</mn> </msub>
-           <mn>&hairsp;,&thinsp;</mn>
-         <msub> <mi>x</mi> <mn>w</mn> </msub>
-           <mn>&hairsp;,&thinsp;</mn>
-         <mi>B</mi>
-      <mn>)</mn>
-    </mrow>
-    <mi>V</mi>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <mi>w</mi>
+         <mn>&thinsp;(</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>t</mn>
+            </msub>
+            <mn>&hairsp;,&thinsp;</mn>
+            <msub>
+               <mi>x</mi>
+               <mn>w</mn>
+            </msub>
+            <mn>&hairsp;,&thinsp;</mn>
+            <mi>B</mi>
+         <mn>)</mn>
+      </mrow>
+      <mi>V</mi>
+   </mfrac>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mn>d</mn> <mi>&Gamma;</mi> <mn>&thinsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>&Gamma;</mi>
+      <mo mathsize="100%">&Hat;</mo>
+   </mover>      
 
-  <mo>&thinsp;.</mo>
+   <mo>&thinsp;.</mo>
 
-  <mi>X</mi>
+   <mi>X</mi>
 
-  <mo>.&thinsp;</mo>
+   <mo>.&thinsp;</mo>
 
-  <mi>Z</mi>
-  <mn>&hairsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <mi>B</mi>
-  <mn>&hairsp;)</mn>
+   <mi>Z</mi>
+   <mn>&hairsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <mi>B</mi>
+   <mn>&hairsp;)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.3)
+<td class="eqn">                                          (24.3)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
@@ -437,7 +496,7 @@
  for a propeller of a typical tip speed ratio <i>X</i> = 5.
 </p>
 
-<span style="color:darkgrey">
+<span class="draft">
 
 <p>&emsp;&emsp;<i> TODO
  Discuss band of 2&pi;/B à la Prandtl. </i>
@@ -463,7 +522,7 @@
 
 <p>&emsp;
  Like in
-  <span style="font-variant: small-caps;">Prandtl</span>'s
+  <span class="surname";>Prandtl</span>'s
  approximation, the effects of <i>B</i> and those of <i>x</i>
  are very similar.
  Both act on the axial spacing between successive spirals,
@@ -497,7 +556,7 @@
             The full cosine distribution for the propeller </h4>
 
 <p> We now use
-  <span style="font-variant: small-caps;">Lerbs</span>'s
+  <span class="surname";>Lerbs</span>'s
  downwash equation in a discrete lifting line theory
  for the propeller,
  in exactly the same way as we did before for the wing.
@@ -539,21 +598,20 @@
 <table class = "equation">
 <tr> <td>
 <math>
-  <mi>&theta;</mi>
+   <mi>&theta;</mi>
 
-  <mo>=</mo>
+   <mo>=</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>0&hairsp;.&thinsp;.&hairsp;N</mn> 
-    <mn>N</mn> 
- </mfrac>
-  <mo>.</mo>
-  <mn>&pi;</mn>
+   <mfrac>
+      <mn>0&hairsp;.&thinsp;.&hairsp;N</mn> 
+      <mn>N</mn> 
+   </mfrac>
+   <mo>.</mo>
+   <mn>&pi;</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.4)
+<td class="eqn">                                          (24.4)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -561,19 +619,26 @@
 <table class = "equation"; style="margin-top:6px">
 <tr> <td>
 <math>
-  <msub> <mi>x</mi> <mn>t</mn> </msub>
+   <msub>
+      <mi>x</mi>
+      <mn>t</mn>
+   </msub>    
 
-  <mo>=</mo>
+   <mo>=</mo>
 
-  <mi>X</mi> <mo>.</mo>
-  <mn>(&hairsp;</mn>
-    <mn>&frac12;</mn> <mo>+</mo> <mn>&frac12;</mn>
-    <mo>cos</mo> <mi>&theta;</mi>
-  <mn>&hairsp;)</mn>
+   <mi>X</mi>
+   <mo>.</mo>
+   <mn>(&hairsp;</mn>
+      <mn>&frac12;</mn>
+      <mo>+</mo>
+      <mn>&frac12;</mn>
+      <mo>cos</mo>
+      <mi>&theta;</mi>
+   <mn>&hairsp;)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">  (24.5)
+<td class="eqn">                                          (24.5)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -589,22 +654,21 @@
 <table class = "equation">
 <tr> <td>
 <math>
-  <mi>&phi;</mi>
+   <mi>&phi;</mi>
 
-  <mo>=</mo>
+   <mo>=</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>&frac12&thinsp;.&thinsp;.&hairsp;
+   <mfrac>
+      <mn>&frac12&thinsp;.&thinsp;.&hairsp;
       (&hairsp;N&hairsp;-&hairsp;&frac12;&hairsp;)</mn> 
-    <mn>N</mn> 
- </mfrac>
-  <mo>.</mo>
-  <mn>&pi;</mn>
+      <mn>N</mn> 
+   </mfrac>
+   <mo>.</mo>
+   <mn>&pi;</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.6)
+<td class="eqn">                                          (24.6)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -612,23 +676,30 @@
 <table class = "equation"; style="margin-top:6px">
 <tr> <td>
 <math>
-  <msub> <mi>x</mi> <mn>w</mn> </msub>
+   <msub> <mi>x</mi> <mn>w</mn> </msub>
 
-  <mo>=</mo>
+   <mo>=</mo>
 
-  <msub> <mi>x</mi> <mn>G</mn> </msub>
+   <msub>
+      <mi>x</mi>
+      <mn>G</mn>
+   </msub>
 
-  <mo>=</mo>
+   <mo>=</mo>
 
-  <mi>X</mi> <mo>.</mo>
-  <mn>(&hairsp;</mn>
-    <mn>&frac12;</mn> <mo>+</mo> <mn>&frac12;</mn>
-    <mo>cos</mo> <mi>&phi;</mi>
-  <mn>&hairsp;)</mn>
+   <mi>X</mi>
+   <mo>.</mo>
+   <mn>(&hairsp;</mn>
+      <mn>&frac12;</mn>
+      <mo>+</mo>
+      <mn>&frac12;</mn>
+      <mo>cos</mo>
+      <mi>&phi;</mi>
+   <mn>&hairsp;)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.7)
+<td class="eqn">                                          (24.7)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -647,7 +718,6 @@
  starting from a guaranteed value of zero at the free tip end.
 </p>
 
-
 <div class = "center">
 <img src = "images/prop_full_cosine_blade.gif";
    width = "50%";
@@ -659,7 +729,6 @@
          Full cosine distribution in the propeller. </i> </p>
 </div>
 
-
 <!-- SECTION -------------------------------------------------->
 
 <h4> 24.5 &emsp; The transfer matrix from vortex pattern
@@ -667,43 +736,57 @@
 
 <p> Like in (22.5) for the wing we can put the transfer from
  the trailing vortex radius terms to the downwash radius terms
-into an influence matrix <i>A</i> :
+into an influence matrix A :
 </p>
-<p>&emsp;&emsp; <i> Define the step from (24.1..3) to A </i> </p>
+<p class="draft"
+>&emsp;&emsp; <i> Define the step from (24.1..3) to A </i> </p>
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>A</mi>
-  <mn>&thinsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub>
-  <mn>&thinsp;)</mn>
+   <mi>A</mi>
+   <mn>&thinsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+   <mn>&thinsp;)</mn>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mn>2&pi;</mn>
-  </mfrac>
+   <mfrac>
+      <mn>1</mn>
+      <mn>2&pi;</mn>
+   </mfrac>
 
-  <mo>.</mo>
+   <mo>.</mo>
 
-  <mi>Z</mi>
-  <mn>&thinsp;(</mn>
-     <msub> <mi>x</mi> <mn>t</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <msub> <mi>x</mi> <mn>w</mn> </msub>
-       <mn>&hairsp;,&thinsp;</mn>
-     <mi>B</mi>
-  <mn>)</mn>
+   <mi>Z</mi>
+   <mn>&thinsp;(</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>w</mn>
+      </msub>
+      <mn>&hairsp;,&thinsp;</mn>
+      <mi>B</mi>
+   <mn>)</mn>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">                (24.8)
+<td class="eqn">                                          (24.8)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
@@ -715,22 +798,32 @@ into an influence matrix <i>A</i> :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle style="font-weight: bold;">        <!-- !!!!!!!!!!!!!!! -->
+<!--  <mstyle style="font-weight: bold;">  --> <!-- tooo fat -->
 
-  <mi>w</b></mi>
+      <mover>
+         <mi>w</b></mi>
+         <mo mathsize="110%">&rharu;</mo>
+      </mover>
 
-  <mspace/> <mo>=</mo> <mspace/>
+      <mspace/>
+      <mo>=</mo>
+      <mspace/>
 
-  <mi>A</mi>
+      <mn><b>A</b></mn>
 
-  <mo>.</mo>
-
-  <mn>d</mn><mi>&Gamma;</mi>
- </mstyle>
+      <mo> . </mo>
+      <mover>
+         <mrow>
+            <mn>d</mn>
+            <mi>&Gamma;</mi>
+         </mrow>
+         <mo mathsize="110%">&rharu;</mo>
+      </mover>
+<!--   </mstyle> -->
 
 </math>
 
-<td style="width:50px; text-align:right">                (24.9)
+<td class="eqn">                                          (24.9)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -740,47 +833,60 @@ into an influence matrix <i>A</i> :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle style="font-weight: bold;">
+<!--   <mstyle style="font-weight:bold"> -->
 
-  <mn>d</mn><mi>&Gamma;</mi>
+      <mover>
+         <mrow> <mn>d</mn>
+         <mi>&Gamma;</mi> </mrow>
+         <mo mathsize="130%">&rharu;</mn>
+      </mover>         
 
-  <mspace/> <mo>=</mo> <mspace/>
+      <mspace/>
+      <mo>=</mo>
+      <mspace/>
 
-  <mi>A</mi>
+      <mn><b>A</b></mn>
 
-  <mo>&hairsp;\&hairsp;</mo>
+      <mo>&hairsp;\&hairsp;</mo>
 
-  <mi>w</b></mi>
- </mstyle>
+      <mover>
+         <mi>w</mi>
+         <mo>&rharu;</mo>
+      </mover>
+<!--   </mstyle>  -->
 </math>
 
-<td style="width:50px; text-align:right">               (24.10)
+<td class="eqn">                                         (24.10)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The basic matrix <b><i>A</i></b> has the dimensions 
-   (N+1) x N.
- There are (N+1) trailing vortices d<i>Γ</i> for N
- downwash locations.
+<p>Matrix <b>A</b> has dimensions 
+   (N+1)&nbsp;x&nbsp;N.
+ There are (N+1) trailing vortices d<i>Γ</i><sub>k</sub>, for N
+ downwash locations  k&nbsp;=&nbsp;0..N.
 </p>
-<p>&emsp;
- We can call the condition (22.8) on the total trailing vorticity
- to the rescue again to increase <b><i>A</i></b>
- to (N+1) x (N+1) before inverting it.
+<p>
+ Since the matrix is not square, it is not invertible.
+ N downwash conditions are not enough to define
+(N+1) trailing vortices. 
 </p>
-<p>&emsp;
+<p> &emsp;
+ We could call on the extra condition (22.8) for zero total
+ trailing vorticity again, to increase <b>A</b>
+ to&nbsp;(N+1)&nbsp;x&nbsp;(N+1) before inverting it.
  However, in the propeller we have the immediate alternative of
- reducing the order of <b><i>A</i></b>
+ reducing the order of <b>A</b>
  to N&nbsp;x&nbsp;N before inverting it,
  by leaving out the last column.
  This column contains only zeros.
  It gives the axial influence of the root vortex at
- &theta; = &pi;,  <i>x</i><sub>t</sub>&nbsp;=&nbsp;0.
+ <i>&theta;</i> = &pi;,
+ <i>x</i><sub>t</sub>&nbsp;=&nbsp;0.
 </p>
 <p>&emsp;
  The root vortex is not a true spiral.
- It is just a straight line, coincidiong with the propeller axis.
+ It is just a straight line, coinciding with the propeller axis.
  Since it points straight back, its induction, if any,
  is purely tangential.
  In other words, the root vortex and the axial induction
@@ -791,46 +897,73 @@ into an influence matrix <i>A</i> :
 <div style = "break-before:page"> </div>
 
 <p>&emsp;
- Omitting the last column of the matrix <b><i>A</i></b>
- leaves only N trailing vortices, to match
- with N desired downwash values.
- The number of equations matches the number of unknowns.
+ Omitting the last column of the matrix <b>A</b>
+ leaves only N trailing vortices to find, which matches
+ up with N defined downwash values.
+ The number of equations now matches the number of unknowns.
  After solving (24.8) for the remaining
- N-vector <b>d<i>&Gamma;</i></b>
- from an N-vector <b><i>w</i></b> for the desired
- downwash distribution, we can later find
+ N-vector 
+    <span class="hat-anchor-capital">d<i>&Gamma;</i>    
+	<span class="harpoon">&rharu;</span></span>
+   from an N-vector
+   <span class="hat-anchor"><i>w</i>    
+	<span class="harpoon";
+         style="top:-0.55em";>&rharu;</span></span>
+ for the desired downwash distribution, we can later find
  the root vortex separately by :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn>
-    <msub> <mi>&Gamma;</mi> <mn>N</mn> </msub>
+   <mn>d</mn>
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>N</mn>
+   </msub>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <msubsup> <mo>&sum;</mo> <mn>0</mn> <mn>N-1</mn> </msubsup>
-  <mn>d</mn>
-    <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+   <msubsup>
+      <mo>&sum;</mo>
+      <mn>0</mn>
+      <mn>N-1</mn>
+   </msubsup>
+   <mn>d</mn>
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>k</mn>
+   </msub>
 
 </math>
 
-<td style="width:50px; text-align:right">               (24.11)
+<td class="eqn">                                        (24.11)
 
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p>
 The root vortex value is redundant.
- It is not needed in finding either <b>d<i>&Gamma;</i></b>,
- <b><i>&Gamma;</i></b>, or <b><i>w</i></b>.
+ It is not needed for finding 
+   <span class="hat-anchor-capital">d<i>&Gamma;</i>    
+	<span class="harpoon">&rharu;</span></span>
+   &hairsp;and&hairsp;
+   <span class="hat-anchor-capital"><i>&Gamma;</i>    
+	<span class="harpoon">&rharu;</span></span>  
+ &nbsp;from 
+   <span class="hat-anchor"><i>w</i>    
+	<span class="harpoon"
+    style="top:-0.55em";>&rharu;</span></span>,
+  or vice versa.
 </p>
 <p>&emsp;
  Figure 24.4 shows the two options in the matrix calculation.
  We have a choice of leaving off the right hand column of zeros
- ( shown in red ), or keeping it in
+ (&nbsp;shown in red&nbsp;), or keeping it in
  and adding the bottom row of ones, shown yellow,
+  to make a full (N+1) x (N+1) matrix
  like we did in figure 22.5 for the wing.
  The easiest option is to use only the grey
  N&nbsp;x&nbsp;N part
@@ -848,7 +981,6 @@ The root vortex value is redundant.
          The transfer matrix <b>A</b> in the propeller. </i> </p>
 </div>
 
-
 <!-- SECTION -------------------------------------------------->
 
 <h4> 24.6 &emsp;
@@ -861,23 +993,37 @@ The root vortex value is redundant.
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>&Gamma;</mi> <mn>k+1</mn> </msub>
-  <mspace/> <mo>=</mo> <mspace/>
-  <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
-  <mo>+</mo>
-  <mn>d</mn> <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>k+1</mn>
+   </msub>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>k</mn>
+   </msub>
+   <mo>+</mo>
+   <mn>d</mn>
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>k</mn>
+   </msub>
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (24.10)
+<td class="eqn">                                         (24.12)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
 <p> The bound vortex outside a free blade tip is zero.
+ We will discuss the ducted propeller later.
  For a free tip, (24.10) starts with
- <i>&Gamma;</i><sub>0</sub> = 0
+ <i>&Gamma;</i><sub>o</sub> = 0
  at <i>x</i><sub>G</sub> = <i>X</i>.
-<br> We will discuss the ducted propeller later.
 </p>
 <p>&emsp;
  The first interpolated value is
@@ -908,7 +1054,7 @@ The root vortex value is redundant.
  over the staircase graph of <i>&Gamma;</i> versus <i>x</i> :
 </p>
 
-<span style="color:darkgrey">
+<span class="draft">
 
 <p> <i> &emsp;  &emsp; TODO  &emsp;
  Fix the Gamma . X and the thrust. 
@@ -919,30 +1065,52 @@ The root vortex value is redundant.
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="110%">&minus;</mo>
+   </mover>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>&rho;</mi> <mo>.</mo> <mi>V</mi>  <mo>.</mo> 
+   <mi>&rho;</mi>
+   <mo>.</mo>
+   <mi>V</mi>
+   <mo>.</mo> 
 
-  <msubsup> <mo>&sum;</mo> <mn>1</mn> <mn>N</mn> </msubsup>
+   <msubsup>
+      <mo>&sum;</mo>
+      <mn>1</mn>
+      <mn>N</mn>
+   </msubsup>
 
-  <mn>d</mn>   <msub> <mi>&Gamma;</mi> <mn>k</mn> </msub>
+   <mn>d</mn>
+   <msub>
+      <mi>&Gamma;</mi>
+      <mn>k</mn>
+   </msub>
 
    <mo>.</mo> 
 
-  <mn>[&nbsp;</mn>
-    <msub> <mi>x</mi> <mn>t</mn> </msub> 
-       <mn>(&hairsp;k&hairsp;)</mn>
-      <mo>&minus;</mo>
-      <msub> <mi>x</mi> <mn>t</mn> </msub> 
-        <mn>(&hairsp;k-1&hairsp;)</mn>
-  <mn>&nbsp;]</mn>
+   <mn>[&nbsp;</mn>
+      <msub>
+         <mi>x</mi>
+         <mn>t</mn>
+      </msub> 
+      <mn>(&hairsp;k&hairsp;)</mn>
+         <mo>&minus;</mo>
+         <msub>
+            <mi>x</mi>
+            <mn>t</mn>
+         </msub> 
+      <mn>(&hairsp;k-1&hairsp;)</mn>
+   <mn>&nbsp;]</mn>
 
 </math>
 </td>
 
-<td style="width:50px; text-align:right">               (24.11)
+<td class="eqn">                                         (24.13)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 

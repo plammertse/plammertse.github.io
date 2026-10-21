@@ -61,7 +61,7 @@
  For the propeller, we know that this is not the case.
  The optimum propwash (&hairsp;more precisely, the optimal
  axial induction &hairsp;) follows
- <span style="font-variant: small-caps;">Betz</span>'s
+ <span class="surname">Betz</span>'s
  cos<sup>2</sup><i>&phi;</i> pattern
  for minimal rotational loss,
  possibly modified by an extra linear term
@@ -69,13 +69,13 @@
 </p>
 <p>&emsp;
  However, it is interesting first to explore the
- <span style="font-variant: small-caps;">Lerbs</span>
+ <span class="surname">Lerbs</span>
  solution and the tip loss, for a propeller of constant
  prop&shywash without the
- <span style="font-variant: small-caps;">Betz</span>,
+ <span class="surname">Betz</span>,
  correction. This makes for a more direct comparison 
  to the (&hairsp;multiplane&hairsp;) wing, and in fact to
-  <span style="font-variant: small-caps;">Prandtl</span>'s
+  <span class="surname">Prandtl</span>'s
  approximation for the tip loss. 
 </p>
 <p>&emsp;
@@ -88,20 +88,30 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle style="font-weight: bold;">
-  <mi>w</mi>
+   <mover>
+      <mi>w</mi>
+      <mo mathsize=130%">&rharu;</mo>
+   </mover>
+   
+   <mspace/>
+      <mo>=</mo>
+   <mspace/>
 
-  <mspace/> <mo>=</mo> <mspace/>
-
-  <mn>1</mn>
- </mstyle>
+   <mover>
+      <mn>1</mn>
+      <mo mathsize=130%">&rharu;</mo>
+   </mover>
 </math>
 
-<td style="width:50px; text-align:right">                (25.1)
+<td class="eqn">                                          (25.1)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Here "<b>1</b>" is the vector of ones
+<p> Here
+   <span class="hat-anchor-capital">1    
+	<span class="harpoon";
+         style="font-size:16px;">&rharu;</span></span>
+  is the vector of ones
  of the appropriate length,
  possibly extended with the extra zero from figure 24.4.
 </p>
@@ -109,7 +119,7 @@
  Figure 25.1 shows the result for our standard example
  of <i>B</i>&nbsp;=&nbsp;2, <i>X</i>&nbsp;=&nbsp;5.
  The graph is very similar to figure 21.4 for the
- <span style="font-variant: small-caps;">Prandtl</span>
+ <span class="surname">Prandtl</span>
  tip for the same case. 
 </p>
 
@@ -133,30 +143,30 @@
 </p>
 <p>&emsp;
  Figure 25.2 shows the comparison to
-  <span style="font-variant: small-caps;">Prandtl</span>'s
+  <span class="surname">Prandtl</span>'s
  tip for a few other values of the tip speed ratio X.
  The only real difference is near the root.
  The
- <span style="font-variant: small-caps;">Lerbs</span>
+ <span class="surname">Lerbs</span>
  solution always goes to 1 there.
 </p>
 <p>&emsp;
  Since the induction is a constant, by
-  <span style="font-variant: small-caps;">Newton</span>'s
+  <span class="surname">Newton</span>'s
  law of (4.7) the effective mass distribution has the same shape
  as the thrust distribution.
  This fits with our earlier interpretation of
-   <span style="font-variant: small-caps;">Prandtl</span>'s
+   <span class="surname">Prandtl</span>'s
  tip approximation as a mass factor.
 </p>
 <p>&emsp;
  The result thus matches
-  <span style="font-variant: small-caps;">Prandtl</span>'s
+  <span class="surname">Prandtl</span>'s
  model very nicely.
  We will see in the next section
  that this likeness is lost near the root of the blade,
  as soon as we apply
-  <span style="font-variant: small-caps;">Betz</span>'s 
+  <span class="surname">Betz</span>'s 
  cos<sup>2</sup><i>&phi;</i> condition for minimal rotational loss.
 </p>
 
@@ -185,10 +195,10 @@
 </p>
 <p>&emsp;
  In windmills, a different 
-  <span style="font-variant: small-caps;">Betz</span>
+  <span class="surname">Betz</span>
  optimum applies,  which has nothing to do with rotation.
  This "other" 
-  <span style="font-variant: small-caps;">Betz</span>
+  <span class="surname">Betz</span>
  condition states that the actuator disk must reduce the incoming
  wind velocity to &frac13; of its original value,
  for maximum energy extraction.
@@ -253,14 +263,20 @@ We now apply the discrete vortex solution to the rotationally
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>w</mi>
+   <mi>w</mi>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <msup> <mo>cos</mo> <mn>2</mn> </msup> <mi>&phi;</mi>
+   <msup>
+      <mo>cos</mo>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
 </math>
 
-<td style="width:50px; text-align:right">                (25.2)
+<td class="eqn">                                          (25.2)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -280,27 +296,31 @@ This <i>&phi;</i> is not the cosine parameter of (24.5),
 <p>&emsp;
  Figure 25.3 shows the result for our standard example
  of <i>B</i>&nbsp;=&nbsp;2, <i>X</i>&nbsp;=&nbsp;5.
- This the equivalent of the combination of 
+ This is the equivalent of the combination of 
  the cos<sup>2</sup><i>&hairsp;&phi;</i> distribution with 
- <span style="font-variant: small-caps;">Prandtl</span>'s
-  tip in figure 22.2.
+ <span class="surname">Prandtl</span>'s
+  tip in Figure 22.2.
 </p>
 
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
 
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mi>T</mi>
-    <mi>w</mi>
- </mfrac>
+   <mfrac>
+      <mi>T</mi>
+      <mi>w</mi>
+   </mfrac>
 </math>
 
-<td style="width:50px; text-align:right">                (25.3)
+<td class="eqn">                                          (25.3)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -326,17 +346,17 @@ This <i>&phi;</i> is not the cosine parameter of (24.5),
 <p>&emsp;
  There is a qualitative difference between the two solutions,
  which already surprised
- <span style="font-variant: small-caps;">Glauert</span>.
- The  <span style="font-variant: small-caps;">Prandtl</span>
+ <span class="surname">Glauert</span>.
+ The  <span class="surname">Prandtl</span>
  solution always preserves the curved start of the
  cos<sup>2</sup><i>&phi;</i> function from figure 10.1.
-  The  <span style="font-variant: small-caps;">Goldstein</span> 
+  The  <span class="surname">Goldstein</span> 
  vortex solution, as calculated here by the
- <span style="font-variant: small-caps;">Lerbs</span> method,
+ <span class="surname">Lerbs</span> method,
  has a linear start, at least for low blade counts
  (&hairsp;up to four&hairsp;).
  The mass flow ratio follows from 
-<span style="font-variant: small-caps;">Newton</span>'s law as per
+<span class="surname">Newton</span>'s law as per
 
 <span style="color:darkgrey">
 
@@ -358,38 +378,36 @@ repeated here for the propeller :
  no amount of axial thrust will give any axial induction.
 </p>
 <p>&emsp;
- <span style="font-variant: small-caps;">Goldstein</span>
+ <span class="surname">Goldstein</span>
  gave mathematical models for the mass term <i>K</i>(<i>x</i>)
  near the <i>x</i>&nbsp;=&nbsp;0 at infinite pitch
  for several blade counts, but these are purely mathematical,
-and they give nophu=yscialinsight..
+and they give no physcal insight.
  Figure 25.3 shows <i>K</i>(<i>x</i>) as computed by
 
-<span style="color:darkgrey">
+<span class="draft">
  (XXXXXXXXXX)
 
 </span>
- from the <span style="font-variant: small-caps;">Lerbs</span> 
+ from the <span class="surname">Lerbs</span> 
  solution. It matches
- <span style="font-variant: small-caps;">Goldstein</span>'s
+ <span class="surname">Goldstein</span>'s
  tables, but it is not pretty.
  Fortunately, we do not need <i>K</i>(<i>x</i>) explicitly
  in our calculations. These give <i>G</i>(<i>x</i>) directly.
 </p>
 <p>&emsp;
  The difference near the origin between the clean,
- <span style="font-variant: small-caps;">Goldstein</span>-like
+ <span class="surname">Goldstein</span>-like
  mass factor for the case of constant induction of figures
  25.1 and 25.2 and the infinite "exact" mass factor
  in figure 25.3 is remarkable.
 </p>
 <p>&emsp;
  It already surprised
-  <span style="font-variant: small-caps;">Glauert</span>.
+  <span class="surname">Glauert</span>.
  A physical explanation would still be welcome.
 </p>
-
-<span style="color:darkgrey">
 
 <!-- SECTION -------------------------------------------------->
 
