@@ -60,7 +60,7 @@
      the non-dimensional radius <i>x</i>                   </h4>
      
 <p> So far we looked at
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname">Prandtl</span>'s
  approximation of the isolated mass flow factor
  <i>K</i>&hairsp;(<i>x</i>),
  as defined in (17.2). 
@@ -69,14 +69,14 @@
  </p>
  <p> &emsp;
  With
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname">Prandtl</span>'s
   approximation
    <span class="hat-anchor-capital"> <i>F</i>    
 	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
  for <i>K&hairsp;</i>(<i>x</i>)
 (&hairsp;slightly adapted here, as indicated
  by the tilde&hairsp;),
- we define the obvious approximation to the
+ we define the following approximation to the
  <i>G</i>&hairsp;(<i>x</i>) of 
  (&hairsp;<a href="prop_book_17.html#17.4">17.6</a>&hairsp;)&nbsp;:
 </p>
@@ -88,7 +88,7 @@
 <!--  <mi>G</mi> <mn>&thinsp;&prime;</mn>   -->
    <mover>
       <mi>G</mi>
-      <mn mathsize="130%">&tilde;</mn>
+      <mn class="mover-tilde">&tilde;</mn>
    </mover>
    <mn>&hairsp;(</mn>
    <mi>x</mi>
@@ -100,14 +100,10 @@
    <mi>&phi;</mi>
 
    <mo> . </mo>
-  
-<!--
-  <mi>F</mi>
-  <mn>&thinsp;&prime;</mn>
--->
+
    <mover>
       <mi>F</mi>
-      <mn mathsize="130%">&tilde;</mn>
+      <mn class="mover-tilde">&tilde;</mn>
    </mover>      
   
    <mn>&hairsp;(</mn>
@@ -131,9 +127,9 @@
  either figure 19.6 or figure 19.7.
   Those figures were at the scale of <i>B&hairsp;.&hairsp;X</i>,
  which is natural to
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname">Prandtl</span>'s
  tip function,
- and at the scale of <i>r&thinsp;/&hairsp;R</i>
+ and at the scale of <i>r&thinsp;/&hairsp;R</i>,
  which is natural for different propellers
  of the same diameter.
  </p>
@@ -143,17 +139,17 @@
 	<span class="tilde">&tilde;</span></span>&hairsp;(<i>x</i>)
  on the  <i>x</i> scale, which is the natural scale
  for cos<sup>&hairsp;2&hairsp;</sup><i>&phi;</i>.
- Drawn on this scale, 
-   cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i>
- is identical for all propellers.
+ Drawn on this scale, the
+   <nobr>cos<sup>&hairsp;2</sup>&hairsp;<i>&phi;</i></nobr>
+ line is identical for all propellers.
  It is shown in the figure as a red dotted line. 
 </p>
 <p>&emsp;
  The&nbsp;blades have a tip radius of <i>X</i>
- (&hairsp;the capital <i>X</i>&hairsp;),
+ (&hairsp;the capital letter <i>X</i>&hairsp;),
  so the blades vary in length with <i>X</i> on the graph.
  On&nbsp;this scale,
- <span style="font-variant: small-caps;">Prandtl</span>'s
+ <span class="surname">Prandtl</span>'s
  tip has the same shape with <i>x</i> only for 
  propellers with the same number of blades.
 </p>
@@ -175,7 +171,7 @@
 <p style="margin-left   : 200px;
           margin-bottom :  12px;">
     <i> Figure 20.1 : &ensp;
-       <span style="font-variant: small-caps;">Prandtl</span>'s
+       <span class="surname">Prandtl</span>'s
  tip shape and cos<sup>2&hairsp;</sup>&phi; on the x scale.
  </i> 
 </div>
@@ -233,7 +229,7 @@
 
 <div class = "center">
 <p> <i> Figure 20.2 : &ensp;
-       <span style="font-variant: small-caps;">Prandtl</span>'s
+       <span class="surname">Prandtl</span>'s
  tip shape combined with cos<sup>2&hairsp;</sup>&phi;.
  </i>  </p>
  </div>
@@ -250,7 +246,7 @@
 </p>
 <p>
  We can now calculate a 
-  <span style="font-variant: small-caps;">Prandtl</span>-approximate
+  <span class="surname">Prandtl</span>-approximate
  version of 
 <nobr>
  <math>
@@ -281,7 +277,7 @@ which we shall call
       <mi>&kappa;</mi>
       <mover>
          <mn>G</mn> 
-         <mn mathsize="170%">&tilde;</mn>
+         <mn  class="mover-tilde-sub">&tilde;</mn>
       </mover>
    </msub>
    <mn>(</mn>
@@ -317,7 +313,7 @@ which we shall call
    <mo> . </mo>
    <mover>
       <mi>F</mi>
-      <mn mathsize="130%">&tilde;</mn>
+      <mn  class="mover-tilde">&tilde;</mn>
    </mover>
    
    <mn>(</mn>
@@ -354,7 +350,7 @@ which we shall call
       <mi>&kappa;</mi>
       <mover>
          <mn>G</mn> 
-         <mn mathsize="150%">&tilde;</mn>
+         <mn class="mover-tilde-sub">&tilde;</mn>
       </mover>
    </msub>
   <mn>(</mn> <mi>X</mi> <mn>)</mn>
@@ -372,22 +368,19 @@ which we shall call
 
    <mn>&ensp;.</mn>
 
-   <mstyle displaystyle="true">
-   <msubsup>
+   <msubsup displaystyle="true">
+   <!--   <munderover displaystyle="true">  -->
+   <!-- Size jump between 120% and 125% when shrinking the summation symbol, -->
+   <!-- also with munderover                                          -->
+   <!--   <mo stretchy="true" maxsize="120%">&sum;</mo>               -->
       <mo>&sum;</mo>
-      <mn> &nbsp; 0</mn>
-<!--      
-      <mrow>
-         <mn>&nbsp; 0</mn>
-         <mn>&hairsp;.&thinsp;&Delta;</mn>
-         <mi>x</mi>
-      </mrow>
--->      
+      <mn>&nbsp&nbsp; 0</mn>
       <mrow>
          <mn>&nbsp;N</mn>
          <mn>&hairsp;.&thinsp;&Delta;</mn>
          <mi>x</mi>
       </mrow>
+<!--   </munderover>  -->
    </msubsup>
 
    <msup>
@@ -400,7 +393,7 @@ which we shall call
 
    <mover>
       <mi>F</mi>
-      <mn mathsize="130%">&tilde;</mn>
+      <mn class="mover-tilde"">&tilde;</mn>
    </mover>
       
    <mn>(</mn>
@@ -497,7 +490,7 @@ by the inverse of the overall thrust loss factor
  It is the equivalent of figure
  <a href="prop_book_11.html#11.3">11.2</a>, 
  but this time including the 
- <span style="font-variant: small-caps;">Prandtl</span>
+ <span class="surname">Prandtl</span>
  tip loss for a two bladed propeller.
 <!--
 cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6. 
@@ -540,7 +533,7 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
    <mn>d</mn>
    <mover>
       <mi>T</mi>
-      <mn mathsize="100%">&Hat;</mn>
+      <mo>&Hat;</mo>
    </mover>      
 
    <mspace/> <mo>=</mo> <mspace/>
@@ -550,23 +543,23 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
       <mi>x</mi>
    <mn>)</mn>
 
-   <mo>.</mo>
+   <mo> . </mo>
 
    <mover>
       <mi>m</mi>
-      <mn mathszie="100%">&Hat;</mn>
+      <mo>&Hat;</mo>
    </mover>
 
    <mspace/>
-   <mo>=</mo>
+   <mo> = </mo>
    <mspace/>
 
    <mover>
       <mi>T</mi>
-      <mn mathsize="100%">&Hat;</mn>
+      <mo>&Hat;</mo>
    </mover>      
 
-   <mo>&thinsp;.&thinsp;</mo>
+   <mo> .  </mo>
 
    <mfrac>
       <mrow>
@@ -584,13 +577,13 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
       </mrow>
    </mfrac> 
 
-   <mo>.</mo>
+   <mo> . </mo>
 
    <mfrac>
       <mrow>
          <mn>2</mn>
          <mi>x</mi> 
-         <mn>&thinsp;.&thinsp;</mn>
+         <mo>.</mo>
          <mn>d</mn>
          <mi>x</mi>
       </mrow>
@@ -624,10 +617,10 @@ cases <i>B</i>&nbsp;=&nbsp;2 and <i>B</i>&nbsp;=&nbsp;6.
 <!-- TRUE FOOTER ---------------------------------------------->
 <div class="footer"> 
    <span style="float:left"> <a href="prop_book_19.html">
-               &#x25C4;&#xFE0E;</a> </span>
+               &&#x25C0;&#xFE0E;</a> </span>
 P. Lammertse, 2025
    <span style="float:right"> <a href="prop_book_21.html">
-               &#x25BA;&#xFE0E;</a> </span>              
+               &#x25B6;&#xFE0E;</a> </span>              
 </div>
 
 <!-- SCRIPTS -------------------------------------------------->

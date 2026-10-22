@@ -73,13 +73,20 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>T</mi>
+   <mn>d</mn>
+   <mi>T</mi>
  
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mn>d</mn> <msup> <mi>m</mi> <mn>&bull;</mn> </msup>
-  <mo>.</mo>
-  <mi>w</mi>
+   <mn>d</mn>
+   <mover>
+      <mi>m</mi>
+      <mn>&bull;</mn>
+   </mover>
+   <mo>.</mo>
+   <mi>w</mi>
 
 </math>
 
@@ -94,15 +101,28 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn><mi>T</mi> <mn>&thinsp;&prime;</mn>
-  <mn>(</mn> <mi>x</mi> <mn>)</mn> 
+   <mn>d</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
 
-  <mo>=</mo>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 
-  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
-  <mo>.</mo>
-  <mi>b</mi>
-  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+   <mo>=</mo>
+
+   <mn>d</mn>
+   <mover>
+      <mi>m</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
+   <mo>.</mo>
+   <mi>b</mi>
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 </math>
 
 <td class="eqn">                                         (17.2)
@@ -155,7 +175,7 @@
  the tip loss reduces the efficiency for a given thrust after all.
 </p>
 
-<span style="color:darkgrey">
+<span class="draft">
 
 <p>&emsp;    TODO - MENTION THAT IN THE END BOTH ARE REDUCTIONS
  ON THE THRUST AT A GIVEN EFFICIENCY, 
@@ -197,7 +217,7 @@
  Conceptually, the blades still give the local air
  the full induction <i>b</i>(<i>x</i>),
  but in
- <span style="font-variant: small-caps;"> Newton</span>'s
+ <span class="surname"> Newton</span>'s
  law of (17.1) they do not "feel" the resistance
  of the full mass flow through the ring pushing back on them.
 </p>
@@ -205,7 +225,8 @@
  By this concept, (17.1) with the full induction 
  <i>b</i>(<i>x</i>) applies for the whole ring,
  provided we can find the reduced ring mass flow 
- d<i>m</i><sup>&#9679;</sup>.
+ 	d<span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&bull;</span> </span>.
 </p>
 <p>&emsp;
  Tip loss theory is built around this concept.
@@ -221,7 +242,8 @@
 
 <p> We made the local thrust (7.4) non-dimensional in (7.5),
  by introducing a non-dimensional mass flow
- d<i>m</i>&thinsp;&prime;.
+ d<span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&Hat;</span> </span>
 </p>
 <p>&emsp;
  We now define a function
@@ -234,24 +256,35 @@
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>m</mi> <mn>&hairsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>m</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
     
-  <mspace/> <mo> &equiv; </mo> <mspace/>
+   <mspace/>
+   <mo> &equiv; </mo>
+   <mspace/>
 
-  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>K</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
  </mfrac>
 </math>
 
@@ -264,7 +297,10 @@ This equation defines the mass reduction factor
    <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>).
 </p>
 <p>&emsp;
-Like before,  d<i>m</i>&thinsp;&prime; is just
+Like before,
+  d<span class="hat-anchor"> <i>m</i> 
+	<span class="hat">&Hat;</span> </span>
+   is just
  the effective non-dimensional
  frontal area of the ring at radius <i>x</i>.
  Without <i>K</i>&hairsp;(<i>&hairsp;x&hairsp;</i>)
@@ -282,31 +318,43 @@ The local thrust (17.2) becomes :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn><mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
     
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/>
+   <mo> = </mo>
+   <mspace/>
 
-  <mi>K</mi>
-  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+   <mi>K</mi>
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mi>b</mi>
-  <mn>&hairsp;(</mn> <mi>x</mi> <mn>)</mn> 
+   <mi>b</mi>
+   <mn>&hairsp;(</mn>
+      <mi>x</mi>
+   <mn>)</mn> 
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>   
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.4)
@@ -334,15 +382,23 @@ The local thrust (17.2) becomes :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo> = </mo> <mspace/> 
+   <mspace/>
+   <mo> = </mo>
+   <mspace/> 
 
-  <mi>C</mi> 
-  <mo> . </mo>
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-s</math>
+   <mi>C</mi> 
+   <mo> . </mo>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
+</math>
 
 <td class="eqn">                                         (17.5)
 </td> </tr> </table>
@@ -354,36 +410,48 @@ s</math>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>      
 
-  <mspace/> <mo>=</mo> <mspace/> 
+   <mspace/>
+   <mo>=</mo>
+   <mspace/> 
 
-  <mi>C</mi> 
+   <mi>C</mi> 
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>K</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-
-    <mo>.</mo>
-
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.6)
@@ -408,18 +476,27 @@ s</math>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>G</mi> 
-    <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>G</mi> 
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo>&equiv;</mo> <mspace/> 
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/> 
 
-  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>K</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <msup> <mn>cos</mn> <mn>2</mn> </msup>
-        <mi>&phi;</mi>
-
+   <msup>
+      <mn>cos</mn>
+      <mn>2</mn>
+   </msup>
+   <mi>&phi;</mi>
 </math>
 
 <td class="eqn">                                         (17.7)
@@ -429,7 +506,7 @@ s</math>
 <p> The symbol <i>G</i> for this factor
  is a common convention in the literature.
  It is probably named after Sidney 
-<span style="font-variant: small-caps;">Gold&shystein</span>,
+<span class="surname">Gold&shystein</span>,
  who made the first rigorous analysis of it in 1929.
 </p>
 <p>&emsp;
@@ -456,37 +533,54 @@ s</math>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
     
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/>
+   <mo> = </mo>
+   <mspace/>
 
-  <mi>C</mi>
+   <mi>C</mi>
 
-  <mn>&thinsp;.</mn>
+   <mn>&thinsp;.</mn>
 
-  <mstyle displaystyle="true">
-  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mstyle displaystyle="true">
+   <msubsup>
+      <mo>&int;</mo>
+      <mn>0</mn>
+      <mi>X</mi>
+   </msubsup>
 
-  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>K</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <msup> <mn>cos</mn> <mn>2&hairsp;</mn> </msup>
-  <mi>&phi;</mi>
+   <msup>
+      <mn>cos</mn>
+      <mn>2&hairsp;</mn>
+   </msup>
+   <mi>&phi;</mi>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.8)
@@ -499,32 +593,46 @@ s</math>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> </mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
     
-  <mspace/> <mo> = </mo> <mspace/>
+   <mspace/>
+   <mo> = </mo>
+   <mspace/>
 
-  <mi>C</mi>
+   <mi>C</mi>
 
-  <mn>&thinsp;.</mn>
+   <mn>&thinsp;.</mn>
 
-  <mstyle displaystyle="true">
-  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mstyle displaystyle="true">
+   <msubsup>
+      <mo>&int;</mo>
+      <mn>0</mn>
+      <mi>X</mi>
+   </msubsup>
 
-  <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>G</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.9)
@@ -544,29 +652,48 @@ s</math>
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>&kappa;</mi> <mn>G&hairsp;</mn> </msub>
-  <mn>(</mn> <mi>X</mi> <mn>)</mn>
+   <msub>
+      <mi>&kappa;</mi>
+      <mn>G&hairsp;</mn>
+   </msub>
+
+   <mn>(</mn>
+      <mi>X</mi>
+   <mn>)</mn>
     
-  <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-    <mn>1</mn>
-    <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mfrac>
+   <mfrac> 
+      <mn>1</mn>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 
-  <mn>&thinsp;.</mn>
+   <mn>&thinsp;.</mn>
 
-  <mstyle displaystyle="true">
-  <msubsup> <mo>&int;</mo> <mn>0</mn> <mi>X</mi> </msubsup>
+   <mstyle displaystyle="true">
+   <msubsup>
+      <mo>&int;</mo>
+      <mn>0</mn>
+      <mi>X</mi>
+   </msubsup>
 
-  <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>G</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo>&hairsp;.</mo>
+   <mo>&hairsp;.</mo>
 
-    <mn>2&hairsp;</mn> <mi>x</mi>
-    <mo>.</mo>
-    <mn>d</mn> <mi>x</mi>
+   <mn>2&hairsp;</mn>
+   <mi>x</mi>
+   <mo>.</mo>
+   <mn>d</mn>
+   <mi>x</mi>
 </math>
 
 <td class="eqn">                                         (17.10)
@@ -590,12 +717,21 @@ From (17.9) and (17.10) we have :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo>&Hat;</mo>
+   </mover>
     
-  <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mi>C</mi> <mo>&hairsp;.&hairsp;</mo>
-  <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
+   <mi>C</mi>
+   <mo>&hairsp;.&hairsp;</mo>
+   <msub>
+      <mi>&kappa;</mi>
+      <mn>G</mn>
+   </msub>
 
 </math>
 
@@ -629,19 +765,34 @@ From (17.9) and (17.10) we have :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mi>b</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>b</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mspace/> <mo> = </mo> <mspace/> 
+   <mspace/>
+   <mo> = </mo>
+   <mspace/> 
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
-  <mo> . </mo>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow><msup> <mn>cos</mn> <mn>2</mn> </msup>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
+   
+   <mo> . </mo>
+   <mfrac>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
           <mi>&phi;</mi>
-    </mrow>
-    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
-  </mfrac>
+      </mrow>
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>G</mn>
+      </msub>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.13)
@@ -649,7 +800,7 @@ From (17.9) and (17.10) we have :
 <!-- END EQUATION --------------------------------------------->
 
 <p> For the same thrust, the induction gets larger 
- relative to 1<i>&hairsp;/&hairsp;&kappa;</i><sub>&phi;</sub>,
+ relative to 1<i>&nbsp;&frasl;&nbsp;&kappa;</i><sub>&phi;</sub>,
  to compensate for the loss in mass flow.
 </p>
 <p>
@@ -659,42 +810,62 @@ From (17.9) and (17.10) we have :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mn>d</mn>
+   <mover>
+      <mi>T</mi>
+      <mo mathsize="100%>&"Hat;</mo>
+   </mover>
 
-  <mspace/> <mo>=</mo> <mspace/> 
+   <mspace/>
+   <mo>=</mo>
+   <mspace/> 
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo>&Hat;</mo>
+   </mover>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mi>K</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
+   <mi>K</mi>
+   <mn>(</mn>
+      <mi>x</mi>
+   <mn>)</mn>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow><msup> <mn>cos</mn> <mn>2</mn> </msup>
+   <mfrac>
+      <mrow>   
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
           <mi>&phi;</mi>
-    </mrow>
-    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
-  </mfrac>
+      </mrow>
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>G</mn>
+      </msub>
+   </mfrac>
 
 
   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
 
-    <mo>.</mo>
+         <mo>.</mo>
 
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <!--
@@ -710,35 +881,46 @@ From (17.9) and (17.10) we have :
 <!--
   <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
 -->
-  <mspace width="1.5em"/>
-  <mspace/> <mo>=</mo> <mspace/> 
+   <mspace width="1.5em"/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/> 
 
-  <mi>T</mi> <mn>&thinsp;&prime;</mn>
+   <mover>
+      <mi>T</mi>
+      <mo class="hat">&Hat;</mo>
+   </mover>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>G</mi> <mn>(</mn> <mi>x</mi> <mn>)</mn>
-    </mrow>
-    <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
-  </mfrac>
+   <mfrac>
+      <mrow>
+         <mi>G</mi>
+         <mn>(</mn>
+         <mi>x</mi>
+         <mn>)</mn>
+      </mrow>
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>G</mn>
+      </msub>
+   </mfrac>
 
-  <mo> . </mo>
+   <mo> . </mo>
 
-  <mstyle displaystyle="true">
-  <mfrac> 
-   <mrow>
-    <mn>2&hairsp;</mn> <mi>x</mi>
-
-    <mo>.</mo>
-
-    <mn>d</mn> <mi>x</mi>
-  </mrow>
-   <mrow>
-     <msup> <mi>X</mi> <mn>2</mn> </msup>
-  </mrow>
- </mfrac>
+   <mfrac> 
+      <mrow>
+         <mn>2&hairsp;</mn>
+         <mi>x</mi>
+         <mo>.</mo>
+         <mn>d</mn>
+         <mi>x</mi>
+      </mrow>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 </math>
 
 <td class="eqn">                                         (17.14)
@@ -772,24 +954,40 @@ we have :
 <!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mn>d</mn> <msub> <mi>P</mi> <mn>m</mn> </msub>
-      <mn>&thinsp;&prime;</mn>
-   </mrow>
-    <mrow> <mn>d</mn> <mi>T</mi> <mn>&thinsp;&prime;</mn>
-   </mrow>
- </mfrac>
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+         <msub>
+            <mover>
+               <mi>P</mi>
+               <mo class="hat">&Hat;</mo>
+            </mover>
+            <mn>m</mn>
+         </msub>
+      </mrow>
+      <mover>
+         <mi>T</mi>
+         <mo class="hat">&Hat;</mo>
+      </mover>
+   </mfrac>
 
-  <mspace/> <mo> = </mo> <mspace/> </mo>
+   <mspace/>
+   <mo> = </mo>
+   <mspace/>
 
-  <mn>&frac12;</mn> <mo>.</mo>
+   <mn>&frac12;</mn>
+   <mo>.</mo>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
-    <mrow> <msub> <mi>&kappa;</mi> <mn>G</mn> </msub> </mrow>
- </mfrac>
+   <mfrac>
+      <mover>
+         <mi>T</mi>
+         <mo class="hat">&Hat;</mo>
+      </mover>
+      <msub>
+         <mi>&kappa;</mi>
+         <mn>G</mn>
+      </msub>
+   </mfrac>
 
 </math>
 </td>
@@ -802,25 +1000,32 @@ we have :
 <!-- EQUATION ------------------------------------------------->
 <table class="equation"; style="margin-top:8px;"> <tr> <td>
 <math>
-  <msub> <mi>η</mi> <mn>m</mn> </msub>
-  <mspace/> <mspace/> 
-  <mspace/> <mo>=</mo> <mspace/>
+   <msub>
+      <mi>&eta;</mi>
+      <mn>m</mn>
+   </msub>
+   <mspace/> <mspace/> 
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
 
-  <mstyle displaystyle="true">
-  <mfrac>
-    <mn>1</mn>
-    <mrow>
-      <mn>1</mn> <mo>+</mo>
-      <mn>&frac12;&thinsp;</mn>
-      <mn>&hairsp;.&hairsp;</mn>
-      <mstyle displaystyle="true">
-      <mfrac>
-        <mrow> <mi>T</mi> <mn>&thinsp;&prime;</mn> </mrow>
-        <mrow> 
-          <msub> <mi>&kappa;</mi> <mn>G</mn> </msub>
-       </mrow>
-     </mfrac>
-   </mrow>
+   <mfrac>
+      <mn>1</mn>
+      <mrow>
+         <mn>1</mn> <mo>+</mo>
+         <mn>&frac12;&thinsp;</mn>
+         <mn>&hairsp;.&hairsp;</mn>
+         <mfrac displaystyle="true">
+            <mover>
+               <mi>T</mi>
+               <mo class="hat">&Hat;</mo>
+            </mover>
+            <msub>
+               <mi>&kappa;</mi>
+               <mn>G</mn>
+            </msub>
+         </mfrac>
+      </mrow>
   </mfrac> 
 
 </math> </td>
@@ -864,7 +1069,7 @@ and how are we going to integrate it into a
 <!-- TRUE FOOTER ------------------------------------------------->
 <div class="footer"> 
    <span style="float:left"> <a href="prop_book_16.html">
-               &#x25C4;</a> </span>
+               &#x25C0;&#xFE0E;</a> </span>
 P. Lammertse, 2025
    <span style="float:right"> <a href="prop_book_18.html">
                &#x25BA;</a> </span>              

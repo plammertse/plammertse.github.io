@@ -262,8 +262,11 @@ td {
 
 /* Use for names like Newton, or Biot-Savart */
 /* Style guides say : don't do this in text  */
+/* Maybe use something like his in literature references */
 .surname {
 /*
+   color           : 0x333333;
+   font-size       : 15.6px;
    font-variant    : small-caps;
    font-style      : italic;
 */
@@ -318,16 +321,17 @@ td {
 }
 
 
-/* Use on diacritical like &Hat; */
+/* Use in text on a diacritical like &Hat; */
 .hat {   
   	position  : absolute;         /* relative to anchor letter         */
    left      : 65%;              /* shift anchor position over letter */
                                  /* to right of middle for italics    */
    top       : -0.5em;           /* shift diacritical up              */
 	transform : translateX(-50%); /* shift diacritical middle left     */
+   font-size : 100%;
 }
 
-/* Use this instead of .hat class for a bigger tilde */
+/* Use this in text instead of .hat for a bigger tilde */
 .tilde {   
   	position  : absolute;         /* relative to anchor letter         */
    left      : 65%;              /* shift anchor position over letter */
@@ -337,7 +341,7 @@ td {
    font-size : 22px;             /* make tilde bigger                 */
 }
 
-/* Use this instead of .hat class on &minus; for lower overbar ("mean")  */
+/* Use this in text instead of .hat on &minus; for overbar ("mean")   */
 .bar {   
   	position  : absolute;         /* relative to anchor letter         */
    left      : 65%;              /* shift anchor position over letter */
@@ -347,6 +351,7 @@ td {
 /*   font-size : 22px;  */       /* &minus; sign is big enough        */
 }
 
+/* Use this in text for one side ("half") vector arrows               */
 .harpoon {   
   	position  : absolute;         /* relative to anchor letter         */
    left      : 65%;              /* shift anchor position over letter */
@@ -359,20 +364,24 @@ td {
 /* Use this class in a span to make the hamburger sign equally spaced */
 .equiv {
    font-family : 'Cambria Math', 'Segoe UI Symbol', sans-serif;
-/* looks like these are not needed with Cambria Math : */
+/* These are apparently not needed with Cambria Math : */
 /*
    text-rendering : geometricPrecision;
-   -webkit-font-smoothing : antialiased;
-*/   
+   -webkit-font-smoothing : antialiased;  */   
    /* anti-aliased smoothes out the subpixel calculation */
 }
 
-/* This does not work yet from CSS (for diacriticals) : */
+/* This is the right size for &Hat;, a bit too small for others       */
 mover > mo {
-   font-size:"150%";
-   movablelimits : "false";
-   font-style:"normal";
+   font-size  : 100%;
 }
+.mover-tilde  {
+	font-size : 130%;
+}
+.mover-tilde-sub  {
+	font-size : 170%;
+}
+
 
 button {
   background-color : blue;       /* #04AA6D;  */
