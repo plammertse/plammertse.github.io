@@ -57,7 +57,7 @@
 <h4> 3.1 &emsp; The thrust coefficient                     </h4>
 
 <p> This text will use the thrust from the propeller
- (&hairsp;not the torque&hairsp;)
+ <nobr>(&hairsp;not</nobr> the <nobr>torque&hairsp;)</nobr>
  as the starting point of the design.
 </p>
 <p>&emsp;
@@ -76,18 +76,36 @@
 
 <table class = "equation"> <tr> <td>
 <math>
-  <msub> <mi>C</mi> <mi>T </mi> </msub>
- <mspace/> <mo> ≡ </mo> <mspace/>
- <mstyle displaystyle="true">
- <mfrac>
-   <mrow> <mi>T</mi> </mrow>
-   <mrow> <mn>&frac12&hairsp;</mn>
-     <mi>&rho;</mi> <mn>&hairsp;</mn>
-     <msup> <mi>V</mi> <mn>2</mn> </msup>
-     <mn>.&thinsp;&pi;</mn>
-     <msup> <mi>R</mi> <mn>2</mn> </msup>
-  </mrow>
-</mfrac> </math>
+   <msub>
+      <mi>C</mi>
+      <mi>T </mi>
+   </msub>
+
+   <mspace/>
+   <mo> &equiv; </mo>
+   <mspace/>
+
+   <mfrac>
+      <mrow>
+         <mi>T</mi>
+      </mrow>
+      <mrow>
+         <mn>&frac12&hairsp;</mn>
+         <mi>&rho;</mi>
+         <mn>&hairsp;</mn>
+         <msup>
+            <mi>V</mi>
+            <mn>2</mn>
+         </msup>
+         <mn>.&thinsp;&pi;</mn>
+         <msup>
+            <mi>R</mi>
+            <mn>2</mn>
+         </msup>
+      </mrow>
+   </mfrac>
+</math>
+</td>
 
 <td class="eqn">                                               (3.1)
 </td> </tr> </table>
@@ -130,10 +148,12 @@ This definition is based on <i>V</i> instead of on
 <math>
    <mover>
       <mi>T</mi>
-      <mo mathsize="100%">&Hat;</mo>
+      <mo>&Hat;</mo>
    </mover> 
  
-   <mspace/> <mo> &equiv; </mo> <mspace/>
+   <mspace/>
+   <mo> &equiv; </mo>
+   <mspace/>
 
    <mfrac>
       <mi>T</mi>
@@ -167,7 +187,7 @@ It follows that :
 <math>
    <mover>
       <mi>T</mi>
-      <mo mathsize="100%">&Hat;</mo>
+      <mo>&Hat;</mo>
    </mover> 
 
    <mspace/> <mo> = </mo> <mspace/>
@@ -191,7 +211,7 @@ It follows that :
 <math>
    <mover>
       <mi>P</mi>
-      <mo mathsize="100%">&Hat;</mo>
+      <mo>&Hat;</mo>
    </mover> 
  
    <mspace/> <mo> &equiv; </mo> <mspace/>
@@ -250,7 +270,7 @@ It follows that :
 <math>
    <mover>
       <mi>T</mi>
-      <mo mathsize="100%">&Hat;</mo>
+      <mo>&Hat;</mo>
    </mover> 
    
    <mo>=</mo>
@@ -291,7 +311,6 @@ It follows that :
  exerted by the propeller on the aircraft,
  by the definition of (3.4).
 </p>
-
 
 <!-- SECTION 3.3 ---------------------------------------------->
 <h4> 3.3 &emsp; Power loss and efficiency </h4>
@@ -334,11 +353,19 @@ The propeller's efficiency then becomes :
 <table class = "equation"> <tr> <td> <math>
    <mi>&eta;</mi>
 
-   <mspace/> <mo>&equiv;</mo> <mspace/>
+   <mspace/>
+   <mo>&equiv;</mo>
+   <mspace/>
 
    <mfrac> 
-      <msub> <mi>P</mi> <mn>out</mn> </msub>
-      <msub> <mi>P</mi> <mn>in</mn> </msub>
+      <msub>
+         <mi>P</mi>
+         <mn>out</mn>
+      </msub>
+      <msub>
+         <mi>P</mi>
+         <mn>in</mn>
+      </msub>
    </mfrac> 
 
    <mspace/> <mo>=</mo> <mspace/>
@@ -395,7 +422,9 @@ The propeller's efficiency then becomes :
                <mn>m </mn>
             </msub>
             <mrow>
-               <mi>T</mi> <mo>.</mo> <mi>V</mi>
+               <mi>T</mi>
+               <mo>.</mo>
+               <mi>V</mi>
             </mrow>
          </mfrac>
 
@@ -407,7 +436,9 @@ The propeller's efficiency then becomes :
                <mn>v</mn>
             </msub>
             <mrow>
-               <mi>T</mi> <mo>.</mo> <mi>V</mi>
+               <mi>T</mi>
+               <mo>.</mo>
+               <mi>V</mi>
             </mrow>
          </mfrac>
       </mrow>
@@ -443,33 +474,21 @@ The propeller's efficiency then becomes :
    <mfrac>
       <mover>
          <mi>P</mi>
-         <mo mathsize="100%">&Hat;</mo>
+         <mo>&Hat;</mo>
       </mover> 
       <mover>
          <mi>T</mi>
-         <mo mathsize="100%">&Hat;</mo>
+         <mo>&Hat;</mo>
       </mover> 
    </mfrac>
    
- <!--  Attempt with fractional slash, not great either
-       <mover>
-         <mi>P</mi>
-         <mo mathsize="100%">&Hat;</mo>
-      </mover> 
-      
-      <mn>&#x27CB;&thinsp;</mn>
-      
-      <mover>
-         <mi>T</mi>
-         <mo mathsize="100%">&Hat;</mo>
-      </mover> 
--->      
-    
    <mspace/> <mo> &equiv; </mo> <mspace/>
    <mfrac>
       <mi>P</mi>
       <mrow>
-         <mi>T</mi> <mo>.</mo> <mi>V</mi>
+         <mi>T</mi>
+         <mo>.</mo>
+         <mi>V</mi>
       </mrow>
    </mfrac>
 </math>
@@ -488,7 +507,9 @@ The propeller's efficiency then becomes :
    <mspace/> 
    <mi>&eta;</mi>
    <mspace/>
-   <mspace/> <mo>=</mo> <mspace/>
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
    <mspace/> 
 
    <mfrac>
@@ -501,14 +522,14 @@ The propeller's efficiency then becomes :
             <msub>
                <mover>
                   <mi>P</mi>
-                  <mo mathsize="100%">&Hat;</mo>
+                  <mo>&Hat;</mo>
                </mover>             
                <mn>m</mn>
             </msub> 
     
             <mover>
                <mi>T</mi>
-               <mo mathsize="100%">&Hat;</mo>
+               <mo>&Hat;</mo>
             </mover> 
          </mfrac>
 
@@ -519,14 +540,14 @@ The propeller's efficiency then becomes :
             <msub>
                <mover>
                   <mi>P</mi>
-                  <mo mathsize="100%">&Hat;</mo>
+                  <mo>&Hat;</mo>
                </mover>                      
                <mn>v</mn>
             </msub> 
     
             <mover>
                <mi>T</mi>
-               <mo mathsize="100%">&Hat;</mo>
+               <mo>&Hat;</mo>
             </mover> 
          </mfrac>
       </mfrac>
@@ -567,7 +588,7 @@ for a given thrust.
 
 /////////////////////////////////////////////////////////////-->
 
-<div class="draft"">
+<div class="draft">
 
 <h4> 3.5 &emsp; Other non-dimensional parameters </h4>
 
