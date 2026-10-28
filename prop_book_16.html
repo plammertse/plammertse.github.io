@@ -979,8 +979,6 @@ for the same thrust, <i>A</i>
       </msup>
    </mfrac>
 
-   <mo>.</mo>
-
    <msubsup>
       <mo>&int;</mo> 
       <mn>0</mn> 
@@ -1392,7 +1390,7 @@ Substituting  this into (16.8) gives the optimal
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>  The whole bracketed term together is a constant.
+<p>  The left bracketed term is a constant.
  It equals &frac12;&thinsp;<i>A</i>.
  The first term within  the brackets is the rotat&shyion&shyally optimal
  momentum loss ratio (10.10).
@@ -1852,7 +1850,7 @@ gave  the viscous loss integral for an arbitrary
 <!-- END EQUATION --------------------------------------------->
 
 <p> Substituting the optimal
-   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) of (16.13),
+   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) of (16.12),
  the first cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i> term
  in the numerator will cancel, but the
    1&thinsp;&frasl;&thinsp;cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
@@ -1882,8 +1880,6 @@ gave  the viscous loss integral for an arbitrary
          <mn>2</mn>
       </msup>
    </mfrac>
-
-   <mspace/>
 
    <!-- integral -->
    <msubsup>
@@ -1924,7 +1920,12 @@ gave  the viscous loss integral for an arbitrary
    <mn>d</mn>
    <mi>x</mi>
 
-   <mspace/>
+</math<
+</td></tr>
+ <tr> <td>
+<math>
+
+   <mspace width="40px"; />
    <mo> &minus;</mo>
    <mspace/>
 
@@ -2034,7 +2035,8 @@ gave  the viscous loss integral for an arbitrary
    </mfrac>
 </math>
 </td>
-
+<td class="eqn">                                         (16.21)
+</td> </tr>
 </table>
 
 <p>
@@ -2042,7 +2044,8 @@ gave  the viscous loss integral for an arbitrary
 </p>
 
 <!-- EQUATION ------------------------------------------------->
-<table class = "equation"> <tr> <td>
+<table class = "equation">
+<tr> <td>
 <math> 
    <msub>
       <mover>
@@ -2104,7 +2107,22 @@ gave  the viscous loss integral for an arbitrary
    <mn>d</mn>
    <mi>x</mi>
 
+</math>
+</td></tr>
+ <tr> <td>
+<math>
+
+   <mspace width = "60px"; />
    <mo> &minus; </mo>
+   <mspace/>
+   
+   <mfrac>
+      <mn>1</mn>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
+   </mfrac>
 
    <msubsup>
       <mo>&int;</mo>
@@ -2135,15 +2153,17 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.21)
-</td> </tr> </table>
+<td class="eqn">                                         (16.22)
+</td> </tr>
+</table>
 <!-- END EQUATION --------------------------------------------->
 
 
 <p> All the integrals are now simple powers of <i>x</i>,
  which evaluate to simple powers of <i>X</i>.
- Dividing by the 1&thinsp;&frasl;&thinsp;<i>X</i>&hairsp;<sup>2</sup>
- term outside the integral yields :
+ Combining these with the 
+ <nobr>1&thinsp;&frasl;&thinsp;<i>X</i>&hairsp;<sup>2</sup></nobr>
+ terms yields :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -2177,8 +2197,13 @@ gave  the viscous loss integral for an arbitrary
          <mn>&phi;</mn>
       </msub>
    </mfrac>
-
-   <mspace/> <mo>+</mo> <mspace/>
+</m,ath>
+</td></tr>
+<tr><td>
+<math>
+   <mspace width="55px";/>
+   <mo>+</mo>
+   <mspace/>
   
    <mfrac>
       <mrow>
@@ -2213,7 +2238,7 @@ gave  the viscous loss integral for an arbitrary
   
 </math> </td>
 
-<td class="eqn">                                         (16.22)
+<td class="eqn">                                         (16.23)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -2256,7 +2281,13 @@ gave  the viscous loss integral for an arbitrary
       </msub>
    </mfrac>
 
-   <mspace/> <mo>&minus;</mo> <mspace/>
+</math>
+</td></tr>
+ <tr> <td>
+<math>
+   <mspace width="60px" />
+   <mo>&minus;</mo>
+   <mspace/>
    
    <mfrac>
       <msup>
@@ -2299,13 +2330,13 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.23)
+<td class="eqn">                                         (16.24)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p>   The left hand term is the overall viscous loss ratio of
+<p>   The first term is the overall viscous loss ratio of
  the rotationally optimal propeller of (16.6).
- The right hand term is the decrease of the viscous loss
+ The second term is the decrease of the viscous loss
  ratio due to the viscous optimization.
  <p class="draft">
  TODO      Offer some insights.
@@ -2346,7 +2377,6 @@ gave  the viscous loss integral for an arbitrary
          <mn>2</mn>
       </msup>
    </mfrac>
-   <mo>.</mo>
 
    <!-- integral -->
    <msubsup>
@@ -2381,16 +2411,16 @@ gave  the viscous loss integral for an arbitrary
 </math> 
 </td>
 
-<td class="eqn">                                         (16.24)
+<td class="eqn">                                         (16.25)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
+<!--
 <p> 
  Substituting the newly optimized <i>b&hairsp;</i>(<i>x</i>)
  from (16.12) yields :
  </p>
  
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math> 
    <msub>
@@ -2413,11 +2443,9 @@ gave  the viscous loss integral for an arbitrary
       </msup>
    </mfrac>
    
-   <mo>.</mo>
-   
-   <!-- integral -->  
-   <mstyle displaystyle="true">     <!-- doesn't seem to help -->
-                                    <!-- neither did largeop  -->
+   <! -- integral -- >  
+   <mstyle displaystyle="true">     <! -- doesn't seem to help -- >
+                                    <! -- neither did largeop  -- >
    <msubsup>
       <mo style="font-size:28px">&int;</mo>
       <mn>0</mn>
@@ -2429,7 +2457,6 @@ gave  the viscous loss integral for an arbitrary
    <mo>.</mo>
 
    <mfrac>
-<!--      <msup style="vertical-align:-24px"> -- doesn't help -->
       <msup>
          <mrow>
             <mo maxsize="42px">(</mo>
@@ -2473,7 +2500,7 @@ gave  the viscous loss integral for an arbitrary
             <mo maxsize="42px">)</mo>  
          </mrow>
 
-         <!-- pull exponent down a little -->
+         <! -- pull exponent down a little -- >
          <mn style="font-size:17px; transform : translateY(12px)";">2</mn>
       </msup>   
 
@@ -2497,18 +2524,87 @@ gave  the viscous loss integral for an arbitrary
 
 <td class="eqn">                                         (16.25)
 </td> </tr> </table>
+-->
+
+<p> From (16.12) we have :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <msup>
+      <mi>b</mi>
+      <mn>2</mn> 
+   </msup>
+
+   <mspace/>
+   <mo>=</mo>
+   <mspace/>
+
+   <msup>
+      <mrow>
+         <mo maxsize="42px">(</mo>
+            <mfrac displaystyle="true">
+               <mrow>
+                  <mover>
+                     <mi>T</mi>
+                     <mo mathsize="100%">&Hat;</mo>
+                  </mover>
+                  <mo> + </mo>
+
+                  <mn> &frac23; </mn>  
+                  <mo>.</mo>
+                  <mi>&epsilon;</mi>
+                  <mo>.</mo>
+                  <mi>X</mi>
+                  <mo>.</mo>
+               </mrow>
+               <msub>
+                  <mi>&kappa;</mi>
+                  <mn>&phi;</mn>
+               </msub>
+            </mfrac>
+      
+            <mo>.</mo>
+      
+            <msup>
+               <mn>cos</mn>
+               <mn>2</mn>
+            </msup>
+            <mn>&phi;</mn>
+      
+            <mo> &minus; </mo>
+
+            <mi>&epsilon;</mi>
+            <mo> . </mo>
+            <mi>x</mi>
+
+         <mo maxsize="42px">)</mo>  
+      </mrow>
+
+      <!-- pull exponent down a little -->
+      <mn style="font-size:17px; transform : translateY(12px)";">2</mn>
+   </msup>   
+
+</math>
+</td>
+
+<td class="eqn">                                         (16.26)
+</td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> Squaring the bracketed term gives three terms,
- as in (<i>a</i> - <i>b</i>)&hairsp;<sup>2</sup> =
+<p> Squaring the bracketed expression gives three terms,
+ according to (<i>a</i> - <i>b</i>)&hairsp;<sup>2</sup> =
  <i>a</i>&hairsp;<sup>&hairsp;2</sup>
    &minus; 2 <i>a&hairsp;b</i> 
    + <i>b</i>&hairsp;<sup>2</sup>. 
+</p>
+<p>
  Dividing each term by cos<sup>2</sup>&hairsp;<i>&phi;</i>
- and writing the three integrals separately yields :
- </p
+ and writing the three resulting integrals separately yields :
+</p
  
- <!-- EQUATION ------------------------------------------------->
+<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math> 
    <msub>
@@ -2525,9 +2621,11 @@ gave  the viscous loss integral for an arbitrary
 
    <mfrac>
       <mn>1</mn>
-      <msup> <mi>X</mi> <mn>2</mn> </msup>
+      <msup>
+         <mi>X</mi>
+         <mn>2</mn>
+      </msup>
    </mfrac>
-   <mo>.</mo>
 
    <!-- integral -->
    <msubsup>
@@ -2595,7 +2693,7 @@ gave  the viscous loss integral for an arbitrary
 
    <mspace style="width:30px;"/>
 
-   <mo> + </mo> <mspace/>
+   <mo> &minus; </mo> <mspace/>
 
    <mfrac>
       <mn>1</mn>
@@ -2605,8 +2703,6 @@ gave  the viscous loss integral for an arbitrary
       </msup>
    </mfrac>
 
-   <mo>.</mo>
-
    <!-- integral -->
    <msubsup>
       <mo>&int;</mo> 
@@ -2614,10 +2710,6 @@ gave  the viscous loss integral for an arbitrary
       <mi>X</mi> 
    </msubsup>
    
-   <mspace/><mspace/>
-   <mn>&minus;</mn>
-   <mspace/>
-
    <mfrac>
       <mrow>
          <mover>
@@ -2675,8 +2767,6 @@ gave  the viscous loss integral for an arbitrary
       </msup>
    </mfrac>
    
-   <mo>.</mo>
-   
    <!-- integral -->
    <msubsup>
       <mo>&int;</mo>
@@ -2720,7 +2810,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.26)
+<td class="eqn">                                         (16.27)
 </td> 
 
 </tr> </table>
@@ -2729,15 +2819,20 @@ gave  the viscous loss integral for an arbitrary
 <p> The first line contains the integral 
 of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
  By the definition of (11.3), that integral is
- <i>&kappa;</i>&hairsp;<sub>&phi;</sub> in the numerator.
- This cancels one of the two 
+ <i>&kappa;</i>&hairsp;<sub>&phi;</sub>&hairsp;. <br>
+ This factor of  <i>&kappa;</i>&hairsp;<sub>&phi;</sub>
+ in the numerator cancels with one of the two 
   <i>&kappa;</i>&hairsp;<sub>&phi;</sub> terms in the denominator.
+  </p>
+  <p> &emsp;
  The&nbsp;second line contains the integral of 
    <i>x</i>&hairsp;<sup>2</sup>. That integral is
   &frac13;&thinsp;<i>X</i>&hairsp;<sup>3</sup>. 
+ </p>
+ <p>
  The third line contains the same integral
  of 1&thinsp;&frasl;&hairsp;cos&thinsp;<sup>2</sup>&hairsp;<i>&phi;</i>
- which was solved before in (16.XX).
+ we solved in (16.22) by using (2.8).
  All in all this yields :
  </p>
  <!-- EQUATION ------------------------------------------------->
@@ -2884,7 +2979,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 </math> 
 </td>
 
-<td class="eqn">                                         (16.27)
+<td class="eqn">                                         (16.28)
 </td> 
 
 </tr> </table>
@@ -2974,7 +3069,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 </math>
 </td>
 
-<td class="eqn">                                         (16.28)
+<td class="eqn">                                         (16.29)
 </td> 
 
 </tr> </table>
@@ -3061,7 +3156,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 
 </math> </td>
 
-<td class="eqn">                                         (16.29)
+<td class="eqn">                                         (16.30)
 </td> 
 
 </tr> </table>
@@ -3136,13 +3231,13 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                        (16.30)
+<td class="eqn">                                        (16.31)
 </td> 
 
 </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The exact term <i>h&hairsp;</i>(<i>X</i>) is :
+<p> The exact expression for <i>h&hairsp;</i>(<i>X</i>) is :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -3183,7 +3278,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                         (16.31)
+<td class="eqn">                                         (16.32)
 </td> 
 
 </tr> </table>
@@ -3238,7 +3333,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    </mfrac>
 </td>
 
-<td class="eqn">                                         (16.32)
+<td class="eqn">                                         (16.33)
 </td> 
 </table>
 
@@ -3252,7 +3347,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    width = "70%";
      alt = "Viscous optimization factor"; >
 </div>
-<div class = "caption">
+<div class = "caption" style="margin-top:12px";>
 <p> <i> Figure 16.5 : &ensp; The viscous optimization factor h&hairsp;(X). </i> </p>
 </div>
 
@@ -3301,7 +3396,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    <mn>0.36</mn>
 </td>
 
-<td class="eqn">                                         (16.33)
+<td class="eqn">                                         (16.34)
 </td> 
 </table>
 
@@ -3360,7 +3455,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                        (16.34)
+<td class="eqn">                                        (16.35)
 </td> 
 
 </tr> </table>
