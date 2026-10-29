@@ -1155,23 +1155,27 @@ Substituting  this into (16.8) gives the optimal
 <math> 
    <mfrac>
       <mrow>
-         <mn>d</mn>
-         <mo>(</mo>
-            <mn>d</mn>
+         <mn>d&hairsp;</mn>
+         <mn>(</mn>
+            <mn>d&hairsp;</mn>
             <msub>
-               <mi>P</mi>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
                <mn>m</mn>
             </msub>
-         <mo>)</mo>
+         <mn>)</mn>
       </mrow>
       <mrow>
-         <mn>d</mn>
-         <mo>(</mo>
-            <mn>d</mn>
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
-         <mo>)</mo>
+         <mn>d&hairsp;</mn>
+         <mn>(</mn> 
+            <mn>d&hairsp;</mn>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+         <mn>)</mn>
       </mrow>
    </mfrac>
 
@@ -1225,20 +1229,29 @@ Substituting  this into (16.8) gives the optimal
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The left hand term is the constant marginal loss (16.11).
- The right hand term effectively subtracts
+<p> The left hand term is the (&hairsp;constant&hairsp;)
+ combined marginal loss (16.11).
+ The right hand term subtracts
  the viscous marginal loss (16.2) from this,
- leaving a marginal momentum loss which is no longer a constant.
- The momentum loss by itself will no longer be optimal.
- Interestingly, the marginal loss is made constant
- by modifying the momentum term, not the viscous term.
+ leaving just the marginal momentum loss.
+ </p>
+<p> &emsp;
+ The marginal <i>momentum loss</i> is now no longer a constant.
+ It will, by itself, no longer be optimal.
+ Part of its opti&shymal&shyity has been sacrificed to the viscous
+ optimization.
+ Interestingly, the combined marginal loss is made constant
+ by modifying the local marginal momentum loss,
+ not the marginal viscous loss.
 </p>
 <p>&emsp;
  Figure 16.3 shows the result.
  The optimization moves thrust towards the region of lower
- viscous loss near <i>x</i>&nbsp;=&nbsp;1, as shown in figure 15.4.
- Increasing the thrust there means that we have to accept
- a momentum loss varying with the radius.
+ local viscous loss near <i>x</i>&nbsp;=&nbsp;1,
+ as shown before in Figure 
+ <a href="prop_book_14.html#F14.4">14.4</a>.
+ Moving extra thrust to this region means that we have to accept
+ a local increase in the momentum loss there.
 </p>
 
 <div class = "center">
@@ -1248,7 +1261,8 @@ Substituting  this into (16.8) gives the optimal
 </div>
 <div class = "caption">
 <p> <i> Figure 16.3 : &ensp;
-        Constant combined marginal loss, optimized by (16.3). </i> </p>
+        Combined optimality gives varying
+        marginal momentum loss (16.13). </i> </p>
  </div>
 <!------------------------------------------------------------->
 
@@ -1256,7 +1270,7 @@ Substituting  this into (16.8) gives the optimal
 
 <h4> 16.9 &emsp; The optimized local loss ratio itself is not a constant </h4>
 
-<p> The combined <i>marginal</i> loss is constant along the blade.
+<p> The combined <i>marginal</i> loss (16.11) is constant along the blade.
  But unlike for the purely rotational optimum,
  the actual loss ratio <i>itself</i> is not. 
  Substituting the combined optimum
@@ -1270,15 +1284,19 @@ Substituting  this into (16.8) gives the optimal
       <mrow>
          <mn>d</mn>
             <msub>
-               <mi>P</mi>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
                <mn>m</mn>
             </msub>
       </mrow>
       <mrow>
          <mn>d</mn>
-         <mi>T</mi>
-         <mo>.</mo>
-         <mi>V</mi>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
       </mrow>
    </mfrac>
 
@@ -1333,7 +1351,7 @@ Substituting  this into (16.8) gives the optimal
   <tr> <td>
  <math>
  
-   <mspace width="85px";/> 
+   <mspace width="140px";/> 
    <mo>&minus;</mo> 
    <mspace/>
 
@@ -1362,8 +1380,11 @@ Substituting  this into (16.8) gives the optimal
 <!-- END EQUATION --------------------------------------------->
 
 <p>  The bracketed term is a constant.
- It equals &frac12;&thinsp;<i>A</i>.
- The first term within  the brackets is the rotat&shyion&shyally optimal
+ It equals &frac12;&thinsp;<i>A</i>, i.e. half
+ of the local marginal loss, like we had
+ in the rotational optimization.
+ The first term within  the brackets is in fact 
+ the rotat&shyion&shyally optimal
  momentum loss ratio (10.10).
  The second term within the brackets is exactly half
  the average rotationally optimal viscous loss ratio of (16.6).
@@ -1375,12 +1396,120 @@ Substituting  this into (16.8) gives the optimal
  and via 1&nbsp;&frasl;&thinsp;cos<sup>2</sup>&thinsp;<i>&phi;</i>.
  This local term is exactly half the viscous loss ratio of (15.21).
  </p>
+ <p> Adding the inexorable local visocus loss ratio
+(<a href="prop_book_14.html#(14.14)">14.14</a>)
+ to this, the combined local loss becomes :
+</p>
+
+<!-- EQUATION ------------------------------------------------->
+<table class = "equation"> <tr> <td>
+<math> 
+   <mfrac>
+      <mrow>
+         <mn>d</mn>
+            <msub>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
+               <mn>m+v</mn>
+            </msub>
+      </mrow>
+      <mrow>
+         <mn>d</mn>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+      </mrow>
+   </mfrac>
+
+   <mspace/> <mo>=</mo> <mspace/>
+
+   <mo maxsize="42px">(</mo>
+
+      <mn>&frac12;</mn>
+      <mo>.</mo>
+
+      <mfrac>
+         <mrow>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
+         </mrow>
+         <mrow>
+            <msub>
+               <mi>&kappa;</mi>
+               <mn>&phi;</mn>
+            </msub>
+         </mrow>
+      </mfrac>
+
+      <mspace/>
+      <mo>+</mo>
+      <mspace/>
+
+      <mn>&frac12;</mn>
+      <mo>.</mo>
+
+      <mfrac>
+         <mrow>
+            <mn>&frac23;&nbsp;</mn>
+            <mi>&epsilon;</mi>
+            <mo>.</mo>
+            <mi>X</mi>
+         </mrow>
+         <mrow>
+            <msub>
+               <mi>&kappa;</mi>
+               <mn>&phi;</mn>
+            </msub>
+         </mrow>
+      </mfrac>
+
+   <mo maxsize="42px">)</mo>
+   
+ </math>
+ </td></tr>
+  <tr> <td>
+ <math>
+ 
+   <mspace width="160px";/> 
+   <mo> + </mo> 
+   <mspace/>
+
+   <mn>&frac12;</mn>
+   <mo>.</mo>
+
+   <mfrac>
+      <mrow>
+         <mi>&epsilon;</mi>
+         <mo>.</mo>
+         <mi>x</mi>
+      </mrow>
+      <mrow>
+         <msup>
+            <mn>cos</mn>
+            <mn>2</mn>
+         </msup>
+         <mi>&phi;</mi>
+      </mrow>
+   </mfrac>      
+
+</math> </td>
+
+<td class="eqn">                                         (16.15)
+</td> </tr> </table>
+<!-- END EQUATION --------------------------------------------->
+ 
+ <!--
  <p> &emsp;
  With (16.14), the viscous loss has been split into two halves :
  a constant term, depending only on <i>X</i>,
   and a varying term, depending only on <i>x</i>.
 </p>
-
+-->
 <p> &emsp;
  Figure 16.5 shows the result for our standard lightplane example.
  Unlike the marginal loss, the actual loss
@@ -1401,6 +1530,12 @@ Substituting  this into (16.8) gives the optimal
  Combined actual (&hairsp;not marginal&hairsp;) local loss, optimized by (16.3). </i> </p>
  </div>
 
+<div class="draft">
+<p>
+ See if you can point ahead to the optimized integral.
+ Does it look like &frac12;&thinsp;<i>A</i> at all ?
+</p>
+</div>
 
 <!-- SECTION 16.10 --------------------------------------------->
 
@@ -1496,7 +1631,7 @@ Substituting  this into (16.8) gives the optimal
 
 </math> </td>
 
-<td class="eqn">                                         (16.15)
+<td class="eqn">                                         (16.16)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1562,7 +1697,7 @@ Substituting  this into (16.8) gives the optimal
 </math>
 </td>
 
-<td class="eqn">                                         (16.16)
+<td class="eqn">                                         (16.17)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1659,7 +1794,7 @@ This is just over two thirds of the prop radius,
   <mo maxsize="42px">)</mo>
 </math> </td>
 
-<td class="eqn">                                         (16.17)
+<td class="eqn">                                         (16.18)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1698,7 +1833,7 @@ This is just over two thirds of the prop radius,
 </math>
 </td>
 
-<td class="eqn">                                         (16.18)
+<td class="eqn">                                         (16.19)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1827,7 +1962,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.19)
+<td class="eqn">                                         (16.20)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -1960,7 +2095,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.20)
+<td class="eqn">                                         (16.21)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -2017,7 +2152,7 @@ gave  the viscous loss integral for an arbitrary
    </mfrac>
 </math>
 </td>
-<td class="eqn">                                         (16.21)
+<td class="eqn">                                         (16.22)
 </td> </tr>
 </table>
 
@@ -2135,7 +2270,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.22)
+<td class="eqn">                                         (16.23)
 </td> </tr>
 </table>
 <!-- END EQUATION --------------------------------------------->
@@ -2222,7 +2357,7 @@ gave  the viscous loss integral for an arbitrary
   
 </math> </td>
 
-<td class="eqn">                                         (16.23)
+<td class="eqn">                                         (16.24)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -2314,7 +2449,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.24)
+<td class="eqn">                                         (16.25)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -2395,120 +2530,9 @@ gave  the viscous loss integral for an arbitrary
 </math> 
 </td>
 
-<td class="eqn">                                         (16.25)
+<td class="eqn">                                         (16.26)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
-
-<!--
-<p> 
- Substituting the newly optimized <i>b&hairsp;</i>(<i>x</i>)
- from (16.12) yields :
- </p>
- 
-<table class = "equation"> <tr> <td>
-<math> 
-   <msub>
-      <mover>
-         <mi>P</mi>
-         <mo mathsize="100%">&Hat;</mo>
-      </mover>
-      <mn>m</mn> 
-   </msub>
-
-   <mspace/>
-   <mo>=</mo>
-   <mspace/>
-
-   <mfrac>
-      <mn>1</mn>
-      <msup>
-         <mi>X</mi>
-         <mn>2</mn>
-      </msup>
-   </mfrac>
-   
-   <! -- integral -- >  
-   <mstyle displaystyle="true">     <! -- doesn't seem to help -- >
-                                    <! -- neither did largeop  -- >
-   <msubsup>
-      <mo style="font-size:28px">&int;</mo>
-      <mn>0</mn>
-      <mi>X</mi>
-   </msubsup>
-   
-   <mn>&frac12;</mn>
-
-   <mo>.</mo>
-
-   <mfrac>
-      <msup>
-         <mrow>
-            <mo maxsize="42px">(</mo>
-
-               <mfrac displaystyle="true">
-                  <mrow>
-                     <mover>
-                        <mi>T</mi>
-                        <mo mathsize="100%">&Hat;</mo>
-                     </mover>
-                     <mo> + </mo>
-
-                     <mn> &frac23; </mn>  
-                     <mo>.</mo>
-                     <mi>&epsilon;</mi>
-                     <mo>.</mo>
-                     <mi>X</mi>
-                     <mo>.</mo>
-                  </mrow>
-                  <msub>
-                     <mi>&kappa;</mi>
-                     <mn>&phi;</mn>
-                  </msub>
-               </mfrac>
-      
-               <mo>.</mo>
-      
-               <msup>
-                  <mn>cos</mn>
-                  <mn>2</mn>
-               </msup>
-               <mn>&phi;</mn>
-      
-               <mspace/>
-               <mo>&minus;</mo>
-               <mspace/>
-               <mi>&epsilon;</mi>
-               <mo> . </mo>
-               <mi>x</mi>
-
-            <mo maxsize="42px">)</mo>  
-         </mrow>
-
-         <! -- pull exponent down a little -- >
-         <mn style="font-size:17px; transform : translateY(12px)";">2</mn>
-      </msup>   
-
-      <mrow>
-         <msup>
-            <mn>cos</mn>
-            <mn>2</mn>
-         </msup>
-         <mi>&phi;</mi> 
-      </mrow>
-   </mfrac>
-
-   <mo>.</mo>
-   <mn>2</mn>
-   <mi>x</mi>
-   <mo>.</mo>
-   <mn>d</mn>
-   <mi>x</mi>
-</math>
-</td>
-
-<td class="eqn">                                         (16.25)
-</td> </tr> </table>
--->
 
 <p> From (16.12) we have :
 </p>
@@ -2573,7 +2597,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.26)
+<td class="eqn">                                         (16.27)
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
@@ -2794,7 +2818,7 @@ gave  the viscous loss integral for an arbitrary
 </math>
 </td>
 
-<td class="eqn">                                         (16.27)
+<td class="eqn">                                         (16.28)
 </td> 
 
 </tr> </table>
@@ -2965,7 +2989,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 </math> 
 </td>
 
-<td class="eqn">                                         (16.28)
+<td class="eqn">                                         (16.29)
 </td> 
 
 </tr> </table>
@@ -3061,7 +3085,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 </math>
 </td>
 
-<td class="eqn">                                         (16.29)
+<td class="eqn">                                         (16.30)
 </td> 
 
 </tr> </table>
@@ -3155,7 +3179,7 @@ of cos&hairsp;<sup>2</sup>&hairsp;<i>&phi;</i> over the prop disk.
 
 </math> </td>
 
-<td class="eqn">                                         (16.30)
+<td class="eqn">                                         (16.31)
 </td> 
 
 </tr> </table>
@@ -3230,11 +3254,17 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                        (16.31)
+<td class="eqn">                                        (16.32)
 </td> 
 
 </tr> </table>
 <!-- END EQUATION --------------------------------------------->
+
+<div class="draft">
+<p>
+  Now give P^_m+v / T^ .
+</p>
+</div>
 
 <p> The exact expression for <i>h&hairsp;</i>(<i>X</i>) is :
 </p>
@@ -3277,7 +3307,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                         (16.32)
+<td class="eqn">                                         (16.33)
 </td> 
 
 </tr> </table>
@@ -3332,7 +3362,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    </mfrac>
 </td>
 
-<td class="eqn">                                         (16.33)
+<td class="eqn">                                         (16.34)
 </td> 
 </table>
 
@@ -3395,7 +3425,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
    <mn>0.36</mn>
 </td>
 
-<td class="eqn">                                         (16.34)
+<td class="eqn">                                         (16.35)
 </td> 
 </table>
 
@@ -3459,7 +3489,7 @@ optimization (&hairsp;before tip loss&hairsp;) gives a net improvement
 </math>
 </td>
 
-<td class="eqn">                                        (16.35)
+<td class="eqn">                                        (16.36)
 </td> 
 
 </tr> </table>
