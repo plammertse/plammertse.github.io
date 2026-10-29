@@ -398,8 +398,13 @@ We can write
 <!-- END EQUATION --------------------------------------------->
 
 </p>
-<p> Taking the derivative with respect to  d<i>T.V</i>
-  like in (9.1) gives :
+<p> This is a linear relationship between 
+   d<span class="hat-anchor-capital"><i>P</i> 
+	<span class="hat">&Hat;</span></span><sub>v</sub>
+and
+   d<span class="hat-anchor-capital"><i>T</i> 
+	<span class="hat">&Hat;</span> </span>.
+ Taking the derivative immediately yields the slope :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -422,6 +427,7 @@ We can write
       <mrow>
          <mn>d&hairsp;</mn>
          <mn>(</mn> 
+            <mn>d&hairsp;</mn>
             <mover>
                <mi>T</mi>
                <mo mathsize="100%">&Hat;</mo>
@@ -456,7 +462,12 @@ We can write
 </td> </tr> </table>
 <!-- END EQUATION -------------------------------------------------->
 
-<p> <span style="font-variant: small-caps;"> Glauert</span>
+<p> 
+Note the <i>d&hairsp;</i>'s inside the brackets mean "increment per ring",
+and the outer <i>d&hairsp;</i>'s mean "derivative".
+</p>
+<p> &emsp;
+ <span style="font-variant: small-caps;"> Glauert</span>
  used the simplified viscous drag ratio (15.16) here,
  but the (&hairsp;almost&hairsp;) exact equation (15.21) will
  give us simpler and more accurate results.
@@ -481,10 +492,14 @@ The momentum loss will suffer, and there will be a trade-off.
 
 <h4> 16.3 &emsp; The combined marginal loss </h4>
 
-<p> We combine (16.1) with the marginal momentum loss for an arbitrary
+<p> We combine the viscous loss (16.2) 
+ and the marginal momentum loss 
+<!--for an arbitrary
  (&hairsp;but light loading&hairsp;) induction
- <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) in
- (<a class="crossref"; href="prop_book_09.html#(9.6)">9.6</a>)&nbsp;:
+ <i>b</i>&hairsp;(<i>x</i>) in
+ -->
+ (<a class="crossref"; href="prop_book_10.html#(10.6)">10.6</a>)&nbsp;
+ into the combined margin&shyal loss&nbsp;:
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -496,42 +511,22 @@ The momentum loss will suffer, and there will be a trade-off.
          <mn>(</mn>
             <mn>d&hairsp;</mn>
             <msub>
-               <mi>P</mi>
-               <mn>m</mn>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
+               <mn>m+v</mn>
             </msub>
          <mn>)</mn>
       </mrow>
       <mrow>
          <mn>d&hairsp;</mn>
          <mn>(</mn> 
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
-         <mn>)</mn>
-      </mrow>
-   </mfrac>
-
-   <mspace/>
-   <mo>+</mo>
-   <mspace/>
-
-   <mfrac>
-      <mrow>
-         <mn>d&hairsp;</mn>
-         <mn>(</mn>
             <mn>d&hairsp;</mn>
-            <msub>
-               <mi>P</mi>
-               <mn>v</mn>
-            </msub>
-         <mn>)</mn>
-      </mrow>
-      <mrow>
-         <mn>d&hairsp;</mn>
-         <mn>(</mn> 
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
          <mn>)</mn>
       </mrow>
    </mfrac>
@@ -581,17 +576,20 @@ The momentum loss will suffer, and there will be a trade-off.
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> The combined marginal loss will now depend on 
- <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
- but onlhy via the momentum loss.
+<p> The combined loss depends on 
+ <i>b</i>&hairsp;(<i>x</i>)
+ via the momentum loss. 
+ The viscous loss depends only on the radius.
+ </p>
+ <p> &emsp;
  We will first look at the combined marginal loss
- for the rotationally optimized propeller, without optimization
- for the viscous loss.<br>
+ for the rotationally optimized propeller, without optimizing
+ the viscous loss.
  This is an interesting reference case,
  since most of the literature accepts this as the standard solution.
 </p>
 <p>&emsp;
- The <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) for the
+ The <i>b</i>&hairsp;(<i>x</i>) for the
  rotationally optimal propeller was given by (10.8),
  and the resulting (&hairsp;constant&hairsp;) 
  marginal momentum loss by (10.7).
@@ -607,39 +605,22 @@ The momentum loss will suffer, and there will be a trade-off.
          <mn>(</mn>
             <mn>d&hairsp;</mn>
             <msub>
-               <mi>P</mi>
-               <mn>m</mn>
-            </msub>
-         <mn>)</mn>
-      </mrow>
-    <mrow> <mn>d&hairsp;</mn>
-      <mn>(</mn> 
-      <mi>T</mi> <mo>.</mo> <mi>V</mi>
-      <mn>)</mn>
-    </mrow>
-  </mfrac>
-
-   <mspace/>
-   <mo>+</mo>
-   <mspace/>
-
-   <mfrac>
-      <mrow>
-         <mn>d&hairsp;</mn>
-         <mn>(</mn>
-            <mn>d&hairsp;</mn>
-            <msub>
-               <mi>P</mi>
-               <mn>v</mn>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
+               <mn>m+v</mn>
             </msub>
          <mn>)</mn>
       </mrow>
       <mrow>
          <mn>d&hairsp;</mn>
          <mn>(</mn> 
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
+            <mn>d&hairsp;</mn>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
          <mn>)</mn>
       </mrow>
    </mfrac>
@@ -685,8 +666,9 @@ The momentum loss will suffer, and there will be a trade-off.
 </td> </tr> </table>
 <!-- END EQUATION --------------------------------------------->
 
-<p> This combined marginal loss is very similar to (16.1)
- which gave the actual local loss
+<p> This combined marginal loss is very similar to
+(<a href="prop_book_15.html">15.1</a>)
+ which gave the <i>actual</i> local loss
  for the rotationally optimal propeller.
  The only difference is that the marginal momentum loss is
  exactly twice the local momentum loss,
@@ -740,42 +722,22 @@ The momentum loss will suffer, and there will be a trade-off.
          <mn>(</mn>
             <mn>d&hairsp;</mn>
             <msub>
-               <mi>P</mi>
-               <mn>m</mn>
+               <mover>
+                  <mi>P</mi>
+                  <mo mathsize="100%">&Hat;</mo>
+               </mover>                
+               <mn>m+v</mn>
             </msub>
          <mn>)</mn>
       </mrow>
       <mrow>
          <mn>d&hairsp;</mn>
          <mn>(</mn> 
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
-         <mn>)</mn>
-      </mrow>
-   </mfrac>
-
-   <mspace/>
-   <mo>+</mo>
-   <mspace/>
-
-   <mfrac>
-      <mrow>
-         <mn>d&hairsp;</mn>
-         <mn>(</mn>
             <mn>d&hairsp;</mn>
-            <msub>
-               <mi>P</mi>
-               <mn>v</mn>
-            </msub>
-         <mn>)</mn>
-      </mrow>
-      <mrow>
-         <mn>d&hairsp;</mn>
-         <mn>(</mn> 
-            <mi>T</mi>
-            <mo>.</mo>
-            <mi>V</mi>
+            <mover>
+               <mi>T</mi>
+               <mo mathsize="100%">&Hat;</mo>
+            </mover>
          <mn>)</mn>
       </mrow>
    </mfrac>
@@ -886,7 +848,7 @@ The momentum loss will suffer, and there will be a trade-off.
 </p>
 <p> <span style="font-variant: small-caps;"> Glauert</span>
  himself used the approximate 
-  <i>&mu;</i>&thinsp;(&hairsp;<i>x</i>&hairsp;)
+  <i>&mu;</i>&thinsp;(<i>x</i>)
  of (15.16), which yields :
 </p>
 
@@ -956,7 +918,7 @@ for the same thrust, <i>A</i>
 	<span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span>,
  <i>&epsilon;</i> and <i>X</i>.
- Using the induction <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;)
+ Using the induction <i>b</i>&hairsp;(<i>x</i>)
  of (16.7) in the light loading thrust integral
 (<a class="crossref";
     href="prop_book_07.html#(7.16)">7.16</a>),
@@ -1102,7 +1064,7 @@ for the same thrust, <i>A</i>
 
 <p>
 Substituting  this into (16.8) gives the optimal
- <i>b</i>(&hairsp;<i>x</i>&hairsp;) in design parameters :
+ <i>b</i>(<i>x</i>) in design parameters :
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -1181,7 +1143,7 @@ Substituting  this into (16.8) gives the optimal
     Constant marginal loss gives a varying momentum loss </h4>
 
 <p> The marginal viscous loss is independent of
-  <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;),
+  <i>b</i>&hairsp;(<i>x</i>),
  but the marginal momentum loss is not.
  Substituting the <i>b</i>&hairsp;(&hairsp;x&hairsp;)
  of (16.7) into the marginal
@@ -1298,7 +1260,7 @@ Substituting  this into (16.8) gives the optimal
  But unlike for the purely rotational optimum,
  the actual loss ratio <i>itself</i> is not. 
  Substituting the combined optimum
- <i>&hairsp;b</i>(&hairsp;<i>x</i>&hairsp;) of (16.12)
+ <i>&hairsp;b</i>(<i>x</i>) of (16.12)
  into the generic momentum loss (8.4) gives :
 </p>
 <!-- EQUATION ------------------------------------------------->
@@ -1801,7 +1763,7 @@ This is just over two thirds of the prop radius,
 <p> Equation (14.XX), repeated here,
 gave  the viscous loss integral for an arbitrary
  (&hairsp;light loading&hairsp;) induction distribution
- <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;).
+ <i>b</i>&hairsp;(<i>x</i>).
 </p>
 
 <!-- EQUATION ------------------------------------------------->
@@ -1870,7 +1832,7 @@ gave  the viscous loss integral for an arbitrary
 <!-- END EQUATION --------------------------------------------->
 
 <p> Substituting the optimal
-   <i>b</i>&hairsp;(&hairsp;<i>x</i>&hairsp;) of (16.12),
+   <i>b</i>&hairsp;(<i>x</i>) of (16.12),
  the first cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i> term
  in the numerator will cancel, but the
    1&thinsp;&frasl;&thinsp;cos<sup>&hairsp;2</sup><i>&hairsp;&phi;</i>
