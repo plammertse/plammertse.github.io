@@ -158,7 +158,6 @@
 
 <td class="eqn">                                          (15.1)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <p> Figure 16.1 shows the graph.
  It is the same as figure
@@ -290,7 +289,7 @@
 -->
 
 
-<!-- SECTION 15.2 --------------------------------------------->
+<!------------------------------------------------------------->
 
 <h4> 15.2 &emsp; 
    The viscous loss integral for light loading </h4>
@@ -304,7 +303,7 @@
 <p> &emsp;
 For lightly loaded propellers without tip loss,
  the&nbsp;local thrust 
-   d<span class="hat-anchor"> <i>T</i> 
+   d<span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span> follows from
  (<a class="crossref"
     href="prop_book_07.html#(7.14)">7.14</a>), repeated here
@@ -346,14 +345,12 @@ added in for clarity&nbsp;:
 
 <td class="eqn">                                       (15.2)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <p> With the viscous loss ratio of 
 (<a class="crossref"; href="prop_book_14.html#(14.14)">14.14</a>) 
 for an arbitrary loading <i>b</i>&hairsp;(<i>x</i>),
  the  local viscous power loss will be :</p>
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <mn>d</mn>
@@ -406,7 +403,6 @@ for an arbitrary loading <i>b</i>&hairsp;(<i>x</i>),
 
 <td class="eqn">                                         (15.3)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <p> The light loading viscous loss integral, 
 before tip loss, 
@@ -414,7 +410,6 @@ for an arbitrary induction distri&shybution
  <i>b</i>&hairsp;(<i>x</i>) is then&nbsp;:
 </p>
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <msub>
@@ -460,7 +455,6 @@ for an arbitrary induction distri&shybution
 
 <td class="eqn">                                         (15.4)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <h4> 15.3 &emsp; The rotationally optimal propeller </h4>
 
@@ -473,7 +467,6 @@ for an arbitrary induction distri&shybution
  repeated here :
 </p>
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <mi>b</mi>
@@ -514,7 +507,6 @@ for an arbitrary induction distri&shybution
  cancel :
 </p> 
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <msub>
@@ -572,19 +564,17 @@ for an arbitrary induction distri&shybution
 
 <td class="eqn">                                          (15.6)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <p> The integral by itself yields
  &frac23;&thinsp;<i>X</i>&thinsp;<sup>3</sup>.
  Dividing out an <i>X</i>&thinsp;<sup>2</sup> and 
  the
-   <span class="hat-anchor"> <i>T</i> 
+   <span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span> term,
  the overall viscous loss for the
  rotationally optimal propeller is :
 </p>
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <mfrac>
@@ -622,7 +612,6 @@ for an arbitrary induction distri&shybution
 
 <td class="eqn">                                          (15.7)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
 <p> 
  This result makes good sense.
@@ -691,20 +680,20 @@ for an arbitrary induction distri&shybution
  </p>
  </div>
 
-<!-- SECTION 15.4 --------------------------------------------->
+<!------------------------------------------------------------->
 
 <h4> 15.4 &emsp;
-  The overall loss for the rotationally optimal distribution </h4>
+  The combined loss for the rotationally optimal propeller </h4>
 
-<p> We can now sum the overall (&hairsp;averaged&hairsp;) values
- of the momentum and the viscous losses 
- <span style="color:red"> (10.10) and (15.6). </span>
+<p> We can now combine the overall (&hairsp;averaged&hairsp;) values
+ of the momentum losses 
+(<a href="prop_book_11.html#(11.9)">11.9</a>)
+ and the viscous loss (15.7).
  Note that these are values for the rotationally optimal propeller,
- for light loading, before tip loss,
+ for light loading, before tip loss
  and before viscous optimization :
 </p>
 
-<!-- EQUATION ------------------------------------------------->
 <table class = "equation"> <tr> <td>
 <math>
    <mfrac>
@@ -722,52 +711,16 @@ for an arbitrary induction distri&shybution
    </mfrac>
 
    <mspace/>
-   <mo>&hairsp; &equiv; &hairsp;</mo>
+   <mo>=</mo>
    <mspace/>
 
+   <mn>&frac12;</mn>
+   <mo>.</mo>
    <mfrac>
-      <msub>
-         <mover>
-            <mi>P</mi>
-            <mo mathsize="100%">&Hat;</mo>
-         </mover>
-         <mn>m</mn>
-      </msub>
-      <mover>
-         <mi>T</mi>
-         <mo mathsize="100%">&Hat;</mo>
-      </msup>
-   </mfrac>
-
-   <mo>&hairsp; + &hairsp;</mo>
-
-   <mfrac>
-      <msub>
-         <mover>
-            <mi>P</mi>
-            <mo mathsize="100%">&Hat;</mo>
-         </mover>
-         <mn>v</mn>
-      </msub>
       <mover>
          <mi>T</mi>
          <mo mathsize="100%">&Hat;</mo>
       </mover>
-   </mfrac>
-
-   <mspace/>
-   <mo>=</mo>
-   <mspace/>
-
-   <mfrac>
-      <mrow>
-         <mn>&frac12;</mn>
-         <mo>.</mo>
-         <mover>
-            <mi>T</mi>
-            <mo mathsize="100%">&Hat;</mo>
-         </mover>
-      </mrow>
       <msub>
          <mi>&kappa;</mi>
          <mn>&phi;</mn>
@@ -793,13 +746,12 @@ for an arbitrary induction distri&shybution
 
 <td class="eqn">                                          (15.8)
 </td> </tr> </table>
-<!-- END EQUATION --------------------------------------------->
 
-<p>&emsp; Figure 15.3 shows the result.
- The basis is a constant loss
- due to the optimized momentum loss,
+<p> Figure 15.3 shows the result.
+ The basis is the constant, rotationally optimized momentum loss.
+ On top of this there is 
  and a straight slope due to the non-optimized viscous loss.
- The viscous loss term gives a steady rise of
+ The sum gives a steady rise of
  the combined loss ratio with increasing 
  tip speed ratio <i>X</i>.
 </p>
@@ -822,35 +774,35 @@ for an arbitrary induction distri&shybution
          for rotationally optimal thrust.</i> </p>
 </div>
 
-<!-- SECTION 15.4 --------------------------------------------->
+<!------------------------------------------------------------->
 
-<h4> 15.4 &emsp; The optimal tip speed ratio </h4>
+<h4> 15.5 &emsp; The optimal tip speed ratio </h4>
 
-<p> The loss increase at both ends of the <i>X</i> range means
+<p> The combined loss increase at both ends
+ of the <i>X</i> range means
  that there is a minimum halfway.
  The location of the optimum depends on the balance
-   <span class="hat-anchor"> <i>T</i> 
-	<span class="hat">&Hat;</span> </span>&frasl;
-      &thinsp;<i>&epsilon;</i>
+   <span class="hat-anchor-capital"> <i>T</i> 
+	<span class="hat">&Hat;</span></span>&nbsp;&frasl;&thinsp;<i>&epsilon;</i>
  between the momentum and viscous losses.
 </p>
 <p>&emsp; This balance will not change if we scale up both
-   <span class="hat-anchor"> <i>T</i> 
+   <span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span>
  and <i>&epsilon;</i> by the same factor.
  The whole graph will just be inflated by that factor.
- But if we change either
-   <span class="hat-anchor"> <i>T</i> 
+ If we change either
+   <span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span>
    or
  <i>&epsilon;</i> separately, the curve will change.
   The figure shows the effect of  varying <i>&epsilon;</i>
  for a given
-   <span class="hat-anchor"> <i>T</i> 
+   <span class="hat-anchor-capital"> <i>T</i> 
 	<span class="hat">&Hat;</span> </span>.
  The circle marker indi&shycat&shyes this minimum
  for our standard example of 
-   <span class="hat-anchor"> <i>T</i>       
+   <span class="hat-anchor-capital"> <i>T</i>       
 	<span class="hat">&Hat;</span> </span>&nbsp;=&nbsp;0.1,
  <i>&epsilon;</i>&nbsp;=&nbsp;0.02. 
  The optimum falls near <i>X</i> = 2.9.
